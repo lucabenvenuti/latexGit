@@ -8,25 +8,23 @@
 \label{section:behaviorinvestigation}
 %************************************************
 
-This is the second draft of what should be the main topic of my PhD Thesis. The final version will enter and modify accordingly the ToC.
+This is the third draft of what should be the main topic of my PhD Thesis. The ToC is developed accordingly.
 
 \subsection{Investigation topcis}
 \label{subsection:investigationtopics}
 
-In order to define the scientific core of my PhD Thesis the following themses could be investigated:
+In order to define the scientific core of my PhD Thesis the following themses will be investigated:
 \begin{enumerate}
-\item{the micro-macro transition,}
+%\item{the micro-macro transition,}
 \item{the influence of variations (distributions) of input parameters and poly-dispersity,}
-\item{the behavior of the different properties in real life (e.g. segregation before doing the shear cell experiment),}
+%\item{the behavior of the different properties in real life (e.g. segregation before doing the shear cell experiment),}
 \item{the possbility to extrapolate (e.g. given 3 different fraction distributions, with known behaviors, extrapolate the behavior of a fourth fraction distribution).}
 \end{enumerate}
-Design of experiments and Oberkampf's guidelines will be used to perform the investigations.
-The selection and number of simulations necessary to accomplish the tasks have yet to be decided.
 
 \subsection{Micro - DEM parameters}
 \label{subsection:microparameters}
 
-The main micro parameters that characterize a single sphere in a simulation are:
+The main micro parameters in a simulation are:
 
 \begin{enumerate}[label=(\Alph*)]
 \item{the particle diameter distribution ($radii$ (R),\%) (0.00025 - 0.05 $[m[$),}
@@ -39,24 +37,7 @@ The main micro parameters that characterize a single sphere in a simulation are:
 \item{the domain edge dimension ($D_{cyl}$), proportional to R (76, 100, 124 times bigger).}
 \end{enumerate}
 
-The parameter that drives the simulation time is $D_{cyl}$. The number of particles is cubically proportional to its size. An estimation is given in Tab. \ref{tab:timestimation} with 32 cores on gollum.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Time estimation in hours for each shear cell simulation, see Draft 1}
-    \begin{tabular}{c|ccc}
-    \toprule
-    $D_{cyl}$ & 76    & 100   & 124 \\
-    \midrule
-    $\alpha$ & 0.5   & 2     & 24 \\
-    $\beta$ & 2     & 24    & 168 \\
-    $\gamma$ & 168   & 336   & ? \\
-    $\delta$ & 720   & ?     & ? \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:timestimation}%
-\end{table}%
-
+The parameter that drives the simulation time is $D_{cyl}$. The number of particles is cubically proportional to its size. 
 
 \subsection{Macro - bulk parameters}
 \label{subsection:macroparameters}
@@ -76,24 +57,24 @@ The main macro parameters we experimentally determine for a bulk material are:
 Angle of Repose simulation, individual contacts micro-DEM parameters:
 Sliding friction: from 0.05 to 1, 0.05 interval $=$ 20 possibilities;
 Rolling friction: from 0.05 to 1, 0.05 interval $=$ 20 possibilities;
-Coefficient  of restitution: from 0.5 to 1, 0.1 interval $=$ 5 possibilities;
+Coefficient  of restitution: from 0.5 to 1, 0.1 interval $=$ 6 possibilities;
 Particle density: e.g. from 2500 to 3500 $kg/m3$, 100 interval $=$ 11 possibilities;
 (Particle to geometry ratio: 50, 100, 150 $=$ 3 possibilities;)
-20 x 20 x 5 x 11 x 3 $=$ 22000 possible combinations of parameter
-Each combination would require a simulation, each simulation requires 9 hours over 32 cores $=$ 8250 days!
+20 x 20 x 6 x 11 x 3 $=$ 26400 possible combinations of parameter
+Each combination would require a simulation, each simulation requires 9 hours over 32 cores $=$ 9900 days!
 All for only one material with a defined size distribution (e.g. from 3 to 10 mm)!
 We only consider p2g $=$ 50, because otherwise with e.g. 100 the number of particles is 8 times higher, and so the time 8 times longer
 
 Shear cell simulation, individual contacts micro-DEM parameters:
 Sliding friction: from 0.05 to 1, 0.05 interval $=$ 20 possibilities;
 Rolling friction: from 0.05 to 1, 0.05 interval $=$ 20 possibilities;
-Coefficient  of restitution: from 0.5 to 1, 0.1 interval $=$ 5 possibilities;
+Coefficient  of restitution: from 0.5 to 1, 0.1 interval $=$ 6 possibilities;
 Particle density: e.g. from 2500 to 3500 kg/m3, 100 interval $=$ 11 possibilities;
 Normal stress: 1, 2, 5, 10 kPa $=$ 4 possibilities;
 Shear %: 40, 60, 80, 100% $=$ 4 possibilities;
 (Particle to geometry ratio: 20, 36, 38, 40, 100, 150 $=$ 6 possibilities;)
-20 x 20 x 5 x 11 x 4 x 4 $=$ 352000 possible combinations of parameter
-Each combination would require a simulation, each simulation requires 64 minutes over 32 cores $=$ 15644 days!
+20 x 20 x 6 x 11 x 4 x 4 $=$ 422400 possible combinations of parameter
+Each combination would require a simulation, each simulation requires 64 minutes over 32 cores $=$ 18774 days!
 All for only one material with a defined size distribution (e.g. from 3 to 10 mm)!
 
 

@@ -16,7 +16,13 @@ We have performed from 6 to 16 experiments per bulk material.\\
 \subsubsection{SCT simulation}
 \label{subsubsection:sctsimulation}
 
-The script has been modified to run on 32 cores over $Mach$. As of now each shear cell experiment is simulated approx. 250 times with different combinations of parameters.\\
+The script has been modified to run on 32 cores over $Mach$. As of now each shear cell experiment is simulated approx. 250 times with different combinations of parameters.
+As can be seen in Fig. \ref{010dCylDpComparison}, a wall effect appears in the simulations, an the coefficient of internal friction decreases if the cell dimension grows. Since a bigger dimension means more particles and more computational demand, only a part of the simulations have been realized with a larger cell's diameter. The Neural Network, see section \ref{subsection:microparameters} will account also for this $wall$ effect.\\
+\begin{figure}[!h]
+\includegraphics[width=.96\columnwidth]{010dCylDpComparison}
+\caption{increased geometry effect}
+\label{010dCylDpComparison}
+\end{figure}
 
 \subsection{Angle of Repose}
 \label{subsection:aor}
@@ -53,6 +59,6 @@ This project will remain in stand-by until further notice.
 Both the experiment and the simulation manage to rotate the spheres at a given velocity.
 To identify the slope in the middle of the drum have been suggested:
 \begin{itemize}
-\item{to put a laser measurement system in the middle of the beam, that rotates together with the drum, but at least once per turn it registers correctly the ;}
-\item{the mean radius (R);}
+\item{to put a laser measurement system in the middle of the beam, that rotates together with the drum, but at least once per turn it registers correctly the slope's angle;}
+\item{an "unstable" system connected to a load cell: when in a steady-state the load on the cell will be $0$, when in movement the load over the cell would allow to determine the mass of the "inclined" material;}
 \end{itemize}
