@@ -1,4 +1,4 @@
-
+~/AppData/Roaming/GitPad/GitPad.exe
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -27,3 +27,4 @@ old/
 *.toc
 *.*~
 *.synctex.gz
+~/AppData/Roaming/GitPad/GitPad.exe
