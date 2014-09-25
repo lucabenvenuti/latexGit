@@ -97,46 +97,20 @@ The inputs are:
 
 The outputs are \textit{f} and \textit{g}.\\
 
-The idea would be to use a \textit{backpropagation supervised learning}. The already performed simulations could be used as follows: given e.g. 5000 simulations, I will use 3000 of them as training set, and 1000 of the remaining ones could be used to validate the neural system from the $simulation$ point of view.
-In this way I could study \textit{the influence of variations of input parameters and poly-dispersity}.\\
+The idea would be to use a \textit{feed forward Multi Layer Perceptron Neural Network}.
+A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).
+A Neural Network has been created for each bulk parameter investigated ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
+15\% of the simulations have been excluded from the training processes.
+They have been used to define per each NN the correct number of neurons in the hidden layer, based on an $R^2$ maximization.
+Then each trained NN received as input one million different combinations.
+Now that the networks have been trained, we can feed the networks with all the combination we need and receive reliable macro-BULK parameters as response.
+Especially, we can increase the parameter that account for the geometry dimension, without paying completely the price for it.\\
+The DEM coefficients were obtained by fitting NN outputs to experimental data (within a 5\% error).
+Further, we validated the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN.
+The validation agreement was also within reliable limits (5\% error).\\
 
 Between the 1000 simulations remained, as hypothesis 100 of them are experimentally validated. I could use 80 of them to further refine the weights of the neural network functions, and the remaining 20 to validate this second step. At this point I should be able to \textit{extrapolate the behavior of bulk with a volume too large to be simulated} with this complete neural network and to compare the results with the real scale experiments (Leoben).\\
 
 The reliability of this work is deeply based on the already performed simulations: further numerical investigations as suggested in draft $1$ could improve it.
 
 By reserving a portion of the simulations, we can use them to establish the most effective number of neurons inside the hidden layer, for each bulk parameter, through maximization of R2.\\
-
-Now that the networks have been trained, we can feed the networks with all the combination we need and receive reliable macro-BULK parameters as response.
-Especially, we can increase the parameter that account for the geometry dimension, without paying completely the price for it.
-E.g.: for the shear cell only $~100$ simulations can be done with $g2p >20$, but thanks to them the network can be trained to understand how that parameter relates with the others $=$ We can expand this consideration and evaluate the effect of the micro-DEM parameters over the large scale AOR test!
-
-
-\subsubsection{Test run with Matlab neural fitting tool}
-\label{subsubsection:testrunmatlab}
-
-I tried a run with Matlab neural fitting tool.
-773 simulations of the Jenike shear cell tester have been analyzed, with monodispersed spheres with the same radius, Young's modulus, $\nu$, $\rho_p$, $e$ and domain dimensions.
-The inputs values are F, G, the normal load until steady-state flow and the \% of it during the second phase.
-Especially, these \% are 40\%, 60\% and 80\%.
-All other DEM values are identical for all the 773 simulations.
-The target value for each simulation is the coefficient of internal friction in the the second phase.
-I use 10 hidden neurons in the hidden layer and 1 neuron in the output layer.
-Matlab "eats" 541 simulations to train the network, 116 to validate it and 116 to test it.\\
-Now I use the network. 
-The inputs values are F, G, the normal load until steady-state flow and the \% of it during the second phase.
-Especially, this is only 100\%.
-I have a total of 256 combinations.
-I compare the coefficient of internal friction in the second phase of the simulations and of the network in these 256 cases.
-
- \begin{equation}
-\langle{ \frac{\mu_{sh,sim}-\mu_{sh,neural}}{\mu_{sh,sim}}}\rangle = -1.16 \%
-\end{equation}
-
-The average value is really promising for this approach.
-
-  % C_{kl} = 
- % \begin{cases}
-% 1 & \text{if } (\lvert{{\mu_{psh,exp}}}\rvert < 5\% ~\text{and}~ \lvert{1-\frac{\mu_{sh,sim}}{\mu_{sh,exp}}}\rvert < 5\% ) ,\\
-% 0 & \text{else} .\\ 
-% \end{cases}
- % \label{eq:check}
