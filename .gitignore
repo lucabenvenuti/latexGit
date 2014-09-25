@@ -16,3 +16,11 @@ _book
 #*.pdf
 .fuse_hidden*
 old/
+
+#tex temp files
+*.aux
+*.blg
+*.lof
+*.log
+*.lot
+*.toc
