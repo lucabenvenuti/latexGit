@@ -248,6 +248,61 @@
   \field{year}{2013}
 \endentry
 
+\entry{RefWorks:161}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Antony}{A.}%
+     {S.~J.}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {C.~H.}{C.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wang}{W.}%
+     {X.}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Particulate materials; Granular materials; Neural network; Hybrid
+  modelling}
+  \strng{namehash}{ASJZCHWX1}
+  \strng{fullhash}{ASJZCHWX1}
+  \field{sortinit}{A}
+  \field{abstract}{%
+  A hybrid neural network model is designed to predict the micro-macroscopic
+  characteristics of particulate systems subjected to shearing. The network is
+  initially trained to understand the micro-mechanical characteristics of
+  particulate assemblies, by feeding the results based on three-dimensional
+  discrete element simulations. Given the physical properties of the individual
+  particles and the packing condition of the particulate assemblies under
+  specified loading conditions, the network thus understands the way contact
+  forces are distributed, the orientation of contact (fabric) networks and the
+  evolution of stress tensor during the mechanical loading. These relationships
+  are regarded as soft sensors. Using the signals received from soft sensors, a
+  mechanistic neural network model is constructed to establish the relationship
+  between the micro-macroscopic characteristics of granular assemblies
+  subjected to shearing. The macroscopic results obtained form this hybrid
+  mechanistic neural network modelling for data that were not part of the
+  training signals, is compared with simulations based on discrete element
+  modelling alone and in general, the agreement is good. The hybrid network
+  responds to their inputs at a high speed and can be regarded as a real-time
+  system for understanding the complex behaviour of particulate systems under
+  mechanical process conditions.%
+  }
+  \field{isbn}{0307-904X}
+  \field{number}{1}
+  \field{pages}{116\bibrangedash 128}
+  \field{title}{An integrated mechanistic-neural network modelling for granular
+  systems}
+  \field{volume}{30}
+  \field{journaltitle}{Applied Mathematical Modelling}
+  \field{month}{01}
+  \field{year}{2006}
+\endentry
+
 \entry{RefWorks:81}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -327,9 +382,140 @@
   \strng{namehash}{AI1}
   \strng{fullhash}{AI1}
   \field{sortinit}{A}
-  \field{title}{ASTM D6128 - 06 -Standard Test Method for Shear Testing of Bulk
-  Solids Using the Jenike Shear Cell}
+  \field{title}{ASTM D6128 - 06 - Standard Test Method for Shear Testing of
+  Bulk Solids Using the Jenike Shear Cell}
   \field{year}{2013}
+\endentry
+
+\entry{RefWorks:142}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {ASTM}{A.}%
+     {International}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AI1}
+  \strng{fullhash}{AI1}
+  \field{sortinit}{A}
+  \field{title}{ASTM D6773 - 02 - Standard Shear Test Method for Bulk Solids
+  Using the Schulze Ring Shear Tester}
+  \field{year}{2013}
+\endentry
+
+\entry{RefWorks:154}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Barati}{B.}%
+     {Reza}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Neyshabouri}{N.}%
+     {Seyed Ali Akbar~Salehi}{S.~A. A.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ahmadi}{A.}%
+     {Goodarz}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Particle motion; Sphere drag; Reynolds number; Multi-gene Genetic
+  Programming}
+  \strng{namehash}{BRNSAASAG1}
+  \strng{fullhash}{BRNSAASAG1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  Abstract An accurate correlation for the smooth sphere drag coefficient with
+  wide range of applicability is a useful tool in the field of particle
+  technology. The present study focuses on the development of high accurate
+  drag coefficient correlations from low to very high Reynolds numbers (up to
+  106) using a multi-gene Genetic Programming (GP) procedure. A clear
+  superiority of GP over other methods is that GP is able to determine the
+  structure and parameters of the model, simultaneously, while the structure of
+  the model is imposed by the user in traditional regression analysis, and only
+  the parameters of the model are assigned. In other words, in addition to the
+  parameters of the model, the structure of it can be optimized using GP
+  approach. Among two new and high accurate models of the present study, one of
+  them is acceptable for the region before drag dip, and the other is
+  applicable for the whole range of Reynolds numbers up to 106 including the
+  transient region from laminar to turbulent. The performances of the developed
+  models are examined and compared with other reported models. The results
+  indicate that these models respectively give 16.2 \% and 69.4 \% better
+  results than the best existing correlations in terms of the sum of squared of
+  logarithmic deviations (SSLD). On the other hand, the proposed models are
+  validated with experimental data. The validation results show that all of the
+  estimated drag coefficients are within the bounds of +- 7 \% of experimental
+  values.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{11\bibrangedash 19}
+  \field{title}{Development of empirical models with high accuracy for
+  estimation of drag coefficient of flow around a smooth sphere: An
+  evolutionary approach}
+  \field{volume}{257}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{05}
+  \field{year}{2014}
+\endentry
+
+\entry{RefWorks:167}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Barrasso}{B.}%
+     {Dana}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tamrakar}{T.}%
+     {Ashutosh}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ramachandran}{R.}%
+     {Rohit}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Wet granulation; Discrete element modeling; Population balance
+  modeling; Reduced order modeling; Artificial neural networks}
+  \strng{namehash}{BDTARR1}
+  \strng{fullhash}{BDTARR1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  Abstract Wet granulation is a particle design process, often used in the
+  pharmaceutical, consumer product, food, and fertilizer industries. A better
+  process understanding is needed to improve process design, control, and
+  optimization. Predominantly, two modeling frameworks are implemented to
+  simulate granulation processes: population balance modeling (PBM) and
+  discrete element methods (DEM). While PBM simulates changes in the number of
+  particles in each size class due to rate processes such as aggregation, DEM
+  tracks each particle individually, with the abilities to simulate spatial
+  variations and collect mechanistic data. In this bi-directional coupled
+  approach, the computational expenditure of the full model is overwhelmed by
+  the high-fidelity DEM algorithm that needs to solve a set of ODEs for each
+  and every particle being handled in the system for very small time intervals.
+  To mitigate this computational inefficiency, reduced order modeling (ROM) is
+  used to replace the computationally expensive DEM step. An artificial neural
+  network (ANN) was trained using DEM results to relate particle size, size
+  distribution, and impeller speed to the collision frequency. Results showed a
+  high correlation between the trained ANN predictions and DEM-generated data.
+  The ANN was coupled with a PBM as a key component of the aggregation rate
+  kernel. The coupled model showed a different development of average particle
+  size and size distribution over time from that of a constant aggregation rate
+  kernel. In addition, the coupled model demonstrated sensitivity to the
+  impeller speed via the ANN rate kernel. When compared with the fully coupled
+  PBM-DEM model for accuracy and computation time savings, the hybrid PBM-ANN
+  model demonstrated excellent agreement with DEM simulations at fractions of
+  the original computational time.%
+  }
+  \field{isbn}{0009-2509}
+  \field{number}{0}
+  \field{title}{A reduced order PBM-ANN model of a multi-scale PBM-DEM
+  description of a wet granulation process}
+  \field{journaltitle}{Chemical Engineering Science}
 \endentry
 
 \entry{RefWorks:92}{article}{}
@@ -486,6 +672,59 @@
   \warn{\item Invalid format of field 'month'}
 \endentry
 
+\entry{RefWorks:156}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bhattacharya}{B.}%
+     {Tathagata}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {McCarthy}{M.}%
+     {J.~J.}{J.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Granular materials; Chute flow; Mixing; Segregation; DEM}
+  \strng{namehash}{BTMJJ1}
+  \strng{fullhash}{BTMJJ1}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  Abstract Handling of granular materials involves the use of many solids
+  processing devices such as chutes, hoppers, tumblers or other transfer
+  equipment. Unfortunately, granular materials segregate if they are subjected
+  to flow or external agitation in the presence of a gravitational field. Thus,
+  operation of many of these devices is prone to segregation. Many studies of
+  granular flow have focused on gravity driven chute flows owing to their
+  practical importance in granular processing and to the fact that the relative
+  simplicity of this type of flow allows for development and testing of new
+  theories/equipment. In the present work, we observe the deposition behavior
+  of both mono-sized and polydisperse dry granular materials in an inclined
+  chute flow, both experimentally and computationally. We investigate the
+  effects on the mass fraction distribution of granular materials of different
+  parameters such as chute angle, particle size, falling height and charge
+  amount. The simulation results obtained using the Discrete Element Method
+  (DEM) are compared with the experimental findings and a high degree of
+  agreement is observed. Tuning of the underlying contact force parameters
+  allows realistic results and is used as a means of validating the simulation
+  model against available experimental data. The tuned simulation is then used
+  to test predictions of granular segregation theories outlined in previous
+  studies. That is, it has been predicted that a system can maintain a mixed
+  configuration when L<Uavgts, where L, Uavg, and ts denote the length of the
+  chute, the average stream-wise flow velocity of the particles, and the
+  characteristic time of segregation, respectively. Our results with the tuned
+  simulation support these conclusions for chute flows.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{126\bibrangedash 139}
+  \field{title}{Chute flow as a means of segregation characterization}
+  \field{volume}{256}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{04}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:110}{misc}{}
   \name{author}{1}{}{%
     {{}%
@@ -631,6 +870,64 @@
   \field{journaltitle}{Powder Technology}
   \field{month}{11}
   \field{year}{2013}
+\endentry
+
+\entry{RefWorks:169}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Canakci}{C.}%
+     {Aykut}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozsahin}{O.}%
+     {Sukru}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Varol}{V.}%
+     {Temel}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Mechanical alloying; Artificial neural networks; Powder metallurgy}
+  \strng{namehash}{CAOSVT1}
+  \strng{fullhash}{CAOSVT1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  An artificial neural network (ANN) model was developed for modeling the
+  effect of the amount of a process control agent (PCA) on the apparent
+  density, particle size and microhardness of Al-10Â wt.%Al2O3 composite
+  powders. Methanol was used as the process control agent in varying amounts of
+  1, 2, and 3wt.% to investigate the effect of the PCA on the properties of the
+  composite powders. Composite powders were fabricated using high energy
+  planetary ball milling, and the training data for the ANN were collected from
+  experimental results. After the training process, the experimental data were
+  used to verify the accuracy of the system. The properties of the composite
+  powders were analyzed using a hall flowmeter for the apparent density, a
+  laser particle size analyzer for the particle size, a microhardness tester
+  for the powder microhardness and a scanning electron microscopy (SEM) for the
+  powder morphology. The two input parameters in the proposed ANN were the
+  amount of methanol and duration of the milling process. Apparent density,
+  particle size and microhardness of the composite powders were the outputs
+  obtained from the proposed ANN. As a result of this study the ANN was found
+  to be successful for predicting the apparent density, particle size and
+  microhardness of Alâ€“Al2O3 composite powders. The mean absolute
+  percentage error (MAPE) for the predicted values didn't exceed 4.93%. This
+  model can be used for predicting Al-Al2O3 composite powder properties
+  produced with different amounts of methanol and using different milling
+  times.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{26\bibrangedash 35}
+  \field{title}{Modeling the influence of a process control agent on the
+  properties of metal matrix composite powders using artificial neural
+  networks}
+  \field{volume}{228}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{09}
+  \field{year}{2012}
 \endentry
 
 \entry{RefWorks:45}{article}{}
@@ -882,6 +1179,54 @@
   \field{year}{2002}
 \endentry
 
+\entry{RefWorks:149}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Coetzee}{C.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nel}{N.}%
+     {R.~G.}{R.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Discrete Element Modelling (DEM); Property calibration; Hopper
+  discharge; Packed rock beds; Self-sustaining tunnels}
+  \strng{namehash}{CCJNRG1}
+  \strng{fullhash}{CCJNRG1}
+  \field{sortinit}{C}
+  \field{abstract}{%
+  Abstract The increased necessity to obtain energy from other sources than
+  conventional fossil fuels has led to the growing interest in solar energy.
+  The problem with the proposed technology is that it can only provide power
+  during the day and therefore requires some sort of storage system, if power
+  is to be supplied throughout the day and night. A number of storage systems
+  exist, but the one of particular interest is packed rock beds. Discrete
+  Element Models (DEM) of rock beds were developed through both experimental
+  and numerical procedures, by conducting a series of sensitivity and
+  calibration studies. Through these procedures, a set of microproperties could
+  be determined to accurately model the rock particles. The properties were
+  verified by modelling the discharge from a hopper with three different
+  opening widths. Further, the research focused on the potential of
+  constructing self-supporting tunnels within the rock beds in order to improve
+  the air flow through the bed by minimizing the pressure drop. Horizontal and
+  vertical tunnels were investigated, each with different diameters. It was
+  observed that if the appropriate steps were followed, stable self-supporting
+  tunnels could be formed using particles of different scale.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{332\bibrangedash 342}
+  \field{title}{Calibration of discrete element properties and the modelling of
+  packed rock beds}
+  \field{volume}{264}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{09}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:113}{misc}{}
   \name{author}{3}{}{%
     {{}%
@@ -1053,6 +1398,61 @@
   \field{year}{2012}
 \endentry
 
+\entry{RefWorks:151}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Feng}{F.}%
+     {Zhi-Gang}{Z.-G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Musong}{M.}%
+     {Samuel~Gem}{S.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Fluidized bed; Heat and mass transfer; Forced convection; Direct
+  numerical simulation; Resolved discrete particle method; Immersed boundary
+  method}
+  \strng{namehash}{FZGMSG1}
+  \strng{fullhash}{FZGMSG1}
+  \field{sortinit}{F}
+  \field{abstract}{%
+  Abstract We have developed a direct numerical simulation approach combined
+  with the immersed boundary (DNS-IB) method for studying heat transfer in
+  particulate flows. In this method, fluid velocity and temperature fields are
+  obtained by solving the modified momentum and heat transfer equations, which
+  are due to the presence of heated particles in the fluid; particles are
+  tracked individually and their velocities and positions are solved based on
+  the equations of linear and angular motions; particle temperature is assumed
+  to be constant. The momentum and heat exchanges between a particle and the
+  surrounding fluid at its surface are resolved using the immersed boundary
+  method with the direct forcing scheme. The DNS-IB method has been used to
+  study the heat transfer of 225 heated spheres in a fluidized bed. By
+  exploring the rich data generated from the DNS-IB simulations, we are able to
+  obtain statistically averaged fluid and particle velocities as well as the
+  overall heat transfer rate in the fluidized bed. Good agreement between the
+  current study and the one by Pan et al. (2002) is found for the hydrodynamic
+  properties of the bed such as pressure gradients within the bed and the
+  relationship between fluidization velocity and bed solid fraction. The
+  particle-averaged Nusselt number is found to increase as the fluidization
+  velocity increases and the bed height rises; particles at the entrance of the
+  bed tend to have the maximum heat transfer rate because of the higher
+  particle-fluid temperature gradients in this region; as the fluid moves
+  upward in the bed, it gets warmer, which reduces particle-fluid temperature
+  gradients and decreases the transfer rate of particles.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{62\bibrangedash 70}
+  \field{title}{Direct numerical simulation of heat and mass transfer of
+  spheres in a fluidized bed}
+  \field{volume}{262}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{08}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:108}{article}{}
   \name{author}{8}{}{%
     {{}%
@@ -1162,6 +1562,58 @@
   \field{year}{2008}
 \endentry
 
+\entry{RefWorks:162}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Geldart}{G.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Abdullah}{A.}%
+     {E.~C.}{E.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Verlinden}{V.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Powder flow; Cohesion; Angle of repose; Flowability; Shear testers}
+  \strng{namehash}{GDAECVA1}
+  \strng{fullhash}{GDAECVA1}
+  \field{sortinit}{G}
+  \field{abstract}{%
+  The word characterisation as applied to bulk powders may include many
+  different physical properties depending on the process that the powder must
+  undergo during manufacture or the use to which it is to be put by the
+  customer. In industrial processes the terms cohesion and flowability are in
+  common use, the former being, roughly, the resistance of the powder to flow
+  and some researchers prefer to use the inverse of cohesion as a measure of a
+  powder's flowability. In this paper we present some of the work we have done
+  to compare some devices that use the Jenike theory for measuring the shear
+  strength of mixtures of alumina powders in order to arrive at values for
+  cohesion, with an instrument that measures cohesion directly. We also compare
+  the inverse of cohesion with angle of repose of the same dry powders. It is
+  our opinion that while measurements of shear strength are essential for the
+  proper design of storage vessels, for the purpose of monitoring the flow
+  behaviour of bulk powders on a daytoday basis, it is simpler and quicker to
+  measure powder flowability more directly using angle of repose using a
+  standard technique. Most of our experiments were carried out on blends of
+  fine and coarse alumina, but some recent results on natural organic products
+  having non-spherical shapes are also presented.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{1-2}
+  \field{pages}{70\bibrangedash 74}
+  \field{title}{Characterisation of dry powders}
+  \field{volume}{190}
+  \field{journaltitle}{Powder Technology}
+  \field{year}{2009}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
 \entry{RefWorks:77}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -1233,6 +1685,50 @@
   \field{journaltitle}{Powder Technology}
   \field{month}{10}
   \field{year}{2013}
+\endentry
+
+\entry{RefWorks:147}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Goniva}{G.}%
+     {Christoph}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kloss}{K.}%
+     {Christoph}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Deen}{D.}%
+     {Niels~G.}{N.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kuipers}{K.}%
+     {Johannes A.~M.}{J.~A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pirker}{P.}%
+     {Stefan}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{CFDâ€“DEM; Open source; Rolling friction; Spout fluidized bed;
+  Non-sphericity}
+  \strng{namehash}{GC+1}
+  \strng{fullhash}{GCKCDNGKJAMPS1}
+  \field{sortinit}{G}
+  \field{isbn}{1674-2001}
+  \field{number}{5}
+  \field{pages}{582\bibrangedash 591}
+  \field{title}{Influence of rolling friction on single spout fluidized bed
+  simulation}
+  \field{volume}{10}
+  \field{journaltitle}{Particuology}
+  \field{month}{10}
+  \field{year}{2012}
 \endentry
 
 \entry{RefWorks:66}{article}{}
@@ -1494,6 +1990,57 @@
   \field{year}{2008}
 \endentry
 
+\entry{RefWorks:153}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Guo}{G.}%
+     {Jie}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Roberts}{R.}%
+     {Alan~W.}{A.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Prigge}{P.}%
+     {Jan-Dirk}{J.-D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Normal wall pressure; Variable hopper geometry; Surcharge pressure;
+  Filling level}
+  \strng{namehash}{GJRAWPJD1}
+  \strng{fullhash}{GJRAWPJD1}
+  \field{sortinit}{G}
+  \field{abstract}{%
+  Abstract Based on Jenike's method, only the self-weight of each arch element
+  is involved in the calculation of the arch thickness parameter which leads to
+  the surcharge pressure not being taken into account in determining the
+  critical outlet dimension of a bulk material storage bin. The aim of this
+  study is to investigate the influence of surcharge pressure on wall pressure
+  distribution and arching behavior in mass-flow structures. A method is
+  introduced to measure the hopper wall pressure distribution. The measurements
+  of the wall pressure and critical outlet dimension were conducted under
+  different surcharge pressures and at various filling levels. The experimental
+  results are compared with existing prevailing theories, where the theoretical
+  outlet dimensions demonstrated significant overdesign in terms of low
+  surcharge pressure and reasonable estimates corresponding to high surcharge.
+  The peak wall pressures around the transition area of the bin are smaller
+  than the calculated values, whereas the stresses close to the outlet are
+  larger than the relative theoretical values.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{272\bibrangedash 284}
+  \field{title}{Experimental investigation of wall pressure and arching
+  behavior under surcharge pressure in mass-flow hoppers}
+  \field{volume}{258}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{05}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:120}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -1539,6 +2086,29 @@
   \field{title}{Analysis of ball mill grinding operation using mill power
   specific kinetic parameters}
   \field{journaltitle}{Advanced Powder Technology}
+\endentry
+
+\entry{RefWorks:159}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Gurney}{G.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {Taylor}%
+    {Francis}%
+  }
+  \strng{namehash}{GK1}
+  \strng{fullhash}{GK1}
+  \field{sortinit}{G}
+  \field{isbn}{9780203451519}
+  \field{title}{An Introduction to Neural Networks}
+  \verb{url}
+  \verb http://books.google.com.pk/books?id=sn6oBHq8qQQC
+  \endverb
+  \field{year}{2003}
 \endentry
 
 \entry{RefWorks:79}{article}{}
@@ -1712,6 +2282,30 @@
   \field{journaltitle}{Powder Technology}
   \field{year}{2011}
   \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:158}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Haykin}{H.}%
+     {S.~S.}{S.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice Hall}%
+  }
+  \strng{namehash}{HSS1}
+  \strng{fullhash}{HSS1}
+  \field{sortinit}{H}
+  \field{isbn}{9780131471399}
+  \field{note}{2008034079}
+  \field{number}{v. 10}
+  \field{title}{Neural Networks and Learning Machines}
+  \verb{url}
+  \verb http://books.google.com.pk/books?id=K7P36lKzI\_QC
+  \endverb
+  \field{year}{2009}
 \endentry
 
 \entry{RefWorks:51}{article}{}
@@ -1975,6 +2569,31 @@
   \field{year}{1998}
 \endentry
 
+\entry{RefWorks:144}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Iwashita}{I.}%
+     {Kazuyoshi}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Oda}{O.}%
+     {Masanobu}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{IKOM1}
+  \strng{fullhash}{IKOM1}
+  \field{sortinit}{I}
+  \field{number}{3}
+  \field{pages}{285\bibrangedash 292}
+  \field{title}{Rolling Resistance at Contacts in Simulation of Shear band
+  Development by DEM}
+  \field{volume}{124}
+  \field{journaltitle}{Journal of Engineering Mechanics}
+  \field{year}{1998}
+\endentry
+
 \entry{RefWorks:50}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -2018,6 +2637,40 @@
   \field{journaltitle}{Powder Technology}
   \field{year}{2005}
   \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:143}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Jiang}{J.}%
+     {M.~J.}{M.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yu}{Y.}%
+     {H.~S}{H.~S}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Harris}{H.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Kinematical models; Contact laws; Granulates; Rolling resistance;
+  Discrete element methods}
+  \strng{namehash}{JMJYHSHD1}
+  \strng{fullhash}{JMJYHSHD1}
+  \field{sortinit}{J}
+  \field{isbn}{0266-352X}
+  \field{number}{5}
+  \field{pages}{340\bibrangedash 357}
+  \field{title}{A novel discrete model for granular material incorporating
+  rolling resistance}
+  \field{volume}{32}
+  \field{journaltitle}{Computers and Geotechnics}
+  \field{month}{07}
+  \field{year}{2005}
 \endentry
 
 \entry{RefWorks:59}{article}{}
@@ -2211,6 +2864,54 @@
   \warn{\item Invalid format of field 'month'}
 \endentry
 
+\entry{RefWorks:152}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kim}{K.}%
+     {JuHyeon}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lee}{L.}%
+     {SangHwan}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Aggregate; Drag force model; Shielding effect; Low Reynolds number}
+  \strng{namehash}{KJLS1}
+  \strng{fullhash}{KJLS1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  Abstract We present a simple model for the hydrodynamic drag force acting on
+  the individual N particles of aggregates in uniform flow with low Reynolds
+  number. The present model predicts the shielding effect due to hydrodynamic
+  interactions by considering the individual location and flow direction. The
+  shielding effect of two particles was obtained from curve fitting with the
+  exact solution. Furthermore, the shielding effect of N-particles was extended
+  using scaling laws and curve fitting equations. The present model is
+  advantageous in that it can predict the drag force without considering the
+  fractal dimension. In addition, the hydrodynamic interaction between
+  particles can be calculated without matrix operations. The presented model
+  was verified by calculating the drag acting on aggregates with the Filippov
+  method. Verification conditions were that the number of particles was less
+  than 200, and the fractal dimension was in the range of 1.3 to 2.6.
+  Validation results showed good agreement with Filippov's exact solution. The
+  maximum error for the total drag force is within 5 \%. Finally, we not only
+  applied the drag force model to the discrete element method, but also
+  performed a numerical study of gravitational sedimentation problems at fixed
+  depth.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{22\bibrangedash 32}
+  \field{title}{Modeling drag force acting on the individual particles in low
+  Reynolds number flow}
+  \field{volume}{261}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{07}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:132}{misc}{}
   \name{author}{2}{}{%
     {{}%
@@ -2289,6 +2990,54 @@
   \field{year}{2012}
 \endentry
 
+\entry{RefWorks:155}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kobylka}{K.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Molenda}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Anisotropy; DEM; Granular flow; Load estimation; Load asymmetry; Silo}
+  \strng{namehash}{KRMM1}
+  \strng{fullhash}{KRMM1}
+  \field{sortinit}{K}
+  \field{abstract}{%
+  Abstract In the design of a storage silo usually an axially symmetric state
+  of stress is assumed. However, unsymmetrical pressure distribution may occur
+  because of such factors as: non-uniform humidity of the material, eccentric
+  filling or/and discharge, and additional construction elements inside the
+  deposit. Small internal construction members act similarly to structural
+  imperfection and can initiate buckling, while larger flow obstacles can
+  markedly alter the stress distribution. A study was conducted to numerically
+  simulate the effect of plane (2D) or block (3D) obstruction attached to the
+  wall in a model grain silo holding wheat. This work compares the results of
+  earlier laboratory testing and numerical simulations using the discrete
+  element method (DEM). Series of the DEM simulations were performed with an
+  assembly of 75000 spherical particles with random uniform distribution of
+  diameters with a mean of 3.8 mm and range of +-1\% placed in the cylindrical
+  container with a diameter of 0.12 m. The set-up of DEM simulations reproduced
+  earlier laboratory tests performed in the model grain silo, 1.83 m in
+  diameter with flat floor and corrugated wall. Despite the very large
+  difference in the number of particles in real and simulated deposits, the
+  results of simulations and laboratory testing were in fairly good agreement.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{210\bibrangedash 216}
+  \field{title}{DEM simulations of loads on obstruction attached to the wall of
+  a model grain silo and of flow disturbance around the obstruction}
+  \field{volume}{256}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{04}
+  \field{year}{2014}
+\endentry
+
 \entry{RefWorks:56}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -2339,6 +3088,40 @@
   \field{journaltitle}{Powder Technology}
   \field{year}{2009}
   \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:146}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kruggel-Emden}{K.-E.}%
+     {H.}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wirtz}{W.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Scherer}{S.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Granular media; Analytical solution; Collisions models; Discrete
+  element method}
+  \strng{namehash}{KEHWSSV1}
+  \strng{fullhash}{KEHWSSV1}
+  \field{sortinit}{K}
+  \field{isbn}{0009-2509}
+  \field{number}{23}
+  \field{pages}{6914\bibrangedash 6926}
+  \field{title}{An analytical solution of different configurations of the
+  linear viscoelastic normal and frictional-elastic tangential contact model}
+  \field{volume}{62}
+  \field{journaltitle}{Chemical Engineering Science}
+  \field{month}{12}
+  \field{year}{2007}
 \endentry
 
 \entry{RefWorks:57}{article}{}
@@ -2396,6 +3179,70 @@
   \field{volume}{197}
   \field{journaltitle}{Powder Technology}
   \field{year}{2010}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:170}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Lashkarbolooki}{L.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vaferi}{V.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rahimpour}{R.}%
+     {M.~R.}{M.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Solid solubilities; Supercritical carbon dioxide; Artificial neural
+  network; Cubic equation of state; Mixing rules}
+  \strng{namehash}{LMVBRMR1}
+  \strng{fullhash}{LMVBRMR1}
+  \field{sortinit}{L}
+  \field{abstract}{%
+  The aim of this study is develop a feed-forward multi-layer perceptron neural
+  network (MLPNN) model to predict the solid solubilities of aromatic
+  hydrocarbons, aliphatic carboxylic acids, aromatic acids, heavy aliphatic and
+  aromatic alcohols in the supercritical carbon dioxide. Different networks are
+  considered and trained using 627 data sets; the accuracy of the network is
+  validated by 343 testing data sets. The networks were different regarding to
+  network parameters, such as number of hidden layer, hidden neurons and
+  training algorithm. Using validating data set, the network that is having the
+  lowest absolute average relative deviation percent (AARD%), mean square error
+  (MSE) and the highest regression coefficient (R2) is selected as an optimal
+  configuration. To verify the network generalization, 100 different data sets
+  of 23 binary systems have been considered. In the present work, 970
+  experimental data points of different works (up to now) which covers a wide
+  range of temperatures and pressures have been used. Statistical analyses show
+  that the artificial neural network (ANN) predictions have an excellent
+  agreement (AARD%=0.98, MSE=2.8*10-5 and R2=0.99813) with the experimental
+  data set. Also, accuracy of the cubic Peng-Robinson (PR) and
+  Soave-Redlich-Kwong (SRK) equations of state by using six mixing rules,
+  namely, the Wong-Sandler (WS) rule, the Orbey-Sandler (OS) rule, the van der
+  Waals one fluid rule with one (VDW1) and two (VDW2) adjustable parameters,
+  the covolume dependent (CVD) rule and the Esmaeilzadeh-As-adi-Lashkarbolooki
+  (EAL) mixing rule for the prediction of solubility of solids in supercritical
+  carbon dioxide has been compared with a developed neural network model. To
+  base this comparison on a fair basis, same experimental data points of 23
+  different compounds has been used for both optimization of equations of state
+  parameters and training, validation and testing of neural network. Results
+  show that developed optimal ANN model is more accurate compared to the PR and
+  SRK EOSs with mentioned mixing rules for the same compounds.%
+  }
+  \field{isbn}{0378-3812}
+  \field{number}{1-2}
+  \field{pages}{35\bibrangedash 43}
+  \field{title}{Comparison the capability of artificial neural network (ANN)
+  and EOS for prediction of solid solubilities in supercritical carbon dioxide}
+  \field{volume}{308}
+  \field{journaltitle}{Fluid Phase Equilibria}
+  \field{year}{2011}
   \warn{\item Invalid format of field 'month'}
 \endentry
 
@@ -2480,6 +3327,114 @@
   \field{volume}{12}
   \field{journaltitle}{EJECE}
   \field{year}{2008}
+\endentry
+
+\entry{RefWorks:163}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Lumay}{L.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Boschini}{B.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Traina}{T.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bontempi}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Remy}{R.}%
+     {J.~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cloots}{C.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vandewalle}{V.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Powder characterization; Flowability; Angle of repose; Packing
+  fraction; Cohesion; Powder rheometer}
+  \strng{namehash}{LG+1}
+  \strng{fullhash}{LGBFTKBSRJCCRVN1}
+  \field{sortinit}{L}
+  \field{abstract}{%
+  A granular material is a complex system which exhibits non-trivial
+  transitions between the static, the quasi-static and the dynamical states.
+  Indeed, an assembly of grains can behave like a solid or a fluid according to
+  the applied stress. In between solid and fluid granular states, very slow
+  dynamics are observed. When a complete macroscopic characterization of a
+  powder is needed, all these granular states have to be precisely analyzed. In
+  this paper, we show how three measurement techniques can be used to measure
+  the physical properties of a powder. The measurements are based on classical
+  tests modified to meet the recent fundamental researches on granular
+  materials. The static properties of the powder are analyzed through the shape
+  of a heap. The quasi-static behavior is studied with the analysis of the
+  compaction dynamics. Finally, the dynamical regime is monitored through the
+  flow in a rotating drum. In order to illustrate how these measurements can be
+  used in practical cases, analyses are performed with three types of granular
+  materials: silicon carbide abrasives, flours and rice. These selected
+  materials allow to show the influence of the different parameters (grain
+  size, grain size distribution, grain shape) on the macroscopic properties of
+  the assembly. Moreover, these studies show the pertinence of the parameters
+  obtained with the proposed techniques for the rheological characterization of
+  powders and grains.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{19\bibrangedash 27}
+  \field{title}{Measuring the flowing properties of powders and grains}
+  \field{volume}{224}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{07}
+  \field{year}{2012}
+\endentry
+
+\entry{RefWorks:165}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {M.}{M.}%
+     {Tankeo}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {P.}{P.}%
+     {Richard}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {E.}{E.}%
+     {Canot}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Condensed Matter, Soft Condensed Matter, Physics, Fluid Dynamics}
+  \strng{namehash}{MTPREC1}
+  \strng{fullhash}{MTPREC1}
+  \field{sortinit}{M}
+  \field{note}{1309.2267; Provided by the SAONASA Astrophysics Data System}
+  \field{title}{Analytical solution of the mu-i-rheology for fully developed
+  granular flows in simple configurations}
+  \verb{url}
+  \verb httpadsabs.harvard.eduabs2013arXiv1309.2267T
+  \endverb
+  \field{journaltitle}{ArXiv e-prints}
+  \field{year}{2013}
+  \warn{\item Invalid format of field 'month'}
 \endentry
 
 \entry{RefWorks:62}{article}{}
@@ -2867,6 +3822,33 @@
   \field{year}{2013}
 \endentry
 
+\entry{RefWorks:160}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Oberkampf}{O.}%
+     {W.~L.}{W.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Roy}{R.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{OWLRCJ1}
+  \strng{fullhash}{OWLRCJ1}
+  \field{sortinit}{O}
+  \field{isbn}{9781139491761}
+  \field{title}{Verification and Validation in Scientific Computing}
+  \verb{url}
+  \verb http://books.google.com.pk/books?id=7d26zLEJ1FUC
+  \endverb
+  \field{year}{2010}
+\endentry
+
 \entry{RefWorks:48}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -2909,6 +3891,63 @@
   \field{volume}{174}
   \field{journaltitle}{Powder Technology}
   \field{year}{2007}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:164}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Pirard}{P.}%
+     {Sophie~L.}{S.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lumay}{L.}%
+     {Geoffroy}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vandewalle}{V.}%
+     {Nicolas}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pirard}{P.}%
+     {Jean-Paul}{J.-P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Carbon nanotubes; Powder flow; Rotating drum}
+  \strng{namehash}{PSL+1}
+  \strng{fullhash}{PSLLGVNPJP1}
+  \field{sortinit}{P}
+  \field{abstract}{%
+  The granular flow behavior of carbon nanotubes produced by the CCVD method in
+  a laboratory continuous inclined rotary reactor and of a catalyst was
+  experimentally studied using a rotating drum. The dynamic angle of repose of
+  the bulk solid and the standard variation of the solid bed surface were
+  determined as a function of rotational speed of the rotating drum and for
+  several filling percentages of the drum. Whatever the carbon nanotube
+  production conditions, the dynamic angle of repose and the standard variation
+  of the solid bed depended only on the filling percentage of the drum. Results
+  were very interesting for practical application to carbon nanotube production
+  in an industrial continuous inclined rotary reactor, because the granular
+  flow behavior was the same during the reaction throughout the length of the
+  reactor and depended only on the reactor filling. A bed behavior diagram
+  based on the drum rotational speed and on the drum filling percentage was
+  also constructed experimentally. The flow behavior of the solid during carbon
+  nanotube production was on the boundary between the slumping and the rolling
+  modes, leading to a good mixing of gas and solid during the reaction and to
+  an improvement of the mass and heat transfer in the bed.%
+  }
+  \field{isbn}{1385-8947}
+  \field{number}{1}
+  \field{pages}{143\bibrangedash 147}
+  \field{title}{Motion of carbon nanotubes in a rotating drum: The dynamic
+  angle of repose and a bed behavior diagram}
+  \field{volume}{146}
+  \field{journaltitle}{Chemical Engineering Journal}
+  \field{year}{2009}
   \warn{\item Invalid format of field 'month'}
 \endentry
 
@@ -3055,6 +4094,34 @@
   \field{volume}{24}
   \field{journaltitle}{Measurement Science and Technology}
   \field{year}{2013}
+\endentry
+
+\entry{RefWorks:145}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Renzo}{R.}%
+     {Alberto~Di}{A.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Maio}{M.}%
+     {Francesco Paolo~Di}{F.~P.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{DEM simulations; Granular flow; Contact force modeling}
+  \strng{namehash}{RADMFPD1}
+  \strng{fullhash}{RADMFPD1}
+  \field{sortinit}{R}
+  \field{isbn}{0009-2509}
+  \field{number}{3}
+  \field{pages}{525\bibrangedash 541}
+  \field{title}{Comparison of contactforce models for the simulation of
+  collisions in DEMbased granular flow codes}
+  \field{volume}{59}
+  \field{journaltitle}{Chemical Engineering Science}
+  \field{month}{02}
+  \field{year}{2004}
 \endentry
 
 \entry{RefWorks:103}{article}{}
@@ -3263,6 +4330,47 @@
   \field{volume}{101}
   \field{journaltitle}{Powder Technology}
   \field{year}{1999}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{RefWorks:166}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Seghouane}{S.}%
+     {Abd-Krim}{A.-K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Moudden}{M.}%
+     {Yassir}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fleury}{F.}%
+     {Gilles}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{language}{1}{%
+    {English}%
+  }
+  \keyw{Feedforward neural networks; Learning; Input noise injection;
+  Penalization; Upper bound}
+  \strng{namehash}{SAKMYFG1}
+  \strng{fullhash}{SAKMYFG1}
+  \field{sortinit}{S}
+  \field{isbn}{0941-0643}
+  \field{note}{J2: Neural Comput and Applic}
+  \field{number}{3}
+  \field{pages}{248\bibrangedash 254}
+  \field{title}{Regularizing the effect of input noise injection in feedforward
+  neural networks training}
+  \verb{url}
+  \verb http://dx.doi.org/10.1007/s00521-004-0411-6
+  \endverb
+  \field{volume}{13}
+  \field{journaltitle}{Neural Computing and Applications}
+  \field{year}{2004}
   \warn{\item Invalid format of field 'month'}
 \endentry
 
@@ -3652,6 +4760,139 @@
   \field{year}{2013}
 \endentry
 
+\entry{RefWorks:150}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Vaferi}{V.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Samimi}{S.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pakgohar}{P.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mowla}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Nanofluids; Convective heat transfer coefficient; Artificial
+  intelligence; Optimal architecture}
+  \strng{namehash}{VB+1}
+  \strng{fullhash}{VBSFPEMD1}
+  \field{sortinit}{V}
+  \field{abstract}{%
+  Abstract This paper presents the best artificial neural network (ANN) model
+  for the estimation of the convective heat transfer coefficient (HTC) of
+  nanofluids flowing through a circular tube with various wall conditions under
+  different flow regimes. The parameters of the ANN model are adjusted by the
+  back propagation learning algorithm using wide ranges of experimental
+  datasets. The developed ANN model shows mean square error (MSE) of 1.7 x
+  10^-5, absolute average relative deviation, percent (AARD \%) of 2.41 and
+  regression coefficient (R2) of 0.99966 in modeling of overall experimental
+  datasets of convective HTC. The predictive performance of the proposed
+  approach is compared with some reliable correlations which have been proposed
+  in various literatures. The superior performance of the proposed model with
+  respect to other published works has been found through the comparison of
+  results.%
+  }
+  \field{isbn}{0032-5910}
+  \field{number}{0}
+  \field{pages}{1\bibrangedash 10}
+  \field{title}{Artificial neural network approach for prediction of thermal
+  behavior of nanofluids flowing through circular tubes}
+  \field{volume}{267}
+  \field{journaltitle}{Powder Technology}
+  \field{month}{11}
+  \field{year}{2014}
+\endentry
+
+\entry{RefWorks:168}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Varol}{V.}%
+     {Temel}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Canakci}{C.}%
+     {Aykut}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozsahin}{O.}%
+     {Sukru}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{A. Metal matrix composites (MMCs); B. Mechanical properties; C.
+  Computational modelling}
+  \strng{namehash}{VTCAOS1}
+  \strng{fullhash}{VTCAOS1}
+  \field{sortinit}{V}
+  \field{abstract}{%
+  Abstract In the present study artificial neural network (ANN) approach was
+  used for the prediction of effect of physical and mechanical properties of
+  Al2024-B4C composites produced by powder metallurgy. Effects of reinforcement
+  size and content (wt.%) on the physical and mechanical properties of
+  composites were determined by measuring the density, hardness and tensile
+  strength values. Density, hardness and tensile values strength of the
+  composites were the outputs obtained from the proposed ANN. It was found that
+  the effect of reinforcement size and content on the homogeneous distribution
+  of B4C particles is as important as the effect of milling time. By comparing
+  the predicted values with the experimental data, it was demonstrated that the
+  well-trained feed forward back propagation ANN model is a powerful tool for
+  prediction of effect of physical and mechanical properties of composites.%
+  }
+  \field{isbn}{1359-8368}
+  \field{number}{0}
+  \field{pages}{224\bibrangedash 233}
+  \field{title}{Artificial neural network modeling to effect of reinforcement
+  properties on the physical and mechanical properties of Al2024-B4C composites
+  produced by powder metallurgy}
+  \field{volume}{54}
+  \field{journaltitle}{Composites Part B: Engineering}
+  \field{month}{11}
+  \field{year}{2013}
+\endentry
+
+\entry{RefWorks:148}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Vu-Quoc}{V.-Q.}%
+     {Loc}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhang}{Z.}%
+     {Xiang}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Particle flow; Discrete element simulation; Elastic frictional contact;
+  Tangential force model; Flow statistics; Finite element validation; Chute
+  experiment}
+  \strng{namehash}{VQLZX1}
+  \strng{fullhash}{VQLZX1}
+  \field{sortinit}{V}
+  \field{isbn}{0167-6636}
+  \field{number}{4}
+  \field{pages}{235\bibrangedash 269}
+  \field{title}{An accurate and efficient tangential force-displacement model
+  for elastic frictional contact in particle-flow simulations}
+  \field{volume}{31}
+  \field{journaltitle}{Mechanics of Materials}
+  \field{month}{04}
+  \field{year}{1999}
+\endentry
+
 \entry{RefWorks:87}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -3801,6 +5042,65 @@
   \field{journaltitle}{Powder Technology}
   \field{month}{05}
   \field{year}{2012}
+\endentry
+
+\entry{RefWorks:157}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Yoshida}{Y.}%
+     {Hideto}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yamamoto}{Y.}%
+     {Tetsuya}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mori}{M.}%
+     {Yasushige}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Masuda}{M.}%
+     {Hiroaki}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Okazaki}{O.}%
+     {Kenji}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sugasawa}{S.}%
+     {Hirosuke}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Particle size; Reference particle; Uncertainty region; Log-normal
+  distribution; Size measurement}
+  \strng{namehash}{YH+1}
+  \strng{fullhash}{YHYTMYMHOKSH1}
+  \field{sortinit}{Y}
+  \field{abstract}{%
+  Abstract In order to confirm reliable particle size measurement technique and
+  to prepare standard reference particles for calibrating particle size
+  measurement devices, uncertainty region of count and mass based size
+  distribution have been theoretically examined. The uncertainty region of
+  count base cumulative size distribution is smaller than that of the mass base
+  cumulative distribution. The uncertainty region of count base cumulative size
+  distribution is nearly constant over wide range of particle diameter and the
+  region is nearly constant for sample size greater than about 20,000. On the
+  other hand, the uncertainty region of mass base cumulative distribution
+  increases with the increase of particle diameter. The reliability of
+  theoretical uncertainty region is confirmed by the experimental data of
+  particle size measurement.%
+  }
+  \field{isbn}{0921-8831}
+  \field{number}{0}
+  \field{title}{Particle size measurement of reference particle candidates and
+  uncertainty region of count and mass based cumulative distribution}
+  \field{journaltitle}{Advanced Powder Technology}
 \endentry
 
 \entry{RefWorks:67}{article}{}
