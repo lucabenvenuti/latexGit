@@ -1,0 +1,62 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+
+%*******************************************************
+% Introduzione
+%*******************************************************
+\cleardoublepage
+\pdfbookmark{Introduzione}{introduzione}
+
+\begingroup
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE,LO]{Introduzione}
+%\fancyhead[LO]{\nouppercase{\rightmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyheadoffset{0\columnwidth}
+
+\chapter*{Introduzione}
+
+Il rischio associato ai processi degradativi, in atto presso il complesso estrattivo abbandonato Prete Santo di San Lazzaro di Savena, è dominato dalla presenza di numerose abitazioni al di sopra di esso.\\
+Il conglomerato gessoso nel quale è stata scavata la miniera è infatti attualmente soggetto a degrado, quest'ultimo governato dalla presenza di acqua e aria umida: progressivamente i legami intergranulari si rompono, trasformando l'ammasso roccioso in un deposito di materiale incoerente.\\
+A seguito del degrado si modifica la situazione tenso-deformativa del sito, che può potenzialmente portare a cedimenti nei pressi dell'abitato.\\
+
+L'obiettivo primario di questo elaborato di laurea è sviluppare analisi tridimensionali agli elementi finiti, al fine di studiare la situazione attuale del sito e valutare gli effetti dei possibili interventi che potrebbero essere realizzati, con lo scopo di mitigare il rischio.\\
+
+L'elaborato sarà articolato come segue.
+\begin{description}
+\item[{\hyperref[cap:Il Sito]{Il capitolo I}}]
+offre un inquadramento generale del sito, ripercorrendo la storia pregressa del complesso minerario, e delle principali problematiche in essere; esse sono connesse principalmente all'uso di esplosivo e all'intercettazione di un collettore carsico nel periodo antecedente la chiusura (1976).
+\item[{\hyperref[cap:Degrado del gesso]{Il capitolo II}}]
+riassume brevemente le caratteristiche del minerale gesso, per poi introdurre la teoria inerente al fenomeno della dissoluzione.
+\item[{\hyperref[cap:Prove sperimentali su provini di gesso]{Il capitolo III}}]
+espone le prove sperimentali, monoassiali, brasiliane e triassiali, a differenti condizioni di danno, che sono state effettuate sul gesso del sito da \textcite{flefra:tesi}, \textcite{bencaste:tesi}, \textcite{bed:tesi}, \textcite{breoss:tesi}. Queste ultime due campagne sono state svolte con la collaborazione dell'Ing. Frigerio, volendo verificare il degrado causato dall'acqua, confrontando materiale intatto e gesso degradato in laboratorio, a bassa e ad elevata velocità.
+\item[{\hyperref[cap:Modellazione matematica del degrado]{Nel capitolo IV}}]
+la modellazione matematica del degrado chemo-meccanico delle anidriti, sviluppata da \textcite{ricky:mines}, viene estesa al gesso, permettendo di stimare la progressiva diminuzione dello sforzo limite sopportabile da un pilastro del complesso minerario.
+\item[{\hyperref[cap:Determinazione dei valori di resistenza]{Il capitolo V}}]
+espone brevemente i principali modelli costitutivi utilizzati, Hoek-Brown, Mohr-Coulomb e strain-softening, utilizzando poi i risultati delle prove sperimentali per determinare i valori di resistenza del materiale gesso in sito per ciascuno dei modelli.
+\item[{\hyperref[cap:Modello tridimensionale]{Nel capitolo VI}}]
+è illustrato il percorso che si è seguito per sviluppare un modello tridimensionale agli EF del sito, al fine di conoscerne la situazione tenso-deformativa, con particolare riguardo ai profili topografico e stratigrafico, ai livelli ed ai pilastri minerari.
+\item[{\hyperref[cap:Analisi tridimensionale]{Nel capitolo VII}}]
+vengono sviluppate analisi tridimensionali FEM: analisi preliminari sull'intero modello al fine di determinare il fattore di sicurezza del sito e le più rilevanti zone plasticizzate; successivamente su un singolo pilastro per valutare l'influenza di diversi modelli e l'effetto del degrado, infine sull'intero modello con un'analisi di collasso.
+\item[{\hyperref[cap:Progetto di stabilizzazione]{Il capitolo VIII}}]
+presenta gli interventi di stabilizzazione che potrebbero essere effettuati a fini di salvaguardia, che consistono principalmente nell'utilizzo di materiale di riempimento, cerchiature in calcestruzzo e cerchiature attive in geosintetico ad alte prestazioni.
+\item[{\hyperref[cap:Analisi degli interventi]{Il capitolo IX}}]
+valuta le differenze in caso di collasso fra la situazione attuale e quella in cui venissero realizzati gli interventi, inizialmente su un singolo pilastro, successivamente con un'analisi bidimensionale su una sezione d'interesse, infine con un'analisi tridimensionale sull'intero modello, concentrandosi in particolare sulla riduzione dei cedimenti ottenuta grazie ai diversi interventi.
+\item[{\hyperref[cap:schedetecnichegeosintetici]{L'appendice A}}] mostra le schede tecniche del geosintetico utilizzato per una delle ipotesi d'intervento.
+\end{description}
+
+
+I disastrosi terremoti emiliani dal 20 maggio al 6 giugno 2012 non hanno impattato in modo visibile sul sito, per ciò che è stato possibile osservare nei numerosi sopralluoghi effettuati. Si è deciso quindi di non considerare le sollecitazioni dinamiche indotte dal sisma, poichè i tempi di ritorno di fenomeni di tale intensità superano le tempistiche di quelli che il presente elaborato presenta come maggiormente pericolosi per il sito.\\
+
+Nelle {\hyperref[cap:Conclusioni]{conclusioni}} verrà presentata una panoramica dei risultati ottenuti, e verrà data un'opinione ragionata sui diversi interventi sviluppati.\\
+
+
+\endgroup

@@ -1,0 +1,63 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+
+%*******************************************************
+% Indici
+%*******************************************************
+
+
+\begingroup
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancyhf{}
+%\fancyfoot[C]{\thepage}
+%%%\fancyhead[LO]{\rightmark}
+%\fancyhead[LE,RO]{\leftmark}
+%\fancyhead[RE,LO]{}
+
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+
+
+\renewcommand{\headrulewidth}{0.5pt}
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyheadoffset{0\columnwidth}
+
+
+\cleardoublepage
+\pdfbookmark{\contentsname}{tableofcontents}
+%\setcounter{tocdepth}{2}
+\tableofcontents
+%\markboth{\contentsname}{\contentsname} 
+\clearpage
+
+%\begingroup 
+    %\let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+    %*******************************************************
+    % Elenco delle figure
+    %*******************************************************    
+    \phantomsection
+    \pdfbookmark{\listfigurename}{lof}
+    \listoffigures
+
+ %   \vspace*{8ex}
+\clearpage
+    %*******************************************************
+    % Elenco delle tabelle
+    %*******************************************************
+    \phantomsection
+    \pdfbookmark{\listtablename}{lot}
+    \listoftables
+        
+    \vspace*{8ex}
+       
+\endgroup
+
+\cleardoublepage

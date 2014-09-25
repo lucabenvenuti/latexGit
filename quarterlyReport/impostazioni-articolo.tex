@@ -1,0 +1,210 @@
+%*********************************************************************************
+% impostazioni-articolo.tex
+% di Luca Benvenuti (2013)
+% file che contiene le impostazioni dell'articolo
+%*********************************************************************************
+
+
+%*********************************************************************************
+% Comandi personali
+%*******************************************************
+\newcommand{\myName}{Luca \textsc{Benvenuti}}                            % autore
+\newcommand{\myMatricola}{16457}
+\newcommand{\myTitle}{Quarterly report} % titolo
+\newcommand{\myDegree}{Tesi di laurea}                       % tipo di tesi
+\newcommand{\myUni}{JKU} % universit\`a
+\newcommand{\myFaculty}{Strongmuslehre}    % facolt\`a
+\newcommand{\myDepartment}{CD Lab - Particulate Flow Modelling}         % dipartimento
+\newcommand{\myProf}{DI~Dr.~Christoph \textsc{Goniva}}      % relatore
+\newcommand{\myOtherProf}{DI~Dr.~Christoph \textsc{Kloss}}    
+\newcommand{\myOtherProff}{DI~Dr.~Stefan \textsc{Pirker}}              % eventuale correlatore
+%\newcommand{\myOtherProff}{Ing.~Gabriele Frigerio}              % eventuale correlatore
+%\newcommand{\myCounterProf}{Chiar.mo Prof.~Mister x}    
+\newcommand{\myLocation}{Linz}                         % dove
+\newcommand{\myTime}{\today}                          % quando
+\newcommand{\myPhd}{Materials2Simulation2Application} % titolo
+\newcommand{\myemail}{luca.benvenuti@jku.at} % titolo
+
+
+
+
+
+
+
+
+%*********************************************************************************
+% Impostazioni di amsmath, amssymb, amsthm
+%*********************************************************************************
+
+% comandi per gli insiemi numerici (serve il pacchetto amssymb)
+\newcommand{\numberset}{\mathbb} 
+\newcommand{\N}{\numberset{N}} 
+\newcommand{\R}{\numberset{R}} 
+
+% un ambiente per i sistemi
+\newenvironment{sistema}%
+  {\left\lbrace\begin{array}{@{}l@{}}}%
+  {\end{array}\right.}
+
+% definizioni (serve il pacchetto amsthm)
+\theoremstyle{definition} 
+\newtheorem{definizione}{Definizione}
+
+% teoremi, leggi e decreti (serve il pacchetto amsthm)
+\theoremstyle{plain} 
+\newtheorem{teorema}{Teorema}
+\newtheorem{legge}{Legge}
+\newtheorem{decreto}[legge]{Decreto}
+\newtheorem{murphy}{Murphy}[section]
+
+%simboli matematici vari
+\newcommand{\Rot}[1]{\nabla\times\vec{#1}}
+\newcommand{\Div}[1]{\nabla\cdot\vec{#1}}
+\newcommand{\Grad}[1]{\nabla #1}
+\newcommand{\Lap}[1]{\nabla^2#1}
+\newcommand{\parder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\braket}[3]{\langle #1\,\vert\,\hat{#2}\,\vert\,#3\rangle}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\total}{\mathrm{D}}
+
+%********************************************************************************
+% Impostazioni di biblatex
+%*********************************************************************************
+
+% \renewcommand\bibname{References} s'incazza
+% \addto\captionsenglish{\renewcommand\refname{References}} 
+% \addto\captionsitalian{\renewcommand\refname{References}} 
+
+\DefineBibliographyStrings{english}{%
+  bibliography = {Bibliography},
+  references = {References},
+}
+
+\DefineBibliographyStrings{italian}{%
+  bibliography = {Bibliography},
+  references = {References},
+}
+
+\defbibheading{bibliography}{%
+\cleardoublepage
+\phantomsection 
+\addcontentsline{toc}{section}{\refname}
+
+\section*{\refname\markboth{\refname}
+{\refname}}}
+
+
+
+
+
+
+
+
+
+%*********************************************************************************
+% Impostazioni di listings
+%*********************************************************************************
+\lstset{language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue},%\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,%left,%
+    numberstyle=\scriptsize,%\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single
+	tabsize=2,                      % sets default tabsize to 2 spaces
+    captionpos=b,                   % sets the caption-position to bottom
+} 
+
+
+
+
+
+%*********************************************************************************
+% Impostazioni di hyperref
+%*********************************************************************************
+\hypersetup{%
+    hyperfootnotes=false,pdfpagelabels,
+    %draft,	% = elimina tutti i link (utile per stampe in bianco e nero)
+    colorlinks=true, linktocpage=true, pdfstartpage=1, pdfstartview=FitV,%
+    % decommenta la riga seguente per avere link in nero (per esempio per la stampa in bianco e nero)
+    %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=1, pdfstartview=FitV,% 
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%nesting=true,%frenchlinks,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    pdftitle={\myTitle},%
+    pdfauthor={\textcopyright\ \myName},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref and ClassicThesis}%
+}
+
+
+
+%*********************************************************************************
+% Impostazioni di graphicx
+%*********************************************************************************
+\graphicspath{{Immagini/}} % cartella dove sono riposte le immagini
+
+
+
+%*********************************************************************************
+% Impostazioni di xcolor
+%*********************************************************************************
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+
+
+%*********************************************************************************
+% Impostazioni di caption
+%*********************************************************************************
+\captionsetup{tableposition=top,figureposition=bottom,font=small,format=hang,labelfont=bf}
+
+
+
+
+
+%*********************************************************************************
+% Impostazioni di fancyhdr
+%*********************************************************************************
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\sectionname\ \thesection.\ #1}{}}
+
+\fancyhf{}
+
+
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+
+
+\renewcommand{\headrulewidth}{0.5pt}
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyheadoffset{0\columnwidth}	
+
+
+%*********************************************************************************
+% Altro
+%*********************************************************************************
+
+% [...] ;-)
+\newcommand{\omissis}{[\dots\negthinspace]}
+
+% eccezioni all'algoritmo di sillabazione
+\hyphenation{Fortran ma-cro-istru-zio-ne nitro-idrossil-amminico}
+
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}} 
