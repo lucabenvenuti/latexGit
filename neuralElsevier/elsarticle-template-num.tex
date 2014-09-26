@@ -83,12 +83,12 @@
 
 \begin{abstract}
 Discrete Element Method ($DEM$) simulations are widely used to model and understand particle behavior. 
-It is important to note that each combination of DEM-micro parameters gets different bulk-macro bahavior.
+It is important to note that each combination of DEM-micro parameters gets different bulk-macro behavior.
 As a consequence, a straight-forward trial-and-error calibration procedure is prohibitively computationally expensive to fathom the micro-macro transition relationship.
 A limited number of combinations have been simulated, through 2000 shear cell numeric test and 300 angle of repose numeric test.
-The DEM parameters of the simulations have been used as inputs of feed forward Multilayer Perceptron Neural Network (MLPNN), while the bulk values and behavior as targets for the Neural Network (NN).
+The DEM parameters of the simulations have been used as inputs of feed forward Multilayer Perceptron Neural Networks (MLPNN), while the bulk values and behavior as targets for the Neural Network (NN).
 A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).
-A NN has been created for each bulk parameter investigated ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
+A NN has been created for each bulk parameter investigated.% ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
 15\% of the simulations have been excluded from the training processes.
 They have been used to define per each NN the correct number of neurons in the hidden layer, based on an $R^2$ maximization.
 Then each trained NN received as input one million different combinations.
