@@ -8,7 +8,7 @@
 \label{section:behaviorinvestigation}
 %************************************************
 
-This is the third draft of what should be the main topic of my PhD Thesis. The ToC is developed accordingly.
+This is the third draft of what should be the main topic of my PhD Thesis. The ToC is developed accordingly and attached.
 
 \subsection{Investigation topcis}
 \label{subsection:investigationtopics}
@@ -95,35 +95,54 @@ The inputs are:
 \item{\textit{E}, from real data \textit{e},}
 \item{\textit{F,G}, the main calibration parameters,}
 \end{enumerate}
-The outputs are \textit{f} and \textit{g}.\\
+The outputs are \textit{b}, \textit{f} and \textit{g}.\\
 The idea would be to use a \textit{feed forward Multi Layer Perceptron Neural Network (MLPNN)}.
-A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).
+A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).\\
 A Neural Network (NN) has been created for each bulk parameter investigated ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
+This bulk parameters, or $target$, have been obtained by running a limited number of simulations (for each bulk), $\approx 600$ for the shear cell and 81 for the angle of repose.
+Together with the corresponding inputs they have been used to train the networks.\\
 15\% of the simulations have been excluded from the training processes.
 They have been used to define per each NN the correct number of neurons in the hidden layer, based on an $R^2$ maximization.
-Then each trained NN received as input one million different combinations.
 Now that the networks have been trained, we can feed the networks with all the combination we need and receive reliable macro-BULK parameters as response.
 Especially, we can increase the parameter that account for the geometry dimension, without paying completely the price for it.\\
-
 The NN inputs will be defined interval values or random values.\\
 
 \subsubsection{Defined interval values}
 \label{subsubsection:definedintervalvalues}
 
+For the $defined interval values$ procedure each trained NN received as input the $422400$ different combinations.
+Then we selected between them the valid $input-DEM-micro$ parameters combinations by fitting NN outputs to experimental data (within a 5\% error).
+About $400$ of them were selected.
+Next step will be to validate the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN (the $26400$ combinations).\\
 
+Let's say that between the 400 simulations remained, as hypothesis 20 of them are experimentally validated. At this point I should be able to \textit{extrapolate the behavior of bulk with a volume too large to be simulated} with this complete neural network and to compare the results with the real scale experiments (Leoben).\\
 
-The DEM coefficients were obtained by fitting NN outputs to experimental data (within a 5\% error).
-Further, we validated the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN.
-The validation agreement was also within reliable limits (5\% error).\\
-
-Between the 1000 simulations remained, as hypothesis 100 of them are experimentally validated. I could use 80 of them to further refine the weights of the neural network functions, and the remaining 20 to validate this second step. At this point I should be able to \textit{extrapolate the behavior of bulk with a volume too large to be simulated} with this complete neural network and to compare the results with the real scale experiments (Leoben).\\
-
-The reliability of this work is deeply based on the already performed simulations: further numerical investigations as suggested in draft $1$ could improve it.
-
-By reserving a portion of the simulations, we can use them to establish the most effective number of neurons inside the hidden layer, for each bulk parameter, through maximization of R2.\\
+The reliability of this work is deeply based on the already performed simulations: further numerical investigations as suggested in draft $1$ could improve it.\\
 
 
 \subsubsection{Random values}
 \label{subsubsection:randomvalues}
 
-foglio stefan
+For the $random values$ procedure each trained NN received as input the same as the $defined interval values$, except for the following:
+\begin{itemize}
+\item{Sliding friction: from 0.05 to 1, 100 random numbers, and so 100 possibilities;}
+\item{Rolling friction: from 0.05 to 1, 100 random numbers, and so 100 possibilities;}
+\item{Coefficient  of restitution: from 0.5 to 1, 50 random numbers, and so 50 possibilities;}
+\item{Particle density: e.g. from 2500 to 3500 $kg/m3$, 50 random numbers, and so 50 possibilities.}
+\end{itemize}
+Together it makes 25 millions different combinations.
+Again we selected between them the valid $input-DEM-micro$ parameters combinations by fitting NN outputs to experimental data (within a 5\% error).
+About $400$ thousand of them were selected.\\
+From them we extracted of the $valid$ input parameters the following values:
+\begin{enumerate}
+\item{the minimum and the maximum,}
+\item{the mean ($\mu$) and the standard deviation ($\sigma$),}
+\item{the lines between $p_i$'s,}
+\end{enumerate}
+as can be seen in Fig. \ref{011testRadar3}
+
+\begin{figure}[!h]
+\includegraphics[width=.96\columnwidth]{011testRadar3}
+\caption{$X_1 = e$, $X_2 = sf$, $X_3 = rf$, $X_4 = \rho_p$}
+\label{011testRadar3}
+\end{figure}
