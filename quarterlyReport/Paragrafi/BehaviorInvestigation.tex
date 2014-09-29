@@ -83,7 +83,7 @@ Again all for only one material with a defined size distribution (e.g. from 3 to
 \label{subsection:artificialneuralnetwork}
 
 Do we really need all these simulations?
-How to identify the effect (weight) each parameter?\\
+How to identify the effect (weight) of each parameter?\\
 The representation of a multi-sphere experiment through a mathematical model presents numerous complexities.
 A different approach involves an artificial neural network, that can be realized to understand the relationship between the input and the output parameters.
 An artificial neural network is composed of many artificial neurons that are linked together according to a specific network architecture. The objective of the neural network is to transform the inputs into meaningful outputs.
@@ -96,7 +96,7 @@ The inputs are:
 \item{\textit{F,G}, the main calibration parameters,}
 \end{enumerate}
 The outputs are \textit{b}, \textit{f} and \textit{g}.\\
-The idea would be to use a \textit{feed forward Multi Layer Perceptron Neural Network (MLPNN)}.
+The idea would be to use a \textit{feed forward Multilayer Perceptron Neural Network (MLPNN)}.
 A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).\\
 A Neural Network (NN) has been created for each bulk parameter investigated ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
 This bulk parameters, or $target$, have been obtained by running a limited number of simulations (for each bulk), $\approx 600$ for the shear cell and 81 for the angle of repose.
@@ -110,7 +110,7 @@ The NN inputs will be defined interval values or random values.\\
 \subsubsection{Defined interval values}
 \label{subsubsection:definedintervalvalues}
 
-For the $defined interval values$ procedure each trained NN received as input the $422400$ different combinations.
+For the $defined ~ interval ~ values$ procedure each trained NN received as input the $422400$ different combinations.
 Then we selected between them the valid $input-DEM-micro$ parameters combinations by fitting NN outputs to experimental data (within a 5\% error).
 About $400$ of them were selected.
 Next step will be to validate the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN (the $26400$ combinations).\\
@@ -123,7 +123,7 @@ The reliability of this work is deeply based on the already performed simulation
 \subsubsection{Random values}
 \label{subsubsection:randomvalues}
 
-For the $random values$ procedure each trained NN received as input the same as the $defined interval values$, except for the following:
+For the $random ~ values$ procedure each trained NN received as input the same as the $defined ~ interval ~ values$, except for the following:
 \begin{itemize}
 \item{Sliding friction: from 0.05 to 1, 100 random numbers, and so 100 possibilities;}
 \item{Rolling friction: from 0.05 to 1, 100 random numbers, and so 100 possibilities;}
@@ -137,9 +137,9 @@ From them we extracted of the $valid$ input parameters the following values:
 \begin{enumerate}
 \item{the minimum and the maximum,}
 \item{the mean ($\mu$) and the standard deviation ($\sigma$),}
-\item{the lines between $p_i$'s,}
+\item{the lines between $p_i$'s.}
 \end{enumerate}
-as can be seen in Fig. \ref{011testRadar3}
+The lines connecting $1$ and $2$ can be seen in Fig. \ref{011testRadar3}
 
 \begin{figure}[!h]
 \includegraphics[width=.96\columnwidth]{011testRadar3}
