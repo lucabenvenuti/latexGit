@@ -8,6 +8,55 @@
 \label{sec:introduction}
 %************************************************
 
+Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - play a major role in a variety of industries, including process industry and metallurgy. In his book, \citet{RefWorks:117} stated that "between 1 and 10\% of all the energy is used in comminution, i.e. the processes of crushing, grinding, milling, micronising". 
+However, a univocal method to characterize these particles has so far not been established.
+From the experimental point of view, the main issues are the difficult setups and the general reliability and reproducibility of the tests. 
+From the numerical point of view, no general procedure is available, and the existence of a mathematically unique solution describing macro/micro particle contact has yet to be proved.
+Moreover, in a recent study, \citet{RefWorks:56} implied "that the dynamic properties of a powder cannot be applied to universally predict the static properties of a powder, and, likewise, the static properties cannot be used to predict dynamic properties".\\
+Discrete Element Method (DEM) simulations are widely used to understand particle behavior.
+\citet{RefWorks:135} defined the $DEM$ as "a special class of numerical schemes for simulating the behavior of discrete, interacting bodies".
+The force that particle i exerts on particle j is defined as:
+\input{equations/newtonlaw}
+Further details on the method can be found in \citet{RefWorks:133}.
+$LIGGGHTS$ (LAMMPS improved for general granular and granular heat transfer simulations) is one of the most powerful open source $DEM$ simulation software packages available. 
+The models it can analyze are described in detail in the literature \citet{RefWorks:136}.\label{par:overviewdemliggghts}
+In combination with shear cell tester simulation \citet{RefWorks:139}, $LIGGGHTS$ has correctly defined the coefficient of sliding friction for coarse round particles - 
+a critical parameter describing inter-particle friction in medium to dense granular flows simulations.\\
+Since the bulk solid is represented by perfect spheres, the only parameter the software uses to describe its shape is the radius of the particle ($R$).
+However, since the shape is one of the most relevant aspects defining particle behavior, we consider the coefficient of rolling friction ($\mu_r$) as an additional $DEM$ shape parameter. 
+It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
+\input{equations/mur}
+$DEM$ simulations have recently been used to reduce the bias of the experiments, and more precise devices such as the Schulze ring shear cell tester (SRSCT)(see \citet{RefWorks:104}) have been built.
+A dedicated workflow that combines experiments and simulations must now be devised following the Design of Experiments method, as illustrated by \citet{RefWorks:116}.\\
+The main goal of this new procedure should be the characterization of non-spherical particles, especially the $DEM$ coefficients of friction, following standardizable steps.
+With this objective in mind, we profited from the shear cell experimental and numerical setup in combination with $LIGGGHTS$ simulation to improve the accuracy and the range of applicability of particle characterization.
+Nevertheless, $DEM$ simulations require tens of thousand of particles to achieve the necessary reliability for a straight-forward trial-and-error calibration procedure.
+The calibration compels to identify the $DEM-micro$ combination of parameters numerically that grants the same $bulk-macro$ behavior experimentally registered, measured as $steady-state-flow/pre-shear ~ coefficient-of-internal-friction $ $ (\mu_{ie-ps})$, $incipient-flow/shear ~ coefficient-of-internal-friction $ $ (\mu_{ie-s})$ and $bulk ~ density ~ (\rho_b)$.
+Furthermore, we used Hertz' Law for the particle-particle and particle-wall interactions.
+Its complexity increased the computational effort to fathom the micro-macro transition relationship. 
+Thus, the time necessary to perform all the possible $DEM-micro$ parameters combinations became boundless.
+In order to overcome this doomed situation we decided to operate artificial neural networks, as suggested by \citet{RefWorks:161}.
+A limited number of combinations have been simulated, designed to maxime the representativity.
+Following the indications of \citet{RefWorks:150}, \textit{feed forward Multilayer Perceptron Neural Networks (MLPNN)} have been handled.
+Their trustworthiness, together with a backpropagation reinforcement learning training algorithm(scaled conjugate gradient), has been widely demonstrated in the literature, see \citet{RefWorks:158}.
+The DEM parameters of the simulations have been used as inputs of the Neural Networks ($NN$), while the bulk values and behavior as targets for them.
+Furthermore, the best practice suggested by \citet{RefWorks:150} demands to establish the most appropriate number of neurons inside the hidden layer of each $NN$.
+As in literature, this goal has been achieved by first excluding 15\% of the simulations from the training processes.
+We then fed the $NN$ with the same $DEM-micro$ parameters of these simulations.
+Subsequently, we controlled the square regression error between the $bulk-macro$ behavior in these simulations and in the output of the $NN$.
+Finally, we selected for each $bulk-macro$ behavior property ($\mu_{ie-ps}$, $\mu_{ie-s}$ and $\rho_b$) the $NN$ with the number of neurons that provided the maximum $R^2$.
+Later, each of these three trained $NN$ received as insertion $1M$ different combinations $DEM-micro$ parameters.
+We then compared their outputs against the values provided by the shear cell experiments (within a 5\% error), gaining the $DEM-micro$ coefficients range.
+\citet{RefWorks:160} prescribes an ulterior validation step.
+To accomplish his demand, we realized a $static-angle-of-repose$ ($SAOR$) experiment and $SAOR$ simulation.
+Furthermore, we performed the $AOR$ simulation, again with the same limited number of combinations.
+These allowed to determine two $bulk-macro$ behavior properties, the $angle-of-repose$ ($AOR$) and $bulk ~ density ~ (\rho_b)$.
+Likewise, we then trained $NN$ and optimized the number of their neurons.
+Later, each of these two trained $NN$ received as insertion the $DEM-micro$ coefficients range previously determined.
+We then compared their outputs against the values provided by the $SAOR$ experiment (again within a 5\% error), gaining a narrower $DEM-micro$ coefficients range.
+Since this study was supported by the metallurgical industry, the materials examined were: silibeads (2 mm), coke, iron ore, limestone (all 0-3.15 mm).\\ \label{par:materials}
+
+
 
 %% \linenumbers
 
@@ -16,8 +65,5 @@
 %\label{introduction}
 
 \lipsum[1]
-\citet*{RefWorks:117}
+\citet{RefWorks:117}
 \input{equations/check}
-
-\citet*{RefWorks:56}
-

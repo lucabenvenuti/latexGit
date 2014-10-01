@@ -1,15 +1,64 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 
+\bibitem[{Aigner et~al.(2013)Aigner, Schneiderbauer, Kloss, and
+  Pirker}]{RefWorks:139}
+Aigner, A., Schneiderbauer, S., Kloss, C., Pirker, S., 2013 2013. Determining
+  the coefficient of friction by shear tester simulation. pp. 335--342.
+
+\bibitem[{Antony et~al.(2006)Antony, Zhou, and Wang}]{RefWorks:161}
+Antony, S.~J., Zhou, C.~H., Wang, X., 1 2006. An integrated mechanistic-neural
+  network modelling for granular systems. Applied Mathematical Modelling
+  30~(1), 116--128.
+
+\bibitem[{Grossman and Vecchio(2008)}]{RefWorks:116}
+Grossman, R.~F., Vecchio, R. J.~D., 2008. Chapter 22 : Design of Experiments.
+  Handbook of Vinyl Formulating. Wiley - Interscience, p. 515.
+
+\bibitem[{Haykin(2009)}]{RefWorks:158}
+Haykin, S.~S., 2009. Neural Networks and Learning Machines. No. v. 10. Prentice
+  Hall, 2008034079.
+\newline\urlprefix\url{http://books.google.com.pk/books?id=K7P36lKzI\_QC}
+
 \bibitem[{Holdich(2002)}]{RefWorks:117}
 Holdich, R.~G., 2002. Fundamentals of Particle Technology. Midland Information
   and Technology and Publishing.
 
+\bibitem[{Kloss et~al.(2012)Kloss, Goniva, Hager, Amberger, and
+  Pirker}]{RefWorks:136}
+Kloss, C., Goniva, C., Hager, A., Amberger, S., Pirker, S., 2012. Models,
+  algorithms and validation for opensource dem and cfddem. Progress in
+  Computational Fluid Dynamics, an International Journal 12~(2), 140--152.
+\newline\urlprefix\url{http://dx.doi.org/10.1504/PCFD.2012.047457}
+
 \bibitem[{Krantz et~al.(2009)Krantz, Zhang, and Zhu}]{RefWorks:56}
 Krantz, M., Zhang, H., Zhu, J., 9/15 2009. Characterization of powder flow:
   Static and dynamic testing. Powder Technology 194~(3), 239--245.
+
+\bibitem[{Mishra and Rajamani(1992)}]{RefWorks:135}
+Mishra, B.~K., Rajamani, R.~K., 11 1992. The discrete element method for the
+  simulation of ball mills. Applied Mathematical Modelling 16~(11), 598--604.
+
+\bibitem[{Oberkampf and Roy(2010)}]{RefWorks:160}
+Oberkampf, W.~L., Roy, C.~J., 2010. Verification and Validation in Scientific
+  Computing. Cambridge University Press.
+\newline\urlprefix\url{http://books.google.com.pk/books?id=7d26zLEJ1FUC}
+
+\bibitem[{Poschel and Schwager(2004)}]{RefWorks:133}
+Poschel, T., Schwager, T., 2004. Computational Granular Dynamics. Springer.
+
+\bibitem[{Schulze et~al.(2001)Schulze, Heinrici, and Zetzener}]{RefWorks:104}
+Schulze, D., Heinrici, H., Zetzener, H., 2001. The ring shear tester as a
+  valuable tool for silo design and powder characterization. Powder Handling
+  and Processing 13~(19-26).
+
+\bibitem[{Vaferi et~al.(2014)Vaferi, Samimi, Pakgohar, and
+  Mowla}]{RefWorks:150}
+Vaferi, B., Samimi, F., Pakgohar, E., Mowla, D., 11 2014. Artificial neural
+  network approach for prediction of thermal behavior of nanofluids flowing
+  through circular tubes. Powder Technology 267~(0), 1--10.
 
 \end{thebibliography}
