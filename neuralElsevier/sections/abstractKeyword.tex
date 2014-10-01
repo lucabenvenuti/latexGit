@@ -1,0 +1,41 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../elsarticle-template-num.tex
+% !TEX spellcheck = en-EN
+
+%************************************************
+%\section{abstract}
+%\label{sec:introduction}
+%************************************************
+
+\begin{abstract}
+Discrete Element Method ($DEM$) simulations are widely used to model and understand particle behavior. 
+It is important to note that each combination of DEM-micro parameters gets different bulk-macro behavior.
+As a consequence, a straight-forward trial-and-error calibration procedure is prohibitively computationally expensive to fathom the micro-macro transition relationship.
+A limited number of combinations have been simulated, through 2000 shear cell numeric test and 300 angle of repose numeric test.
+The DEM parameters of the simulations have been used as inputs of feed forward Multilayer Perceptron Neural Networks (MLPNN), while the bulk values and behavior as targets for the Neural Network (NN).
+A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).
+A NN has been created for each bulk parameter investigated.% ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
+15\% of the simulations have been excluded from the training processes.
+They have been used to define per each NN the correct number of neurons in the hidden layer, based on an $R^2$ maximization.
+Then each trained NN received as input one million different combinations.
+The bulk solids were characterized using shear cell testers. 
+The DEM coefficients were obtained by fitting NN outputs to experimental data (within a 5\% error).
+Further, we validated the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN.
+The validation agreement was also within reliable limits (5\% error).
+The calculated DEM coefficients of iron ore, limestone and silibeads accord well with published data and in-house experiments. 
+%Among the key parameters, defining the inter-particle friction parameters is very relevant to perform simulations of granular flows.
+%To model non-spherical particles with spherical elements, we used an elasto-plastic rolling friction model in combination with Coulomb's law in the $DEM$ code LIGGGHTS.
+% of friction  and conclude that the described setup successfully defined the DEM parameters for the materials tested.
+\end{abstract}
+
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Meshless methods (DEM) \sep Rheology \sep experimental validation studies \sep process industries \sep process metallurgy \sep LIGGGHTS \sep Material characterization \sep Artificial Neural Networks
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}

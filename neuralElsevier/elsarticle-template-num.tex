@@ -1,224 +1,35 @@
-%\documentclass[preprint,12pt]{elsarticle}
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = elsarticle-template-num.tex
+% !TEX spellcheck = en-EN
 
-%% Use the option review to obtain double line spacing
-%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
-
-%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
-%% for a journal layout:
-%% \documentclass[final,1p,times]{elsarticle}
-%% \documentclass[final,1p,times,twocolumn]{elsarticle}
-%% \documentclass[final,3p,times]{elsarticle}
 \documentclass[final,3p,times,twocolumn]{elsarticle}
-%% \documentclass[final,5p,times]{elsarticle}
-%% \documentclass[final,5p,times,twocolumn]{elsarticle}
-
-%% For including figures, graphicx.sty has been loaded in
-%% elsarticle.cls. If you prefer to use the old commands
-%% please give \usepackage{epsfig}
-
-%% The amssymb package provides various useful mathematical symbols
-\usepackage{amssymb}
-%% The amsthm package provides extended theorem environments
-\usepackage{amsthm}
-\usepackage{amsmath}
-
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers.
-%% \usepackage{lineno}
-
-\usepackage{lipsum}                        % testo fittizio
-\usepackage{acronym}
-
-\journal{Powder Technology}
+\input{sections/settings}
 
 \begin{document}
 
+%******************************************************************
+% Materiale iniziale
+%******************************************************************
 \begin{frontmatter}
-
-%% Title, authors and addresses
-
-%% use the tnoteref command within \title for footnotes;
-%% use the tnotetext command for theassociated footnote;
-%% use the fnref command within \author or \address for footnotes;
-%% use the fntext command for theassociated footnote;
-%% use the corref command within \author for corresponding author footnotes;
-%% use the cortext command for theassociated footnote;
-%% use the ead command for the email address,
-%% and the form \ead[url] for the home page:
-\title{Title\tnoteref{label1}}
-%\tnotetext[label1]{}
-%% \author{Name\corref{cor1}\fnref{label2}}
-%% \ead{email address}
-%% \ead[url]{home page}
-%% \fntext[label2]{}
-%% \cortext[cor1]{}
-%% \address{Address\fnref{label3}}
-%% \fntext[label3]{}
-
-\title{A novel approach to particle characterization for discrete element method by means of artificial neural networks}
-
-%% use optional labels to link authors explicitly to addresses:
-%% \author[label1,label2]{}
-%% \address[label1]{}
-%% \address[label2]{}
-
-\author[JKU PFM]{L. Benvenuti \corref{benvenuti}}
-\ead{luca.benvenuti@jku.at}
-
-\author[JKU PFM]{S. Pirker}
-
-\address[JKU PFM]{JKU Department of Particulate Flow Modelling - Linz}
-
-
-%\ead{stefan.pirker@jku.at}
-%\address[JKU PFM]{JKU Department of Particulate Flow Modelling - Linz}
-
-
-\author[DCS]{C. Kloss}
-%\ead{christoph.kloss@dcs-computing.com}
-\address[DCS]{DCS Computing - Linz}
-
-\cortext[benvenuti]{Corresponding author}
-
-\begin{abstract}
-Discrete Element Method ($DEM$) simulations are widely used to model and understand particle behavior. 
-It is important to note that each combination of DEM-micro parameters gets different bulk-macro behavior.
-As a consequence, a straight-forward trial-and-error calibration procedure is prohibitively computationally expensive to fathom the micro-macro transition relationship.
-A limited number of combinations have been simulated, through 2000 shear cell numeric test and 300 angle of repose numeric test.
-The DEM parameters of the simulations have been used as inputs of feed forward Multilayer Perceptron Neural Networks (MLPNN), while the bulk values and behavior as targets for the Neural Network (NN).
-A backpropagation reinforcement learning training algorithm has been used (scaled conjugate gradient).
-A NN has been created for each bulk parameter investigated.% ($\mu_{e,ps}$, $\mu_{e,s}$, $\rho_{b}$).
-15\% of the simulations have been excluded from the training processes.
-They have been used to define per each NN the correct number of neurons in the hidden layer, based on an $R^2$ maximization.
-Then each trained NN received as input one million different combinations.
-The bulk solids were characterized using shear cell testers. 
-The DEM coefficients were obtained by fitting NN outputs to experimental data (within a 5\% error).
-Further, we validated the DEM parameters by means of static angle-of-repose experiments and AOR simulations-trained NN.
-The validation agreement was also within reliable limits (5\% error).
-The calculated DEM coefficients of iron ore, limestone and silibeads accord well with published data and in-house experiments. 
-%Among the key parameters, defining the inter-particle friction parameters is very relevant to perform simulations of granular flows.
-%To model non-spherical particles with spherical elements, we used an elasto-plastic rolling friction model in combination with Coulomb's law in the $DEM$ code LIGGGHTS.
-% of friction  and conclude that the described setup successfully defined the DEM parameters for the materials tested.
-\end{abstract}
-
-\begin{keyword}
-%% keywords here, in the form: keyword \sep keyword
-Meshless methods (DEM) \sep Rheology \sep experimental validation studies \sep process industries \sep process metallurgy \sep LIGGGHTS \sep Material characterization \sep Artificial Neural Networks
-%% PACS codes here, in the form: \PACS code \sep code
-
-%% MSC codes here, in the form: \MSC code \sep code
-%% or \MSC[2008] code \sep code (2000 is the default)
-
-\end{keyword}
-
+\input{sections/front}
+\input{sections/abstractKeyword}
 \end{frontmatter}
 
-%% \linenumbers
+%******************************************************************
+% Materiale principale
+%******************************************************************
+\input{sections/introduction}
+\input{sections/method}
+\input{sections/resultsdiscussion}
+\input{sections/conclusions}
 
-%% main text
-\section{Introduction}
-\label{introduction}
-
-\lipsum[1]
-\citet*{RefWorks:117}
-\input{equations/check}
-
-\citet*{RefWorks:56}
-
-\section{Method}
-\label{sec:method}
-\lipsum[1]
-\input{equations/emc2}
-
-\subsection{Discrete element method}
-\label{subsec:dem}
-
-\lipsum[1]
-\input{equations/forceij}
-
-\subsection{Artificial Neural Networks}
-\label{subsec:ann}
-\lipsum[1]
-\input{equations/mrtm}
-
-\subsection{Experimental setup}
-\label{subsec:experimentalsetup}
-\lipsum[1]
-\input{equations/equivProp2}
-
-
-
-\section{Results and discussion}
-\label{sec:results}
-\lipsum[1]
-\input{equations/force_t}
-
-\subsection{DEM Simulations}
-\label{subsec:simulations}
-\lipsum[1]
-\input{equations/hertz}
-
-
-
-
-\subsection{ANN model development}
-\label{subsec:annmodeldev}
-\lipsum[1]
-\input{equations/mur}
-
-\subsection{ANN identification}
-\label{subsec:annmodeliden}
-\lipsum[1]
-\input{equations/newtonlaw}
-
-\subsection{ANN application}
-\label{subsec:annapplication}
-\lipsum[1]
-\input{equations/phi_ps}
-
-
-\input{equations/phi_s}
-\input{equations/sumcheck}
-
-\section{Conclusions}
-\label{sec:conclusions}
-\lipsum[1]
-
-
-
-
-%\input{Acronimi}
-
-
-%% The Appendices part is started with the command \appendix;
-%% appendix sections are then done as normal sections
-%% \appendix
-
-%% \section{}
-%% \label{}
-
+% *****************************************************************
+% Materiale finale
+%******************************************************************
 \section{References}
 \label{sec:references}
-
-%% If you have bibdatabase file and want bibtex to generate the
-%% bibitems, please use
-%%
 \bibliographystyle{elsarticle-harv} 
 \bibliography{Bibliografia}
 
-%% else use the following coding to input the bibitems directly in the
-%% TeX file.
-
-\begin{thebibliography}{00}
-
-%% \bibitem{label}
-%% Text of bibliographic item
-
-\bibitem{}
-
-\end{thebibliography}
 \end{document}
-%\endinput
-%%
-%% End of file `elsarticle-template-num.tex'.
