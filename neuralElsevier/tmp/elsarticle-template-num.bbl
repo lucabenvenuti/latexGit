@@ -14,6 +14,11 @@ Antony, S.~J., Zhou, C.~H., Wang, X., 1 2006. An integrated mechanistic-neural
   network modelling for granular systems. Applied Mathematical Modelling
   30~(1), 116--128.
 
+\bibitem[{Cundall and Strack(1979)}]{RefWorks:172}
+Cundall, P.~A., Strack, O. D.~L., 1979. A discrete numerical model for granular
+  assemblies. Geotechnique 29~(Volume 29, Issue 1), 47--65(18).
+\newline\urlprefix\url{http://www.icevirtuallibrary.com/content/article/10.1680/geot.1979.29.1.47}
+
 \bibitem[{Grossman and Vecchio(2008)}]{RefWorks:116}
 Grossman, R.~F., Vecchio, R. J.~D., 2008. Chapter 22 : Design of Experiments.
   Handbook of Vinyl Formulating. Wiley - Interscience, p. 515.
@@ -37,10 +42,6 @@ Kloss, C., Goniva, C., Hager, A., Amberger, S., Pirker, S., 2012. Models,
 \bibitem[{Krantz et~al.(2009)Krantz, Zhang, and Zhu}]{RefWorks:56}
 Krantz, M., Zhang, H., Zhu, J., 9/15 2009. Characterization of powder flow:
   Static and dynamic testing. Powder Technology 194~(3), 239--245.
-
-\bibitem[{Mishra and Rajamani(1992)}]{RefWorks:135}
-Mishra, B.~K., Rajamani, R.~K., 11 1992. The discrete element method for the
-  simulation of ball mills. Applied Mathematical Modelling 16~(11), 598--604.
 
 \bibitem[{Oberkampf and Roy(2010)}]{RefWorks:160}
 Oberkampf, W.~L., Roy, C.~J., 2010. Verification and Validation in Scientific
