@@ -11,13 +11,11 @@
 %\label{sec:method}
 %************************************************
 
-%%\lipsum[1]
+%%%\lipsum[1]
 %%\input{equations/emc2}
 
-\input{images/texCaller/01srsct}
-aa
-aaaaaa
-%\input{images/texCaller/regressionTest}
+
+
 
 \subsection{Discrete element method}
 \label{subsec:dem}
@@ -26,7 +24,36 @@ the domain it follows the course and calculate the force of that exerts on parti
 by integrating Newton' second law:
 \input{equations/newtonlaw}
 and the position and orientation equations.
-Further details on the method can be found in \cite{RefWorks:133}.
+The main forces interested are: gravitation, contact forces due to collisions,
+solid-solid interactions such as electrostatic, Van der Waals, cohesive forces
+and fluid-solid interactions in multiphase flows.
+
+For the raw materials used in this work \cite{RefWorks:145} suggested using the non-linear Hertzian model without cohesion for the particle-particle and particle-wall contacts.\\
+This granular model uses the following formula for the force between two granular particles (Eq. \ref{eq:forceij}):
+\input{equations/forceij}
+while the tangential force component is truncated to fulfill
+\input{equations/force_t}
+Both the normal and the tangential force comprise two terms, a spring force and a damping force. The shear force is a "history" effect that accounts for the tangential displacement 
+("tangential overlap") between the particles for the duration of contact. \\
+
+The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from the material properties as follows:
+\input{equations/hertz}
+In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{eq:equivProp2}) are required:
+\input{equations/equivProp2}
+
+The $\mu_r$ parameter enters the equations according to the elasto-rolling resistance model presented by \cite{RefWorks:87} and \cite{RefWorks:131}, also used by \cite{RefWorks:147}, 
+based on the work of \cite{RefWorks:143}(and in contrast to \cite{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
+This is appropriate for the one way rolling cases as well as the cycling rolling ones.
+The total rolling resistance torque is (Eq. \ref{eq:mrtm}):
+\input{equations/mrtm}
+
+Given these equations, completely defining a dry material for DEM simulations requires these data:
+\begin{itemize}
+\item{the radius of the particles ($R$);}
+\item{the Young's modulus ($E$) and the Poisson's coefficient ($\nu$);}
+\item{the particle density ($\rho_p$) and the coefficient of restitution ($e$);}
+\item{the coefficients of sliding ($\mu_s$) and rolling ($\mu_r$) friction.}
+\end{itemize}
 
 
 Further details on the method can be found in \cite{RefWorks:133}.
@@ -42,11 +69,13 @@ Furthermore, we used Hertz' Law for the particle-particle and particle-wall inte
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
-\lipsum[1]
+%\lipsum[1]
 \input{equations/mrtm}
 
 \subsection{Experimental setup}
 \label{subsec:experimentalsetup}
-\lipsum[1]
+%\lipsum[1]
 \input{equations/equivProp2}
+
+\input{images/texCaller/01srsct}
 
