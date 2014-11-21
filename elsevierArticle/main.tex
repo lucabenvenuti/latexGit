@@ -1,19 +1,29 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[review]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{picins}
+
+\usepackage[nomarkers]{endfloat}
+
+\newcommand{\listoflstlistings}{\lstlistoflistings}
+\DeclareDelayedFloat{lstlisting}[flol]{\textbf{List of Listings}}
+
+\lstset{tabsize=2,language=C++,basicstyle=\footnotesize\tt,keywordstyle=\color{blue}\bfseries}
+
+\journal{Powder Technology}
 
 \begin{document}
 
+\begin{frontmatter}
+\input{sections/front}
+\input{sections/abstractKeyword.tex}
+\end{frontmatter}
 
-\section{Title}
-
-\subsection{Subtitle}
-
-Plain text.
-
-\subsection{Another subtitle}
-
-More plain text.
 
 
 \end{document}
