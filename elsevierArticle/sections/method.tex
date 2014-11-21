@@ -40,7 +40,10 @@ The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from th
 \input{equations/hertz}
 In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{eq:equivProp2}) are required:
 \input{equations/equivProp2}
-
+The coefficient of sliding friction for coarse round particles is a critical
+parameter describing inter-particle friction in medium to dense granular flows simulations.
+It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
+\input{equations/mur}
 The $\mu_r$ parameter enters the equations according to the elasto-rolling resistance model presented by \cite{RefWorks:87} and \cite{RefWorks:131}, also used by \cite{RefWorks:147}, 
 based on the work of \cite{RefWorks:143}(and in contrast to \cite{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
 This is appropriate for the one way rolling cases as well as the cycling rolling ones.
@@ -58,24 +61,47 @@ Given these equations, completely defining a dry material for DEM simulations re
 
 Further details on the method can be found in \cite{RefWorks:133}.
 
-The coefficient of sliding friction for coarse round particles is a critical
-parameter describing inter-particle friction in medium to dense granular flows simulations.
-It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
-\input{equations/mur}
 
-Furthermore, we used Hertz' Law for the particle-particle and particle-wall interactions.
 
-\input{equations/forceij}
+
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
+
+An Artificial Neural Network (NN) is a powerful modellization technique, based
+on non-linear functions (Haykin \cite{RefWorks:158}). In this paper, we first use them to fit the DEM
+numerical simulation data, and then to process vast amount of parameters combinations.
+NN original idea is directly borrowed from human brain design, with neurons and
+synapses.
+There are divers types of NN, remarkably the Feedforward (FF) and the Radial
+basis function (RBF). For FF-NN, considerable
+amount of traning algorithms are available. The most common are based on
+backpropagation: Levenberg-Marquardt, Bayesian regulation and scaled conjugate
+gradient. Following the best practice suggested by Vaferi et al. \cite{RefWorks:150}
+\textit{FF Multilayer Perceptron Neural Networks (MLPNN)} have been
+handled. They map combinations of input data into convenient outputs (fitting).
+Each processing units or node (neuron) possesses a nonlinear activation
+function. Together, they are interconnected into layers, also linked together.
+To recognize not linearly separable data the standard 
+linear perceptron $NN$ has been modified into $MLPNN$.
+Their trustworthiness, together with a backpropagation reinforcement
+learning training algorithm (scaled conjugate gradient), has been widely
+demonstrated in the literature, see Haykin \cite{RefWorks:158}.
+Several scientists \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
+RefWorks:170} have operated $NN$ to model materials mechanical properties.
+In fact, $MLPNN$ are built with three different layers.
+The input layer has a number of neurons equal to the number of different inputs
+of the network. Similarly for a Best practice also demands to establish the
+most appropriate number of neurons inside the hidden layer of each $NN$.
+As in literature, this goal has been achieved by first excluding 15\% of the
+simulations from th  training processes .
 %\lipsum[1]
-\input{equations/mrtm}
+%\input{equations/mrtm}
 
 \subsection{Experimental setup}
 \label{subsec:experimentalsetup}
 %\lipsum[1]
-\input{equations/equivProp2}
+%\input{equations/equivProp2}
 
 \input{images/texCaller/01srsct}
 

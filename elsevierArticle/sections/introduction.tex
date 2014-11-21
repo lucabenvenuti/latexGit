@@ -37,9 +37,6 @@ Following the indications of Vaferi et al. \cite{RefWorks:150}, \textit{feed for
 Their trustworthiness, together with a backpropagation reinforcement learning training algorithm(scaled conjugate gradient), has been widely demonstrated in the literature, see
 Haykin \cite{RefWorks:158}.
 The DEM parameters of the simulations have been used as inputs of the Neural Networks ($NN$), while the bulk values and behavior as targets for them.
-Furthermore, the best practice suggested by Vaferi et al. \cite{RefWorks:150}
-demands to establish the most appropriate number of neurons inside the hidden layer of each $NN$.
-As in literature, this goal has been achieved by first excluding 15\% of the simulations from the training processes.
 We then fed the $NN$ with the same $DEM-micro$ parameters of these simulations.
 Subsequently, we controlled the square regression error between the $bulk-macro$ behavior in these simulations and in the output of the $NN$.
 Finally, we selected for each $bulk-macro$ behavior property ($\mu_{ie-ps}$, $\mu_{ie-s}$ and $\rho_b$) the $NN$ with the number of neurons that provided the maximum $R^2$.
