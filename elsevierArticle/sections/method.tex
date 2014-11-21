@@ -1,0 +1,46 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../elsarticle-template-num.tex
+% !TEX spellcheck = en-EN
+
+%************************************************
+\section{Method}
+\label{sec:method}
+%************************************************
+%\section{Method}
+%\label{sec:method}
+%************************************************
+
+%%\lipsum[1]
+%%\input{equations/emc2}
+
+\subsection{Discrete element method}
+\label{subsec:dem}
+The $DEM$ is based on a relatively elementary idea. For each particle i inside
+the domain it follows the course and calculate the force of that exerts on particle j
+by integrating Newton' second law:
+\input{equations/newtonlaw}
+and the position and orientation equations.
+Further details on the method can be found in \citet{RefWorks:133}.
+
+
+Further details on the method can be found in \citet{RefWorks:133}.
+
+The coefficient of sliding friction for coarse round particles is a critical
+parameter describing inter-particle friction in medium to dense granular flows simulations.
+It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
+\input{equations/mur}
+
+Furthermore, we used Hertz' Law for the particle-particle and particle-wall interactions.
+
+\input{equations/forceij}
+
+\subsection{Artificial Neural Networks}
+\label{subsec:ann}
+\lipsum[1]
+\input{equations/mrtm}
+
+\subsection{Experimental setup}
+\label{subsec:experimentalsetup}
+\lipsum[1]
+\input{equations/equivProp2}
