@@ -1,2 +1,7 @@
+powtec.pdf
+Thumbs.db
+*.aux
+*.log
+*.spl
 /tmp/
-/powtec.pdf
+*-eps-converted-to.pdf
