@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Fri Nov 21 11:03:58 GMT+01:00 2014
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=main.tex
+outputFile=powtec.pdf
+langSpell=en
+markDer=true
+srcDir=
