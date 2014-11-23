@@ -14,6 +14,31 @@
 %%%\lipsum[1]
 %%\input{equations/emc2}
 
+\subsection{Experimental setup}
+\label{subsec:experimentalsetup}
+
+The first step of the procedure was using a SRSCT (see \cite{RefWorks:142}) to characterize particle flow properties, especially the complete yield locus.
+A representative sample of bulk solid was placed in a shear cell of specified dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$). 
+\input{images/texCaller/01srsct}
+A normal load was applied to the cover, and the specimen was pre-sheared  until a steady-state shear value was reached.
+ The steady-state flow horizontal stress (Fig. \ref{fig:02srsctdiagram}) is
+called pre-shear stress ($\tau_{psh}$). Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal friction of the pre-shear phase 
+($\phi_{e-psh}$), our first flowability value \cite{RefWorks:118}:
+\input{equations/phi_ps} 
+\input{images/texCaller/02srsctdiagram}
+The normal stress and the angular velocity were then immediately reduced to zero. 
+Subsequently, the specimen was sheared under a fraction of the first normal load until the shear force reached a maximum and began to decrease. 
+Both the pre-shear and shear phases were executed at constant velocity. We define the horizontal stress during the shear force peak as maximum shear stress, 
+thus obtaining (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
+\input{equations/phi_s} 
+From three to four different pre-shear normal loads were applied in the experiment. For each we used
+a proportional shear increasing from stage one (40\%) to stage four (100\%) with two escalating intermediate stages (60\% and 80\%).
+Each experiment was performed on a fresh material sample. \\
+Furthermore, in order to recreate the repose angle observed in a pile of the real material, a sample was deposited on a 20 cm diameter plate 
+with lift-able boundary, called static angle of repose ($AOR$) tester (Fig. \ref{fig:05aor}).
+\input{images/texCaller/05aor}
+Once the particles were in position, the boundary was lifted, allowing some
+particles to drop. Once stabilized, the $AOR$ was measured eight times using a digital protractor at different positions of the heap. The result is given as the average of the measurements.
 
 
 
@@ -44,8 +69,10 @@ The coefficient of sliding friction for coarse round particles is a critical
 parameter describing inter-particle friction in medium to dense granular flows simulations.
 It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
 \input{equations/mur}
-The $\mu_r$ parameter enters the equations according to the elasto-rolling resistance model presented by \cite{RefWorks:87} and \cite{RefWorks:131}, also used by \cite{RefWorks:147}, 
-based on the work of \cite{RefWorks:143}(and in contrast to \cite{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
+The $\mu_r$ parameter enters the equations according to the elasto-rolling
+resistance model presented by \cite{RefWorks:87} and \cite{RefWorks:131}, also
+used by \cite{RefWorks:147} and \cite{RefWorks:173}, based on the work of
+\cite{RefWorks:143}(and in contrast to \cite{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
 This is appropriate for the one way rolling cases as well as the cycling rolling ones.
 The total rolling resistance torque is (Eq. \ref{eq:mrtm}):
 \input{equations/mrtm}
@@ -61,9 +88,44 @@ Given these equations, completely defining a dry material for DEM simulations re
 
 Further details on the method can be found in \cite{RefWorks:133}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Simulations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+$LIGGGHTS$, the simulation toolbox we used, meets most of the requirements of modelling the shear tester described above. 
+First, it is capable of importing triangulated meshes of the two rings and a top lid. Since the real set-up had a wall thickness, 
+contact forces acting on a mesh are summed and can be saved, and thus shear force calculation is available out of the box. Moreover, 
+the code can move a mesh with constant velocity as required for the measurement. 
+To determine the shear stresses, the bulk solid had to be stressed with user-defined normal stresses.
+Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
 
+Although the geometry differs, the $SRSCT$ was designed to obtain the same values for the shear stresses as the $JSCT$, but with improved automation and reliability \cite{RefWorks:118}. 
+For this reason, the simulation setup realized included only the $JSCT$, and it had been used to compare both experimental testers.
+As suggested by \cite{RefWorks:139}, the diameter and the height of the rings operated in the simulations were respectively 50 and 13 times the diameter of the particles involved.
+The layout of the simulation geometry can be seen in Figure \ref{fig:09simGeometry}. \\
+\input{images/texCaller/09simGeometry} 
 
+To reduce the computational effort in the simulation, only one average value was used for each parameter indicated in the \textit{model description} section, except for the coefficients of friction.
+A simulation run comprised four phases. 
+First, the shear cell was filled with the granulate material, and it was allowed to settle. 
+Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
+Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
+Finally, the normal load was reduced to a fraction of the initial load, the ring was moved again by a distance $l$, and the shear force was recorded. 
+Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation.\\
+The normal stresses (pre-shear and shear phases) applied in each simulation were
+the same as in the experiments. The corresponding $\tau_{psh}$ and $\tau_{sh}$
+were calculated - as in the experiments - from the mean of the plateau.\\
+Thus, we obtained the $\mu_{psh}$ and the $\mu_{sh}$ values to be compared with
+the experimental values. 
+Further, we also performed $AOR$ simulations. Here we tried to replicate meticulously the experimental set-up, considering both the plate and the lift-able boundary, 
+respectively 50 and 20 times the diameter of the particles involved.
+The particles had the same properties as in the shear cell simulation, and featured the calibrated $ \mu_s $ and $ \mu_r $.
+The first phase was identical to that of the shear cell simulation. 
+After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
+\input{images/texCaller/08aorsim}
+An image post-processing software was used to obtain the average slope.
+Furthermore, in both simulation set-ups the $E$ value was not realistic, but reduced to increase the time step.
+This led to a reduction in computational time, resulting in 22 minutes with 32 cores for each shear cell simulation and 6 hours for each $AOR$ simulation.\\
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
@@ -98,23 +160,5 @@ simulations from th  training processes.
 %\lipsum[1]
 %\input{equations/mrtm}
 
-\subsection{Experimental setup}
-\label{subsec:experimentalsetup}
-
-The first step of the procedure was using a SRSCT (see \cite{RefWorks:142}) to characterize particle flow properties, especially the complete yield locus.
-A representative sample of bulk solid was placed in a shear cell of specified dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$). 
-\input{images/texCaller/01srsct}
-A normal load was applied to the cover, and the specimen was pre-sheared  until a steady-state shear value was reached.
- The steady-state flow horizontal stress (Fig. \ref{fig:02srsctdiagram}) is
-called pre-shear stress ($\tau_{psh}$). Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal friction of the pre-shear phase 
-($\phi_{e-psh}$), our first flowability value \cite{RefWorks:118}:
-\input{equations/phi_ps} 
-\input{images/texCaller/02srsctdiagram}
-The normal stress and the angular velocity were then immediately reduced to zero. 
-Subsequently, the specimen was sheared under a fraction of the first normal load until the shear force reached a maximum and began to decrease. 
-Both the pre-shear and shear phases were executed at constant velocity. We define the horizontal stress during the shear force peak as maximum shear stress, 
-thus obtaining (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
-\input{equations/phi_s} 
-Each experiment was performed on a fresh material sample. \\
 
 
