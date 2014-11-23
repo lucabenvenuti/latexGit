@@ -94,14 +94,27 @@ The input layer has a number of neurons equal to the number of different inputs
 of the network. Similarly for a Best practice also demands to establish the
 most appropriate number of neurons inside the hidden layer of each $NN$.
 As in literature, this goal has been achieved by first excluding 15\% of the
-simulations from th  training processes .
+simulations from th  training processes.
 %\lipsum[1]
 %\input{equations/mrtm}
 
 \subsection{Experimental setup}
 \label{subsec:experimentalsetup}
-%\lipsum[1]
-%\input{equations/equivProp2}
 
+The first step of the procedure was using a SRSCT (see \cite{RefWorks:142}) to characterize particle flow properties, especially the complete yield locus.
+A representative sample of bulk solid was placed in a shear cell of specified dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$). 
 \input{images/texCaller/01srsct}
+A normal load was applied to the cover, and the specimen was pre-sheared  until a steady-state shear value was reached.
+ The steady-state flow horizontal stress (Fig. \ref{fig:02srsctdiagram}) is
+called pre-shear stress ($\tau_{psh}$). Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal friction of the pre-shear phase 
+($\phi_{e-psh}$), our first flowability value \cite{RefWorks:118}:
+\input{equations/phi_ps} 
+\input{images/texCaller/02srsctdiagram}
+The normal stress and the angular velocity were then immediately reduced to zero. 
+Subsequently, the specimen was sheared under a fraction of the first normal load until the shear force reached a maximum and began to decrease. 
+Both the pre-shear and shear phases were executed at constant velocity. We define the horizontal stress during the shear force peak as maximum shear stress, 
+thus obtaining (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
+\input{equations/phi_s} 
+Each experiment was performed on a fresh material sample. \\
+
 

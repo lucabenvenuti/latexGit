@@ -5,3 +5,6 @@ Thumbs.db
 *.spl
 /tmp/
 *-eps-converted-to.pdf
+main.fff
+*.eps
+*.pdf
