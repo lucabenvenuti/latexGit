@@ -99,13 +99,14 @@ the code can move a mesh with constant velocity as required for the measurement.
 To determine the shear stresses, the bulk solid had to be stressed with user-defined normal stresses.
 Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
 
-Although the geometry differs, the $SRSCT$ was designed to obtain the same values for the shear stresses as the $JSCT$, but with improved automation and reliability \cite{RefWorks:118}. 
-For this reason, the simulation setup realized included only the $JSCT$, and it had been used to compare both experimental testers.
+Although the geometry differs, the $SRSCT$ was designed to obtain the same
+values for the shear stresses as the Jenike shear cell tester ($JSCT$), but with
+improved automation and reliability \cite{RefWorks:118}.
+For this reason, the simulation setup has been based over the $JSCT$.
 As suggested by \cite{RefWorks:139}, the diameter and the height of the rings operated in the simulations were respectively 50 and 13 times the diameter of the particles involved.
 The layout of the simulation geometry can be seen in Figure \ref{fig:09simGeometry}. \\
 \input{images/texCaller/09simGeometry} 
 
-To reduce the computational effort in the simulation, only one average value was used for each parameter indicated in the \textit{model description} section, except for the coefficients of friction.
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed to settle. 
 Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
@@ -115,11 +116,10 @@ Unlike in the original experiment, the bottom ring was moved to facilitate the n
 The normal stresses (pre-shear and shear phases) applied in each simulation were
 the same as in the experiments. The corresponding $\tau_{psh}$ and $\tau_{sh}$
 were calculated - as in the experiments - from the mean of the plateau.\\
-Thus, we obtained the $\mu_{psh}$ and the $\mu_{sh}$ values to be compared with
-the experimental values. 
+
 Further, we also performed $AOR$ simulations. Here we tried to replicate meticulously the experimental set-up, considering both the plate and the lift-able boundary, 
 respectively 50 and 20 times the diameter of the particles involved.
-The particles had the same properties as in the shear cell simulation, and featured the calibrated $ \mu_s $ and $ \mu_r $.
+The particles had the same properties as in the shear cell simulation.
 The first phase was identical to that of the shear cell simulation. 
 After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
 \input{images/texCaller/08aorsim}
