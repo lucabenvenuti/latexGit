@@ -1,9 +1,3 @@
-% !TEX encoding = UTF-8
-% !TEX TS-program = pdflatex
-% !TEX root = ../elsarticle-template-num.tex
-% !TEX spellcheck = en-EN
-
-%************************************************
 \section{Results and discussion}
 \label{sec:results}
 %************************************************
@@ -12,10 +6,14 @@
 \label{subsec:experiments}
 
 %\InsTab{tables/05sinterTableExperimental}
-Initially, experimental values have been acquired though the SRSCT, see Table
-\ref{tab:05sinterTableExperimental}.
+Initially, experimental values identifying the bulk behavior, $\phi_{e-psh}$, 
+$\phi_{e-sh}$ and $\rho_{b}$, for sinter fine have been acquired though the
+SRSCT, see Table \ref{tab:05sinterTableExperimental}.
 \input{tables/05sinterTableExperimental}
-
+Later, two AOR test have been performed, given an average angle of $38.85
+^\circ$.
+ 
+ONE TABLE FOR EACH MATERIAL
 
 % a
 % 
@@ -25,34 +23,72 @@ Initially, experimental values have been acquired though the SRSCT, see Table
 \label{subsec:simulations}
 % \lipsum[1]
 % \input{equations/hertz}
-704 shear cell and 54 static angle of repose simulations have been realized with
-the variation described in Table \ref{tab:07DEMinputvalues}.
+For sinter fine 704 shear cell and 54 static angle of repose simulations have
+been realized with the variation described in Table \ref{tab:07DEMinputvalues},
+gaining four values identifying the numerical bulk behavior, $\phi_{e-psh}$, 
+$\phi_{e-sh}$, $AOR$ and $\rho_{b}$ for each simulated combination.
+The shear cell simulations made are more than the angle of repose to account for
+the different normal load applied.
 \input{tables/07DEMinputvalues}
 
 
 \subsection{ANN model development}
 \label{subsec:annmodeldev}
 
-The linear relationship between the training values have been evaluated in
-Table \ref{tab:06inputRelationshipTable}.
+We then fed the $NN$ with the same $DEM-micro$ parameters of these simulations
+as input.
+A series of NN have been realized for each bulk behavior as target, ranging from
+5 to 34 neurons in the hidden layer.
+The linear relationship between the
+training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
 \input{tables/06inputRelationshipTable}
+EVALUTE IF ADD AOR AS ENTRY IN THE TABLE OR MAKE A NEW SEPARATE TABLE
+
+
+
 % \lipsum[1]
 % \input{equations/mur}
 
 \subsection{ANN identification}
 \label{subsec:annmodeliden}
+Subsequently, we controlled the square regression error between the $bulk-macro$
+behavior in these simulations and in the output of the $NN$, see Eq.
+\ref{eq:rsquare}.
+\input{equations/rSquare}
+SSE is the sum of squared error, SSR is the sum of squared regression, SST is
+the sum of squared total.
+As in literature, this goal has been achieved by first excluding 15\% of the
+simulations from th  training processes.\\
+
+RMSE amplifies and severely punishes large errors, see Eq.
+\ref{eq:rootMeanSquareError}.
+\input{equations/rootMeanSquareError}
+
+
+Finally, we selected for each $bulk-macro$ behavior property ($\mu_{ie-ps}$, $\mu_{ie-s}$ and $\rho_b$) the $NN$ with the 
+number of neurons that provided the maximum $R^2$.
+
+
 % \lipsum[1]
 % \input{equations/newtonlaw}
 
 \subsection{ANN application}
 \label{subsec:annapplication}
 
-\input{images/texCaller/14aorSchulzeIntersection}
+Later, each of these three trained $NN$ received as insertion $100M$ different
+combinations $DEM-micro$ parameters.
+So, we gained the numerical bulk behavior for each of this combination. 
+We then compared the values of these behaviors against the experimental bulk
+values, $SRSCT$ and $AOR$, obtaining a narrow range of valid DEM-micro
+combinations (about 80K).
+These results have been showed through radar plots (Figs. \ref{fig:15Schulze}
+and \ref{fig:16aorSchulzeIntersectionWorking}).
+To highlight an eventual $clumping$ behavior, we also plot the results in a
+cloud shape, see Fig. \ref{fig:17aorSchulzeIntersectionCloudSFRFCOR}.
+
+%\input{images/texCaller/14aorSchulzeIntersection}
 \input{images/texCaller/15Schulze}
 % \lipsum[1]
+\input{images/texCaller/16aorSchulzeIntersectionWorking}
 % \input{equations/phi_ps}
-% 
-% 
-% \input{equations/phi_s}
-% \input{equations/sumcheck}
-
+\input{images/texCaller/17aorSchulzeIntersectionCloudSFRFCOR}

@@ -1,9 +1,3 @@
-% !TEX encoding = UTF-8
-% !TEX TS-program = pdflatex
-% !TEX root = ../elsarticle-template-num.tex
-% !TEX spellcheck = en-EN
-
-%************************************************
 \section{Method}
 \label{sec:method}
 %************************************************
@@ -52,8 +46,10 @@ and the position and orientation equations.
 The main forces interested are: gravitation, contact forces due to collisions,
 solid-solid interactions such as electrostatic, Van der Waals, cohesive forces
 and fluid-solid interactions in multiphase flows.
-
-For the raw materials used in this work \cite{RefWorks:145} suggested using the non-linear Hertzian model without cohesion for the particle-particle and particle-wall contacts.\\
+For the raw materials used in this work Di Renzo and Di Maio \cite{RefWorks:145}
+suggested using the non-linear Hertzian model without cohesion for the particle-particle and particle-wall contacts.
+Although, its complexity increased the computational effort to fathom the
+micro-macro transition relationship.\\
 This granular model uses the following formula for the force between two granular particles (Eq. \ref{eq:forceij}):
 \input{equations/forceij}
 while the tangential force component is truncated to fulfill
@@ -86,7 +82,7 @@ Given these equations, completely defining a dry material for DEM simulations re
 \end{itemize}
 
 
-Further details on the method can be found in \cite{RefWorks:133}.
+Further details on the method can be found in \cite{RefWorks:133}.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%Simulations
@@ -125,7 +121,8 @@ After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}
 \input{images/texCaller/08aorsim}
 An image post-processing software was used to obtain the average slope.
 Furthermore, in both simulation set-ups the $E$ value was not realistic, but reduced to increase the time step.
-This led to a reduction in computational time, resulting in 22 minutes with 32 cores for each shear cell simulation and 6 hours for each $AOR$ simulation.\\
+This led to a reduction in computational time, resulting in 1 hour with 32 cores
+for each shear cell simulation and 9 hours for each $AOR$ simulation.\\
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
@@ -134,29 +131,30 @@ An Artificial Neural Network (NN) is a powerful modellization technique, based
 on non-linear functions (Haykin \cite{RefWorks:158}). In this paper, we first use them to fit the DEM
 numerical simulation data, and then to process vast amount of parameters combinations.
 NN original idea is directly borrowed from human brain design, with neurons and
-synapses.
+synapses. They map combinations of input data into convenient outputs (fitting).
 There are divers types of NN, remarkably the Feedforward (FF) and the Radial
 basis function (RBF). For FF-NN, considerable
 amount of traning algorithms are available. The most common are based on
-backpropagation: Levenberg-Marquardt, Bayesian regulation and scaled conjugate
-gradient. Following the best practice suggested by Vaferi et al. \cite{RefWorks:150}
-\textit{FF Multilayer Perceptron Neural Networks (MLPNN)} have been
-handled. They map combinations of input data into convenient outputs (fitting).
-Each processing units or node (neuron) possesses a nonlinear activation
-function. Together, they are interconnected into layers, also linked together.
+backpropagation: e.g. Levenberg-Marquardt, Bayesian regulation and scaled
+conjugate gradient. 
 To recognize not linearly separable data the standard 
-linear perceptron $NN$ has been modified into $MLPNN$.
-Their trustworthiness, together with a backpropagation reinforcement
-learning training algorithm (scaled conjugate gradient), has been widely
+linear perceptron $NN$ has been modified into \textit{FF Multilayer Perceptron
+Neural Networks (MLPNN)}. Here, each processing units or node (neuron) possesses a nonlinear activation
+function. Together, they are interconnected into layers, also linked together.
+The trustworthiness of the $MLPNN$, with a backpropagation
+reinforcement learning training algorithm (scaled conjugate gradient), has been widely
 demonstrated in the literature, see Haykin \cite{RefWorks:158}.
 Several scientists \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
 RefWorks:170} have operated $NN$ to model materials mechanical properties.
 In fact, $MLPNN$ are built with three different layers.
 The input layer has a number of neurons equal to the number of different inputs
-of the network. Similarly for a Best practice also demands to establish the
+of the network. 
+Following the best practice suggested by Vaferi et al. \cite{RefWorks:150}
+$MLPNN$ have been handled. 
+Similarly, the best practice also demands to establish the
 most appropriate number of neurons inside the hidden layer of each $NN$.
-As in literature, this goal has been achieved by first excluding 15\% of the
-simulations from th  training processes.\\
+
+
 %\lipsum[1]
 %\input{equations/mrtm}
 
