@@ -107,6 +107,7 @@ The layout of the simulation geometry can be seen in Figure \ref{fig:09simGeomet
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed to settle. 
 Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
+As in the experiment, the servo-wall allows to calculate the position of the lid while the first particle is touched. Together with the simulation area, we calculated $\rho_b$.
 Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
 Finally, the normal load was reduced to a fraction of the initial load, the ring was moved again by a distance $l$, and the shear force was recorded. 
 Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation.\\
@@ -121,7 +122,7 @@ The first phase was identical to that of the shear cell simulation.
 After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
 \input{images/texCaller/08aorsim}
 An image post-processing software was used to obtain the average slope.
-Furthermore, in both simulation set-ups the $E$ value was not realistic, but reduced to increase the time step.
+%%%%%%%%%%%%%%%%%%%Furthermore, in both simulation set-ups the $E$ value was not realistic, but .
 This led to a reduction in computational time, resulting in 1 hour with 32 cores
 for each shear cell simulation and 9 hours for each $AOR$ simulation.\\
 
