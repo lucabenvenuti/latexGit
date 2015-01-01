@@ -6,3 +6,59 @@
 \end{figure}
 \efloatseparator
  
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.8\textwidth]{images/original/02srsctdiagram.eps}
+\caption{Schulze ring shear cell tester diagram \cite{RefWorks:118}}
+\label{fig:02srsctdiagram}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.8\textwidth]{images/original/05aor}
+\caption{Angle of repose tester \cite{RefWorks:118}}
+\label{fig:05aor}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.8\textwidth]{images/original/09simGeometry}
+\caption{shear cell simulation layout}
+\label{fig:09simGeometry}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.8\textwidth]{images/original/08aorsim}
+\caption{AOR simulation, heap of particles}
+\label{fig:08aorsim}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.8\textwidth]{images/original/15Schulze}
+\caption{aor Schulze Intersection}
+\label{fig:15Schulze}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.96\textwidth]{images/original/16aorSchulzeIntersectionWorking}
+\caption{aor Schulze Intersection working}
+\label{fig:16aorSchulzeIntersectionWorking}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=.96\textwidth]{images/original/17aorSchulzeIntersectionCloudSFRFCOR}
+\caption{Cloud aor Schulze Intersection working}
+\label{fig:17aorSchulzeIntersectionCloudSFRFCOR}
+\end{figure}
+\efloatseparator
+ 

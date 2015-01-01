@@ -3,62 +3,63 @@
 \label{sec:introduction}
 %************************************************
 
-Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - play a major role in a variety of industries, 
-including process industry and metallurgy. In his book, Holdich \cite{RefWorks:117}
-stated that "between 1 and 10\% of all the energy is used in comminution, i.e. the processes of crushing, grinding, milling, micronising". 
-However, a univocal method to characterize these particles has so far not been established.
-From the experimental point of view, the main issues are the difficult setups and the general reliability and reproducibility of the tests. 
-From the numerical point of view, no general procedure is available, and the existence of a mathematically unique solution describing macro/micro particle contact has yet to be proved.
-Moreover, in a recent study, Krantz et al. \cite{RefWorks:56} implied "that the dynamic properties of a powder cannot be applied to universally predict the static properties of a powder, and,
-likewise, the static properties cannot be used to predict dynamic properties".\\
-Discrete Element Method (DEM) simulations are widely used to understand particle behavior.
-Cundall and Strack \cite{RefWorks:172} defined the $DEM$ as "a numerical model capable of describing the mechanical behaviour of assemblies of discs and spheres".
-$LIGGGHTS$ (LAMMPS improved for general granular and granular heat transfer simulations) is one of the most powerful open source $DEM$ simulation software packages available.
+Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - 
+play a major role in a variety of industries, including process industry and metallurgy. 
+In his book, Holdich \cite{RefWorks:117} stated that "between 1 and 10\% of all the energy 
+is used in comminution, i.e. the processes of crushing, grinding, milling, micronising". 
+However, a univocal method to characterize these particles has so far not been established. 
+Discrete Element Method (DEM) simulations are widely used to understand particle behaviour 
+and in the simulation of granular processes, such as bulk handling.\\
+$LIGGGHTS$ (LAMMPS improved for general granular and granular heat transfer simulations) 
+is one of the most powerful open source $DEM$ simulation software packages available. 
 The models it can analyze are described in detail in the literature, see Kloss
-et al. \cite{RefWorks:136}.\label{par:overviewdemliggghts} In combination with
-the shear cell tester simulation developed by Aigner et al. \cite{RefWorks:139},
-$LIGGGHTS$ has correctly defined the coefficient of sliding friction for coarse round particles.\\
-Since the bulk solid is represented by perfect spheres, the only parameter the software uses to describe its shape is the radius of the particle ($R$).
-However, since the shape is one of the most relevant aspects defining particle behavior, we consider the coefficient of rolling friction ($\mu_r$) as an additional $DEM$ shape parameter.
-The ulterior $DEM-micro$ parameters we investigated are the
-$coefficient-of-restitution$ ($COR$) and the $particle-density$ ($\rho_p$),
-given their centrality in the whole model.
-$DEM$ simulations have recently been used to reduce the bias of the experiments, and more precise devices such as the Schulze ring shear cell tester (SRSCT)(see Schulze 
-et al. \cite{RefWorks:104})
-have been built.
-A dedicated workflow that combines experiments and simulations must now be devised following the Design of Experiments method, as illustrated by Grossman and Del Vecchio \cite{RefWorks:116}.\\
-The main goal of this new procedure should be the characterization of
-non-spherical particles, through $DEM$ coefficients,
-following standardizable steps.
-With this objective in mind, we profited from the shear cell experimental and numerical setup in combination with $LIGGGHTS$ simulation to improve the accuracy and the range of
-applicability of particle characterization.
-Nevertheless, $DEM$ simulations require tens of thousand of particles to achieve the necessary reliability for a straight-forward trial-and-error calibration procedure.
-The calibration compels to identify the $DEM-micro$ combination of parameters that numerically grants the same $bulk-macro$ behavior experimentally registered, measured as
-$steady-state-flow/pre-shear ~ coefficient-of-internal-friction $ $ (\mu_{ie-ps})$, $incipient-flow/shear ~ coefficient-of-internal-friction $ $ (\mu_{ie-s})$ and $bulk ~ density ~
-(\rho_b)$.
-Thus, the time necessary to perform all the possible $DEM-micro$ parameters combinations became boundless.
-In order to overcome this $doomed$ situation we decided to operate artificial
-neural networks, as suggested by Antony et al. \cite{RefWorks:161}.
-A limited number of combinations have been simulated, designed to maximize the representativity.
-Following the indications of Vaferi et al. \cite{RefWorks:150}, \textit{feed forward Multilayer Perceptron Neural Networks (MLPNN)} have been handled.
-Their trustworthiness, together with a backpropagation reinforcement learning training algorithm(scaled conjugate gradient), has been widely demonstrated in the literature, see
-Haykin \cite{RefWorks:158}.
-The DEM-micro parameters of the simulations have been used as inputs of the
-Neural Networks ($NN$), while the bulk values and behavior as targets for them.
-We then compared their outputs against the values provided by the shear cell
-experiments (within a 5\% error), gaining the $DEM-micro$ coefficients range.
-Oberkampf and Roy \cite{RefWorks:160} prescribe an ulterior validation step.
-To accomplish his demand, we realized a $static-angle-of-repose$ ($SAOR$) experiment and $SAOR$ simulation.
-Furthermore, we performed the $SAOR$ simulation, again with the same limited number of combinations.
-These allowed to determine one ulterior $bulk-macro$ behavior property, the
-$angle-of-repose$ ($AOR$).
-Likewise, we then trained $NN$ and optimized the number of its neurons.
-Later, this new trained $NN$ received as insertion the $DEM-micro$ coefficients
-range previously determined.
-We then compared their outputs against the values provided by the $SAOR$ experiment (again within a 5\% error), gaining a narrower $DEM-micro$ coefficients range.
-Since this study was supported by the metallurgical industry, the materials
-examined were: silibeads (2 mm), coke, iron ore, limestone, sinterfine (all
-0-3.15 mm).
-Witten et al . \cite{RefWorks:174}.
-\input{tables/08DEMparameters}
-For the same reason, cohesive materials have been excluded from this study.\\ \label{par:materials}
+et al. \cite{RefWorks:136}, while a useful example is provided by the shear cell tester 
+simulation developed by Aigner et al. \cite{RefWorks:139}.\\
+From the experimental point of view, we are focusing on the bulk behaviour of the materials analysed. 
+It was out of scope to investigate the properties of each particle separately, like shape, 
+Young modulus ($E$), coefficient of Poisson ($\nu$) of each sample.\\
+Nevertheless, the DEM requires defining these and other attributes for each single particle. 
+In our study, we assigned the same particles parameters, except for the radius, to all the 
+particles in each simulation. 
+In other words, the DEM attributes may vary comparing different 
+numerical setups, but are kept constant for each of simulation. 
+Further, we tried to obtain simulations ideally perform, with the correct parameters, 
+the same macroscopic behaviour of the experiments, the static angle of repose
+($AOR$) and Schulze ring shear cell tester ($SRSCT$). That allowed us to later
+compare numerical and experimental results, as suggested by Ai et al.
+\cite{RefWorks:131}.\\
+We could identify the most suitable value for each DEM parameter 
+investigated performing large numbers of simulations. Each will have a different value. 
+For instance, for the coefficient of rolling friction ($\mu_r$), ranging from
+$0.01$ to $1.00$, a reasonable approach would involve $100$ simulations.
+Regrettably, as stated by Hoehner et al. \cite{RefWorks:86}, all the parameters listed in table TABLENUMBER 
+contribute to define the numerical bulk behaviour. Performing and investigate the 
+more than $10^8$ simulations required was out of the scope of this paper.
+Instead, we executed a limited number of simulations and we investigated them. 
+Statistical method as the Polynomial Chaos Expansion (PCE) or Bayesian networks 
+could be used to correlate numerical and experimental behaviour. 
+Still, these methods are challenged by the non-linearity intrinsic to our system. 
+Rather, as suggested by Vaferi et al. \cite{RefWorks:150} and Witten et al.
+\cite{RefWorks:174}, we harnessed Artificial Neural Networks (NN) for their stability and reliability.
+Furthermore, the main aim of this work was to improve the characterization 
+of several DEM parameters for non-spherical particles. 
+From the performed simulations bulk representative parameters were extracted. 
+They provide the information for the output layer of the NN. Instead the DEM 
+parameters of the same simulations provided the information for the input layer. 
+Once trained, these NN were fed with random combinations of DEM parameters (~6M), 
+and they provided numerical bulk representative parameters for each of these combinations. 
+Those were compared with the experimental results. A portion of the combinations
+(ca. 0.1\%)
+had parameters matching with the experiments, i.e. the ratio of the NN behaviour
+values over the experimental values differed less than 5\%, as suggested by Oberkampf et al. \cite{RefWorks:160}. 
+We kept these combinations as working solutions.
+Since this study was supported by the metallurgical industry, the material examined was  sinter fine (0-3.15 mm).
+Eventually, all the un-cohesive materials that can be tested through the $AOR$
+and $SRSCT$ could be numerically characterized through this workflow, because no
+further hypothesis have been imposed.
+This flexibility would allow extending the procedure to different granular materials, further than the ones examined.
+In the next section we will present the pre-requisites enforced. 
+First, the setups we operated to experimentally define the materials. 
+Later, the portion of the DEM theory we focused onto. 
+Then, the typology of NN we harnessed for this work. 
+Furthermore, a detailed methodology is presented. Finally, we show our results.
