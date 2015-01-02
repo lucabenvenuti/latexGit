@@ -18,7 +18,8 @@ simulation developed by Aigner et al. \cite{RefWorks:139}.\\
 From the experimental point of view, we are focusing on the bulk behaviour of the materials analysed. 
 It was out of scope to investigate the properties of each particle separately, like shape, 
 Young modulus ($E$), coefficient of Poisson ($\nu$) of each sample.\\
-Nevertheless, the DEM requires defining these and other attributes for each single particle. 
+Nevertheless, the $DEM$ requires defining these and other attributes for each
+single particle.
 In our study, we assigned the same particles parameters, except for the radius, to all the 
 particles in each simulation. 
 In other words, the DEM attributes may vary comparing different 
@@ -37,13 +38,14 @@ Regrettably, as stated by Hoehner et al. \cite{RefWorks:86}, all the parameters 
 contribute to define the numerical bulk behaviour. Performing and investigate the 
 more than $10^8$ simulations required was out of the scope of this paper.
 Instead, we executed a limited number of simulations and we investigated them. 
-Statistical method as the Polynomial Chaos Expansion (PCE) or Bayesian networks 
-could be used to correlate numerical and experimental behaviour. 
+Statistical method as the Polynomial Chaos Expansion ($PCE$) or Bayesian
+networks could be used to correlate numerical and experimental behaviour. 
 Still, these methods are challenged by the non-linearity intrinsic to our system. 
 Rather, as suggested by Vaferi et al. \cite{RefWorks:150} and Witten et al.
-\cite{RefWorks:174}, we harnessed Artificial Neural Networks (NN) for their stability and reliability.
+\cite{RefWorks:174}, we harnessed Artificial Neural Networks ($NN$) for their
+stability and reliability.
 Furthermore, the main aim of this work was to improve the characterization 
-of several DEM parameters for non-spherical particles. 
+of several $DEM$ parameters for non-spherical particles. 
 From the performed simulations bulk representative parameters were extracted. 
 They provide the information for the output layer of the NN. Instead the DEM 
 parameters of the same simulations provided the information for the input layer. 
@@ -52,7 +54,8 @@ and they provided numerical bulk representative parameters for each of these com
 Those were compared with the experimental results. A portion of the combinations
 (ca. 0.1\%)
 had parameters matching with the experiments, i.e. the ratio of the NN behaviour
-values over the experimental values differed less than 5\%, as suggested by Oberkampf et al. \cite{RefWorks:160}. 
+values over the experimental values differed less than $5\%$, as suggested by
+Oberkampf et al. \cite{RefWorks:160}.
 We kept these combinations as working solutions.
 Since this study was supported by the metallurgical industry, the material examined was  sinter fine (0-3.15 mm).
 Eventually, all the un-cohesive materials that can be tested through the $AOR$
@@ -61,6 +64,6 @@ further hypothesis have been imposed.
 This flexibility would allow extending the procedure to different granular materials, further than the ones examined.
 In the next section we will present the pre-requisites enforced. 
 First, the setups we operated to experimentally define the materials. 
-Later, the portion of the DEM theory we focused onto. 
-Then, the typology of NN we harnessed for this work. 
+Later, the portion of the $DEM$ theory we focused onto. 
+Then, the typology of $NN$ we harnessed for this work. 
 Furthermore, a detailed methodology is presented. Finally, we show our results.

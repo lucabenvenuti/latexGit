@@ -13,138 +13,106 @@
 
 The first step of the procedure was using a SRSCT (see \cite{RefWorks:142}) to characterize particle flow properties, 
 especially the complete yield locus.
-With the procedure described in appendix A1 we obtained for each of the twelve load conditions 
-three values representative of the bulk behaviour: bulk density ($\rho_b$),
+With the procedure described in \ref{subsec:srsctexperiment} we
+obtained for each of the twelve load conditions three values representative of the bulk behaviour: bulk density ($\rho_b$),
 coefficient of internal friction in the pre-shear phase ($ (\mu_{psh})$) and
 coefficient of internal friction in the shear phase  ($ (\mu_{sh})$).\\
-Furthermore, in order to recreate the repose angle observed in a pile of the real material, we performed angle of repose (AOR) tests, as the AOR was the fourth behaviour value. The complete description can be found in appendix B1.
-Moreover, we sieved the materials samples to obtain the size distribution of the particles. 6 different sifters have been used.
-
-
+Furthermore, in order to recreate the repose angle observed in a pile of the real material, 
+we performed angle of repose ($AOR$) tests, as the $AOR$ was the fourth
+behaviour value. The complete description can be found in
+\ref{subsec:aorexperiment}.
+Moreover, we sieved the materials samples to obtain the size distribution of the
+particles. Six different sifters have been used.\\
 
 \subsection{Discrete element method}
 \label{subsec:dem}
-The $DEM$ is based on a relatively elementary idea. For each particle i inside
-the domain it follows the course and calculate the force that particle i exerts on particle j
-by integrating Newton' second law:
-\input{equations/newtonlaw}
-\input{equations/cor} 
-and the position and orientation equations.
-The main forces interested are: gravitation, contact forces due to collisions,
-solid-solid interactions such as electrostatic, Van der Waals, cohesive forces
-and fluid-solid interactions in multiphase flows.
-For the raw materials used in this work Di Renzo and Di Maio \cite{RefWorks:145}
-suggested using the non-linear Hertzian model without cohesion for the particle-particle and particle-wall contacts.
-Although, its complexity increased the computational effort to fathom the
-micro-macro transition relationship.\\
-This granular model uses the following formula for the force between two granular particles (Eq. \ref{eq:forceij}):
+The $DEM$ is based on a relatively elementary idea. 
+For each particle i inside the domain it follows the trajectory and calculates the force that particle i exerts on particle j. 
+The main forces involved are: gravity, contact forces due to collisions and further interactions such as electrostatic, 
+Van der Waals, cohesive forces and fluid-solid interactions in multiphase flows. For the raw material used in this work 
+Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear Hertzian model without cohesion for 
+the particle-particle and particle-wall contacts. 
+This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
 \input{equations/forceij}
-while the tangential force component is truncated to fulfill
+where the subscript n stands for normal and t for tangential. 
+$k$ and $\gamma$ are respectively the elastic and damping coefficients, 
+while $\delta$ and $v$ the displacement and the velocity, $r$ the distance
+between two particles of radii $R_i$ and $R_j$ and $d = R_i + R_j $ is the
+contact distance.
+Both the normal and the tangential
+force comprise two terms, a spring force and a damping force. 
+The shear force is a "history" effect that accounts for the tangential displacement 
+("tangential overlap") between the particles for the duration of contact. 
+The tangential force component is truncated to fulfil 
 \input{equations/force_t}
-Both the normal and the tangential force comprise two terms, a spring force and a damping force. The shear force is a "history" effect that accounts for the tangential displacement 
-("tangential overlap") between the particles for the duration of contact. \\
-
-The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from the material properties as follows:
-\input{equations/hertz}
-In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{eq:equivProp2}) are required:
-\input{equations/equivProp2}
-The coefficient of rolling friction for coarse round particles is a critical
-parameter describing inter-particle friction in medium to dense granular flows simulations.
-It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
-\input{equations/mur}
-The $\mu_r$ parameter enters the equations according to the elasto-rolling
-resistance model presented by \cite{RefWorks:87} and \cite{RefWorks:131}, also
-used by \cite{RefWorks:173}, based on the work of
-\cite{RefWorks:143}(and in contrast to \cite{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
-This is appropriate for the one way rolling cases as well as the cycling rolling ones.
-The total rolling resistance torque is (Eq. \ref{eq:trmax}):
+where $\mu_s$ is the coefficient of sliding friction, one of the particle based
+DEM parameter we investigated. 
+An ulterior parameter was the coefficient of rolling friction ($\mu_r$). 
+For coarse not round particles is a critical parameter and describes inter-particle 
+friction in medium to dense granular flows simulations. It is proportional to the 
+torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
+equations according to the elasto-rolling resistance model presented by Wensrich and 
+Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131}, 
+based on the work of Jiang et al. \cite{RefWorks:143}. 
+The model is called $EPSD2$ in $LIGGGHTS$. This is appropriate for the one way
+rolling cases as well as the cycling rolling ones.
+The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 \input{equations/trmax}
-
-Given these equations, completely defining a dry material for DEM simulations requires these data:
-\begin{itemize}
-\item{the radius of the particles ($R$);}
-\item{the Young's modulus ($E$) and the Poisson's coefficient ($\nu$);}
-\item{the particle density ($\rho_p$) and the coefficient of restitution ($e$);}
-\item{the coefficients of sliding ($\mu_s$) and rolling ($\mu_r$) friction.}
-\end{itemize}
-
-
-Further details on the method can be found in \cite{RefWorks:133}.\\
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%Simulations
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-$LIGGGHTS$, the simulation toolbox we used, meets most of the requirements of modelling the shear tester described above. 
-First, it is capable of importing triangulated meshes of the two rings and a top lid. Since the real set-up had a wall thickness, 
-contact forces acting on a mesh are summed and can be saved, and thus shear force calculation is available out of the box. Moreover, 
-the code can move a mesh with constant velocity as required for the measurement. 
-To determine the shear stresses, the bulk solid had to be stressed with user-defined normal stresses.
-Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
-
-Although the geometry differs, the $SRSCT$ was designed to obtain the same
-values for the shear stresses as the Jenike shear cell tester ($JSCT$), but with
-improved automation and reliability \cite{RefWorks:118}.
-For this reason, the simulation setup has been based over the $JSCT$.
-As suggested by \cite{RefWorks:139}, the diameter and the height of the rings operated in the simulations were respectively 50 and 13 times the diameter of the particles involved.
-The layout of the simulation geometry can be seen in Figure \ref{fig:09simGeometry}. \\
-\input{images/texCaller/09simGeometry} 
-
-A simulation run comprised four phases. 
-First, the shear cell was filled with the granulate material, and it was allowed to settle. 
-Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
-As in the experiment, the servo-wall allows to calculate the position of the lid while the first particle is touched. Together with the simulation area, we calculated $\rho_b$.
-Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
-Finally, the normal load was reduced to a fraction of the initial load, the ring was moved again by a distance $l$, and the shear force was recorded. 
-Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation.\\
-The normal stresses (pre-shear and shear phases) applied in each simulation were
-the same as in the experiments. The corresponding $\tau_{psh}$ and $\tau_{sh}$
-were calculated - as in the experiments - from the mean of the plateau.\\
-
-Further, we also performed $AOR$ simulations. Here we tried to replicate meticulously the experimental set-up, considering both the plate and the lift-able boundary, 
-respectively 50 and 20 times the diameter of the particles involved.
-The particles had the same properties as in the shear cell simulation.
-The first phase was identical to that of the shear cell simulation. 
-After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
-\input{images/texCaller/08aorsim}
-An image post-processing software was used to obtain the average slope.
-%%%%%%%%%%%%%%%%%%%Furthermore, in both simulation set-ups the $E$ value was not realistic, but .
-This led to a reduction in computational time, resulting in 1 hour with 32 cores
-for each shear cell simulation and 9 hours for each $AOR$ simulation.\\
+Here, $R_r$ is the equivalent radius and $F_n$ the normal force.
+The DEM parameters for the Young's modulus ($E$) and the coefficient of Poisson ($\nu$) 
+have been taken from the literature, see \cite{RefWorks:175} and \cite{RefWorks:176}, 
+although we reduced the former to increase the time step, following the indications of Ai et al. \cite{RefWorks:131}. 
+The particles radii have been approximated from the experimental measurements. 
+The last two particle based $DEM$ parameter we investigated were the particle density 
+($\rho_p$) and the coefficient of restitution ($COR$), as defined by Ai. et al. \cite{RefWorks:131}. 
+There and in the work Wensrich and Katterfeld \cite{RefWorks:87} further details on the method can be found.
+The complete description of the shear cell simulations can be found in \ref{subsec:srsctsimulation}, 
+while the AOR simulation is presented in appendix \ref{subsec:aorsimulation}.\\
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
 
-An Artificial Neural Network (NN) is a powerful modellization technique, based
-on non-linear functions (Haykin \cite{RefWorks:158}). In this paper, we first use them to fit the DEM
-numerical simulation data, and then to process vast amount of parameters combinations.
-NN original idea is directly borrowed from human brain design, with neurons and
-synapses. They map combinations of input data into convenient outputs (fitting).
-There are divers types of NN, remarkably the Feedforward (FF) and the Radial
-basis function (RBF). For FF-NN, considerable
-amount of traning algorithms are available. The most common are based on
-backpropagation: e.g. Levenberg-Marquardt, Bayesian regulation and scaled
-conjugate gradient. 
-To recognize not linearly separable data the standard 
-linear perceptron $NN$ has been modified into \textit{FF Multilayer Perceptron
-Neural Networks (MLPNN)}. Here, each processing units or node (neuron) possesses a nonlinear activation
-function. Together, they are interconnected into layers, also linked together.
-The trustworthiness of the $MLPNN$, with a backpropagation
-reinforcement learning training algorithm (scaled conjugate gradient), has been widely
-demonstrated in the literature, see Haykin \cite{RefWorks:158}.
-Several scientists \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
-RefWorks:170} have operated $NN$ to model materials mechanical properties.
-In fact, $MLPNN$ are built with three different layers.
+An Artificial Neural Network ($NN$) is a powerful modellization technique, 
+based on non-linear functions (Haykin \cite{RefWorks:158}). 
+In this paper, we first use the $NN$ to fit the $DEM$ numerical simulation data, 
+and then to process vast amount of parameters combinations. 
+The original idea is directly borrowed from human brain design, with neurons and synapses. 
+They map combinations of input data into convenient outputs (fitting). 
+There is a variety of types of $NN$, remarkably the Feedforward ($FF$) 
+and the Radial basis function ($RBF$). For $FF-NN$, considerable amount 
+of traning algorithms are available. The most common are based on backpropagation: 
+e.g. Levenberg-Marquardt, Bayesian regulation and scaled conjugate gradient. 
+To recognize not linearly separable data the standard linear perceptron $NN$ 
+has been modified into \textit{FF Multilayer Perceptron Neural Networks (MLPNN)}. 
+Here, each processing units or node (neuron) possesses a nonlinear activation function. 
+Together, they are interconnected into layers, also linked together. 
+The trustworthiness of the $MLPNN$, with a backpropagation reinforcement learning 
+training algorithm (scaled conjugate gradient), has been widely demonstrated in the 
+literature, see Haykin \cite{RefWorks:158}. Several scientists 
+\cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169, RefWorks:170} 
+have operated $NN$ to model materials mechanical properties. 
+In fact, $MLPNN$ are built with three different layers. 
+\input{images/texCaller/18NNscheme}
 The input layer has a number of neurons equal to the number of different inputs
-of the network. 
-Following the best practice suggested by Vaferi et al. \cite{RefWorks:150}
-$MLPNN$ have been handled. 
-Similarly, the best practice also demands to establish the
-most appropriate number of neurons inside the hidden layer of each $NN$.
-
-
-%\lipsum[1]
-%\input{equations/mrtm}
-
-
-IMAGE OF MY NEURAL NETWORK WITH INPUT AND OUTPUT PARAMETERS. \\
+of the network, see Fig. \ref{fig:18NNscheme}.
+Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
+Similarly, the best practice also demands to establish the most appropriate number of neurons inside the 
+hidden layer of each $NN$. This check has been handled through mean square maximization ($R^2$). 
+For each investigated output we chose the number of neurons with the greater
+$R^2$.\\
+Further, we should question the quality of the NN data, accordingly to the 
+Oberkampf et al. \cite{RefWorks:160} method. Haykin \cite{RefWorks:158} 
+suggests questioning both the NN training process and the following data generation from given inputs. 
+The former is usually challenged when dealing with experimental training data, and frequently 
+managed by noise-corrupted patterns calibration. Nevertheless, our training pool is numerical. 
+The particles in each of our simulations are created through a random algorithm, and the training pool is extensive. 
+For massive training data the effect of noise-corrupted patterns is negligible, see Haykin \cite{RefWorks:158}. 
+Instead the latter was a challenging aspect of our work. Once trained, as input for the $NN$ we imposed 
+combinations of $DEM$ parameters. 
+We tried different methods to generate these combinations. 
+Our first attempt was assigning to the investigated variables parameters in even increments 
+from the minimum to the maximum values. 
+E.g. the $COR$ ranges from 0.5 to 0.9, the first value would be 0.5, the second 0.508163 and so on. 
+To increase the generalization, we decided to follow a different approach. 
+Random values generators created values in the defined ranges and in the requested 
+number for each of the investigated parameter. Then, they were combined and imposed as input.\\
