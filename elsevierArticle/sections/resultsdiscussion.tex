@@ -5,29 +5,27 @@
 \subsection{Experiments}
 \label{subsec:experiments}
 
-%\InsTab{tables/05sinterTableExperimental}
-Initially, experimental values identifying the bulk behavior, $\phi_{e-psh}$, 
-$\phi_{e-sh}$ and $\rho_{b}$, for sinter fine have been acquired though the
-SRSCT, see Table 
+Initially, experimental values identifying the bulk behavior, $\mu_{e-psh}$, $\mu_{e-sh}$ and $\rho_{b}$, 
+for sinter fine have been acquired though the SRSCT, see Table \ref{tab:05sinterTableExperimental}. 
+A representative stress path can be seen in Fig. \ref{fig:20experimental}.
+\input{tables/05sinterTableExperimental}
+\input{images/texCaller/20experimental}
 Later, two AOR test have been performed, given an average angle of $38.85
 ^\circ$.
- 
-ONE TABLE FOR EACH MATERIAL
-
-% a
-% 
-% \input{equations/force_t}
+We also realized the SIEVING.
 
 \subsection{DEM Simulations}
 \label{subsec:simulations}
-% \lipsum[1]
-% \input{equations/hertz}
-For sinter fine 704 shear cell and 54 static angle of repose simulations have
-been realized with the variation described in Table \ref{tab:07DEMinputvalues},
-gaining four values identifying the numerical bulk behavior, $\phi_{e-psh}$, 
-$\phi_{e-sh}$, $AOR$ and $\rho_{b}$ for each simulated combination.
-The shear cell simulations made are more than the angle of repose to account for
-the different normal load applied.
+
+For sinter fine 546 shear cell and 81 static angle of repose simulations have
+been realized with the variation described in Tab.
+\ref{tab:10DEMVariableinputvalues}.
+A representative stress path can be seen in Fig. \ref{fig:21simexample}.
+\input{images/texCaller/21simexample}
+The computational time resulted in 1 hour with 32 AMD cores for a benchmark
+shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
+Simulations with large $dCylDp$ required a greater time amount (e.g. with 400K
+particles $\~ 12 hours$ for the shear cell). \\
 
 
 
@@ -35,60 +33,54 @@ the different normal load applied.
 \subsection{ANN model development}
 \label{subsec:annmodeldev}
 
-We then fed the $NN$ with the same $DEM-micro$ parameters of these simulations
-as input.
-A series of NN have been realized for each bulk behavior as target, ranging from
-5 to 40 neurons in the hidden layer.
+First, we present the regression plot of a bulk behaviour parameter, e.g. the
+$\mu_{e-psh}$, see Fig. \ref{fig:22regression}, where the regression plot for
+the $NN$ with the maximum $R^2$ in shown. Each circle represents a simulation. 
+The plot presents a consistent agreement between the DEM results distribution and the NN regression line.
+\input{images/texCaller/22regression}
 The linear relationship between the
 training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
 \input{tables/06inputRelationshipTable}
-EVALUTE IF ADD AOR AS ENTRY IN THE TABLE OR MAKE A NEW SEPARATE TABLE
+Then we show how the $R^2$ changed with the different number of neurons. The
+straight line, referred only to the test simulations, is more sensible to
+variations of number of neurons, see Fig. \ref{fig:23regressiongraph}.
+\input{images/texCaller/23regressiongraph}
+Thus, we selected the $NN$ with the maximum $R^2$ in the test line, as stated in the methodology.
+Later, we processed the random combinations (Tab.
+\ref{tab:10DEMVariableinputvalues}) with the $NN$.
+The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
+individuation of all the tabbed $DEM$ combinations for the shear cell did not take more than a few seconds on a single core. 
+We represented the tabbed combinations for one load condition of the shear cell in Fig.
 
+% \ref{eq:rsquare}.
+% \input{equations/rSquare}
+% 
+% \ref{eq:rootMeanSquareError}.
+% \input{equations/rootMeanSquareError}
 
-
-% \lipsum[1]
-% \input{equations/mur}
-
-\subsection{ANN identification}
-\label{subsec:annmodeliden}
-Subsequently, we controlled the square regression error between the $bulk-macro$
-behavior in these simulations and in the output of the $NN$, see Eq.
-\ref{eq:rsquare}.
-\input{equations/rSquare}
-SSE is the sum of squared error, SSR is the sum of squared regression, SST is
-the sum of squared total.
-As in literature, this goal has been achieved by first excluding 15\% of the
-simulations from the training processes.\\
-
-RMSE amplifies and severely punishes large errors, see Eq.
-\ref{eq:rootMeanSquareError}.
-\input{equations/rootMeanSquareError}
-
-
-Finally, we selected for each $bulk-macro$ behavior property ($\mu_{ie-ps}$, $\mu_{ie-s}$ and $\rho_b$) the $NN$ with the 
-number of neurons that provided the maximum $R^2$.
 
 
 % \lipsum[1]
 % \input{equations/newtonlaw}
-
-\subsection{ANN application}
-\label{subsec:annapplication}
-
-Later, each of these three trained $NN$ received as insertion $100M$ different
-combinations $DEM-micro$ parameters.
-So, we gained the numerical bulk behavior for each of this combination. 
-We then compared the values of these behaviors against the experimental bulk
-values, $SRSCT$ and $AOR$, obtaining a narrow range of valid DEM-micro
-combinations (about 80K).
-These results have been showed through radar plots (Figs. \ref{fig:15Schulze}
-and \ref{fig:16aorSchulzeIntersectionWorking}).
-To highlight an eventual $clumping$ behavior, we also plot the results in a
-cloud shape, see Fig. \ref{fig:17aorSchulzeIntersectionCloudSFRFCOR}.
-
-%\input{images/texCaller/14aorSchulzeIntersection}
-\input{images/texCaller/15Schulze}
-% \lipsum[1]
-\input{images/texCaller/16aorSchulzeIntersectionWorking}
-% \input{equations/phi_ps}
-\input{images/texCaller/17aorSchulzeIntersectionCloudSFRFCOR}
+% \subsection{ANN identification}
+% \label{subsec:annmodeliden}
+% \subsection{ANN application}
+% \label{subsec:annapplication}
+% 
+% Later, each of these three trained $NN$ received as insertion $100M$ different
+% combinations $DEM-micro$ parameters.
+% So, we gained the numerical bulk behavior for each of this combination. 
+% We then compared the values of these behaviors against the experimental bulk
+% values, $SRSCT$ and $AOR$, obtaining a narrow range of valid DEM-micro
+% combinations (about 80K).
+% These results have been showed through radar plots (Figs. \ref{fig:15Schulze}
+% and \ref{fig:16aorSchulzeIntersectionWorking}).
+% To highlight an eventual $clumping$ behavior, we also plot the results in a
+% cloud shape, see Fig. \ref{fig:17aorSchulzeIntersectionCloudSFRFCOR}.
+% 
+% %\input{images/texCaller/14aorSchulzeIntersection}
+% \input{images/texCaller/15Schulze}
+% % \lipsum[1]
+% \input{images/texCaller/16aorSchulzeIntersectionWorking}
+% % \input{equations/phi_ps}
+% \input{images/texCaller/17aorSchulzeIntersectionCloudSFRFCOR}
