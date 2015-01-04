@@ -35,7 +35,7 @@ the particle-particle and particle-wall contacts.
 This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
 \input{equations/forceij}
 where the subscript n stands for normal and t for tangential. 
-$k$ and $\gamma$ are respectively the elastic and damping coefficients, 
+Here, $k$ and $\gamma$ are respectively the elastic and damping coefficients, 
 while $\delta$ and $v$ the displacement and the velocity, $r$ the distance
 between two particles of radii $R_i$ and $R_j$ and $d = R_i + R_j $ is the
 contact distance.
@@ -46,7 +46,7 @@ The shear force is a "history" effect that accounts for the tangential displacem
 The tangential force component is truncated to fulfil 
 \input{equations/force_t}
 where $\mu_s$ is the coefficient of sliding friction, one of the particle based
-DEM parameter we investigated. 
+$DEM$ parameter we investigated. 
 An ulterior parameter was the coefficient of rolling friction ($\mu_r$). 
 For coarse not round particles is a critical parameter and describes inter-particle 
 friction in medium to dense granular flows simulations. It is proportional to the 
@@ -59,7 +59,7 @@ rolling cases as well as the cycling rolling ones.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 \input{equations/trmax}
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
-The DEM parameters for the Young's modulus ($E$) and the coefficient of Poisson ($\nu$) 
+The $DEM$ parameters for the Young's modulus ($E$) and the coefficient of Poisson ($\nu$) 
 have been taken from the literature, see \cite{RefWorks:175} and \cite{RefWorks:176}, 
 although we reduced the former to increase the time step, following the indications of Ai et al. \cite{RefWorks:131}. 
 The particles radii have been approximated from the experimental measurements. 
@@ -67,7 +67,7 @@ The last two particle based $DEM$ parameter we investigated were the particle de
 ($\rho_p$) and the coefficient of restitution ($COR$), as defined by Ai. et al. \cite{RefWorks:131}. 
 There and in the work Wensrich and Katterfeld \cite{RefWorks:87} further details on the method can be found.
 The complete description of the shear cell simulations can be found in \ref{subsec:srsctsimulation}, 
-while the AOR simulation is presented in appendix \ref{subsec:aorsimulation}.\\
+while the AOR simulation is presented in \ref{subsec:aorsimulation}.\\
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
@@ -92,7 +92,7 @@ literature, see Haykin \cite{RefWorks:158}. Several scientists
 \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169, RefWorks:170} 
 have operated $NN$ to model materials mechanical properties. 
 In fact, $MLPNN$ are built with three different layers. 
-\input{images/texCaller/18NNScheme}
+%\input{images/texCaller/18NNScheme}
 The input layer has a number of neurons equal to the number of different inputs
 of the network, see Fig. \ref{fig:18NNscheme}.
 Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
@@ -102,10 +102,12 @@ For each investigated output we chose the number of neurons with the greater
 $R^2$.\\
 Further, we should question the quality of the NN data, accordingly to the 
 Oberkampf et al. \cite{RefWorks:160} method. Haykin \cite{RefWorks:158} 
-suggests questioning both the NN training process and the following data generation from given inputs. 
+suggests questioning both the $NN$ training process and the following data generation from given inputs. 
 The former is usually challenged when dealing with experimental training data, and frequently 
-managed by noise-corrupted patterns calibration. Nevertheless, our training pool is numerical. 
-The particles in each of our simulations are created through a random algorithm, and the training pool is extensive. 
+managed by noise-corrupted patterns calibration. Nevertheless, our training pool
+was numerical.
+The particles in each of our simulations were created through a random
+algorithm, and the training pool was extensive.
 For massive training data the effect of noise-corrupted patterns is negligible, see Haykin \cite{RefWorks:158}. 
 Instead the latter was a challenging aspect of our work. Once trained, as input for the $NN$ we imposed 
 combinations of $DEM$ parameters. 
@@ -116,3 +118,4 @@ E.g. the $COR$ ranges from 0.5 to 0.9, the first value would be 0.5, the second 
 To increase the generalization, we decided to follow a different approach. 
 Random values generators created values in the defined ranges and in the requested 
 number for each of the investigated parameter. Then, they were combined and imposed as input.\\
+\input{images/texCaller/18NNScheme}
