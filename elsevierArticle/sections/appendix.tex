@@ -19,8 +19,8 @@ Together with the area of the ring, the total volume can be calculated, and subs
 of the sample is obtained, the first value representative of the bulk behaviour.
 Then the specimen was pre-sheared until a steady-state shear value was reached.
 The steady-state flow horizontal stress (Fig. \ref{fig:02srsctdiagram}) is called $steady-state-flow/pre-shear$ stress ($\tau_{psh}$).
-Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal friction of the pre-shear phase ($\phi_{e-psh}$), 
-and consequently the $coefficient-of-internal-friction $ $ (\mu_{psh})$, the
+Knowing the normal stress, it provides (Eq. \ref{eq:phi_ps}) the angle of
+internal friction of the pre-shear phase ($\phi_{e-psh}$), and consequently the $coefficient-of-internal-friction $ $ (\mu_{psh})$, the
 second behaviour value, see Schulze \cite{RefWorks:118}:
 \input{equations/phi_ps}   
 % \input{images/texCaller/02srsctdiagram}
@@ -45,7 +45,7 @@ Each experiment was performed on a fresh material sample. \\
 $LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
 modelling the shear tester described in the \ref{subsec:srsctexperiment}. 
 First, it is capable of importing triangulated meshes of the two rings and a top lid. 
-Since the real set-up had a wall thickness, contact forces acting on a mesh are summed and can be saved, 
+Since the real setup had a wall thickness, contact forces acting on a mesh are summed and can be saved, 
 and thus shear force calculation is available out of the box. Moreover, the code can move a mesh with constant 
 velocity as required for the measurement. To determine the shear stresses, the bulk solid had to be stressed with 
 user-defined normal stresses. Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
@@ -61,10 +61,11 @@ For this reason, we considered the cylinders dimension, as proportion to the mea
 an additional $DEM$ parameter investigated. \\   
 % \input{images/texCaller/09simGeometry} 
 A simulation run comprised four phases. 
-First, the shear cell was filled with the granulate material, and it was allowed to settle. 
+First, the shear cell was filled with the granulate material, and it was allowed
+settling.
 Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
-As in the experiment, the servo-wall allows to calculate the position of the lid while the 
-first particle is touched. 
+As in the experiment, the servo-wall allows calculating the position of the lid
+while the first particle is touched. 
 Together with the simulation area, we calculated $\rho_b$. 
 Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
 Finally, the normal load was reduced to a fraction of the initial load, 
@@ -87,7 +88,8 @@ A sample was deposited on a 20 cm diameter plate with lift-able boundary, called
 % \input{images/texCaller/05aor}
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
 Once stabilized, the $AOR$ was measured eight times using a digital protractor at different positions of the heap. 
-The result is given as the average of the measurements, granting the fourth behaviour value.
+The result is produced as the average of the measurements, granting the fourth
+behaviour value.
 Notably, the experiments were performed only for larger size bulk solids. 
 So, the compaction condition in the initial state was not critical to the final result.
 \input{images/texCaller/05aor}
@@ -95,16 +97,18 @@ So, the compaction condition in the initial state was not critical to the final 
 
 \subsection{AOR simulation}
 \label{subsec:aorsimulation}
-In $AOR$ simulations we tried to replicate meticulously the experimental set-up, 
+In $AOR$ simulations we tried to replicate meticulously the experimental setup, 
 considering both the plate and the lift-able boundary, with the same domain size consideration as before. 
 The particles had the same properties as in the shear cell simulation. The first phase was identical to that of the shear cell simulation. 
 After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
 % \input{images/texCaller/08aorsim} 
 An image post-processing software was used to obtain the average slope.
 \input{images/texCaller/08aorsim} 
+
+
 \input{images/texCaller/36schulzeradarandcloudfirst}
 \input{images/texCaller/37schulzeradarandcloudsecond}
 \input{images/texCaller/38schulze10070aorradarandcloudfirst}
 \input{images/texCaller/39schulze10070aorradarandcloudsecond}
 
-\end{appendix}\
+\end{appendix}

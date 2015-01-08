@@ -42,7 +42,8 @@ So, we could use the $DEM$ parameter combinations and their corresponding bulk v
 Notably, we excluded 15\% of the simulations ($test ~ simulations$), casually
 picked, from the training processes.
 First, we started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{ie-ps}$ to create 36 $NN$. 
-They differed because they have from five to forty neurons in the hidden layer. 
+They differed because they included from five to forty neurons in the hidden
+layer.
 Later, we controlled the square regression error between the $bulk-macro$ behaviours in the output of 
 the $NN$ and the 15\% $test ~ simulations$, granted uncorrelated. 
 So, we could select for $\mu_{ie-ps}$ the $NN$ with the maximum $R^2$, and we noted its number of neurons. 
