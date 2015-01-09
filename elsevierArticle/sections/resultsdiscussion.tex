@@ -6,22 +6,40 @@
 \label{subsec:experiments}
 
 Initially, experimental values identifying the bulk behavior, $\mu_{e-psh}$, $\mu_{e-sh}$ and $\rho_{b}$, 
-for sinter fine have been acquired through the $SRSCT$, see Table
-\ref{tab:05sinterTableExperimental}.
-A representative stress path can be seen in Fig. \ref{fig:20experimental}.
+for sinter fine have been acquired through the $SRSCT$, e.g. in Table
+\ref{tab:05sinterTableExperimental}
+these values for three load conditions are presented.
+In the $\mu_{psh}$ a descending path is evident. 
+Instead, the $\mu_{sh}$ is oscillating.
+The $\rho_b$ presents a clear average of $1760 [kg/m^3]$ with a $42 [kg/m^3]$
+deviation.
+The stress path for the second load condition of Table
+\ref{tab:05sinterTableExperimental} is shown in Fig.
+\ref{fig:20experimental}.
+In the first 300 seconds the $\sigma_n$ was kept constant. After 250 seconds a
+plateau was reached. 
+The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
+Later, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
+After approximately 30 seconds, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
 %\input{tables/05sinterTableExperimental}
 Later, two $AOR$ test have been performed, thus identifying an average angle of
 $38.85 ^\circ$.
-We also realized the sieving.
+We also realized the sieving, obtaining the radius ($R$) mean and standard
+deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
 \input{images/texCaller/20experimental}
 
 \subsection{DEM Simulations}
 \label{subsec:simulations}
 
 For sinter fine 546 shear cell and 81 static angle of repose simulations have
-been realized with the variation described in Tab.
+been realized with the variation described in table
 \ref{tab:10DEMVariableinputvalues}.
 A representative stress path can be seen in Fig. \ref{fig:21simexample}.
+Although the duration is smaller by two order of magnitude, the stress path is
+comparable to the experimental one, especially the plateaux.
+They were clearly relevant because there we collected the numerical bulk
+behaviour representative values.\\
 The computational time resulted in 1 hour with 32 AMD cores for a benchmark
 shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
 Simulations with large $dCylDp$ required a greater time amount (e.g. with 400K
@@ -32,12 +50,16 @@ particles (about 12 hours for the shear cell). \\
 \label{subsec:annmodeldev}
 
 First, we present the regression plot of a bulk behaviour parameter, e.g. the
-$\mu_{e-psh}$, see Fig. \ref{fig:22regression}, where the regression plot for
+$\mu_{psh}$, see Fig. \ref{fig:22regression}, where the regression plot for
 the $NN$ with the maximum $R^2$ in shown. Each circle represents a simulation. 
 The plot presents a consistent agreement between the $DEM$ results distribution and the $NN$ regression line.
 % \input{images/texCaller/22regression}
 The linear relationship between the
 training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
+The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
+$\rho_p$ and $\rho_b$.
+Instead, for $\mu_{sh}$ and $AOR$ the $\mu_r$ balanced the influence of the 
+$\mu_s$, and further parameters were worthly correlated. \\
 % \input{tables/06inputRelationshipTable}
 Then we show how the $R^2$ changed with the different number of neurons. The
 straight line, referred only to the test simulations, is more sensible to
@@ -46,7 +68,7 @@ to the total line. In the latter, also the correlated simulations used for
 training participate in the $R^2$ evaluation.
 % \input{images/texCaller/23regressiongraph}
 Thus, we selected the $NN$ with the maximum $R^2$ in the test line, as stated in the methodology.
-Later, we processed the random combinations (Tab.
+Later, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $NN$.
 The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
 individuation of all the tabbed $DEM$ combinations for the shear cell did not take more than a few seconds on a single core. 
@@ -59,7 +81,7 @@ especially for the $COR$, highlighting its scarce influence over the characteriz
 Instead, both the $\rho_p$  and the $\mu_s$ show a narrow confidence range, 
 displaying at the same time their influence and the validity of this procedure to find valid $DEM$ parameters. 
 That agrees with the examination of the ratio of the standard deviation to the
-range, see Tab. \ref{tab:13DEMvalidvalues}.
+range, see table \ref{tab:13DEMvalidvalues}.
 Further, we could see how different $DEM$ parameters
 combinations could reproduce the experimental behaviour and evaluate their mutual dependencies. 
 This is clearer in a cloud plot, as in Fig. 
@@ -93,7 +115,7 @@ had an important role and the reliability of these parameters combinations to re
 Also in the cloud plot in Fig. \ref{fig:34cloudpirker1schulze10070aor} we
 observed a condensed distribution of valid parameters.
 From the initial 6250000 combinations, only 3884 of them are valid (0.0621 \%),
-see Tab. \ref{tab:13DEMvalidvalues}.
+see table \ref{tab:13DEMvalidvalues}.
 \input{images/texCaller/22regression}
 \input{tables/06inputRelationshipTable}
 \input{tables/13DEMvalidvalues}
