@@ -51,8 +51,10 @@ particles (about 12 hours for the shear cell). \\
 
 First, we present the regression plot of a bulk behaviour parameter, e.g. the
 $\mu_{psh}$, see Fig. \ref{fig:22regression}, where the regression plot for
-the $NN$ with the maximum $R^2$ in shown. Each circle represents a simulation. 
-The plot presents a consistent agreement between the $DEM$ results distribution and the $NN$ regression line.
+the $NN$ with the maximum $R^2$ in shown. Each circle represents one of the 546
+simulations.
+The plot presents a consistent agreement between the $DEM$ results distribution
+(T in the legend) and the $NN$ regression (or fitting) line.
 % \input{images/texCaller/22regression}
 The linear relationship between the
 training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
@@ -67,12 +69,15 @@ variations of number of neurons, see Fig. \ref{fig:23regressiongraph}, compared
 to the total line. In the latter, also the correlated simulations used for
 training participate in the $R^2$ evaluation.
 % \input{images/texCaller/23regressiongraph}
-Thus, we selected the $NN$ with the maximum $R^2$ in the test line, as stated in the methodology.
+Thus, for each bulk parameter we selected the $NN$ with the maximum $R^2$ in the
+test line, as stated in the methodology, e.g the one with fifteen neurons for
+$\mu_{psh}$.
 Later, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $NN$.
 The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
 individuation of all the tabbed $DEM$ combinations for the shear cell did not take more than a few seconds on a single core. 
-We represented the tabbed combinations for one load condition of the shear cell in Fig.
+We represented the tabbed combinations ($TC1$) for one load condition of the
+shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$) in Fig.
 \ref{fig:24radarpirker1schulze10070}.
 % \input{images/texCaller/29schulzeradarandcloud}
 Here, the minimum and maximum values, together with the mean and the confidence
@@ -91,24 +96,28 @@ the experimental behaviour.
 This underlines once more their correlation, as already stated by Wensrich and 
 Katterfeld \cite{RefWorks:87}.
 To further demonstrate the validity of the procedure, we modified the product
-coefficient. In the first attempt we set it to $P=0.8$. We can see in the radar plot in Fig. 
+coefficient. In the first attempt we set it to $P=0.8$ and we obtained another
+series of tabbed combinations ($TC2$).
+We can see in the radar plot in Fig.
 \ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
 compared to $P=1.0$. Instead in the cloud plot in Fig. 
 \ref{fig:27cloudpirker08schulze10070} the area
 appears larger, although slightly less densely populated. Finally, for $P=1.2$
-the radar plot in Fig.
+and its tabbed combinations ($TC3$) the radar plot in Fig.
 \ref{fig:28radarpirker12schulze10070} shows a completely different confidence
 range, while the cloud plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
 Thus, it could be effectively handled for a wide range of bulk materials.\\
 % \input{images/texCaller/35schulze10070aorradarandcloud}
 We then processed the random combinations with the $AOR$ $NN$. In Fig.
-\ref{fig:31radarpirker1aor} the radar plot can be seen. In accordance with the
-theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
+\ref{fig:31radarpirker1aor} the radar plot realized with the same criteria as
+before can be seen.
+In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by the particles rolling the coefficient of rolling friction has the maximum influence. 
 Further, in the cloud plot in Fig. \ref{fig:32cloudpirker1aor}
 we could see that there are valid combinations also with slight $\mu_s$. \\
-Finally, we extracted from the tabbed combinations values ($P=1.0$) the $AOR$ $NN$ behaviour and compared it with the experimental one. 
+Finally, we extracted from the $TC1$ values the $AOR$ $NN$ behaviour
+and compared it with the experimental one.
 As can be seen in the radar plot in Fig.
 \ref{fig:33radarpirker1schulze10070aor}, the confidence range is meager, indicating that all the parameters but the $COR$ 
 had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
@@ -120,8 +129,12 @@ see table \ref{tab:13DEMvalidvalues}.
 \input{tables/06inputRelationshipTable}
 \input{tables/13DEMvalidvalues}
 \input{images/texCaller/23regressiongraph}
-\input{images/texCaller/29schulzeradarandcloud}
-\input{images/texCaller/35schulze10070aorradarandcloud}
+%\input{images/texCaller/29schulzeradarandcloud}
+%\input{images/texCaller/35schulze10070aorradarandcloud}
+\input{images/texCaller/36schulzeradarandcloudfirst}
+\input{images/texCaller/37schulzeradarandcloudsecond}
+\input{images/texCaller/38schulze10070aorradarandcloudfirst}
+\input{images/texCaller/39schulze10070aorradarandcloudsecond}
 
 
 %\input{images/texCaller/24radarpirker1schulze10070}
