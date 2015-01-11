@@ -5,7 +5,7 @@
 \subsection{Experiments}
 \label{subsec:experiments}
 
-Initially, experimental values identifying the bulk behavior, $\mu_{e-psh}$, $\mu_{e-sh}$ and $\rho_{b}$, 
+Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
 for sinter fine have been acquired through the $SRSCT$, e.g. in Table
 \ref{tab:05sinterTableExperimental}
 these values for three load conditions are presented.
@@ -28,12 +28,13 @@ $38.85 ^\circ$.
 We also realized the sieving, obtaining the radius ($R$) mean and standard
 deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
 \input{images/texCaller/20experimental}
+\input{tables/05sinterTableExperimental}
 
 \subsection{DEM Simulations}
 \label{subsec:simulations}
 
 For sinter fine 546 shear cell and 81 static angle of repose simulations have
-been realized with the variation described in table
+been realized with the variations described in table
 \ref{tab:10DEMVariableinputvalues}.
 A representative stress path can be seen in Fig. \ref{fig:21simexample}.
 Although the duration is smaller by two order of magnitude, the stress path is
@@ -43,14 +44,14 @@ behaviour representative values.\\
 The computational time resulted in 1 hour with 32 AMD cores for a benchmark
 shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
 Simulations with large $dCylDp$ required a greater time amount (e.g. with 400K
-particles (about 12 hours for the shear cell). \\
+particles about 12 hours for the shear cell). \\
 \input{images/texCaller/21simexample}
 
 \subsection{ANN model development}
 \label{subsec:annmodeldev}
 
-First, we present the regression plot of a bulk behaviour parameter, e.g. the
-$\mu_{psh}$, see Fig. \ref{fig:22regression}, where the regression plot for
+First, we controlled the regression of the bulk behaviour parameters, e.g. the
+$\mu_{psh}$, see Fig. \ref{fig:22regression}, where the corresponding plot for
 the $NN$ with the maximum $R^2$ in shown. Each circle represents one of the 546
 simulations.
 The plot presents a consistent agreement between the $DEM$ results distribution
@@ -63,8 +64,9 @@ $\rho_p$ and $\rho_b$.
 Instead, for $\mu_{sh}$ and $AOR$ the $\mu_r$ balanced the influence of the 
 $\mu_s$, and further parameters were worthly correlated. \\
 % \input{tables/06inputRelationshipTable}
-Then we show how the $R^2$ changed with the different number of neurons. The
-straight line, referred only to the test simulations, is more sensible to
+Then we observed how the $R^2$ changed with the different number of neurons for
+the $\mu_{psh}$.
+The straight line, referred only to the test simulations, is more sensible to
 variations of number of neurons, see Fig. \ref{fig:23regressiongraph}, compared
 to the total line. In the latter, also the correlated simulations used for
 training participate in the $R^2$ evaluation.
@@ -100,11 +102,11 @@ coefficient. In the first attempt we set it to $P=0.8$ and we obtained another
 series of tabbed combinations ($TC2$).
 We can see in the radar plot in Fig.
 \ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
-compared to $P=1.0$. Instead in the cloud plot in Fig. 
+compared to $P=1.0$, while in the cloud plot in Fig. 
 \ref{fig:27cloudpirker08schulze10070} the area
 appears larger, although slightly less densely populated. Finally, for $P=1.2$
 and its tabbed combinations ($TC3$) the radar plot in Fig.
-\ref{fig:28radarpirker12schulze10070} shows a completely different confidence
+\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
 range, while the cloud plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
 Thus, it could be effectively handled for a wide range of bulk materials.\\
@@ -123,7 +125,7 @@ As can be seen in the radar plot in Fig.
 had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
 Also in the cloud plot in Fig. \ref{fig:34cloudpirker1schulze10070aor} we
 observed a condensed distribution of valid parameters.
-From the initial 6250000 combinations, only 3884 of them are valid (0.0621 \%),
+From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
 see table \ref{tab:13DEMvalidvalues}.
 \input{images/texCaller/22regression}
 \input{tables/06inputRelationshipTable}
