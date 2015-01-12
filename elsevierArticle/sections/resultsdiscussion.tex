@@ -66,14 +66,9 @@ $\mu_s$, and further parameters were worthly correlated. \\
 % \input{tables/06inputRelationshipTable}
 Then we observed how the $R^2$ changed with the different number of neurons for
 the $\mu_{psh}$.
-The straight line, referred only to the test simulations, is more sensible to
-variations of number of neurons, see Fig. \ref{fig:23regressiongraph}, compared
-to the total line. In the latter, also the correlated simulations used for
-training participate in the $R^2$ evaluation.
-% \input{images/texCaller/23regressiongraph}
-Thus, for each bulk parameter we selected the $NN$ with the maximum $R^2$ in the
-test line, as stated in the methodology, e.g the one with fifteen neurons for
-$\mu_{psh}$.
+Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
+In this case we reached a $R^2 = 0.96$ for a $NN$ with fifteen neurons. 
+Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
 Later, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $NN$.
 The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
@@ -130,7 +125,7 @@ see table \ref{tab:13DEMvalidvalues}.
 \input{images/texCaller/22regression}
 \input{tables/06inputRelationshipTable}
 \input{tables/13DEMvalidvalues}
-\input{images/texCaller/23regressiongraph}
+%\input{images/texCaller/23regressiongraph}
 %\input{images/texCaller/29schulzeradarandcloud}
 %\input{images/texCaller/35schulze10070aorradarandcloud}
 \input{images/texCaller/36schulzeradarandcloudfirst}
