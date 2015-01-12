@@ -8,4 +8,6 @@ Thumbs.db
 main.fff
 *.eps
 *.pdf
+*.png
+*.tif
 /main.ttt
