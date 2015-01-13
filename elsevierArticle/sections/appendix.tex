@@ -11,8 +11,8 @@
 \subsection{SRSCT experiment}
 \label{subsec:srsctexperiment}
 A representative sample of bulk solid was placed in a shear cell of specified
-dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$),
-see Fig. \ref{fig:01srsct}.
+dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$).
+%, see Fig. \ref{fig:01srsct}.
 % \input{images/texCaller/01srsct}
 A normal load was applied to the cover. As soon as the lid touches the sample, its position is calculated.
 Together with the area of the ring, the total volume can be calculated, and subsequently the $bulk ~ density ~ (\rho_b)$ 
@@ -39,7 +39,7 @@ From two to three different pre-shear normal loads were applied in the experimen
 For each we used a normal load proportional to the initial one ($shear-perc$) increasing from stage one (40\%) 
 to stage four (100\%) with two escalating intermediate stages (60\% and 80\%).
 Each experiment was performed on a fresh material sample. \\
-\input{images/texCaller/01srsct}
+%\input{images/texCaller/01srsct}
 %\input{images/texCaller/02srsctdiagram}
 
 
@@ -56,7 +56,9 @@ Although the geometry differs, the $SRSCT$ was designed to obtain the same value
 Jenike shear cell tester ($JSCT$), but with improved automation and reliability,
 see Schulze \cite{RefWorks:118}. 
 For this reason, the simulation setup has been
-based over the $JSCT$. The layout of the simulation geometry can be seen in Fig. \ref{fig:09simGeometry}. 
+based over the $JSCT$.
+% The layout of the simulation geometry can be seen in Fig.
+ % \ref{fig:09simGeometry}.
 As suggested by Aigner et al. \cite{RefWorks:139} and Benvenuti et al. \cite{RefWorks:173}, 
 the diameter and the height of the rings operated in the simulations had to be sufficiently large to avoid relevant wall effects. 
 Nevertheless, a larger domain increases the number of particles, and thus the simulation time. 
@@ -80,14 +82,15 @@ The former is obtained by low (relatively) velocity, the latter by high speed. W
 of $3*(mean particle radius)/seconds$, the most suitable to satisfy the two competing requests. \\
 The normal stresses (pre-shear and shear phases) applied in each simulation were the same as in the experiments. 
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
-\input{images/texCaller/09simGeometry} 
+%\input{images/texCaller/09simGeometry} 
 
 \section{AOR}
 \label{sec:AOR}
 
 \subsection{AOR experiment}
 \label{subsec:aorexperiment}
-A sample was deposited on a 20 cm diameter plate with lift-able boundary, called static angle of repose ($AOR$) tester (Fig. \ref{fig:05aor}).
+A sample was deposited on a 20 cm diameter plate with lift-able boundary, called
+static angle of repose ($AOR$) tester. % (Fig. \ref{fig:05aor}).
 % \input{images/texCaller/05aor}
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
 Once stabilized, the $AOR$ was measured eight times using a digital protractor at different positions of the heap. 
@@ -95,7 +98,7 @@ The result is produced as the average of the measurements, granting the fourth
 behaviour value.
 Notably, the experiments were performed only for larger size bulk solids. 
 So, the compaction condition in the initial state was not critical to the final result.
-\input{images/texCaller/05aor}
+%\input{images/texCaller/05aor}
 
 
 \subsection{AOR simulation}
@@ -103,10 +106,11 @@ So, the compaction condition in the initial state was not critical to the final 
 In $AOR$ simulations we tried to replicate meticulously the experimental setup, 
 considering both the plate and the lift-able boundary, with the same domain size consideration as before. 
 The particles had the same properties as in the shear cell simulation. The first phase was identical to that of the shear cell simulation. 
-After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
+After lifting the boundary, the particles formed a heap.
+% (Fig. \ref{fig:08aorsim}).
 % \input{images/texCaller/08aorsim} 
 An image post-processing software was used to obtain the average slope.
-\input{images/texCaller/08aorsim} 
+%\input{images/texCaller/08aorsim} 
 
 
 
