@@ -5,19 +5,22 @@
 
 Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - 
 play a major role in a variety of industries, including process industry and metallurgy. 
-In his book, Holdich \cite{RefWorks:117} stated that "between 1 and 10\% of all the energy 
-is used in comminution, i.e. the processes of crushing, grinding, milling, micronising". 
-However, a univocal method to characterize these particles has so far not been established. 
-Discrete Element Method ($DEM$) simulations are widely used to understand particle behaviour 
-and in the simulation of granular processes, such as bulk handling.\\
+Discrete Element Method ($DEM$) simulations are widely used to picture particle
+behaviour in these granular processes.\\
 $LIGGGHTS$ ($LAMMPS$ improved for general granular and granular heat transfer
 simulations) is one of the most powerful open source $DEM$ simulation software packages available. 
 The models it can analyze are described in detail in the literature, see Kloss
 et al. \cite{RefWorks:136}, while a useful example is provided by the shear cell tester 
 simulation developed by Aigner et al. \cite{RefWorks:139}.\\
-From the experimental point of view, we are focusing on the bulk behaviour of the materials analysed. 
-It was out of scope to investigate the properties of each particle separately, like shape, 
-Young modulus ($E$), coefficient of Poisson ($\nu$) of each sample.\\
+This approach try to solve the issue of particle-particle interaction. The
+parameters, empirically by nature, that depict this phenomenon are challenging
+to obtain experimentally.
+From the experimental point of view, we are focusing
+on the bulk behaviour of the materials analysed.
+From that we investigated the relationship with the particle-particle $DEM$
+contact parameters.
+It was out of scope to investigate the properties of each
+particle separately, like shape, Young modulus ($E$), coefficient of Poisson ($\nu$) of each sample.\\
 Nevertheless, the $DEM$ requires defining these and other attributes for each
 single particle.
 In our study, we assigned the same particles parameters, except for the radius, to all the 
@@ -30,20 +33,17 @@ the same macroscopic behaviour of the experiments, the static angle of repose
 compare numerical and experimental results, as suggested by Ai et al.
 \cite{RefWorks:131}.\\
 We could identify the most suitable value for each $DEM$ parameter 
-investigated performing large numbers of simulations. Each will have a different value. 
+investigated performing huge numbers of simulations. Each will have a different
+value.
 For instance, for the coefficient of rolling friction ($\mu_r$), ranging from
 $0.01$ to $1.00$, a reasonable approach would involve $100$ simulations.
 %\input{tables/08DEMparameters}
 Regrettably, as stated by Hoehner et al. \cite{RefWorks:86}, all the parameters listed in table \ref{tab:08DEMparameters}
 contribute to define the numerical bulk behaviour. Performing and investigate the 
 more than $10^8$ simulations required was out of the scope of this paper.
-Instead, we executed a limited number of simulations and we investigated them. 
-Statistical method as the Polynomial Chaos Expansion ($PCE$) or Bayesian
-networks could be used to correlate numerical and experimental behaviour. 
-Still, these methods are challenged by the non-linearity intrinsic to our system. 
-Rather, as suggested by Vaferi et al. \cite{RefWorks:150} and Witten et al.
+Instead, as suggested by Vaferi et al. \cite{RefWorks:150} and Witten et al.
 \cite{RefWorks:174}, we harnessed Artificial Neural Networks ($NN$) for their
-stability and reliability.
+stability and reliability with non-linear systems like ours.
 Furthermore, the main aim of this work was to improve the characterization 
 of several $DEM$ parameters for non-spherical particles. 
 From the performed simulations bulk representative parameters were extracted. 
