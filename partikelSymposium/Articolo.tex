@@ -34,7 +34,7 @@
 \usepackage[utf8]{inputenc}                 % codifica di input; anche [latin1] va bene
                                             % NOTA BENE! va accordata con le preferenze dell'editor
 
-\usepackage[english,italian]{babel}         % per scrivere in italiano e in inglese;
+\usepackage[english]{babel}         % per scrivere in italiano e in inglese;
                                             % l'ultima lingua (l'italiano) risulta predefinita
 
 %\usepackage[binding=20mm]{layaureo}          % margini ottimizzati per l'A4;
@@ -50,8 +50,10 @@
 \usepackage{tabularx}                       % tabelle di larghezza prefissata
 
 \usepackage{graphicx}                       % immagini
+\usepackage{epstopdf}
 
 \usepackage{subfig}                         % sottofigure, sottotabelle
+\usepackage{subfigure}   
 
 \usepackage{caption}                        % didascalie
 
@@ -61,13 +63,14 @@
 
 \usepackage{amsmath,amssymb,amsthm}         % matematica
 
-\usepackage[italian]{varioref}              % riferimenti completi della pagina
+\usepackage[english]{varioref}              % riferimenti completi della pagina
 
 % \usepackage{mparhack,fixltx2e,relsize}      % finezze tipografiche
 
-\usepackage[style=numeric-comp,hyperref,backref,backend=bibtex]{biblatex}	
-                                            % eccellente pacchetto per la bibliografia;
-                                            % produce uno stile di citazione autore-anno; 
+\usepackage[style=numeric-comp,backref=false,backend=bibtex]{biblatex}
+%\usepackage{refcheck}
+                                            % eccellente pacchetto per la
+                                            % bibliografia;hyperref, produce uno stile di citazione autore-anno; 
                                             % lo stile "numeric-comp" produce riferimenti numerici
                                           
 \bibliography{Bibliografia}                 % database di biblatex 
@@ -78,29 +81,28 @@
 
 \usepackage{eurosym}                        % simbolo dell'euro
 
-\usepackage{hyperref}                       % collegamenti ipertestuali
+%\usepackage{hyperref}                       % collegamenti ipertestuali
 
 %\usepackage{bookmark}                       % segnalibri
 
 \input{impostazioni-articolo}               % file con le impostazioni personali
 
 \begin{document}
-%\pagestyle{headings} 
-%******************************************************************
-% Materiale iniziale
-%******************************************************************
-\input{MaterialeInizialeFinale/Frontespizio}
-%\input{MaterialeInizialeFinale/Indici}
-\input{MaterialeInizialeFinale/Sommario+Abstract}
-%******************************************************************
-% Materiale principale
-%******************************************************************
-\input{Paragrafi/Lorem}
-\input{Paragrafi/Ipsum}
-\appendix
-\input{Paragrafi/Dolor}
-% *****************************************************************
-% Materiale finale
-%******************************************************************
-\input{MaterialeInizialeFinale/Bibliografia}
+
+%\begin{frontmatter}
+\input{sections/front}
+\input{sections/abstractKeyword}
+%\end{frontmatter}
+
+% \input{highlights}
+
+\input{sections/introduction}
+
+\input{sections/modellingprerequisites}
+\input{sections/methodology}
+\input{sections/resultsdiscussion}
+\input{sections/conclusions}
+\input{sections/acknowledgements}
+\input{sections/bibliografy}
+
 \end{document}
