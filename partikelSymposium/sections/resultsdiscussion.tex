@@ -1,0 +1,173 @@
+\section{Results and discussion}
+\label{sec:results}
+%************************************************
+
+\subsection{Experiments}
+\label{subsec:experiments}
+
+Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+for sinter fine have been acquired through the $SRSCT$, e.g. in Table
+\ref{tab:05sinterTableExperimental}
+these values for three load conditions are presented.
+In the $\mu_{psh}$ a descending path is evident. 
+Instead, the $\mu_{sh}$ is oscillating.
+The $\rho_b$ presents a clear average of $1760 [kg/m^3]$ with a $42 [kg/m^3]$
+deviation.
+The stress path for the second load condition of Table
+\ref{tab:05sinterTableExperimental} is shown in Fig.
+\ref{fig:20experimental}.
+In the first 300 seconds the $\sigma_n$ was kept constant. After 250 seconds a
+plateau was reached. 
+The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
+Later, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
+After approximately 30 seconds, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
+%\input{tables/05sinterTableExperimental}
+Later, two $AOR$ test have been performed, thus identifying an average angle of
+$38.85 ^\circ$.
+We also realized the sieving, obtaining the radius ($R$) mean and standard
+deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
+\input{images/texCaller/40experimentalsimulation}
+\input{tables/05sinterTableExperimental}
+
+\subsection{DEM Simulations}
+\label{subsec:simulations}
+
+For sinter fine 546 shear cell and 81 static angle of repose simulations have
+been realized with the variations described in table
+\ref{tab:10DEMVariableinputvalues}.
+A representative stress path can be seen in Fig. \ref{fig:21simexample}.
+Although the duration is smaller by two order of magnitude, the stress path is
+comparable to the experimental one, especially the plateaux.
+They were clearly relevant because there we collected the numerical bulk
+behaviour representative values.\\
+The computational time resulted in 1 hour with 32 AMD cores for a benchmark
+shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
+Simulations with large $dCylDp$ required a greater time amount (e.g. with 400K
+particles about 12 hours for the shear cell). \\
+%\input{images/texCaller/21simexample}
+
+\subsection{ANN model development}
+\label{subsec:annmodeldev}
+
+First, we controlled the regression of the bulk behaviour parameters, e.g. the
+$\mu_{psh}$, see Fig. \ref{fig:22regression}, where the corresponding plot for
+the $NN$ with the maximum $R^2$ in shown. Each circle represents one of the 546
+simulations.
+The plot presents a consistent agreement between the $DEM$ results distribution
+(T in the legend) and the $NN$ regression (or fitting) line.
+% \input{images/texCaller/22regression}
+The linear relationship between the
+training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
+The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
+$\rho_p$ and $\rho_b$.
+Instead, for $\mu_{sh}$ and $AOR$ the $\mu_r$ balanced the influence of the 
+$\mu_s$, and further parameters were worthly correlated. \\
+% \input{tables/06inputRelationshipTable}
+Then we observed how the $R^2$ changed with the different number of neurons for
+the $\mu_{psh}$.
+Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
+In this case we reached a $R^2 = 0.96$ for a $NN$ with fifteen neurons. 
+Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
+Later, we processed the random combinations (table
+\ref{tab:10DEMVariableinputvalues}) with the $NN$.
+The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
+individuation of all the tabbed $DEM$ combinations for the shear cell did not take more than a few seconds on a single core. 
+We represented the tabbed combinations ($TC1$) for one load condition of the
+shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$) in Fig.
+\ref{fig:24radarpirker1schulze10070}.
+% \input{images/texCaller/29schulzeradarandcloud}
+Here, the minimum and maximum values, together with the mean and the confidence
+range, provided by the square deviation, are shown. Notably, the confidence range is large, 
+especially for the $COR$, highlighting its scarce influence over the characterization. 
+Instead, both the $\rho_p$  and the $\mu_s$ show a narrow confidence range, 
+displaying at the same time their influence and the validity of this procedure to find valid $DEM$ parameters. 
+That agrees with the examination of the ratio of the standard deviation to the
+range, see table \ref{tab:13DEMvalidvalues}.
+Further, we could see how different $DEM$ parameters
+combinations could reproduce the experimental behaviour and evaluate their mutual dependencies. 
+This is clearer in a cloud plot, as in Fig. 
+\ref{fig:25cloudpirker1schulze10070}. While the $COR$ varied, multiple
+combinations ($250407 --> 4\% $ of the total) of $\mu_s$ and $\mu_r$ reproduced
+the experimental behaviour.
+This underlines once more their correlation, as already stated by Wensrich and 
+Katterfeld \cite{RefWorks:87}.
+To further demonstrate the validity of the procedure, we modified the product
+coefficient. In the first attempt we set it to $P=0.8$ and we obtained another
+series of tabbed combinations ($TC2$).
+We can see in the radar plot in Fig.
+\ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
+compared to $P=1.0$, while in the cloud plot in Fig. 
+\ref{fig:27cloudpirker08schulze10070} the area
+appears larger, although slightly less densely populated. Finally, for $P=1.2$
+and its tabbed combinations ($TC3$) the radar plot in Fig.
+\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
+range, while the cloud plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
+illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
+Thus, it could be effectively handled for a wide range of bulk materials.\\
+% \input{images/texCaller/35schulze10070aorradarandcloud}
+We then processed the random combinations with the $AOR$ $NN$. In Fig.
+\ref{fig:31radarpirker1aor} the radar plot realized with the same criteria as
+before can be seen.
+In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
+by the particles rolling the coefficient of rolling friction has the maximum influence. 
+Further, in the cloud plot in Fig. \ref{fig:32cloudpirker1aor}
+we could see that there are valid combinations also with slight $\mu_s$. \\
+Finally, we extracted from the $TC1$ values the $AOR$ $NN$ behaviour
+and compared it with the experimental one.
+As can be seen in the radar plot in Fig.
+\ref{fig:33radarpirker1schulze10070aor}, the confidence range is meager, indicating that all the parameters but the $COR$ 
+had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
+Also in the cloud plot in Fig. \ref{fig:34cloudpirker1schulze10070aor} we
+observed a condensed distribution of valid parameters.
+From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
+see table \ref{tab:13DEMvalidvalues}.
+\input{images/texCaller/22regression}
+\input{tables/06inputRelationshipTable}
+\input{tables/13DEMvalidvalues}
+%\input{images/texCaller/23regressiongraph}
+%\input{images/texCaller/29schulzeradarandcloud}
+%\input{images/texCaller/35schulze10070aorradarandcloud}
+\input{images/texCaller/36schulzeradar}
+\input{images/texCaller/37schulzecloud}
+\input{images/texCaller/38schulze10070aorradar}
+\input{images/texCaller/39schulze10070aorcloud}
+
+
+%\input{images/texCaller/24radarpirker1schulze10070}
+%\input{images/texCaller/25cloudpirker1schulze10070}
+%\input{images/texCaller/26radarpirker08schulze10070}
+%\input{images/texCaller/27cloudpirker08schulze10070}
+%\input{images/texCaller/28radarpirker12schulze10070}
+% \ref{eq:rsquare}.
+% \input{equations/rSquare}
+% 
+% \ref{eq:rootMeanSquareError}.
+% \input{equations/rootMeanSquareError}
+
+
+
+% \lipsum[1]
+% \input{equations/newtonlaw}
+% \subsection{ANN identification}
+% \label{subsec:annmodeliden}
+% \subsection{ANN application}
+% \label{subsec:annapplication}
+% 
+% Later, each of these three trained $NN$ received as insertion $100M$ different
+% combinations $DEM-micro$ parameters.
+% So, we gained the numerical bulk behavior for each of this combination. 
+% We then compared the values of these behaviors against the experimental bulk
+% values, $SRSCT$ and $AOR$, obtaining a narrow range of valid DEM-micro
+% combinations (about 80K).
+% These results have been showed through radar plots (Figs. \ref{fig:15Schulze}
+% and \ref{fig:16aorSchulzeIntersectionWorking}).
+% To highlight an eventual $clumping$ behavior, we also plot the results in a
+% cloud shape, see Fig. \ref{fig:17aorSchulzeIntersectionCloudSFRFCOR}.
+% 
+% %\input{images/texCaller/14aorSchulzeIntersection}
+% \input{images/texCaller/15Schulze}
+% % \lipsum[1]
+% \input{images/texCaller/16aorSchulzeIntersectionWorking}
+% % \input{equations/phi_ps}
+% \input{images/texCaller/17aorSchulzeIntersectionCloudSFRFCOR}
