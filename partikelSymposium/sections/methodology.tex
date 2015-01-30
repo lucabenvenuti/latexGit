@@ -1,44 +1,19 @@
 \section{Methodology of DEM Parameter Identification}
 \label{sec:methodology}
 
-We now illustrate the methodology used, also shown in Fig.
-\ref{fig:19methodology}.
-%\input{images/texCaller/19methodology}
-The experimental characterization has been performed as described in
-\ref{subsec:srsctexperiment} and \ref{subsec:aorexperiment}. We performed
-three tests with the $SRSCT$ for the sinter fine bulk, for a total of twelve
-load conditions. 
-%An example for three of them can be seen in table
-% \ref{tab:05sinterTableExperimental}.
-% \input{tables/05sinterTableExperimental}
 The first bulk behaviour representative value ($\rho_b$) was directly provided. 
-If the test was performed correctly, we observed a linear increase in the
-coefficient of internal friction.
-%, see Fig. \ref{fig:20experimental}.
-Later, the first plateau was reached. 
-The second bulk behaviour representative value ($\mu_{psh}$) was calculated by averaging the coefficient in this plateau. 
+The second bulk behaviour representative value ($\mu_{psh}$) was calculated by
+averaging the coefficient in the first plateau.
 Further, the normal load was modified, and then a second plateau was reached. The third value ($\mu_{sh}$) was 
 determined by averaging the coefficient in this plateau. 
 Next, we performed two $AOR$ tests. 
 The average of the repose angles provided us the fourth bulk value, allowing us
 to define the experimental bulk behaviour.
-For simulations purposes, we also sieved the bulk to know the size distribution.
-We could then focus on the numerical section of the characterization. 
-As stated in the modelling section of this paper, we decided to fix one univocal contact law for all the simulations performed. 
-Furthermore, we locked the size distribution, as provided by the sieving, the
-elastic coefficients and the time step, see table
-\ref{tab:09DEMFixedinputvalues}.
-% \input{tables/09DEMFixedinputvalues}
-% \input{tables/10DEMVariableinputvalues}
-The last was smaller than the Rayleigh time. 
-Other coefficients, $COR$, $\mu_s$, $\mu_r$,
-$\rho_p$ and $dCylDp$, as indicated in table \ref{tab:10DEMVariableinputvalues},
+We decided to fix one univocal contact law for all the simulations performed. 
+Some coefficients, $COR$, $\mu_s$, $\mu_r$,
+$\rho_p$ and $dCylDp$
 were constant in each simulation, but their combination differed between
 simulations.
-%, see e.g. table \ref{tab:11DEMSimExampleinputvalues}.
-% \input{tables/11DEMSimExampleinputvalues}
-Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
-all simulations had $dCylDp$ larger than $20$ (additional information can be found in \ref{subsec:srsctsimulation}). 
 The normal stress $\sigma_n$ and its
 percentage during the incipient flow condition $\tau_{\%}$
 varied to replicate the twelve shear cell load conditions. 
@@ -46,37 +21,11 @@ In total, we realized $546$ shear cell and $81$ angle of repose simulations.
 A Matlab script allowed us to extract from the simulations output the numerical
 bulk representative values ($\mu_{psh}$, $\mu_{sh}$, $\rho_b$ and $AOR$) for each $simulation-DEM$ parameter combination. 
 So, we could use the $DEM$ parameter combinations and their corresponding bulk values to train the $NN$. 
-Notably, we excluded 15\% of the simulations ($test ~ simulations$), casually
-picked, from the training processes.
-First, we started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $NN$. 
-They differed because they included from five to forty neurons in the hidden
-layer.
-Later, we controlled the square regression error between the $bulk-macro$ behaviours in the output of 
-the $NN$ and the 15\% $test ~ simulations$, granted uncorrelated. 
-So, we could select for $\mu_{psh}$ the $NN$ with the maximum $R^2$, and we noted its number of neurons. 
-We repeated the same steps from the $NN$ creations for $\mu_{sh}$, $\rho_b$ and $AOR$, 
-obtaining one trained $NN$ for each bulk representative value. \\
-% \input{tables/12DEMRandominputvalues}
-Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
-simulations, so their $NN$ were handled together. We then created random values
-in the range and number defined in table \ref{tab:12DEMRandominputvalues}.
+We then created random values.
 The total number of combinations of these random values was $6250000$. These
 combinations were then processed by the selected $NN$, granting for each three bulk representative parameters for the shear cell and one for the $AOR$. Later, we confronted the $NN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
 If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
-than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
-\input{equations/check2}
+than 5\% from the corresponding experiments,
 then the combination was tabbed. The latter combinations were handled by the $AOR$ $NN$, and then confronted with the experiment. 
 Were branded as valid only those that differed less than $5\%$ also in this
-comparison (Eq. \ref{eq:checkaor}):
-\input{equations/checkaor}
-Further, to prove the system validity, we tested the tabbed combinations by modifying the experimental bulk
-behaviour representative values of the shear cell. 
-We artificially decreased or increased $\mu_{psh}$ and $\mu_{sh}$ by a product
-coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
-\input{equations/pcoeff}
-\input{images/texCaller/19methodology}
-
-\input{tables/09DEMFixedinputvalues}
-\input{tables/10DEMVariableinputvalues}
-%\input{tables/11DEMSimExampleinputvalues}
-\input{tables/12DEMRandominputvalues}
+comparison.
