@@ -12,8 +12,8 @@ load conditions.
 % \ref{tab:05sinterTableExperimental}.
 % \input{tables/05sinterTableExperimental}
 The first bulk behaviour representative value ($\rho_b$) was directly provided. 
-If the test was performed correctly, we observed a linear increase in the
-coefficient of internal friction.
+If the test was performed correctly, see \ref{subsec:srsctexperiment}, we
+observed a linear increase in the coefficient of internal friction.
 %, see Fig. \ref{fig:20experimental}.
 Later, the first plateau was reached. 
 The second bulk behaviour representative value ($\mu_{psh}$) was calculated by averaging the coefficient in this plateau. 
@@ -23,14 +23,16 @@ Next, we performed two $AOR$ tests.
 The average of the repose angles provided us the fourth bulk value, allowing us
 to define the experimental bulk behaviour.
 For simulations purposes, we also sieved the bulk to know the size distribution.
-We could then focus on the numerical section of the characterization. 
-As stated in the modelling section of this paper, we decided to fix one univocal contact law for all the simulations performed. 
+We could then focus on the simulations. 
+As stated in the modelling section of this paper, we decided to fix one single
+contact law for all the simulations performed.
 Furthermore, we locked the size distribution, as provided by the sieving, the
 elastic coefficients and the time step, see table
 \ref{tab:09DEMFixedinputvalues}.
 % \input{tables/09DEMFixedinputvalues}
 % \input{tables/10DEMVariableinputvalues}
-The last was smaller than the Rayleigh time. 
+The last was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, that depends
+to the particle density.
 Other coefficients, $COR$, $\mu_s$, $\mu_r$,
 $\rho_p$ and $dCylDp$, as indicated in table \ref{tab:10DEMVariableinputvalues},
 were constant in each simulation, but their combination differed between
@@ -46,7 +48,7 @@ In total, we realized $546$ shear cell and $81$ angle of repose simulations.
 A Matlab script allowed us to extract from the simulations output the numerical
 bulk representative values ($\mu_{psh}$, $\mu_{sh}$, $\rho_b$ and $AOR$) for each $simulation-DEM$ parameter combination. 
 So, we could use the $DEM$ parameter combinations and their corresponding bulk values to train the $NN$. 
-Notably, we excluded 15\% of the simulations ($test ~ simulations$), casually
+Notably, we excluded 15\% of the simulations ($test ~ simulations$), randomly
 picked, from the training processes.
 First, we started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $NN$. 
 They differed because they included from five to forty neurons in the hidden

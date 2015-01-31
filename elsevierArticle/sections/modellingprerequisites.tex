@@ -40,7 +40,7 @@ The tangential force component is truncated to fulfil
 \input{equations/force_t}
 where $\mu_s$ is the coefficient of sliding friction, one of the particle based
 $DEM$ parameter we investigated. 
-An ulterior parameter was the coefficient of rolling friction ($\mu_r$). 
+Another parameter was the coefficient of rolling friction ($\mu_r$). 
 For coarse not round particles is a critical parameter and describes inter-particle 
 friction in medium to dense granular flows simulations. It is proportional to the 
 torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
@@ -92,15 +92,15 @@ Similarly, the best practice also demands to establish the most appropriate numb
 hidden layer of each $NN$. This check has been handled through mean square maximization ($R^2$). 
 For each investigated output we chose the number of neurons with the greater
 $R^2$.\\
-Further, we should question the quality of the $NN$ data, accordingly to the 
+Further, we should question the quality of the $NN$ data, according to the 
 Oberkampf et al. \cite{RefWorks:160} method. Haykin \cite{RefWorks:158} 
 suggests questioning both the $NN$ training process and the following data
 generation from provided inputs.
 The former is usually challenged when dealing with experimental training data, and frequently 
 managed by noise-corrupted patterns calibration. Nevertheless, our training pool
 was numerical.
-The particles in each of our simulations were created through a random
-algorithm, and the training pool was extensive.
+The particles in each of our simulations were inserted through a random
+seed value, and the training pool was extensive.
 For massive training data the effect of noise-corrupted patterns is negligible, see Haykin \cite{RefWorks:158}. 
 Instead the latter was a challenging aspect of our work. Once trained, as input for the $NN$ we imposed 
 combinations of $DEM$ parameters. 

@@ -1,64 +1,190 @@
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=.8\textwidth]{images/original/01srsct}
-\caption{Schulze ring shear cell tester \cite{RefWorks:118}}
-\label{fig:01srsct}
+\includegraphics[width=.96\textwidth]{images/original/18nnscheme}
+\caption[NN Scheme]{Neural Network ($NN$) Scheme. This is the schematic of how
+the Multi Layer Perceptron $NN$ ($MLPNN$) derives one bulk behaviour
+dependent variable from the mutually independent simulation variables.}
+\label{fig:18nnscheme}
 \end{figure}
 \efloatseparator
  
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=.8\textwidth]{images/original/02srsctdiagram.eps}
-\caption{Schulze ring shear cell tester diagram \cite{RefWorks:118}}
-\label{fig:02srsctdiagram}
+\includegraphics[width=.96\textwidth]{images/original/19methodology}
+\caption[Methodology]{Methodology. After the $DEM$ simulations the $NN$ are
+trained and selected. We then compare experimental and numerical results to
+identify the valid parameters.}
+\label{fig:19methodology}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=.8\textwidth]{images/original/05aor}
-\caption{Angle of repose tester \cite{RefWorks:118}}
-\label{fig:05aor}
+\begin{figure}[htp] \centering
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/20experimental}
+        \caption{Experimental shear cell tester stress path - $\sigma_n = 2000
+        [Pa]$}
+        \label{fig:20experimental}
+    \end{subfigure}\\
+        \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/21simexample}
+        \caption{Numerical shear cell tester stress path - $\sigma_n = 10000
+        [Pa]$}
+        \label{fig:21simexample}
+    \end{subfigure}
+    \caption[Stress path]{Sample of the stress path for
+the Schulze ring shear cell tester, experimental and numerical.
+Time is normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
+time when the normal stress ($\sigma_n$) is modified during the tests.
+Until $\tilde{t}=1$ the $\sigma_n = 2000 ~[Pa]$ is kept constant.
+In Fig. \ref{fig:20experimental} at $\tilde{t}~=0.91$
+  a plateau is reached.
+The $\mu_{psh}$ is calculated as average of the $\mu_{ie}$ in this first
+plateau.
+Later, at $\tilde{t}=1$, the $\sigma_n$ is reduced to $80 \%$ of its initial
+value.
+Soon, a second plateau starts.
+As average of $\mu_{ie}$ in this second plateau we obtain $\mu_{sh}$.
+The stress path is in the numerical simulation is comparable to the
+experimental one, especially the plateaux.
+They were clearly relevant because there we collected the numerical bulk
+behaviour representative values. }
+    \label{fig:40experimentalsimulation}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
+\begin{figure}[!h]
 \centering
-\includegraphics[width=.8\textwidth]{images/original/09simGeometry}
-\caption{shear cell simulation layout}
-\label{fig:09simGeometry}
+\includegraphics[width=.96\textwidth]{images/original/22regression}
+%[width=.96\textwidth]
+\caption[Comparison between prediction of the trained NN and full DEM
+simulation]{Comparison between prediction of the trained Neural Network ($NN$)
+and 546 full DEM simulations of the coefficient of pre-shear ($\mu_{psh}$). In
+this case the regression line is nearly linear, and demonstrates the accurate
+prediction of the $NN$.}
+\label{fig:22regression}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=.8\textwidth]{images/original/08aorsim}
-\caption{AOR simulation, heap of particles}
-\label{fig:08aorsim}
+\begin{figure}[htp] \centering
+    \begin{subfigure}[b]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/24radarpirker1schulze10070}
+        \caption{Radar plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=1.0$}
+        \label{fig:24radarpirker1schulze10070}
+    \end{subfigure} \\
+        \begin{subfigure}[b]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/26radarpirker08schulze10070}
+        \caption{Radar plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=0.8$}
+        \label{fig:26radarpirker08schulze10070}
+    \end{subfigure}\\
+        \begin{subfigure}[b]{0.5\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/28radarpirker12schulze10070}
+        \caption{Radar plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=1.2$}
+        \label{fig:28radarpirker12schulze10070}
+    \end{subfigure}
+    \caption[Radar plot of valid simulations parameters for three different
+    bulk behaviours measured by SCT]{Radar plot of valid simulations parameters for three different
+    bulk behaviours measured by shear cell tester ($SCT$).
+    Each axes of the radar plot represents one simulation parameters.
+    Furthermore, the shaded area represents valid parameters combinations.
+    Dark shaded values stand for the confidence range.
+    We represent the tabbed combinations for one load condition of the shear cell.
+    Further explanation in the text.
+   }
+    \label{fig:29schulzeradarandcloud}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=.8\textwidth]{images/original/15Schulze}
-\caption{aor Schulze Intersection}
-\label{fig:15Schulze}
+\begin{figure}[htp] \centering
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/25cloudpirker1schulze10070}
+        \caption{Cloud plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=1.0$}
+        \label{fig:25cloudpirker1schulze10070}
+    \end{subfigure}\\
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/27cloudpirker08schulze10070}
+        \caption{Cloud plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=0.8$}
+        \label{fig:27cloudpirker08schulze10070}
+    \end{subfigure}\\
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/30cloudpirker12schulze10070}
+        \caption{Cloud plot, $SCT$, $\sigma_n=10070 ~[Pa]$, $P=1.2$}
+        \label{fig:30cloudpirker12schulze10070}
+    \end{subfigure}
+    \caption[Density plot comparison of SCT results]{Density plot comparison of
+    $SCT$ results. We represent the tabbed combinations for one load condition
+    of the shear cell.
+    Density plot of the particles' coefficient of restitution (COR) in dependence
+of coefficient of sliding friction and coefficient of rolling friction; in the
+white area no valid sets of simulation parameter can be found.
+In each cell the valid sets are grouped accordingly to the 4 different COR
+ranges.
+Each cell is colored accordingly to the group with the most members.
+    Here, the values plotted are selected between the numerical
+    values from the $NN$ with initially the original experimental results for the shear cell tester $P=1.0$ (Fig.
+    \ref{fig:25cloudpirker1schulze10070}).
+        Later, they have been chosen with
+    the virtual decreased results $P=0.8$
+    (\ref{fig:27cloudpirker08schulze10070}).
+    The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
+    instead the selection with the the virtual increased results $P=1.2$.    }
+    \label{fig:29schulzeradarandcloud}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=.96\textwidth]{images/original/16aorSchulzeIntersectionWorking}
-\caption{aor Schulze Intersection working}
-\label{fig:16aorSchulzeIntersectionWorking}
+\begin{figure}[htp] \centering
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/31radarpirker1aor}
+        \caption{Radar plot, $AOR_{exp} = 38.85 ^\circ$}
+        \label{fig:31radarpirker1aor}
+    \end{subfigure}\\
+        \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/33radarpirker1schulze10070aor}
+        \caption{Radar plot, $AOR_{exp} = 38.85
+        ^\circ$ \& $SCT$: $\sigma_n=10070 ~[Pa]$}
+        \label{fig:33radarpirker1schulze10070aor}
+    \end{subfigure}
+    \caption[Radar plot of valid simulations parameters for the AOR and
+    the merge between AOR and SCT valid parameters]{Radar plot of valid
+    simulations parameters for the angle of repose tester ($AOR$) and the merge
+    between AOR and shear cell tester ($SCT$).
+    Each axes of the radar plot represents one simulation parameters.
+    Furthermore, the shaded area represents valid parameters combinations.
+    Dark shaded values stand for the confidence range.
+    We represent the tabbed combinations for one load condition of the shear cell.
+    Further explanation in the text. }
+    \label{fig:35schulze10070aorradarandcloud}
 \end{figure}
 \efloatseparator
  
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=.96\textwidth]{images/original/17aorSchulzeIntersectionCloudSFRFCOR}
-\caption{Cloud aor Schulze Intersection working}
-\label{fig:17aorSchulzeIntersectionCloudSFRFCOR}
+\begin{figure}[htp] \centering
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/32cloudpirker1aor}
+        \caption{Cloud plot, $AOR_{exp} = 38.85 ^\circ$}
+        \label{fig:32cloudpirker1aor}
+    \end{subfigure}\\
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{images/original/34cloudpirker1schulze10070aor}
+        \caption{Cloud plot, $AOR_{exp} = 38.85
+        ^\circ$ \& $SCT$: $\sigma_n=10070 ~[Pa]$}
+        \label{fig:34cloudpirker1schulze10070aor}
+    \end{subfigure}
+    \caption[Density plot comparison of AOR and SCT results]{Density plot
+    comparison of $AOR$ and $SCT$ results. We represent the tabbed combinations for the
+    $AOR$ test.
+    Density plot of the particles' coefficient of restitution (COR) in dependence
+of coefficient of sliding friction and coefficient of rolling friction; in the
+white area no valid sets of simulation parameter can be found.
+In each cell the valid sets are grouped accordingly to the 4 different COR
+ranges.
+Each cell is colored accordingly to the group with the most members.
+    Here, the values plotted are selected between the numerical
+    values from the $NN$ with initially the original experimental results for
+    the $AOR$, $P=1.0$ (Fig.
+    \ref{fig:32cloudpirker1aor}).
+    The last image (Fig. \ref{fig:34cloudpirker1schulze10070aor}) represents
+    instead the values valid for both the $AOR$ test and the $SCT$, with a
+    $\sigma_n=10070 ~[Pa]$, both for $P=1.0$. }
+    \label{fig:35schulze10070aorradarandcloud}
 \end{figure}
 \efloatseparator
  
