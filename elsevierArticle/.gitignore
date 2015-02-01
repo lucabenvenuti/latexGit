@@ -12,3 +12,6 @@ main.fff
 *.tif
 *.jpg
 /main.ttt
+main.ttt
+*.zip
+*.fff
