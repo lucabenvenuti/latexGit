@@ -16,11 +16,11 @@ deviation.
 The stress path for the second load condition of Table
 \ref{tab:05sinterTableExperimental} is shown in Fig.
 \ref{fig:20experimental}.
-In the first 300 seconds the $\sigma_n$ was kept constant. After 250 seconds a
-plateau was reached. 
+First, the $\sigma_n$ was kept constant. 
+Meanwhile, the $\mu_{ie}$ initially increased and then reached a plateau.
 The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
-Later, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
-After approximately 30 seconds, a second plateau started.
+Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
+After, a second plateau started.
 As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
 Later, two $AOR$ test have been performed, thus identifying an average angle of
 $38.85 ^\circ$.
@@ -42,7 +42,7 @@ They were clearly relevant because there we collected the numerical bulk
 behaviour representative values.\\
 The computational time resulted in 1 hour with 32 AMD cores for a benchmark
 shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
-Simulations with large $dCylDp$ required a greater time amount (e.g. with 400K
+Simulations with larger $dCylDp$ required a greater time amount (e.g. with 400K
 particles about 12 hours for the shear cell). \\
 
 \subsection{ANN model development}
@@ -50,7 +50,7 @@ particles about 12 hours for the shear cell). \\
 
 First, we controlled the regression of the bulk behaviour parameters, e.g. the
 $\mu_{psh}$, see Fig. \ref{fig:22regression}, where the corresponding plot for
-the $NN$ with the maximum $R^2$ in shown. Each circle represents one of the 546
+the $NN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
 simulations.
 The plot presents a consistent agreement between the $DEM$ results distribution
 (T in the legend) and the $NN$ regression (or fitting) line.
@@ -63,7 +63,8 @@ $\mu_s$, and further parameters were worthly correlated. \\
 Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
 In this case we reached a $R^2 = 0.96$ for a $NN$ with fifteen neurons. 
 Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
-Later, we processed the random combinations (table
+We later obtained the correct number of neurons for all the $NN$.
+Further, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $NN$.
 The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
 individuation of all the marked $DEM$ combinations for the shear cell did not
@@ -115,7 +116,7 @@ before can be seen.
 In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by the particles rolling the coefficient of rolling friction has the maximum
 influence. \\
-Finally, we extracted from the $TC1$ values the $AOR$ $NN$ behaviour
+Finally, we extracted from the $MC1$ values the $AOR$ $NN$ behaviour
 and compared it with the experimental one.
 As can be seen in the radar plot in Fig.
 \ref{fig:33radarpirker1schulze10070aor}, the confidence range is meager, indicating that all the parameters but the $COR$ 

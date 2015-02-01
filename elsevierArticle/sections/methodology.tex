@@ -12,8 +12,9 @@ If the test was performed correctly, see \ref{subsec:srsctexperiment}, we
 observed a linear increase in the coefficient of internal friction.
 Later, the first plateau was reached. 
 The second bulk behaviour representative value ($\mu_{psh}$) was calculated by averaging the coefficient in this plateau. 
-Further, the normal load was modified, and then a second plateau was reached. The third value ($\mu_{sh}$) was 
-determined by averaging the coefficient in this plateau. 
+Further, the normal load ($\sigma_n$) was modified, and then a second plateau
+was reached.
+The third value ($\mu_{sh}$) was determined by averaging the coefficient in this plateau. 
 Next, we performed two $AOR$ tests. 
 The average of the repose angles provided us the fourth bulk value, allowing us
 to define the experimental bulk behaviour.
@@ -51,7 +52,7 @@ We repeated the same steps from the $NN$ creations for $\mu_{sh}$, $\rho_b$ and 
 obtaining one trained $NN$ for each bulk representative value. \\
 Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
 simulations, so their $NN$ were handled together. 
-We had one cluster of three $NN$ for the shear cell and one with only one $NN$
+We had one cluster with three $NN$ for the shear cell and one with only one $NN$
 for the $AOR$.
 Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
 ($DOE$) method to determine the parameters' combinations to be simulated.
@@ -66,7 +67,7 @@ combinations were then processed by the selected $NN$, granting for each three b
 If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
 than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
 \input{equations/check2}
-then the combination was marked. The latter combinations were handled by the
+then the combination was marked. The marked combinations were handled by the
 $AOR$ $NN$, and then confronted with the experiment.
 Were branded as valid only those that differed less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
