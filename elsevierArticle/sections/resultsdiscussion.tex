@@ -69,13 +69,16 @@ Increasing the number of neurons did not improve the $R^2$, that even started to
 Later, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $NN$.
 The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
-individuation of all the tabbed $DEM$ combinations for the shear cell did not take more than a few seconds on a single core. 
-We represented the tabbed combinations ($TC1$) for one load condition of the
+individuation of all the marked $DEM$ combinations for the shear cell did not
+take more than a few seconds on a single core.
+We represented the marked combinations ($MC1$) for one load condition of the
 shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$) in Fig.
 \ref{fig:24radarpirker1schulze10070}.
-% \input{images/texCaller/29schulzeradarandcloud}
-Here, the minimum and maximum values, together with the mean and the confidence
-range, provided by the square deviation, are shown. Notably, the confidence range is large, 
+Here, the minimum and maximum values, together with the mean are shown. 
+Furthermore, the shaded area represents valid parameters combinations.
+Dark shaded values stand for the confidence range, provided by the square
+deviation.
+Notably, the confidence range is large, 
 especially for the $COR$, highlighting its scarce influence over the characterization. 
 Instead, both the $\rho_p$  and the $\mu_s$ show a narrow confidence range, 
 displaying at the same time their influence and the validity of this procedure to find valid $DEM$ parameters. 
@@ -83,23 +86,30 @@ That agrees with the examination of the ratio of the standard deviation to the
 range, see table \ref{tab:13DEMvalidvalues}.
 Further, we could see how different $DEM$ parameters
 combinations could reproduce the experimental behaviour and evaluate their mutual dependencies. 
-This is clearer in a cloud plot, as in Fig. 
-\ref{fig:25cloudpirker1schulze10070}. While the $COR$ varied, multiple
+This is clearer in a density plot, as in Fig. 
+\ref{fig:25cloudpirker1schulze10070} for $MC1$, 
+of the particles' coefficient of restitution (COR) in dependence
+of coefficient of sliding friction and coefficient of rolling friction; in the
+white area no valid sets of simulation parameter can be found.
+In each cell the valid sets are grouped accordingly to the 4 different COR
+ranges.
+Each cell is colored accordingly to the group with the most members. 
+While the $COR$ varied, multiple
 combinations ($250407 --> 4\% $ of the total) of $\mu_s$ and $\mu_r$ reproduced
 the experimental behaviour.
 This underlines once more their correlation, as already stated by Wensrich and 
 Katterfeld \cite{RefWorks:87}.
 To further demonstrate the validity of the procedure, we modified the product
 coefficient. In the first attempt we set it to $P=0.8$ and we obtained another
-series of tabbed combinations ($TC2$).
+series of marked combinations ($MC2$).
 We can see in the radar plot in Fig.
 \ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
-compared to $P=1.0$, while in the cloud plot in Fig. 
+compared to $P=1.0$, while in the density plot in Fig. 
 \ref{fig:27cloudpirker08schulze10070} the area
 appears larger, although slightly less densely populated. Finally, for $P=1.2$
-and its tabbed combinations ($TC3$) the radar plot in Fig.
+and its marked combinations ($MC3$) the radar plot in Fig.
 \ref{fig:28radarpirker12schulze10070} shows a largely different confidence
-range, while the cloud plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
+range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
 Thus, it could be effectively handled for a wide range of bulk materials.\\
 % \input{images/texCaller/35schulze10070aorradarandcloud}
@@ -107,16 +117,15 @@ We then processed the random combinations with the $AOR$ $NN$. In Fig.
 \ref{fig:31radarpirker1aor} the radar plot realized with the same criteria as
 before can be seen.
 In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
-by the particles rolling the coefficient of rolling friction has the maximum influence. 
-Further, in the cloud plot in Fig. \ref{fig:32cloudpirker1aor}
-we could see that there are valid combinations also with slight $\mu_s$. \\
+by the particles rolling the coefficient of rolling friction has the maximum
+influence. \\
+%Further, in the density plot in Fig. \ref{fig:32cloudpirker1aor}
+%we could see that there are valid combinations also with slight $\mu_s$. \\
 Finally, we extracted from the $TC1$ values the $AOR$ $NN$ behaviour
 and compared it with the experimental one.
 As can be seen in the radar plot in Fig.
 \ref{fig:33radarpirker1schulze10070aor}, the confidence range is meager, indicating that all the parameters but the $COR$ 
 had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
-Also in the cloud plot in Fig. \ref{fig:34cloudpirker1schulze10070aor} we
-observed a condensed distribution of valid parameters.
 From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
 see table \ref{tab:13DEMvalidvalues}.
 \input{images/texCaller/22regression}
@@ -128,7 +137,7 @@ see table \ref{tab:13DEMvalidvalues}.
 \input{images/texCaller/36schulzeradar}
 \input{images/texCaller/37schulzecloud}
 \input{images/texCaller/38schulze10070aorradar}
-\input{images/texCaller/39schulze10070aorcloud}
+%\input{images/texCaller/39schulze10070aorcloud}
 
 
 %\input{images/texCaller/24radarpirker1schulze10070}

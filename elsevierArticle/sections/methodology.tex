@@ -58,21 +58,30 @@ the $NN$ and the 15\% $test ~ simulations$, granted uncorrelated.
 So, we could select for $\mu_{psh}$ the $NN$ with the maximum $R^2$, and we noted its number of neurons. 
 We repeated the same steps from the $NN$ creations for $\mu_{sh}$, $\rho_b$ and $AOR$, 
 obtaining one trained $NN$ for each bulk representative value. \\
-% \input{tables/12DEMRandominputvalues}
 Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
-simulations, so their $NN$ were handled together. We then created random values
+simulations, so their $NN$ were handled together. 
+We had one cluster of three $NN$ for the shear cell and one with only one $NN$
+for the $AOR$.
+Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
+($DOE$) method to determine the parameters' combinations to be simulated.
+They affirm that this approach allows to optimize the computational time with
+only an acceptable loss of precision.
+Thanks to the speed of the trained $NN$, we followed a different approach to
+maximize the precision of the characterization.
+We created random values
 in the range and number defined in table \ref{tab:12DEMRandominputvalues}.
 The total number of combinations of these random values was $6250000$. These
 combinations were then processed by the selected $NN$, granting for each three bulk representative parameters for the shear cell and one for the $AOR$. Later, we confronted the $NN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
 If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
 than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
 \input{equations/check2}
-then the combination was tabbed. The latter combinations were handled by the $AOR$ $NN$, and then confronted with the experiment. 
+then the combination was marked. The latter combinations were handled by the
+$AOR$ $NN$, and then confronted with the experiment.
 Were branded as valid only those that differed less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
 \input{equations/checkaor}
-Further, to prove the system validity, we tested the tabbed combinations by modifying the experimental bulk
-behaviour representative values of the shear cell. 
+Further, to prove the system validity, we tested the marked combinations by
+modifying the experimental bulk behaviour representative values of the shear cell. 
 We artificially decreased or increased $\mu_{psh}$ and $\mu_{sh}$ by a product
 coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 \input{equations/pcoeff}

@@ -4,16 +4,17 @@
 %************************************************
 
 Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - 
-play a major role in a variety of industries, including process industry and metallurgy. 
+play a major role in a variety of industries, including process industry and
+metallurgy.
 Discrete Element Method ($DEM$) simulations are widely used to picture particle
 behaviour in these granular processes.
 From the original formulation by Cundall and Strack \cite{RefWorks:172}
 the method has been further refined in the hard-spheres and soft-spheres
 approaches, explained in details, respectively, by Vu-Quoc and Zhang
 \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}.
-Di Renzo and Di Maio \cite{RefWorks:145} confirm that the soft-spheres approach
+They \cite{RefWorks:145} confirm that the soft-spheres approach
 allows an easier implementation of the inter-particle forces.
-the approach has been implemented in the open source code $LIGGGHTS$ by
+The approach has been implemented in the open source code $LIGGGHTS$ by
 Kloss et al. \cite{RefWorks:136}.
 Further, Ai et al. \cite{RefWorks:131} demonstrated that a series of DEM
 models can reproduce the behaviours of non-spherical materials.
@@ -25,7 +26,8 @@ Like us, both Alenzi et al. \cite{RefWorks:91} and Aigner et al.
 \cite{RefWorks:139} dealt with the issue of identifying the parameters for the
 inter-particle forces evaluated with these methods.
 The parameters, empirically by nature, that depict this phenomenon are challenging
-to obtain experimentally.
+to obtain experimentally \cite{RefWorks:148, RefWorks:145, RefWorks:136,
+RefWorks:131, RefWorks:87, RefWorks:91, RefWorks:139}.
 So, they used shear cell testers to perform calibration experiments, 
 focusing on the bulk behaviour of the materials analysed.
 The calibration consisted in using this macro behaviour to 
@@ -57,8 +59,9 @@ $0.01$ to $1.00$, a reasonable approach would involve $100$ simulations.
 Performing and investigate the 
 more than $10^8$ simulations required was out of the scope of this paper.
 Instead, as suggested by Vaferi et al. \cite{RefWorks:150} and Witten et al.
-\cite{RefWorks:174}, we harnessed Artificial Neural Networks ($NN$) for their
-stability and reliability with non-linear systems like ours.
+\cite{RefWorks:174}, we harnessed Artificial Neural Networks ($NN$) not only for
+their stability and reliability with non-linear systems like ours,
+but also for their critical effectiveness in handling huge amounts of data.
 Furthermore, the main aim of this work was to improve the characterization 
 of several $DEM$ parameters for non-spherical particles. 
 From the performed simulations bulk representative parameters were extracted. 
