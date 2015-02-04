@@ -39,9 +39,11 @@ varied to replicate the twelve shear cell load conditions.
 In total, we realized $546$ shear cell and $81$ angle of repose simulations.
 A Matlab script allowed us to extract from the simulations output the numerical
 bulk representative values ($\mu_{psh}$, $\mu_{sh}$, $\rho_b$ and $AOR$) for each $simulation-DEM$ parameter combination. 
-So, we could use the $DEM$ parameter combinations and their corresponding bulk values to train the $NN$. 
-Notably, we excluded 15\% of the simulations ($test ~ simulations$), randomly
-picked, from the training processes.
+So, we could use the $DEM$ parameter combinations and their corresponding bulk
+values to train the $NN$,
+dashed line in Fig. \ref{fig:19methodology}.
+Notably, we excluded 15\% of the simulations ($test ~ simulations$),
+randomly picked, from the training processes.
 First, we started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $NN$. 
 They differed because they included from five to forty neurons in the hidden
 layer.
@@ -54,6 +56,8 @@ Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
 simulations, so their $NN$ were handled together. 
 We had one cluster with three $NN$ for the shear cell and one with only one $NN$
 for the $AOR$.
+We could then proceed in identifying the valid input parameters, straight line
+in Fig. \ref{fig:19methodology}.
 Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
 ($DOE$) method to determine the parameters' combinations to be simulated.
 They affirm that this approach allows optimizing the computational time with
@@ -63,7 +67,8 @@ maximize the precision of the characterization.
 We created random values
 in the range and number defined in table \ref{tab:12DEMRandominputvalues}.
 The total number of combinations of these random values was $6250000$. These
-combinations were then processed by the selected $NN$, granting for each three bulk representative parameters for the shear cell and one for the $AOR$. Later, we confronted the $NN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
+combinations were then processed by the selected $NN$, granting for each three bulk representative parameters for the shear cell and one for the $AOR$. 
+Later, we confronted the $NN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
 If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
 than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
 \input{equations/check2}

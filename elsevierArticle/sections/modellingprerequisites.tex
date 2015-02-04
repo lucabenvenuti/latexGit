@@ -81,21 +81,20 @@ Together, they are interconnected into layers, also linked together.
 The trustworthiness of the $MLPNN$, with a backpropagation reinforcement learning 
 training algorithm (scaled conjugate gradient), has been widely demonstrated in the 
 literature, see Haykin \cite{RefWorks:158}. Several scientists 
-\cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169, RefWorks:170} 
-have operated $NN$ to model materials mechanical properties. 
+\cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
+RefWorks:170, RefWorks:178, RefWorks:179} have operated $NN$ to model materials
+mechanical properties.
 Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
 In fact, $MLPNN$ are built with three different layers. 
 The input layer has a number of neurons equal to the number of different inputs
 of the network, see Fig. \ref{fig:18nnscheme}.
-The hidden (or central) layer number of neurons must be defined. 
+The hidden (or central) layer's number of neurons must be defined. 
 In our case this number has been established through mean square maximization ($R^2$), 
 again as suggested by Vaferi et al. \cite{RefWorks:150}. 
 For each investigated output we chose the number of neurons with the greater $R^2$.
 Finally, the output layer contains one neuron for the output.
-The transfer functions between the first two layers are the tangential sigmoid, Eq. \ref{eq:tansig}, 
-while between the hidden and central layers are linear, Eq. \ref{eq:purelin}:
-\input{equations/tansig}
-\input{equations/purelin}
+The transfer functions between the first two layers are the tangential sigmoid, 
+while between the hidden and central layers are linear.\\
 Further, we should question the quality of the $NN$ data, according to the 
 Oberkampf et al. \cite{RefWorks:160} method. Haykin \cite{RefWorks:158} 
 suggests questioning both the $NN$ training process and the following data
