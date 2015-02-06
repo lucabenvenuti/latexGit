@@ -6,7 +6,7 @@
 \label{subsec:experiments}
 
 Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
-for sinter fine have been acquired through the $SRSCT$, e.g. in Table
+for sinter fine have been acquired through the $SSC$, e.g. in Table
 \ref{tab:05sinterTableExperimental}
 these values for three load conditions are presented.
 In the $\mu_{psh}$ a descending path is evident. 
@@ -22,7 +22,7 @@ The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
 Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
 After, a second plateau started.
 As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
-Later, two $AOR$ test have been performed, thus identifying an average angle of
+Later, two $AoR$ test have been performed, thus identifying an average angle of
 $38.85 ^\circ$.
 We also realized the sieving, obtaining the radius ($R$) mean and standard
 deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
@@ -41,7 +41,7 @@ comparable to the experimental one, especially the plateaux.
 They were clearly relevant because there we collected the numerical bulk
 behaviour representative values.\\
 The computational time resulted in 1 hour with 32 AMD cores for a benchmark
-shear cell simulation and 9 hours for a benchmark $AOR$ simulation, both with 50K particles. 
+shear cell simulation and 9 hours for a benchmark $AoR$ simulation, both with 50K particles. 
 Simulations with larger $dCylDp$ required a greater time amount (e.g. with 400K
 particles about 12 hours for the shear cell). \\
 
@@ -50,23 +50,23 @@ particles about 12 hours for the shear cell). \\
 
 First, we controlled the regression of the bulk behaviour parameters, e.g. the
 $\mu_{psh}$, see Fig. \ref{fig:22regression}, where the corresponding plot for
-the $NN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
+the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
 simulations.
 The plot presents a consistent agreement between the $DEM$ results distribution
-(T in the legend) and the $NN$ regression (or fitting) line.
+(T in the legend) and the $ANN$ regression (or fitting) line.
 The linear relationship between the
 training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
 The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
 $\rho_p$ and $\rho_b$.
-Instead, for $\mu_{sh}$ and $AOR$ the $\mu_r$ balanced the influence of the 
+Instead, for $\mu_{sh}$ and $AoR$ the $\mu_r$ balanced the influence of the 
 $\mu_s$, and further parameters were worthly correlated. \\
 Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
-In this case we reached a $R^2 = 0.96$ for a $NN$ with fifteen neurons. 
+In this case we reached a $R^2 = 0.96$ for a $ANN$ with fifteen neurons. 
 Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
-We later obtained the correct number of neurons for all the $NN$.
+We later obtained the correct number of neurons for all the $ANN$.
 Further, we processed the random combinations (table
-\ref{tab:10DEMVariableinputvalues}) with the $NN$.
-The $NN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
+\ref{tab:10DEMVariableinputvalues}) with the $ANN$.
+The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
 individuation of all the marked $DEM$ combinations for the shear cell did not
 take more than a few seconds on a single core.
 We represented the marked combinations ($MC1$) for one load condition of the
@@ -110,13 +110,13 @@ and its marked combinations ($MC3$) the radar plot in Fig.
 range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
 Thus, it could be effectively handled for a wide range of bulk materials.\\
-We then processed the random combinations with the $AOR$ $NN$. In Fig.
+We then processed the random combinations with the $AoR$ $ANN$. In Fig.
 \ref{fig:31radarpirker1aor} the radar plot realized with the same criteria as
 before can be seen.
 In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by the particles rolling the coefficient of rolling friction has the maximum
 influence. \\
-Finally, we extracted from the $MC1$ values the $AOR$ $NN$ behaviour
+Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
 and compared it with the experimental one.
 As can be seen in the radar plot in Fig.
 \ref{fig:33radarpirker1schulze10070aor}, the confidence range is meager, indicating that all the parameters but the $COR$ 
