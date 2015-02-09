@@ -2,32 +2,7 @@
 \label{sec:results}
 %************************************************
 
-\subsection{Experiments}
-\label{subsec:experiments}
 
-Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
-for sinter fine have been acquired through the $SSC$, e.g. in Table
-\ref{tab:05sinterTableExperimental}
-these values for three load conditions are presented.
-In the $\mu_{psh}$ a descending path is evident. 
-Instead, the $\mu_{sh}$ is oscillating.
-The $\rho_b$ presents a clear average of $1760 [kg/m^3]$ with a $42 [kg/m^3]$
-deviation.
-The stress path for the second load condition of Table
-\ref{tab:05sinterTableExperimental} is shown in Fig.
-\ref{fig:20experimental}.
-First, the $\sigma_n$ was kept constant. 
-Meanwhile, the $\mu_{ie}$ initially increased and then reached a plateau.
-The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
-Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
-After, a second plateau started.
-As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
-Later, two $AoR$ test have been performed, thus identifying an average angle of
-$38.85 ^\circ$.
-We also realized the sieving, obtaining the radius ($R$) mean and standard
-deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
-\input{images/texCaller/40experimentalsimulation}
-\input{tables/05sinterTableExperimental}
 
 \subsection{DEM Simulations}
 \label{subsec:simulations}
@@ -44,6 +19,7 @@ The computational time resulted in 1 hour with 32 AMD cores for a benchmark
 shear cell simulation and 9 hours for a benchmark $AoR$ simulation, both with 50K particles. 
 Simulations with larger $dCylDp$ required a greater time amount (e.g. with 400K
 particles about 12 hours for the shear cell). \\
+\input{images/texCaller/40experimentalsimulation}
 
 \subsection{ANN model development}
 \label{subsec:annmodeldev}
@@ -69,6 +45,40 @@ Further, we processed the random combinations (table
 The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
 individuation of all the marked $DEM$ combinations for the shear cell did not
 take more than a few seconds on a single core.
+\input{images/texCaller/22regression}
+\input{tables/06inputRelationshipTable}
+
+
+\subsection{Experiments}
+\label{subsec:experiments}
+
+Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+for sinter fine have been acquired through the $SSC$, e.g. in Table
+\ref{tab:05sinterTableExperimental}
+these values for three load conditions are presented.
+In the $\mu_{psh}$ a descending path is evident. 
+Instead, the $\mu_{sh}$ is oscillating.
+The $\rho_b$ presents a clear average of $1760 ~ [kg/m^3]$ with a $42 ~
+[kg/m^3]$ deviation.
+The stress path for the second load condition of Table
+\ref{tab:05sinterTableExperimental} is shown in Fig.
+\ref{fig:20experimental}.
+First, the $\sigma_n$ was kept constant. 
+Meanwhile, the $\mu_{ie}$ initially increased and then reached a plateau.
+The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
+Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
+After, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
+Later, two $AoR$ test have been performed, thus identifying an average angle of
+$38.85 ^\circ$.
+We also realized the sieving, obtaining the radius ($R$) mean and standard
+deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
+\input{tables/05sinterTableExperimental}
+
+
+\subsection{Parameter Identification}
+\label{subsec:parameteridentification}
+
 We represented the marked combinations ($MC1$) for one load condition of the
 shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$) in Fig.
 \ref{fig:24radarpirker1schulze10070}.
@@ -123,8 +133,7 @@ As can be seen in the radar plot in Fig.
 had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
 From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
 see table \ref{tab:13DEMvalidvalues}.
-\input{images/texCaller/22regression}
-\input{tables/06inputRelationshipTable}
+
 \input{tables/13DEMvalidvalues}
 \input{images/texCaller/36schulzeradar}
 \input{images/texCaller/37schulzecloud}
