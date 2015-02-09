@@ -11,7 +11,13 @@ For sinter fine 546 shear cell and 81 static angle of repose simulations have
 been realized with the variations described in table
 \ref{tab:10DEMVariableinputvalues}.
 A representative stress path can be seen in Fig. \ref{fig:21simexample}.
-Although the duration is smaller by two order of magnitude, the stress path is
+First, the $\sigma_n$ was kept constant. 
+Meanwhile, the $\mu_{ie}$ initially increased and then reached a plateau.
+The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
+Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
+After, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
+The stress path is
 comparable to the experimental one, especially the plateaux.
 They were clearly relevant because there we collected the numerical bulk
 behaviour representative values.\\
@@ -43,16 +49,16 @@ We later obtained the correct number of neurons for all the $ANN$.
 Further, we processed the random combinations (table
 \ref{tab:10DEMVariableinputvalues}) with the $ANN$.
 The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
-individuation of all the marked $DEM$ combinations for the shear cell did not
-take more than a few seconds on a single core.
+individuation of the numerical bulk behaviours for all the $DEM$ combinations
+did not take more than a few seconds on a single core.
 \input{images/texCaller/22regression}
 \input{tables/06inputRelationshipTable}
 
 
-\subsection{Experiments}
-\label{subsec:experiments}
+\subsection{Experiments and Parameter Identification}
+\label{subsec:experimentsparameteridentification}
 
-Initially, experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
 for sinter fine have been acquired through the $SSC$, e.g. in Table
 \ref{tab:05sinterTableExperimental}
 these values for three load conditions are presented.
@@ -63,24 +69,15 @@ The $\rho_b$ presents a clear average of $1760 ~ [kg/m^3]$ with a $42 ~
 The stress path for the second load condition of Table
 \ref{tab:05sinterTableExperimental} is shown in Fig.
 \ref{fig:20experimental}.
-First, the $\sigma_n$ was kept constant. 
-Meanwhile, the $\mu_{ie}$ initially increased and then reached a plateau.
-The $\mu_{psh}$ was calculated as average of the $\mu_{ie}$ in this plateau.
-Automatically, the $\sigma_n$ was reduced to $80 \%$ of its initial value.
-After, a second plateau started.
-As average of $\mu_{ie}$ in this second plateau we obtained $\mu_{sh}$.
+
 Later, two $AoR$ test have been performed, thus identifying an average angle of
 $38.85 ^\circ$.
 We also realized the sieving, obtaining the radius ($R$) mean and standard
 deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
-\input{tables/05sinterTableExperimental}
 
-
-\subsection{Parameter Identification}
-\label{subsec:parameteridentification}
-
-We represented the marked combinations ($MC1$) for one load condition of the
-shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$) in Fig.
+The confrontation between numerical and experimental behaviours led to a first
+series of marked combinations ($MC1$) for one load condition of
+the shear cell ($\sigma_n=10070 ~[Pa]$, $P=1.0$), represented in Fig.
 \ref{fig:24radarpirker1schulze10070}.
 Here, the minimum and maximum values, together with the mean are shown. 
 Furthermore, the shaded area represents valid parameters combinations.
@@ -133,8 +130,14 @@ As can be seen in the radar plot in Fig.
 had an important role and the reliability of these parameters combinations to represent the bulk behaviour. 
 From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
 see table \ref{tab:13DEMvalidvalues}.
-
+\input{tables/05sinterTableExperimental}
 \input{tables/13DEMvalidvalues}
 \input{images/texCaller/36schulzeradar}
 \input{images/texCaller/37schulzecloud}
 \input{images/texCaller/38schulze10070aorradar}
+
+
+
+
+% \subsection{}
+% \label{subsec:}
