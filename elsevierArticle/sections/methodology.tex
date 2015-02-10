@@ -20,9 +20,9 @@ although we reduced the former to increase the time step ($\Delta t$), following
 the indications of Ai et al. \cite{RefWorks:131}.
 The last was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, that also
 depends to the particle density ($\rho_p$).
-Furthermore, we locked the size distribution, provided by experimental sieving
-\ref{tab:09DEMFixedinputvalues}.
-In the contact law we used 
+Furthermore, we locked the size distribution, provided by experimental sieving,
+see table \ref{tab:09DEMFixedinputvalues}.
+In the contact law we used, 
 the tangential component of the contact force between two generic particles
 ($F_t$) is truncated to fulfil
 \input{equations/force_t}
@@ -40,13 +40,12 @@ rolling cases as well as the cycling rolling ones.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 \input{equations/trmax}
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
-The particles radii have been approximated from the experimental measurements. 
 The last two particle based $DEM$ parameter we investigated were the $\rho_p$
 and the coefficient of restitution ($COR$), as defined by Ai. et al. \cite{RefWorks:131}.
 
 The coefficients, $COR$, $\mu_s$, $\mu_r$,
-$\rho_p$ and $dCylDp$, as indicated in table \ref{tab:10DEMVariableinputvalues},
-were constant in each simulation, but their combination differed between
+$\rho_p$ and $dCylDp$ (the cylinder dimension, as proportion to the mean
+particle diameter), as indicated in table \ref{tab:10DEMVariableinputvalues}, were constant in each simulation, but their combination differed between
 simulations.
 Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
 all simulations had $dCylDp$ larger than $20$ (additional information can be found in \ref{subsec:srsctsimulation}). 
@@ -54,27 +53,33 @@ The normal stress $\sigma_n$ and its
 percentage during the incipient flow condition $\tau_{\%}$
 varied to replicate twelve shear cell load conditions. 
 The complete description of the shear cell simulations can be found in \ref{subsec:srsctsimulation}, 
-while the AOR simulation is presented in \ref{subsec:aorsimulation}.
-In total, we realized $546$ shear cell and $81$ angle of repose simulations.
+while the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulations output the numerical
 bulk representative values for
 each $simulation-DEM$ parameter combination:
 bulk density ($\rho_b$),
 coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
-and angle of repose ($AoR$) .
+and angle of repose ($AoR$).
 The first bulk behaviour representative value ($\rho_b$) was directly provided. 
 If a simulation was performed correctly, see \ref{subsec:srsctsimulation}, we
-observed a linear increase in the coefficient of internal friction.
-Later, the first plateau was reached. 
-The second bulk behaviour representative value ($\mu_{psh}$) was calculated by averaging the coefficient in this plateau. 
-Further, the normal load ($\sigma_n$) was modified, and then a second plateau
-was reached.
-The third value ($\mu_{sh}$) was determined by averaging the coefficient in this plateau. 
+observed a stress path as in Fig. \ref{fig:21simexample}.
+First, the $\sigma_n$ was kept constant. 
+Meanwhile, the coefficient of internal friction ($\mu_{ie}$) initially increased
+and then reached a plateau.
+The second bulk behaviour representative value ($\mu_{psh}$) was calculated as average of the $\mu_{ie}$ in this plateau.
+Automatically, the $\sigma_n$ was reduced, in this example to $80 \%$ of its
+initial value.
+After, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained the third value
+($\mu_{sh}$).
+The stress path is
+comparable to the experimental one, especially the plateaux.
+They were clearly relevant because there we collected the numerical bulk
+behaviour representative values.\\
 In the $AoR$ tests the average of the repose angles provided us the fourth bulk
 value, allowing us to define the numerical bulk behaviour.
-
-
+\input{images/texCaller/40experimentalsimulation}
 \input{tables/09DEMFixedinputvalues}
 \input{tables/10DEMVariableinputvalues}
 \input{tables/12DEMRandominputvalues}
@@ -95,13 +100,12 @@ values to train the $ANN$,
 dashed line in Fig. \ref{fig:19methodology}.
 Notably, we excluded 15\% of the simulations ($test ~ simulations$),
 randomly picked, from the training processes.
-First, we started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $ANN$. 
+We started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $ANN$. 
 They differed because they included from five to forty neurons in the hidden
 layer.
-Later, we controlled the square regression error between the $bulk-macro$ behaviours in the output of 
-the $ANN$ and the 15\% $test ~ simulations$, granted uncorrelated. 
-So, we could select for $\mu_{psh}$ the $ANN$ with the maximum 
-mean square maximization ($R^2$), 
+Later, we controlled the coefficient of determination ($R^2$) between the
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, granted uncorrelated. 
+So, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
 We repeated the same steps from the $ANN$ creations for $\mu_{sh}$, $\rho_b$ and $AoR$, 
@@ -113,7 +117,7 @@ for the $AoR$.
 We could then proceed in identifying the valid input parameters, straight line
 in Fig. \ref{fig:19methodology}.
 Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
-($DOE$) method to determine the parameters' combinations to be simulated.
+($DoE$) method to determine the parameters' combinations to be simulated.
 They affirm that this approach allows optimizing the computational time with
 only an acceptable loss of precision.
 Thanks to the speed of the trained $ANN$, we followed a different approach to
