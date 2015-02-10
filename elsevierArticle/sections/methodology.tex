@@ -29,8 +29,8 @@ the tangential component of the contact force between two generic particles
 where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
 friction, one of the particle based $DEM$ parameter we investigated. 
 Another parameter was the coefficient of rolling friction ($\mu_r$). 
-For coarse not round particles is a critical parameter and describes inter-particle 
-friction in medium to dense granular flows simulations. It is proportional to the 
+For coarse non-spherical particles this is a critical parameter and describes
+inter-particle friction in medium to dense granular flows simulations. It is proportional to the 
 torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
 equations according to the elasto-rolling resistance model presented by Wensrich and 
 Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131}, 
@@ -102,7 +102,8 @@ We started with all the $DEM$ parameter combinations and their corresponding num
 They differed because they included from five to forty neurons in the hidden
 layer.
 Later, we controlled the coefficient of determination ($R^2$) between the
-$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, granted uncorrelated. 
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
+which are not correlated with the remaining 85\% used for the training. 
 So, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.

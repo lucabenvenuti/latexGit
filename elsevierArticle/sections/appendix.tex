@@ -18,10 +18,10 @@ Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear Hertzian
 the particle-particle and particle-wall contacts. 
 This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
 \input{equations/forceij}
-where the subscript n stands for normal and t for tangential. 
-Here, $k$ and $\gamma$ are respectively the elastic and damping coefficients, 
-while $\delta$ and $v$ the displacement and the velocity, $r$ the distance
-between two particles of radii $R_i$ and $R_j$ and $d = R_i + R_j $ is the
+where the subscript $n$ stands for normal and $t$ for tangential. 
+Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
+while $\delta$ and $v$ are the displacement and the velocity, $r$ is the
+distance between two particles of radii $R_i$ and $R_j$ and $d = R_i + R_j $ is the
 contact distance.
 Both the normal and the tangential
 force comprise two terms, a spring force and a damping force. 
@@ -88,17 +88,18 @@ and then to process vast amount of parameters combinations.
 They map combinations of input data into convenient outputs (fitting). 
 There is a variety of types of $ANN$, remarkably the Feedforward ($FF$) 
 and the Radial basis function ($RBF$). For $FF-NN$, considerable amount 
-of traning algorithms are available. The most common are based on backpropagation: 
+of training algorithms are available. The most common are based on
+backpropagation:
 e.g. Levenberg-Marquardt, Bayesian regulation and scaled conjugate gradient. 
 To recognize not linearly separable data the standard linear perceptron $ANN$ 
 has been modified into \textit{FF Multilayer Perceptron Neural Networks (MLPNN)}. 
-Here, each processing units or node (neuron) possesses a nonlinear activation function. 
+Here, each processing unit or node (neuron) possesses a nonlinear activation function. 
 Together, they are interconnected into layers, also linked together. 
-The trustworthiness of the $MLPNN$, with a backpropagation reinforcement learning 
+The validity of the $MLPNN$, with a backpropagation reinforcement learning 
 training algorithm (scaled conjugate gradient), has been widely demonstrated in the 
 literature, see Haykin \cite{RefWorks:158}. Several scientists 
 \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
-RefWorks:170, RefWorks:178, RefWorks:179} have operated $ANN$ to model materials
+RefWorks:170, RefWorks:178, RefWorks:179} have used $ANN$ to model materials'
 mechanical properties.
 Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
 
