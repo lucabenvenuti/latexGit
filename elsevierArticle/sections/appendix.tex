@@ -25,9 +25,10 @@ between two particles of radii $R_i$ and $R_j$ and $d = R_i + R_j $ is the
 contact distance.
 Both the normal and the tangential
 force comprise two terms, a spring force and a damping force. 
-The shear force is a "history" effect that accounts for the tangential displacement 
-("tangential overlap") between the particles for the duration of contact. 
-In the work Wensrich and Katterfeld \cite{RefWorks:87} further details on the method can be found.
+The tangential (or shear) force is a "history" effect that accounts for the
+tangential displacement ("tangential overlap") between the particles for the duration of contact. 
+In the work Wensrich and Katterfeld \cite{RefWorks:87} further details on the
+method can be found.\\
 $LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
 modelling the shear tester described in the \ref{subsec:srsctexperiment}. 
 First, it is capable of importing triangulated meshes of the two rings and a top lid. 
@@ -44,7 +45,7 @@ As suggested by Aigner et al. \cite{RefWorks:139} and Benvenuti et al. \cite{Ref
 the diameter and the height of the rings operated in the simulations had to be sufficiently large to avoid relevant wall effects. 
 Nevertheless, a larger domain increases the number of particles, and thus the simulation time. 
 For this reason, we considered the cylinder dimension, as proportion to the mean particle diameter ($dCylDp$), 
-an additional $DEM$ parameter investigated. \\   
+an additional $DEM$ parameter to be investigated. \\   
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed
 settling.
@@ -63,7 +64,8 @@ The velocity of the ring displacement, and consequently the total simulation tim
 through a challenging equilibrium between the downgrading of normal load oscillation and the computational time containment. 
 The former is obtained by low (relatively) velocity, the latter by high speed. We imposed a constant velocity 
 of $3*(mean-particle-radius)/seconds$, the most suitable to satisfy the two competing requests. \\
-The normal stresses (pre-shear and shear phases) applied in each simulation were the same as in the experiments. 
+The normal stresses (pre-shear and shear phases) applied in each simulation were
+the same as in the experiments, see \ref{subsec:srsctexperiment}.
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
 
 \subsection{AOR simulation}
@@ -100,8 +102,7 @@ RefWorks:170, RefWorks:178, RefWorks:179} have operated $ANN$ to model materials
 mechanical properties.
 Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
 
-Further, we should question the quality of the $ANN$ data, according to the 
-Oberkampf et al. \cite{RefWorks:160} method. Haykin \cite{RefWorks:158} 
+Further, we should question the quality of the $ANN$ data. Haykin \cite{RefWorks:158} 
 suggests questioning both the $ANN$ training process and the following data
 generation from provided inputs.
 The former is usually challenged when dealing with experimental training data, and frequently 
@@ -148,9 +149,11 @@ We define the horizontal stress during the shear force peak as maximum shear str
 thus obtaining the $incipient-flow/shear ~ coefficient-of-internal-friction $ $
 (\mu_{sh})$, third behaviour value (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
 \input{equations/phi_s} 
-From two to three different pre-shear normal loads were applied in the experiment. 
+Three different pre-shear normal loads were applied in the experiment
+(1000, 2000, and 10000 Pa).
 For each we used a normal load proportional to the initial one ($shear-perc$) increasing from stage one (40\%) 
-to stage four (100\%) with two escalating intermediate stages (60\% and 80\%).
+to stage four (100\%) with two escalating intermediate stages (60\% and 80\%),
+for a total of twelve load conditions.
 Each experiment was performed on a fresh material sample. \\
 
 \subsection{AOR experiment}
