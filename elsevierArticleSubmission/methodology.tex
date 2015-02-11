@@ -1,0 +1,158 @@
+\section{Methodology of DEM Parameter Identification}
+\label{sec:methodology}
+
+We now illustrate the methodology used, also shown in Fig.
+\ref{fig:19methodology}.
+\input{19methodology}
+
+% For simulations purposes, we also sieved the bulk to know the size distribution.
+% We could then focus on the simulations. 
+
+\subsection{Discrete element method}
+\label{subsec:dem}
+
+We decided to fix one single
+contact law for all the simulations performed, see
+\ref{subsec:srsctsimulation}.
+The $DEM$ parameters for the Young's modulus ($E$) and the coefficient of Poisson ($\nu$) 
+have been taken from the literature, see \cite{RefWorks:175} and \cite{RefWorks:176}, 
+although we reduced the former to increase the time step ($\Delta t$), following
+the indications of Ai et al. \cite{RefWorks:131}.
+The last was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, that also
+depends to the particle density ($\rho_p$).
+Furthermore, we locked the size distribution, provided by experimental sieving,
+see table \ref{tab:09DEMFixedinputvalues}.
+In the contact law we used, 
+the tangential component of the contact force between two generic particles
+($F_t$) is truncated to fulfil
+\input{force_t}
+where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
+friction, one of the particle based $DEM$ parameter we investigated. 
+Another parameter was the coefficient of rolling friction ($\mu_r$). 
+For coarse non-spherical particles this is a critical parameter and describes
+inter-particle friction in medium to dense granular flows simulations. It is proportional to the 
+torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
+equations according to the elasto-rolling resistance model presented by Wensrich and 
+Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131}, 
+based on the work of Jiang et al. \cite{RefWorks:143}. 
+The model is called $EPSD2$ in $LIGGGHTS$. This is appropriate for the one way
+rolling cases as well as the cycling rolling ones.
+The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
+\input{trmax}
+where $R_r$ is the equivalent radius and $F_n$ the normal force.
+The last two particle based $DEM$ parameter we investigated were the $\rho_p$
+and the coefficient of restitution ($COR$), as defined by Ai. et al. \cite{RefWorks:131}.
+
+The coefficients, $COR$, $\mu_s$, $\mu_r$,
+$\rho_p$ and $dCylDp$ (the cylinder dimension, as proportion to the mean
+particle diameter), as indicated in table \ref{tab:10DEMVariableinputvalues}, were constant in each simulation, but their combination differed between
+simulations.
+Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
+all simulations had $dCylDp$ larger than $20$ (additional information can be found in \ref{subsec:srsctsimulation}). 
+The normal stress $\sigma_n$ and its
+percentage during the incipient flow condition $\tau_{\%}$
+varied to replicate twelve shear cell load conditions. 
+The complete description of the shear cell simulations can be found in \ref{subsec:srsctsimulation}, 
+while the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
+A Matlab script allowed us to extract from the simulations output the numerical
+bulk representative values for
+each $simulation-DEM$ parameter combination:
+bulk density ($\rho_b$),
+coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
+coefficient of internal friction in the shear phase ($\mu_{sh}$),
+and angle of repose ($AoR$).
+The first bulk behaviour representative value ($\rho_b$) was directly provided. 
+If a simulation was performed correctly, see \ref{subsec:srsctsimulation}, we
+observed a stress path as in Fig. \ref{fig:21simexample}.
+First, the $\sigma_n$ was kept constant. 
+Meanwhile, the coefficient of internal friction ($\mu_{ie}$) initially increased
+and then reached a plateau.
+The second bulk behaviour representative value ($\mu_{psh}$) was calculated as average of the $\mu_{ie}$ in this plateau.
+Automatically, the $\sigma_n$ was reduced, in this example to $80 \%$ of its
+initial value.
+After, a second plateau started.
+As average of $\mu_{ie}$ in this second plateau we obtained the third value
+($\mu_{sh}$).
+The stress path is
+comparable to the experimental one, especially the plateaux.\\
+In the $AoR$ tests the average of the repose angles provided us the fourth bulk
+value, allowing us to define the numerical bulk behaviour.
+\input{40experimentalsimulation}
+\input{09DEMFixedinputvalues}
+\input{10DEMVariableinputvalues}
+\input{12DEMRandominputvalues}
+
+\subsection{Artificial Neural Networks}
+\label{subsec:ann}
+We first defined the typology of Artificial Neural Network ($ANN$) we used and
+the input we imposed to them, see \ref{sec:appann}.
+Our $ANN$ are built with three different layers. 
+The input layer has a number of neurons equal to the number of different inputs
+of the network, see Fig. \ref{fig:18nnscheme}.
+The hidden (or central) layer's number of neurons must be investigated. 
+The output layer contains one neuron for the output.
+The transfer functions between the first two layers are the tangential sigmoid, 
+while between the hidden and central layers are linear.\\
+So, we could use the $DEM$ parameter combinations and their corresponding bulk
+values to train the $ANN$,
+dashed line in Fig. \ref{fig:19methodology}.
+Notably, we excluded 15\% of the simulations ($test ~ simulations$),
+randomly picked, from the training processes.
+We started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $ANN$. 
+They differed because they included from five to forty neurons in the hidden
+layer.
+Later, we controlled the coefficient of determination ($R^2$) between the
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
+which are not correlated with the remaining 85\% used for the training. 
+So, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
+again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
+of neurons.
+We repeated the same steps from the $ANN$ creations for $\mu_{sh}$, $\rho_b$ and $AoR$, 
+obtaining one trained $ANN$ for each bulk representative value. \\
+Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
+simulations, so their $ANN$ were handled together. 
+We had one cluster with three $ANN$ for the shear cell and one with only one $ANN$
+for the $AoR$.
+We could then proceed in identifying the valid input parameters, straight line
+in Fig. \ref{fig:19methodology}.
+Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
+($DoE$) method to determine the parameters' combinations to be simulated.
+They affirm that this approach allows optimizing the computational time with
+only an acceptable loss of precision.
+Thanks to the speed of the trained $ANN$, we followed a different approach to
+maximize the precision of the characterization.
+We created random values
+in the range and number defined in table \ref{tab:12DEMRandominputvalues}.
+Together, the total number of combinations of these random values was $6250000$.
+These combinations were then imposed as input and processed by the selected
+$ANN$, granting for each three bulk representative parameters for the shear cell and one for the $AoR$. 
+\input{18nnscheme}
+
+
+\subsection{Macroscopic Experiments and Parameter Identification}
+\label{subsec:macroscopicexperimentsparameteridentification}
+The experimental characterization has been performed as described in
+\ref{subsec:srsctexperiment} and \ref{subsec:aorexperiment}. 
+We obtained for each of the twelve load conditions of the $SSC$ three values
+representative of the bulk behaviour ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
+Furthermore, to recreate the repose angle observed in a pile of the real material, 
+we performed two angle of repose ($AoR$) tests, as the $AoR$ was the fourth
+behaviour value. 
+
+Later, we confronted the $ANN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
+If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
+than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
+\input{check2}
+then the combination was marked. The marked combinations were handled by the
+$AoR$ $ANN$, and then confronted with the experiment.
+Were branded as valid only those that differed less than $5\%$ also in this
+comparison (Eq. \ref{eq:checkaor}):
+\input{checkaor}
+Further, to prove the system validity, we tested the marked combinations by
+modifying the experimental bulk behaviour representative values of the shear cell. 
+We artificially decreased or increased $\mu_{psh}$ and $\mu_{sh}$ by a product
+coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+\input{pcoeff}
+
+% \subsection{ Methodology}
+% \label{subsec:parameteridentificationmethodology}

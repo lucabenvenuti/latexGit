@@ -1,0 +1,67 @@
+%************************************************
+\section{Introduction}
+\label{sec:introduction}
+%************************************************
+
+Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - 
+play a major role in a variety of industries. 
+Discrete Element Method ($DEM$) simulations are widely used to picture particle
+behaviour in these granular processes (Cleary and Sawley \cite{RefWorks:130}).\\
+In their original formulation of $DEM$, Cundall and Strack \cite{RefWorks:172} allowed two 
+particles to slightly overlap upon contact and consequently they proposed repulsive forces in dependence on this overlap distance. 
+Since then their fundamental modelling concept has been widely accepted in literature 
+and their soft sphere contact law has been further developed by numerous researchers 
+(Vu-Quoc and Zhang \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}). 
+With increasing computational resources $DEM$ simulation have become very prominent 
+giving rise to the development of commercial (e.g. $PFC3D$, used by Wensrich and
+Katterfeld \cite{RefWorks:87}) and open-source software (e.g. $LIGGGHTS$, Kloss
+et al. \cite{RefWorks:136}, Aigner et al. \cite{RefWorks:139}).
+Soft sphere $DEM$ simulations of thousands of particles have proven to 
+picture particles bulk behaviour (Hohner et al. \cite{RefWorks:86}). \\
+In these macroscopic $DEM$ simulations the contact law kernel between a 
+pair of particles determines the global bulk behaviour of the granular material (Ai et al. \cite{RefWorks:131}). 
+As a consequence, defining a correct contact law is of crucial importance for the predictive 
+capability of $DEM$ simulations of granular material. 
+Since $DEM$ contact laws, in turn, are based 
+on a set of semi-empirical parameters, this further requires defining correct contact law 
+parameters for a given granular material. 
+Without material dependent contact law parameter identification $DEM$ simulations are prone to fail (Combarros et al. \cite{RefWorks:177}). \\
+Identifying $DEM$ contact law parameters is not at all a trivial task. 
+It may be impracticable to identify valid parameter sets by performing bilateral 
+particle collision experiments due to the sheer number of different particles within in a granular material. 
+Furthermore, some contact law parameters like the coefficient of rolling
+friction are purely empirical in nature and cannot be determined by direct 
+particle to particle measurements (Wensrich and Katterfeld \cite{RefWorks:87}).
+Therefore, $DEM$ contact law parameters (table \ref{tab:08DEMparameters}) are
+commonly determined by comparing the macroscopic outcome of large scale $DEM$ simulations with bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
+If $DEM$ simulation results disagree with bulk measurements the set of contact law parameters 
+has to be adapted until reasonable agreement id achieved.\\
+However, this purely forward methodology of parameter identification is limited by 
+the multi-dimensionality of the parameter space and the associated computational costs of the required $DEM$ test simulations. 
+To make things worse, one parameter set which is valid for one bulk behaviour (e.g. angle of repose) 
+might fail in case of another bulk behaviour (e.g. shear tester). \\
+Obviously, there is a need for an efficient methodology for the identification of $DEM$ contact law parameters. 
+In our study we harnessed Artificial Neural Networks ($ANN$) in order to reduce the number of required $DEM$ test simulations. 
+$ANN$ have proven to be a versatile tool in analysing complex, non-linear systems of 
+multi-dimensional input-streams (Vaferi et al. \cite{RefWorks:150}, Witten et
+al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
+In our case we fed an $ANN$ with $DEM$ contact law parameters as input parameters and 
+subsequently compared the output of the $ANN$ with the predicted bulk behaviour of a corresponding $DEM$ simulation. 
+The difference between $ANN$ prediction and $DEM$ prediction is utilized to train our 
+specific $ANN$ by a backward propagation algorithm (described further below). 
+After a training phase by a limited number of $DEM$ test simulations, the $ANN$ can then be 
+used as a stand-alone prediction tool for the bulk behaviour of a granular material in dependence of $DEM$ contact law parameters. \\
+In this study we applied this parameter identification methodology to two different granular bulk behaviours, 
+namely the angle of repose ($AoR$) test and Schulze shear cell ($SSC$) test. 
+In both cases we first trained a specific $ANN$ by a number of $DEM$ test simulations, 
+before we identified valid sets $DEM$ contact law parameters by comparing those 
+stand-alone $ANN$ predictions with corresponding bulk experiments. 
+For both cases we obtained valid sets of contact law parameters 
+which we then intersected to get a reliable contact law formulation for a given granular material. 
+We further show that the same $ANN$ can be utilized to characterize different granular materials. \\
+In the following section we define some pre-requisites including $DEM$ contact law definitions, 
+a general description of the $ANN$ functionality and sketches of the experimental set-ups under consideration. 
+Next, we present the proposed methodology of $DEM$ contact law parameter identification. 
+Subsequently, we apply this methodology to characterize $DEM$ contact law
+parameters of sinter fines.
+\input{08DEMparameters}

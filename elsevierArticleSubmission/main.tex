@@ -1,0 +1,86 @@
+\documentclass[review]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{picins}
+\usepackage{epstopdf}
+
+
+\usepackage{lipsum}                        % testo fittizio
+
+\usepackage[nomarkers]{endfloat}
+
+\newcommand{\listoflstlistings}{\lstlistoflistings}
+\DeclareDelayedFloat{lstlisting}[flol]{\textbf{List of Listings}}
+
+\lstset{tabsize=2,language=C++,basicstyle=\footnotesize\tt,keywordstyle=\color{blue}\bfseries}
+
+\journal{Powder Technology}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frontmatter}
+
+\title{Identification of DEM Simulation Parameters by Artificial Neural Networks
+and Bulk Experiments}
+
+\author[jku]{L.~Benvenuti\corref{cor1}}
+\ead{Tel. +43 73224686483}
+\ead{luca.benvenuti@jku.at}
+
+\author[dcs]{C.~Kloss}
+\ead{christoph.kloss@dcs-computing.com}
+
+\author[jku]{S.~Pirker}
+\ead{stefan.pirker@jku.at}
+
+\cortext[cor1]{Corresponding author}
+
+\address[jku]{Johannes Kepler University Linz, Department on Particulate Flow
+Modelling, Altenbergerstrasse 69, 4040, Linz, Austria}
+
+\address[dcs]{DCS Computing GmbH, Altenbergerstr. 66a - Science Park, 4040 Linz,
+Austria}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{abstract}
+
+\begin{keyword}
+Discrete Element Method ($DEM$) Simulations \sep Parameter Identification \sep Artificial Neural Networks
+\end{keyword}
+\end{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{highlights}
+
+\input{introduction}
+
+%\input{modellingprerequisites}
+\input{methodology}
+\input{resultsdiscussion}
+\input{conclusions}
+
+\section{Acknowledgements}
+This study was funded by Christian Doppler Forschungsgesellschaft, Siemens VAI Metals Technologies and Voestalpine Stahl. The authors gratefully aknowledge their support.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{elsarticle-num}
+\bibliography{Bibliografia}
+
+
+
+\newpage
+\input{appendix}
+
+\newpage
+%\input{vitae}
+
+\renewcommand\thefigure{\arabic{figure}}
+
+\end{document}
