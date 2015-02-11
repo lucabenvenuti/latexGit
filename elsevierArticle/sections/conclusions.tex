@@ -2,22 +2,28 @@
 \section{Conclusions}
 \label{sec:conclusions}
 %************************************************
-We performed a 
-limited number of $DEM$ simulations designed to be representative of a $SSC$ and an $AoR$ tester. 
-By varying a selection of the $DEM$ parameters combinations we obtained different numerical bulk behaviours. 
-We used these numerical results to train $ANN$. Once trained, they processed huge 
-numbers of $DEM$ parameters combinations to fast collect their numerical bulk behaviours. 
-These were compared with experimental values to gather valid combinations. 
-The validity of the procedure was tested against a different artificial series of experimental 
-values and also by using more than one bulk characterization experiment. 
-We could then claim that is a stringent methodology of refined $DEM$ parameters
-identification.
-Further, we demonstrated that an entire series of non-cohesive bulk materials could be tested with this procedure.
-Since the poly-dispersity had been considered in the simulations, but not varied, a future aim would 
-be to characterize with these procedure at least two bulk of the same material, with different size distributions. 
-Then, provided the size distribution of the mixture of the two, we could evaluate if the $ANN$ could predict 
-the bulk behaviour of the mixture without any further training. 
-Finally, we could expand the characterization to more materials, like coke, iron
-ore and limestone.
 
-%After the experimental characterization with  w
+We presented a two phase methodology for DEM simulation parameter
+identification. In a first phase an artificial neural network is 
+trained by dedicated DEM simulation in order to predict bulk 
+behaviour in dependence on a set of DEM simulation parameters. 
+In a second phase this artificial neural network is then utilized 
+to predict the bulk behaviour of a huge number of additional DEM parameter sets. 
+The main findings of this study can be summarized as:
+\begin{itemize}
+  \item{An artificial neural network can be trained by a limited number of dedicated DEM simulations. 
+  		Subsequently, the trained artificial neural network is able to predict
+  		granular bulk behaviour.}
+  \item{This prediction of granular bulk behaviour is highly efficient if
+  		compared to computationally expensive DEM simulations.
+  		Thus, a huge number of parameter sets can be studied with respect to their
+  		macroscopic output.}
+  \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
+  		valid sets of DEM simulation parameters can be readily deduced for a
+  		specific granular material.}
+  \item{This DEM parameter identification methodology can be applied to arbitrary bulk experiments. 
+  		Combining two artificial neural networks, which predict two different bulk
+  		behaviours, leads to focusing the set of valid DEM simulation parameters.}
+\end{itemize}
+In future we will further develop this methodology by considering different
+fractions of granular materials, which will lead to size dependent sets of DEM simulation parameters.
