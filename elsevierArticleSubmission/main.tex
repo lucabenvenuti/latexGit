@@ -430,9 +430,9 @@ $ANN$, granting for each three bulk representative parameters for the shear cell
 \begin{figure}[!htb] 
 \centering 
 \includegraphics[width=.96\textwidth]{18nnscheme} 
-\caption[NN Scheme]{Neural Network ($NN$) Scheme. This is the schematic of how
-the Multi Layer Perceptron $NN$ ($MLPNN$) derives one bulk behaviour
-dependent variable from the mutually independent simulation variables.}
+\caption[ANN Scheme]{Artificial Neural Network ($ANN$) Scheme. This is the
+schematic of how the Multi Layer Perceptron $ANN$ ($MLPNN$) derives one bulk
+behaviour dependent variable from the mutually independent simulation variables.}
 \label{fig:18nnscheme} 
 \end{figure}
 %************************************************
@@ -472,8 +472,8 @@ comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 Further, to prove the system validity, we tested the marked combinations by
 modifying the experimental bulk behaviour representative values of the shear cell. 
-We artificially decreased or increased $\mu_{psh}$ and $\mu_{sh}$ by a product
-coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+We artificially decreased or increased the shear force, and so $\mu_{psh}$ and
+$\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
 \begin{equation}
 \label{eq:pcoeff}
@@ -719,7 +719,7 @@ Finally, we show the number of valid parameter combinations over the total
         \label{fig:28radarpirker12schulze10070} 
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for three different
-    bulk behaviours measured by SCT]{Parameter space plot of valid simulations
+    bulk behaviours measured by SSC]{Parameter space plot of valid simulations
     parameters for three different bulk behaviours measured by shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     Furthermore, the shaded area represents valid parameter combinations.
@@ -749,7 +749,7 @@ Finally, we show the number of valid parameter combinations over the total
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
         \label{fig:30cloudpirker12schulze10070} 
     \end{subfigure}
-    \caption[Density plot comparison of SCT results]{Density plot comparison of
+    \caption[Density plot comparison of SSC results]{Density plot comparison of
     shear cell tester ($SSC$) results. The marked combinations for
     $\sigma_n=10070 ~Pa$ are here presented.
     Density plot of the particles' coefficient of restitution (COR) in dependence
@@ -783,7 +783,7 @@ Finally, we show the number of valid parameter combinations over the total
         \label{fig:33radarpirker1schulze10070aor} 
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for the AoR and
-    the merge between AoR and SCT valid parameters]{Parameter space plot of
+    the merge between AoR and SSC valid parameters]{Parameter space plot of
     valid simulations parameters for the angle of repose tester ($AoR$) and the merge
     between $AoR$ and shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
@@ -987,14 +987,14 @@ S.~M. Turp, B.~Eren, A.~Ates, Prediction of adsorption efficiency for the
 \section{Simulations}
 \label{sec:appsimulations}
 
-\subsection{SRSCT simulation}
+\subsection{SSC simulation}
 \label{subsec:srsctsimulation}
 For each particle i inside the domain a Discrete Element Method ($DEM$) code
 follows the trajectory and calculates the force that particle i exerts on particle j.
 The main forces involved are: gravity, contact forces due to collisions and further interactions such as electrostatic, 
 Van der Waals, cohesive forces and fluid-solid interactions in multiphase flows. For the raw material used in this work 
-Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear Hertzian model without cohesion for 
-the particle-particle and particle-wall contacts. 
+Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear
+Hertzian model without cohesion for the particle-particle and particle-wall contacts. 
 This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
 %************************************************
 \begin{equation}
@@ -1119,7 +1119,7 @@ number for each of the investigated parameter. Then, they were combined and impo
 \section{Experiments}
 \label{sec:appexperiments}
 
-\subsection{SRSCT experiment}
+\subsection{SSC experiment}
 \label{subsec:srsctexperiment}
 A representative sample of bulk solid was placed in a shear cell of specified
 dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$).
