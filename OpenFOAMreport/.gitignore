@@ -1,0 +1,16 @@
+/tmp/
+/Articolo.pdf
+/Articolo.run.xml
+*.jpg
+*.tif
+*.synctex.gz
+*.bib
+*.aux
+*.bbl
+*.bcf
+*.lof
+*.log
+*.lot
+*.nlo
+*.pdf
+*.toc

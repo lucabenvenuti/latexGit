@@ -1,0 +1,146 @@
+              %******************************************%
+              %                                          %
+              %     Modello di articolo scientifico      %
+              %            di Luca Benvenuti             %
+              %                                          %
+              %         versione: 22 maggio 2013         %
+              %                                          %
+              %******************************************%
+       
+
+% I seguenti commenti speciali impostano:
+% 1. utf8 come codifica di input,
+% 2. PDFLaTeX come motore di composizione;
+% 3. Articolo.tex come documento principale;
+% 4. il controllo ortografico italiano per l'editor.
+
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = Articolo.tex
+% !TEX spellcheck = it-IT
+
+\documentclass[10pt,%                       % corpo del font principale
+               a4paper,%                    % carta A4
+             %  oneside,%                    % solo fronte
+              twoside,%                    % fronte-retro
+               ]{article}                  % classe report di KOMA-Script;
+	   
+			   
+\usepackage{fancyhdr}
+               
+\usepackage[T1]{fontenc}                    % codifica dei font:
+                                            % NOTA BENE! richiede una distribuzione *completa* di LaTeX,
+                                          % per esempio TeXLive o MiKTeX *complete*
+
+\usepackage[utf8]{inputenc}              % codifica di input; anche [latin1] va beneutf8
+                                           % NOTA BENE! va accordata con le preferenze dell'editor
+
+
+\usepackage{microtype}                     % microtipografia
+
+\usepackage[italian,english]{babel}        % per scrivere in italiano e in inglese;
+                                           % l'ultima lingua (l'italiano) risulta predefinita
+                                           
+\usepackage[binding=5mm]{layaureo}         % margini ottimizzati per l'A4; rilegatura di 5 mm
+
+
+\usepackage{lmodern}  					   %new gerahrd
+\usepackage{cleveref}  					   %new gerahrd
+\usepackage{emptypage}     
+\usepackage{indentfirst}                    % rientra il primo capoverso di ogni sezione
+
+\usepackage{booktabs}                       % tabelle
+\usepackage{tabularx}                       % tabelle di larghezza prefissata
+\usepackage{graphicx}                       % immagini
+
+\usepackage{subfig}                         % sottofigure, sottotabelle
+\usepackage{caption}                        % didascalie
+
+\usepackage{listings}                       % codici
+
+\usepackage[font=small]{quoting}            % citazioni
+
+\usepackage{amsmath,amssymb,amsthm}        % matematica
+\usepackage{amsxtra,amstext,amsfonts}
+\usepackage{amscd}						   %chimica
+
+\usepackage[english]{varioref}              % riferimenti completi della pagina
+
+\usepackage{mparhack,fixltx2e,relsize}      % finezze tipografiche
+\usepackage[babel]{csquotes}
+      
+\usepackage[style=numeric-comp,hyperref,backref,backend=bibtex]{biblatex}
+\bibliography{Bibliografia}                 % database di biblatex 
+                                          
+\usepackage{chngpage,calc}                 % centra il frontespizio
+\usepackage[dvipsnames]{xcolor}             % colori
+\usepackage{color}
+
+\usepackage{lipsum}                        % testo fittizio
+
+\usepackage{eurosym}                       % simbolo dell'euro
+
+\usepackage[pdfa]{hyperref}                      % collegamenti ipertestuali
+
+\usepackage{bookmark}                      % segnalibri
+\usepackage[figuresright]{rotating}
+
+\usepackage{array}
+
+\usepackage{enumitem}
+
+\usepackage{colortbl}
+
+\usepackage{floatflt}
+\usepackage{titlesec}
+
+\usepackage{eurosym}  %indovina
+
+\setcounter{tocdepth}{5} %to make it appears in TOC
+\setcounter{secnumdepth}{5} %to make it numbered
+
+
+\usepackage{acronym}
+\usepackage{rotating}
+
+\input{impostazioni-articolo}               % file con le impostazioni personali
+
+
+
+\begin{document}
+\pagestyle{headings} 
+%******************************************************************
+% Materiale iniziale
+%******************************************************************
+\input{MaterialeInizialeFinale/Frontespizio}
+\input{MaterialeInizialeFinale/Indici}
+%
+%\input{MaterialeInizialeFinale/Sommario+Abstract}
+%******************************************************************
+% Materiale principale
+%******************************************************************
+
+%\input{Paragrafi/Scopeofwork}
+%\input{Paragrafi/Stages}
+%\input{Paragrafi/Referencescollection}
+%\input{Paragrafi/CFDConference}
+%\input{Paragrafi/Materials}
+%\input{Paragrafi/DEMParameters}
+\input{Paragrafi/Demcharacterizationworkflowcoarseparticles}
+\input{Paragrafi/CFDemcharacterizationworkflowcoarseparticles}
+\input{Paragrafi/BehaviorInvestigation}
+\input{Paragrafi/Elsevierpaper}
+%\input{Paragrafi/Demcharacterizationworkflowpowder}
+%\input{Paragrafi/Newfloor}
+%\input{Paragrafi/Ipsum}
+%\input{Paragrafi/trota}
+\appendix
+%\input{Paragrafi/Dolor}
+% *****************************************************************
+% Materiale finale
+%\input{MaterialeInizialeFinale/Acronimi}
+%\input{MaterialeInizialeFinale/Bibliografia}
+%******************************************************************
+\end{document}
+
+
