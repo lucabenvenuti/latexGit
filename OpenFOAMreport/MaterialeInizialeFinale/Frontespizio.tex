@@ -1,0 +1,65 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Articolo.tex
+% !TEX spellcheck = it-IT
+
+%*******************************************************
+% Frontespizio
+%*******************************************************
+\begin{titlepage}
+\pdfbookmark{Frontespizio}{Frontespizio}
+\changetext{}{}{}{((\paperwidth - \textwidth) / 2) - \oddsidemargin - \hoffset - 1in}{}
+
+\begin{center}
+
+
+% Upper part of the page
+\includegraphics[width=0.5\textwidth]{01PFM_Logo_Original}\\[1cm]    
+
+%\textsc{\LARGE \myDepartment}\\[1.5cm]
+
+
+% This document uses the following counting scheme
+%    I   - Year for Q1 of the year Year
+%    II  - Year ...
+%    III - Year
+%    IV  - Year
+\textsc{\Large \myTitle ~ - \RM{1}  - 2015}\\[0.5cm]
+
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries \myPhd}\\[0.4cm]
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+
+\begin{minipage}{0.8\textwidth}
+\begin{center} \large
+
+\emph{Author:}\\[0.4cm]
+
+%irstname \textsc{Lastname}
+\myName \\
+\texttt{\myemail}\\[1.5cm]
+
+\emph{Lecturer:} \\[0.4cm]
+% \
+\myProf \\[0.2cm]
+% \myOtherProf \\ [0.2cm]
+% \myOtherProff
+%\end{flushright}
+
+\end{center}
+
+\end{minipage}
+
+\vfill
+
+% Print the current date at the bottom of the page
+{\large \myTime}
+
+\end{center}
+
+\end{titlepage}
