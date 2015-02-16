@@ -8,7 +8,32 @@
 \label{section:methodology}
 %************************************************
 
+Two regions were created: porous and air.
+The porous region was a parallelepiped with a quadratic base and an height of
+1.15 m in the z axis. The base edge was 0.14 m, making the base area
+equivalent to the experimental one.
+The air region had the same base of the porous region, but had an height of
+1.35 m.
+From $z=0.1 ~m$ to $z=1.25 ~m$ the two regions shared the same volume.\\
+The solver used is \textbf{chtMultiRegionSimpleFoam}, since we had a steady hot
+air flow as lower boundary condition, hence a steady state solver.
+The solver consider the fluid region as compressible flow.\\
+A series of probes, as indicated by \textcite{RegionProbe}, were positioned to
+register the temperature.
 
-\subsection{Laboratory experiment}
-\label{subsection:laboratoryexperiment}
+\subsection{Permeability coefficient}
+\label{subsection:permeabilitycoefficient}
 
+The value of the $d$ coefficient has been varied, by order of magnitudes, to
+evaluate its effect on the temperature.
+
+\subsection{Flow velocity}
+\label{subsection:flowvelocity}
+
+The value of the flow velocity $U$ has been varied to
+evaluate its effect on the temperature.
+
+\subsection{Time interval}
+\label{subsection:timeinterval}
+
+The total simulation time has been corrected to match the experimental time.

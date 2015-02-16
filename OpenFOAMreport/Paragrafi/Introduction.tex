@@ -9,29 +9,20 @@
 %************************************************
 
 This report describes the numerical modellization of heat transfer in a porous
-media and its comparison with available laboratory experiments.
+media inside a vertical pipe, while hot air flows, and its comparison with available laboratory
+experiments.
 
 \subsection{Laboratory experiment}
 \label{subsection:laboratoryexperiment}
 
-
-
-\subsection{Porosity theory and parent tutorial}
-\label{subsection:porositytheorytutorial}
-
-Darcy's law
-
-\subsection{Heat transfer theory and parent tutorial}
-\label{subsection:heattransfertheorytutorial}
-
-
-\cite{ReportRamin, OFWikicht, ReportTempel, ReportReveillon, OForgFv,
-Soulaine, RegionProbe, Permeability, ReportHofer}
-
-\subsubsection{SCT simulation}
-\label{subsubsection:sctsimulation}
-
-
+The experimental test has been performed with the system available in the
+laboratory of the Department of Particulate Flow Modelling in the JKU.
+It can be seen in Fig. \ref{fig:02tester}, while the heating element is shown in
+Fig. \ref{fig:03heater}. 
+The porous media was a densely packed bed of glass silibeads, for a total height
+of 1.15 m, with a diameter of 0.15 m. \\
+The experimental data have been collected from the report of
+\textcite{ReportHofer}.
 
 \begin{figure}[!h]
 \centering
@@ -44,3 +35,25 @@ Soulaine, RegionProbe, Permeability, ReportHofer}
 \caption[experiments]{experiments}
 \label{fig:experiments}
 \end{figure}
+
+\subsection{Porosity theory and parent tutorial}
+\label{subsection:porositytheorytutorial}
+
+The theorical foundation of the porosity model used in this work is the
+\textbf{Darcy's law}.
+The solver substitutes the permeability tensor with the tensor $\bar{\bar{d}}$,
+where $d= \frac {1}{k}$.
+This porosity model is widely investigated in the reports of
+\textcite{ReportReveillon} and \textcite{Soulaine}, together with its usage in
+OpenFOAM\textregistered.
+The settings are defined in the fvOptions file \cite{OForgFv},
+while the porosity values were provided by \textcite{Permeability}.
+
+
+\subsection{Heat transfer theory and parent tutorial}
+\label{subsection:heattransfertheorytutorial}
+
+The investigated experiment belongs to the \textbf{conjugate heat transfer
+problems} class.
+The model is presented in the report of \textcite{ReportTempel},
+and further information can be found in \textcite{OFWikicht}.
