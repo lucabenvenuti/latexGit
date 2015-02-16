@@ -12,10 +12,10 @@ Two regions were created: porous and air.
 The porous region was a parallelepiped with a quadratic base and an height of
 1.15 m in the z axis. The base edge was 0.14 m, making the base area
 equivalent to the experimental one.
-The air region had the same base of the porous region, but had an height of
+The air region had the same base of the porous region, but an height of
 1.35 m.
 From $z=0.1 ~m$ to $z=1.25 ~m$ the two regions shared the same volume.\\
-The solver used is \textbf{chtMultiRegionSimpleFoam}, since we had a steady hot
+The solver used was chtMultiRegionSimpleFoam, since we had a steady hot
 air flow as lower boundary condition, hence a steady state solver.
 The solver consider the fluid region as compressible flow.\\
 A series of probes, as indicated by \textcite{RegionProbe}, were positioned to
@@ -29,14 +29,14 @@ experimental ones.
 
 Five simulations have been performed with a constant flow speed in z
 direction lower boundary condition of $U = 0.1 ~m/s$.
-In each the value of the $\bar{\bar{d}}$ coefficient has been varied, by order
-of magnitudes, to evaluate its effect on the temperature.
+In each the value of the $d$ coefficient (isotropic, hence $d = d_x = d_y =
+d_z$) has been varied, by order of magnitudes, to evaluate its effect on the temperature.
 
 \subsection{Flow velocity}
 \label{subsection:flowvelocity}
 
 One additional simulation has been performed with $U = 1.0 ~m/s$ and
-$\bar{\bar{d}} = 10 ~m^{-2}$.
+$d = 10 ~m^{-2}$.
 The value of the flow velocity $U$ has been varied to
 evaluate its effect on the temperature.
 

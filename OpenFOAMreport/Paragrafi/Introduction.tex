@@ -10,7 +10,7 @@
 
 This report describes the numerical modellization of heat transfer in a porous
 media inside a vertical pipe, while hot air flows, and its comparison with available laboratory
-experiments.
+experiments. The simulations were performed with OpenFOAM\textregistered ($OF$).
 
 \subsection{Laboratory experiment}
 \label{subsection:laboratoryexperiment}
@@ -19,8 +19,10 @@ The experimental test has been performed with the system available in the
 laboratory of the Department of Particulate Flow Modelling in the JKU.
 It can be seen in Fig. \ref{fig:02tester}, while the heating element is shown in
 Fig. \ref{fig:03heater}. 
-The porous media was a densely packed bed of glass silibeads, for a total height
-of 1.15 m, with a diameter of 0.15 m. \\
+The porous media was a densely packed bed of glass silibeads, 
+hence its porosity properties were considered isotropic.
+The total height was
+1.15 m, with a diameter of 0.15 m. \\
 The experimental data have been collected from the report of
 \textcite{ReportHofer}.
 He used two thermocouples, one positioned 0.10 m above the bed bottom, one 0.10
@@ -42,12 +44,12 @@ m below.
 \label{subsection:porositytheorytutorial}
 
 The theorical foundation of the porosity model used in this work is the
-\textbf{Darcy's law}.
-The solver substitutes the permeability tensor with the tensor $\bar{\bar{d}}$,
-where $d= \frac {1}{k}$.
+Darcy's law.
+The solvers that handle porosity in $OF$ substitute the
+permeability tensor with the tensor $\bar{\bar{d}}$, where $d= \frac {1}{k}$.
 This porosity model is widely investigated in the reports of
 \textcite{ReportReveillon} and \textcite{Soulaine}, together with its usage in
-OpenFOAM\textregistered.
+$OF$.
 The settings are defined in the fvOptions file \cite{OForgFv},
 while the porosity values were provided by \textcite{Permeability}.
 
@@ -55,7 +57,7 @@ while the porosity values were provided by \textcite{Permeability}.
 \subsection{Heat transfer theory and parent tutorial}
 \label{subsection:heattransfertheorytutorial}
 
-The investigated experiment belongs to the \textbf{conjugate heat transfer
-problems} class.
+The investigated experiment belongs to the conjugate heat transfer
+problems class.
 The model is presented in the report of \textcite{ReportTempel},
 and further information can be found in \textcite{OFWikicht}.
