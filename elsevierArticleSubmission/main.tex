@@ -48,30 +48,32 @@ Austria}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 In Discrete Element Method ($DEM$) simulations, particle-particle contact laws
-determine the macroscopic simulation results. Particle based contact laws, in
-turn, commonly rely on semi-empirical parameters, which can be hardly obtained
+determine the macroscopic simulation results. Particle-based contact laws, in
+turn, commonly rely on semi-empirical parameters which are difficult to obtain
 by direct microscopic measurements.
-In this study we present a methodology for the identification of
-$DEM$ simulation parameters by linking the macroscopic experimental results to the
-microscopic numerical parameters by artificial neural networks.
-In a first step, a series
-of $DEM$ simulations with varying simulation parameters are used to train a feed
-forward artificial neural network by backward propagation reinforcement. In a
-second step, this artificial neural network is utilized to predict the
-macroscopic ensemble behaviour in dependence of additional sets of particle
-based simulation parameters.
-As a result, a comprehensive database is obtained,
-which links particle based simulation parameters to a specific macroscopic
-bulk behaviour of the ensemble.
-The trained artificial neural network is able to predict the behaviour of
-additional sets of input parameters accurately and highly efficient.
-Furthermore, this methodology can be applied to
-identify $DEM$ material parameters in a generic way.
-For each set of calibration experiments, the training of the neural network has
-to be performed just once. 
+In this study, we present a method for the identification of
+$DEM$ simulation parameters 
+that uses artificial neural networks to link
+macroscopic experimental results to
+microscopic numerical parameters.
+In the first step, a series
+of $DEM$ simulations with varying simulation parameters is used to train a
+feed-forward artificial neural network by backward propagation reinforcement. 
+In the second step, this artificial neural network is utilized to predict the
+macroscopic ensemble behaviour in relation to additional sets of particle-based
+simulation parameters.
+Thus, a comprehensive database is obtained
+which links particle-based simulation parameters to specific macroscopic
+bulk behaviours of the ensemble.
+The trained artificial neural network is able to predict the behaviours of
+additional sets of input parameters accurately and highly efficiently.
+Furthermore, this method can be used generically to
+identify $DEM$ material parameters.
+For each set of calibration experiments, the neural network 
+needs to be trained only once.
 After the training, the neural network provides a generic link between the macroscopic 
 experimental results and the microscopic $DEM$ simulation parameters.
-By the help of these experiments, the $DEM$ simulation parameters of a specific
+Based on these experiments, the $DEM$ simulation parameters of any given
 non-cohesive granular material can be identified.
 
 \end{abstract}
@@ -142,8 +144,8 @@ the multi-dimensionality of the parameter space and the associated computational
 To make things worse, one parameter set which is valid for one bulk behaviour (e.g. angle of repose) 
 might fail in case of another bulk behaviour (e.g. shear tester). \\
 Obviously, there is a need for an efficient methodology for the identification of $DEM$ contact law parameters. 
-In our study we harnessed Artificial Neural Networks ($ANN$) in order to reduce the number of required $DEM$ test simulations. 
-$ANN$ have proven to be a versatile tool in analysing complex, non-linear systems of 
+In our study we harnessed Artificial Neural Network ($ANN$) in order to reduce the number of required $DEM$ test simulations. 
+$ANN$ has proven to be a versatile tool in analysing complex, non-linear systems of 
 multi-dimensional input-streams (Vaferi et al. \cite{RefWorks:150}, Witten et
 al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
 In our case we fed an $ANN$ with $DEM$ contact law parameters as input parameters and 
@@ -241,7 +243,7 @@ F_{t} \leq \mu_s F_{n},
 \end{equation}
 %************************************************
 where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
-friction, one of the particle based $DEM$ parameter we investigated. 
+friction, one of the particle-based $DEM$ parameter we investigated. 
 Another parameter was the coefficient of rolling friction ($\mu_r$). 
 For coarse non-spherical particles this is a critical parameter and describes
 inter-particle friction in medium to dense granular flows simulations. It is proportional to the 
@@ -259,7 +261,7 @@ T_{r~max} = \mu_r R_r |\tilde{F_n}| ~,
 \end{equation}
 %************************************************
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
-The last two particle based $DEM$ parameter we investigated were the $\rho_p$
+The last two particle-based $DEM$ parameter we investigated were the $\rho_p$
 and the coefficient of restitution ($COR$), as defined by Ai. et al. \cite{RefWorks:131}.
 The coefficients, $COR$, $\mu_s$, $\mu_r$,
 $\rho_p$ and $dCylDp$ (the cylinder dimension, as proportion to the mean
@@ -273,19 +275,19 @@ varied to replicate twelve shear cell load conditions.
 The complete description of the shear cell simulations can be found in \ref{subsec:srsctsimulation}, 
 while the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulations output the numerical
-bulk representative values for
-each $simulation-DEM$ parameter combination:
+values representative of bulk behaviour (hereafter called $bulk values$)
+for each $simulation-DEM$ parameter combination:
 bulk density ($\rho_b$),
 coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
 and angle of repose ($AoR$).
-The first bulk behaviour representative value ($\rho_b$) was directly provided. 
+The first bulk value ($\rho_b$) was directly provided. 
 If a simulation was performed correctly, see \ref{subsec:srsctsimulation}, we
 observed a stress path as in Fig. \ref{fig:21simexample}.
 First, the $\sigma_n$ was kept constant. 
 Meanwhile, the coefficient of internal friction ($\mu_{ie}$) initially increased
 and then reached a plateau.
-The second bulk behaviour representative value ($\mu_{psh}$) was calculated as average of the $\mu_{ie}$ in this plateau.
+The second bulk value ($\mu_{psh}$) was calculated as average of the $\mu_{ie}$ in this plateau.
 Automatically, the $\sigma_n$ was reduced, in this example to $80 \%$ of its
 initial value.
 After, a second plateau started.
@@ -383,9 +385,9 @@ distribution.}
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
-We first defined the typology of Artificial Neural Network ($ANN$) we used and
+We first defined the typology of Artificial Neural Network ($ANNs$) we used and
 the input we imposed to them, see \ref{sec:appann}.
-Our $ANN$ are built with three different layers. 
+Our $ANNs$ are built with three different layers. 
 The input layer has a number of neurons equal to the number of different inputs
 of the network, see Fig. \ref{fig:18nnscheme}.
 The hidden (or central) layer's number of neurons must be investigated. 
@@ -393,11 +395,12 @@ The output layer contains one neuron for the output.
 The transfer functions between the first two layers are the tangential sigmoid, 
 while between the hidden and central layers are linear.\\
 So, we could use the $DEM$ parameter combinations and their corresponding bulk
-values to train the $ANN$,
+values to train the $ANNs$,
 dashed line in Fig. \ref{fig:19methodology}.
 Notably, we excluded 15\% of the simulations ($test ~ simulations$),
 randomly picked, from the training processes.
-We started with all the $DEM$ parameter combinations and their corresponding numerical $\mu_{psh}$ to create 36 $ANN$. 
+We started with all the $DEM$ parameter combinations and their corresponding
+numerical $\mu_{psh}$ to create 36 $ANNs$.
 They differed because they included from five to forty neurons in the hidden
 layer.
 Later, we controlled the coefficient of determination ($R^2$) between the
@@ -406,26 +409,27 @@ which are not correlated with the remaining 85\% used for the training.
 So, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
-We repeated the same steps from the $ANN$ creations for $\mu_{sh}$, $\rho_b$ and $AoR$, 
-obtaining one trained $ANN$ for each bulk representative value. \\
+We repeated the same steps from the $ANNs$ creations for $\mu_{sh}$, $\rho_b$
+and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
 Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear cell
-simulations, so their $ANN$ were handled together. 
-We had one cluster with three $ANN$ for the shear cell and one with only one $ANN$
-for the $AoR$.
+simulations, so their $ANNs$ were handled together. 
+We had one cluster with three $ANNs$ for the shear cell and one with only one
+$ANN$ for the $AoR$.
 We could then proceed in identifying the valid input parameters, continuous line
 in Fig. \ref{fig:19methodology}.
 Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
 ($DoE$) method to determine the parameters' combinations to be simulated.
 They affirm that this approach allows optimizing the computational time with
 only an acceptable loss of precision.
-Thanks to the speed of the trained $ANN$, we followed a different approach to
+Thanks to the speed of the trained $ANNs$, we followed a different approach to
 maximize the precision of the characterization.
 We created random values
 in the range and number defined in Table \ref{tab:12DEMRandominputvalues}
 according to a standard uniform distribution.
 Together, the total number of combinations of these random values was $6250000$.
 These combinations were then imposed as input and processed by the selected
-$ANN$, granting for each three bulk representative parameters for the shear cell and one for the $AoR$. 
+$ANNs$, granting for each three bulk values for the shear
+cell and one for the $AoR$.
 %************************************************
 \begin{figure}[!htb] 
 \centering 
@@ -441,14 +445,14 @@ behaviour dependent variable from the mutually independent simulation variables.
 \label{subsec:macroscopicexperimentsparameteridentification}
 The experimental characterization has been performed as described in
 \ref{subsec:srsctexperiment} and \ref{subsec:aorexperiment}. 
-We obtained for each of the twelve load conditions of the $SSC$ three values
-representative of the bulk behaviour ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
+We obtained for each of the twelve load conditions of the $SSC$ three bulk
+values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
 Furthermore, to recreate the repose angle observed in a pile of the real material, 
 we performed two angle of repose ($AoR$) tests, as the $AoR$ was the fourth
 behaviour value. 
 
 Later, we confronted the $ANN$ and experimental bulk behaviours for the twelve shear cell load conditions. 
-If in a $DEM-parameter$ combination all the three bulk representative parameters differed less 
+If in a $DEM-parameter$ combination all the three bulk values differed less 
 than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
 %************************************************
 \begin{equation}
@@ -471,7 +475,7 @@ comparison (Eq. \ref{eq:checkaor}):
 \end{equation}
 %************************************************
 Further, to prove the system validity, we tested the marked combinations by
-modifying the experimental bulk behaviour representative values of the shear cell. 
+modifying the experimental bulk values of the shear cell. 
 We artificially decreased or increased the shear force, and so $\mu_{psh}$ and
 $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
@@ -516,7 +520,7 @@ $\mu_s$, and further parameters were worthly correlated. \\
 Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
 In this case we reached a $R^2 = 0.96$ for a $ANN$ with fifteen neurons. 
 Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
-We later obtained the correct number of neurons for all the $ANN$.
+We later obtained the correct number of neurons for all the $ANNs$.
 Further, we processed the random combinations (Table
 \ref{tab:10DEMVariableinputvalues}) with the $ANN$.
 The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
@@ -1080,7 +1084,7 @@ based on non-linear functions (Haykin \cite{RefWorks:158}).
 In this paper, we first use the $ANN$ to fit the $DEM$ numerical simulation data, 
 and then to process vast amount of parameters combinations. 
 They map combinations of input data into convenient outputs (fitting). 
-There is a variety of types of $ANN$, remarkably the Feedforward ($FF$) 
+There is a variety of types of $ANNs$, remarkably the Feedforward ($FF$) 
 and the Radial basis function ($RBF$). For $FF-NN$, considerable amount 
 of training algorithms are available. The most common are based on
 backpropagation:
@@ -1093,7 +1097,7 @@ The validity of the $MLPNN$, with a backpropagation reinforcement learning
 training algorithm (scaled conjugate gradient), has been widely demonstrated in the 
 literature, see Haykin \cite{RefWorks:158}. Several scientists 
 \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
-RefWorks:170, RefWorks:178, RefWorks:179} have used $ANN$ to model materials'
+RefWorks:170, RefWorks:178, RefWorks:179} have used $ANNs$ to model materials'
 mechanical properties.
 Following the best practice suggested by Vaferi et al. \cite{RefWorks:150} $MLPNN$ have been handled.
 Further, we should question the quality of the $ANN$ data. Haykin \cite{RefWorks:158} 
@@ -1125,7 +1129,7 @@ A representative sample of bulk solid was placed in a shear cell of specified
 dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$).
 A normal load was applied to the cover. As soon as the lid touches the sample, its position is calculated.
 Together with the area of the ring, the total volume can be calculated, and subsequently the $bulk ~ density ~ (\rho_b)$ 
-of the sample is obtained, the first value representative of the bulk behaviour.
+of the sample is obtained, the first bulk value.
 Then the specimen was pre-sheared until a steady-state shear value was reached.
 The steady-state flow horizontal stress
 is called $steady-state-flow/pre-shear$ stress.
