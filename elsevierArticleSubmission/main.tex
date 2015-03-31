@@ -396,51 +396,46 @@ distribution.}
 
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
-We first defined the typology of Artificial Neural Network ($ANNs$) we used and
-the input we imposed to them, see \ref{sec:appann}.
-Our $ANNs$ are built with three different layers. 
-The input layer has a number of neurons equal to the number of different inputs
-of the network, see Fig. \ref{fig:18nnscheme}.
-The hidden (or central) layer's number of neurons must be investigated. 
+We first defined the typology of Artificial Neural Networks ($ANNs$) we used and
+the input we fed them, see \ref{sec:appann}.
+Our $ANNs$ have three different layers: the input layer has a number of neurons
+equal to the number of different inputs of the network, see Fig. \ref{fig:18nnscheme}.
+The hidden (or central) layer's number of neurons was to be investigated. 
 The output layer contains one neuron for the output.
 The transfer functions between the first two layers are the tangential sigmoid, 
-while between the hidden and central layers are linear.\\
-So, we could use the $DEM$ parameter combinations and their corresponding bulk
-values to train the $ANNs$,
-dashed line in Fig. \ref{fig:19methodology}.
-Notably, we excluded 15\% of the simulations ($test ~ simulations$),
-randomly picked, from the training processes.
+and those between the hidden and central layers are linear.\\
+Thus, we were able to use the $DEM$ parameter combinations and their
+corresponding bulk values to train the $ANNs$.
+Note that 15\% of the simulations ($test ~ simulations$) were
+randomly picked and excluded from the training processes.
 We started with all the $DEM$ parameter combinations and their corresponding
-numerical $\mu_{psh}$ to create 36 $ANNs$.
-They differed because they included from five to forty neurons in the hidden
-layer.
-Later, we controlled the coefficient of determination ($R^2$) between the
+numerical $\mu_{psh}$ to create 36 $ANNs$ that differed in their numbers of
+neurons in the hidden layer (between five to forty neurons).
+We then determined the coefficient of determination ($R^2$) between the
 $bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
-which are not correlated with the remaining 85\% used for the training. 
-So, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
+which were not correlated with the remaining 85\% used for the training. 
+Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
-We repeated the same steps from the $ANNs$ creations for $\mu_{sh}$, $\rho_b$
+We repeated the same $ANN$ creation steps for $\mu_{sh}$, $\rho_b$
 and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
-Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
-simulations, so their $ANNs$ were handled together. 
-We had one cluster with three $ANNs$ for the shear cell and one with only one
-$ANN$ for the $AoR$.
-We could then proceed in identifying the valid input parameters, continuous line
-in Fig. \ref{fig:19methodology}.
-Oberkampf et al. \cite{RefWorks:160} suggest to use a Design of Experiments
-($DoE$) method to determine the parameters' combinations to be simulated.
-They affirm that this approach allows optimizing the computational time with
-only an acceptable loss of precision.
-Thanks to the speed of the trained $ANNs$, we followed a different approach to
-maximize the precision of the characterization.
+Since $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
+simulations, their $ANNs$ were handled together: we had one cluster with three 
+$ANNs$ for the shear cell and one with only one $ANN$ for the $AoR$.
+We could then proceed in identifying valid input parameters.
+Oberkampf et al. \cite{RefWorks:160} suggested using a Design of Experiments
+($DoE$) method to determine the parameter combinations to be simulated.
+They stated that this approach allows optimization of computation time
+with an acceptable loss of precision.
+The speed of the trained $ANNs$ enabled us to follow a different approach to
+maximizing the precision of the characterization.
 We created random values
-in the range and number defined in Table \ref{tab:12DEMRandominputvalues}
+in the range and numbers defined in Table \ref{tab:12DEMRandominputvalues}
 according to a standard uniform distribution.
-Together, the total number of combinations of these random values was $6250000$.
-These combinations were then imposed as input and processed by the selected
-$ANNs$, granting for each three bulk values for the shear
-cell and one for the $AoR$.
+The total number of combinations of these random values was 6,250,000.
+These combinations were then fed to and processed by the selected
+$ANNs$, and thus three bulk values for the shear
+cell and one for the $AoR$ were obtained.
 %************************************************
 \begin{figure}[!htb] 
 \centering 
