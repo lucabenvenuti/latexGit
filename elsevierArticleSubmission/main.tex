@@ -60,7 +60,7 @@ microscopic numerical parameters.
 In the first step, a series
 of $DEM$ simulations with varying simulation parameters is used to train a
 feed-forward artificial neural network by backward-propagation reinforcement. 
-In the second step, this artificial neural network is utilized to predict the
+In the second step, this artificial neural network is used to predict the
 macroscopic ensemble behaviour in relation to additional sets of particle-based
 simulation parameters.
 Thus, a comprehensive database is obtained
@@ -158,7 +158,7 @@ al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
 In our case, we fed an $ANN$ with $DEM$ contact law parameters as input
 and compared the output with the bulk behaviour 
 predicted by a corresponding $DEM$ simulation. 
-The difference between $ANN$ prediction and $DEM$ prediction is utilized to train our 
+The difference between $ANN$ prediction and $DEM$ prediction is used to train our 
 specific $ANN$ with a backward-propagation algorithm (described further below). 
 After a training phase comprising a limited number of $DEM$ test simulations,
 the $ANN$ can then be used as a stand-alone prediction tool for the bulk behaviour of a 
@@ -172,7 +172,7 @@ comparing the stand-alone $ANN$ predictions with corresponding bulk experiments.
 For both cases we obtained valid sets of contact law parameters, 
 which we then compared to formulate a reliable contact law for a given
 granular material.
-We further show that the same $ANN$ can be utilized to characterize different granular materials. \\
+We further show that the same $ANN$ can be used to characterize different granular materials. \\
 In the next section we define some prerequisites including $DEM$ contact law
 definitions, a general description of the $ANN$ functionality, and the proposed
 method of $DEM$ contact law parameter identification.
@@ -811,38 +811,40 @@ Finally, we show the number of valid parameter combinations over the total
 \section{Conclusions}
 \label{sec:conclusions}
 %************************************************
-We presented a two phase methodology for $DEM$ simulation parameter
-identification. In a first phase an artificial neural network is 
-trained by dedicated $DEM$ simulation in order to predict bulk 
-behaviour in dependence on a set of $DEM$ simulation parameters. 
-In a second phase this artificial neural network is then utilized 
+We have presented a two-step method for $DEM$ simulation parameter
+identification. In the first step, an artificial neural network is 
+trained using dedicated $DEM$ simulations in order to predict bulk 
+behaviours as function of a set of $DEM$ simulation parameters. 
+In the second step, this artificial neural network is then used 
 to predict the bulk behaviour of a huge number of additional $DEM$ parameter
 sets.
-The main findings of this study can be summarized as:
+The main findings of this study can be summarized as follows:
 \begin{itemize}
   \item{An artificial neural network can be trained by a limited number of
   dedicated $DEM$ simulations.
-  		Subsequently, the trained artificial neural network is able to predict
+  		The trained artificial neural network is then able to predict
   		granular bulk behaviour.}
-  \item{This prediction of granular bulk behaviour is highly efficient if
-  		compared to computationally expensive $DEM$ simulations.
-  		Thus, a huge number of parameter sets can be studied with respect to their
-  		macroscopic output.}
+  \item{This prediction of granular bulk behaviour is much more efficient
+  		than computationally expensive $DEM$ simulations.
+  		Thus, the macroscopic output associated with a huge number of parameter sets
+  		can be studied.}
   \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
   		valid sets of $DEM$ simulation parameters can be readily deduced for a
   		specific granular material.}
-  \item{This $DEM$ parameter identification methodology can be applied to
+  \item{This $DEM$ parameter identification method can be applied to
   arbitrary bulk experiments.
-  		Combining two artificial neural networks, which predict two different bulk
-  		behaviours, leads to focusing the set of valid $DEM$ simulation parameters.}
+  		Combining two artificial neural networks which predict two different bulk
+  		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
 \end{itemize}
-In future we will further develop this methodology by considering different
-fractions of granular materials, which will lead to size dependent sets of $DEM$
+As part of future work, we will develop this method further by considering
+different fractions of granular materials, which will lead to size-dependent sets of $DEM$
 simulation parameters.
 %************************************************
 
 \section{Acknowledgements}
-This study was funded by Christian Doppler Forschungsgesellschaft, Siemens VAI Metals Technologies and Voestalpine Stahl. The authors gratefully aknowledge their support.
+This study was funded by the Christian Doppler Forschungsgesellschaft, Siemens
+VAI Metals Technologies, and Voestalpine Stahl. The authors gratefully
+aknowledge their support.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{elsarticle-num}
