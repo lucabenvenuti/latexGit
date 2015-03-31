@@ -164,7 +164,7 @@ the $ANN$ can then be used as a stand-alone prediction tool for the bulk behavio
 granular material in relation to $DEM$ contact law parameters. \\
 In this study, we applied this parameter identification method to two different
 granular bulk behaviours, namely the angle of repose ($AoR$) test and the
-Schulze shear-cell ($SSC$) test.
+Schulze shear cell ($SSC$) test.
 In both cases, we first trained a specific $ANN$ using a number of $DEM$ test
 simulations before we identified valid sets of $DEM$ contact law parameters by
 comparing the stand-alone $ANN$ predictions with corresponding bulk experiments. 
@@ -284,46 +284,45 @@ The normal stress $\sigma_n$ and its
 percentage during the incipient flow condition $\tau_{\%}$
 varied to replicate twelve shear-cell load conditions. 
 The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-while the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
-A Matlab script allowed us to extract from the simulations output the numerical
-values representative of bulk behaviour (hereafter called $bulk values$)
-for each $simulation-DEM$ parameter combination:
+and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
+A Matlab script allowed us to extract from the simulation output the numerical
+values representative of bulk behaviour (hereafter called $bulk ~ values$)
+for each DEM simulation parameter combination, which consists of
 bulk density ($\rho_b$),
 coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
 and angle of repose ($AoR$).
-The first bulk value ($\rho_b$) was directly provided. 
-If a simulation was performed correctly, see \ref{subsec:srsctsimulation}, we
+The first bulk value ($\rho_b$) was provided directly. 
+For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
 observed a stress path as in Fig. \ref{fig:21simexample}.
-First, the $\sigma_n$ was kept constant. 
-Meanwhile, the coefficient of internal friction ($\mu_{ie}$) initially increased
-and then reached a plateau.
-The second bulk value ($\mu_{psh}$) was calculated as average of the $\mu_{ie}$ in this plateau.
-Automatically, the $\sigma_n$ was reduced, in this example to $80 \%$ of its
-initial value.
-After, a second plateau started.
-As average of $\mu_{ie}$ in this second plateau we obtained the third value
-($\mu_{sh}$).
-The stress path is
-comparable to the experimental one, especially the plateaux.\\
-In the $AoR$ tests the average of the repose angles provided us the fourth bulk
-value, allowing us to define the numerical bulk behaviour.
+First, the $\sigma_n$ was kept constant while the coefficient of internal
+friction ($\mu_{ie}$) initially increased and then reached a plateau.
+The second bulk value ($\mu_{psh}$) was calculated as the average of the
+$\mu_{ie}$ in this plateau.
+The $\sigma_n$ was then automatically reduced, in our example to $80 \%$ of
+its initial value.
+Subsequently, a second plateau developed.
+We obtained the third
+value ($\mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+The stress path accords with the experimental one, especially the plateaux.\\
+In the $AoR$ tests the average of the repose angles provided us with the fourth
+bulk value, allowing us to define the numerical bulk behaviour.
 %************************************************
 \begin{figure}[htp] \centering
     \begin{subfigure}[b]{0.96\columnwidth}
         \includegraphics[width=\textwidth]{20experimental}
-        \caption{Experimental shear-cell tester stress path - $\sigma_n = 10000
+        \caption{Experimental shear cell tester stress path - $\sigma_n = 10000
         ~Pa$}
         \label{fig:20experimental} 
     \end{subfigure}\\
         \begin{subfigure}[b]{0.96\columnwidth}
         \includegraphics[width=\textwidth]{21simexample}
-        \caption{Numerical shear-cell tester stress path - $\sigma_n = 10000
+        \caption{Numerical shear cell tester stress path - $\sigma_n = 10000
         ~Pa$}
         \label{fig:21simexample} 
     \end{subfigure}
     \caption[Stress path]{Sample of the stress path for
-	the Schulze ring shear-cell tester, experimental and numerical.
+	the Schulze ring shear cell tester, experimental and numerical.
 	Time is normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
 	time when the normal stress ($\sigma_n$) is modified during the tests.
 	Until $\tilde{t}=1$ the $\sigma_n = 10000 ~Pa$ is kept constant. 
@@ -424,7 +423,7 @@ We repeated the same steps from the $ANNs$ creations for $\mu_{sh}$, $\rho_b$
 and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
 Notably, $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
 simulations, so their $ANNs$ were handled together. 
-We had one cluster with three $ANNs$ for the shear-cell and one with only one
+We had one cluster with three $ANNs$ for the shear cell and one with only one
 $ANN$ for the $AoR$.
 We could then proceed in identifying the valid input parameters, continuous line
 in Fig. \ref{fig:19methodology}.
@@ -486,7 +485,7 @@ comparison (Eq. \ref{eq:checkaor}):
 \end{equation}
 %************************************************
 Further, to prove the system validity, we tested the marked combinations by
-modifying the experimental bulk values of the shear-cell. 
+modifying the experimental bulk values of the shear cell. 
 We artificially decreased or increased the shear force, and so $\mu_{psh}$ and
 $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
@@ -503,14 +502,14 @@ $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 \subsection{DEM Simulations}
 \label{subsec:simulations}
 
-For sinter fine 546 shear-cell and 81 static angle of repose simulations have
+For sinter fine 546 shear cell and 81 static angle of repose simulations have
 been realized with the variations described in Table
 \ref{tab:10DEMVariableinputvalues}.
 The computational time resulted in 1 hour with 32 AMD cores for a benchmark
 shear-cell simulation and 9 hours for a benchmark $AoR$ simulation, both with
 50000 particles.
 Simulations with larger $dCylDp$ required a greater time amount (e.g., with
-400000 particles about 12 hours for the shear-cell). \\
+400000 particles about 12 hours for the shear cell). \\
 
 
 \subsection{ANN model development}
@@ -604,7 +603,7 @@ We also realized the sieving, obtaining the radius ($R$) mean and standard
 deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
 The confrontation between numerical and experimental behaviours led to a first
 series of marked combinations ($MC1$) for one load condition of
-the shear-cell ($\sigma_n=10070$ Pa, P=1.0), represented in Fig.
+the shear cell ($\sigma_n=10070$ Pa, P=1.0), represented in Fig.
 \ref{fig:24radarpirker1schulze10070}.
 Here, the minimum and maximum values, together with the mean are shown. 
 Furthermore, the shaded area represents valid parameter combinations.
@@ -735,7 +734,7 @@ Finally, we show the number of valid parameter combinations over the total
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for three different
     bulk behaviours measured by SSC]{Parameter space plot of valid simulations
-    parameters for three different bulk behaviours measured by shear-cell tester ($SSC$).
+    parameters for three different bulk behaviours measured by shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     Furthermore, the shaded area represents valid parameter combinations.
     Dark shaded values stand for the confidence range.
@@ -765,7 +764,7 @@ Finally, we show the number of valid parameter combinations over the total
         \label{fig:30cloudpirker12schulze10070} 
     \end{subfigure}
     \caption[Density plot comparison of SSC results]{Density plot comparison of
-    shear-cell tester ($SSC$) results. The marked combinations for
+    shear cell tester ($SSC$) results. The marked combinations for
     $\sigma_n=10070 ~Pa$ are here presented.
     Density plot of the particles' coefficient of restitution (COR) in dependence
 	of coefficient of sliding friction ($\mu_s$) and coefficient of rolling
@@ -800,7 +799,7 @@ Finally, we show the number of valid parameter combinations over the total
     \caption[Parameter space plot of valid simulations parameters for the AoR and
     the merge between AoR and SSC valid parameters]{Parameter space plot of
     valid simulations parameters for the angle of repose tester ($AoR$) and the merge
-    between $AoR$ and shear-cell tester ($SSC$).
+    between $AoR$ and shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     Furthermore, the shaded area represents valid parameters combinations.
     Dark shaded values stand for the confidence interval.
@@ -905,7 +904,7 @@ M.~Combarros, H.~J. Feise, H.~Zetzener, A.~Kwade, Segregation of particulate
 
 \bibitem{RefWorks:91}
 A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, DEM validation using an
-  annular shear-cell, Powder Technology 248~(0) (2013) 131--142.
+  annular shear cell, Powder Technology 248~(0) (2013) 131--142.
 
 \bibitem{RefWorks:150}
 B.~Vaferi, F.~Samimi, E.~Pakgohar, D.~Mowla, Artificial neural network approach
@@ -1040,7 +1039,7 @@ and thus shear force calculation is available out of the box. Moreover, the code
 velocity as required for the measurement. To determine the shear stresses, the bulk solid had to be stressed with 
 user-defined normal stresses. Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
 Although the geometry differs, the $SSC$ was designed to obtain the same values for the shear stresses as the 
-Jenike shear-cell tester ($JSCT$), but with improved automation and reliability,
+Jenike shear cell tester ($JSCT$), but with improved automation and reliability,
 see Schulze \cite{RefWorks:118}. 
 For this reason, the simulation setup has been
 based over the $JSCT$.
@@ -1050,7 +1049,7 @@ Nevertheless, a larger domain increases the number of particles, and thus the si
 For this reason, we considered the cylinder dimension, as proportion to the mean particle diameter ($dCylDp$), 
 an additional $DEM$ parameter to be investigated. \\   
 A simulation run comprised four phases. 
-First, the shear-cell was filled with the granulate material, and it was allowed
+First, the shear cell was filled with the granulate material, and it was allowed
 settling.
 Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
 As in the experiment, the servo-wall allows calculating the position of the lid
@@ -1081,7 +1080,7 @@ The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the exper
 \label{subsec:aorsimulation}
 In $AoR$ simulations we tried to replicate meticulously the experimental setup, 
 considering both the plate and the lift-able boundary, with the same domain size consideration as before. 
-The particles had the same properties as in the shear-cell simulation. The first phase was identical to that of the shear-cell simulation. 
+The particles had the same properties as in the shear-cell simulation. The first phase was identical to that of the shear cell simulation. 
 After lifting the boundary, the particles formed a heap.
 An image post-processing software was used to obtain the average slope.
 
@@ -1136,7 +1135,7 @@ number for each of the investigated parameter. Then, they were combined and impo
 
 \subsection{SSC experiment}
 \label{subsec:srsctexperiment}
-A representative sample of bulk solid was placed in a shear-cell of specified
+A representative sample of bulk solid was placed in a shear cell of specified
 dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$).
 A normal load was applied to the cover. As soon as the lid touches the sample, its position is calculated.
 Together with the area of the ring, the total volume can be calculated, and subsequently the $bulk ~ density ~ (\rho_b)$ 
