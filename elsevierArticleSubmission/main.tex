@@ -449,17 +449,18 @@ behaviour dependent variable from the mutually independent simulation variables.
 
 \subsection{Macroscopic Experiments and Parameter Identification}
 \label{subsec:macroscopicexperimentsparameteridentification}
-The experimental characterization has been performed as described in
+The experimental characterization was performed as described in
 \ref{subsec:srsctexperiment} and \ref{subsec:aorexperiment}. 
 We obtained for each of the twelve load conditions of the $SSC$ three bulk
 values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
-Furthermore, to recreate the repose angle observed in a pile of the real material, 
-we performed two angle of repose ($AoR$) tests, as the $AoR$ was the fourth
-behaviour value. 
+The fourth bulk value was the result of two angle of repose ($AoR$) tests that
+recreated the repose angle observed in a pile of the
+real material. 
 
-Later, we confronted the $ANN$ and experimental bulk behaviours for the twelve shear-cell load conditions. 
-If in a $DEM-parameter$ combination all the three bulk values differed less 
-than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
+Subsequently, we compared the $ANN$ and experimental bulk behaviours for the
+twelve shear-cell load conditions.
+If in a DEM-parameter combination all the three bulk values differed by less 
+than 5\% from those of the corresponding experiments, i.e.:
 %************************************************
 \begin{equation}
  \begin{cases}
@@ -470,9 +471,9 @@ than 5\% from the corresponding experiments, see Eq. \ref{eq:check2}:
  \label{eq:check2}
 \end{equation}
 %************************************************
-then the combination was marked. The marked combinations were handled by the
-$AoR$ $ANN$, and then confronted with the experiment.
-Were branded as valid only those that differed less than $5\%$ also in this
+the combination was marked. The marked combinations were processed by the
+$AoR$ $ANN$, and then compared with the experiment.
+Were considered valid those that differed by less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \begin{equation}
@@ -480,9 +481,9 @@ comparison (Eq. \ref{eq:checkaor}):
 \label{eq:checkaor}
 \end{equation}
 %************************************************
-Further, to prove the system validity, we tested the marked combinations by
-modifying the experimental bulk values of the shear cell. 
-We artificially decreased or increased the shear force, and so $\mu_{psh}$ and
+Further, to prove the validity of the system, we tested the marked combinations
+by modifying the experimental bulk values of the shear cell. 
+We artificially decreased or increased the shear force, and thus $\mu_{psh}$ and
 $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
 \begin{equation}
@@ -498,14 +499,14 @@ $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 \subsection{DEM Simulations}
 \label{subsec:simulations}
 
-For sinter fine 546 shear cell and 81 static angle of repose simulations have
-been realized with the variations described in Table
+For sinter fine, 546 shear cell and 81 static $AoR$ simulations were run with
+the parameter combinations described in Table
 \ref{tab:10DEMVariableinputvalues}.
-The computational time resulted in 1 hour with 32 AMD cores for a benchmark
-shear-cell simulation and 9 hours for a benchmark $AoR$ simulation, both with
-50000 particles.
-Simulations with larger $dCylDp$ required a greater time amount (e.g., with
-400000 particles about 12 hours for the shear cell). \\
+The computational time amounted to 1 hour with 32 AMD cores for a benchmark
+shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
+50,000 particles.
+Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
+the shear cell with 400,000 particles ). \\
 
 
 \subsection{ANN model development}
