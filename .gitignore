@@ -14,7 +14,7 @@ _book
 # eBook build output
 *.epub
 *.mobi
-#*.pdf
+*.pdf
 .fuse_hidden*
 old/
 
@@ -28,3 +28,28 @@ old/
 *.*~
 *.synctex.gz
 ~/AppData/Roaming/GitPad/GitPad.exe
+
+powtec.pdf
+Thumbs.db
+Tesi.*
+Tesi.pdf
+*.aux
+*.log
+*.spl
+/tmp/
+*-eps-converted-to.pdf
+main.fff
+*.eps
+*.pdf
+*.png
+*.tif
+*.jpg
+/main.ttt
+main.ttt
+*.zip
+*.fff
+
+phdThesis/Tesi.run.xml
+phdThesis/tmp/*
+phdThesis/Tesi.pdf
+phdThesis/Tesi.synctex.gz
