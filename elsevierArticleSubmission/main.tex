@@ -512,22 +512,25 @@ the shear cell with 400,000 particles ). \\
 \subsection{ANN model development}
 \label{subsec:annmodeldev}
 
-First, we controlled the regression of the bulk behaviour parameters, e.g. the
-$\mu_{psh}$, see Fig. \ref{fig:22regression}, where the corresponding plot for
-the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
+First, we determined the regression of the bulk behaviour parameters, for
+instance the $\mu_{psh}$; see Fig. \ref{fig:22regression}, where the
+corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
 simulations.
-The plot presents a consistent agreement between the 
-$DEM$ and the $ANN$ values, showing a regression line almost linear (0.94).
+The plot shows a consistent agreement between the 
+$DEM$ and the $ANN$ values and an almost linear regression ($R^2
+= 0.94$).
 The linear relationship between the
-training values have been evaluated in Table \ref{tab:06inputRelationshipTable}.
+training values can be seen in Table \ref{tab:06inputRelationshipTable}.
 The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
 $\rho_p$ and $\rho_b$.
-Instead, for $\mu_{sh}$ and $AoR$ the $\mu_r$ balanced the influence of the 
-$\mu_s$, and further parameters were worthly correlated. \\
-Then we observed how the $R^2$ changed with the different number of neurons for the $\mu_{psh}$. 
-In this case we reached a $R^2 = 0.96$ for a $ANN$ with fifteen neurons. 
-Increasing the number of neurons did not improve the $R^2$, that even started to oscillate with the neuron number. 
-We later obtained the correct number of neurons for all the $ANNs$.
+In contrast, for $\mu_{sh}$ and $AoR$, the $\mu_r$ balanced the influence of the 
+$\mu_s$. \\
+We then investigated how the $R^2$ changed with the number of neurons
+for the $\mu_{psh}$.
+In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
+Increasing the number of neurons did not improve the $R^2$; it even started to
+oscillate with higher numbers of neurons.
+We subsequently obtained the optimal number of neurons for all $ANNs$.
 Further, we processed the random combinations (Table
 \ref{tab:10DEMVariableinputvalues}) with the $ANN$.
 The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
