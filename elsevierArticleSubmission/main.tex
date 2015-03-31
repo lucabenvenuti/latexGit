@@ -533,7 +533,7 @@ oscillate with higher numbers of neurons.
 We subsequently obtained the optimal number of neurons for all $ANNs$.
 Further, we processed the random combinations (Table
 \ref{tab:10DEMVariableinputvalues}) with the $ANN$.
-The $ANN$ evaluation was incredibly faster compared to the $DEM$ simulations. The
+The $ANN$ evaluation was significantly faster than the $DEM$ simulations. The
 individuation of the numerical bulk behaviours for all the $DEM$ combinations
 did not take more than a few seconds on a single core.
 %************************************************
@@ -587,76 +587,76 @@ is not used as training parameter for the $AoR$ bulk behaviour.}
 \label{subsec:experimentsparameteridentification}
 
 Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
-for sinter fine have been acquired through the $SSC$, e.g. in Table
-\ref{tab:05sinterTableExperimental}
-these values for three load conditions are presented.
-The $\mu_{psh}$ is clearly decreasing. 
-Instead, the $\mu_{sh}$ is oscillating.
-The $\rho_b$ presents a clear average of 1760 kg/m3 with a 42 
+of sinter fine were acquired through $SSC$ tests. 
+Table \ref{tab:05sinterTableExperimental} presents
+these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
+the $\mu_{sh}$ oscillates.
+The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
 kg/m3 deviation.
-The stress path for the second load condition of Table
+The stress path for the second load condition in Table
 \ref{tab:05sinterTableExperimental} is shown in Fig.
 \ref{fig:20experimental}.
-Later, two $AoR$ test have been performed, thus identifying an average angle of
+Two $AoR$ tests were performed that gave an average angle of
 38.85$^\circ$.
-We also realized the sieving, obtaining the radius ($R$) mean and standard
-deviation, already shown in Table \ref{tab:09DEMFixedinputvalues}.
-The confrontation between numerical and experimental behaviours led to a first
+We obtained the radius ($R$) mean and standard
+deviations, as shown in Table
+\ref{tab:09DEMFixedinputvalues}, from sieving experiments.
+The comparison between numerical and experimental behaviours led to a first
 series of marked combinations ($MC1$) for one load condition of
-the shear cell ($\sigma_n=10070$ Pa, P=1.0), represented in Fig.
-\ref{fig:24radarpirker1schulze10070}.
-Here, the minimum and maximum values, together with the mean are shown. 
-Furthermore, the shaded area represents valid parameter combinations.
-Dark shaded values stand for the confidence interval, provided by the square
-deviation.
-Notably, the confidence interval is large, 
-especially for the $COR$, highlighting its scarce influence over the characterization. 
-Instead, both the $\rho_p$  and the $\mu_s$ show a narrow confidence interval, 
-displaying at the same time their influence and the validity of this procedure to find valid $DEM$ parameters. 
-That agrees with the examination of the ratio of the standard deviation to the
-range, see Table \ref{tab:13DEMvalidvalues}.
-Further, we could see how different $DEM$ parameters
-combinations could reproduce the experimental behaviour and evaluate their mutual dependencies. 
-This is clearer in a density plot, as in Fig. 
-\ref{fig:25cloudpirker1schulze10070} for $MC1$, 
-of the particles' coefficient of restitution (COR) in dependence
-of coefficient of sliding friction ($\mu_s$) and coefficient of rolling friction ($\mu_r$); in the
-white area no valid sets of simulation parameter can be found.
-In each cell the valid sets are grouped accordingly to the four different $COR$
-ranges.
-Each cell is coloured accordingly to the group with the most members. 
-While the $COR$ varied, multiple
-combinations (250407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
-the experimental behaviour.
+the shear cell ($\sigma_n=10,070$ Pa, P=1.0), as plotted in Fig.
+\ref{fig:24radarpirker1schulze10070}, where 
+the minimum and maximum values are shown, together with the mean. 
+Note that the confidence interval is large, 
+especially for the $COR$, which highlights its insignificant influence on the
+characterization.
+Both the $\rho_p$  and the $\mu_s$, however, show a narrow confidence interval, 
+which demonstrates their influence and the ability of this procedure to find
+valid $DEM$ parameters.
+These results agree with our examination of the ratio of the standard deviation
+to the range, see Table \ref{tab:13DEMvalidvalues}.
+Further, we observed that various $DEM$ parameter
+combinations could reproduce the experimental behaviour, and thus evaluated
+their mutual dependencies.
+This is shown more clearly in a density plot (see Fig. 
+\ref{fig:25cloudpirker1schulze10070} for $MC1$) 
+of the particles' coefficient of restitution (COR) in relation to
+the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$). 
+Multiple
+combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
+the experimental behaviour with varying $COR$.
 This underlines once more their correlation, as already stated by Wensrich and 
 Katterfeld \cite{RefWorks:87}.
 To further demonstrate the validity of the procedure, we modified the product
-coefficient. In the first attempt we set it to $P=0.8$ and we obtained another
+coefficient. 
+First, we set it to $P=0.8$, and we obtained another
 series of marked combinations ($MC2$).
-We can see in the parameter space plot in Fig.
+It can be seen in the parameter space plot in Fig.
 \ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
-compared to $P=1.0$, while in the density plot in Fig. 
+than for $P=1.0$, while in the density plot in Fig. 
 \ref{fig:27cloudpirker08schulze10070} the area
 appears larger, although slightly less densely populated. Finally, for $P=1.2$
 and its marked combinations ($MC3$) the parameter space plot in Fig.
 \ref{fig:28radarpirker12schulze10070} shows a largely different confidence
 range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
-illustrates a smaller area. As expected, the procedure was highly sensible to the variations of the experimental data. 
-Thus, it could be effectively handled for a wide range of bulk materials.\\
+shows a smaller area. As expected, the procedure was highly sensitive to
+variations in the experimental data.
+Our approach could therefore be used
+for a wide range of bulk materials.\\
 We then processed the random combinations with the $AoR$ $ANN$. In Fig.
-\ref{fig:31radarpirker1aor} the parameter space plot realized with the same criteria as
+\ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
-In accordance with the theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
-by the particles rolling the coefficient of rolling friction has the maximum
+In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
+by rolling particles, the coefficient of rolling friction has the maximum
 influence. \\
 Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
 and compared it with the experimental one.
 As can be seen in the parameter space plot in Fig.
-\ref{fig:33radarpirker1schulze10070aor}, the confidence interval is meager,
-indicating that all the parameters but the $COR$ had an important role and demonstrating the reliability of these parameters
-combinations to represent the bulk behaviour.
-From the initial 6250000 combinations, only 3884 of them were valid (0.0621 \%),
-see Table \ref{tab:13DEMvalidvalues}.
+\ref{fig:33radarpirker1schulze10070aor}, the confidence interval is very small,
+indicating that all the parameters but the $COR$ played an important role, 
+and demonstrating the reliability of these parameter
+combinations in representing the bulk behaviour.
+From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
+\%), see Table \ref{tab:13DEMvalidvalues}.
 %************************************************
 \begin{table}[h]
 \centering
