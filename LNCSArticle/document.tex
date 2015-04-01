@@ -1,20 +1,54 @@
 \documentclass{llncs}
 
-%\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{graphicx}
+% \usepackage{picins}
+
+
+\usepackage[nomarkers]{endfloat}
 %
 \begin{document}
 
 
-\title{LaTeX Template for Your LNCS Paper}
+\title{Identification for Rhodes of DEM Simulation Parameters by Artificial
+Neural Networks and Bulk Experiments}
 
-\author{Author 1, Author 2}
+\author{L.~Benvenuti, C.~Kloss, S.~Pirker}
 
-\institute{Lab, University, Address}
+\institute{PFM, JKU, Linz}
 \maketitle
 
 \begin{abstract}
 
-Abstract is here.
+In Discrete Element Method ($DEM$) simulations, particle-particle contact laws
+determine the macroscopic simulation results. Particle based contact laws, in
+turn, commonly rely on semi-empirical parameters, which can be hardly obtained
+by direct microscopic measurements.
+In this study we present a methodology for the identification of
+$DEM$ simulation parameters by linking the macroscopic experimental results to the
+microscopic numerical parameters by artificial neural networks.
+In a first step, a series
+of $DEM$ simulations with varying simulation parameters are used to train a feed
+forward artificial neural network by backward propagation reinforcement. In a
+second step, this artificial neural network is utilized to predict the
+macroscopic ensemble behaviour in dependence of additional sets of particle
+based simulation parameters.
+As a result, a comprehensive database is obtained,
+which links particle based simulation parameters to a specific macroscopic
+bulk behaviour of the ensemble.
+The trained artificial neural network is able to predict the behaviour of
+additional sets of input parameters accurately and highly efficient.
+Furthermore, this methodology can be applied to
+identify $DEM$ material parameters in a generic way.
+For each set of calibration experiments, the training of the neural network has
+to be performed just once. 
+After the training, the neural network provides a generic link between the macroscopic 
+experimental results and the microscopic $DEM$ simulation parameters.
+By the help of these experiments, the $DEM$ simulation parameters of a specific
+non-cohesive granular material can be identified.
 
 \end{abstract}
 
