@@ -1040,26 +1040,31 @@ First, it is capable of importing triangulated meshes of the two rings and a top
 Since the real setup had a wall thickness, contact forces acting on a mesh are summed and can be saved, 
 and thus shear force calculation is available out of the box. 
 Second, the code can move a mesh with constant 
-velocity as required for the measurement. To determine the shear stresses, the bulk solid had to be stressed with 
-user-defined normal stresses. Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
+velocity as required for the measurement. 
+To determine the shear stresses, the bulk solid had to be stressed with 
+user-defined normal stresses. 
+Therefore, a stress-controlled wall (servo-wall in $LIGGGHTS$) was applied to the lid. \\
 Although the geometry differs, the $SSC$ was designed to obtain the same values for the shear stresses as the 
 Jenike shear cell tester ($JSCT$), but with improved automation and reliability,
 see Schulze \cite{RefWorks:118}. 
-For this reason, the simulation setup has been
-based over the $JSCT$.
+For this reason, the simulation setup was
+based on the $JSCT$.
 As suggested by Aigner et al. \cite{RefWorks:139} and Benvenuti et al. \cite{RefWorks:173}, 
 the diameter and the height of the rings operated in the simulations had to be sufficiently large to avoid relevant wall effects. 
-Nevertheless, a larger domain increases the number of particles, and thus the simulation time. 
-For this reason, we considered the cylinder dimension, as proportion to the mean particle diameter ($dCylDp$), 
-an additional $DEM$ parameter to be investigated. \\   
+However, a larger domain increases the number of particles and thus
+simulation time.
+For this reason, we considered the cylinder dimension ($dCylDp$), which is
+proportional to the mean particle diameter, as an additional $DEM$
+parameter to be investigated. \\
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed
-settling.
-Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
+to settle.
+Then, the top lid was lowered and the first normal stress applied to the bulk
+solid.
 As in the experiment, the servo-wall allows calculating the position of the lid
-while the first particle is touched. 
-The distance between the lid and the bottom of the domain, multiplied by the 
-simulation area, gave the total volume.
+while the first particle is being touched. 
+The distance between the lid and the bottom of the domain multiplied by the 
+simulation area gave the total volume.
 Since the software already provided the total mass, we were able to calculate:
 %************************************************
 \begin{equation}
@@ -1067,14 +1072,18 @@ Since the software already provided the total mass, we were able to calculate:
  \label{eq:rhob}
 \end{equation}
 %************************************************
-Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
+Next, the ring moved by a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and
+the required pre-shear force was measured.
 Finally, the normal load was reduced to a fraction of the initial load, 
 the ring was moved again by a distance $l$, and the shear force was recorded. 
 Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation. 
-The velocity of the ring displacement, and consequently the total simulation time, are determined 
-through a challenging equilibrium between the downgrading of normal load oscillation and the computational time containment. 
-The former is obtained by low (relatively) velocity, the latter by high speed. We imposed a constant velocity 
-of $3*(mean-particle-radius)/seconds$, the most suitable to satisfy the two competing requests. \\
+The velocity of the ring displacement, and consequently the total simulation time, 
+was determined by a trade-off between minimizing the normal load oscillation and
+optimizing computation time. 
+The former requires (relatively) low velocity, and the latter requires high
+speed.
+We chose a constant velocity of $3*(mean ~ particle ~ radius)/seconds$, as the
+best trade-off.\\
 The normal stresses (pre-shear and shear phases) applied in each simulation were
 the same as in the experiments, see \ref{subsec:srsctexperiment}.
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
@@ -1082,9 +1091,10 @@ The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the exper
 %************************************************
 \subsection{AoR simulation}
 \label{subsec:aorsimulation}
-In $AoR$ simulations we tried to replicate meticulously the experimental setup, 
-considering both the plate and the lift-able boundary, with the same domain size consideration as before. 
-The particles had the same properties as in the shear-cell simulation. The first phase was identical to that of the shear cell simulation. 
+In $AoR$ simulations we sought to replicate meticulously the experimental setup, 
+considering both the plate and the liftable boundary, with the same domain size consideration as before. 
+The particles had the same properties as in the shear-cell simulation. 
+The first phase was identical to that of the shear-cell simulation. 
 After lifting the boundary, the particles formed a heap.
 An image post-processing software was used to obtain the average slope.
 
