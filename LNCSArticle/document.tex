@@ -189,8 +189,8 @@ Further explanations can be found in Section \ref{sec:methodology}.
 \label{subsec:dem}
 
 We decided to utilize a single
-contact law for all the simulations performed, see
-\ref{subsec:srsctsimulation}.
+contact law for all the simulations performed, for details see
+Benvenuti et al. \cite{RefWorks:180}.
 The $DEM$ parameters for the Young's modulus ($E$) and the Poisson's coefficient
 ($\nu$) were taken from the literature, see \cite{RefWorks:175} 
 and \cite{RefWorks:176}; however we reduced the former to increase the time step
@@ -814,8 +814,13 @@ aknowledge their support.
 
 %************************************************
 
+% % %\begin{thebibliography}{10}
+% \bibliographystyle{splncs}
+% \bibliography{Bibliografia}
+% 
+% %\end{thebibliography}
+%************************************************
 \begin{thebibliography}{10}
-
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -823,7 +828,7 @@ aknowledge their support.
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{RefWorks:130}
-P.~W. Cleary, M.~L. Sawley, DEM modelling of industrial granular flows: 3d case
+P.~W. Cleary, M.~L. Sawley, Dem modelling of industrial granular flows: 3d case
   studies and the effect of particle shape on hopper discharge, Applied
   Mathematical Modelling 26~(2) (2002) 89--111.
 
@@ -838,16 +843,16 @@ L.~Vu-Quoc, X.~Zhang, An accurate and efficient tangential force-displacement
 
 \bibitem{RefWorks:145}
 A.~D. Renzo, F.~P.~D. Maio, Comparison of contactforce models for the
-  simulation of collisions in DEM-based granular flow codes, Chemical
+  simulation of collisions in dembased granular flow codes, Chemical
   Engineering Science 59~(3) (2004) 525--541.
 
 \bibitem{RefWorks:87}
 C.~M. Wensrich, A.~Katterfeld, Rolling friction as a technique for modelling
-  particle shape in DEM, Powder Technology 217~(0) (2012) 409--417.
+  particle shape in dem, Powder Technology 217~(0) (2012) 409--417.
 
 \bibitem{RefWorks:136}
 C.~Kloss, C.~Goniva, A.~Hager, S.~Amberger, S.~Pirker, Models, algorithms and
-  validation for opensource DEM and CFDDEM, Progress in Computational Fluid
+  validation for opensource dem and cfddem, Progress in Computational Fluid
   Dynamics, an International Journal 12~(2) (2012) 140--152.
 
 \bibitem{RefWorks:139}
@@ -867,10 +872,10 @@ J.~Ai, J.-F. Chen, J.~M. Rotter, J.~Y. Ooi, Assessment of rolling resistance
 
 \bibitem{RefWorks:177}
 M.~Combarros, H.~J. Feise, H.~Zetzener, A.~Kwade, Segregation of particulate
-  solids: Experiments and DEM simulations, Particuology 12~(0) (2014) 25--32.
+  solids: Experiments and dem simulations, Particuology 12~(0) (2014) 25--32.
 
 \bibitem{RefWorks:91}
-A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, DEM validation using an
+A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, Dem validation using an
   annular shear cell, Powder Technology 248~(0) (2013) 131--142.
 
 \bibitem{RefWorks:150}
@@ -904,13 +909,18 @@ M.~J. Jiang, H.~S. Yu, D.~Harris, A novel discrete model for granular material
 W.~L. Oberkampf, C.~J. Roy, Verification and Validation in Scientific
   Computing, Cambridge University Press, 2010.
 
+\bibitem{RefWorks:180}
+L.~Benvenuti, C.~Kloss, S.~Pirker, Identification of dem simulation parameters
+  by artificial neural networks and bulk experiments, manuscript sumbitted for
+  publication.
+
 \bibitem{RefWorks:118}
 D.~Schulze, Powders and bulk solids: behavior, characterization, storage and
   flow, Springer, 2008.
 
 \bibitem{RefWorks:173}
 L.~Benvenuti, A.~Aigner, D.~Queteschiner, S.~Pirker, C.~Kloss, Establishing the
-  predictive capabilities of DEM simulations: sliding and rolling friction
+  predictive capabilities of dem simulations: sliding and rolling friction
   coefficients of non-spherical particles, in: CFD 2014 Proceedings, 2014.
 
 \bibitem{RefWorks:161}
@@ -925,7 +935,7 @@ A.-K. Seghouane, Y.~Moudden, G.~Fleury, Regularizing the effect of input noise
 
 \bibitem{RefWorks:167}
 D.~Barrasso, A.~Tamrakar, R.~Ramachandran, A reduced order pbm-ann model of a
-  multi-scale PBM-DEM description of a wet granulation process, Chemical
+  multi-scale pbm-dem description of a wet granulation process, Chemical
   Engineering Science~(0).
 
 \bibitem{RefWorks:168}
@@ -954,8 +964,10 @@ B.~Das, U.~P. Ganguly, N.~Bar, S.~K. Das, Holdup prediction in inverse
 S.~M. Turp, B.~Eren, A.~Ates, Prediction of adsorption efficiency for the
   removal of nickel(ii) ions by zeolite using artificial neural network(ann)
   approach, Fresenius Environmental Bulletin 20~(12) (2011) 3158--3165.
+
 \end{thebibliography}
 
+%************************************************
 
 
 \end{document}
