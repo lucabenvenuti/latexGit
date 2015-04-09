@@ -184,7 +184,7 @@ parameters of sinter fines.
 \centering
 \begin{tabular}{l}
 \hline 
-     Particles radius $R$ (m)   \\ [5pt]
+     Particle radius $R$ (m)   \\ [5pt]
 
 	Size distribution (-) \\ [5pt]
 
@@ -201,9 +201,9 @@ parameters of sinter fines.
    
 \hline
 \end{tabular}
-\caption[DEM parameters]{DEM parameters. The upper parameters are
-identical in all the simulations. The lower parameters are constant in each
-simulation, but are varied between simulations.}
+\caption[DEM parameters]{DEM parameters. The upper parameters were
+identical in all simulations. The lower parameters were constant in each
+simulation, but were varied between simulations.}
 \label{tab:08DEMparameters}
 \end{table}
 %************************************************
@@ -374,7 +374,7 @@ bulk value, allowing us to define the numerical bulk behaviour.
 \hline
 \end{tabular}
 \caption[DEM variable input values]{DEM variable input values for training the
-Neural Networks}
+Artificial Neural Networks}
 \label{tab:10DEMVariableinputvalues}
 \end{table}
 %************************************************
@@ -392,7 +392,7 @@ Neural Networks}
 \hline
 \end{tabular}
 \caption[DEM random input values]{DEM random input values. Within each range the
-indicated number of random values is chosen according to a standard uniform
+indicated number of random values was chosen according to a standard uniform
 distribution.}
 \label{tab:12DEMRandominputvalues}
 \end{table}
@@ -577,11 +577,11 @@ demonstrates the accurate predictive power of the $ANN$.}
 \hline
 \end{tabular}}
 \caption[Values of linear relationship between considered variables]{Values of
-linear relationship between considered variables multiplied by 100. Sliding
+linear relationship between variables considered multiplied by 100. Sliding
 friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
-influence the most, respectively, the coefficient of pre-shear ($\mu_{psh}$),
-the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
-is not used as training parameter for the $AoR$ bulk behaviour.}
+had the greatest influence on, respectively, the coefficient of pre-shear
+($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
+was not used as a training parameter for $AoR$ bulk behaviour.}
 \label{tab:06inputRelationshipTable}
 \end{table}
 %************************************************
@@ -713,7 +713,7 @@ load conditions}
 
 \hline
 \end{tabular}
-\caption[DEM valid values]{DEM valid values. For each parameter we show the
+\caption[Valid DEM values]{Valid DEM values. For each parameter we show the
 valid parameter statistics in the two tests and in their intersection.
 Finally, we show the number of valid parameter combinations over the total
 (6250000).}
@@ -752,40 +752,42 @@ Finally, we show the number of valid parameter combinations over the total
 %************************************************
 \begin{figure}[htp] \centering
 
-    \begin{subfigure}[b]{0.96\columnwidth}
+    \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{27cloudpirker08schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
         \label{fig:27cloudpirker08schulze10070} 
     \end{subfigure}\\
-    \begin{subfigure}[b]{0.96\columnwidth}
+    \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{25cloudpirker1schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
         \label{fig:25cloudpirker1schulze10070}
     \end{subfigure}\\
 
-    \begin{subfigure}[b]{0.96\columnwidth}
+    \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{30cloudpirker12schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
         \label{fig:30cloudpirker12schulze10070} 
     \end{subfigure}
     \caption[Density plot comparison of SSC results]{Density plot comparison of
     shear cell tester ($SSC$) results. The marked combinations for
-    $\sigma_n=10070 ~Pa$ are here presented.
-    Density plot of the particles' coefficient of restitution (COR) in dependence
-	of coefficient of sliding friction ($\mu_s$) and coefficient of rolling
-	friction ($\mu_r$); in the white area no valid sets of simulation parameter can be found.
-	In each cell the valid sets are grouped accordingly to the 4 different COR
+    $\sigma_n=10070 ~Pa$ are presented.
+    Density plot of the particles' coefficient of restitution (COR) as a
+    function of the coefficient of sliding friction ($\mu_s$) and the
+    coefficient of rolling friction ($\mu_r$); 
+    in the white area, no valid sets of simulation parameters can be found.
+	In each cell the valid sets are grouped according to the 4 different COR
 	ranges.
-	Each cell is colored accordingly to the group with the most members. 
-    Here, the values plotted are selected between the numerical
-    values from the Neural Network with initially the original experimental
-    results for the $SSC$, with a product coefficient $P=1.0$ (Fig.
+	Each cell is colored according to the group with the most members. 
+    The values plotted here were initially
+    selected between the numerical
+    values from the Artificial Neural Network with the original
+    experimental results for the $SSC$, with a product coefficient $P=1.0$ (Fig.
     \ref{fig:25cloudpirker1schulze10070}). 
-        Later, they have been chosen with  
-    a virtually lower shear stress ($P=0.8$)
+    Subsequently, they were chosen with  
+    a lower virtual shear stress ($P=0.8$)
     (\ref{fig:27cloudpirker08schulze10070}).
     The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
-    instead the selection with a virtually higher shear stress ($P=1.2$).    }
+    the selection with a higher virtual shear stress ($P=1.2$).    }
     \label{fig:29schulzeradarandcloud}
 \end{figure}
 %************************************************
@@ -801,14 +803,17 @@ Finally, we show the number of valid parameter combinations over the total
         ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
         \label{fig:33radarpirker1schulze10070aor} 
     \end{subfigure}
-    \caption[Parameter space plot of valid simulations parameters for the AoR and
-    the combination of AoR and SSC valid parameters]{Parameter space plot of
-    valid simulations parameters for the angle of repose tester ($AoR$) and the
+    \caption[Parameter space plots of valid simulation parameters for the AoR
+    and the combination of AoR and SSC valid parameters]{Parameter space plots
+    of valid simulation parameters for the angle of repose tester ($AoR$) and the
     combination of $AoR$ and shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
-    Furthermore, the shaded area represents valid parameters combinations.
-    Dark shaded values stand for the confidence interval.
-    Further explanation in section \ref{subsec:experimentsparameteridentification}.}
+    The shaded area 
+    and dark shaded values indicate
+    valid parameters combinations and
+    the confidence interval, respectively.
+    Further explanations are given in Section
+    \ref{subsec:experimentsparameteridentification}.}
     \label{fig:35schulze10070aorradarandcloud}
 \end{figure}
 %************************************************
