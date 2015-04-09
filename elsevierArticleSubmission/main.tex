@@ -217,15 +217,18 @@ Fig. \ref{fig:19methodology} illustrates the methodology used.
 \begin{figure}[!htb] 
 \centering 
 \includegraphics[width=.96\textwidth]{19methodology} 
-\caption[Methodology]{Methodology. 
-In the training phase (dashed lines) from the initial random input parameters
-$DEM$ simulations are performed. The behaviours provided are used to train the
-Neural Networks ($NN$), in a loop that continues until the difference is within
-the limit ($\Delta$).
-Then in the parameters' identification phase (continous
-lines) we identify the valid input parameters by comparing (\textbf{=}) $NN$ and
+\caption[Method]{Method. 
+In the training phase (dashed lines)
+$DEM$ simulations are performed
+with random initial input parameters.
+The behaviours obtained are used to train the
+Artificial Neural Networks ($ANNs$) in a loop that continues until the
+difference between the outputs of each $ANN$ and its simulations is below the
+limit ($\Delta$) (see Section \ref{subsec:ann}).
+In the parameters identification phase (solid
+lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
 experimental behaviours.
-Further explanations in section \ref{sec:methodology}.
+Further explanations can be found in Section \ref{sec:methodology}.
 }
 \label{fig:19methodology} 
 \end{figure}
@@ -312,34 +315,35 @@ bulk value, allowing us to define the numerical bulk behaviour.
 \begin{figure}[htp] \centering
     \begin{subfigure}[b]{0.96\columnwidth}
         \includegraphics[width=\textwidth]{20experimental}
-        \caption{Experimental shear cell tester stress path - $\sigma_n = 10000
+        \caption{Experimental shear-cell tester stress path - $\sigma_n = 10000
         ~Pa$}
         \label{fig:20experimental} 
     \end{subfigure}\\
         \begin{subfigure}[b]{0.96\columnwidth}
         \includegraphics[width=\textwidth]{21simexample}
-        \caption{Numerical shear cell tester stress path - $\sigma_n = 10000
+        \caption{Numerical shear-cell tester stress path - $\sigma_n = 10000
         ~Pa$}
         \label{fig:21simexample} 
     \end{subfigure}
-    \caption[Stress path]{Sample of the stress path for
-	the Schulze ring shear cell tester, experimental and numerical.
-	Time is normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
-	time when the normal stress ($\sigma_n$) is modified during the tests.
-	Until $\tilde{t}=1$ the $\sigma_n = 10000 ~Pa$ is kept constant. 
-	In Fig. \ref{fig:20experimental} at $\tilde{t}~=0.91$
- 	a plateau is reached.
-	The coefficient of pre-shear ($\mu_{psh}$) is calculated as average of the
+    \caption[Stress path]{Experimental and numerical samples of the stress path
+    for the Schulze ring shear cell tester.
+	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
+	point in time at which the normal stress ($\sigma_n$) was modified during the
+	tests.
+	Until $\tilde{t}=1$, the $\sigma_n$ was kept constant at 10,000 Pa. 
+	In Fig. \ref{fig:20experimental}, 
+ 	a plateau was reached at $\tilde{t}~=0.91$.
+	The coefficient of pre-shear ($\mu_{psh}$) was calculated as the average of the
 	coefficient of internal friction ($\mu_{ie}$) in this first plateau.
-	Later, at $\tilde{t}=1$, the $\sigma_n$ is reduced to $80 \%$ of its initial
-	value.
-	Soon, a second plateau starts.
-	As average of $\mu_{ie}$ in this second plateau we obtain coefficient of
-	shear ($ \mu_{sh}$).
-	The stress path is in the numerical simulation is comparable to the
-	experimental one, especially the plateaux.
-	They were clearly relevant because there we collected the numerical bulk
-	behaviour representative values. }
+	At $\tilde{t}=1$, the $\sigma_n$ was reduced to $80 \%$ of its initial
+	value, and soon after
+	a second plateau developed.
+	We obtained the coefficient of
+	shear ($ \mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+	The stress paths agree well, especially the plateaux.
+	They were clearly relevant because
+	the values representative of the bulk behaviours 
+	were collected there.}
     \label{fig:40experimentalsimulation}
 \end{figure}
 %************************************************
@@ -440,8 +444,8 @@ cell and one for the $AoR$ were obtained.
 \begin{figure}[!htb] 
 \centering 
 \includegraphics[width=.96\textwidth]{18nnscheme} 
-\caption[ANN Scheme]{Artificial Neural Network ($ANN$) Scheme. This is the
-schematic of how the Multi Layer Perceptron $ANN$ ($MLPNN$) derives one bulk
+\caption[ANN Scheme]{Artificial Neural Network ($ANN$) Scheme
+of how the Multi-Layer Perceptron $ANN$ ($MLPNN$) derives one bulk
 behaviour dependent variable from the mutually independent simulation variables.}
 \label{fig:18nnscheme} 
 \end{figure}
@@ -797,9 +801,9 @@ Finally, we show the number of valid parameter combinations over the total
         \label{fig:33radarpirker1schulze10070aor} 
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for the AoR and
-    the merge between AoR and SSC valid parameters]{Parameter space plot of
-    valid simulations parameters for the angle of repose tester ($AoR$) and the merge
-    between $AoR$ and shear cell tester ($SSC$).
+    the combination of AoR and SSC valid parameters]{Parameter space plot of
+    valid simulations parameters for the angle of repose tester ($AoR$) and the
+    combination of $AoR$ and shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     Furthermore, the shaded area represents valid parameters combinations.
     Dark shaded values stand for the confidence interval.
@@ -1206,14 +1210,13 @@ Each experiment was performed on a fresh material sample. \\
 %************************************************
 \subsection{AoR experiment}
 \label{subsec:aorexperiment}
-A sample was deposited on a 20 cm diameter plate with lift-able boundary, called
+A sample was deposited on a 20 cm diameter plate with liftable boundary called
 static angle of repose ($AoR$) tester.
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
 Once stabilized, the $AoR$ was measured eight times using a digital protractor at different positions of the heap. 
-The result is produced as the average of the measurements, granting the fourth
-behaviour value.
-Notably, the experiments were performed only for larger size bulk solids. 
-So, the compaction condition in the initial state was not critical to the final result.
+The average of the measurements gave the fourth bulk value.
+Note that, since the experiments were performed only for larger-size bulk
+solids, the compaction condition in the initial state was not critical to the final result.
 
 \end{appendix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
