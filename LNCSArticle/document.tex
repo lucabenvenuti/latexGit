@@ -6,6 +6,7 @@
 \usepackage{courier}
 \usepackage{graphicx}
 % \usepackage{picins}
+\usepackage{epstopdf}
 
 
 \usepackage[nomarkers]{endfloat}
@@ -13,8 +14,7 @@
 \begin{document}
 
 
-\title{Identification for Rhodes of DEM Simulation Parameters by Artificial
-Neural Networks and Bulk Experiments}
+\title{Characterization of DEM particles by means of artificial neural networks and macroscopic experiments}
 
 \author{L.~Benvenuti, C.~Kloss, S.~Pirker}
 
@@ -235,12 +235,13 @@ were constant in each simulation, but their combination differed between
 simulations.
 Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
 simulations had a $dCylDp$ larger than $20$ (additional information can be found
-in \ref{subsec:srsctsimulation}).
+in Benvenuti et al. \cite{RefWorks:180}).
 The normal stress $\sigma_n$ and its
 percentage during the incipient flow condition $\tau_{\%}$
 varied to replicate twelve shear-cell load conditions. 
-The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
+The complete description of the shear-cell 
+and the $AoR$ simulations
+can be found in Benvenuti et al. \cite{RefWorks:180}.
 A Matlab script allowed us to extract from the simulation output the numerical
 values representative of bulk behaviour (hereafter called $bulk ~ values$)
 for each DEM simulation parameter combination, which consists of
@@ -249,7 +250,7 @@ coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
 and angle of repose ($AoR$).
 The first bulk value ($\rho_b$) was provided directly. 
-For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
+For correctly performed simulations, see Benvenuti et al. \cite{RefWorks:180}, we
 observed a stress path as in Fig. \ref{fig:21simexample}.
 First, the $\sigma_n$ was kept constant while the coefficient of internal
 friction ($\mu_{ie}$) initially increased and then reached a plateau.
@@ -353,7 +354,7 @@ distribution.}
 \subsection{Artificial Neural Networks}
 \label{subsec:ann}
 We first defined the typology of Artificial Neural Networks ($ANNs$) we used and
-the input we fed them, see \ref{sec:appann}.
+the input we fed them, see Benvenuti et al. \cite{RefWorks:180}.
 Our $ANNs$ have three different layers: the input layer has a number of neurons
 equal to the number of different inputs of the network, see Fig. \ref{fig:18nnscheme}.
 The hidden (or central) layer's number of neurons was to be investigated. 
@@ -406,7 +407,7 @@ bulk-behaviour-dependent variable from the mutually independent simulation varia
 \subsection{Macroscopic Experiments and Parameter Identification}
 \label{subsec:macroscopicexperimentsparameteridentification}
 The experimental characterization was performed as described in
-\ref{subsec:srsctexperiment} and \ref{subsec:aorexperiment}. 
+Benvenuti et al. \cite{RefWorks:180}. 
 We obtained for each of the twelve load conditions of the $SSC$ three bulk
 values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
 The fourth bulk value was the result of two angle of repose ($AoR$) tests that
@@ -828,7 +829,7 @@ aknowledge their support.
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{RefWorks:130}
-P.~W. Cleary, M.~L. Sawley, Dem modelling of industrial granular flows: 3d case
+P.~W. Cleary, M.~L. Sawley, DEM modelling of industrial granular flows: 3D case
   studies and the effect of particle shape on hopper discharge, Applied
   Mathematical Modelling 26~(2) (2002) 89--111.
 
@@ -843,16 +844,16 @@ L.~Vu-Quoc, X.~Zhang, An accurate and efficient tangential force-displacement
 
 \bibitem{RefWorks:145}
 A.~D. Renzo, F.~P.~D. Maio, Comparison of contactforce models for the
-  simulation of collisions in dembased granular flow codes, Chemical
+  simulation of collisions in DEM-based granular flow codes, Chemical
   Engineering Science 59~(3) (2004) 525--541.
 
 \bibitem{RefWorks:87}
 C.~M. Wensrich, A.~Katterfeld, Rolling friction as a technique for modelling
-  particle shape in dem, Powder Technology 217~(0) (2012) 409--417.
+  particle shape in DEM, Powder Technology 217~(0) (2012) 409--417.
 
 \bibitem{RefWorks:136}
 C.~Kloss, C.~Goniva, A.~Hager, S.~Amberger, S.~Pirker, Models, algorithms and
-  validation for opensource dem and cfddem, Progress in Computational Fluid
+  validation for opensource DEM and CFDDEM, Progress in Computational Fluid
   Dynamics, an International Journal 12~(2) (2012) 140--152.
 
 \bibitem{RefWorks:139}
@@ -872,10 +873,10 @@ J.~Ai, J.-F. Chen, J.~M. Rotter, J.~Y. Ooi, Assessment of rolling resistance
 
 \bibitem{RefWorks:177}
 M.~Combarros, H.~J. Feise, H.~Zetzener, A.~Kwade, Segregation of particulate
-  solids: Experiments and dem simulations, Particuology 12~(0) (2014) 25--32.
+  solids: Experiments and DEM simulations, Particuology 12~(0) (2014) 25--32.
 
 \bibitem{RefWorks:91}
-A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, Dem validation using an
+A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, DEM validation using an
   annular shear cell, Powder Technology 248~(0) (2013) 131--142.
 
 \bibitem{RefWorks:150}
@@ -914,13 +915,14 @@ L.~Benvenuti, C.~Kloss, S.~Pirker, Identification of dem simulation parameters
   by artificial neural networks and bulk experiments, manuscript sumbitted for
   publication.
 
+
 \bibitem{RefWorks:118}
 D.~Schulze, Powders and bulk solids: behavior, characterization, storage and
   flow, Springer, 2008.
 
 \bibitem{RefWorks:173}
 L.~Benvenuti, A.~Aigner, D.~Queteschiner, S.~Pirker, C.~Kloss, Establishing the
-  predictive capabilities of dem simulations: sliding and rolling friction
+  predictive capabilities of DEM simulations: sliding and rolling friction
   coefficients of non-spherical particles, in: CFD 2014 Proceedings, 2014.
 
 \bibitem{RefWorks:161}
@@ -935,7 +937,7 @@ A.-K. Seghouane, Y.~Moudden, G.~Fleury, Regularizing the effect of input noise
 
 \bibitem{RefWorks:167}
 D.~Barrasso, A.~Tamrakar, R.~Ramachandran, A reduced order pbm-ann model of a
-  multi-scale pbm-dem description of a wet granulation process, Chemical
+  multi-scale PBM-DEM description of a wet granulation process, Chemical
   Engineering Science~(0).
 
 \bibitem{RefWorks:168}
@@ -964,6 +966,7 @@ B.~Das, U.~P. Ganguly, N.~Bar, S.~K. Das, Holdup prediction in inverse
 S.~M. Turp, B.~Eren, A.~Ates, Prediction of adsorption efficiency for the
   removal of nickel(ii) ions by zeolite using artificial neural network(ann)
   approach, Fresenius Environmental Bulletin 20~(12) (2011) 3158--3165.
+
 
 \end{thebibliography}
 
