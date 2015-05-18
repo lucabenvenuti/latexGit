@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon May 18 12:59:38 CEST 2015
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=particles2015.tex
+outputFile=particles2015.pdf
+langSpell=en
+markDer=true
+srcDir=

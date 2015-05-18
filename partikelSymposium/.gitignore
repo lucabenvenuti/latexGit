@@ -19,3 +19,4 @@ main.fff
 *.zip
 *.synctex.gz
 Articolo-blx.bib
+/Articolo.run.xml
