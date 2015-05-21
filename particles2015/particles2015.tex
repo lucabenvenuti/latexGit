@@ -173,7 +173,7 @@ Fig. \ref{fig:19methodology} illustrates the methodology used.
 \begin{figure}[!htb] 
 \centering 
 \includegraphics[width=.80\textwidth]{19methodology} 
-\caption[Method]{Method. 
+\caption[Method]{\small{Method. 
 In the training phase (dashed lines)
 $DEM$ simulations are performed
 with random initial input parameters.
@@ -185,7 +185,7 @@ In the parameters identification phase (solid
 lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
 experimental behaviours.
 Further explanations can be found in Section \ref{sec:methodology}.
-}
+}}
 \label{fig:19methodology} 
 \end{figure}
 %************************************************
@@ -283,8 +283,8 @@ bulk value, allowing us to define the numerical bulk behaviour.
         ~Pa$}
         \label{fig:21simexample} 
     \end{subfigure}
-    \caption[Stress path]{Experimental and numerical samples of the stress path
-    for the Schulze ring shear cell tester.
+    \caption[Stress path]{\small{Experimental and numerical samples of the
+    stress path for the Schulze ring shear cell tester.
 	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
 	point in time at which the normal stress ($\sigma_n$) was modified during the
 	tests.
@@ -301,12 +301,13 @@ bulk value, allowing us to define the numerical bulk behaviour.
 	The stress paths agree well, especially the plateaux.
 	They were clearly relevant because
 	the values representative of the bulk behaviours 
-	were collected there.}
+	were collected there.}}
     \label{fig:40experimentalsimulation}
 \end{figure}
 %************************************************
 \begin{table}[h]
 \centering
+\scalebox{0.8}{
 \begin{tabular}{ccccc}
 \hline
     Mean & Std.dev.  & Young's & Poisson's & $\Delta t$\\
@@ -315,13 +316,14 @@ bulk value, allowing us to define the numerical bulk behaviour.
     \hline
     $0.732$ & $0.41$ & $10$    & $0.40$ & $10^{-6}$\\
 \hline
-\end{tabular}
-\caption{DEM fixed input values}
+\end{tabular}}
+\caption{\small{DEM fixed input values}}
 \label{tab:09DEMFixedinputvalues}
 \end{table}
 %************************************************
 \begin{table}[h]
 \centering
+\scalebox{0.8}{
 \begin{tabular}{ccccc}
 \hline
     $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $dCylDp$ \\
@@ -330,14 +332,15 @@ bulk value, allowing us to define the numerical bulk behaviour.
     0.4 / 0.6 / 0.8 & 0.4 / 0.6 / 0.8 & 0.5 / 0.7 / 0.9 & 2500 / 3000 / 3500 & 20 / 36 / 38 / 40 \\
 
 \hline
-\end{tabular}
-\caption[DEM variable input values]{DEM variable input values for training the
-Artificial Neural Networks}
+\end{tabular}}
+\caption[DEM variable input values]{\small{DEM variable input values for
+training the Artificial Neural Networks}}
 \label{tab:10DEMVariableinputvalues}
 \end{table}
 %************************************************
 \begin{table}[h]
 \centering
+\scalebox{0.8}{
 \begin{tabular}{lcccc}
 \hline
  &  $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$  \\
@@ -348,10 +351,10 @@ Artificial Neural Networks}
     number of values & 100   & 100   & 25    & 25    \\
 
 \hline
-\end{tabular}
-\caption[DEM random input values]{DEM random input values. Within each range the
-indicated number of random values was chosen according to a standard uniform
-distribution.}
+\end{tabular}}
+\caption[DEM random input values]{\small{DEM random input values. Within each
+range the indicated number of random values was chosen according to a standard uniform
+distribution.}}
 \label{tab:12DEMRandominputvalues}
 \end{table}
 %************************************************
@@ -447,12 +450,14 @@ comparison (Eq. \ref{eq:checkaor}):
 Further, to prove the validity of the system, we tested the marked combinations
 by modifying the experimental bulk values of the shear cell. 
 We artificially decreased or increased the shear force, and thus $\mu_{psh}$ and
-$\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+$\mu_{sh}$, by a product coefficient ($P$), e.g. 
+%Eq. \ref{eq:pcoeff}:
+$\mu_{psh, new} = \mu_{psh, old} \cdot P$.
 %************************************************
-\begin{equation}
-\label{eq:pcoeff}
-\mu_{psh, new} = \mu_{psh, old} \cdot P .
-\end{equation}
+% \begin{equation}
+% \label{eq:pcoeff}
+% \mu_{psh, new} = \mu_{psh, old} \cdot P .
+% \end{equation}
 %************************************************
 
 \section{Results and discussion}
@@ -624,6 +629,7 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 %************************************************
 \begin{table}[h]
 \centering
+\scalebox{0.8}{
 \begin{tabular}{cccccc}
 \hline
 $\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
@@ -634,14 +640,15 @@ $\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
     10070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
 
 \hline
-\end{tabular}
-\caption[Experimental results]{Experimental results. Values for three
-load conditions}
+\end{tabular}}
+\caption[Experimental results]{\small{Experimental results. Values for three
+load conditions}}
 \label{tab:05sinterTableExperimental}
 \end{table}
 %************************************************
 \begin{table}[h]
 \centering
+\scalebox{0.8}{
 \begin{tabular}{llccc}
 \hline
 
@@ -672,34 +679,34 @@ load conditions}
     combinations & (\%) & 4.64  & 13.06 & 0.06 \\  
 
 \hline
-\end{tabular}
-\caption[Valid DEM values]{Valid DEM values. For each parameter we show the
-valid parameter statistics in the two tests and in their intersection.
+\end{tabular}}
+\caption[Valid DEM values]{\small{Valid DEM values. For each parameter we show
+the valid parameter statistics in the two tests and in their intersection.
 Finally, we show the number of valid parameter combinations over the total
-(6250000).}
+(6250000).}}
 \label{tab:13DEMvalidvalues}
 \end{table}
 %************************************************
 \begin{figure}[htp] \centering
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{26radarpirker08schulze10070}
         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
         \label{fig:26radarpirker08schulze10070} 
     \end{subfigure}
-     \begin{subfigure}[b]{0.3\textwidth}
+     \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{24radarpirker1schulze10070}
         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
         \label{fig:24radarpirker1schulze10070}
     \end{subfigure} 
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.32\textwidth}
         %\includegraphics[width=.45\columnwidth]
         \includegraphics[width=\textwidth]{28radarpirker12schulze10070}
         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
         \label{fig:28radarpirker12schulze10070} 
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for three different
-    bulk behaviours measured by SSC]{Parameter space plot of valid simulation
-    parameters for three different bulk behaviours measured by a shear cell
+    bulk behaviours measured by SSC]{\small{Parameter space plot of valid
+    simulation parameters for three different bulk behaviours measured by a shear cell
     tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     The shaded area indicates valid parameter combinations, and dark shaded
@@ -707,29 +714,29 @@ Finally, we show the number of valid parameter combinations over the total
 	The marked combinations for $\sigma_n=10070$ Pa are presented.
     Further explanations can be found in
    Section \ref{subsec:experimentsparameteridentification}.
-   }
+   }}
     \label{fig:29schulzeradarandcloud}
 \end{figure}
 %************************************************
 \begin{figure}[htp] \centering
 
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{27cloudpirker08schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
         \label{fig:27cloudpirker08schulze10070} 
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{25cloudpirker1schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
         \label{fig:25cloudpirker1schulze10070}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{30cloudpirker12schulze10070}
         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
         \label{fig:30cloudpirker12schulze10070} 
     \end{subfigure}
-    \caption[Density plot comparison of SSC results]{Density plot comparison of
-    shear cell tester ($SSC$) results. The marked combinations for
+    \caption[Density plot comparison of SSC results]{\small{Density plot
+    comparison of shear cell tester ($SSC$) results. The marked combinations for
     $\sigma_n=10070 ~Pa$ are presented.
     Density plot of the particles' coefficient of restitution (COR) as a
     function of the coefficient of sliding friction ($\mu_s$) and the
@@ -747,7 +754,7 @@ Finally, we show the number of valid parameter combinations over the total
     a lower virtual shear stress ($P=0.8$)
     (\ref{fig:27cloudpirker08schulze10070}).
     The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
-    the selection with a higher virtual shear stress ($P=1.2$).    }
+    the selection with a higher virtual shear stress ($P=1.2$).    }}
     \label{fig:29schulzeradarandcloud}
 \end{figure}
 %************************************************
@@ -764,8 +771,8 @@ Finally, we show the number of valid parameter combinations over the total
         \label{fig:33radarpirker1schulze10070aor} 
     \end{subfigure}
     \caption[Parameter space plots of valid simulation parameters for the AoR
-    and the combination of AoR and SSC valid parameters]{Parameter space plots
-    of valid simulation parameters for the angle of repose tester ($AoR$) and the
+    and the combination of AoR and SSC valid parameters]{\small{Parameter space
+    plots of valid simulation parameters for the angle of repose tester ($AoR$) and the
     combination of $AoR$ and shear cell tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     The shaded area 
@@ -773,7 +780,7 @@ Finally, we show the number of valid parameter combinations over the total
     valid parameters combinations and
     the confidence interval, respectively.
     Further explanations are given in Section
-    \ref{subsec:experimentsparameteridentification}.}
+    \ref{subsec:experimentsparameteridentification}.}}
     \label{fig:35schulze10070aorradarandcloud}
 \end{figure}
 %************************************************
