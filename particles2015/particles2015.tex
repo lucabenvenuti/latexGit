@@ -269,7 +269,7 @@ The stress path accords with the experimental one, especially the plateaux.\\
 In the $AoR$ tests the average of the repose angles provided us with the fourth
 bulk value, allowing us to define the numerical bulk behaviour.
 %************************************************
-\begin{figure}[htp] \centering
+\begin{figure}[h] \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{20experimental}
         \caption{Experimental shear-cell tester stress path - $\sigma_n =
@@ -758,7 +758,7 @@ Finally, we show the number of valid parameter combinations over the total
     \label{fig:29schulzeradarandcloud}
 \end{figure}
 %************************************************
-\begin{figure}[htp] \centering
+\begin{figure}[h] \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{31radarpirker1aor}
         \caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
@@ -795,24 +795,18 @@ behaviours as function of a set of $DEM$ simulation parameters.
 In the second step, this artificial neural network is then used 
 to predict the bulk behaviour of a huge number of additional $DEM$ parameter
 sets.
-The main findings of this study can be summarized as follows:
-\begin{itemize}
-  \item{An artificial neural network can be trained by a limited number of
-  dedicated $DEM$ simulations.
-  		The trained artificial neural network is then able to predict
-  		granular bulk behaviour.}
-  \item{This prediction of granular bulk behaviour is much more efficient
-  		than computationally expensive $DEM$ simulations.
-  		Thus, the macroscopic output associated with a huge number of parameter sets
-  		can be studied.}
-  \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
-  		valid sets of $DEM$ simulation parameters can be readily deduced for a
-  		specific granular material.}
-  \item{This $DEM$ parameter identification method can be applied to
-  arbitrary bulk experiments.
-  		Combining two artificial neural networks which predict two different bulk
-  		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
-\end{itemize}
+We can then state that an artificial neural network can be trained by a limited
+number of dedicated $DEM$ simulations. The trained artificial neural network is
+then able to predict granular bulk behaviour.
+Further, this prediction of granular bulk behaviour is much more efficient
+than computationally expensive $DEM$ simulations. Thus, the macroscopic output
+associated with a huge number of parameter sets can be studied.
+If the predictions of the artificial neural network are compared to a bulk experiment, 
+valid sets of $DEM$ simulation parameters can be readily deduced for a
+specific granular material.
+More importantly, this $DEM$ parameter identification method can be applied to
+arbitrary bulk experiments. Combining two artificial neural networks which
+predict two different bulk behaviours leads to winnowing the set of valid $DEM$ simulation parameters.
 As part of future work, we will develop this method further by considering
 different fractions of granular materials, which will lead to size-dependent sets of $DEM$
 simulation parameters.
