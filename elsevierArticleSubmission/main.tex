@@ -290,8 +290,8 @@ varied to replicate twelve shear-cell load conditions.
 The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
 and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulation output the numerical
-values representative of bulk behaviour (hereafter called $bulk ~ values$)
-for each DEM simulation parameter combination, which consists of
+values representative of bulk behaviour (hereafter called \textit{bulk values})
+for each $DEM$ simulation parameter combination, which consists of
 bulk density ($\rho_b$),
 coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
@@ -410,13 +410,13 @@ The transfer functions between the first two layers are the tangential sigmoid,
 and those between the hidden and central layers are linear.\\
 Thus, we were able to use the $DEM$ parameter combinations and their
 corresponding bulk values to train the $ANNs$.
-Note that 15\% of the simulations ($test ~ simulations$) were
+Note that 15\% of the simulations (\textit{test simulations}) were
 randomly picked and excluded from the training processes.
 We started with all the $DEM$ parameter combinations and their corresponding
 numerical $\mu_{psh}$ to create 36 $ANNs$ that differed in their numbers of
 neurons in the hidden layer (between five to forty neurons).
 We then determined the coefficient of determination ($R^2$) between the
-$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% \textit{test simulations}, 
 which were not correlated with the remaining 85\% used for the training. 
 Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
@@ -459,8 +459,7 @@ We obtained for each of the twelve load conditions of the $SSC$ three bulk
 values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
 The fourth bulk value was the result of two angle of repose ($AoR$) tests that
 recreated the repose angle observed in a pile of the
-real material. 
-
+real material.
 Subsequently, we compared the $ANN$ and experimental bulk behaviours for the
 twelve shear-cell load conditions.
 If in a DEM-parameter combination all the three bulk values differed by less 
@@ -477,7 +476,7 @@ than 5\% from those of the corresponding experiments, i.e.:
 %************************************************
 the combination was marked. The marked combinations were processed by the
 $AoR$ $ANN$, and then compared with the experiment.
-Were considered valid those that differed by less than $5\%$ also in this
+Were considered valid those that differed by less than 5\% also in this
 comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \begin{equation}
@@ -510,7 +509,7 @@ The computational time amounted to 1 hour with 32 AMD cores for a benchmark
 shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
 50,000 particles.
 Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
-the shear cell with 400,000 particles ). \\
+the shear cell with 400,000 particles). \\
 
 
 \subsection{ANN model development}
@@ -623,7 +622,7 @@ combinations could reproduce the experimental behaviour, and thus evaluated
 their mutual dependencies.
 This is shown more clearly in a density plot (see Fig. 
 \ref{fig:25cloudpirker1schulze10070} for $MC1$) 
-of the particles' coefficient of restitution (COR) in relation to
+of the particles' coefficient of restitution ($COR$) in relation to
 the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$). 
 Multiple
 combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
@@ -854,7 +853,7 @@ simulation parameters.
 \section{Acknowledgements}
 This study was funded by the Christian Doppler Forschungsgesellschaft, Siemens
 VAI Metals Technologies, and Voestalpine Stahl. The authors gratefully
-aknowledge their support.
+acknowledge their support.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{elsarticle-num}
