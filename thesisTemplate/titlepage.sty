@@ -1,0 +1,172 @@
+%
+% Institut fuer Regelungstechnik und elektrische Antriebe
+%
+% LaTex Style File Extension for Diplomarbeit TNFstyle
+%
+% 2001-07-10 Version 1.0
+%
+% The abstract is included here to avoid problems with SWP3 or LyX
+% 2001-09-24 Version 1.01 W. strikes again.
+%
+% modified for LyX 1.6.x
+% 2008-11-18 by Bernhard Ramsebner, regpro
+% 2009-08-13 TNF-Logo and some small style changes, Ramsi
+% 2009-08-27 Style for Projektseminar
+% DO NOT CHANGE ANYTHING, UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!!!
+%
+% stolen, and adapted by Gerhard Holzinger
+%
+% -------- only change entries beginning here ----------------------------
+%
+% enter the title of the thesis
+%
+\def\title{Modelling Simulations with Models 22 \RM{2}}
+%
+% choose type of work: 0 ... Dissertation
+%                      1 ... Diplomarbeit
+%                      2 ... Masterarbeit
+\def\type{0} %% see comment XXX
+%
+%
+% enter name of degree, see examples below
+%
+\def\degree{Diplomingenieur}
+%\def\degree{Diplomingenieurin}
+%\def\degree{Master of Science}
+%\def\degree{Doktor}
+%\def\degree{Doktorin}
+
+% enter the study (Studienrichtung)
+% e.g. Diplomstudium:
+\def\study{Technische Mathematik}
+% e.g. Masterstudium:
+% \def\study{Industriemathematik}
+% e.g. Doktorratsstudium
+%\def\study{Technischen Wissenschaften}
+%\def\study{Naturwissenschaften}
+%
+% titlelength influences vertical spacing depending on the length of the title
+% recommended values are:
+% 0: for short title (1 line)
+% 1: for medium length title (2 lines)
+% 2: for long title (3 lines)
+% 3: for over-long title (>3 lines)
+\def\titlelength{2}
+%
+%
+% enter the name of the student
+%
+\def\name{Heinz Heinzelmann}
+%
+%
+% enter the name of the institute
+% z.B. \def\institute{Institut für Symbolisches Rechnen}
+\def\institute{Institut für Theoretische Theorie}
+
+%
+%
+% enter the name of the supervisor (who is also the first referee)
+% was also the supervisor, do so by choosing the line with (Betreuung)
+%
+\def\firstreferee{DI\  Dr.\ Mein\ Chef}
+%
+%
+% in case of a second referee: uncomment the following line and enter the name
+%
+\def\secondreferee{Prof. Smith}
+%
+%
+% if there has been assistance by further people uncomment the following line
+% and enter the name(s). if there are several assistants speerate the names by \\
+%
+% \def\assist{Name of assistant}
+%\def\assist{Name of first assistant \\ Name of second assistant}
+%
+%
+% enter month year
+\def\date{Janucember, 2045}
+
+
+\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+
+\def\varskip{\ifcase\titlelength\bigskip\bigskip\bigskip\or\bigskip\bigskip\or\bigskip\else\smallskip\fi}
+
+\renewcommand\maketitle{%
+\begin{titlepage}%
+{\fontsize{12pt}{14pt} \selectfont Text}
+    \enlargethispage{5cm}
+
+    \unitlength 1cm
+    \definecolor{mygray}{gray}{.85}
+\begin{picture}(0,0)
+\put(-3.9,2.1){\color{mygray}\rule{25cm}{2.6cm}}
+\put(10.1,2.25){\small UNIVERSIT\"AT}
+\put(12.7,2.25){\small LINZ}
+\put(10.1,2.6){\small JOHANNES}
+\put(12.1,2.6){\small KEPLER}
+\put(14,2.25){\Huge JKU}
+\put(13.75,2.25){\line(0,1){.6}}
+\put(8.9,2.6){\includegraphics[width=9mm]{images/wap_small}}
+\put(-1,-1.85){\includegraphics[width=3cm]{images/tnf}}
+\put(2.2,-1.5){\scriptsize Technisch-Naturwissenschaftliche}
+\put(2.2,-1.8){\scriptsize Fakult\"at}
+\end{picture}
+
+    \begin{center}
+    \vspace*{2.9cm}%
+{\LARGE\bfseries\title}
+\bigskip\bigskip\bigskip\par
+{\Large\ifcase\type DISSERTATION\or DIPLOMARBEIT\or MASTERARBEIT\fi} %% this is comment XXX
+\bigskip\par
+zur Erlangung des akademischen Grades
+\bigskip\smallskip\par
+{\Large\degree}
+\bigskip\par
+im \ifcase\type Doktoratsstudium der\or Diplomstudium\or Masterstudium\fi %% this is comment XXX
+\bigskip\smallskip\par
+{\Large\study}
+\end{center}
+
+\bigskip\bigskip\bigskip\par
+Eingereicht von:
+\smallskip\par
+{\large\name}
+\medskip\bigskip\par
+Angefertigt am:
+\smallskip\par
+{\large\institute}
+\medskip\bigskip\par
+Beurteilung:
+\smallskip\par
+{\large\firstreferee}
+\ifundefined{secondreferee}\else {\large (Betreuung)}
+\smallskip\par
+{\large\secondreferee}\fi
+\ifundefined{assist}\else
+\medskip\bigskip\par
+Mitwirkung:
+\smallskip\par
+{\large\assist}
+\fi
+%
+% more space ???
+%\bigskip
+\bigskip\bigskip\bigskip\par
+{\large \date}
+    
+    %\vfill
+    
+    \begin{center}
+       %\vfill
+       %\vspace*{-0.5cm}
+       \vspace*{4.5cm}
+        \hspace*{-2.2cm} \rule{19cm}{0.02cm}
+        {\small \bf Johannes Kepler Universit\"at Linz}  \\
+        {\small A-4040 Linz, Altenberger Str. 69, Internet: http://www.jku.at, %
+         DVR 0093696 }
+        \hspace*{-2.2cm} \rule{19cm}{0.02cm}
+    \end{center}
+
+
+\end{titlepage}
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pdflatex PhD_Thesis_Template.tex
+
+makeindex PhD_Thesis_Template.nlo  -s nomencl.ist -o PhD_Thesis_Template.nls
+
+latexmk --pdf --pdflatex=pdflatex PhD_Thesis_Template

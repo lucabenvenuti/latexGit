@@ -1,0 +1,185 @@
+\RequirePackage[l2tabu, orthodox]{nag}	% keep on nagging
+\makeatletter
+\renewcommand\thenag@c{\romannumeral\c@nag@c}
+\makeatother
+
+
+\documentclass[a4paper,twoside,10pt]{report}
+% Alternative Options:
+% Duplex: oneside / twoside
+% Base Font Size: 10pt / 11pt / 12pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Options / Modifications / Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{options}	% all packages and modifications
+
+%\includeonly{introduction}	% include only a certain chapter
+
+\setcounter{secnumdepth}{3}	% section numbering depth
+\setcounter{tocdepth}{2}	% table-of-contents counter depth
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{empty} %No headings for the first pages.
+\hypersetup{pageanchor=false}
+
+\thispagestyle{empty}
+\maketitle
+
+
+
+%% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\tableofcontents %Table of contents
+%\cleardoublepage %The first chapter should start on an odd page.
+
+
+
+%% Abstracts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% english and german abstract are mandatory
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{tex/abstract}
+
+% German abstract
+\chapter*{Zusammenfassung}
+\addcontentsline{toc}{chapter}{Zusammenfassung}
+\input{tex/zusammenfassung}
+
+
+
+%% Acknowledgements %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Acknowledgement}
+\input{tex/acknowledgement}
+
+% German
+\chapter*{Danksagung}
+\input{tex/danksagung}
+
+
+%% Publications %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Publications}
+\addcontentsline{toc}{chapter}{Publications}
+\input{tex/publications}
+
+
+
+
+%% Lists, LOF, LOT, LOA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The List of Figures
+\clearpage
+%\addcontentsline{toc}{chapter}{List of Figures} % not needed anymore, thanks to tocbibind
+\listoffigures
+
+%% The List of Tables
+\clearpage
+%\addcontentsline{toc}{chapter}{List of Tables} % not needed anymore, thanks to tocbibind
+\listoftables
+
+% List of Acronyms
+\clearpage
+\chapter*{Acronyms}
+\addcontentsline{toc}{chapter}{Acronyms}
+\input{tex/acronyms}
+
+\clearpage
+
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+
+
+%\pagestyle{fancy} %Now display headings: headings / fancy / ...
+\pagestyle{mainmatter} % use the style mainmatter
+
+
+%% Chapters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{introduction}
+
+
+\include{theory}
+
+
+\include{conclusion}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+\include{app_derivations}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOMENCLATURE AND BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+
+%% A small distance to the other stuff in the table of contents (toc)
+\addtocontents{toc}{\protect\vspace*{\baselineskip}}
+
+%% The Nomenclature
+\setlength{\columnsep}{1.5cm}
+\renewcommand*{\nompreamble}{\begin{multicols}{2}}
+\renewcommand*{\nompostamble}{\end{multicols}}
+
+\printnomenclature  %creates nomenclature section produced by MakeIndex
+
+% D	dimensionless numbers: 		symbol, description, definition
+% G	Greek symbols				symbol, description, unit
+% L	Latin (Roman) symbols		symbol, description, unit
+% X	Other?						symbol, description, unit
+% U	subscripts					symbol, description
+% S	superscripts				symbol, description
+% O	oversymbols					symbol, description
+
+
+%% The Bibliography
+%% ==> You need a file 'literature.bib' for this.
+%% ==> You need to run BibTeX for this (Project | Properties... | Uses BibTeX)
+%\nocite{*} %Even non-cited BibTeX-Entries will be shown.
+%\phantomsection
+\bibliographystyle{plainnat} %Style of Bibliography: plain / apalike / amsalpha / ...
+%\addcontentsline{toc}{chapter}{Bibliography} %'Bibliography' into toc  % not needed anymore, thanks to tocbibind
+\bibliography{thesisBibliography} %You need a file 'thesisBibliography.bib' for this.
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CV & Eidsstattliche Erklaerung
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CV and eidesstattliche erklaerung are mandatory.
+
+\pagestyle{empty} %No headings for the first pages.
+
+\input{tex/cv.tex}
+
+\input{tex/EidesErkl.tex}
+
+%\input{SwornDeclaration.tex} ?
+
+
+\end{document}
