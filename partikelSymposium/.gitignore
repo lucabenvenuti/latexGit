@@ -20,3 +20,33 @@ main.fff
 *.synctex.gz
 Articolo-blx.bib
 /Articolo.run.xml
+
+# ignore all temp files of latex
+*.aux
+*.toc
+*.log
+*.lot
+*.lof
+*.nlo
+*.nls
+*.nlg
+*.fls
+*.fdb_latexmk
+*.blg
+*.bak
+*.out
+*.ilg
+*.bbl
+
+# ignore the auto-saved files
+*~
+
+# ignore pdf, ps and dvi
+*.pdf
+*.ps
+*.dvi
+
+# ignore texmaker stuff
+*.synctex.gz
+
+/tmp/
