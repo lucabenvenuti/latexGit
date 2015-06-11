@@ -18,7 +18,12 @@ in more recent PhD theses, less often in Batchelor's and Master's theses. These 
 produced with the \verb+epigraph+ package. This even works with images, such as XKCD comics 
 (see Chapter \ref{app:derivation}), however, your advisor might not approve.
 
+\subsubsection*{A 22 note on \LaTeX{}}
 
+At the beginning of each chapter you see some more or less smart quotes. This is often seen 
+in more recent PhD theses, less often in Batchelor's and Master's theses. These quotes are 
+produced with the \verb+epigraph+ package. This even works with images, such as XKCD comics 
+(see Chapter \ref{app:derivation}), however, your advisor might not approve.
 
 %% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Eulerian two-phase modelling}
@@ -32,21 +37,21 @@ situation. Within the (Eulerian) mathematical description, however, both phases
 are continua.
 
 
-% \begin{figure}[htbp]
-%   \null\hfill
-%   \subfloat[Discrete bubbles in a continuous liquid.]{
-% 	  \input{images/EulerianFlowModelling/twoPhase_discreteBubbles_edit}
-% 	  \label{subfig:twoPhaseSim_unresolved}
-%   }
-%   \hfill
-%   \subfloat[Continuum approach.]{
-% 	  \input{images/EulerianFlowModelling/twoPhaseSim_continuum_fullRange_edit}
-% 	  \label{subfig:twoPhaseSim_continuum}
-%   }
-%   \hfill\null
-%   \caption{Modelling approach on the example of a gas-liquid two-phase system.}
-%   \label{fig:twoPhaseSim_resolution}
-% \end{figure}
+\begin{figure}[htbp]
+  \null\hfill
+  \subfloat[Discrete bubbles in a continuous liquid.]{
+	  \input{images/EulerianFlowModelling/twoPhase_discreteBubbles_edit}
+	  \label{subfig:twoPhaseSim_unresolved}
+  }
+  \hfill
+  \subfloat[Continuum approach.]{
+	  \input{images/EulerianFlowModelling/twoPhaseSim_continuum_fullRange_edit}
+	  \label{subfig:twoPhaseSim_continuum}
+  }
+  \hfill\null
+  \caption{Modelling approach on the example of a gas-liquid two-phase system.}
+  \label{fig:twoPhaseSim_resolution}
+\end{figure}
 
 
 
@@ -217,7 +222,6 @@ deviatoric part \cite{pope2000}. \Cref{eq:tensorDeviatorDecomposition} shows the
 
 
 
-
 % --------------------------------------
 %\subsubsection{Quadrature method of moments  (\acs{QMOM})} % uncomment this, you might run into trouble
 \subsubsection{Quadrature method of moments  (\NoCaseChange{\acs{QMOM}})}
@@ -253,9 +257,9 @@ Mathematical operators need to be upright to be able to discern the variable $d$
 
 % intro & a little history
 OpenFOAM is an open source CFD framework based on its predecessor \ac{FOAM} \cite{weller1998}. By 
-definition OpenFOAM is not strictly a CFD code. \citet{weller1998} originally describe \ac{FOAM} 
-as a \emph{field operation and manipulation (\ac{FOAM}) C++ class library for continuum mechanics} 
-and conclude:
+definition OpenFOAM is not strictly a CFD code. \citet{weller1998},
+\citet{weller1992} originally describe \ac{FOAM} as a \emph{field operation and
+manipulation (\ac{FOAM}) C++ class library for continuum mechanics} and conclude:
 
 \begin{myquote}
 In essence, \ac{FOAM} is a high-level language, a \acs{CCM} meta-language, that closely parallels 
