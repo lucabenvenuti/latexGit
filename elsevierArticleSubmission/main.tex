@@ -196,8 +196,8 @@ parameters of sinter fines.
      Coefficient of sliding friction $\mu_s$ (-)\\  [5pt]
     Coefficient of rolling friction $\mu_r$ (-) \\ [5pt]
     Coefficient of restitution $COR$ (-)   \\ [5pt]
-     Particle density $\rho_p$ (kg/m3)  \\ [5pt]
-    Geometry factor $dCylDp$ (-)  \\ [5pt]
+     Particle density $\rho_p = \frac{mass ~ of ~ one ~ particle}{volume ~ of ~
+     one ~ particle}$ (kg/m3)  \\ [5pt] Geometry factor $dCylDp$ (-)  \\ [5pt]
    
 \hline
 \end{tabular}
@@ -290,12 +290,14 @@ varied to replicate twelve shear-cell load conditions.
 The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
 and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulation output the numerical
-values representative of bulk behaviour (hereafter called \textit{bulk values})
-for each $DEM$ simulation parameter combination, which consists of
-bulk density ($\rho_b$),
-coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
-coefficient of internal friction in the shear phase ($\mu_{sh}$),
-and angle of repose ($AoR$).
+values representative of bulk behaviour (hereafter called \textit{bulk values}),
+see Table \ref{tab:14bulkvalues},
+for each $DEM$ simulation parameter combination.
+%, which consists of
+% bulk density ($\rho_b$),
+% coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
+% coefficient of internal friction in the shear phase ($\mu_{sh}$),
+% and angle of repose ($AoR$).
 The first bulk value ($\rho_b$) was provided directly. 
 For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
 observed a stress path as in Fig. \ref{fig:21simexample}.
@@ -361,6 +363,29 @@ bulk value, allowing us to define the numerical bulk behaviour.
 \caption{DEM fixed input values}
 \label{tab:09DEMFixedinputvalues}
 \end{table}
+%************************************************
+\begin{table}[h]
+  \centering
+    \begin{tabular}{lcc}
+    \hline
+     & acronym & formula \\ 
+     \hline
+    bulk density & $\rho_b$ & $\frac{mass ~ of ~ the ~ bulk}{volume ~ of ~ the ~ bulk}$ \\ 
+    [5pt]
+     
+    steady-state flow/pre-shear coefficient of internal friction & $\mu_{psh}$
+     & $\frac{\tau_{psh}}{\sigma_{n,psh}}$ \\      [5pt]
+     
+    incipient flow/shear coefficient of internal friction & $\mu_{sh}$ &
+    $\frac{\tau_{sh}}{\sigma_{n,sh}}$ \\      [5pt]
+     
+    static angle of repose & AOR   & from the slope \\
+\hline
+    
+    \end{tabular}%
+  \caption{Values representative of bulk behaviour.}
+\label{tab:14bulkvalues}
+\end{table}%
 %************************************************
 \begin{table}[h]
 \centering
