@@ -148,8 +148,14 @@ the multi-dimensionality of the parameter space and the associated computational
 $DEM$ test simulations. 
 Moreover, one parameter set which is valid for one bulk behaviour (e.g., angle
 of repose) might fail for another (e.g., shear tester). \\
-Clearly, there is a need for an efficient method for identifying
-$DEM$ contact law parameters.
+There are ways to determine contact parameters directly by measuring material properties or 
+by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177} and 
+Paulick et al. \cite{RefWorks:181}. However, these methodologies are laborious, 
+since they have to be performed for every new granular material prior to a $DEM$
+simulations. Especially for the rolling friction parameter, it is arduous to link the rolling 
+friction parameter to the non-sphericity of the particle. Clearly, there is a
+need for an efficient method for identifying $DEM$ contact law parameters, given
+a specific particle behaviour.
 In our study, we harnessed Artificial Neural Networks ($ANNs$) in order to
 reduce the number of $DEM$ test simulations required. 
 $ANNs$ have proven to be a versatile tool in analysing complex, non-linear
@@ -172,7 +178,9 @@ comparing the stand-alone $ANN$ predictions with corresponding bulk experiments.
 For both cases we obtained valid sets of contact law parameters, 
 which we then compared to formulate a reliable contact law for a given
 granular material.
-We further show that the same $ANN$ can be used to characterize different granular materials. \\
+We further show that the same $ANN$ can be used to characterize different granular materials, 
+which have the same particle behaviour and can modelled with the same contact
+law. \\
 In the next section we define some prerequisites including $DEM$ contact law
 definitions, a general description of the $ANN$ functionality, and the proposed
 method of $DEM$ contact law parameter identification.
