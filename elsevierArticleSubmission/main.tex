@@ -139,8 +139,8 @@ Furthermore, some contact law parameters such as the coefficient of rolling
 friction are purely empirical and cannot be determined by direct 
 particle-to-particle measurements (Wensrich and Katterfeld \cite{RefWorks:87}).
 Therefore, $DEM$ contact law parameters (Table \ref{tab:08DEMparameters}) are
-commonly determined by comparing the macroscopic outcome of large-scale $DEM$ simulations with 
-bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
+commonly determined by comparing the macroscopic outcome of large-scale $DEM$
+simulations with bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
 If $DEM$ simulation results disagree with bulk measurements, the set of contact
 law parameters must be adjusted until reasonable agreement is achieved.\\
 However, this purely forward methodology of parameter identification is limited by 
@@ -149,8 +149,8 @@ $DEM$ test simulations.
 Moreover, one parameter set which is valid for one bulk behaviour (e.g., angle
 of repose) might fail for another (e.g., shear tester). \\
 There are ways to determine contact parameters directly by measuring material properties or 
-by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177} and 
-Paulick et al. \cite{RefWorks:181}. However, these methodologies are laborious, 
+by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177}, 
+Paulick et al. \cite{RefWorks:181}, and Lommen et al. \cite{RefWorks:186}. However, these methodologies are laborious, 
 since they have to be performed for every new granular material prior to a $DEM$
 simulations. Especially for the rolling friction parameter, it is arduous to link the rolling 
 friction parameter to the non-sphericity of the particle. Clearly, there is a
@@ -240,6 +240,32 @@ Further explanations can be found in Section \ref{sec:methodology}.
 }
 \label{fig:19methodology} 
 \end{figure}
+
+%************************************************
+\subsection{Applicability and scope}
+\label{subsec:applicability}
+
+The material used for this work was sinter fine. Its particles had a mean radius of 0.73 mm and were cohesionless, 
+see \ref{subsec:macroscopicexperimentsparameteridentification}. 
+To avoid the macroscopic plastic deformations analysed by Harthong et al. \cite{RefWorks:183} 
+we checked for each simulation for its total duration that the packing density was 
+lower than a defined limit. 
+This threshold (0.671) was given by the packing density of the close random packing with the 
+same size distribution, as suggested and with the software provided by Baranau, Tallarek 
+et al. \cite{RefWorks:182, RefWorks:185}.
+The experimental characterization was performed at environmental temperature and thus 
+temperature was not considered in the numerical simulations. Chemical reactions and aging 
+were also not part of the scope of this work.
+Due to the limited number of experiments realized, a restricted number of flow regimes were tested. 
+Further, only one size distribution was considered. 
+The authors are confident that these two limitations have not compromised the validity of the method. 
+Rather, further investigations on these two aspects could again demonstrate its effectiveness. 
+We chose an elastic model to picture the particle behaviour. If we try to identify parameters 
+for an elastic contact model in a system of non-elastic particles, this $ANN$ approach will fail. 
+So choosing appropriate contact models is an essential pre-requisite for contact 
+parameter identification by means of $ANN$. 
+Further, $ANNs$ can give indications about the correctness of the chosen model 
+(see \ref{subsec:experimentsparameteridentification}).
 %************************************************
 \subsection{Discrete element method}
 \label{subsec:dem}
@@ -921,13 +947,16 @@ acknowledge their support.
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{RefWorks:130}
-P.~W. Cleary, M.~L. Sawley, DEM modelling of industrial granular flows: 3D case
+P.~W. Cleary, M.~L. Sawley, Dem modelling of industrial granular flows: 3d case
   studies and the effect of particle shape on hopper discharge, Applied
   Mathematical Modelling 26~(2) (2002) 89--111.
 
 \bibitem{RefWorks:172}
-P.~A. Cundall, O.~D.~L. Strack, A discrete numerical model for granular
-  assemblies, Geotechnique 29~(Volume 29, Issue 1) (1979) 47--65(18).
+P.~A. Cundall, O.~D.~L. Strack,
+  \href{http://www.icevirtuallibrary.com/content/article/10.1680/geot.1979.29.1.47}{A
+  discrete numerical model for granular assemblies}, Geotechnique 29~(Volume
+  29, Issue 1) (1979) 47--65(18).
+\newline\urlprefix\url{http://www.icevirtuallibrary.com/content/article/10.1680/geot.1979.29.1.47}
 
 \bibitem{RefWorks:148}
 L.~Vu-Quoc, X.~Zhang, An accurate and efficient tangential force-displacement
@@ -936,17 +965,19 @@ L.~Vu-Quoc, X.~Zhang, An accurate and efficient tangential force-displacement
 
 \bibitem{RefWorks:145}
 A.~D. Renzo, F.~P.~D. Maio, Comparison of contactforce models for the
-  simulation of collisions in DEM-based granular flow codes, Chemical
+  simulation of collisions in dembased granular flow codes, Chemical
   Engineering Science 59~(3) (2004) 525--541.
 
 \bibitem{RefWorks:87}
 C.~M. Wensrich, A.~Katterfeld, Rolling friction as a technique for modelling
-  particle shape in DEM, Powder Technology 217~(0) (2012) 409--417.
+  particle shape in dem, Powder Technology 217~(0) (2012) 409--417.
 
 \bibitem{RefWorks:136}
-C.~Kloss, C.~Goniva, A.~Hager, S.~Amberger, S.~Pirker, Models, algorithms and
-  validation for opensource DEM and CFDDEM, Progress in Computational Fluid
+C.~Kloss, C.~Goniva, A.~Hager, S.~Amberger, S.~Pirker,
+  \href{http://dx.doi.org/10.1504/PCFD.2012.047457}{Models, algorithms and
+  validation for opensource dem and cfddem}, Progress in Computational Fluid
   Dynamics, an International Journal 12~(2) (2012) 140--152.
+\newline\urlprefix\url{http://dx.doi.org/10.1504/PCFD.2012.047457}
 
 \bibitem{RefWorks:139}
 A.~Aigner, S.~Schneiderbauer, C.~Kloss, S.~Pirker, Determining the coefficient
@@ -965,11 +996,20 @@ J.~Ai, J.-F. Chen, J.~M. Rotter, J.~Y. Ooi, Assessment of rolling resistance
 
 \bibitem{RefWorks:177}
 M.~Combarros, H.~J. Feise, H.~Zetzener, A.~Kwade, Segregation of particulate
-  solids: Experiments and DEM simulations, Particuology 12~(0) (2014) 25--32.
+  solids: Experiments and dem simulations, Particuology 12~(0) (2014) 25--32.
 
 \bibitem{RefWorks:91}
-A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, DEM validation using an
+A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, Dem validation using an
   annular shear cell, Powder Technology 248~(0) (2013) 131--142.
+
+\bibitem{RefWorks:181}
+M.~Paulick, M.~Morgeneyer, A.~Kwade, Review on the influence of elastic
+  particle properties on dem simulation results, Powder Technology 283~(0)
+  (2015) 66--76.
+
+\bibitem{RefWorks:186}
+S.~Lommen, D.~Schott, G.~Lodewijks, Dem speedup: Stiffness effects on behavior
+  of bulk material, Particuology 12~(0) (2014) 107--112.
 
 \bibitem{RefWorks:150}
 B.~Vaferi, F.~Samimi, E.~Pakgohar, D.~Mowla, Artificial neural network approach
@@ -981,8 +1021,22 @@ I.~Witten, E.~Frank, M.~Hall, Data Mining: Practical machine learning tools and
   techniques, Morgan Kaufmann, 2005.
 
 \bibitem{RefWorks:158}
-S.~Haykin, Neural Networks and Learning Machines, no. v. 10, Prentice Hall,
-  2009, 2008034079.
+S.~Haykin, \href{http://books.google.com.pk/books?id=K7P36lKzI\_QC}{Neural
+  Networks and Learning Machines}, no. v. 10, Prentice Hall, 2009, 2008034079.
+\newline\urlprefix\url{http://books.google.com.pk/books?id=K7P36lKzI\_QC}
+
+\bibitem{RefWorks:183}
+B.~Harthong, J.~F. Jérier, P.~Dorémus, D.~Imbault, F.~V. Donzé, Modeling of
+  high-density compaction of granular materials by the discrete element method,
+  International Journal of Solids and Structures 46~(18–19) (2009) 3357--3364.
+
+\bibitem{RefWorks:182}
+V.~Baranau, D.~Hlushkou, S.~Khirevich, U.~Tallarek, Pore-size entropy of random
+  hard-sphere packings.
+
+\bibitem{RefWorks:185}
+V.~Baranau, U.~Tallarek, Random-close packing limits for monodisperse and
+  polydisperse hard spheres.
 
 \bibitem{RefWorks:175}
 N.~Tsafnat, N.~Amanat, A.~S. Jones, Analysis of coke under compressive loading:
@@ -999,17 +1053,20 @@ M.~J. Jiang, H.~S. Yu, D.~Harris, A novel discrete model for granular material
   340--357.
 
 \bibitem{RefWorks:160}
-W.~L. Oberkampf, C.~J. Roy, Verification and Validation in Scientific
-  Computing, Cambridge University Press, 2010.
+W.~L. Oberkampf, C.~J. Roy,
+  \href{http://books.google.com.pk/books?id=7d26zLEJ1FUC}{Verification and
+  Validation in Scientific Computing}, Cambridge University Press, 2010.
+\newline\urlprefix\url{http://books.google.com.pk/books?id=7d26zLEJ1FUC}
 
 \bibitem{RefWorks:118}
 D.~Schulze, Powders and bulk solids: behavior, characterization, storage and
   flow, Springer, 2008.
 
 \bibitem{RefWorks:173}
-L.~Benvenuti, A.~Aigner, D.~Queteschiner, M.~Combarros, S.~Pirker, C.~Kloss, Establishing the
-  predictive capabilities of DEM simulations: sliding and rolling friction
-  coefficients of non-spherical particles, in: CFD 2014 Proceedings, 2014.
+L.~Benvenuti, A.~Aigner, D.~Queteschiner, M.~Combarros, S.~Pirker, C.~Kloss,
+  Establishing the predictive capabilities of dem simulations: sliding and
+  rolling friction coefficients of non-spherical particles, in: CFD 2014
+  Proceedings, 2014.
 
 \bibitem{RefWorks:161}
 S.~J. Antony, C.~H. Zhou, X.~Wang, An integrated mechanistic-neural network
@@ -1017,13 +1074,16 @@ S.~J. Antony, C.~H. Zhou, X.~Wang, An integrated mechanistic-neural network
   116--128.
 
 \bibitem{RefWorks:166}
-A.-K. Seghouane, Y.~Moudden, G.~Fleury, Regularizing the effect of input noise
-  injection in feedforward neural networks training, Neural Computing and
-  Applications 13~(3) (2004) 248--254, j2: Neural Comput and Applic.
+A.-K. Seghouane, Y.~Moudden, G.~Fleury,
+  \href{http://dx.doi.org/10.1007/s00521-004-0411-6}{Regularizing the effect of
+  input noise injection in feedforward neural networks training}, Neural
+  Computing and Applications 13~(3) (2004) 248--254, j2: Neural Comput and
+  Applic.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s00521-004-0411-6}
 
 \bibitem{RefWorks:167}
 D.~Barrasso, A.~Tamrakar, R.~Ramachandran, A reduced order pbm-ann model of a
-  multi-scale PBM-DEM description of a wet granulation process, Chemical
+  multi-scale pbm-dem description of a wet granulation process, Chemical
   Engineering Science~(0).
 
 \bibitem{RefWorks:168}
