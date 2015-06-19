@@ -47,6 +47,7 @@
 
 \documentclass{sig-alternate-05-2015}
 
+\usepackage{epstopdf}
 
 \begin{document}
 
@@ -347,7 +348,7 @@ parameters of sinter fines.
 %\input{08DEMparameters}
 \begin{table}[h]
 \centering
-\begin{tabular}{l}
+\scalebox{0.5}{\begin{tabular}{l}
 \hline 
      Particle radius $R$ (m)   \\ [5pt]
 
@@ -368,328 +369,689 @@ parameters of sinter fines.
 \end{tabular}
 \caption[DEM parameters]{DEM parameters. The upper parameters were
 identical in all simulations. The lower parameters were constant in each
-simulation, but were varied between simulations.}
+simulation, but were varied between simulations.}}
 \label{tab:08DEMparameters}
 \end{table}
 %************************************************
 
-\section{The {\secit Body} of The Paper}
-Typically, the body of a paper is organized
-into a hierarchical structure, with numbered or unnumbered
-headings for sections, subsections, sub-subsections, and even
-smaller sections.  The command \texttt{{\char'134}section} that
-precedes this paragraph is part of such a
-hierarchy.\footnote{This is the second footnote.  It
-starts a series of three footnotes that add nothing
-informational, but just give an idea of how footnotes work
-and look. It is a wordy one, just so you see
-how a longish one plays out.} \LaTeX\ handles the numbering
-and placement of these headings for you, when you use
-the appropriate heading commands around the titles
-of the headings.  If you want a sub-subsection or
-smaller part to be unnumbered in your output, simply append an
-asterisk to the command name.  Examples of both
-numbered and unnumbered headings will appear throughout the
-balance of this sample document.
+\section{DEM Parameter Identification}
+\label{sec:methodology}
 
-Because the entire article is contained in
-the \textbf{document} environment, you can indicate the
-start of a new paragraph with a blank line in your
-input file; that is why this sentence forms a separate paragraph.
+Fig. \ref{fig:19methodology} illustrates the methodology used.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
-We have already seen several typeface changes in this sample.  You
-can indicate italicized words or phrases in your text with
-the command \texttt{{\char'134}textit}; emboldening with the
-command \texttt{{\char'134}textbf}
-and typewriter-style (for instance, for computer code) with
-\texttt{{\char'134}texttt}.  But remember, you do not
-have to indicate typestyle changes when such changes are
-part of the \textit{structural} elements of your
-article; for instance, the heading of this subsection will
-be in a sans serif\footnote{A third footnote, here.
-Let's make this a rather short one to
-see how it looks.} typeface, but that is handled by the
-document class file. Take care with the use
-of\footnote{A fourth, and last, footnote.}
-the curly braces in typeface changes; they mark
-the beginning and end of
-the text that is to be in the different typeface.
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{19methodology} 
+\caption[Method]{Method. 
+In the training phase (dashed lines)
+$DEM$ simulations are performed
+with random initial input parameters.
+The behaviours obtained are used to train the
+Artificial Neural Networks ($ANNs$) in a loop that continues until the
+difference between the outputs of each $ANN$ and its simulations is below the
+limit ($\Delta$) (see Section \ref{subsec:ann}).
+In the parameters identification phase (solid
+lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
+experimental behaviours.
+Further explanations can be found in Section \ref{sec:methodology}.
+}
+\label{fig:19methodology} 
+\end{figure}
+%************************************************
+\subsection{Discrete element method}
+\label{subsec:dem}
 
-You can use whatever symbols, accented characters, or
-non-English characters you need anywhere in your document;
-you can find a complete list of what is
-available in the \textit{\LaTeX\
-User's Guide}\cite{Lamport:LaTeX}.
-
-\subsection{Math Equations}
-You may want to display math equations in three distinct styles:
-inline, numbered or non-numbered display.  Each of
-the three are discussed in the next sections.
-
-\subsubsection{Inline (In-text) Equations}
-A formula that appears in the running text is called an
-inline or in-text formula.  It is produced by the
-\textbf{math} environment, which can be
-invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end}
-construction or with the short form \texttt{\$. . .\$}. You
-can use any of the symbols and structures,
-from $\alpha$ to $\omega$, available in
-\LaTeX\cite{Lamport:LaTeX}; this section will simply show a
-few examples of in-text equations in context. Notice how
-this equation: \begin{math}\lim_{n\rightarrow \infty}x=0\end{math},
-set here in in-line math style, looks slightly different when
-set in display style.  (See next section).
-
-\subsubsection{Display Equations}
-A numbered display equation -- one set off by vertical space
-from the text and centered horizontally -- is produced
-by the \textbf{equation} environment. An unnumbered display
-equation is produced by the \textbf{displaymath} environment.
-
-Again, in either environment, you can use any of the symbols
-and structures available in \LaTeX; this section will just
-give a couple of examples of display equations in context.
-First, consider the equation, shown as an inline equation above:
-\begin{equation}\lim_{n\rightarrow \infty}x=0\end{equation}
-Notice how it is formatted somewhat differently in
-the \textbf{displaymath}
-environment.  Now, we'll enter an unnumbered equation:
-\begin{displaymath}\sum_{i=0}^{\infty} x + 1\end{displaymath}
-and follow it with another numbered equation:
-\begin{equation}\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f\end{equation}
-just to demonstrate \LaTeX's able handling of numbering.
-
-\subsection{Citations}
-Citations to articles \cite{bowman:reasoning,
-clark:pct, braams:babel, herlihy:methodology},
-conference proceedings \cite{clark:pct} or
-books \cite{salas:calculus, Lamport:LaTeX} listed
-in the Bibliography section of your
-article will occur throughout the text of your article.
-You should use BibTeX to automatically produce this bibliography;
-you simply need to insert one of several citation commands with
-a key of the item cited in the proper location in
-the \texttt{.tex} file \cite{Lamport:LaTeX}.
-The key is a short reference you invent to uniquely
-identify each work; in this sample document, the key is
-the first author's surname and a
-word from the title.  This identifying key is included
-with each item in the \texttt{.bib} file for your article.
-
-The details of the construction of the \texttt{.bib} file
-are beyond the scope of this sample document, but more
-information can be found in the \textit{Author's Guide},
-and exhaustive details in the \textit{\LaTeX\ User's
-Guide}\cite{Lamport:LaTeX}.
-
-This article shows only the plainest form
-of the citation command, using \texttt{{\char'134}cite}.
-This is what is stipulated in the SIGS style specifications.
-No other citation format is endorsed or supported.
-
-\subsection{Tables}
-Because tables cannot be split across pages, the best
-placement for them is typically the top of the page
-nearest their initial cite.  To
-ensure this proper ``floating'' placement of tables, use the
-environment \textbf{table} to enclose the table's contents and
-the table caption.  The contents of the table itself must go
-in the \textbf{tabular} environment, to
-be aligned properly in rows and columns, with the desired
-horizontal and vertical rules.  Again, detailed instructions
-on \textbf{tabular} material
-is found in the \textit{\LaTeX\ User's Guide}.
-
-Immediately following this sentence is the point at which
-Table 1 is included in the input file; compare the
-placement of the table here with the table in the printed
-dvi output of this document.
-
-\begin{table}
+We decided to utilize a single
+contact law for all the simulations performed, for details see
+Benvenuti et al. \cite{RefWorks:180}.
+The $DEM$ parameters for the Young's modulus ($E$) and the Poisson's coefficient
+($\nu$) were taken from the literature, see \cite{RefWorks:175} 
+and \cite{RefWorks:176}; however we reduced the former to increase the time step
+($\Delta t$), following the recommendations of Ai et al. \cite{RefWorks:131}.
+The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
+also depends on the particle density ($\rho_p$).
+Furthermore, we locked the size distribution, which was obtained by experimental
+sieving, see Table \ref{tab:09DEMFixedinputvalues}.
+In the contact law we used, 
+the tangential component of the contact force between two generic particles
+($F_t$) is truncated to fulfil:
+%************************************************
+\begin{equation}
+F_{t} \leq \mu_s F_{n},
+ \label{eq:force_t}
+\end{equation}
+%************************************************
+where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
+friction, one of the particle-based $DEM$ parameter we investigated, 
+another being the coefficient of rolling friction ($\mu_r$). 
+For coarse non-spherical particles, this is a critical parameter and describes
+inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
+torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
+equations according to the elasto-rolling resistance model presented by Wensrich and 
+Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131} 
+based on the work of Jiang et al. \cite{RefWorks:143}. 
+The model is called $EPSD2$ in $LIGGGHTS$ and is appropriate for both one-way and cyclical rolling cases.
+The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
+%************************************************
+\begin{equation}
+T_{r~max} = \mu_r R_r |\tilde{F_n}| ~,
+ \label{eq:trmax}
+\end{equation}
+%************************************************
+where $R_r$ is the equivalent radius and $F_n$ the normal force.
+The last two particle-based $DEM$ parameters we investigated were $\rho_p$
+and the coefficient of restitution ($COR$) as defined by Ai. et al. \cite{RefWorks:131}.
+These coefficients, $COR$, $\mu_s$, $\mu_r$,
+$\rho_p$ and $dCylDp$ (the cylinder dimension, proportional to the mean
+particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues}, 
+were constant in each simulation, but their combination differed between
+simulations.
+Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
+simulations had a $dCylDp$ larger than $20$ (additional information can be found
+in Benvenuti et al. \cite{RefWorks:180}).
+The normal stress $\sigma_n$ and its
+percentage during the incipient flow condition $\tau_{\%}$
+varied to replicate twelve shear-cell load conditions. 
+The complete description of the shear-cell 
+and the $AoR$ simulations
+can be found in Benvenuti et al. \cite{RefWorks:180}.
+A Matlab script allowed us to extract from the simulation output the numerical
+values representative of bulk behaviour (hereafter called $bulk ~ values$)
+for each DEM simulation parameter combination, which consists of
+bulk density ($\rho_b$),
+coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
+coefficient of internal friction in the shear phase ($\mu_{sh}$),
+and angle of repose ($AoR$).
+The first bulk value ($\rho_b$) was provided directly. 
+% For correctly performed simulations, see Benvenuti et al. \cite{RefWorks:180}, we
+% observed a stress path as in Fig. \ref{fig:21simexample}.
+First, the $\sigma_n$ was kept constant while the coefficient of internal
+friction ($\mu_{ie}$) initially increased and then reached a plateau.
+The second bulk value ($\mu_{psh}$) was calculated as the average of the
+$\mu_{ie}$ in this plateau.
+The $\sigma_n$ was then automatically reduced, in our example to $80 \%$ of
+its initial value.
+Subsequently, a second plateau developed.
+We obtained the third
+value ($\mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+The stress path accords with the experimental one, especially the plateaux.\\
+In the $AoR$ tests the average of the repose angles provided us with the fourth
+bulk value, allowing us to define the numerical bulk behaviour.
+%************************************************
+% \begin{figure}%[htp] 
+% 
+% \end{figure}\centering
+%     \begin{subfigure}[b]{0.96\columnwidth}
+%         \includegraphics[width=\textwidth]{20experimental}
+%         \caption{Experimental shear-cell tester stress path - $\sigma_n = 10000
+%         ~Pa$}
+%         \label{fig:20experimental} 
+%     \end{subfigure}\\
+%         \begin{subfigure}[b]{0.96\columnwidth}
+%         \includegraphics[width=\textwidth]{21simexample}
+%         \caption{Numerical shear-cell tester stress path - $\sigma_n = 10000
+%         ~Pa$}
+%         \label{fig:21simexample} 
+%     \end{subfigure}
+%     \caption[Stress path]{Experimental and numerical samples of the stress path
+%     for the Schulze ring shear cell tester.
+% 	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
+% 	point in time at which the normal stress ($\sigma_n$) was modified during the
+% 	tests.
+% 	Until $\tilde{t}=1$, the $\sigma_n$ was kept constant at 10,000 Pa. 
+% 	In Fig. \ref{fig:20experimental}, 
+%  	a plateau was reached at $\tilde{t}~=0.91$.
+% 	The coefficient of pre-shear ($\mu_{psh}$) was calculated as the average of the
+% 	coefficient of internal friction ($\mu_{ie}$) in this first plateau.
+% 	At $\tilde{t}=1$, the $\sigma_n$ was reduced to $80 \%$ of its initial
+% 	value, and soon after
+% 	a second plateau developed.
+% 	We obtained the coefficient of
+% 	shear ($ \mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+% 	The stress paths agree well, especially the plateaux.
+% 	They were clearly relevant because
+% 	the values representative of the bulk behaviours 
+% 	were collected there.}
+%     \label{fig:40experimentalsimulation}
+% \end{figure}
+%************************************************
+\begin{table}%[h]
 \centering
-\caption{Frequency of Special Characters}
-\begin{tabular}{|c|c|l|} \hline
-Non-English or Math&Frequency&Comments\\ \hline
-\O & 1 in 1,000& For Swedish names\\ \hline
-$\pi$ & 1 in 5& Common in math\\ \hline
-\$ & 4 in 5 & Used in business\\ \hline
-$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-\hline\end{tabular}
+\begin{tabular}{ccccc}
+\hline
+    Mean & Std.dev.  & Young's & Poisson's & $\Delta t$\\
+    $R$ & $R$ & modulus & ratio & \\
+    (mm)  & (mm)  & (MPa) & (-) & (s)\\
+    \hline
+    $0.732$ & $0.41$ & $10$    & $0.40$ & $10^{-6}$\\
+\hline
+\end{tabular}
+\caption{DEM fixed input values}
+\label{tab:09DEMFixedinputvalues}
 \end{table}
-
-To set a wider table, which takes up the whole width of
-the page's live area, use the environment
-\textbf{table*} to enclose the table's contents and
-the table caption.  As with a single-column table, this wide
-table will ``float" to a location deemed more desirable.
-Immediately following this sentence is the point at which
-Table 2 is included in the input file; again, it is
-instructive to compare the placement of the
-table here with the table in the printed dvi
-output of this document.
-
-
-\begin{table*}
+%************************************************
+\begin{table*}%[h]
 \centering
-\caption{Some Typical Commands}
-\begin{tabular}{|c|c|l|} \hline
-Command&A Number&Comments\\ \hline
-\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-\texttt{{\char'134}table}& 300 & For tables\\ \hline
-\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+\begin{tabular}{ccccc}
+\hline
+    $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $dCylDp$ \\
+    	(-)  & (-)   & (-)   & (kg/m3) & (-) \\
+    \hline
+    0.4 / 0.6 / 0.8 & 0.4 / 0.6 / 0.8 & 0.5 / 0.7 / 0.9 & 2500 / 3000 / 3500 & 20 / 36 / 38 / 40 \\
+
+\hline
+\end{tabular}
+\caption[DEM variable input values]{DEM variable input values for training the
+Artificial Neural Networks}
+\label{tab:10DEMVariableinputvalues}
 \end{table*}
-% end the environment with {table*}, NOTE not {table}!
-
-\subsection{Figures}
-Like tables, figures cannot be split across pages; the
-best placement for them
-is typically the top or the bottom of the page nearest
-their initial cite.  To ensure this proper ``floating'' placement
-of figures, use the environment
-\textbf{figure} to enclose the figure and its caption.
-
-This sample document contains examples of \textbf{.eps} files to be
-displayable with \LaTeX.  If you work with pdf\LaTeX, use files in the
-\textbf{.pdf} format.  Note that most modern \TeX\ system will convert
-\textbf{.eps} to \textbf{.pdf} for you on the fly.  More details on
-each of these is found in the \textit{Author's Guide}.
-
-\begin{figure}
+%************************************************
+\begin{table*}%[h]
 \centering
-\includegraphics{fly}
-\caption{A sample black and white graphic.}
+\begin{tabular}{lcccc}
+\hline
+ &  $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$  \\
+   &	(-)  & (-)   & (-)   & (kg/m3) \\
+          \hline
+    range & $[0.1 \ldots 1.0]$ & $[0.1 \ldots 1.0]$ & $[0.5 \ldots 0.9]$ &
+    $[2000 \ldots 3500]$     \\
+    number of values & 100   & 100   & 25    & 25    \\
+
+\hline
+\end{tabular}
+\caption[DEM random input values]{DEM random input values. Within each range the
+indicated number of random values was chosen according to a standard uniform
+distribution.}
+\label{tab:12DEMRandominputvalues}
+\end{table*}
+%************************************************
+
+\subsection{Artificial Neural Networks}
+\label{subsec:ann}
+We first defined the typology of Artificial Neural Networks ($ANNs$) we used and
+the input we fed them, see Benvenuti et al. \cite{RefWorks:180}.
+Our $ANNs$ have three different layers: the input layer has a number of neurons
+equal to the number of different inputs of the network, see Fig. \ref{fig:18nnscheme}.
+The hidden (or central) layer's number of neurons was to be investigated. 
+The output layer contains one neuron for the output.
+The transfer functions between the first two layers are the tangential sigmoid, 
+and those between the hidden and central layers are linear.\\
+Thus, we were able to use the $DEM$ parameter combinations and their
+corresponding bulk values to train the $ANNs$.
+Note that 15\% of the simulations ($test ~ simulations$) were
+randomly picked and excluded from the training processes.
+We started with all the $DEM$ parameter combinations and their corresponding
+numerical $\mu_{psh}$ to create 36 $ANNs$ that differed in their numbers of
+neurons in the hidden layer (between five to forty neurons).
+We then determined the coefficient of determination ($R^2$) between the
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
+which were not correlated with the remaining 85\% used for the training. 
+Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
+again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
+of neurons.
+We repeated the same $ANN$ creation steps for $\mu_{sh}$, $\rho_b$
+and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
+Since $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
+simulations, their $ANNs$ were handled together: we had one cluster with three 
+$ANNs$ for the shear cell and one with only one $ANN$ for the $AoR$.
+We could then proceed in identifying valid input parameters.
+Oberkampf et al. \cite{RefWorks:160} suggested using a Design of Experiments
+($DoE$) method to determine the parameter combinations to be simulated.
+They stated that this approach allows optimization of computation time
+with an acceptable loss of precision.
+The speed of the trained $ANNs$ enabled us to follow a different approach to
+maximizing the precision of the characterization.
+We created random values
+in the range and numbers defined in Table \ref{tab:12DEMRandominputvalues}
+according to a standard uniform distribution.
+The total number of combinations of these random values was 6,250,000.
+These combinations were then fed to and processed by the selected
+$ANNs$, and thus three bulk values for the shear
+cell and one for the $AoR$ were obtained.
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{18nnscheme} 
+\caption[ANN Scheme]{Artificial Neural Network ($ANN$) Scheme
+of how the Multilayer Perceptron $ANN$ ($MLPNN$) derives one
+bulk-behaviour-dependent variable from the mutually independent simulation variables.}
+\label{fig:18nnscheme} 
 \end{figure}
+%************************************************
 
-\begin{figure}
-\centering
-\includegraphics[height=1in, width=1in]{fly}
-\caption{A sample black and white graphic
-that has been resized with the \texttt{includegraphics} command.}
+\subsection{Macroscopic Experiments and Parameter Identification}
+\label{subsec:macroscopicexperimentsparameteridentification}
+The experimental characterization was performed as described in
+Benvenuti et al. \cite{RefWorks:180}. 
+We obtained for each of the twelve load conditions of the $SSC$ three bulk
+values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
+The fourth bulk value was the result of two angle of repose ($AoR$) tests that
+recreated the repose angle observed in a pile of the
+real material. 
+
+Subsequently, we compared the $ANN$ and experimental bulk behaviours for the
+twelve shear-cell load conditions.
+If in a DEM-parameter combination all the three bulk values differed by less 
+than 5\% from those of the corresponding experiments, i.e.:
+%************************************************
+\begin{equation}
+ \begin{cases}
+\text{if } & \lvert{1-\frac{\mu_{psh,num}}{\mu_{psh,exp}}}\rvert < 5\%  ,\\
+\text{and if } & \lvert{1-\frac{\mu_{sh,num}}{\mu_{sh,exp}}}\rvert < 5\% , \\ 
+\text{and if } & \lvert{1-\frac{\rho_{p,num}}{\rho_{p,exp}}}\rvert < 5\% ,\\ 
+\end{cases}
+ \label{eq:check2}
+\end{equation}
+%************************************************
+the combination was marked. The marked combinations were processed by the
+$AoR$ $ANN$, and then compared with the experiment.
+Were considered valid those that differed by less than $5\%$ also in this
+comparison (Eq. \ref{eq:checkaor}):
+%************************************************
+\begin{equation}
+\text{if} ~~~~~~ \lvert{1-\frac{AoR_{num}}{AoR_{exp}}}\rvert < 5\% .
+\label{eq:checkaor}
+\end{equation}
+%************************************************
+Further, to prove the validity of the system, we tested the marked combinations
+by modifying the experimental bulk values of the shear cell. 
+We artificially decreased or increased the shear force, and thus $\mu_{psh}$ and
+$\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+%************************************************
+\begin{equation}
+\label{eq:pcoeff}
+\mu_{psh, new} = \mu_{psh, old} \cdot P .
+\end{equation}
+%************************************************
+
+\section{Results and discussion}
+\label{sec:results}
+%************************************************
+
+\subsection{DEM Simulations}
+\label{subsec:simulations}
+
+For sinter fine, 546 shear cell and 81 static $AoR$ simulations were run with
+the parameter combinations described in Table
+\ref{tab:10DEMVariableinputvalues}.
+The computational time amounted to 1 hour with 32 AMD cores for a benchmark
+shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
+50,000 particles.
+Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
+the shear cell with 400,000 particles ). \\
+
+
+\subsection{ANN model development}
+\label{subsec:annmodeldev}
+
+First, we determined the regression of the bulk behaviour parameters, for
+instance the $\mu_{psh}$; see Fig. \ref{fig:22regression}, where the
+corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
+simulations.
+The plot shows a consistent agreement between the 
+$DEM$ and the $ANN$ values and an almost linear regression ($R^2
+= 0.94$).
+The linear relationship between the
+training values can be seen in Table \ref{tab:06inputRelationshipTable}.
+The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
+$\rho_p$ and $\rho_b$.
+In contrast, for $\mu_{sh}$ and $AoR$, the $\mu_r$ balanced the influence of the 
+$\mu_s$. \\
+We then investigated how the $R^2$ changed with the number of neurons
+for the $\mu_{psh}$.
+In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
+Increasing the number of neurons did not improve the $R^2$; it even started to
+oscillate with higher numbers of neurons.
+We subsequently obtained the optimal number of neurons for all $ANNs$.
+Further, we processed the random combinations (Table
+\ref{tab:10DEMVariableinputvalues}) with the $ANN$.
+The $ANN$ evaluation was significantly faster than the $DEM$ simulations. The
+individuation of the numerical bulk behaviours for all the $DEM$ combinations
+did not take more than a few seconds on a single core.
+%************************************************
+\begin{figure}%[!h] 
+\centering 
+\includegraphics[width=.96\columnwidth]{22regression}
+%[width=.96\textwidth]
+\caption[Comparison between prediction of the trained ANN and full DEM
+simulation]{Comparison between prediction of the trained Artificial Neural
+Network ($ANN$) and 546 full DEM simulations of the coefficient of pre-shear
+($\mu_{psh}$). In this case the regression line is nearly linear (0.94), and
+demonstrates the accurate predictive power of the $ANN$.}
+\label{fig:22regression} 
 \end{figure}
-
-
-As was the case with tables, you may want a figure
-that spans two columns.  To do this, and still to
-ensure proper ``floating'' placement of tables, use the environment
-\textbf{figure*} to enclose the figure and its caption.
-and don't forget to end the environment with
-{figure*}, not {figure}!
-
-\begin{figure*}
+%************************************************
+\begin{table*}%[h]
 \centering
-\includegraphics{flies}
-\caption{A sample black and white graphic
-that needs to span two columns of text.}
-\end{figure*}
+\scalebox{1.0}{
+\begin{tabular}{lcccccccc}
+\hline
+         & $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $\mu_{sh}$ &
+        $\mu_{psh}$ & $\rho_{b}$ & $AoR$ \\
+          \hline
+    $\mu_s$ & 100.00 & 0.55  & 0.04  & 0.00  & 3.84  & 87.26 & 8.39  & 49.48 \\
+    $\mu_r$ & 0.55  & 100.00 & 0.15  & 0.00  & 58.92 & 33.70 & 3.10  & 60.20 \\
+    $COR$ & 0.04  & 0.15  & 100.00 & 0.00  & 15.52 & 0.57  & 1.71  & 21.35 \\
+    $\rho_p$ & 0.00  & 0.00  & 0.00  & 100.00 & 4.98  & 5.71  & 99.00 & 0.00 \\
+    $\mu_{sh}$ & 3.84  & 58.92 & 15.52 & 4.98  & 100.00 & 26.03 & 9.52  & 0.00 \\
+    $\mu_{psh}$ & \textbf{87.26} & 33.70 & 0.57  & 5.71  & 26.03 & 100.00 & 4.33 
+    & 0.00
+    \\
+    $\rho_{b}$ & 8.39  & 3.10  & 1.71  & \textbf{99.00} & 9.52  & 4.33  & 100.00
+    & 0.00 \\
+    $AoR$ \hspace{5ex} & 49.48 & \textbf{60.20} & 21.35  & 0.00  & 0.00  & 0.00 
+    & 0.00  & 100.00 \\
+    
+\hline
+\end{tabular}}
+\caption[Values of linear relationship between considered variables]{Values of
+linear relationship between variables considered multiplied by 100. Sliding
+friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
+had the greatest influence on, respectively, the coefficient of pre-shear
+($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
+was not used as a training parameter for $AoR$ bulk behaviour.}
+\label{tab:06inputRelationshipTable}
+\end{table*}
+%************************************************
 
 
-\begin{figure}
+\subsection{Experiments and Parameter Identification}
+\label{subsec:experimentsparameteridentification}
+
+Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+of sinter fine were acquired through $SSC$ tests. 
+Table \ref{tab:05sinterTableExperimental} presents
+these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
+the $\mu_{sh}$ oscillates.
+The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
+kg/m3 deviation.
+% The stress path for the second load condition in Table
+% \ref{tab:05sinterTableExperimental} is shown in Fig.
+% \ref{fig:20experimental}.
+Two $AoR$ tests were performed that gave an average angle of
+38.85$^\circ$.
+We obtained the radius ($R$) mean and standard
+deviations, as shown in Table
+\ref{tab:09DEMFixedinputvalues}, from sieving experiments.
+The comparison between numerical and experimental behaviours led to a first
+series of marked combinations ($MC1$) for one load condition of
+the shear cell ($\sigma_n=10,070$ Pa, P=1.0), as plotted in Fig.
+\ref{fig:24radarpirker1schulze10070}, where 
+the minimum and maximum values are shown, together with the mean. 
+Note that the confidence interval is large, 
+especially for the $COR$, which highlights its insignificant influence on the
+characterization.
+Both the $\rho_p$  and the $\mu_s$, however, show a narrow confidence interval, 
+which demonstrates their influence and the ability of this procedure to find
+valid $DEM$ parameters.
+These results agree with our examination of the ratio of the standard deviation
+to the range, see Table \ref{tab:13DEMvalidvalues}.
+Further, we observed that various $DEM$ parameter
+combinations could reproduce the experimental behaviour, and thus evaluated
+their mutual dependencies.
+This is shown more clearly in a density plot (see Fig. 
+\ref{fig:25cloudpirker1schulze10070} for $MC1$) 
+of the particles' coefficient of restitution (COR) in relation to
+the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$). 
+Multiple
+combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
+the experimental behaviour with varying $COR$.
+This underlines once more their correlation, as already stated by Wensrich and 
+Katterfeld \cite{RefWorks:87}.
+To further demonstrate the validity of the procedure, we modified the product
+coefficient. 
+First, we set it to $P=0.8$, and we obtained another
+series of marked combinations ($MC2$).
+It can be seen in the parameter space plot in Fig.
+\ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
+than for $P=1.0$, while in the density plot in Fig. 
+\ref{fig:27cloudpirker08schulze10070} the area
+appears larger, although slightly less densely populated. Finally, for $P=1.2$
+and its marked combinations ($MC3$) the parameter space plot in Fig.
+\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
+range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
+shows a smaller area. As expected, the procedure was highly sensitive to
+variations in the experimental data.
+Our approach could therefore be used
+for a wide range of bulk materials.\\
+We then processed the random combinations with the $AoR$ $ANN$. In Fig.
+\ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
+before can be seen.
+In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
+by rolling particles, the coefficient of rolling friction has the maximum
+influence. \\
+Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
+and compared it with the experimental one.
+As can be seen in the parameter space plot in Fig.
+\ref{fig:33radarpirker1schulze10070aor}, the confidence interval is very small,
+indicating that all the parameters but the $COR$ played an important role, 
+and demonstrating the reliability of these parameter
+combinations in representing the bulk behaviour.
+From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
+\%), see Table \ref{tab:13DEMvalidvalues}.
+%************************************************
+\begin{table}[h]
 \centering
-\includegraphics[height=1in, width=1in]{rosette}
-\caption{A sample black and white graphic that has
-been resized with the \texttt{includegraphics} command.}
-\vskip -6pt
+\begin{tabular}{cccccc}
+\hline
+$\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
+$\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
+\hline
+    1068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
+    2069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
+    10070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
+
+\hline
+\end{tabular}
+\caption[Experimental results]{Experimental results. Values for three
+load conditions}
+\label{tab:05sinterTableExperimental}
+\end{table}
+%************************************************
+\begin{table*}%[h]
+\centering
+\begin{tabular}{llccc}
+\hline
+
+          & type  & SSC & AoR   & SSC \& AoR \\
+          \hline
+
+    $\mu_s$ & mean  & 0.831 & 0.177 & 0.664 \\
+    $(-)$   & std. dev. (SD) & 0.097 & 0.095 & 0.029 \\
+          & range ($R$) & 0.9   & 0.9   & 0.9 \\
+          & SD / R & 0.108 & 0.106 & 0.032 \\
+          \hline
+    $\mu_r$ & mean  & 0.692 & 0.830 & 0.916 \\
+    $(-)$   & std. dev. (SD) & 0.215 & 0.193 & 0.042 \\
+          & range ($R$) & 0.9   & 0.9   & 0.9 \\
+          & SD / R & 0.239 & 0.214 & 0.046 \\
+          \hline
+              COR   & mean  & 0.708 & 0.590 & 0.590 \\
+    $(-)$   & std. dev. (SD) & 0.104 & 0.073 & 0.065 \\
+          & range ($R$) & 0.4   & 0.4   & 0.4 \\
+          & SD / R & 0.259 & 0.183 & 0.161 \\
+          \hline
+    $\rho_p$ & mean  & 2245.7 & 3192.8 & 2283.9 \\
+    $(kg/m3)$ & std. dev. (SD) & 80.5  & 277.4 & 67.1 \\
+          & range ($R$) & 1500  & 1500  & 1500 \\
+          & SD / R & 0.054 & 0.185 & 0.045 \\
+          \hline
+    valid & number & 290203 & 816552 & 3884 \\
+    combinations & (\%) & 4.64  & 13.06 & 0.06 \\  
+
+\hline
+\end{tabular}
+\caption[Valid DEM values]{Valid DEM values. For each parameter we show the
+valid parameter statistics in the two tests and in their intersection.
+Finally, we show the number of valid parameter combinations over the total
+(6250000).}
+\label{tab:13DEMvalidvalues}
+\end{table*}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{26radarpirker08schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+\label{fig:26radarpirker08schulze10070} 
 \end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{24radarpirker1schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+\label{fig:24radarpirker1schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{28radarpirker12schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+\label{fig:28radarpirker12schulze10070} 
+\end{figure}
+%************************************************
+% 
+% \begin{figure}%[htp] 
+% \centering
+% %         \begin{subfigure}%[b]{0.4\columnwidth}
+% %         \includegraphics[width=0.2\columnwidth]{26radarpirker08schulze10070}
+% %         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+% %         \label{fig:26radarpirker08schulze10070} 
+% %     \end{subfigure}\\
+% %      \begin{subfigure}%[b]{0.4\columnwidth}
+% %         \includegraphics[width=0.2\textwidth]{24radarpirker1schulze10070}
+% %         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+% %         \label{fig:24radarpirker1schulze10070}
+% %     \end{subfigure} \\
+%         \begin{subfigure}%[b]{0.4\columnwidth} 
+%         %\includegraphics[width=.45\columnwidth]
+%         \includegraphics[width=0.2\textwidth]{28radarpirker12schulze10070}
+%         \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+%         \label{fig:28radarpirker12schulze10070} 
+%     \end{subfigure}
+%     \caption[Parameter space plot of valid simulations parameters for three different
+%     bulk behaviours measured by SSC]{Parameter space plot of valid simulation
+%     parameters for three different bulk behaviours measured by a shear cell
+%     tester ($SSC$).
+%     Each axis of the parameter space plot represents one simulation parameter.
+%     The shaded area indicates valid parameter combinations, and dark shaded
+%     values indicate the confidence range.
+% 	The marked combinations for $\sigma_n=10070$ Pa are presented.
+%     Further explanations can be found in
+%    Section \ref{subsec:experimentsparameteridentification}.
+%    }
+%     \label{fig:29schulzeradarandcloud}
+% \end{figure}
+%************************************************
+\begin{figure}%[htp] 
+\centering
 
-\subsection{Theorem-like Constructs}
-Other common constructs that may occur in your article are
-the forms for logical constructs like theorems, axioms,
-corollaries and proofs.  There are
-two forms, one produced by the
-command \texttt{{\char'134}newtheorem} and the
-other by the command \texttt{{\char'134}newdef}; perhaps
-the clearest and easiest way to distinguish them is
-to compare the two in the output of this sample document:
+    \begin{subfigure}[b]{0.8\columnwidth}
+        \includegraphics[width=0.5\textwidth]{27cloudpirker08schulze10070}
+        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+        \label{fig:27cloudpirker08schulze10070} 
+    \end{subfigure}\\
+    \begin{subfigure}[b]{0.8\columnwidth}
+        \includegraphics[width=0.5\textwidth]{25cloudpirker1schulze10070}
+        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+        \label{fig:25cloudpirker1schulze10070}
+    \end{subfigure}\\
 
-This uses the \textbf{theorem} environment, created by
-the\linebreak\texttt{{\char'134}newtheorem} command:
-\newtheorem{theorem}{Theorem}
-\begin{theorem}
-Let $f$ be continuous on $[a,b]$.  If $G$ is
-an antiderivative for $f$ on $[a,b]$, then
-\begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
-\end{theorem}
-
-The other uses the \textbf{definition} environment, created
-by the \texttt{{\char'134}newdef} command:
-\newdef{definition}{Definition}
-\begin{definition}
-If $z$ is irrational, then by $e^z$ we mean the
-unique number which has
-logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
-\end{definition}
-
-Two lists of constructs that use one of these
-forms is given in the
-\textit{Author's  Guidelines}.
- 
-There is one other similar construct environment, which is
-already set up
-for you; i.e. you must \textit{not} use
-a \texttt{{\char'134}newdef} command to
-create it: the \textbf{proof} environment.  Here
-is a example of its use:
-\begin{proof}
-Suppose on the contrary there exists a real number $L$ such that
-\begin{displaymath}
-\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-\end{displaymath}
-Then
-\begin{displaymath}
-l=\lim_{x\rightarrow c} f(x)
-= \lim_{x\rightarrow c}
-\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
-= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-\frac{f(x)}{g(x)} = 0\cdot L = 0,
-\end{displaymath}
-which contradicts our assumption that $l\neq 0$.
-\end{proof}
-
-Complete rules about using these environments and using the
-two different creation commands are in the
-\textit{Author's Guide}; please consult it for more
-detailed instructions.  If you need to use another construct,
-not listed therein, which you want to have the same
-formatting as the Theorem
-or the Definition\cite{salas:calculus} shown above,
-use the \texttt{{\char'134}newtheorem} or the
-\texttt{{\char'134}newdef} command,
-respectively, to create it.
-
-\subsection*{A {\secit Caveat} for the \TeX\ Expert}
-Because you have just been given permission to
-use the \texttt{{\char'134}newdef} command to create a
-new form, you might think you can
-use \TeX's \texttt{{\char'134}def} to create a
-new command: \textit{Please refrain from doing this!}
-Remember that your \LaTeX\ source code is primarily intended
-to create camera-ready copy, but may be converted
-to other forms -- e.g. HTML. If you inadvertently omit
-some or all of the \texttt{{\char'134}def}s recompilation will
-be, to say the least, problematic.
+    \begin{subfigure}[b]{0.8\columnwidth}
+        \includegraphics[width=0.5\textwidth]{30cloudpirker12schulze10070}
+        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+        \label{fig:30cloudpirker12schulze10070} 
+    \end{subfigure}
+    \caption[Density plot comparison of SSC results]{Density plot comparison of
+    shear cell tester ($SSC$) results. The marked combinations for
+    $\sigma_n=10070 ~Pa$ are presented.
+    Density plot of the particles' coefficient of restitution (COR) as a
+    function of the coefficient of sliding friction ($\mu_s$) and the
+    coefficient of rolling friction ($\mu_r$); 
+    in the white area, no valid sets of simulation parameters can be found.
+	In each cell the valid sets are grouped according to the 4 different COR
+	ranges.
+	Each cell is colored according to the group with the most members. 
+    The values plotted here were initially
+    selected between the numerical
+    values from the Artificial Neural Network with the original
+    experimental results for the $SSC$, with a product coefficient $P=1.0$ (Fig.
+    \ref{fig:25cloudpirker1schulze10070}). 
+    Subsequently, they were chosen with  
+    a lower virtual shear stress ($P=0.8$)
+    (\ref{fig:27cloudpirker08schulze10070}).
+    The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
+    the selection with a higher virtual shear stress ($P=1.2$).    }
+    \label{fig:29schulzeradarandcloud}
+\end{figure}
+%************************************************
+\begin{figure}%[htp] 
+\centering
+    \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{31radarpirker1aor}
+        \caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
+        \label{fig:31radarpirker1aor} 
+    \end{subfigure}\\
+        \begin{subfigure}[b]{0.96\columnwidth}
+        \includegraphics[width=\textwidth]{33radarpirker1schulze10070aor}
+        \caption{Parameter space plot, $AoR_{exp} = 38.85
+        ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
+        \label{fig:33radarpirker1schulze10070aor} 
+    \end{subfigure}
+    \caption[Parameter space plots of valid simulation parameters for the AoR
+    and the combination of AoR and SSC valid parameters]{Parameter space plots
+    of valid simulation parameters for the angle of repose tester ($AoR$) and the
+    combination of $AoR$ and shear cell tester ($SSC$).
+    Each axis of the parameter space plot represents one simulation parameter.
+    The shaded area 
+    and dark shaded values indicate
+    valid parameters combinations and
+    the confidence interval, respectively.
+    Further explanations are given in Section
+    \ref{subsec:experimentsparameteridentification}.}
+    \label{fig:35schulze10070aorradarandcloud}
+\end{figure}
+%************************************************
 
 \section{Conclusions}
-This paragraph will end the body of this sample document.
-Remember that you might still have Acknowledgments or
-Appendices; brief samples of these
-follow.  There is still the Bibliography to deal with; and
-we will make a disclaimer about that here: with the exception
-of the reference to the \LaTeX\ book, the citations in
-this paper are to articles which have nothing to
-do with the present subject and are used as
-examples only.
-%\end{document}  % This is where a 'short' article might terminate
+\label{sec:conclusions}
+%************************************************
+We have presented a two-step method for $DEM$ simulation parameter
+identification. In the first step, an artificial neural network is 
+trained using dedicated $DEM$ simulations in order to predict bulk 
+behaviours as function of a set of $DEM$ simulation parameters. 
+In the second step, this artificial neural network is then used 
+to predict the bulk behaviour of a huge number of additional $DEM$ parameter
+sets.
+The main findings of this study can be summarized as follows:
+\begin{itemize}
+  \item{An artificial neural network can be trained by a limited number of
+  dedicated $DEM$ simulations.
+  		The trained artificial neural network is then able to predict
+  		granular bulk behaviour.}
+  \item{This prediction of granular bulk behaviour is much more efficient
+  		than computationally expensive $DEM$ simulations.
+  		Thus, the macroscopic output associated with a huge number of parameter sets
+  		can be studied.}
+  \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
+  		valid sets of $DEM$ simulation parameters can be readily deduced for a
+  		specific granular material.}
+  \item{This $DEM$ parameter identification method can be applied to
+  arbitrary bulk experiments.
+  		Combining two artificial neural networks which predict two different bulk
+  		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
+\end{itemize}
+As part of future work, we will develop this method further by considering
+different fractions of granular materials, which will lead to size-dependent sets of $DEM$
+simulation parameters.
+
+%************************************************
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
+This study was funded by the Christian Doppler Forschungsgesellschaft, Siemens
+VAI Metals Technologies, and Voestalpine Stahl. The authors gratefully
+aknowledge their support.
 
 %
 % The following two commands are all you need in the
