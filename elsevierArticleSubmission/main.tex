@@ -205,7 +205,8 @@ parameters of sinter fines.
     Coefficient of rolling friction $\mu_r$ (-) \\ [5pt]
     Coefficient of restitution $COR$ (-)   \\ [5pt]
      Particle density $\rho_p = \frac{mass ~ of ~ one ~ particle}{volume ~ of ~
-     one ~ particle}$ (kg/m3)  \\ [5pt] Geometry factor $dCylDp$ (-)  \\ [5pt]
+     one ~ particle}$ ($kg/m^3$)  \\ [5pt] Geometry factor $dCylDp$ (-)  \\
+     [5pt]
    
 \hline
 \end{tabular}
@@ -793,9 +794,9 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 $\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
 $\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
 \hline
-    1068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
-    2069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
-    10070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
+    1,068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
+    2,069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
+    1,0070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
 
 \hline
 \end{tabular}
@@ -850,12 +851,12 @@ Finally, we show the number of valid parameter combinations over the total
 %[width=.96\textwidth]
 \caption[Parameter space plot of valid simulations parameters for one
     bulk behaviour measured by SSC]{Parameter space plot of valid simulation
-    parameters for one bulk behaviours measured by a shear cell
+    parameters for one bulk behaviour measured by a shear cell
     tester ($SSC$).
     Each axis of the parameter space plot represents one simulation parameter.
     The shaded area indicates valid parameter combinations, and dark shaded
     values indicate the confidence range.
-	The marked combinations for $\sigma_n=1068$ Pa are presented.
+	The marked combinations for $\sigma_n=1,068$ Pa are presented.
     Further explanations can be found in
    Section \ref{subsec:experimentsparameteridentification}}
 \label{fig:41radarpirker1schulze1068}
@@ -864,17 +865,17 @@ Finally, we show the number of valid parameter combinations over the total
 \begin{figure}[htp] \centering
         \begin{subfigure}[b]{0.5\columnwidth}
         \includegraphics[width=\textwidth]{26radarpirker08schulze10070}
-        \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+        \caption{Parameter space plot, $SSC$, $\sigma_n=10,070$ Pa, P=0.8}
         \label{fig:26radarpirker08schulze10070} 
     \end{subfigure}\\
      \begin{subfigure}[b]{0.5\columnwidth}
         \includegraphics[width=\textwidth]{24radarpirker1schulze10070}
-        \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+        \caption{Parameter space plot, $SSC$, $\sigma_n=10,070$ Pa, P=1.0}
         \label{fig:24radarpirker1schulze10070}
     \end{subfigure} \\
         \begin{subfigure}[b]{0.5\columnwidth}
         \includegraphics[width=\textwidth]{28radarpirker12schulze10070}
-        \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+        \caption{Parameter space plot, $SSC$, $\sigma_n=10,070$ Pa, P=1.2}
         \label{fig:28radarpirker12schulze10070} 
     \end{subfigure}
     \caption[Parameter space plot of valid simulations parameters for three different
@@ -884,7 +885,7 @@ Finally, we show the number of valid parameter combinations over the total
     Each axis of the parameter space plot represents one simulation parameter.
     The shaded area indicates valid parameter combinations, and dark shaded
     values indicate the confidence range.
-	The marked combinations for $\sigma_n=10070$ Pa are presented.
+	The marked combinations for $\sigma_n=10,070$ Pa are presented.
     Further explanations can be found in
    Section \ref{subsec:experimentsparameteridentification}.
    }
@@ -895,23 +896,23 @@ Finally, we show the number of valid parameter combinations over the total
 
     \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{27cloudpirker08schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+        \caption{Density plot, $SSC$, $\sigma_n=10,070$ Pa, P=0.8}
         \label{fig:27cloudpirker08schulze10070} 
     \end{subfigure}\\
     \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{25cloudpirker1schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+        \caption{Density plot, $SSC$, $\sigma_n=10,070$ Pa, P=1.0}
         \label{fig:25cloudpirker1schulze10070}
     \end{subfigure}\\
 
     \begin{subfigure}[b]{0.8\columnwidth}
         \includegraphics[width=\textwidth]{30cloudpirker12schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+        \caption{Density plot, $SSC$, $\sigma_n=10,070$ Pa, P=1.2}
         \label{fig:30cloudpirker12schulze10070} 
     \end{subfigure}
     \caption[Density plot comparison of SSC results]{Density plot comparison of
     shear cell tester ($SSC$) results. The marked combinations for
-    $\sigma_n=10070 ~Pa$ are presented.
+    $\sigma_n=10,070 ~Pa$ are presented.
     Density plot of the particles' coefficient of restitution (COR) as a
     function of the coefficient of sliding friction ($\mu_s$) and the
     coefficient of rolling friction ($\mu_r$); 
@@ -941,7 +942,7 @@ Finally, we show the number of valid parameter combinations over the total
         \begin{subfigure}[b]{0.96\columnwidth}
         \includegraphics[width=\textwidth]{33radarpirker1schulze10070aor}
         \caption{Parameter space plot, $AoR_{exp} = 38.85
-        ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
+        ^\circ$ \& $SSC$: $\sigma_n=10,070$ Pa}
         \label{fig:33radarpirker1schulze10070aor} 
     \end{subfigure}
     \caption[Parameter space plots of valid simulation parameters for the AoR
