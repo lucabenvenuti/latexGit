@@ -62,19 +62,19 @@
 
 
 % DOI
-\doi{10.475/123_4}
+\doi{??}
 
 % ISBN
-\isbn{123-4567-24-567/08/06}
+\isbn{??}
 
 %Conference
-\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+\conferenceinfo{EANN 2015}{September 25--28, 2015, Rhodes, Greece}
 
-\acmPrice{\$15.00}
+\acmPrice{\$xx.00}
 
 %
 % --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+\conferenceinfo{RHODES}{2015 Rhodes, Greece}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
@@ -140,14 +140,14 @@ Luca Benvenuti\titlenote{Corresponding author.}\\
        \email{luca.benvenuti@jku.at}
 % 2nd. author
 \alignauthor
-Christoph Kloss %\titlenote{}\\
+Christoph Kloss \\%\titlenote{}\\
        \affaddr{DCS Computing GmbH}\\
        \affaddr{Altenbergerstrasse 66a - Science Park}\\
        \affaddr{4040, Linz, Austria}\\
        \email{christoph.kloss@dcs-computing.com}
 % 3rd. author
 \alignauthor 
-Stefan Pirker %\titlenote{}\\
+Stefan Pirker \\ %\titlenote{}\\
        \affaddr{Johannes Kepler University Linz}\\
        \affaddr{Department on Particulate Flow Modelling}\\
        \affaddr{Altenbergerstrasse 69}\\
@@ -943,74 +943,110 @@ Finally, we show the number of valid parameter combinations over the total
 %     \label{fig:29schulzeradarandcloud}
 % \end{figure}
 %************************************************
-\begin{figure}%[htp] 
-\centering
-
-    \begin{subfigure}[b]{0.8\columnwidth}
-        \includegraphics[width=0.5\textwidth]{27cloudpirker08schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
-        \label{fig:27cloudpirker08schulze10070} 
-    \end{subfigure}\\
-    \begin{subfigure}[b]{0.8\columnwidth}
-        \includegraphics[width=0.5\textwidth]{25cloudpirker1schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
-        \label{fig:25cloudpirker1schulze10070}
-    \end{subfigure}\\
-
-    \begin{subfigure}[b]{0.8\columnwidth}
-        \includegraphics[width=0.5\textwidth]{30cloudpirker12schulze10070}
-        \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
-        \label{fig:30cloudpirker12schulze10070} 
-    \end{subfigure}
-    \caption[Density plot comparison of SSC results]{Density plot comparison of
-    shear cell tester ($SSC$) results. The marked combinations for
-    $\sigma_n=10070 ~Pa$ are presented.
-    Density plot of the particles' coefficient of restitution (COR) as a
-    function of the coefficient of sliding friction ($\mu_s$) and the
-    coefficient of rolling friction ($\mu_r$); 
-    in the white area, no valid sets of simulation parameters can be found.
-	In each cell the valid sets are grouped according to the 4 different COR
-	ranges.
-	Each cell is colored according to the group with the most members. 
-    The values plotted here were initially
-    selected between the numerical
-    values from the Artificial Neural Network with the original
-    experimental results for the $SSC$, with a product coefficient $P=1.0$ (Fig.
-    \ref{fig:25cloudpirker1schulze10070}). 
-    Subsequently, they were chosen with  
-    a lower virtual shear stress ($P=0.8$)
-    (\ref{fig:27cloudpirker08schulze10070}).
-    The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
-    the selection with a higher virtual shear stress ($P=1.2$).    }
-    \label{fig:29schulzeradarandcloud}
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{27cloudpirker08schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+\label{fig:27cloudpirker08schulze10070} 
 \end{figure}
 %************************************************
-\begin{figure}%[htp] 
-\centering
-    \begin{subfigure}[b]{0.96\columnwidth}
-        \includegraphics[width=\textwidth]{31radarpirker1aor}
-        \caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
-        \label{fig:31radarpirker1aor} 
-    \end{subfigure}\\
-        \begin{subfigure}[b]{0.96\columnwidth}
-        \includegraphics[width=\textwidth]{33radarpirker1schulze10070aor}
-        \caption{Parameter space plot, $AoR_{exp} = 38.85
-        ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
-        \label{fig:33radarpirker1schulze10070aor} 
-    \end{subfigure}
-    \caption[Parameter space plots of valid simulation parameters for the AoR
-    and the combination of AoR and SSC valid parameters]{Parameter space plots
-    of valid simulation parameters for the angle of repose tester ($AoR$) and the
-    combination of $AoR$ and shear cell tester ($SSC$).
-    Each axis of the parameter space plot represents one simulation parameter.
-    The shaded area 
-    and dark shaded values indicate
-    valid parameters combinations and
-    the confidence interval, respectively.
-    Further explanations are given in Section
-    \ref{subsec:experimentsparameteridentification}.}
-    \label{fig:35schulze10070aorradarandcloud}
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{25cloudpirker1schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+\label{fig:25cloudpirker1schulze10070} 
 \end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{30cloudpirker12schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+\label{fig:30cloudpirker12schulze10070} 
+\end{figure}
+%************************************************
+% \begin{figure}%[htp] 
+% \centering
+% 
+% %     \begin{subfigure}[b]{0.8\columnwidth}
+% %         \includegraphics[width=0.5\textwidth]{27cloudpirker08schulze10070}
+% %         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+% %         \label{fig:27cloudpirker08schulze10070} 
+% %     \end{subfigure}\\
+% %     \begin{subfigure}[b]{0.8\columnwidth}
+% %         \includegraphics[width=0.5\textwidth]{25cloudpirker1schulze10070}
+% %         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+% %         \label{fig:25cloudpirker1schulze10070}
+% %     \end{subfigure}\\
+% 
+%     \begin{subfigure}[b]{0.8\columnwidth}
+%         \includegraphics[width=0.5\textwidth]{30cloudpirker12schulze10070}
+%         \caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+%         \label{fig:30cloudpirker12schulze10070} 
+%     \end{subfigure}
+%     \caption[Density plot comparison of SSC results]{Density plot comparison of
+%     shear cell tester ($SSC$) results. The marked combinations for
+%     $\sigma_n=10070 ~Pa$ are presented.
+%     Density plot of the particles' coefficient of restitution (COR) as a
+%     function of the coefficient of sliding friction ($\mu_s$) and the
+%     coefficient of rolling friction ($\mu_r$); 
+%     in the white area, no valid sets of simulation parameters can be found.
+% 	In each cell the valid sets are grouped according to the 4 different COR
+% 	ranges.
+% 	Each cell is colored according to the group with the most members. 
+%     The values plotted here were initially
+%     selected between the numerical
+%     values from the Artificial Neural Network with the original
+%     experimental results for the $SSC$, with a product coefficient $P=1.0$ (Fig.
+%     \ref{fig:25cloudpirker1schulze10070}). 
+%     Subsequently, they were chosen with  
+%     a lower virtual shear stress ($P=0.8$)
+%     (\ref{fig:27cloudpirker08schulze10070}).
+%     The last image (Fig. \ref{fig:30cloudpirker12schulze10070}) represents
+%     the selection with a higher virtual shear stress ($P=1.2$).    }
+%     \label{fig:29schulzeradarandcloud}
+% \end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{31radarpirker1aor} 
+\caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
+\label{fig:31radarpirker1aor} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{33radarpirker1schulze10070aor} 
+\caption{Parameter space plot, $AoR_{exp} = 38.85
+        ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
+\label{fig:33radarpirker1schulze10070aor} 
+\end{figure}
+%************************************************
+% \begin{figure}%[htp] 
+% \centering
+% %     \begin{subfigure}[b]{0.96\columnwidth}
+% %         \includegraphics[width=\textwidth]{31radarpirker1aor}
+% %         \caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
+% %         \label{fig:31radarpirker1aor} 
+% %     \end{subfigure}\\
+%         \begin{subfigure}[b]{0.96\columnwidth}
+%         \includegraphics[width=\textwidth]{33radarpirker1schulze10070aor}
+%         \caption{Parameter space plot, $AoR_{exp} = 38.85
+%         ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
+%         \label{fig:33radarpirker1schulze10070aor} 
+%     \end{subfigure}
+%     \caption[Parameter space plots of valid simulation parameters for the AoR
+%     and the combination of AoR and SSC valid parameters]{Parameter space plots
+%     of valid simulation parameters for the angle of repose tester ($AoR$) and the
+%     combination of $AoR$ and shear cell tester ($SSC$).
+%     Each axis of the parameter space plot represents one simulation parameter.
+%     The shaded area 
+%     and dark shaded values indicate
+%     valid parameters combinations and
+%     the confidence interval, respectively.
+%     Further explanations are given in Section
+%     \ref{subsec:experimentsparameteridentification}.}
+%     \label{fig:35schulze10070aorradarandcloud}
+% \end{figure}
 %************************************************
 
 \section{Conclusions}
@@ -1109,11 +1145,11 @@ aknowledge their support.
 % the command \texttt{{\char'134}thebibliography}.
 % This next section command marks the start of
 % Appendix B, and does not continue the present hierarchy
-\section{More Help for the Hardy}
-The sig-alternate.cls file itself is chock-full of succinct
-and helpful comments.  If you consider yourself a moderately
-experienced to expert user of \LaTeX, you may find reading
-it useful but please remember not to change it.
+% \section{More Help for the Hardy}
+% The sig-alternate.cls file itself is chock-full of succinct
+% and helpful comments.  If you consider yourself a moderately
+% experienced to expert user of \LaTeX, you may find reading
+% it useful but please remember not to change it.
 %\balancecolumns % GM June 2007
 % That's all folks!
 \end{document}
