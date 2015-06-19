@@ -117,7 +117,7 @@ repulsive forces in relation to this overlap distance.
 Their fundamental modelling concept has since been widely accepted in the
 literature and their soft-sphere contact law has been developed further by
 numerous researchers (Vu-Quoc and Zhang \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}). 
-With increasing computational resources, $DEM$ simulation have become very
+With increasing computational resources, $DEM$ simulations have become very
 popular giving rise to the development of commercial (e.g., $PFC3D$, used by
 Wensrich and Katterfeld \cite{RefWorks:87}) and open-source software (e.g.,
 $LIGGGHTS$, Kloss et al. \cite{RefWorks:136}, Aigner et al. \cite{RefWorks:139}).
@@ -257,23 +257,23 @@ et al. \cite{RefWorks:182, RefWorks:185}.
 The experimental characterization was performed at environmental temperature and thus 
 temperature was not considered in the numerical simulations. Chemical reactions and aging 
 were also not part of the scope of this work.
-Due to the limited number of experiments realized, a restricted number of flow regimes were tested. 
-Further, only one size distribution was considered. 
+Further, due to the limited number of experiments realized, a restricted number
+of flow regimes were tested, and only one size distribution was considered. 
 The authors are confident that these two limitations have not compromised the validity of the method. 
 Rather, further investigations on these two aspects could again demonstrate its effectiveness. 
-We chose an elastic model to picture the particle behaviour. If we try to identify parameters 
-for an elastic contact model in a system of non-elastic particles, this $ANN$ approach will fail. 
+Notably, we chose an elastic model to picture the particle behaviour. If we try
+to identify parameters for an elastic contact model in a system of non-elastic particles, this $ANN$ approach will fail. 
 So choosing appropriate contact models is an essential pre-requisite for contact 
 parameter identification by means of $ANN$. 
-Further, $ANNs$ can give indications about the correctness of the chosen model, 
+Moreover, $ANNs$ can give indications about the correctness of the chosen model, 
 see Section \ref{subsec:experimentsparameteridentification}.
 %************************************************
 \subsection{Discrete element method}
 \label{subsec:dem}
 
 For each particle i inside the domain, a Discrete Element Method ($DEM$) code follows the trajectory and 
-calculates the force that particle i exerts on particle j. 
-We decided to utilize a single contact law for all the simulations performed. 
+calculates the force that particle i exerts on particle j, according to the imposed contact law. 
+We decided to utilize a single contact law, equal for each particle, in all the simulations performed. 
 Di Renzo and Di Maio \cite{RefWorks:145} suggested using the elastic non-linear Hertzian 
 model without cohesion for the particle-particle and particle-wall contacts.
 $LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
@@ -342,12 +342,11 @@ simulations.
 Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
 simulations had a $dCylDp$ larger than $20$.
 The normal stress $\sigma_n$ (1,068, 2,069, and 10,070 Pa) and its
-percentage (40, 60, 80, 100 \%) during the incipient flow condition $\tau_{\%}$
-varied to replicate twelve shear-cell load conditions. 
+percentage (40, 60, 80, and 100 \%) during the incipient flow condition
+($\tau_{\%}$) varied to replicate twelve shear-cell load conditions. 
 A Matlab script allowed us to extract from the simulation output the numerical
 values representative of bulk behaviour (hereafter called \textit{bulk values}),
-see Table \ref{tab:14bulkvalues},
-for each $DEM$ simulation parameter combination.
+see Table \ref{tab:14bulkvalues}, for each $DEM$ simulation parameter combination.
 For correctly performed simulations, we
 observed a stress path as in Fig. \ref{fig:21simexample}.
 First, the $\sigma_n$ was kept constant while the coefficient of internal
@@ -446,7 +445,7 @@ bulk value, allowing us to define the numerical bulk behaviour.
 \begin{tabular}{ccccc}
 \hline
     $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $dCylDp$ \\
-    	(-)  & (-)   & (-)   & (kg/m3) & (-) \\
+    	(-)  & (-)   & (-)   & ($kg/m^3$) & (-) \\
     \hline
     0.4 / 0.6 / 0.8 & 0.4 / 0.6 / 0.8 & 0.5 / 0.7 / 0.9 & 2500 / 3000 / 3500 & 20 / 36 / 38 / 40 \\
 
@@ -462,7 +461,7 @@ Artificial Neural Networks}
 \begin{tabular}{lcccc}
 \hline
  &  $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$  \\
-   &	(-)  & (-)   & (-)   & (kg/m3) \\
+   &	(-)  & (-)   & (-)   & ($kg/m^3$) \\
           \hline
     range & $[0.1 \ldots 1.0]$ & $[0.1 \ldots 1.0]$ & $[0.5 \ldots 0.9]$ &
     $[2000 \ldots 3500]$     \\
@@ -700,13 +699,13 @@ was not used as a training parameter for $AoR$ bulk behaviour.}
 \subsection{Experiments and Parameter Identification}
 \label{subsec:experimentsparameteridentification}
 
-Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
-of sinter fine were acquired through $SSC$ tests. 
+Experimental values identifying the bulk behaviour, $\mu_{psh}$, $\mu_{sh}$ and
+$\rho_{b}$, of sinter fine were acquired through $SSC$ tests. 
 Table \ref{tab:05sinterTableExperimental} presents
 these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
 the $\mu_{sh}$ oscillates.
-The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
-kg/m3 deviation.
+The $\rho_b$ has a clear average of 1,760 $kg/m^3$ with a 42 
+$kg/m^3$ deviation.
 The stress path for the second load condition in Table
 \ref{tab:05sinterTableExperimental} is shown in Fig.
 \ref{fig:20experimental}.
@@ -767,10 +766,8 @@ and its marked combinations ($MC3$) the parameter space plot in Fig.
 range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
-Our approach could therefore be used
-for a wide range of bulk materials
-in a specific flow regime for a range of bulk materials that can be represented
-with a defined particle bulk behaviour.\\
+Our approach could therefore be used in a specific flow regime for a range of bulk materials 
+that can be represented with a defined particle bulk behaviour.\\
 We then processed the random combinations with the $AoR$ $ANN$. In Fig.
 \ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
@@ -792,7 +789,7 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 \begin{tabular}{cccccc}
 \hline
 $\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
-$\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
+$\mu_{sh}$ (-) & $\rho_b$ ($kg/m^3$) \\
 \hline
     1,068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
     2,069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
@@ -829,7 +826,7 @@ load conditions}
           & SD / R & 0.259 & 0.183 & 0.161 \\
           \hline
     $\rho_p$ & mean  & 2245.7 & 3192.8 & 2283.9 \\
-    $(kg/m3)$ & std. dev. (SD) & 80.5  & 277.4 & 67.1 \\
+    $(kg/m^3)$ & std. dev. (SD) & 80.5  & 277.4 & 67.1 \\
           & range ($R$) & 1500  & 1500  & 1500 \\
           & SD / R & 0.054 & 0.185 & 0.045 \\
           \hline
@@ -841,7 +838,7 @@ load conditions}
 \caption[Valid DEM values]{Valid DEM values. For each parameter we show the
 valid parameter statistics in the two tests and in their intersection.
 Finally, we show the number of valid parameter combinations over the total
-(6250000).}
+(6,250,000).}
 \label{tab:13DEMvalidvalues}
 \end{table}
 %************************************************
