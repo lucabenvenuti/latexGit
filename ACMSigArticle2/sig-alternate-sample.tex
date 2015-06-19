@@ -51,7 +51,7 @@
 \begin{document}
 
 % Copyright
-\setcopyright{acmcopyright}
+%%%%\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
 %\setcopyright{rightsretained}
 %\setcopyright{usgov}
@@ -78,15 +78,17 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
-Format\titlenote{(Produces the permission block, and
-copyright information). For use with
-SIG-ALTERNATE.CLS. Supported by ACM.}}
-\subtitle{[Extended Abstract]
-\titlenote{A full version of this paper is available as
-\textit{Author's Guide to Preparing ACM SIG Proceedings Using
-\LaTeX$2_\epsilon$\ and BibTeX} at
-\texttt{www.acm.org/eaddress.htm}}}
+\title{Characterization of DEM particles by means of artificial neural networks
+and macroscopic experiments}
+%  Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
+% Format\titlenote{(Produces the permission block, and
+% copyright information). For use with
+% SIG-ALTERNATE.CLS. Supported by ACM.}}
+% \subtitle{[Extended Abstract]
+% \titlenote{A full version of this paper is available as
+% \textit{Author's Guide to Preparing ACM SIG Proceedings Using
+% \LaTeX$2_\epsilon$\ and BibTeX} at
+% \texttt{www.acm.org/eaddress.htm}}}
 %
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -112,7 +114,7 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{3} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -129,53 +131,54 @@ SIG-ALTERNATE.CLS. Supported by ACM.}}
 %
 % 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
+Luca Benvenuti\titlenote{Corresponding author.}\\
+       \affaddr{Johannes Kepler University Linz}\\
+       \affaddr{Department on Particulate Flow Modelling}\\
+       \affaddr{Altenbergerstrasse 69}\\
+       \affaddr{4040, Linz, Austria}\\
+       \email{luca.benvenuti@jku.at}
 % 2nd. author
 \alignauthor
-G.K.M. Tobin\titlenote{The secretary disavows
-any knowledge of this author's actions.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{P.O. Box 1212}\\
-       \affaddr{Dublin, Ohio 43017-6221}\\
-       \email{webmaster@marysville-ohio.com}
+Christoph Kloss %\titlenote{}\\
+       \affaddr{DCS Computing GmbH}\\
+       \affaddr{Altenbergerstrasse 66a - Science Park}\\
+       \affaddr{4040, Linz, Austria}\\
+       \email{christoph.kloss@dcs-computing.com}
 % 3rd. author
-\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
-one who did all the really hard work.}\\
-       \affaddr{The Th{\o}rv{\"a}ld Group}\\
-       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
-       \affaddr{Hekla, Iceland}\\
-       \email{larst@affiliation.org}
-\and  % use '\and' if you need 'another row' of author names
-% 4th. author
-\alignauthor Lawrence P. Leipuner\\
-       \affaddr{Brookhaven Laboratories}\\
-       \affaddr{Brookhaven National Lab}\\
-       \affaddr{P.O. Box 5000}\\
-       \email{lleipuner@researchlabs.org}
-% 5th. author
-\alignauthor Sean Fogarty\\
-       \affaddr{NASA Ames Research Center}\\
-       \affaddr{Moffett Field}\\
-       \affaddr{California 94035}\\
-       \email{fogartys@amesres.org}
-% 6th. author
-\alignauthor Charles Palmer\\
-       \affaddr{Palmer Research Laboratories}\\
-       \affaddr{8600 Datapoint Drive}\\
-       \affaddr{San Antonio, Texas 78229}\\
-       \email{cpalmer@prl.com}
+\alignauthor 
+Stefan Pirker %\titlenote{}\\
+       \affaddr{Johannes Kepler University Linz}\\
+       \affaddr{Department on Particulate Flow Modelling}\\
+       \affaddr{Altenbergerstrasse 69}\\
+       \affaddr{4040, Linz, Austria}\\
+       \email{stefan.pirker@jku.at}
+% \and  % use '\and' if you need 'another row' of author names
+% % 4th. author
+% \alignauthor Lawrence P. Leipuner\\
+%        \affaddr{Brookhaven Laboratories}\\
+%        \affaddr{Brookhaven National Lab}\\
+%        \affaddr{P.O. Box 5000}\\
+%        \email{lleipuner@researchlabs.org}
+% % 5th. author
+% \alignauthor Sean Fogarty\\
+%        \affaddr{NASA Ames Research Center}\\
+%        \affaddr{Moffett Field}\\
+%        \affaddr{California 94035}\\
+%        \email{fogartys@amesres.org}
+% % 6th. author
+% \alignauthor Charles Palmer\\
+%        \affaddr{Palmer Research Laboratories}\\
+%        \affaddr{8600 Datapoint Drive}\\
+%        \affaddr{San Antonio, Texas 78229}\\
+%        \email{cpalmer@prl.com}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
 % in the \additional authors block, viz.
-\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+% \additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+% email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+% (The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
 \date{30 July 1999}
 % Just remember to make sure that the TOTAL number of authors
 % is the number that will appear on the first page PLUS the
@@ -183,28 +186,35 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 
 \maketitle
 \begin{abstract}
-This paper provides a sample of a \LaTeX\ document which conforms,
-somewhat loosely, to the formatting guidelines for
-ACM SIG Proceedings. It is an {\em alternate} style which produces
-a {\em tighter-looking} paper and was designed in response to
-concerns expressed, by authors, over page-budgets.
-It complements the document \textit{Author's (Alternate) Guide to
-Preparing ACM SIG Proceedings Using \LaTeX$2_\epsilon$\ and Bib\TeX}.
-This source file has been written with the intention of being
-compiled under \LaTeX$2_\epsilon$\ and BibTeX.
-
-The developers have tried to include every imaginable sort
-of ``bells and whistles", such as a subtitle, footnotes on
-title, subtitle and authors, as well as in the text, and
-every optional component (e.g. Acknowledgments, Additional
-Authors, Appendices), not to mention examples of
-equations, theorems, tables and figures.
-
-To make best use of this sample document, run it through \LaTeX\
-and BibTeX, and compare this source code with the printed
-output produced by the dvi file. A compiled PDF version
-is available on the web page to help you with the
-`look and feel'.
+In Discrete Element Method ($DEM$) simulations, particle-particle contact laws
+determine the macroscopic simulation results. \\
+Particle-based contact laws, in
+turn, commonly rely on semi-empirical parameters which are difficult to obtain
+by direct microscopic measurements.
+In this study, we present a method for the identification of
+$DEM$ simulation parameters 
+that uses artificial neural networks to link
+macroscopic experimental results to
+microscopic numerical parameters.
+In the first step, a series
+of $DEM$ simulations with varying simulation parameters is used to train a
+feed-forward artificial neural network by backward-propagation reinforcement. 
+In the second step, this artificial neural network is used to predict the
+macroscopic ensemble behaviour in relation to additional sets of particle-based
+simulation parameters.
+Thus, a comprehensive database is obtained
+which links particle-based simulation parameters to specific macroscopic
+bulk behaviours of the ensemble.
+The trained artificial neural network is able to predict the behaviours of
+additional sets of input parameters accurately and highly efficiently.
+Furthermore, this method can be used generically to
+identify $DEM$ material parameters.
+For each set of calibration experiments, the neural network 
+needs to be trained only once.
+After the training, the neural network provides a generic link between the macroscopic 
+experimental results and the microscopic $DEM$ simulation parameters.
+Based on these experiments, the $DEM$ simulation parameters of any given
+non-cohesive granular material can be identified.
 \end{abstract}
 
 
@@ -213,45 +223,45 @@ is available on the web page to help you with the
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-\begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>  
-\end{CCSXML}
-
-\ccsdesc[500]{Computer systems organization~Embedded systems}
-\ccsdesc[300]{Computer systems organization~Redundancy}
-\ccsdesc{Computer systems organization~Robotics}
-\ccsdesc[100]{Networks~Network reliability}
-
-
-%
-% End generated code
-%
-
-%
-%  Use this command to print the description
-%
-\printccsdesc
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>10010520.10010553.10010562</concept_id>
+%   <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010575.10010755</concept_id>
+%   <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010553.10010554</concept_id>
+%   <concept_desc>Computer systems organization~Robotics</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10003033.10003083.10003095</concept_id>
+%   <concept_desc>Networks~Network reliability</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>  
+% \end{CCSXML}
+% 
+% \ccsdesc[500]{Computer systems organization~Embedded systems}
+% \ccsdesc[300]{Computer systems organization~Redundancy}
+% \ccsdesc{Computer systems organization~Robotics}
+% \ccsdesc[100]{Networks~Network reliability}
+% 
+% 
+% %
+% % End generated code
+% %
+% 
+% %
+% %  Use this command to print the description
+% %
+% \printccsdesc
 
 % We no longer use \terms command
 %\terms{Theory}
