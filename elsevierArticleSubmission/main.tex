@@ -148,12 +148,14 @@ the multi-dimensionality of the parameter space and the associated computational
 $DEM$ test simulations. 
 Moreover, one parameter set which is valid for one bulk behaviour (e.g., angle
 of repose) might fail for another (e.g., shear tester). \\
-There are ways to determine contact parameters directly by measuring material properties or 
-by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177}, 
-Paulick et al. \cite{RefWorks:181}, and Lommen et al. \cite{RefWorks:186}. However, these methodologies are laborious, 
+There are yet ways to determine contact parameters directly by measuring
+material properties or by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177}, 
+Paulick et al. \cite{RefWorks:181}, and Lommen et al. \cite{RefWorks:186}. 
+However, these methodologies are laborious, 
 since they have to be performed for every new granular material prior to a $DEM$
-simulations. Especially for the rolling friction parameter, it is arduous to link the rolling 
-friction parameter to the non-sphericity of the particle. Clearly, there is a
+simulations. 
+Especially for the already cited rolling friction parameter, it is arduous to
+link the rolling friction parameter to the non-sphericity of the particle. Clearly, there is a
 need for an efficient method for identifying $DEM$ contact law parameters, given
 a specific particle behaviour.
 In our study, we harnessed Artificial Neural Networks ($ANNs$) in order to
@@ -496,7 +498,7 @@ equal to the number of different inputs of the network, see Fig. \ref{fig:18nnsc
 The hidden (or central) layer's number of neurons was to be investigated. 
 The output layer contains one neuron for the output.
 The transfer functions between the first two layers are the tangential sigmoid, 
-and those between the hidden and central layers are linear.\\
+and those between the hidden and output layers are linear.\\
 Thus, we were able to use the $DEM$ parameter combinations and their
 corresponding bulk values to train the $ANNs$.
 Note that 15\% of the simulations (\textit{test simulations}) were
@@ -529,7 +531,7 @@ However, our training pool was numerical and extensive, and the particles in
 our simulations were inserted using a random seed value. For vast amounts of training data, 
 the effect of noise-corrupted patterns is negligible, see Haykin \cite{RefWorks:158}. 
 Thus, in our work task (b) was more challenging. Once trained, the $ANN$ were fed combinations of $DEM$ parameters. \\
-Instead of following Oberkampf’s suggestion, 
+Instead of following Oberkampf's suggestion, 
 the speed of the trained $ANNs$ enabled us to follow a different approach to
 maximizing the precision of the characterization and to increasing the
 generalization.
@@ -733,7 +735,7 @@ valid $DEM$ parameters.
 These results agree with our examination of the ratio of the standard deviation
 to the range, see Table \ref{tab:13DEMvalidvalues}.
 Further, we observed that various $DEM$ parameter
-combinations could reproduce the experimental behaviour, and thus evaluated
+combinations could reproduce the experimental behaviour, and thus we evaluated
 their mutual dependencies.
 This is shown more clearly in a density plot (see Fig. 
 \ref{fig:25cloudpirker1schulze10070} for $MC1$) 
@@ -766,8 +768,8 @@ and its marked combinations ($MC3$) the parameter space plot in Fig.
 range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
 shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
-Our approach could therefore be used in a specific flow regime for a range of bulk materials 
-that can be represented with a defined particle bulk behaviour.\\
+Our approach could therefore be used in specific flow regimes for a range of
+bulk materials that can be represented with a defined particle bulk behaviour.\\
 We then processed the random combinations with the $AoR$ $ANN$. In Fig.
 \ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
