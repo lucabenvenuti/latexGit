@@ -34,12 +34,12 @@ in Melbourne]
 \setlength{\footskip}{15mm}
 \setlength{\textheight}{260.5mm}
 \setlength{\parindent}{0pt}
-\setlength{\textwidth}{150mm}
+\setlength{\textwidth}{167mm}
 \setlength{\linewidth}{80mm}
 \setlength{\columnsep}{10mm}
 %\setlength{\leftmargin}{20mm}
 %\setlength{\rightmargin}{20mm}
-\setlength{\hoffset}{1.0cm}
+\setlength{\hoffset}{0.1cm}
 %\setlength{\marginparwidth}{20mm}
 %\setlength{\oddsidemargin}{-5mm}
 \setlength{\evensidemargin}{-5mm}
