@@ -37,12 +37,12 @@ in Melbourne]
 \setlength{\textwidth}{150mm}
 \setlength{\linewidth}{80mm}
 \setlength{\columnsep}{10mm}
-%\setlength{\leftmargin}{35mm}
-\setlength{\rightmargin}{35mm}
-\setlength{\hoffset}{-0.5cm}
+%\setlength{\leftmargin}{20mm}
+%\setlength{\rightmargin}{20mm}
+\setlength{\hoffset}{1.0cm}
 %\setlength{\marginparwidth}{20mm}
-\setlength{\oddsidemargin}{10mm}
-\setlength{\evensidemargin}{10mm}
+%\setlength{\oddsidemargin}{-5mm}
+\setlength{\evensidemargin}{-5mm}
 
 \newcommand{\arialEight}{\fontsize{8}{10}\fontfamily{phv}\fontseries{m}\fontshape{n}\selectfont}
 \newcommand{\arialNine}{\fontsize{9}{11}\fontfamily{phv}\fontseries{m}\fontshape{n}\selectfont}
