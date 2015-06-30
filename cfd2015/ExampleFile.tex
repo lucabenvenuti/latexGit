@@ -3,12 +3,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This template is created for complying with the author instructions for the 
-%8th International Conference on CFD in Oil & Gas, Metallurgical and Process Industries
-%hosted by SINTEF/NTNU, Trondheim Norway
-%17-19 June 2015
+%11th International Conference on CFD in Mineral and Process
+% Industries
+%2015
 %
-%Sverre G. Johnsen (sverre.g.johnsen@sintef.no)
-%SINTEF Materials and Chemistry
 
 
 %Required files:
@@ -24,7 +22,7 @@
 %   Table.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\usepackage{lipsum}
 
 
 \title{DEM parameter identification by means of artificial neural network for iron ore sintering}
@@ -77,306 +75,685 @@ Artificial Neural Networks }
 \vskip .1em
 
 \section{Introduction}
-Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - play a major role in a variety of industries, including process industry and metallurgy. In his book, \citet{RefWorks:117} stated that "between 1 and 10\% of all the energy is used in comminution, i.e. the processes of crushing, grinding, milling, micronising". 
-However, a univocal method to characterize these particles has so far not been established.
-%reached yet since the results obtained through experiments could be biased. 
-From the experimental point of view, the main issues are the difficult setups and the general reliability and reproducibility of the tests. 
-From the numerical point of view, no general procedure is available, and the existence of a mathematically unique solution describing macro/micro particle contact has yet to be proved.
-Moreover, in a recent study, \citet{RefWorks:56} implied "that the dynamic properties of a powder cannot be applied to universally predict the static properties of a powder, and, likewise, the static properties cannot be used to predict dynamic properties".\\
-Discrete Element Method (DEM) simulations are widely used to understand particle behavior.
-\citet{RefWorks:135} defined the $DEM$ as "a special class of numerical schemes for simulating the behavior of discrete, interacting bodies".
-The force that particle i exerts on particle j is defined as:
-% \ref{equ:newtonlaw}:
-\begin{equation}
-m \ddot{x}_{ij} + c \dot{x}_{ij} + k x_{ij} =  F_{ij} .
-\label{equ:newtonlaw}
-\end{equation}
-Further details on the method can be found in \citet{RefWorks:133}.
-$LIGGGHTS$ (LAMMPS improved for general granular and granular heat transfer simulations) is one of the most powerful open source $DEM$ simulation software packages available. 
-The models it can analyze are described in detail in the literature \cite{RefWorks:136}.\label{par:overviewdemliggghts}
-In combination with shear cell tester simulation \cite{RefWorks:139}, $LIGGGHTS$ has correctly defined the coefficient of sliding friction for coarse round particles - 
-a critical parameter describing inter-particle friction in medium to dense granular flows simulations.\\
-Since the bulk solid is represented by perfect spheres, the only parameter the software uses to describe its shape is the radius of the particle ($R$).
-However, since the shape is one of the most relevant aspects defining particle behavior, we consider the coefficient of rolling friction ($\mu_r$) as an additional $DEM$ shape parameter. 
-It is proportional to the torque counteracting the rotation of the particle and defined as (Eq. \ref{equ:mur}):
-\begin{equation}
- \mu_r =  \tan(\iota) .
-\label{equ:mur}
-\end{equation}
-$DEM $ simulations have recently been used to reduce the bias of the experiments, and more precise devices such as the Schulze ring shear cell tester (SRSCT)(see \citet{RefWorks:104}) have been built.
-A dedicated workflow that combines experiments and simulations must now be devised following the Design of Experiments method, as illustrated by \citet{RefWorks:116}.\\
-The main goal of this new procedure should be the characterization of non-spherical particles, especially the $DEM$ coefficients of friction, following standardizable steps.
-With this objective in mind, we profited from the shear cell experimental and numerical setup in combination with $LIGGGHTS$ simulation to improve the accuracy and the range of applicability of particle characterization.
-%The aforementioned software $LIGGGHTS $ was used for the simulations.
-Since this study was supported by the metallurgical industry, the materials examined were: silibeads (2 mm), coke, iron ore, limestone (all 0-3.15 mm).\\ \label{par:materials}
+\label{sec:introduction}
+%************************************************
 
-\section{Model Description}
- \label{sec:modeldesrip}
-For the raw materials used in this work \citet{RefWorks:145} suggested using the non-linear Hertzian model without cohesion for the particle-particle and particle-wall contacts.\\
-This granular model uses the following formula for the force between two granular particles (Eq. \ref{eq:forceij}):
-\small
-\begin{equation}
- F_{ij} = 
-\begin{cases}
-F_{n,ij} + F_{t,ij} = \left( k_n \delta_{n,ij} + \gamma_n v_{n,ij} \right) + \left( k_t \delta_{t,ij} + \gamma_t v_{t,ij} \right) & \text{if } r < d ,\\
-0    & \text{if } r > d ,\\
-\end{cases}
- \label{eq:forceij}
-\end{equation}
-\normalsize
+Particles in various forms - ranging from raw materials to food grains and pharmaceutical powders - 
+play a major role in a variety of industries. 
+Discrete Element Methods ($DEMs$) are widely used to simulate
+particle behaviour in these granular processes \cite{RefWorks:130}.\\
+In their original formulation of $DEM$, \citet{RefWorks:172} allowed two 
+particles to slightly overlap upon contact, and consequently they proposed
+repulsive forces in relation to this overlap distance.
+Their fundamental modelling concept has since been widely accepted in the
+literature and their soft-sphere contact law has been developed further by
+numerous researchers (\citet{RefWorks:148} and Di Renzo and Di Maio
+\citet{RefWorks:145}).
+With increasing computational resources, $DEM$ simulation have become very
+popular giving rise to the development of commercial (e.g., $PFC3D$, used by
+\citet{RefWorks:87}) and open-source software (e.g.,
+$LIGGGHTS$, \citet{RefWorks:136}, \citet{RefWorks:139}).
+Soft-sphere $DEM$ simulations of thousands of particles have been proven to 
+faithfully model particle bulk behaviour \cite{RefWorks:86}. \\
+In these macroscopic $DEM$ simulations, the contact law kernel between a 
+pair of particles determines the global bulk behaviour of the granular material \cite{RefWorks:131}. 
+As a consequence, defining a correct contact law is of crucial importance for the predictive 
+capability of $DEM$ simulations. 
+Since $DEM$ contact laws are based 
+on a set of semi-empirical parameters, correct contact law 
+parameters must be defined for a given granular material
+or $DEM$ simulations will fail \cite{RefWorks:177}. \\
+Identifying $DEM$ contact law parameters is not a trivial task. 
+Due to the huge number of particles in a granular material, it
+may be impractical to identify valid parameter sets by performing bilateral 
+particle collision experiments. 
+Furthermore, some contact law parameters such as the coefficient of rolling
+friction are purely empirical and cannot be determined by direct 
+particle-to-particle measurements \cite{RefWorks:87}.
+Therefore, $DEM$ contact law parameters 
+%(Table \ref{tab:08DEMparameters}) 
+are
+commonly determined by comparing the macroscopic outcome of large-scale $DEM$ simulations with 
+bulk experiments \cite{RefWorks:91}. 
+If $DEM$ simulation results disagree with bulk measurements, the set of contact
+law parameters must be adjusted until reasonable agreement is achieved.\\
+However, this purely forward methodology of parameter identification is limited by 
+the multi-dimensionality of the parameter space and the associated computational costs of the required 
+$DEM$ test simulations. 
+Moreover, one parameter set which is valid for one bulk behaviour (e.g., angle
+of repose) might fail for another (e.g., shear tester). \\
+Clearly, there is a need for an efficient method for identifying
+$DEM$ contact law parameters.
+In our study, we harnessed Artificial Neural Networks ($ANNs$) in order to
+reduce the number of $DEM$ test simulations required. 
+$ANNs$ have proven to be a versatile tool in analysing complex, non-linear
+systems of multi-dimensional input streams 
+\cite{RefWorks:150}.
+%(Vaferi et al. \cite{RefWorks:150}, Witten et
+%al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
+In our case, we fed an $ANN$ with $DEM$ contact law parameters as input
+and compared the output with the bulk behaviour 
+predicted by a corresponding $DEM$ simulation. 
+The difference between $ANN$ prediction and $DEM$ prediction is used to train our 
+specific $ANN$ with a backward-propagation algorithm (described further below). 
+After a training phase comprising a limited number of $DEM$ test simulations,
+the $ANN$ can then be used as a stand-alone prediction tool for the bulk behaviour of a 
+granular material in relation to $DEM$ contact law parameters. \\
+In this study, we applied this parameter identification method to two different
+granular bulk behaviours, namely the angle of repose ($AoR$) test and the
+Schulze shear cell ($SSC$) test.
+In both cases, we first trained a specific $ANN$ using a number of $DEM$ test
+simulations before we identified valid sets of $DEM$ contact law parameters by
+comparing the stand-alone $ANN$ predictions with corresponding bulk experiments. 
+For both cases we obtained valid sets of contact law parameters, 
+which we then compared to formulate a reliable contact law for a given
+granular material.
+We further show that the same $ANN$ can be used to characterize different granular materials. \\
+In the next section we define some prerequisites including $DEM$ contact law
+definitions, a general description of the $ANN$ functionality, and the proposed
+method of $DEM$ contact law parameter identification.
+We then describe how it is applied to characterize the $DEM$ contact law
+parameters of sinter fines.
+%************************************************
 
-while the tangential force component is truncated to fulfill
+\section{DEM Parameter Identification}
+\label{sec:methodology}
 
+Fig. \ref{fig:19methodology} illustrates the methodology used.
+
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{19methodology} 
+\caption[Method]{Method. 
+In the training phase (dashed lines)
+$DEM$ simulations are performed
+with random initial input parameters.
+The behaviours obtained are used to train the
+Artificial Neural Networks ($ANNs$) in a loop that continues until the
+difference between the outputs of each $ANN$ and its simulations is below the
+limit ($\Delta$) (see Section \ref{subsec:ann}).
+In the parameters identification phase (solid
+lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
+experimental behaviours.
+Further explanations can be found in Section \ref{sec:methodology}.
+}
+\label{fig:19methodology} 
+\end{figure}
+%************************************************
+\subsection{Discrete element method}
+\label{subsec:dem}
+
+We decided to utilize a single
+contact law for all the simulations performed, for details see
+\citet{RefWorks:180}.
+The $DEM$ parameters for the Young's modulus ($E$) and the Poisson's coefficient
+($\nu$) were taken from the literature, see \citet{RefWorks:175} 
+and \cite{RefWorks:176}; however we reduced the former to increase the time step
+($\Delta t$), following the recommendations of \citet{RefWorks:131}.
+The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
+also depends on the particle density ($\rho_p$).
+Furthermore, we locked the size distribution, which was obtained by experimental
+sieving, see Table \ref{tab:09DEMFixedinputvalues}.
+In the contact law we used, 
+the tangential component of the contact force between two generic particles
+($F_t$) is truncated to fulfil:
+%************************************************
 \begin{equation}
-F_{t,ij} \leq \mu_s F_{n,ij}.
+F_{t} \leq \mu_s F_{n},
  \label{eq:force_t}
 \end{equation}
-
-Both the normal and the tangential force comprise two terms, a spring force and a damping force. The shear force is a "history" effect that accounts for the tangential displacement ("tangential overlap") between the particles for the duration of contact. \\
-
-The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from the material properties as follows:
+%************************************************
+where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
+friction, one of the particle-based $DEM$ parameter we investigated, 
+another being the coefficient of rolling friction ($\mu_r$). 
+For coarse non-spherical particles, this is a critical parameter and describes
+inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
+torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
+equations according to the elasto-rolling resistance model presented by
+\citet{RefWorks:87} and \citet{RefWorks:131} 
+based on the work of \citet{RefWorks:143}. 
+The model is called $EPSD2$ in $LIGGGHTS$ and is appropriate for both one-way and cyclical rolling cases.
+The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
+%************************************************
 \begin{equation}
-\begin{aligned}
-	k_n &= \frac{4}{3} E_{eq} \sqrt{R_{eq} \delta_n} ,\\
-	\gamma_n &= 2 \sqrt{\frac{5}{6}} \beta \sqrt{S_n m_{eq}} ,\\
-	k_t &= 8 G_{eq} \sqrt{R_{eq}} \delta_n ,\\
-	\gamma_t &= 2 \sqrt{\frac{5}{6}} \beta \sqrt{S_t m_{eq}} .
-\end{aligned}
-\label{eq:hertz}
+T_{r~max} = \mu_r R_r |\tilde{F_n}| ~,
+ \label{eq:trmax}
 \end{equation}
-%
-In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{eq:equivProp2}) are required:
-%
-\begin{equation}
-\begin{aligned}
- \frac{1}{E_{eq}} & = \frac{1-\nu_i^2}{E_i} + \frac{1-\nu_j^2}{E_j} ,\\
- \frac{1}{G_{eq}} & = \frac{2(2+\nu_i)(1-\nu_i)}{E_i} + \frac{2(2+\nu_j)(1-\nu_j)}{E_j} ,\\
- \frac{1}{R_{eq}} &= \frac{1}{R_i} + \frac{1}{R_j} ,\\
- \frac{1}{m_{eq}} &= \frac{1}{m_i} + \frac{1}{m_j} ,\\
- \beta & = \frac{\ln(e)}{\sqrt{ln^2(e)+\pi^2}} ,\\
- S_n & = 2 E_{eq} \sqrt{R_{eq} \delta_n} ,\\
- S_t & = 8 G_{eq} \sqrt{R_{eq} \delta_n} ,\\
- k_r & = k_t R_{eq}^2 .\\
-\end{aligned}
-\label{eq:equivProp2}
-\end{equation}
-
-The $\mu_r$ parameter enters the equations according to the elasto-rolling resistance model presented by \citet{RefWorks:87} and \citet{RefWorks:131}, also used by \citet{RefWorks:147}, based on the work of \citet{RefWorks:143}(and in contrast to \citet{RefWorks:144}). The model is called EPSD2 in LIGGGHTS.
-This is appropriate for the one way rolling cases as well as the cycling rolling ones.
-The total rolling resistance torque is (Eq. \ref{eq:mrtm}):
-
-\begin{equation}
-\begin{aligned}
-M_r &= M_r^k ,\\
-M_{r,ti+\Delta ti}^k &= M_{r,ti}^k - k_r \Delta \theta_r ,\\
-\lvert{M_{r,ti+\Delta ti}^k}\rvert & \leq M_r^m = \mu_r R_{eq} F_n .\\
-\end{aligned}
- \label{eq:mrtm}
-\end{equation}
-
-
-Given these equations, completely defining a dry material for DEM simulations requires these data:
-\begin{itemize}
-\item{the radius of the particles ($R$);}
-\item{the Young's modulus ($E$) and the Poisson's coefficient ($\nu$);}
-\item{the particle density ($\rho_p$) and the coefficient of restitution ($e$);}
-\item{the coefficients of sliding ($\mu_s$) and rolling ($\mu_r$) friction.}
-\end{itemize}
-
-
-\section{Experimental setup}
-The first step of the procedure was using shear testers - 
-a simplified Jenike shear cell tester ($JSCT$, see \citet{RefWorks:114}) and a SRSCT (see \citet{RefWorks:142})
-to characterize particle flow properties, especially the complete yield locus.
-Each experiment was performed on a fresh material sample. \\
-In the tests with the simplified $JSCT$, a representative sample of bulk solid was placed in a shear cell of 104 mm diameter. 
-This specimen was pre-consolidated by twisting the shear cell cover while applying a compressive load (from 0.488 to 1.379 kg) normal to it.
-Since this was a simplified tester, the specimen was then sheared with the same normal load at a constant velocity. 
-In fact, the \textit{shear to failure} phase was missing in these \textit{simplified} tests, and the \textit{consolidation} phase was not completely serialized.
-The steady-state flow horizontal stress (Fig. \ref{fig:04sjsctdiagram}) is called pre-shear stress ($\tau_{psh}$). Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal friction of the pre-shear phase ($\phi_{e-psh}$), our first flowability value \cite{RefWorks:118}:
-\begin{equation}
-\begin{aligned}
-\phi_{e-psh} &= \arctan \left(\frac{\tau_{psh}}{\sigma_{n,psh}} \right) ,\\
-\mu_{psh} &=\tan(\phi_{e-psh}) .
-\end{aligned}
- \label{eq:phi_ps}
-\end{equation}
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.7\columnwidth]{03sjsct} 
-\caption[simplified JSCT]{Jenike shear cell tester \cite{RefWorks:118}}
-\label{fig:03sjsct} 
-\end{figure}
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.7\columnwidth]{04sjsctdiagram} 
-\caption[Sjsct diagram]{Jenike shear cell tester diagram \cite{RefWorks:118}}
-\label{fig:04sjsctdiagram} 
-\end{figure}
-
-Analogously, in the $SRSCT$ tests a representative sample of bulk solid was placed in a shear cell of specified dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$). A normal load was applied to the cover, and the specimen was pre-sheared  until a steady-state shear value was reached, again obtaining $\phi_{e-psh}$. 
-The normal stress and the angular velocity were then immediately reduced to zero. 
-Subsequently, the specimen was sheared under a fraction of the first normal load until the shear force reached a maximum and began to decrease. Both the pre-shear and shear phases were executed at constant velocity. We define the horizontal stress during the shear force peak as maximum shear stress, thus obtaining (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
-\begin{equation}
-\begin{aligned}
-\phi_{e-sh} &= \arctan \left(\frac{\tau_{sh}}{\sigma_{n,sh}} \right) ,\\
-\mu_{sh} &= \tan(\phi_{e-sh}) .
-\end{aligned}
- \label{eq:phi_s}
-\end{equation}
-From three to four different pre-shear normal loads were applied in the experiment. For each we used
-a proportional shear increasing from stage one (40\%) to stage four (100\%) with two escalating intermediate stages (60\% and 80\%).
-%with one to four proportional shear normal load each (40\%, 60\%, 80\%, 100\%).
-The $\phi_{e-psh}$ values for the limestone obtained with the $SRSCT$ and the simplified $JSCT$ were in good accordance (less than 1\% difference), therefore we were able to validate the latter experimental device for this material.\\
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.7\columnwidth]{01srsct} 
-\caption[Srsct]{Schulze ring shear cell tester \cite{RefWorks:118}}
-\label{fig:01srsct} 
-\end{figure}
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.7\columnwidth]{02srsctdiagram} 
-\caption[Srsct diagram]{Schulze ring shear cell tester diagram \cite{RefWorks:118}}
-\label{fig:02srsctdiagram} 
-\end{figure}
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.5\columnwidth]{05aor} 
-\caption[Aort]{Angle of repose tester \cite{RefWorks:118}}
-\label{fig:05aor} 
-\end{figure}
-
-Furthermore, in order to recreate the repose angle observed in a pile of the real material, a sample was deposited on a 20 cm diameter plate with liftable boundary, called static angle of repose ($AOR$) tester (Fig. \ref{fig:05aor}). 
-Once the particles were in position, the boundary was lifted, allowing some particles to drop. Once stabilized, the $AOR$ was measured eight times using a digital protractor at different positions of the heap. The result is given as the average of the measurements (Tab. \ref{tab:comparisontable}).\\
-
-
-
-\section{Simulations}
-
-$LIGGGHTS$, the simulation toolbox we used, meets most of the requirements of modelling the shear tester described above. First, it is capable of importing triangulated meshes of the two rings and a top lid. Since the real set-up had a wall thickness, both rings have additional horizontal walls that prevent the particles from falling out of the shear cell. Further, all particle-wall contact forces acting on a mesh are summed and can be saved, and thus shear force calculation is available out of the box. Moreover, the code can move a mesh with constant velocity as required for the measurement. 
-To determine the shear stresses, the bulk solid had to be stressed with user-defined normal stresses.
-Therefore, a stress-controlled wall ($servo-wall$ in $LIGGGHTS$) was applied to the lid. \\
-\InsTab{TableProp}
-
-Although the geometry differs, the $SRSCT$ was designed to obtain the same values for the shear stresses as the $JSCT$, but with improved automation and reliability \cite{RefWorks:118}. 
-For this reason, the simulation setup realized included only the $JSCT$, and it had been used to compare both experimental testers.
-As suggested by \citet{RefWorks:139}, the diameter and the height of the rings operated in the simulations were respectively 50 and 13 times the diameter of the particles involved.
-The layout of the simulation geometry can be seen in Figure \ref{fig:09simGeometry}. \\
-
-\begin{figure}[!htb] 
-\centering 
-\includegraphics[width=.7\columnwidth]{09simGeometry} 
-\caption[scsim]{shear cell simulation layout}
-\label{fig:09simGeometry} 
-\end{figure}
-
-\begin{figure}[!htb]
+%************************************************
+where $R_r$ is the equivalent radius and $F_n$ the normal force.
+The last two particle-based $DEM$ parameters we investigated were $\rho_p$
+and the coefficient of restitution ($COR$) as defined by \citet{RefWorks:131}.
+These coefficients, $COR$, $\mu_s$, $\mu_r$,
+$\rho_p$ and $dCylDp$ (the cylinder dimension, proportional to the mean
+particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues}, 
+were constant in each simulation, but their combination differed between
+simulations.
+Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
+simulations had a $dCylDp$ larger than $20$ (additional information can be found
+in \citet{RefWorks:180}).
+The normal stress $\sigma_n$ and its
+percentage during the incipient flow condition $\tau_{\%}$
+varied to replicate twelve shear-cell load conditions. 
+The complete description of the shear-cell 
+and the $AoR$ simulations
+can be found in \citet{RefWorks:180}.
+A Matlab script allowed us to extract from the simulation output the numerical
+values representative of bulk behaviour (hereafter called $bulk ~ values$)
+for each DEM simulation parameter combination, which consists of
+bulk density ($\rho_b$),
+coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
+coefficient of internal friction in the shear phase ($\mu_{sh}$),
+and angle of repose ($AoR$).
+The first bulk value ($\rho_b$) was provided directly. 
+% For correctly performed simulations, see Benvenuti et al. \cite{RefWorks:180}, we
+% observed a stress path as in Fig. \ref{fig:21simexample}.
+First, the $\sigma_n$ was kept constant while the coefficient of internal
+friction ($\mu_{ie}$) initially increased and then reached a plateau.
+The second bulk value ($\mu_{psh}$) was calculated as the average of the
+$\mu_{ie}$ in this plateau.
+The $\sigma_n$ was then automatically reduced, in our example to $80 \%$ of
+its initial value.
+Subsequently, a second plateau developed.
+We obtained the third
+value ($\mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+The stress path accords with the experimental one, especially the plateaux.\\
+In the $AoR$ tests the average of the repose angles provided us with the fourth
+bulk value, allowing us to define the numerical bulk behaviour.
+%************************************************
+\begin{table}%[h]
 \centering
-{\label{fig:11coke}%
-\includegraphics[width=.86\columnwidth]{11coke}} \\ % \quad %,width=.48\columnwidth
-{\label{fig:13ironore}%
-\includegraphics[width=.86\columnwidth]{13ironore}} \\  %,width=.48\columnwidth height=5cm
-{\label{fig:10limestone}%
-\includegraphics[width=.86\columnwidth]{10limestone}} \\ % \quad %,width=.48\columnwidth
-{\label{fig:12silibeads}%
-\includegraphics[width=.86\columnwidth]{12silibeads}} \\  %,width=.48\columnwidth height=5cm
-\caption[JSCT simulation]{JSCT simulation with different materials}
-\label{fig:shearcellsimulationresults}
-\end{figure}
+\begin{tabular}{ccccc}
+\hline
+    Mean & Std.dev.  & Young's & Poisson's & $\Delta t$\\
+    $R$ & $R$ & modulus & ratio & \\
+    (mm)  & (mm)  & (MPa) & (-) & (s)\\
+    \hline
+    $0.732$ & $0.41$ & $10$    & $0.40$ & $10^{-6}$\\
+\hline
+\end{tabular}
+\caption{DEM fixed input values}
+\label{tab:09DEMFixedinputvalues}
+\end{table}
+%************************************************
+\begin{table*}%[h]
+\centering
+\begin{tabular}{ccccc}
+\hline
+    $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $dCylDp$ \\
+    	(-)  & (-)   & (-)   & (kg/m3) & (-) \\
+    \hline
+    0.4 / 0.6 / 0.8 & 0.4 / 0.6 / 0.8 & 0.5 / 0.7 / 0.9 & 2500 / 3000 / 3500 & 20 / 36 / 38 / 40 \\
 
-To reduce the computational effort in the simulation, only one average value was used for each parameter indicated in the \textit{model description} section, except for the coefficients of friction.
-A simulation run comprised four phases. 
-First, the shear cell was filled with the granulate material, and it was allowed to settle. 
-Then, the top lid was lowered and applied the first normal stress to the bulk solid. 
-Next, the ring moved for a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and the required pre-shear force was measured. 
-Finally, the normal load was reduced to a fraction of the initial load, the ring was moved again by a distance $l$, and the shear force was recorded. 
-Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation.\\
-The normal stresses (pre-shear and shear phases) applied in each simulation were the same as in the experiments. The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau (Fig. \ref{fig:shearcellsimulationresults}).
-Thus, we obtained the $\mu_{psh}$ and the $\mu_{sh}$ values to be compared with the experimental values. 
-The $DEM$ $ \mu_s $ and $ \mu_r $ were calibrated via trial-and-error to match these values.\\
-Further, we also performed $AOR$ simulations. Here we tried to replicate meticulously the experimental setup, considering both the plate and the liftable boundary, respectively 50 and 20 times the diameter of the particles involved.
-The particles had the same properties as in the shear cell simulation, and featured the calibrated $ \mu_s $ and $ \mu_r $.
-The first phase was identical to that of the shear cell simulation. 
-After lifting the boundary, the particles formed a heap (Fig. \ref{fig:08aorsim}). 
-An image post-processing software was used to obtain the average slope.
-The whole $AOR$ simulation setup was handled using a beta graphical user interface for $LIGGGHTS$.\\
-Furthermore, in both simulation setups the $E$ value was not realistic, but reduced to increase the time step.
-This led to a reduction in computational time, resulting in 22 minutes with 32 cores for each shear cell simulation and 6 hours for each $AOR$ simulation.\\
+\hline
+\end{tabular}
+\caption[DEM variable input values]{DEM variable input values for training the
+Artificial Neural Networks}
+\label{tab:10DEMVariableinputvalues}
+\end{table*}
+%************************************************
+\begin{table*}%[h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+ &  $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$  \\
+   &	(-)  & (-)   & (-)   & (kg/m3) \\
+          \hline
+    range & $[0.1 \ldots 1.0]$ & $[0.1 \ldots 1.0]$ & $[0.5 \ldots 0.9]$ &
+    $[2000 \ldots 3500]$     \\
+    number of values & 100   & 100   & 25    & 25    \\
 
+\hline
+\end{tabular}
+\caption[DEM random input values]{DEM random input values. Within each range the
+indicated number of random values was chosen according to a standard uniform
+distribution.}
+\label{tab:12DEMRandominputvalues}
+\end{table*}
+%************************************************
 
-\begin{figure}[!htb] 
+\subsection{Artificial Neural Networks}
+\label{subsec:ann}
+We first defined the typology of Artificial Neural Networks ($ANNs$) we used and
+the input we fed them, see \citet{RefWorks:180}.
+Our $ANNs$ have three different layers: the input layer has a number of neurons
+equal to the number of different inputs of the network, see Fig. \ref{fig:18nnscheme}.
+The hidden (or central) layer's number of neurons was to be investigated. 
+The output layer contains one neuron for the output.
+The transfer functions for the central layer are the tangential sigmoid.\\
+Thus, we were able to use the $DEM$ parameter combinations and their
+corresponding bulk values to train the $ANNs$.
+Note that 15\% of the simulations ($test ~ simulations$) were
+randomly picked and excluded from the training processes.
+We started with all the $DEM$ parameter combinations and their corresponding
+numerical $\mu_{psh}$ to create 36 $ANNs$ that differed in their numbers of
+neurons in the hidden layer (between five to forty neurons).
+We then determined the coefficient of determination ($R^2$) between the
+$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
+which were not correlated with the remaining 85\% used for the training. 
+Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
+again as suggested by \citet{RefWorks:150}, and we noted its number
+of neurons.
+We repeated the same $ANN$ creation steps for $\mu_{sh}$, $\rho_b$
+and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
+Since $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
+simulations, their $ANNs$ were handled together: we had one cluster with three 
+$ANNs$ for the shear cell and one with only one $ANN$ for the $AoR$.
+We could then proceed in identifying valid input parameters.
+\citet{RefWorks:160} suggested using a Design of Experiments
+($DoE$) method to determine the parameter combinations to be simulated.
+They stated that this approach allows optimization of computation time
+with an acceptable loss of precision.
+The speed of the trained $ANNs$ enabled us to follow a different approach to
+maximizing the precision of the characterization.
+We created random values
+in the range and numbers defined in Table \ref{tab:12DEMRandominputvalues}
+according to a standard uniform distribution.
+The total number of combinations of these random values was 6,250,000.
+These combinations were then fed to and processed by the selected
+$ANNs$, and thus three bulk values for the shear
+cell and one for the $AoR$ were obtained.
+%************************************************
+\begin{figure}%[!htb] 
 \centering 
-\includegraphics[width=.7\columnwidth]{08aorsim} 
-\caption[AORS]{AOR simulation, heap of particles}
-\label{fig:08aorsim} 
+\includegraphics[width=.96\columnwidth]{18nnscheme} 
+\caption[ANN Scheme]{Artificial Neural Network ($ANN$) Scheme
+of how the Multilayer Perceptron $ANN$ ($MLPNN$) derives one
+bulk-behaviour-dependent variable from the mutually independent simulation variables.}
+\label{fig:18nnscheme} 
+\end{figure}
+%************************************************
+
+\subsection{Macroscopic Experiments and Parameter Identification}
+\label{subsec:macroscopicexperimentsparameteridentification}
+The experimental characterization was performed as described in
+\citet{RefWorks:180}. 
+We obtained for each of the twelve load conditions of the $SSC$ three bulk
+values ($\mu_{psh}$, $\mu_{sh}$ and $\rho_b$).
+The fourth bulk value was the result of two angle of repose ($AoR$) tests that
+recreated the repose angle observed in a pile of the
+real material. 
+
+Subsequently, we compared the $ANN$ and experimental bulk behaviours for the
+twelve shear-cell load conditions.
+If in a DEM-parameter combination all the three bulk values differed by less 
+than 5\% from those of the corresponding experiments, i.e.:
+%************************************************
+\begin{equation}
+ \begin{cases}
+\text{if } & \lvert{1-\frac{\mu_{psh,num}}{\mu_{psh,exp}}}\rvert < 5\%  ,\\
+\text{and if } & \lvert{1-\frac{\mu_{sh,num}}{\mu_{sh,exp}}}\rvert < 5\% , \\ 
+\text{and if } & \lvert{1-\frac{\rho_{p,num}}{\rho_{p,exp}}}\rvert < 5\% ,\\ 
+\end{cases}
+ \label{eq:check2}
+\end{equation}
+%************************************************
+the combination was marked. The marked combinations were processed by the
+$AoR$ $ANN$, and then compared with the experiment.
+Were considered valid those that differed by less than $5\%$ also in this
+comparison (Eq. \ref{eq:checkaor}):
+%************************************************
+\begin{equation}
+\text{if} ~~~~~~ \lvert{1-\frac{AoR_{num}}{AoR_{exp}}}\rvert < 5\% .
+\label{eq:checkaor}
+\end{equation}
+%************************************************
+Further, to prove the validity of the system, we tested the marked combinations
+by modifying the experimental bulk values of the shear cell. 
+We artificially decreased or increased the shear force, and thus $\mu_{psh}$ and
+$\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+%************************************************
+\begin{equation}
+\label{eq:pcoeff}
+\mu_{psh, new} = \mu_{psh, old} \cdot P .
+\end{equation}
+
+%************************************************
+
+\subsection{Application}
+\label{subsec:application}
+
+\lipsum[1]
+
+%************************************************
+
+\section{Results and discussion}
+\label{sec:results}
+%************************************************
+
+\subsection{DEM Simulations}
+\label{subsec:simulations}
+
+For sinter fine, 546 shear cell and 81 static $AoR$ simulations were run with
+the parameter combinations described in Table
+\ref{tab:10DEMVariableinputvalues}.
+The computational time amounted to 1 hour with 32 AMD cores for a benchmark
+shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
+50,000 particles.
+Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
+the shear cell with 400,000 particles ). \\
+
+
+\subsection{ANN model development}
+\label{subsec:annmodeldev}
+
+First, we determined the regression of the bulk behaviour parameters, for
+instance the $\mu_{psh}$; see Fig. \ref{fig:22regression}, where the
+corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
+simulations.
+The plot shows a consistent agreement between the 
+$DEM$ and the $ANN$ values and an almost linear regression ($R^2
+= 0.94$).
+% The linear relationship between the
+% training values can be seen in Table \ref{tab:06inputRelationshipTable}.
+The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
+$\rho_p$ and $\rho_b$.
+In contrast, for $\mu_{sh}$ and $AoR$, the $\mu_r$ balanced the influence of the 
+$\mu_s$. \\
+We then investigated how the $R^2$ changed with the number of neurons
+for the $\mu_{psh}$.
+In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
+Increasing the number of neurons did not improve the $R^2$; it even started to
+oscillate with higher numbers of neurons.
+We subsequently obtained the optimal number of neurons for all $ANNs$.
+Further, we processed the random combinations (Table
+\ref{tab:10DEMVariableinputvalues}) with the $ANN$.
+The $ANN$ evaluation was significantly faster than the $DEM$ simulations. The
+individuation of the numerical bulk behaviours for all the $DEM$ combinations
+did not take more than a few seconds on a single core.
+%************************************************
+\begin{figure}%[!h] 
+\centering 
+\includegraphics[width=.96\columnwidth]{22regression}
+%[width=.96\textwidth]
+\caption[Comparison between prediction of the trained ANN and full DEM
+simulation]{Comparison between prediction of the trained Artificial Neural
+Network ($ANN$) and 546 full DEM simulations of the coefficient of pre-shear
+($\mu_{psh}$). In this case the regression line is nearly linear (0.94), and
+demonstrates the accurate predictive power of the $ANN$.}
+\label{fig:22regression} 
+\end{figure}
+% %************************************************
+% \begin{table*}%[h]
+% \centering
+% \scalebox{1.0}{
+% \begin{tabular}{lcccccccc}
+% \hline
+%          & $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $\mu_{sh}$ &
+%         $\mu_{psh}$ & $\rho_{b}$ & $AoR$ \\
+%           \hline
+%     $\mu_s$ & 100.00 & 0.55  & 0.04  & 0.00  & 3.84  & 87.26 & 8.39  & 49.48 \\
+%     $\mu_r$ & 0.55  & 100.00 & 0.15  & 0.00  & 58.92 & 33.70 & 3.10  & 60.20 \\
+%     $COR$ & 0.04  & 0.15  & 100.00 & 0.00  & 15.52 & 0.57  & 1.71  & 21.35 \\
+%     $\rho_p$ & 0.00  & 0.00  & 0.00  & 100.00 & 4.98  & 5.71  & 99.00 & 0.00 \\
+%     $\mu_{sh}$ & 3.84  & 58.92 & 15.52 & 4.98  & 100.00 & 26.03 & 9.52  & 0.00 \\
+%     $\mu_{psh}$ & \textbf{87.26} & 33.70 & 0.57  & 5.71  & 26.03 & 100.00 & 4.33 
+%     & 0.00
+%     \\
+%     $\rho_{b}$ & 8.39  & 3.10  & 1.71  & \textbf{99.00} & 9.52  & 4.33  & 100.00
+%     & 0.00 \\
+%     $AoR$ \hspace{5ex} & 49.48 & \textbf{60.20} & 21.35  & 0.00  & 0.00  & 0.00 
+%     & 0.00  & 100.00 \\
+%     
+% \hline
+% \end{tabular}}
+% \caption[Values of linear relationship between considered variables]{Values of
+% linear relationship between variables considered multiplied by 100. Sliding
+% friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
+% had the greatest influence on, respectively, the coefficient of pre-shear
+% ($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
+% was not used as a training parameter for $AoR$ bulk behaviour.}
+% \label{tab:06inputRelationshipTable}
+% \end{table*}
+% %************************************************
+
+
+\subsection{Experiments and Parameter Identification}
+\label{subsec:experimentsparameteridentification}
+
+Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+of sinter fine were acquired through $SSC$ tests. 
+% Table \ref{tab:05sinterTableExperimental} presents
+% these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
+% the $\mu_{sh}$ oscillates.
+The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
+kg/m3 deviation.
+Two $AoR$ tests were performed that gave an average angle of
+38.85$^\circ$.
+We obtained the radius ($R$) mean and standard
+deviations, as shown in Table
+\ref{tab:09DEMFixedinputvalues}, from sieving experiments.
+The comparison between numerical and experimental behaviours led to a first
+series of marked combinations ($MC1$) for one load condition of
+the shear cell ($\sigma_n=10,070$ Pa, P=1.0), as plotted in Fig.
+\ref{fig:24radarpirker1schulze10070}, where 
+the minimum and maximum values are shown, together with the mean. 
+Each axis of the parameter space plot represents one simulation parameter.
+The shaded area indicates valid parameter combinations, and dark shaded
+values indicate the confidence range.
+Note that the confidence interval is large, 
+especially for the $COR$, which highlights its insignificant influence on the
+characterization.
+Both the $\rho_p$  and the $\mu_s$, however, show a narrow confidence interval, 
+which demonstrates their influence and the ability of this procedure to find
+valid $DEM$ parameters.
+These results agree with our examination of the ratio of the standard deviation
+to the range, see Table \ref{tab:13DEMvalidvalues}.
+Further, we observed that various $DEM$ parameter
+combinations could reproduce the experimental behaviour, and thus evaluated
+their mutual dependencies.
+This is shown more clearly in a density plot (see Fig. 
+\ref{fig:25cloudpirker1schulze10070} for $MC1$) 
+of the particles' coefficient of restitution ($COR$) in relation to
+the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$); 
+in the white area, no valid sets of simulation parameters can be found.
+In each cell the valid sets are grouped according to the 4 different COR
+ranges.
+Each cell is colored according to the group with the most members.
+Multiple
+combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
+the experimental behaviour with varying $COR$.
+This underlines once more their correlation, as already stated by
+\citet{RefWorks:87}.
+To further demonstrate the validity of the procedure, we modified the product
+coefficient. 
+First, we set it to $P=0.8$, and we obtained another
+series of marked combinations ($MC2$).
+It can be seen in the parameter space plot in Fig.
+\ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
+than for $P=1.0$, while in the density plot in Fig. 
+\ref{fig:27cloudpirker08schulze10070} the area
+appears larger, although slightly less densely populated. Finally, for $P=1.2$
+and its marked combinations ($MC3$) the parameter space plot in Fig.
+\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
+range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
+shows a smaller area. As expected, the procedure was highly sensitive to
+variations in the experimental data.
+Our approach could therefore be used
+for a wide range of bulk materials.\\
+We then processed the random combinations with the $AoR$ $ANN$. In Fig.
+\ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
+before can be seen.
+In accordance with theory \cite{RefWorks:87}, in a simulation dominated
+by rolling particles, the coefficient of rolling friction has the maximum
+influence. \\
+Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
+and compared it with the experimental one.
+As can be seen in the parameter space plot in Fig.
+\ref{fig:33radarpirker1schulze10070aor}, the confidence interval is very small,
+indicating that all the parameters but the $COR$ played an important role, 
+and demonstrating the reliability of these parameter
+combinations in representing the bulk behaviour.
+From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
+\%), see Table \ref{tab:13DEMvalidvalues}.
+%************************************************
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{cccccc}
+% \hline
+% $\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
+% $\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
+% \hline
+%     1068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
+%     2069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
+%     10070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
+% 
+% \hline
+% \end{tabular}
+% \caption[Experimental results]{Experimental results. Values for three
+% load conditions}
+% \label{tab:05sinterTableExperimental}
+% \end{table}
+%************************************************
+\begin{table*}%[h]
+\centering
+\begin{tabular}{llccc}
+\hline
+
+          & type  & SSC & AoR   & SSC \& AoR \\
+          \hline
+
+    $\mu_s$ & mean  & 0.831 & 0.177 & 0.664 \\
+    $(-)$   & std. dev. (SD) & 0.097 & 0.095 & 0.029 \\
+          & range ($R$) & 0.9   & 0.9   & 0.9 \\
+          & SD / R & 0.108 & 0.106 & 0.032 \\
+          \hline
+    $\mu_r$ & mean  & 0.692 & 0.830 & 0.916 \\
+    $(-)$   & std. dev. (SD) & 0.215 & 0.193 & 0.042 \\
+          & range ($R$) & 0.9   & 0.9   & 0.9 \\
+          & SD / R & 0.239 & 0.214 & 0.046 \\
+          \hline
+              COR   & mean  & 0.708 & 0.590 & 0.590 \\
+    $(-)$   & std. dev. (SD) & 0.104 & 0.073 & 0.065 \\
+          & range ($R$) & 0.4   & 0.4   & 0.4 \\
+          & SD / R & 0.259 & 0.183 & 0.161 \\
+          \hline
+    $\rho_p$ & mean  & 2245.7 & 3192.8 & 2283.9 \\
+    $(kg/m3)$ & std. dev. (SD) & 80.5  & 277.4 & 67.1 \\
+          & range ($R$) & 1500  & 1500  & 1500 \\
+          & SD / R & 0.054 & 0.185 & 0.045 \\
+          \hline
+    valid & number & 290203 & 816552 & 3884 \\
+    combinations & (\%) & 4.64  & 13.06 & 0.06 \\  
+
+\hline
+\end{tabular}
+\caption[Valid DEM values]{Valid DEM values. For each parameter we show the
+valid parameter statistics in the two tests and in their intersection.
+Finally, we show the number of valid parameter combinations over the total
+(6250000).}
+\label{tab:13DEMvalidvalues}
+\end{table*}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{26radarpirker08schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+\label{fig:26radarpirker08schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{24radarpirker1schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+\label{fig:24radarpirker1schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{28radarpirker12schulze10070} 
+\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+\label{fig:28radarpirker12schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{27cloudpirker08schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
+\label{fig:27cloudpirker08schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{25cloudpirker1schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
+\label{fig:25cloudpirker1schulze10070} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{30cloudpirker12schulze10070} 
+\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
+\label{fig:30cloudpirker12schulze10070} 
+\end{figure}
+%************************************************
+
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{31radarpirker1aor} 
+\caption{Parameter space plot, $AoR_{exp} = 38.85 ^\circ$}
+\label{fig:31radarpirker1aor} 
+\end{figure}
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{33radarpirker1schulze10070aor} 
+\caption{Parameter space plot, $AoR_{exp} = 38.85
+        ^\circ$ \& $SSC$: $\sigma_n=10070$ Pa}
+\label{fig:33radarpirker1schulze10070aor} 
 \end{figure}
 
-\InsTab{TableCheck}
-\InsTab{TableRaw}
+%************************************************
 
-\section{Results}
+\subsection{Macroscopic application}
+\label{subsec:macroapplication}
 
-The numerical results for $\mu_{psh}$ and $\mu_{sh}$ were compared with the experimental results from the $SRSCT$.
-For each material, each simulation was performed with a different pair of $\mu_s$ and $\mu_r$ values and different normal load $k$ and fraction of normal load $l$ for the second phase. 
-This gives 16 simulations for each pair, as shown in Table \ref{tab:limestonecheck}.
-First, we tried a widely spaced range of $\mu_s$ and $\mu_r$ parameters (0.2, 0.4, 0.6, 0.8, 1.0) ($16 \cdot 5 \cdot 5 = 400 ~simulations$ for the first run for each material).
-We then compared for each normal load and fraction of normal load the $\mu_{psh}$ and $\mu_{sh}$ 
-experimental and simulated,
-%in the experimental and simulation results
-respectively $\mu_{psh,exp}$ and $\mu_{sh,exp}$, and $\mu_{psh,sim}$ and $\mu_{sh,sim}$ by determining the check parameter $C_{kl}$ according to Equation \ref{eq:check}:
+\lipsum[1]
 
- \small
- \begin{equation}
-  C_{kl} = 
- \begin{cases}
-1 & \text{if } (\lvert{1-\frac{\mu_{psh,sim}}{\mu_{psh,exp}}}\rvert < 5\% ~\text{and}~ \lvert{1-\frac{\mu_{sh,sim}}{\mu_{sh,exp}}}\rvert < 5\% ) ,\\
-0 & \text{else} .\\ 
-\end{cases}
- \label{eq:check}
-\end{equation}
-\normalsize
+%42particleDistributionChute
+%************************************************
+\begin{figure}%[!htb] 
+\centering 
+\includegraphics[width=.96\columnwidth]{42particleDistributionChute} 
+\caption{trota}
+\label{fig:42particleDistributionChute} 
+\end{figure}
 
+%************************************************
 
-Subsequently, we applied Equation \ref{eq:sumcheck}
+\section{Conclusions}
+\label{sec:conclusions}
+%************************************************
+We have presented a two-step method for $DEM$ simulation parameter
+identification. In the first step, an artificial neural network is 
+trained using dedicated $DEM$ simulations in order to predict bulk 
+behaviours as function of a set of $DEM$ simulation parameters. 
+In the second step, this artificial neural network is then used 
+to predict the bulk behaviour of a huge number of additional $DEM$ parameter
+sets.
+The main findings of this study can be summarized as follows:
+\begin{itemize}
+  \item{An artificial neural network can be trained by a limited number of
+  dedicated $DEM$ simulations.
+  		The trained artificial neural network is then able to predict
+  		granular bulk behaviour.}
+  \item{This prediction of granular bulk behaviour is much more efficient
+  		than computationally expensive $DEM$ simulations.
+  		Thus, the macroscopic output associated with a huge number of parameter sets
+  		can be studied.}
+  \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
+  		valid sets of $DEM$ simulation parameters can be readily deduced for a
+  		specific granular material.}
+  \item{This $DEM$ parameter identification method can be applied to
+  arbitrary bulk experiments.
+  		Combining two artificial neural networks which predict two different bulk
+  		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
+\end{itemize}
+As part of future work, we will develop this method further by considering
+different fractions of granular materials, which will lead to size-dependent sets of $DEM$
+simulation parameters.
 
-\begin{equation}
-SC = \sum_{k=1}^{4}{\sum_{l=1}^{4}{C_{kl}}} .
- \label{eq:sumcheck}
-\end{equation}
-
-For each material we selected the $\mu_s$ and $\mu_r$ pairs with the maximum $SC$ sum.
-If $SC < 2$, we restarted from the first step with more closely spaced series of values (down to 0.02 spacing).
-For validation purposes, the chosen $\mu_s$ and $\mu_r$ pairs were used to run $AOR$ simulations, and then compared with the experimental values. 
-If the results differed by less than $\pm 5\%$, we deemed the pair to be reliable $DEM$ parameters.\\
-%If they  again  we claimed to had found 
-
-Since the consolidation phase is not completely reliable, the simplified $JSCT$ produced different $\mu_{psh}$ results than the $SRSCT$. Although we compared these results with the numerical values, they cannot be considered valid before the unconsolidated state is accurately defined for all materials.
-% (Is this what you wanted to say?).
-%The not complete reliability of the \textit{consolidation} phase led to results of the $simplified ~ JSCT$, concerning the $\mu_{psh}$, different from the $SRSCT$. The comparison with the numerical values, %although done and presented, could not be considerated solid until this \textit{unconsolidated} state would be accounted accurately for all materials.\\
-For coke, the chosen parameters were not validated by the $AOR$ simulation. 
-Instead of using values from the literature, we decided to focus on our experimental and numerical systematic routine in order to establish a comprehensive workflow for the characterization.
-We believe that the deviation from the $AOR$ values could be reduced by improved calibration of the particle density. \\
-The final $DEM$ parameters selected on the basis of over $7000$ simulations can be found in Table \ref{tab:tableprop}, and the comparison between the experimental and numerical values is presented in Table \ref{tab:comparisontable}.
-
-\section{Conclusion}
-We have discussed the determination of $DEM$ inter-particle friction parameters that are critical in medium to dense granular flow simulation.
-In particular, we have characterized the materials more commonly used in steel-making, with special regard to their non-sphericity.
-We used a $SRSCT$, a $simplified ~ JSCT$ and an $AOR$ tester to acquire experimental data. Then we employed a numerical shear cell tester and a numerical $AOR$ tester for the simulations.
-We could not collect valid data from the $simplified ~ JSCT$, since the consolidation phase was not completely reliable.
-Since our results for iron ore, limestone and glass silibeads are in very good agreement with published data and in-house experiments, we can conclude that the described experimental and simulation setup successfully defined the $DEM$ parameters for these materials. 
-Furthermore, the effectiveness of $LIGGGHTS$ as simulation software has again been demonstrated.\\
-Improved calibration of the particle density could be obtained by modifying the shear cell simulation. 
-We could thus assess the variation of the bulk density $\rho_b$, and then compare it with the experimental $\rho_b$ from the $SRSCT$.
-We are planning to follow this path to obtain solid $DEM$ parameters for coke fines.\\
-Both the shear cell and the $AOR$ experiments will be part of a series of procedures that should enable the complete characterization of particle properties within a 1\% range of difference in the validation experiments.\\
-
-
+%************************************************
 
 
 \section{Aknowledgements}
@@ -391,42 +768,42 @@ This study was funded by Christian Doppler Forschungsgesellschaft, Siemens VAI M
 
 \end{document}
 
-
-
-\newpage
-\section{Appendix A}
-Give any additional information here.
-
-% \begin{figure}[bh]
-% \centering
-% \psfragfig*[width=0.96\columnwidth]{images/limestone}
-% \caption{Comparison of the shear stress for various cylinder diameters. (example for pstool)}
-% \label{fig:example}
-% \end{figure}
-
-%\usepackage{pstool}
-\newpage
-\InsTab{Table}
-\newpage
-You should give a thorough description of your model.
-\vspace{4cm}
-\subsection{Example of Subheading}
-Here is how to produce a numbered equation under a second level
-heading \cite{James1988}.
-\vspace{2cm}\\
-\emph{Continuity equation}
-\begin{equation}
-  \frac{\partial \rho_G}{\partial t}+\nabla\left(\rho_G\mathbf
-    u\right)=0
-\end{equation}
-
-\InsFigRot{figure}{Rotated schematic diagram of geometry.}{label2}
-
-\subsubsection*{Example of Sub-subheading}
-This is how \cite{Luke1988} produced an unnumbered equation under a
-third level heading.
-\begin{equation}
-  \mathbf J=\sigma(\mathbf E+\mathbf u\times\mathbf B)
-\end{equation}
-
-
+% 
+% 
+% \newpage
+% \section{Appendix A}
+% Give any additional information here.
+% 
+% % \begin{figure}[bh]
+% % \centering
+% % \psfragfig*[width=0.96\columnwidth]{images/limestone}
+% % \caption{Comparison of the shear stress for various cylinder diameters. (example for pstool)}
+% % \label{fig:example}
+% % \end{figure}
+% 
+% %\usepackage{pstool}
+% \newpage
+% \InsTab{Table}
+% \newpage
+% You should give a thorough description of your model.
+% \vspace{4cm}
+% \subsection{Example of Subheading}
+% Here is how to produce a numbered equation under a second level
+% heading \cite{James1988}.
+% \vspace{2cm}\\
+% \emph{Continuity equation}
+% \begin{equation}
+%   \frac{\partial \rho_G}{\partial t}+\nabla\left(\rho_G\mathbf
+%     u\right)=0
+% \end{equation}
+% 
+% \InsFigRot{figure}{Rotated schematic diagram of geometry.}{label2}
+% 
+% \subsubsection*{Example of Sub-subheading}
+% This is how \cite{Luke1988} produced an unnumbered equation under a
+% third level heading.
+% \begin{equation}
+%   \mathbf J=\sigma(\mathbf E+\mathbf u\times\mathbf B)
+% \end{equation}
+% 
+% 
