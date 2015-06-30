@@ -22,7 +22,7 @@
 %   Table.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{lipsum}
+
 
 
 \title{DEM parameter identification by means of artificial neural network for iron ore sintering}
@@ -94,7 +94,7 @@ popular giving rise to the development of commercial (e.g., $PFC3D$, used by
 \citet{RefWorks:87}) and open-source software (e.g.,
 $LIGGGHTS$, \citet{RefWorks:136}, \citet{RefWorks:139}).
 Soft-sphere $DEM$ simulations of thousands of particles have been proven to 
-faithfully model particle bulk behaviour \cite{RefWorks:86}. \\
+faithfully model particle bulk behaviour \cite{RefWorks:136}. \\
 In these macroscopic $DEM$ simulations, the contact law kernel between a 
 pair of particles determines the global bulk behaviour of the granular material \cite{RefWorks:131}. 
 As a consequence, defining a correct contact law is of crucial importance for the predictive 
@@ -145,7 +145,8 @@ comparing the stand-alone $ANN$ predictions with corresponding bulk experiments.
 For both cases we obtained valid sets of contact law parameters, 
 which we then compared to formulate a reliable contact law for a given
 granular material.
-We further show that the same $ANN$ can be used to characterize different granular materials. \\
+We further show that these data can be used to model an industrial scale process
+of iron ore sintering. \\
 In the next section we define some prerequisites including $DEM$ contact law
 definitions, a general description of the $ANN$ functionality, and the proposed
 method of $DEM$ contact law parameter identification.
@@ -185,8 +186,8 @@ We decided to utilize a single
 contact law for all the simulations performed, for details see
 \citet{RefWorks:180}.
 The $DEM$ parameters for the Young's modulus ($E$) and the Poisson's coefficient
-($\nu$) were taken from the literature, see \citet{RefWorks:175} 
-and \cite{RefWorks:176}; however we reduced the former to increase the time step
+($\nu$) were taken from the literature, see \citet{RefWorks:175}; 
+however we reduced the former to increase the time step
 ($\Delta t$), following the recommendations of \citet{RefWorks:131}.
 The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
 also depends on the particle density ($\rho_p$).
@@ -208,8 +209,7 @@ For coarse non-spherical particles, this is a critical parameter and describes
 inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
 torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
 equations according to the elasto-rolling resistance model presented by
-\citet{RefWorks:87} and \citet{RefWorks:131} 
-based on the work of \citet{RefWorks:143}. 
+\citet{RefWorks:87} and \citet{RefWorks:131}. 
 The model is called $EPSD2$ in $LIGGGHTS$ and is appropriate for both one-way and cyclical rolling cases.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 %************************************************
@@ -393,22 +393,26 @@ comparison (Eq. \ref{eq:checkaor}):
 \label{eq:checkaor}
 \end{equation}
 %************************************************
-Further, to prove the validity of the system, we tested the marked combinations
-by modifying the experimental bulk values of the shear cell. 
-We artificially decreased or increased the shear force, and thus $\mu_{psh}$ and
-$\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
-%************************************************
-\begin{equation}
-\label{eq:pcoeff}
-\mu_{psh, new} = \mu_{psh, old} \cdot P .
-\end{equation}
-
+Further details to prove the validity of the method can be found in
+\citet{RefWorks:180}.
 %************************************************
 
 \subsection{Application}
 \label{subsec:application}
 
-\lipsum[1]
+The method previously explained allowed to collect data regarding the contact
+law. We took the average value for each of the $DEM$ parameter and we used them
+in an industrial scale $DEM$ simulation, with the same software, of an iron ore
+sintering process.
+We examined the behaviour of these particles in a sinter chute
+cooler. The particles moved from the top of a specifically designed chute and
+were collected by moving boxes at the bottom.
+These boxes were holed at the base, allowing cool air to lower the temperature
+of the sinter.
+It was critical to ascertain if the larger particles were moving to the bottom
+of the boxes, while the smaller to the top, allowing a more effective
+distribution of the cool air.
+The simulation was performed with a maximum of 500,000 particles.
 
 %************************************************
 
@@ -473,7 +477,7 @@ demonstrates the accurate predictive power of the $ANN$.}
 
 Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
 of sinter fine were acquired through $SSC$ tests. 
-The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
+The $\rho_b$ has an average of 1,760 kg/m3 with a 42 
 kg/m3 deviation.
 Two $AoR$ tests were performed that gave an average angle of
 38.85$^\circ$.
@@ -602,16 +606,23 @@ Finally, we show the number of valid parameter combinations over the total
 \subsection{Macroscopic application}
 \label{subsec:macroapplication}
 
-\lipsum[1]
+We divided the first of the boxes filled by the chute in three (equally high)
+layers.
+The top layer was not considered, because it was continuously supplied of
+particles from the chute.
+In Fig. \ref{fig:42particleDistributionChute} the total volume of the particles
+available in each layer, grouped by radius, is shown.
+We could clearly see how the larger particles disposed mostly in the bottom
+layer, validating the realized design.
 
 %42particleDistributionChute
 %************************************************
-\begin{figure}%[!htb] 
+\begin{figure*}%[!htb] 
 \centering 
-\includegraphics[width=.96\columnwidth]{42particleDistributionChute} 
-\caption{trota}
+\includegraphics[width=.96\textwidth]{42particleDistributionChute} 
+\caption{Distribution of particles in the box}
 \label{fig:42particleDistributionChute} 
-\end{figure}
+\end{figure*}
 
 %************************************************
 
@@ -642,6 +653,8 @@ The main findings of this study can be summarized as follows:
   arbitrary bulk experiments.
   		Combining two artificial neural networks which predict two different bulk
   		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
+  \item{The parameters collected with this method can be trustworthy used for
+  large scale simulations.}
 \end{itemize}
 As part of future work, we will develop this method further by considering
 different fractions of granular materials, which will lead to size-dependent sets of $DEM$
