@@ -27,27 +27,19 @@
 
 
 
-\title{Establishing the predictive capabilities of DEM simulations: sliding and rolling friction coefficients of non-spherical particles}
+\title{DEM parameter identification by means of artificial neural network for iron ore sintering}
 \paperID{CFD 2015}
 \author{Luca}{Benvenuti} %{forename}{surname}
 \presenting  %the previous author is presenting the paper (name becomes underlined)
 \address{JKU Department of Particulate Flow Modelling, 4040 Linz, Austria} %affiliation of the previous author
 \email{luca.benvenuti@jku.at}%e-mail address of the previous author
-\author{Andreas}{Aigner}
-\sameaddressas{1}
-%\email{andreas.aigner@jku.at}
-\author{Daniel}{Queteschiner}
-\sameaddressas{1}
-%\email{daniel.queteschiner@jku.at}
-\author{Mar}{Combarros}
-\address{TUBS Institut fur Partikeltechnik, 38104 Braunschweig, Germany} %same address as the first author
-%\email{m.combarros-garcia@tu-braunschweig.de}
+\author{Christoph}{Kloss}
+\address{DCS Computing, 4040 Linz, Austria}
+
 \author{Stefan}{Pirker}
 \sameaddressas{1}
 %\email{stefan.pirker@jku.at}
-\author{Christoph}{Kloss}
-\sameaddressas{1}
-%\email{christoph.kloss@jku.at}
+
 
 
 \begin{document}
@@ -56,16 +48,26 @@
 
 
 \abstract{
-Discrete Element Method ($DEM$) simulations are widely used to understand particle behavior. Among the key parameters, defining the inter-particle friction parameters is very relevant to perform simulations of granular flows.
-To model non-spherical particles with spherical elements, we used an elasto-plastic rolling friction model in combination with Coulomb's law in the $DEM$ code LIGGGHTS.
-The bulk solids were characterized using Schulze ring shear cell and simplified Jenike shear cell testers. 
-The sliding and rolling friction coefficients were obtained by fitting numerical simulations of the shear cells to experimental data.
-The calculated DEM coefficients of friction of iron ore, limestone and silibeads accord well with published data and in-house experiments. 
-Further, we validated the DEM parameters by means of angle-of-repose experiments and simulations and conclude that the described setup successfully defined the DEM parameters for the materials tested.
+Particle-particle contact laws and particles size distributions determine the macroscopic simulation results in 
+Discrete Element Method (DEM). Commonly, contact laws depend on semi-empirical parameters which are difficult to 
+obtain by direct microscopic measurements. Consequently, macroscopic experiments are performed, 
+and the relationship between their results and microscopic DEM simulation is
+investigated.\\
+We present a method for the identification of DEM simulation parameters though macroscopic 
+experiments and dedicated artificial neural networks. First, a feed-forward artificial neural network 
+is trained by backward propagation reinforcement thanks to the macroscopic results of a series of DEM 
+simulations, each with a different set of particle-based simulation parameters and individual particle distributions. 
+We subsequently utilize this artificial neural network to forecast the macroscopic ensemble behaviour in relation to 
+additional sets of particle-based simulation parameters and particle distributions. 
+By this method, a comprehensive database was established, relating particle-based simulation parameters to macroscopic 
+ensemble output.
+If compared to an experiment of a specific granular material, this database identifies valid sets of DEM parameters 
+which lead to the same macroscopic results as observed in the experiments.
+Finally, we applied this method of DEM parameter identification to an industrial scale process of iron ore sintering.
 }
 \keywords{
-Meshless methods (DEM), Rheology, experimental validation studies, process industries, process metallurgy, LIGGGHTS, Material characterization 
-}
+Discrete Element Method ($DEM$) Simulations, Parameter Identification,
+Artificial Neural Networks }
 \normalfont\normalsize
 
 %\section{Nomenclature}
