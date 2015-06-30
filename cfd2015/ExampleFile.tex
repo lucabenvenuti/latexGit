@@ -110,9 +110,6 @@ particle collision experiments.
 Furthermore, some contact law parameters such as the coefficient of rolling
 friction are purely empirical and cannot be determined by direct 
 particle-to-particle measurements \cite{RefWorks:87}.
-Therefore, $DEM$ contact law parameters 
-%(Table \ref{tab:08DEMparameters}) 
-are
 commonly determined by comparing the macroscopic outcome of large-scale $DEM$ simulations with 
 bulk experiments \cite{RefWorks:91}. 
 If $DEM$ simulation results disagree with bulk measurements, the set of contact
@@ -246,8 +243,6 @@ coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
 coefficient of internal friction in the shear phase ($\mu_{sh}$),
 and angle of repose ($AoR$).
 The first bulk value ($\rho_b$) was provided directly. 
-% For correctly performed simulations, see Benvenuti et al. \cite{RefWorks:180}, we
-% observed a stress path as in Fig. \ref{fig:21simexample}.
 First, the $\sigma_n$ was kept constant while the coefficient of internal
 friction ($\mu_{ie}$) initially increased and then reached a plateau.
 The second bulk value ($\mu_{psh}$) was calculated as the average of the
@@ -444,8 +439,6 @@ simulations.
 The plot shows a consistent agreement between the 
 $DEM$ and the $ANN$ values and an almost linear regression ($R^2
 = 0.94$).
-% The linear relationship between the
-% training values can be seen in Table \ref{tab:06inputRelationshipTable}.
 The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
 $\rho_p$ and $\rho_b$.
 In contrast, for $\mu_{sh}$ and $AoR$, the $\mu_r$ balanced the influence of the 
@@ -465,7 +458,6 @@ did not take more than a few seconds on a single core.
 \begin{figure}%[!h] 
 \centering 
 \includegraphics[width=.96\columnwidth]{22regression}
-%[width=.96\textwidth]
 \caption[Comparison between prediction of the trained ANN and full DEM
 simulation]{Comparison between prediction of the trained Artificial Neural
 Network ($ANN$) and 546 full DEM simulations of the coefficient of pre-shear
@@ -473,49 +465,14 @@ Network ($ANN$) and 546 full DEM simulations of the coefficient of pre-shear
 demonstrates the accurate predictive power of the $ANN$.}
 \label{fig:22regression} 
 \end{figure}
-% %************************************************
-% \begin{table*}%[h]
-% \centering
-% \scalebox{1.0}{
-% \begin{tabular}{lcccccccc}
-% \hline
-%          & $\mu_s$ & $\mu_r$ & $COR$ & $\rho_p$ & $\mu_{sh}$ &
-%         $\mu_{psh}$ & $\rho_{b}$ & $AoR$ \\
-%           \hline
-%     $\mu_s$ & 100.00 & 0.55  & 0.04  & 0.00  & 3.84  & 87.26 & 8.39  & 49.48 \\
-%     $\mu_r$ & 0.55  & 100.00 & 0.15  & 0.00  & 58.92 & 33.70 & 3.10  & 60.20 \\
-%     $COR$ & 0.04  & 0.15  & 100.00 & 0.00  & 15.52 & 0.57  & 1.71  & 21.35 \\
-%     $\rho_p$ & 0.00  & 0.00  & 0.00  & 100.00 & 4.98  & 5.71  & 99.00 & 0.00 \\
-%     $\mu_{sh}$ & 3.84  & 58.92 & 15.52 & 4.98  & 100.00 & 26.03 & 9.52  & 0.00 \\
-%     $\mu_{psh}$ & \textbf{87.26} & 33.70 & 0.57  & 5.71  & 26.03 & 100.00 & 4.33 
-%     & 0.00
-%     \\
-%     $\rho_{b}$ & 8.39  & 3.10  & 1.71  & \textbf{99.00} & 9.52  & 4.33  & 100.00
-%     & 0.00 \\
-%     $AoR$ \hspace{5ex} & 49.48 & \textbf{60.20} & 21.35  & 0.00  & 0.00  & 0.00 
-%     & 0.00  & 100.00 \\
-%     
-% \hline
-% \end{tabular}}
-% \caption[Values of linear relationship between considered variables]{Values of
-% linear relationship between variables considered multiplied by 100. Sliding
-% friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
-% had the greatest influence on, respectively, the coefficient of pre-shear
-% ($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
-% was not used as a training parameter for $AoR$ bulk behaviour.}
-% \label{tab:06inputRelationshipTable}
-% \end{table*}
-% %************************************************
 
+% %************************************************
 
 \subsection{Experiments and Parameter Identification}
 \label{subsec:experimentsparameteridentification}
 
 Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
 of sinter fine were acquired through $SSC$ tests. 
-% Table \ref{tab:05sinterTableExperimental} presents
-% these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
-% the $\mu_{sh}$ oscillates.
 The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
 kg/m3 deviation.
 Two $AoR$ tests were performed that gave an average angle of
@@ -554,23 +511,7 @@ Multiple
 combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
 the experimental behaviour with varying $COR$.
 This underlines once more their correlation, as already stated by
-\citet{RefWorks:87}.
-To further demonstrate the validity of the procedure, we modified the product
-coefficient. 
-First, we set it to $P=0.8$, and we obtained another
-series of marked combinations ($MC2$).
-It can be seen in the parameter space plot in Fig.
-\ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
-than for $P=1.0$, while in the density plot in Fig. 
-\ref{fig:27cloudpirker08schulze10070} the area
-appears larger, although slightly less densely populated. Finally, for $P=1.2$
-and its marked combinations ($MC3$) the parameter space plot in Fig.
-\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
-range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
-shows a smaller area. As expected, the procedure was highly sensitive to
-variations in the experimental data.
-Our approach could therefore be used
-for a wide range of bulk materials.\\
+\citet{RefWorks:87}.\\
 We then processed the random combinations with the $AoR$ $ANN$. In Fig.
 \ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
@@ -586,24 +527,6 @@ and demonstrating the reliability of these parameter
 combinations in representing the bulk behaviour.
 From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 \%), see Table \ref{tab:13DEMvalidvalues}.
-%************************************************
-% \begin{table}[h]
-% \centering
-% \begin{tabular}{cccccc}
-% \hline
-% $\sigma_n$ (Pa) & $\tau$ (Pa) & $\mu_{psh}$ (-) & $\tau_{\%}$ (\%) &
-% $\mu_{sh}$ (-) & $\rho_b$ (kg/m3) \\
-% \hline
-%     1068  & 1059  & 0.9916 & 80 & 1.2333 & 1718 \\
-%     2069  & 1818  & 0.8787 & 80 & 0.9994 & 1759 \\
-%     10070 & 8232  & 0.8175 & 80 & 1.1712 & 1802 \\
-% 
-% \hline
-% \end{tabular}
-% \caption[Experimental results]{Experimental results. Values for three
-% load conditions}
-% \label{tab:05sinterTableExperimental}
-% \end{table}
 %************************************************
 \begin{table*}%[h]
 \centering
@@ -647,30 +570,9 @@ Finally, we show the number of valid parameter combinations over the total
 %************************************************
 \begin{figure}%[!htb] 
 \centering 
-\includegraphics[width=.96\columnwidth]{26radarpirker08schulze10070} 
-\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
-\label{fig:26radarpirker08schulze10070} 
-\end{figure}
-%************************************************
-\begin{figure}%[!htb] 
-\centering 
 \includegraphics[width=.96\columnwidth]{24radarpirker1schulze10070} 
 \caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.0}
 \label{fig:24radarpirker1schulze10070} 
-\end{figure}
-%************************************************
-\begin{figure}%[!htb] 
-\centering 
-\includegraphics[width=.96\columnwidth]{28radarpirker12schulze10070} 
-\caption{Parameter space plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
-\label{fig:28radarpirker12schulze10070} 
-\end{figure}
-%************************************************
-\begin{figure}%[!htb] 
-\centering 
-\includegraphics[width=.96\columnwidth]{27cloudpirker08schulze10070} 
-\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=0.8}
-\label{fig:27cloudpirker08schulze10070} 
 \end{figure}
 %************************************************
 \begin{figure}%[!htb] 
@@ -680,14 +582,6 @@ Finally, we show the number of valid parameter combinations over the total
 \label{fig:25cloudpirker1schulze10070} 
 \end{figure}
 %************************************************
-\begin{figure}%[!htb] 
-\centering 
-\includegraphics[width=.96\columnwidth]{30cloudpirker12schulze10070} 
-\caption{Density plot, $SSC$, $\sigma_n=10070$ Pa, P=1.2}
-\label{fig:30cloudpirker12schulze10070} 
-\end{figure}
-%************************************************
-
 \begin{figure}%[!htb] 
 \centering 
 \includegraphics[width=.96\columnwidth]{31radarpirker1aor} 
@@ -767,43 +661,3 @@ This study was funded by Christian Doppler Forschungsgesellschaft, Siemens VAI M
 \bibliography{References}   
 
 \end{document}
-
-% 
-% 
-% \newpage
-% \section{Appendix A}
-% Give any additional information here.
-% 
-% % \begin{figure}[bh]
-% % \centering
-% % \psfragfig*[width=0.96\columnwidth]{images/limestone}
-% % \caption{Comparison of the shear stress for various cylinder diameters. (example for pstool)}
-% % \label{fig:example}
-% % \end{figure}
-% 
-% %\usepackage{pstool}
-% \newpage
-% \InsTab{Table}
-% \newpage
-% You should give a thorough description of your model.
-% \vspace{4cm}
-% \subsection{Example of Subheading}
-% Here is how to produce a numbered equation under a second level
-% heading \cite{James1988}.
-% \vspace{2cm}\\
-% \emph{Continuity equation}
-% \begin{equation}
-%   \frac{\partial \rho_G}{\partial t}+\nabla\left(\rho_G\mathbf
-%     u\right)=0
-% \end{equation}
-% 
-% \InsFigRot{figure}{Rotated schematic diagram of geometry.}{label2}
-% 
-% \subsubsection*{Example of Sub-subheading}
-% This is how \cite{Luke1988} produced an unnumbered equation under a
-% third level heading.
-% \begin{equation}
-%   \mathbf J=\sigma(\mathbf E+\mathbf u\times\mathbf B)
-% \end{equation}
-% 
-% 
