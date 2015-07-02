@@ -27,28 +27,6 @@ An image post-processing software was used to obtain the average slope.
 \label{sec:scsimulation}
 %************************************************
 
-For each particle i inside the domain, a Discrete Element Method ($DEM$) code
-follows the trajectory and calculates the force that particle i exerts on particle j.
-The main forces involved are: gravity, contact forces due to collisions, and
-further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in multiphase flows. For the raw material used in this work 
-Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear
-Hertzian model without cohesion for the particle-particle and particle-wall contacts. 
-This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
-%************************************************
-\input{equations/forceij}
-%************************************************
-where the subscript $n$ stands for normal and $t$ for tangential. 
-Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
-while $\delta$ and $v$ are the displacement and the velocity, $r$ is the
-distance between two particles of radii $R_i$ and $R_j$, and $d = R_i + R_j $ is
-the contact distance.
-Both the normal and the tangential
-force comprise two terms, a spring force and a damping force. 
-The tangential (or shear) force is a ``history'' effect that accounts for the
-tangential displacement (``tangential overlap'') between the particles for the
-duration of contact.
-In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
-the method can be found.\\
 $LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
 modelling the shear tester described in \ref{subsec:srsctexperiment}. 
 First, it is capable of importing triangulated meshes of the two rings and a top lid. 
