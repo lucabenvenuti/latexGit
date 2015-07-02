@@ -1,12 +1,58 @@
 % !TEX encoding = UTF-8
 % !TEX TS-program = pdflatex
 % !TEX root = ../Tesi.tex
-% !TEX spellcheck = it-IT
+% !TEX spellcheck = en-EN
 
 %************************************************
 \chapter{Artificial Neural Network}
 \label{cap:ann}
 %************************************************
 
-\lipsum[1]
-
+An Artificial Neural Network ($ANN$) is a powerful modelling technique, 
+that is based on non-linear functions (Haykin \cite{RefWorks:158}). 
+In this work, we first used the $ANN$ to fit the $DEM$ numerical simulation
+data, and then to process a vast number of parameters combinations. 
+$ANNs$ map combinations of input data to convenient outputs (fitting). 
+There is a variety of $ANNs$ available; important for our context were the
+Feedforward ($FF$) and the Radial basis function ($RBF$). For $FF-NN$, 
+numerous training algorithms are available. The most common are based on
+backpropagation, e.g., Levenberg-Marquardt, Bayesian regulation and the scaled
+conjugate gradient.
+To be able to handle non-linearly separable data, the standard linear perceptron
+$ANN$ was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
+(MLPNN)}.
+Here, each processing unit or node (neuron) possesses a nonlinear activation function. 
+They are interconnected to form layers that are also interlinked. 
+The validity of the $MLPNN$, with a backpropagation reinforcement learning 
+training algorithm (scaled conjugate gradient), has been demonstrated in the 
+literature, see Haykin \cite{RefWorks:158}. Several scientists 
+\cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
+RefWorks:170, RefWorks:178, RefWorks:179} have employed $ANNs$ to model
+the mechanical properties of materials.
+Following the best practice suggested by Vaferi et al. \cite{RefWorks:150}, we
+used $MLPNN$.
+Further, the quality of the $ANN$ data had to be examined critically. 
+Haykin \cite{RefWorks:158} 
+suggested considering the quality of (a) $ANN$ training process and (b) the
+subsequent data generation based on the inputs provided.
+Task (a) is particularly important
+when dealing with experimental training data, and
+usually addressed
+by noise-corrupted pattern calibration.
+However, our training pool was numerical and extensive, 
+and the particles in our simulations were inserted using a random
+seed value.
+For vast amounts of training data, the effect of noise-corrupted patterns is
+negligible, see Haykin \cite{RefWorks:158}.
+Thus, in our work task (b) was more challenging.
+Once trained, the $ANN$ were fed
+combinations of $DEM$ parameters. 
+We tried different methods to generate these combinations. 
+Our first attempt consisted of assigning parameters to the investigated
+variables in even increments from the minimum to the maximum values. 
+For example, the $COR$ ranged from 0.5 to 0.9, and thus the first value was
+0.5, the second 0.508163, and so on.
+To increase generalization, we decided to follow a different approach: 
+random value generators created the number of required values in the defined
+ranges for each parameter investigated.
+These were combined and used as input.\\

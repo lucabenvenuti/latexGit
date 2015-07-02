@@ -1,7 +1,7 @@
 % !TEX encoding = UTF-8
 % !TEX TS-program = pdflatex
 % !TEX root = ../Tesi.tex
-% !TEX spellcheck = it-IT
+% !TEX spellcheck = en-EN
 
 %************************************************
 \chapter{Numerical Simulation}
@@ -15,11 +15,87 @@
 \label{sec:aorsim}
 
 
-\lipsum[1]
+In $AoR$ simulations we sought to replicate meticulously the experimental setup, 
+considering both the plate and the liftable boundary, with the same domain size consideration as before. 
+The particles had the same properties as in the shear-cell simulation. 
+The first phase was identical to that of the shear-cell simulation. 
+After lifting the boundary, the particles formed a heap.
+An image post-processing software was used to obtain the average slope.
 
 
 \section{Shear Cell}
 \label{sec:scsimulation}
 %************************************************
 
-\lipsum[1]
+For each particle i inside the domain, a Discrete Element Method ($DEM$) code
+follows the trajectory and calculates the force that particle i exerts on particle j.
+The main forces involved are: gravity, contact forces due to collisions, and
+further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in multiphase flows. For the raw material used in this work 
+Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear
+Hertzian model without cohesion for the particle-particle and particle-wall contacts. 
+This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
+%************************************************
+\input{equations/forceij}
+%************************************************
+where the subscript $n$ stands for normal and $t$ for tangential. 
+Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
+while $\delta$ and $v$ are the displacement and the velocity, $r$ is the
+distance between two particles of radii $R_i$ and $R_j$, and $d = R_i + R_j $ is
+the contact distance.
+Both the normal and the tangential
+force comprise two terms, a spring force and a damping force. 
+The tangential (or shear) force is a ``history'' effect that accounts for the
+tangential displacement (``tangential overlap'') between the particles for the
+duration of contact.
+In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
+the method can be found.\\
+$LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
+modelling the shear tester described in \ref{subsec:srsctexperiment}. 
+First, it is capable of importing triangulated meshes of the two rings and a top lid. 
+Since the real setup had a wall thickness, contact forces acting on a mesh are summed and can be saved, 
+and thus shear force calculation is available out of the box. 
+Second, the code can move a mesh with constant 
+velocity as required for the measurement. 
+To determine the shear stresses, the bulk solid had to be stressed with 
+user-defined normal stresses. 
+Therefore, a stress-controlled wall (servo-wall in $LIGGGHTS$) was applied to the lid. \\
+Although the geometry differs, the $SSC$ was designed to obtain the same values for the shear stresses as the 
+Jenike shear cell tester ($JSCT$), but with improved automation and reliability,
+see Schulze \cite{RefWorks:118}. 
+For this reason, the simulation setup was
+based on the $JSCT$.
+As suggested by Aigner et al. \cite{RefWorks:139} and Benvenuti et al. \cite{RefWorks:173}, 
+the diameter and the height of the rings operated in the simulations had to be sufficiently large to avoid relevant wall effects. 
+However, a larger domain increases the number of particles and thus
+simulation time.
+For this reason, we considered the cylinder dimension ($dCylDp$), which is
+proportional to the mean particle diameter, as an additional $DEM$
+parameter to be investigated. \\
+A simulation run comprised four phases. 
+First, the shear cell was filled with the granulate material, and it was allowed
+to settle.
+Then, the top lid was lowered and the first normal stress applied to the bulk
+solid.
+As in the experiment, the servo-wall allows calculating the position of the lid
+while the first particle is being touched. 
+The distance between the lid and the bottom of the domain multiplied by the 
+simulation area gave the total volume.
+Since the software already provided the total mass, we were able to calculate:
+%************************************************
+\input{equations/rhob}
+%************************************************
+Next, the ring moved by a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and
+the required pre-shear force was measured.
+Finally, the normal load was reduced to a fraction of the initial load, 
+the ring was moved again by a distance $l$, and the shear force was recorded. 
+Unlike in the original experiment, the bottom ring was moved to facilitate the numerical simulation. 
+The velocity of the ring displacement, and consequently the total simulation time, 
+was determined by a trade-off between minimizing the normal load oscillation and
+optimizing computation time. 
+The former requires (relatively) low velocity, and the latter requires high
+speed.
+We chose a constant velocity of $3*(mean ~ particle ~ radius)/seconds$, as the
+best trade-off.\\
+The normal stresses (pre-shear and shear phases) applied in each simulation were
+the same as in the experiments, see \ref{subsec:srsctexperiment}.
+The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
