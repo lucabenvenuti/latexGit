@@ -8,6 +8,31 @@
 \label{par:conclusion}
 %************************************************
 
-\lipsum[1]
-
-
+We have presented a two-step method for $DEM$ simulation parameter
+identification. In the first step, an artificial neural network is 
+trained using dedicated $DEM$ simulations in order to predict bulk 
+behaviours as function of a set of $DEM$ simulation parameters. 
+In the second step, this artificial neural network is then used 
+to predict the bulk behaviour of a huge number of additional $DEM$ parameter
+sets.
+The main findings of this study can be summarized as follows:
+\begin{itemize}
+  \item{An artificial neural network can be trained by a limited number of
+  dedicated $DEM$ simulations.
+  		The trained artificial neural network is then able to predict
+  		granular bulk behaviour.}
+  \item{This prediction of granular bulk behaviour is much more efficient
+  		than computationally expensive $DEM$ simulations.
+  		Thus, the macroscopic output associated with a huge number of parameter sets
+  		can be studied.}
+  \item{If the predictions of the artificial neural network are compared to a bulk experiment, 
+  		valid sets of $DEM$ simulation parameters can be readily deduced for a
+  		specific granular material.}
+  \item{This $DEM$ parameter identification method can be applied to
+  arbitrary bulk experiments.
+  		Combining two artificial neural networks which predict two different bulk
+  		behaviours leads to winnowing the set of valid $DEM$ simulation parameters.}
+\end{itemize}
+As part of future work, we will develop this method further by considering
+different fractions of granular materials, which will lead to size-dependent sets of $DEM$
+simulation parameters.
