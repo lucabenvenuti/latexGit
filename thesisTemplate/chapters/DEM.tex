@@ -40,14 +40,6 @@ In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{
 
 In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
 the method can be found.\\
-
-We decided to utilize a single
-contact law for all the simulations performed.
-
-The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
-also depends on the particle density ($\rho_p$).
-Furthermore, we locked the size distribution, which was obtained by experimental
-sieving, see Table \ref{tab:09DEMFixedinputvalues}.
 In the contact law we used, 
 the tangential component of the contact force between two generic particles
 ($F_t$) is truncated to fulfil:
@@ -76,54 +68,8 @@ The last two particle-based $DEM$ parameters we investigated were $\rho_p$
 and the coefficient of restitution ($COR$) as defined by Ai. et al.
 \cite{RefWorks:131}.\\
 
-These coefficients, $COR$, $\mu_s$, $\mu_r$,
-$\rho_p$ and $dCylDp$ (the cylinder dimension, proportional to the mean
-particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues}, 
-were constant in each simulation, but their combination differed between
-simulations.
-Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
-simulations had a $dCylDp$ larger than $20$ (additional information can be found
-in \ref{subsec:srsctsimulation}).
-The normal stress $\sigma_n$ and its
-percentage during the incipient flow condition $\tau_{\%}$
-varied to replicate twelve shear-cell load conditions. 
-The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
-A Matlab script allowed us to extract from the simulation output the numerical
-values representative of bulk behaviour (hereafter called \textit{bulk values}),
-see Table \ref{tab:14bulkvalues},
-for each $DEM$ simulation parameter combination.
-
-
-, which consists of
- bulk density ($\rho_b$),
- coefficient of internal friction in the pre-shear phase ($\mu_{psh}$),
- coefficient of internal friction in the shear phase ($\mu_{sh}$),
- and angle of repose ($AoR$).
- 
- 
- 
-The first bulk value ($\rho_b$) was provided directly. 
-For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
-observed a stress path as in Fig. \ref{fig:21simexample}.
-First, the $\sigma_n$ was kept constant while the coefficient of internal
-friction ($\mu_{ie}$) initially increased and then reached a plateau.
-The second bulk value ($\mu_{psh}$) was calculated as the average of the
-$\mu_{ie}$ in this plateau.
-The $\sigma_n$ was then automatically reduced, in our example to $80 \%$ of
-its initial value.
-Subsequently, a second plateau developed.
-We obtained the third
-value ($\mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
-The stress path accords with the experimental one, especially the plateaux.\\
-In the $AoR$ tests the average of the repose angles provided us with the fourth
-bulk value, allowing us to define the numerical bulk behaviour.
-
 \section{Literature Values}
 \label{sec:literaturevalues}
 
-The $DEM$ parameters for the Young's modulus ($E$) and the Poisson's coefficient
-($\nu$) were taken from the literature, see \cite{RefWorks:175} 
-and \cite{RefWorks:176}; however we reduced the former to increase the time step
-($\Delta t$), following the recommendations of Ai et al. \cite{RefWorks:131}.
+DISCUSS ABOUT USUAL VALUES FOR ALL PARAMETERS (COMBARROS, PAULICK).
 

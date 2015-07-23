@@ -9,16 +9,31 @@
 %************************************************
 
 Fig. \ref{fig:19methodology} illustrates the methodology used.
+ 
+In the training phase (dashed lines)
+$DEM$ simulations are performed
+with random initial input parameters.
+The behaviours obtained are used to train the
+Artificial Neural Networks ($ANNs$) in a loop that continues until the
+difference between the outputs of each $ANN$ and its simulations is below the
+limit ($\Delta$) (see Section \ref{cap:ann}).
+In the parameters identification phase (solid
+lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
+experimental behaviours.
 
 \input{images/19methodology}
 
+The training of an $ANN$ consists in defining the weights and the biases for
+each of its neuron.
 We first defined the typology of Artificial Neural Networks ($ANNs$) we used and
 the input we fed them, see Benvenuti et al. \cite{RefWorks:180}.
 Our $ANNs$ have three different layers: the input layer has a number of neurons
 equal to the number of different inputs of the network, see Fig. \ref{fig:18nnscheme}.
 The hidden (or central) layer's number of neurons was to be investigated. 
 The output layer contains one neuron for the output.
-The transfer functions for the central layer are the tangential sigmoid.\\
+The transfer function for the neurons of the central layer is the tangential
+sigmoid, while the neurons of the output layer use the linear transfer
+function.\\
 Thus, we were able to use the $DEM$ parameter combinations and their
 corresponding bulk values to train the $ANNs$.
 Note that 15\% of the simulations ($test ~ simulations$) were
@@ -53,3 +68,4 @@ $ANNs$, and thus three bulk values for the shear
 cell and one for the $AoR$ were obtained.
 % %************************************************
 \input{images/18nnscheme}
+\input{tables/12DEMRandominputvalues}
