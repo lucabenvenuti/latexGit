@@ -32,27 +32,27 @@
 
 \thispagestyle{empty}
 \maketitle
-
+\afterpage{\blankpage}
 
 
 %% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{roman}
 \pagestyle{plain}
-\afterpage{\blankpage}
-%\cleardoublepage
+
+\cleardoublepage
 \tableofcontents %Table of contents
-%\cleardoublepage %The first chapter should start on an odd page.
+\cleardoublepage %The first chapter should start on an odd page.
 
 \input{intro/abstract}
-\afterpage{\blankpage}
+
 \input{intro/zusammenfassung}
-\afterpage{\blankpage}
+
 \input{intro/acknowledgement}
-\afterpage{\blankpage}
+
 \input{intro/danksagung}
-\afterpage{\blankpage}
+
 \input{intro/publications}
-\afterpage{\blankpage}
+
 
 %% Lists, LOF, LOT, LOA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -60,17 +60,18 @@
 \clearpage
 %\addcontentsline{toc}{chapter}{List of Figures} % not needed anymore, thanks to tocbibind
 \listoffigures
-\afterpage{\blankpage}
+
 %% The List of Tables
 %\clearpage
 %\addcontentsline{toc}{chapter}{List of Tables} % not needed anymore, thanks to tocbibind
 \listoftables
-\afterpage{\blankpage}
+
 
 \input{intro/acronyms}
 
 \clearpage
 \afterpage{\blankpage}
+
 
 \hypersetup{pageanchor=true}
 \pagenumbering{arabic}

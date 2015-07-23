@@ -8,6 +8,7 @@
 \label{cap:insufficiency}
 %************************************************
 
+This work focused on the particles handled by metallurgical industries.
 However, a univocal method to characterize these particles has so far not been established.
 From the experimental point of view, the main issues are the difficult setups and the general 
 reliability and reproducibility of the tests. 
@@ -16,9 +17,8 @@ mathematically unique solution describing macro/micro particle contact has yet t
 Moreover, in a recent study, \citet{RefWorks:56} implied "that the dynamic properties of a 
 powder cannot be applied to universally predict the static properties of a powder, and, likewise, 
 the static properties cannot be used to predict dynamic properties".\\
-
-Their fundamental modelling concept has since been widely accepted in the
-literature and their soft-sphere contact law has been developed further by
+Anyway, the fundamental modelling concept of $DEM$ from \citet{RefWorks:172} has
+since been widely accepted in the literature and their soft-sphere contact law has been developed further by
 numerous researchers (Vu-Quoc and Zhang \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}). 
 With increasing computational resources, $DEM$ simulations have become very
 popular giving rise to the development of commercial (e.g., $PFC3D$, used by
@@ -41,7 +41,10 @@ particle collision experiments.
 Furthermore, some contact law parameters such as the coefficient of rolling
 friction are purely empirical and cannot be determined by direct 
 particle-to-particle measurements (Wensrich and Katterfeld \cite{RefWorks:87}).
-Therefore, $DEM$ contact law parameters (Table \ref{tab:08DEMparameters}) are
+Therefore, $DEM$ contact law parameters (
+%Table \ref{tab:08DEMparameters}
+ADD ACRONYM AND CSV LIST HERE
+) are
 commonly determined by comparing the macroscopic outcome of large-scale $DEM$
 simulations with bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
 If $DEM$ simulation results disagree with bulk measurements, the set of contact
@@ -61,34 +64,3 @@ Especially for the already cited rolling friction parameter, it is arduous to
 link the rolling friction parameter to the non-sphericity of the particle. Clearly, there is a
 need for an efficient method for identifying $DEM$ contact law parameters, given
 a specific particle behaviour.
-In our study, we harnessed Artificial Neural Networks ($ANNs$) in order to
-reduce the number of $DEM$ test simulations required. 
-$ANNs$ have proven to be a versatile tool in analysing complex, non-linear
-systems of multi-dimensional input streams (Vaferi et al. \cite{RefWorks:150}, Witten et
-al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
-In our case, we fed an $ANN$ with $DEM$ contact law parameters as input
-and compared the output with the bulk behaviour 
-predicted by a corresponding $DEM$ simulation. 
-The difference between $ANN$ prediction and $DEM$ prediction is used to train our 
-specific $ANN$ with a backward-propagation algorithm (described further below). 
-After a training phase comprising a limited number of $DEM$ test simulations,
-the $ANN$ can then be used as a stand-alone prediction tool for the bulk behaviour of a 
-granular material in relation to $DEM$ contact law parameters. \\
-In this study, we applied this parameter identification method to two different
-granular bulk behaviours, namely the angle of repose ($AoR$) test and the
-Schulze shear cell ($SSC$) test.
-In both cases, we first trained a specific $ANN$ using a number of $DEM$ test
-simulations before we identified valid sets of $DEM$ contact law parameters by
-comparing the stand-alone $ANN$ predictions with corresponding bulk experiments. 
-For both cases we obtained valid sets of contact law parameters, 
-which we then compared to formulate a reliable contact law for a given
-granular material.
-We further show that the same $ANN$ can be used to characterize different granular materials, 
-which have the same particle behaviour and can modelled with the same contact
-law. \\
-In the next section we define some prerequisites including $DEM$ contact law
-definitions, a general description of the $ANN$ functionality, and the proposed
-method of $DEM$ contact law parameter identification.
-We then describe how it is applied to characterize the $DEM$ contact law
-parameters of sinter fines.
-
