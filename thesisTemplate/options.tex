@@ -26,7 +26,7 @@
 
 % use predefined colours
 % see http://en.wikibooks.org/wiki/LaTeX/Colors
-\usepackage[usenames,dvipsnames]{xcolor} % provides colours
+\usepackage[pdftex,usenames,dvipsnames]{xcolor} % provides colours
 % define some colors
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -38,6 +38,8 @@
 \usepackage{epstopdf}
 \usepackage{afterpage}
 \usepackage{emptypage}
+\usepackage{xargs} 
+\usepackage[prependcaption,colorinlistoftodos,textsize=small]{todonotes} %
 %\pgfplotsset{compat=1.10}
 %\usetikzlibrary{arrows.meta}
 
@@ -315,9 +317,9 @@
     \newpage}
 
 %todo notes
-\usepackage[colorinlistoftodos,textsize=small]{todonotes} %prependcaption,
-\newcommand{\unsure}[2][1=]{\todo[inline,linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-\newcommand{\change}[2][1=]{\todo[inline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-\newcommand{\info}[2][1=]{\todo[inline,linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
-\newcommand{\improvement}[2][1=]{\todo[inline,linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-\newcommand{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\usepackage[prependcaption,colorinlistoftodos,textsize=small]{todonotes} %
+\newcommand{\unsure}[2][1]{\todo[inline,linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommand{\change}[2][1]{\todo[inline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommand{\info}[2][1]{\todo[inline,linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommand{\improvement}[2][1]{\todo[inline,linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommand{\thiswillnotshow}[2][1]{\todo[disable,#1]{#2}}
