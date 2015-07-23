@@ -4,7 +4,7 @@
 \makeatother
 
 
-\documentclass[a4paper,oneside,10pt]{report}
+\documentclass[a4paper,twoside,10pt,openright]{report}
 % Alternative Options:
 % Duplex: oneside / twoside
 % Base Font Size: 10pt / 11pt / 12pt
@@ -38,16 +38,21 @@
 %% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{roman}
 \pagestyle{plain}
-
-\cleardoublepage
+\afterpage{\blankpage}
+%\cleardoublepage
 \tableofcontents %Table of contents
 %\cleardoublepage %The first chapter should start on an odd page.
 
 \input{intro/abstract}
+\afterpage{\blankpage}
 \input{intro/zusammenfassung}
+\afterpage{\blankpage}
 \input{intro/acknowledgement}
+\afterpage{\blankpage}
 \input{intro/danksagung}
+\afterpage{\blankpage}
 \input{intro/publications}
+\afterpage{\blankpage}
 
 %% Lists, LOF, LOT, LOA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -55,16 +60,17 @@
 \clearpage
 %\addcontentsline{toc}{chapter}{List of Figures} % not needed anymore, thanks to tocbibind
 \listoffigures
-
+\afterpage{\blankpage}
 %% The List of Tables
-\clearpage
+%\clearpage
 %\addcontentsline{toc}{chapter}{List of Tables} % not needed anymore, thanks to tocbibind
 \listoftables
-
+\afterpage{\blankpage}
 
 \input{intro/acronyms}
 
 \clearpage
+\afterpage{\blankpage}
 
 \hypersetup{pageanchor=true}
 \pagenumbering{arabic}
@@ -110,7 +116,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 
-\include{end/app_derivations}
+%\include{end/app_derivations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% NOMENCLATURE AND BIBLIOGRAPHY

@@ -28,6 +28,16 @@ force comprise two terms, a spring force and a damping force.
 The tangential (or shear) force is a ``history'' effect that accounts for the
 tangential displacement (``tangential overlap'') between the particles for the
 duration of contact.
+The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from
+the material properties as follows:
+%************************************************
+\input{equations/hertz}
+%************************************************
+In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{eq:equivProp2}) are required:
+%************************************************
+\input{equations/equivProp2}
+%************************************************
+
 In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
 the method can be found.\\
 

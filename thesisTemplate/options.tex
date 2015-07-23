@@ -36,6 +36,8 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{tikz,pgfplots}		% provides TikZ
 \usepackage{epstopdf}
+\usepackage{afterpage}
+\usepackage{emptypage}
 %\pgfplotsset{compat=1.10}
 %\usetikzlibrary{arrows.meta}
 
@@ -305,4 +307,9 @@
 % graphics
 \newcommand{\inputTikZ}[2]{\scalebox{#1}{\input{#2}}} % used for tikz schematic images
 
-
+%blank page
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
