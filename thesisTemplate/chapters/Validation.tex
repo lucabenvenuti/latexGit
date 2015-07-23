@@ -11,7 +11,9 @@
 \section{DEM Simulations}
 \label{sec:simulations}
 
-For sinter fine, 546 shear cell and 81 static $AoR$ simulations were run with
+For sinter fine, 546 shear cell and 81 static $AoR$ simulations 
+\wrong{write down all the simulations performed at the end.}
+were run with
 the parameter combinations described in Table
 \ref{tab:10DEMVariableinputvalues}.
 The computational time amounted to 1 hour with 32 AMD cores for a benchmark
@@ -20,6 +22,7 @@ shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
 Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
 the shear cell with 400,000 particles ). \\
 
+\input{tables/10DEMVariableinputvalues}.
 
 \section{ANN model development}
 \label{sec:annmodeldev}
@@ -28,15 +31,17 @@ First, we determined the regression of the bulk behaviour parameters, for
 instance the $\mu_{psh}$; see Fig. \ref{fig:22regression}, where the
 corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
 simulations.
+\wrong{write down all the simulations performed at the end.}
 The plot shows a consistent agreement between the 
 $DEM$ and the $ANN$ values and an almost linear regression ($R^2
-= 0.94$).
+= 0.94$), and
+demonstrates the accurate predictive power of the $ANN$.
 The linear relationship between the
 training values can be seen in Table \ref{tab:06inputRelationshipTable}.
-The clearest connections were between $\mu_s$ and $\mu_{psh}$, and
-$\rho_p$ and $\rho_b$.
-In contrast, for $\mu_{sh}$ and $AoR$, the $\mu_r$ balanced the influence of the 
-$\mu_s$. \\
+Sliding friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
+had the greatest influence on, respectively, the coefficient of pre-shear
+($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
+was not used as a training parameter for $AoR$ bulk behaviour. \\
 We then investigated how the $R^2$ changed with the number of neurons
 for the $\mu_{psh}$.
 In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
@@ -50,6 +55,7 @@ individuation of the numerical bulk behaviours for all the $DEM$ combinations
 did not take more than a few seconds on a single core.
 %************************************************
 \input{images/22regression}
+\improvement{Decide how many regression images are necessary.}
 %************************************************
 \input{tables/06inputRelationshipTable}
 
@@ -57,13 +63,15 @@ did not take more than a few seconds on a single core.
 \section{Experiments and Parameter Identification}
 \label{sec:experimentsparameteridentification}
 
+\input{tables/09DEMFixedinputvalues}
+
 Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
 of sinter fine were acquired through $SSC$ tests. 
 Table \ref{tab:05sinterTableExperimental} presents
 these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
 the $\mu_{sh}$ oscillates.
-The $\rho_b$ has a clear average of 1,760 kg/m3 with a 42 
-kg/m3 deviation.
+The $\rho_b$ has a clear average of 1,760 $kg/m^3$ with a 42 
+$kg/m^3$ deviation.
 Two $AoR$ tests were performed that gave an average angle of
 38.85$^\circ$.
 We obtained the radius ($R$) mean and standard
