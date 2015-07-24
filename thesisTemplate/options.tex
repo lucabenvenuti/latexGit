@@ -128,8 +128,8 @@
 \fancypagestyle{mainmatter}{%
   \renewcommand{\headrulewidth}{.4pt}% Header rule
   \fancyhf{}% Clear header/footer
-  \fancyhead[L]{\textsc{\leftmark}}% Chapter in header Left
-  \fancyhead[R]{\textsl{\rightmark}}% Page number in header Right
+  \fancyhead[L]{\nouppercase{\leftmark}}% Chapter in header Left
+  \fancyhead[R]{\nouppercase{\rightmark}}% Page number in header Right
   \fancyfoot[C]{-- \thepage\ --}
 }
 
