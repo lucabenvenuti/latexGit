@@ -28,7 +28,7 @@ the shear cell with 400,000 particles ). \\
 \label{sec:annmodeldev}
 
 First, we determined the regression of the bulk behaviour parameters, for
-instance the $\mu_{psh}$; see Fig. \ref{fig:22regression}, where the
+instance the $\mu_{psh}$; see Fig. \ref{fig:022regression}, where the
 corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
 simulations.
 \wrong{write down all the simulations performed at the end.}
@@ -54,7 +54,7 @@ The $ANN$ evaluation was significantly faster than the $DEM$ simulations. The
 individuation of the numerical bulk behaviours for all the $DEM$ combinations
 did not take more than a few seconds on a single core.
 %************************************************
-\input{images/22regression}
+\input{images/022regression}
 \improvement{Decide how many regression images are necessary.}
 %************************************************
 \input{tables/06inputRelationshipTable}
@@ -80,7 +80,7 @@ deviations, as shown in Table
 The comparison between numerical and experimental behaviours led to a first
 series of marked combinations ($MC1$) for one load condition of
 the shear cell ($\sigma_n=10,070$ Pa, P=1.0), as plotted in Fig.
-\ref{fig:24radarpirker1schulze10070}, where 
+\ref{fig:024radarpirker1schulze10070}, where 
 the minimum and maximum values are shown, together with the mean. 
 Each axis of the parameter space plot represents one simulation parameter.
 The shaded area indicates valid parameter combinations, and dark shaded
@@ -97,7 +97,7 @@ Further, we observed that various $DEM$ parameter
 combinations could reproduce the experimental behaviour, and thus evaluated
 their mutual dependencies.
 This is shown more clearly in a density plot (see Fig. 
-\ref{fig:25cloudpirker1schulze10070} for $MC1$) 
+\ref{fig:025cloudpirker1schulze10070} for $MC1$) 
 of the particles' coefficient of restitution ($COR$) in relation to
 the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$); 
 in the white area, no valid sets of simulation parameters can be found.
@@ -114,19 +114,19 @@ coefficient.
 First, we set it to $P=0.8$, and we obtained another
 series of marked combinations ($MC2$).
 It can be seen in the parameter space plot in Fig.
-\ref{fig:26radarpirker08schulze10070} that the confidence range is narrower
+\ref{fig:026radarpirker08schulze10070} that the confidence range is narrower
 than for $P=1.0$, while in the density plot in Fig. 
-\ref{fig:27cloudpirker08schulze10070} the area
+\ref{fig:027cloudpirker08schulze10070} the area
 appears larger, although slightly less densely populated. Finally, for $P=1.2$
 and its marked combinations ($MC3$) the parameter space plot in Fig.
-\ref{fig:28radarpirker12schulze10070} shows a largely different confidence
-range, while the density plot in Fig. \ref{fig:30cloudpirker12schulze10070} 
+\ref{fig:028radarpirker12schulze10070} shows a largely different confidence
+range, while the density plot in Fig. \ref{fig:030cloudpirker12schulze10070} 
 shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
 Our approach could therefore be used
 for a wide range of bulk materials.\\
 We then processed the random combinations with the $AoR$ $ANN$. In Fig.
-\ref{fig:31radarpirker1aor} the parameter space plot for the same criteria as
+\ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
 In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by rolling particles, the coefficient of rolling friction has the maximum
@@ -134,7 +134,7 @@ influence. \\
 Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
 and compared it with the experimental one.
 As can be seen in the parameter space plot in Fig.
-\ref{fig:33radarpirker1schulze10070aor}, the confidence interval is very small,
+\ref{fig:033radarpirker1schulze10070aor}, the confidence interval is very small,
 indicating that all the parameters but the $COR$ played an important role, 
 and demonstrating the reliability of these parameter
 combinations in representing the bulk behaviour.
@@ -145,4 +145,4 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 
 \input{tables/13DEMvalidvalues}
 %************************************************
-\input{images/42figures}
+\input{images/042figures}
