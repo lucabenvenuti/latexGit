@@ -10,7 +10,7 @@
 
 This work focused on the particles handled by metallurgical industries.
 \improvement{More words on motivation: industrial processes. 1)Ask MB brochure
-on sinter cooler. 2) Ask TL and CF material on raceway.} 
+on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).} 
 However, a univocal
 method to characterize these particles has so far not been established.
 From the experimental point of view, the main issues are the difficult setups and the general 
@@ -20,11 +20,14 @@ mathematically unique solution describing macro/micro particle contact has yet t
 Moreover, in a recent study, \citet{RefWorks:56} implied "that the dynamic properties of a 
 powder cannot be applied to universally predict the static properties of a powder, and, likewise, 
 the static properties cannot be used to predict dynamic properties".\\
-In their original formulation of $DEM$, \citet{RefWorks:172} allowed two 
-particles to slightly overlap upon contact, and consequently they proposed
+In their original formulation of $DEM$, the discrete element method used in
+this work, \citet{RefWorks:172} allowed two particles to slightly overlap upon
+contact, see Fig. \ref{fig:062collision}, and consequently they proposed
 repulsive forces in relation to this overlap distance.
 The force that particle i exerts on particle j is defined as:
 \input{equations/newtonlaw}
+\input{images/062collision}
+\improvement{explain why we use DEM}
 Their fundamental modelling concept of $DEM$ has
 since been widely accepted in the literature and their soft-sphere contact law has been developed further by
 numerous researchers (Vu-Quoc and Zhang \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}). 
@@ -33,7 +36,9 @@ popular giving rise to the development of commercial (e.g., $PFC3D$, used by
 Wensrich and Katterfeld \cite{RefWorks:87}) and open-source software (e.g.,
 $LIGGGHTS$, Kloss et al. \cite{RefWorks:136}, Aigner et al. \cite{RefWorks:139}).
 Soft-sphere $DEM$ simulations of thousands of particles have been proven to 
-faithfully model particle bulk behaviour (Hohner et al. \cite{RefWorks:86}). \\
+faithfully model particle bulk behaviour, as in Fig. \ref{fig:061cfdemsim}
+(Hohner et al. \cite{RefWorks:86}).\\
+\input{images/061cfdemsim} 
 In these macroscopic $DEM$ simulations, the contact law kernel between a 
 pair of particles determines the global bulk behaviour of the granular material (Ai et al. \cite{RefWorks:131}). 
 As a consequence, defining a correct contact law is of crucial importance for the predictive 
@@ -51,6 +56,7 @@ friction are purely empirical and cannot be determined by direct
 particle-to-particle measurements (Wensrich and Katterfeld \cite{RefWorks:87}).
 Therefore, $DEM$ contact law parameters (
 %Table \ref{tab:08DEMparameters}
+\wrong{cite something}
 ) are
 commonly determined by comparing the macroscopic outcome of large-scale $DEM$
 simulations with bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
@@ -71,3 +77,6 @@ Especially for the already cited rolling friction parameter, it is arduous to
 link the rolling friction parameter to the non-sphericity of the particle. Clearly, there is a
 need for an efficient method for identifying $DEM$ contact law parameters, given
 a specific particle behaviour.
+
+
+

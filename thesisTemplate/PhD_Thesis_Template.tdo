@@ -1,29 +1,31 @@
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ few words on biological relationship}{4}{section*.15}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{5}{section*.17}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ More words on motivation: industrial processes. 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway.}{7}{section*.18}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{9}{section*.19}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some cool pictures}{9}{section*.20}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something?}{13}{section*.21}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ ADD ACRONYM table AND CSV LIST HERE}{16}{section*.22}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Discuss about literature values for all parameters (ref. Combarros, Paulick).}{16}{section*.23}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about CFD: this chapter must be kept (or transformed into cfddem coupling) because of the blast furnace / raceway chapter (right?).}{17}{section*.24}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more propaganda from Haykin introduction}{19}{section*.25}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more propaganda from Kloss}{23}{section*.27}
-\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ reorder}{24}{section*.28}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ put in table and acronym this bulk values names.}{24}{section*.29}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some propaganda for experimental characterization}{29}{section*.35}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Make a table with the particles diameter distributions of all materials.}{29}{section*.36}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Evaluate large-small scale AoR relationship.}{29}{section*.39}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about JSCT (simplified version of RSCT, or viceversa).}{29}{section*.40}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{39}{section*.48}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{39}{section*.50}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{40}{section*.53}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{40}{section*.54}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{47}{section*.68}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{49}{section*.69}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{49}{section*.70}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ available sketches and images from the Primetals presentation.}{53}{section*.71}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{61}{section*.79}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{61}{section*.80}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{61}{section*.81}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{61}{section*.82}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ More words on motivation: industrial processes. 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).}{7}{section*.18}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain why we use DEM}{7}{section*.20}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ cite something}{8}{section*.22}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{11}{section*.23}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some cool pictures}{11}{section*.24}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something?}{15}{section*.25}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ ADD ACRONYM table AND CSV LIST HERE}{18}{section*.26}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Discuss about literature values for all parameters (ref. Combarros, Paulick).}{18}{section*.27}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about CFD: this chapter must be kept (or transformed into cfddem coupling) because of the blast furnace / raceway chapter (right?).}{19}{section*.28}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more propaganda from Haykin introduction}{21}{section*.29}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more propaganda from Kloss}{25}{section*.31}
+\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ reorder}{26}{section*.32}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ put in table and acronym this bulk values names.}{26}{section*.33}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some propaganda for experimental characterization}{31}{section*.39}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Make a table with the particles diameter distributions of all materials.}{31}{section*.40}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Evaluate large-small scale AoR relationship.}{31}{section*.43}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about JSCT (simplified version of RSCT, or viceversa).}{31}{section*.44}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{41}{section*.52}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{41}{section*.54}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{42}{section*.57}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{42}{section*.58}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{49}{section*.72}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{51}{section*.73}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{51}{section*.74}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ available sketches and images from the Primetals presentation.}{55}{section*.75}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{63}{section*.83}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{63}{section*.84}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{63}{section*.85}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{63}{section*.86}
