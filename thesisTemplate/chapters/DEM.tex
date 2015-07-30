@@ -8,10 +8,50 @@
 \label{cap:dem}
 %************************************************
 
+
+\begin{itemize}
+  \item{Molecular Dynamics;}
+  \item{Discrete Element Method:
+  \begin{itemize}
+  \item{Hard spheres approach;}
+  \item{Soft spheres approach.}
+\end{itemize} }
+\end{itemize}
+
+%\section{DEM}
+%\label{sec:dem}
 For each particle i inside the domain, a Discrete Element Method ($DEM$) code
 follows the trajectory and calculates the force that particle i exerts on particle j.
 The main forces involved are: gravity, contact forces due to collisions, and
-further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in multiphase flows. For the raw material used in this work 
+further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
+multiphase flows. 
+
+\section{Hard spheres approach}
+\label{sec:hardspheresapproach}
+\info{words on hard spheres approach}
+
+\section{Soft spheres approach}
+\label{sec:softspheresapproach}
+
+Contact models:
+\begin{itemize}
+  \item{Hooke;}
+  \item{Hertz.}
+\end{itemize}
+Rolling friction:
+\begin{itemize}
+  \item{cdt;}
+  \item{epsd;}
+  \item{epsd2.}
+\end{itemize}
+
+\subsection{Hooke}
+\label{subsec:hooke}
+
+\subsection{Hertz}
+\label{subsec:hertz}
+
+For the raw material used in this work 
 Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear
 Hertzian model without cohesion for the particle-particle and particle-wall contacts. 
 This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
@@ -50,6 +90,10 @@ the tangential component of the contact force between two generic particles
 where $F_n$ is the normal component and $\mu_s$ is the coefficient of sliding
 friction, one of the particle-based $DEM$ parameter we investigated, 
 another being the coefficient of rolling friction ($\mu_r$). 
+
+\subsection{EPSD2}
+\label{subsec:epsd2}
+
 For coarse non-spherical particles, this is a critical parameter and describes
 inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
 torque counteracting the rotation of the particle. The $\mu_r$ parameter enters the 
