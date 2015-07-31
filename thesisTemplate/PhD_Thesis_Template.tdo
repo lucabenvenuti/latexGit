@@ -24,11 +24,13 @@
 \contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{45}{section*.60}
 \contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{46}{section*.63}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{46}{section*.64}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{53}{section*.78}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{55}{section*.79}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{55}{section*.80}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ available sketches and images from the Primetals presentation.}{59}{section*.81}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{67}{section*.89}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{67}{section*.90}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{67}{section*.91}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{67}{section*.92}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ underline that is good that the input parameters are not correlated}{46}{section*.66}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{53}{section*.79}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ or sub-chapter with PCA?}{53}{section*.80}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{55}{section*.81}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{55}{section*.82}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ available sketches and images from the Primetals presentation.}{59}{section*.83}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{67}{section*.91}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{67}{section*.92}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{67}{section*.93}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{67}{section*.94}
