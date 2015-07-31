@@ -55,12 +55,17 @@ core machine. It is not necessary to evaluate a huge number of parameter sets,
 rather we should try to evaluate the \textbf{sensitivity} 
 of the macroscopic bulk behavior with respect to individual particle based parameters.
 This can be realized efficiently by artificial neural networks Fig.
-\ref{fig:048neuron0}!
-\improvement{few words on biological relationship}
+\ref{fig:048neuron0}. 
+After the original work of \citet{RefWorks:189} we know that the human brain is
+composed of neurons and their connections. They receive inputs from receptive
+nerves and together elaborate an output response (e.g. to remove the hand from
+an hot surface).
 \input{images/048neuron0}
-In this artificial neural network neurons are linked to particle based input parameters. 
-By matching the output of the artificial neural network to DEM simulation results the network is trained 
-(i.e. individual neurons are weighted).
+Similarly, in the artificial neural network we trained a series of neurons had
+as inputs particle based parameters and as output the corresponding $DEM$
+simulation results.
+With both data the network is trained (i.e. individual neurons are
+weighted).
 Later, the trained neural network can be used to predict additional valid sets of particle based simulation parameters. 
 
 \begin{enumerate}
