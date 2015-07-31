@@ -8,6 +8,8 @@
 \label{cap:numericalsimulation}
 %************************************************
 
+\wrong{lot of work to do here}
+
 We used $LIGGGHTS$ as the simulation toolbox.
 \improvement{Add some more propaganda from Kloss}
 We decided to utilize a single
@@ -27,11 +29,13 @@ and \cite{RefWorks:176}; however we reduced the former to increase the time step
 \label{sec:aorsim}
 
 In $AoR$ simulations we sought to replicate meticulously the experimental setup, 
-considering both the plate and the liftable boundary, with the same domain size consideration as before. 
+considering both the plate and the liftable boundary, with the same domain size consideration as before
+see Fig. \ref{fig:065aorsim}. 
 The particles had the same properties as in the shear-cell simulation. 
 The first phase was identical to that of the shear-cell simulation. 
 After lifting the boundary, the particles formed a heap.
 An image post-processing software was used to obtain the average slope.
+\input{images/065aorsim}
 
 \section{Shear Cell}
 \label{sec:scsimulation}
@@ -85,7 +89,8 @@ speed.
 We chose a constant velocity of $3*(mean ~ particle ~ radius)/seconds$, as the
 best trade-off.\\
 The normal stresses (pre-shear and shear phases) applied in each simulation were
-the same as in the experiments, see \ref{subsec:srsctexperiment}.
+the same as in the experiments.
+%, see \ref{subsec:srsctexperiment}.
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
 These coefficients, $COR$, $\mu_s$, $\mu_r$,
 $\rho_p$ and $dCylDp$ (the cylinder dimension, proportional to the mean
@@ -93,13 +98,13 @@ particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues},
 were constant in each simulation, but their combination differed between
 simulations.
 Further, $dCylDp$ was used to evaluate the wall effect, but only $~10\%$ of the
-simulations had a $dCylDp$ larger than $20$ (additional information can be found
-in \ref{subsec:srsctsimulation}).
+simulations had a $dCylDp$ larger than $20$.
+%(additional information can be found in \ref{subsec:srsctsimulation}).
 The normal stress $\sigma_n$ and its
 percentage during the incipient flow condition $\tau_{\%}$
 varied to replicate twelve shear-cell load conditions. 
-The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
+% The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
+% and the $AoR$ simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulation output the numerical
 values representative of bulk behaviour (hereafter called \textit{bulk values}),
 see Table \ref{tab:14bulkvalues},
