@@ -110,6 +110,7 @@ particle collision experiments.
 Furthermore, some contact law parameters such as the coefficient of rolling
 friction are purely empirical and cannot be determined by direct 
 particle-to-particle measurements \cite{RefWorks:87}.
+Therefore, $DEM$ contact law parameters are
 commonly determined by comparing the macroscopic outcome of large-scale $DEM$ simulations with 
 bulk experiments \cite{RefWorks:91}. 
 If $DEM$ simulation results disagree with bulk measurements, the set of contact
@@ -174,7 +175,6 @@ limit ($\Delta$) (see Section \ref{subsec:ann}).
 In the parameters identification phase (solid
 lines) we identify valid input parameters by comparing (\textbf{=}) $ANNs$ and
 experimental behaviours.
-Further explanations can be found in Section \ref{sec:methodology}.
 }
 \label{fig:19methodology} 
 \end{figure}
@@ -385,7 +385,7 @@ than 5\% from those of the corresponding experiments, i.e.:
 %************************************************
 the combination was marked. The marked combinations were processed by the
 $AoR$ $ANN$, and then compared with the experiment.
-Were considered valid those that differed by less than $5\%$ also in this
+We considered those valid those that differed by less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \begin{equation}
