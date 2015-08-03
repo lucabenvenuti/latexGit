@@ -8,7 +8,26 @@
 \label{cap:sintersegregator}
 %************************************************
 
-\info{available sketches and images from the Primetals presentation.}
+\section{Sinter chute design}
+\label{sec:sinterchutedesign}
+
+The method previously explained allowed to collect data regarding the contact
+law. We took the average value for each of the DEM parameter and we used them 
+in an industrial scale DEM simulation, with the same software, 
+of an iron ore sintering process. 
+Especially, we examined the behaviour of these particles in a sinter chute cooler. 
+The particles moved from the top of a specifically designed chute and were 
+collected by moving boxes at the bottom. These boxes were holed at the base, 
+allowing cool air to lower the temperature of the sinter. 
+It was critical to ascertain if the larger particles segregated, 
+by moving to the bottom of the boxes, while the smaller to the top, allowing a 
+more effective distribution of the cool air. The simulation was performed 
+with a maximum of 500,000 particles.
+
+\section{Sinter chute results}
+\label{sec:sinterchuteresults}
+
+
 There are two main phases:
 \begin{itemize}
   \item{Initial filling: during this phase many small particles deposited inside
@@ -29,13 +48,27 @@ bottom layers.
 Instead, the smallest particles, radius = 2.5 mm, was rather on the top layer. 
 \input{images/047figuresSinter}
 
+As explained in the Application section, we divided the first of the boxes
+filled by the chute in three (equally high) layers, from 6 on top to 8 
+on bottom, see Fig. \ref{fig:056sinterChuteBox}. 
+The volume over these layers was not considered, because it was continuously 
+supplied of particles from the chute. In Fig. \ref{fig:066sinterbarplot} the
+percentage of the total volume of the particles available in each layer at steady-state, 
+grouped by radius, is shown. 
+We could clearly see how the larger particles disposed mostly 
+in the bottom layer, validating the realized design.
+
 
 \input{images/055sinterChuteVerticalLayout}
 \ref{fig:055sinterChuteVerticalLayout} \\
 
 \input{images/056sinterChuteBox}
-\ref{fig:056sinterChuteBox} \\
 
 
-\input{images/056sinterChuteBox}
-\ref{fig:056sinterChuteBox}
+\input{images/057sinterChuteOrtoLayout}
+\ref{fig:057sinterChuteOrtoLayout} \\
+
+\input{images/066sinterbarplot}
+
+\input{images/067sinterchute}
+\ref{fig:067sinterchute}\\

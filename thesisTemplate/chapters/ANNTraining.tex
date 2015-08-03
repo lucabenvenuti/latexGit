@@ -36,14 +36,19 @@ sigmoid, while the neurons of the output layer use the linear transfer
 function.\\
 Thus, we were able to use the $DEM$ parameter combinations and their
 corresponding bulk values to train the $ANNs$.
-Note that 15\% of the simulations ($test ~ simulations$) were
-randomly picked and excluded from the training processes.
+Especially, we divided the samples in three pools: the first, with 70\% of the
+samples, as \textit{training set}, the second, with 15\% of the samples, as
+\textit{generalization set}, for early stopping, and the third, as \textit{test
+set}, as suggested by Haykin (2009). The assignment of each sample to each pool
+was random.
 We started with all the $DEM$ parameter combinations and their corresponding
-numerical $\mu_{psh}$ to create 36 $ANNs$ that differed in their numbers of
-neurons in the hidden layer (between five to forty neurons).
+numerical $\mu_{psh}$ from the \textit{training set} to create 36 $ANNs$ that
+differed in their numbers of neurons in the hidden layer (between five to forty neurons).
+The \textit{generalization set} was used to speed the training. 
 We then determined the coefficient of determination ($R^2$) between the
-$bulk-macro$ behaviours in the output of the $ANN$ and the 15\% $test ~ simulations$, 
-which were not correlated with the remaining 85\% used for the training. 
+$bulk-macro$ behaviours in the output of the $ANN$ and the \textit{test
+set} simulations, which were not correlated with the remaining 85\% used for the
+training.
 Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
