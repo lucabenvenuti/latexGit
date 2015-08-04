@@ -39,13 +39,7 @@ simulations.
 The plot shows a consistent agreement between the 
 $DEM$ and the $ANN$ values and an almost linear regression ($R^2
 = 0.94$), and
-demonstrates the accurate predictive power of the $ANN$.
-The linear relationship between the
-training values can be seen in Table \ref{tab:06inputRelationshipTable}.
-Sliding friction ($\mu_s$), rolling friction ($\mu_r$) and particle density ($\rho_p$)
-had the greatest influence on, respectively, the coefficient of pre-shear
-($\mu_{psh}$), the angle of repose  ($AoR$) and the bulk density ($\rho_b$). Notably, $\rho_p$
-was not used as a training parameter for $AoR$ bulk behaviour. \\
+demonstrates the accurate predictive power of the $ANN$.\\
 We then investigated how the $R^2$ changed with the number of neurons
 for the $\mu_{psh}$.
 In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
@@ -73,10 +67,6 @@ did not take more than a few seconds on a single core.
   \ref{fig:077regressions}\\
 \input{images/077regressions}
 %************************************************
-\input{tables/06inputRelationshipTable}
-\improvement{underline that is good that the input parameters are not
-correlated}
-
 
 \section{Experiments and Parameter Identification}
 \label{sec:experimentsparameteridentification}
@@ -166,4 +156,6 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 
 
 %************************************************
-\input{images/042figures}
+\input{images/079sctparameterspaceplots}
+\input{images/080sctdensityplots}
+\input{images/081aorandmergeparameterspaceplots}
