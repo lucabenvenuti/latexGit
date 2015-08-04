@@ -31,18 +31,20 @@ the shear cell with 400,000 particles ). \\
 
 First, we determined the regression of the bulk behaviour parameters, for
 instance the $\mu_{psh}$, 
-with a Bayesian linear prediction (Figure 3) and a Gaussian nonlinear prediction (Figure 4). Later we obtained 
-Fig. \ref{fig:022regression}, where the
-corresponding plot for the $ANN$ with the maximum $R^2$ is shown. Each circle represents one of the 546
-simulations.
+with a Bayesian linear prediction (Fig.
+\ref{fig:069sctbayesianlinearregressor}) and a Gaussian nonlinear prediction
+(Fig.  \ref{fig:070sctgaussiannonlinearregressor}). 
+Later we obtained Fig.
+\ref{fig:071annnonlinearregressor}, where the corresponding plot for the $ANN$ with the maximum $R^2$ is shown. 
+Each circle represents one of the 546 simulations.
 \wrong{write down all the simulations performed at the end.}
-The plot shows a consistent agreement between the 
-$DEM$ and the $ANN$ values and an almost linear regression ($R^2
-= 0.94$), and
-demonstrates the accurate predictive power of the $ANN$.\\
-We then investigated how the $R^2$ changed with the number of neurons
-for the $\mu_{psh}$.
-In this case, we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons. 
+Table \ref{tab:14regressionvalues} shows a quantitative comparison between the
+three methods. 
+In fact, 
+we achieved a $R^2 = 0.96$ for an $ANN$ with fifteen neurons,
+a consistent agreement between the 
+$DEM$ and the $ANN$ values, which demonstrates the accurate predictive power of
+the $ANN$.\\ 
 Increasing the number of neurons did not improve the $R^2$; it even started to
 oscillate with higher numbers of neurons.
 We subsequently obtained the optimal number of neurons for all $ANNs$.
