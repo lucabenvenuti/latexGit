@@ -20,7 +20,7 @@
 
 %\section{DEM}
 %\label{sec:dem}
-For each particle i inside the domain, a Discrete Element Method ($DEM$) code
+For each particle i inside the domain, a Discrete Element Method (\acs{DEM}) code
 follows the trajectory and calculates the force that particle i exerts on particle j.
 The main forces involved are: gravity, contact forces due to collisions, and
 further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
@@ -58,7 +58,7 @@ This granular model uses the following formula for the contact force between two
 %************************************************
 \input{equations/forceij}
 %************************************************
-where the subscript $n$ stands for normal and $t$ for tangential. 
+where the subscript \acs{n} stands for normal and \acs{t} for tangential. 
 Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
 while $\delta$ and $v$ are the displacement and the velocity, $r$ is the
 distance between two particles of radii $R_i$ and $R_j$, and $d = R_i + R_j $ is
@@ -87,20 +87,20 @@ the tangential component of the contact force between two generic particles
 \input{equations/force_t}
 %************************************************
 
-where $F_n$ is the normal component and \ac{mus} is the coefficient of sliding
-friction, one of the particle-based $DEM$ parameter we investigated, 
-another being the coefficient of rolling friction (\ac{mur}). 
+where $F_n$ is the normal component and \acs{mus} is the coefficient of sliding
+friction, one of the particle-based \acs{DEM} parameter we investigated, 
+another being the coefficient of rolling friction (\acs{mur}). 
 
 \subsection{EPSD2}
 \label{subsec:epsd2}
 
 For coarse non-spherical particles, this is a critical parameter and describes
 inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
-torque counteracting the rotation of the particle. The \ac{mur} parameter enters the 
+torque counteracting the rotation of the particle. The \acs{mur} parameter enters the 
 equations according to the elasto-rolling resistance model presented by Wensrich and 
 Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131} 
 based on the work of Jiang et al. \cite{RefWorks:143}. 
-The model is called $EPSD2$ in $LIGGGHTS$ and is appropriate for both one-way and cyclical rolling cases.
+The model is called $EPSD2$ in \acs{LIGGGHTS} and is appropriate for both one-way and cyclical rolling cases.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 
 %************************************************
@@ -108,8 +108,8 @@ The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 %************************************************
 
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
-The last two particle-based $DEM$ parameters we investigated were \ac{rhop}
-and the coefficient of restitution (\ac{CoR}) as defined by Ai. et al.
+The last two particle-based \acs{DEM} parameters we investigated were \acs{rhop}
+and the coefficient of restitution (\acs{CoR}) as defined by Ai. et al.
 \cite{RefWorks:131}.\\
 
 \improvement{ADD ACRONYM table AND CSV LIST HERE}

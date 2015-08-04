@@ -23,9 +23,9 @@ materials.}
 \label{sec:aor}
 
 A sample was deposited on a 20 cm diameter plate with liftable boundary called
-static angle of repose (\ac{AoR}) tester, see Fig. \ref{fig:051aorLab}.
+static angle of repose (\acs{AoR}) tester, see Fig. \ref{fig:051aorLab}.
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
-Once stabilized, the \ac{AoR} was measured eight times using a digital protractor at different positions of the heap. 
+Once stabilized, the \acs{AoR} was measured eight times using a digital protractor at different positions of the heap. 
 The average of the measurements gave the fourth bulk value.
 Note that, since the experiments were performed only for larger-size bulk
 solids, the compaction condition in the initial state was not critical to the
@@ -38,7 +38,7 @@ final result.\\
 \label{sec:aorlargescale}
 
 At the Leoben VAS facility a new rotating double chute was used: 
-9 large scale dynamic angle of repose tests were performed. 
+nine large scale dynamic angle of repose tests were performed. 
 \improvement{Evaluate large-small scale AoR relationship.}
 
 \section{Jenike Shear Cell tester}
@@ -80,19 +80,19 @@ bulk value, see Schulze \cite{RefWorks:118}:
 \input{equations/phi_ps}
 %************************************************
 The normal stress and the angular velocity were then immediately reduced to zero. 
-Subsequently, the specimen was sheared under a fraction ($shear-perc$) of the first normal load until the shear force 
-reached a maximum and began to decrease. 
+Subsequently, the specimen was sheared under a fraction (\acs{tauperc}) of the
+first normal load until the shear force reached a maximum and began to decrease. 
 Both the pre-shear and shear phases were executed at constant velocity. 
 We define the horizontal stress at the shear force peak as the maximum shear
-stress, thus obtaining the incipient flow/shear coefficient of internal friction $
-(\mu_{sh})$, third bulk value (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
+stress, thus obtaining the incipient flow/shear coefficient of internal friction
+\acs{mush}, third bulk value (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
 %************************************************
 \input{equations/phi_s}
 %************************************************
 Three different pre-shear normal loads were applied in the experiment
 (1,000, 2,000, and 10,000 Pa).
 For each we used a normal load proportional to the initial one
-(\textit{shear-perc}), increasing from stage one (40\%) to stage four (100\%)
+(\acs{tauperc}), increasing from stage one (40\%) to stage four (100\%)
 with two escalating intermediate stages (60\% and 80\%) for a total of twelve load conditions.
 Each experiment was performed on a fresh material sample. \\
 
@@ -108,18 +108,18 @@ Each experiment was performed on a fresh material sample. \\
 Experimental and numerical samples of the stress path
     for the Schulze ring shear cell tester.
 	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
-	point in time at which the normal stress ($\sigma_n$) was modified during the
+	point in time at which the normal stress (\acs{sigman}) was modified during the
 	tests.
-	Until $\tilde{t}=1$, the $\sigma_n$ was kept constant at 10,000 Pa. 
+	Until $\tilde{t}=1$, the \acs{sigman} was kept constant at 10,000 Pa. 
 	In Fig. \ref{fig:020experimental}, 
  	a plateau was reached at $\tilde{t}~=0.91$.
-	The coefficient of pre-shear (\ac{mupsh}) was calculated as the average of the
-	coefficient of internal friction ($\mu_{ie}$) in this first plateau.
-	At $\tilde{t}=1$, the $\sigma_n$ was reduced to $80 \%$ of its initial
+	The coefficient of pre-shear (\acs{mupsh}) was calculated as the average of the
+	coefficient of internal friction (\acs{muie}) in this first plateau.
+	At $\tilde{t}=1$, the \acs{sigman} was reduced to $80 \%$ of its initial
 	value, and soon after
 	a second plateau developed.
 	We obtained the coefficient of
-	shear ($ \mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+	shear (\acs{mush}) as the average of \acs{muie} in this second plateau.
 	The stress paths agree well, especially the plateaux.
 	They were clearly relevant because
 	the values representative of the bulk behaviours 
@@ -137,27 +137,27 @@ Experimental and numerical samples of the stress path
 \section{Parameter Identification}
 \label{sec:parameteridentification}
 
-We obtained for each of the twelve load conditions of the $SSC$ three bulk
-values (\ac{mupsh}, \ac{mush} and \ac{rhob}).
-The fourth bulk value was the result of two angle of repose (\ac{AoR}) tests that
+We obtained for each of the twelve load conditions of the \acs{SCT} three bulk
+values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
+The fourth bulk value was the result of two angle of repose (\acs{AoR}) tests that
 recreated the repose angle observed in a pile of the
 real material. 
 
-Subsequently, we compared the $ANN$ and experimental bulk behaviours for the
+Subsequently, we compared the \acs{ANN} and experimental bulk behaviours for the
 twelve shear-cell load conditions.
 If in a DEM-parameter combination all the three bulk values differed by less 
 than 5\% from those of the corresponding experiments, i.e.:
 %************************************************
 \input{equations/check2}
 the combination was marked. The marked combinations were processed by the
-\ac{AoR} $ANN$, and then compared with the experiment.
+\acs{AoR} \acs{ANN}, and then compared with the experiment.
 Were considered valid those that differed by less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \input{equations/checkaor}
 Further, to prove the validity of the system, we tested the marked combinations
 by modifying the experimental bulk values of the shear cell. 
-We artificially decreased or increased the shear force, and thus \ac{mupsh} and
-\ac{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+We artificially decreased or increased the shear force, and thus \acs{mupsh} and
+\acs{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
 \input{equations/pcoeff}

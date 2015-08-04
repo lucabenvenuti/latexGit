@@ -10,25 +10,25 @@
 
 \wrong{lot of work to do here}
 
-We used $LIGGGHTS$ as the simulation toolbox.
+We used \acs{LIGGGHTS} as the simulation toolbox.
 \improvement{Add some more propaganda from Kloss}
 We decided to utilize a single
 contact law for all the simulations performed.
 The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
-also depends on the particle density (\ac{rhop}).
+also depends on the particle density (\acs{rhop}).
 Furthermore, we locked the size distribution, which was obtained by experimental
 sieving, see Table \ref{tab:09DEMFixedinputvalues}.
 
-The $DEM$ parameters for the Young's modulus (\ac{E}) and the Poisson's coefficient
-(\ac{nu}) were taken from the literature, see \cite{RefWorks:175} 
+The \acs{DEM} parameters for the Young's modulus (\acs{E}) and the Poisson's coefficient
+(\acs{nu}) were taken from the literature, see \cite{RefWorks:175} 
 and \cite{RefWorks:176}; however we reduced the former to increase the time step
-(\ac{deltat}), following the recommendations of Ai et al. \cite{RefWorks:131}.
+(\acs{deltat}), following the recommendations of Ai et al. \cite{RefWorks:131}.
 
 
 \section{Angle of Repose}
 \label{sec:aorsim}
 
-In \ac{AoR} simulations we sought to replicate meticulously the experimental setup, 
+In \acs{AoR} simulations we sought to replicate meticulously the experimental setup, 
 considering both the plate and the liftable boundary, with the same domain size consideration as before
 see Fig. \ref{fig:065aorsim}. 
 The particles had the same properties as in the shear-cell simulation. 
@@ -41,7 +41,7 @@ An image post-processing software was used to obtain the average slope.
 \label{sec:scsimulation}
 %************************************************
 
-$LIGGGHTS$, the simulation toolbox we used, meets all the requirements of
+\acs{LIGGGHTS}, the simulation toolbox we used, meets all the requirements of
 modelling the shear tester described in \ref{sec:jsct}. 
 First, it is capable of importing triangulated meshes of the two rings and a top lid. 
 Since the real setup had a wall thickness, contact forces acting on a mesh are summed and can be saved, 
@@ -50,18 +50,18 @@ Second, the code can move a mesh with constant
 velocity as required for the measurement. 
 To determine the shear stresses, the bulk solid had to be stressed with 
 user-defined normal stresses. 
-Therefore, a stress-controlled wall (servo-wall in $LIGGGHTS$) was applied to the lid. \\
-Although the geometry differs, the $SSC$ was designed to obtain the same values for the shear stresses as the 
-Jenike shear cell tester ($JSCT$), but with improved automation and reliability,
+Therefore, a stress-controlled wall (servo-wall in \acs{LIGGGHTS}) was applied to the lid. \\
+Although the geometry differs, the \acs{SCT} was designed to obtain the same values for the shear stresses as the 
+Jenike shear cell tester (\acs{JSCT}), but with improved automation and reliability,
 see Schulze \cite{RefWorks:118}. 
 For this reason, the simulation setup was
-based on the $JSCT$.
+based on the \acs{JSCT}.
 As suggested by Aigner et al. \cite{RefWorks:139} and Benvenuti et al. \cite{RefWorks:173}, 
 the diameter and the height of the rings operated in the simulations had to be sufficiently large to avoid relevant wall effects. 
 However, a larger domain increases the number of particles and thus
 simulation time.
-For this reason, we considered the cylinder dimension (\ac{dCylDp}), which is
-proportional to the mean particle diameter, as an additional $DEM$
+For this reason, we considered the cylinder dimension (\acs{dCylDp}), which is
+proportional to the mean particle diameter, as an additional \acs{DEM}
 parameter to be investigated. \\
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed
@@ -92,47 +92,47 @@ The normal stresses (pre-shear and shear phases) applied in each simulation were
 the same as in the experiments.
 %, see \ref{subsec:srsctexperiment}.
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
-These coefficients, \ac{CoR}, \ac{mus}, \ac{mur},
-\ac{rhop} and \ac{dCylDp} (the cylinder dimension, proportional to the mean
+These coefficients, \acs{CoR}, \acs{mus}, \acs{mur},
+\acs{rhop} and \acs{dCylDp} (the cylinder dimension, proportional to the mean
 particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues}, 
 were constant in each simulation, but their combination differed between
 simulations.
-Further, \ac{dCylDp} was used to evaluate the wall effect, but only $~10\%$ of the
-simulations had a \ac{dCylDp} larger than $20$.
+Further, \acs{dCylDp} was used to evaluate the wall effect, but only $~10\%$ of the
+simulations had a \acs{dCylDp} larger than $20$.
 %(additional information can be found in \ref{subsec:srsctsimulation}).
-The normal stress $\sigma_n$ and its
-percentage during the incipient flow condition $\tau_{\%}$
+The normal stress \acs{sigman} and its
+percentage during the incipient flow condition \acs{tauperc}
 varied to replicate twelve shear-cell load conditions. 
 % The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-% and the \ac{AoR} simulation is presented in \ref{subsec:aorsimulation}.
+% and the \acs{AoR} simulation is presented in \ref{subsec:aorsimulation}.
 A Matlab script allowed us to extract from the simulation output the numerical
 values representative of bulk behaviour (hereafter called \textit{bulk values}),
 see Table \ref{tab:14bulkvalues},
-for each $DEM$ simulation parameter combination.
+for each \acs{DEM} simulation parameter combination.
 \change{reorder}
 
 , which consists of
- bulk density (\ac{rhob}),
- coefficient of internal friction in the pre-shear phase (\ac{mupsh}),
- coefficient of internal friction in the shear phase (\ac{mush}),
- and angle of repose (\ac{AoR}).
+ bulk density (\acs{rhob}),
+ coefficient of internal friction in the pre-shear phase (\acs{mupsh}),
+ coefficient of internal friction in the shear phase (\acs{mush}),
+ and angle of repose (\acs{AoR}).
  
 \wrong{put in table and acronym this bulk values names.}
  
-The first bulk value (\ac{rhob}) was provided directly. 
+The first bulk value (\acs{rhob}) was provided directly. 
 For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
 observed a stress path as in Fig. \ref{fig:021simexample}.
-First, the $\sigma_n$ was kept constant while the coefficient of internal
-friction ($\mu_{ie}$) initially increased and then reached a plateau.
-The second bulk value (\ac{mupsh}) was calculated as the average of the
-$\mu_{ie}$ in this plateau.
-The $\sigma_n$ was then automatically reduced, in our example to $80 \%$ of
+First, the \acs{sigman} was kept constant while the coefficient of internal
+friction (\acs{muie}) initially increased and then reached a plateau.
+The second bulk value (\acs{mupsh}) was calculated as the average of the
+\acs{muie} in this plateau.
+The \acs{sigman} was then automatically reduced, in our example to $80 \%$ of
 its initial value.
 Subsequently, a second plateau developed.
 We obtained the third
-value (\ac{mush}) as the average of $\mu_{ie}$ in this second plateau.
+value (\acs{mush}) as the average of \acs{muie} in this second plateau.
 The stress path accords with the experimental one, especially the plateaux.\\
-In the \ac{AoR} tests the average of the repose angles provided us with the fourth
+In the \acs{AoR} tests the average of the repose angles provided us with the fourth
 bulk value, allowing us to define the numerical bulk behaviour.
 
 Fig. \ref{fig:007shearcellsim} \\
@@ -144,18 +144,18 @@ Fig. \ref{fig:021simexample} \\
 Numerical samples of the stress path
     for the Schulze ring shear cell tester.
 	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
-	point in time at which the normal stress ($\sigma_n$) was modified during the
+	point in time at which the normal stress (\acs{sigman}) was modified during the
 	tests.
-	Until $\tilde{t}=1$, the $\sigma_n$ was kept constant at 10,000 Pa.
+	Until $\tilde{t}=1$, the \acs{sigman} was kept constant at 10,000 Pa.
 	In Fig. \ref{fig:20experimental},
  	a plateau was reached at $\tilde{t}~=0.91$.
-	The coefficient of pre-shear (\ac{mupsh}) was calculated as the average of the
-	coefficient of internal friction ($\mu_{ie}$) in this first plateau.
-	At $\tilde{t}=1$, the $\sigma_n$ was reduced to $80 \%$ of its initial
+	The coefficient of pre-shear (\acs{mupsh}) was calculated as the average of the
+	coefficient of internal friction (\acs{muie}) in this first plateau.
+	At $\tilde{t}=1$, the \acs{sigman} was reduced to $80 \%$ of its initial
 	value, and soon after
 	a second plateau developed.
 	We obtained the coefficient of
-	shear ($ \mu_{sh}$) as the average of $\mu_{ie}$ in this second plateau.
+	shear (\acs{mush}) as the average of \acs{muie} in this second plateau.
 	The stress paths agree well, especially the plateaux.
 	They were clearly relevant because
 	the values representative of the bulk behaviours
