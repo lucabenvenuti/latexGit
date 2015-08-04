@@ -47,11 +47,19 @@ differed in their numbers of neurons in the hidden layer (between five to forty 
 The \textit{generalization set} was used to speed the training. 
 We then determined the coefficient of determination ($R^2$) between the
 $bulk-macro$ behaviours in the output of the $ANN$ and the \textit{test
-set} simulations, which were not correlated with the remaining 85\% used for the
+set} simulations, which were not correlated with the remaining 70\% used for the
 training.
 Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
+We then checked $R^2$, \textit{root mean squared error, mean absolute error,
+mean squared error} of this ANN against a \textit{Bayesian linear regression}
+and a \textit{Gaussian nonlinear regression} to estimate the validity of the
+regression.
+Both were trained with the same training set as the ANNs. 
+The check was performed for each method by comparing the DEM bulk values of 
+the test set against the bulk values predicted by each method from the 
+corresponding DEM input values of the test set. \\
 We repeated the same $ANN$ creation steps for $\mu_{sh}$, $\rho_b$
 and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
 Since $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
