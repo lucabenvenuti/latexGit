@@ -17,13 +17,18 @@ contact law for all the simulations performed.
 The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
 also depends on the particle density (\acs{rhop}).
 Furthermore, we locked the size distribution, which was obtained by experimental
-sieving, see Table \ref{tab:09DEMFixedinputvalues}.
-
+sieving, see Table \ref{tab:09DEMFixedinputvalues}.\\
 The \acs{DEM} parameters for the Young's modulus (\acs{E}) and the Poisson's coefficient
 (\acs{nu}) were taken from the literature, see \cite{RefWorks:175} 
 and \cite{RefWorks:176}; however we reduced the former to increase the time step
-(\acs{deltat}), following the recommendations of Ai et al. \cite{RefWorks:131}.
+(\acs{deltat}), following the recommendations of Ai et al.
+\cite{RefWorks:131}.\\
+A Matlab script allowed us to extract from the simulation output the numerical
+values representative of bulk behaviour (hereafter called \textit{bulk values}),
+see Table \ref{tab:14bulkvalues},
+for each \acs{DEM} simulation parameter combination.
 
+\input{tables/14bulkvalues}
 
 \section{Angle of Repose}
 \label{sec:aorsim}
@@ -35,6 +40,8 @@ The particles had the same properties as in the shear-cell simulation.
 The first phase was identical to that of the shear-cell simulation. 
 After lifting the boundary, the particles formed a heap.
 An image post-processing software was used to obtain the average slope.
+In the \acs{AoR} tests the average of the repose angles provided us with the fourth
+bulk value of Table \ref{tab:14bulkvalues}.
 \input{images/065aorsim}
 
 \section{Shear Cell}
@@ -102,25 +109,10 @@ simulations had a \acs{dCylDp} larger than $20$.
 %(additional information can be found in \ref{subsec:srsctsimulation}).
 The normal stress \acs{sigman} and its
 percentage during the incipient flow condition \acs{tauperc}
-varied to replicate twelve shear-cell load conditions. 
-% The complete description of the shear-cell simulations can be found in \ref{subsec:srsctsimulation}, 
-% and the \acs{AoR} simulation is presented in \ref{subsec:aorsimulation}.
-A Matlab script allowed us to extract from the simulation output the numerical
-values representative of bulk behaviour (hereafter called \textit{bulk values}),
-see Table \ref{tab:14bulkvalues},
-for each \acs{DEM} simulation parameter combination.
+varied to replicate twelve shear-cell load conditions.\\ 
 \change{reorder}
-
-, which consists of
- bulk density (\acs{rhob}),
- coefficient of internal friction in the pre-shear phase (\acs{mupsh}),
- coefficient of internal friction in the shear phase (\acs{mush}),
- and angle of repose (\acs{AoR}).
- 
-\wrong{put in table and acronym this bulk values names.}
- 
 The first bulk value (\acs{rhob}) was provided directly. 
-For correctly performed simulations, see \ref{subsec:srsctsimulation}, we
+For correctly performed simulations, we
 observed a stress path as in Fig. \ref{fig:021simexample}.
 First, the \acs{sigman} was kept constant while the coefficient of internal
 friction (\acs{muie}) initially increased and then reached a plateau.
@@ -132,8 +124,8 @@ Subsequently, a second plateau developed.
 We obtained the third
 value (\acs{mush}) as the average of \acs{muie} in this second plateau.
 The stress path accords with the experimental one, especially the plateaux.\\
-In the \acs{AoR} tests the average of the repose angles provided us with the fourth
-bulk value, allowing us to define the numerical bulk behaviour.
+Together with the value from the \acs{AoR} simulation, we were able to define
+the numerical bulk behaviour.
 
 Fig. \ref{fig:007shearcellsim} \\
 \input{images/007shearcellsim}
@@ -147,7 +139,7 @@ Numerical samples of the stress path
 	point in time at which the normal stress (\acs{sigman}) was modified during the
 	tests.
 	Until $\tilde{t}=1$, the \acs{sigman} was kept constant at 10,000 Pa.
-	In Fig. \ref{fig:20experimental},
+	In Fig. \ref{fig:020experimental},
  	a plateau was reached at $\tilde{t}~=0.91$.
 	The coefficient of pre-shear (\acs{mupsh}) was calculated as the average of the
 	coefficient of internal friction (\acs{muie}) in this first plateau.
