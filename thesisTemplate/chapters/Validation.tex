@@ -11,15 +11,15 @@
 \section{DEM Simulations}
 \label{sec:simulations}
 
-For sinter fine, 546 shear cell and 81 static $AoR$ simulations 
+For sinter fine, 546 shear cell and 81 static \ac{AoR} simulations 
 \wrong{write down all the simulations performed at the end.}
 were run with
 the parameter combinations described in Table
 \ref{tab:10DEMVariableinputvalues}.
 The computational time amounted to 1 hour with 32 AMD cores for a benchmark
-shear-cell simulation and to 9 hours for a benchmark $AoR$ simulation, both with
+shear-cell simulation and to 9 hours for a benchmark \ac{AoR} simulation, both with
 50,000 particles.
-Simulations with larger $dCylDp$ required more time (e.g., about 12 hours for
+Simulations with larger \ac{dCylDp} required more time (e.g., about 12 hours for
 the shear cell with 400,000 particles ). \\
 
 \input{tables/10DEMVariableinputvalues}.
@@ -30,7 +30,7 @@ the shear cell with 400,000 particles ). \\
 \input{tables/15regressionvalues}
 
 First, we determined the regression of the bulk behaviour parameters, for
-instance the $\mu_{psh}$, 
+instance the \ac{mupsh}, 
 with a Bayesian linear prediction (Fig.
 \ref{fig:069sctbayesianlinearregressor}) and a Gaussian nonlinear prediction
 (Fig.  \ref{fig:070sctgaussiannonlinearregressor}). 
@@ -76,16 +76,16 @@ did not take more than a few seconds on a single core.
 \input{tables/09DEMFixedinputvalues}
 
 
-Experimental values identifying the bulk behavior, $\mu_{psh}$, $\mu_{sh}$ and $\rho_{b}$, 
+Experimental values identifying the bulk behavior, \ac{mupsh}, \ac{mush} and $\rho_{b}$, 
 of sinter fine were acquired through $SSC$ tests. 
 Table \ref{tab:05sinterTableExperimental} presents
-these values for three load conditions: clearly the $\mu_{psh}$ decreases, and 
-the $\mu_{sh}$ oscillates.
-The $\rho_b$ has a clear average of 1,760 $kg/m^3$ with a 42 
+these values for three load conditions: clearly the \ac{mupsh} decreases, and 
+the \ac{mush} oscillates.
+The \ac{rhob} has a clear average of 1,760 $kg/m^3$ with a 42 
 $kg/m^3$ deviation.
-Two $AoR$ tests were performed that gave an average angle of
+Two \ac{AoR} tests were performed that gave an average angle of
 38.85$^\circ$.
-We obtained the radius ($R$) mean and standard
+We obtained the radius (\ac{R}) mean and standard
 deviations, as shown in Table
 \ref{tab:09DEMFixedinputvalues}, from sieving experiments.
 The comparison between numerical and experimental behaviours led to a first
@@ -97,9 +97,9 @@ Each axis of the parameter space plot represents one simulation parameter.
 The shaded area indicates valid parameter combinations, and dark shaded
 values indicate the confidence range.
 Note that the confidence interval is large, 
-especially for the $COR$, which highlights its insignificant influence on the
+especially for the \ac{CoR}, which highlights its insignificant influence on the
 characterization.
-Both the $\rho_p$  and the $\mu_s$, however, show a narrow confidence interval, 
+Both the \ac{rhop}  and the \ac{mus}, however, show a narrow confidence interval, 
 which demonstrates their influence and the ability of this procedure to find
 valid $DEM$ parameters.
 These results agree with our examination of the ratio of the standard deviation
@@ -109,15 +109,15 @@ combinations could reproduce the experimental behaviour, and thus evaluated
 their mutual dependencies.
 This is shown more clearly in a density plot (see Fig. 
 \ref{fig:025cloudpirker1schulze10070} for $MC1$) 
-of the particles' coefficient of restitution ($COR$) in relation to
-the coefficients of sliding friction ($\mu_s$) and rolling friction ($\mu_r$); 
+of the particles' coefficient of restitution (\ac{CoR}) in relation to
+the coefficients of sliding friction (\ac{mus}) and rolling friction (\ac{mur}); 
 in the white area, no valid sets of simulation parameters can be found.
 In each cell the valid sets are grouped according to the 4 different COR
 ranges.
 Each cell is coloured according to the group with the most members.
 Multiple
-combinations (250,407 or 4\% of the total) of $\mu_s$ and $\mu_r$ reproduced
-the experimental behaviour with varying $COR$.
+combinations (250,407 or 4\% of the total) of \ac{mus} and \ac{mur} reproduced
+the experimental behaviour with varying \ac{CoR}.
 This underlines once more their correlation, as already stated by Wensrich and 
 Katterfeld \cite{RefWorks:87}.
 To further demonstrate the validity of the procedure, we modified the product
@@ -136,17 +136,17 @@ shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
 Our approach could therefore be used
 for a wide range of bulk materials.\\
-We then processed the random combinations with the $AoR$ $ANN$. In Fig.
+We then processed the random combinations with the \ac{AoR} $ANN$. In Fig.
 \ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
 before can be seen.
 In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by rolling particles, the coefficient of rolling friction has the maximum
 influence. \\
-Finally, we extracted from the $MC1$ values the $AoR$ $ANN$ behaviour
+Finally, we extracted from the $MC1$ values the \ac{AoR} $ANN$ behaviour
 and compared it with the experimental one.
 As can be seen in the parameter space plot in Fig.
 \ref{fig:033radarpirker1schulze10070aor}, the confidence interval is very small,
-indicating that all the parameters but the $COR$ played an important role, 
+indicating that all the parameters but the \ac{CoR} played an important role, 
 and demonstrating the reliability of these parameter
 combinations in representing the bulk behaviour.
 From the initial 6,250,000 combinations, only 3,884 were valid (0.0621

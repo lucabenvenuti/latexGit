@@ -42,14 +42,14 @@ samples, as \textit{training set}, the second, with 15\% of the samples, as
 set}, as suggested by Haykin (2009). The assignment of each sample to each pool
 was random.
 We started with all the $DEM$ parameter combinations and their corresponding
-numerical $\mu_{psh}$ from the \textit{training set} to create 36 $ANNs$ that
+numerical \ac{mupsh} from the \textit{training set} to create 36 $ANNs$ that
 differed in their numbers of neurons in the hidden layer (between five to forty neurons).
 The \textit{generalization set} was used to speed the training. 
 We then determined the coefficient of determination ($R^2$) between the
 $bulk-macro$ behaviours in the output of the $ANN$ and the \textit{test
 set} simulations, which were not correlated with the remaining 70\% used for the
 training.
-Thus, we could select for $\mu_{psh}$ the $ANN$ with the maximum $R^2$, 
+Thus, we could select for \ac{mupsh} the $ANN$ with the maximum $R^2$, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
 We then checked $R^2$, \textit{root mean squared error, mean absolute error,
@@ -60,11 +60,11 @@ Both were trained with the same training set as the ANNs.
 The check was performed for each method by comparing the DEM bulk values of 
 the test set against the bulk values predicted by each method from the 
 corresponding DEM input values of the test set. \\
-We repeated the same $ANN$ creation steps for $\mu_{sh}$, $\rho_b$
-and $AoR$, obtaining one trained $ANN$ for each bulk value. \\
-Since $\mu_{psh}$, $\mu_{sh}$ and $\rho_b$ belonged to the shear-cell
+We repeated the same $ANN$ creation steps for \ac{mush}, \ac{rhob}
+and \ac{AoR}, obtaining one trained $ANN$ for each bulk value. \\
+Since \ac{mupsh}, \ac{mush} and \ac{rhob} belonged to the shear-cell
 simulations, their $ANNs$ were handled together: we had one cluster with three 
-$ANNs$ for the shear cell and one with only one $ANN$ for the $AoR$.
+$ANNs$ for the shear cell and one with only one $ANN$ for the \ac{AoR}.
 We could then proceed in identifying valid input parameters.
 Oberkampf et al. \cite{RefWorks:160} suggested using a Design of Experiments
 ($DoE$) method to determine the parameter combinations to be simulated.
@@ -78,7 +78,7 @@ according to a standard uniform distribution.
 The total number of combinations of these random values was 6,250,000.
 These combinations were then fed to and processed by the selected
 $ANNs$, and thus three bulk values for the shear
-cell and one for the $AoR$ were obtained.
+cell and one for the \ac{AoR} were obtained.
 % %************************************************
 \input{images/018nnscheme}
 \input{tables/12DEMRandominputvalues}
