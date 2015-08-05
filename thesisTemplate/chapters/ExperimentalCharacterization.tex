@@ -9,7 +9,7 @@
 \label{cap:experimentalcharacterization}
 %************************************************
 
-\improvement{Add some propaganda for experimental characterization}
+\improvement{Add some details for experimental characterization}
 
 
 
@@ -19,27 +19,28 @@
 \improvement{Make a table with the particles diameter distributions of all
 materials.}
 
-\section{Angle of Repose (p-p) - Small Scale}
+\section{Drained angle of repose (p-p) - small scale}
 \label{sec:aor}
 
-A sample was deposited on a 20 cm diameter plate with liftable boundary called
-static angle of repose (\acs{AoR}) tester, see Fig. \ref{fig:051aorLab}.
+\improvement{explain that the values collected refers to particle-particle
+interactions} 
+A sample was deposited on a 20 cm diameter plate with liftable
+boundary called static angle of repose (\acs{AoR}) tester, see Fig. \ref{fig:088aorexperimental}.
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
 Once stabilized, the \acs{AoR} was measured eight times using a digital protractor at different positions of the heap. 
-The average of the measurements gave the fourth bulk value.
-Note that, since the experiments were performed only for larger-size bulk
-solids, the compaction condition in the initial state was not critical to the
-final result.\\
-\input{images/051aorLab}
-\ref{fig:005aor}.\\
-\input{images/005aor}
+The average of the measurements gave the fourth bulk value (see Table
+\ref{tab:14bulkvalues}).
+Note that, since the experiments were performed only for relatively large size
+bulk solids, the compaction condition in the initial state was not critical to the
+final result of this test.\\
+\input{images/088aorexperimental}
 
-\section{Angle of Repose (p-p) - Large Scale}
+\section{Drained angle of repose (p-p) - large scale}
 \label{sec:aorlargescale}
 
 At the Leoben VAS facility a new rotating double chute was used: 
 nine large scale dynamic angle of repose tests were performed. 
-\improvement{Evaluate large-small scale AoR relationship.}
+\improvement{Evaluate large-small scale AoR relationship and put some images.}
 
 \section{Jenike Shear Cell tester}
 \label{sec:jsct}
@@ -49,27 +50,35 @@ nine large scale dynamic angle of repose tests were performed.
 viceversa).}
 Fig. \ref{fig:052ShearCellLab} \\
 Fig. \ref{fig:053PoorMan} \\
-
-\input{images/052ShearCellLab}
-\input{images/053PoorMan}
-
 Fig. \ref{fig:003sjsct} \\
-\input{images/003sjsct}
 
 Fig. \ref{fig:004sjsctdiagram} \\
-\input{images/004sjsctdiagram}
+\input{images/089jsctexperimental}
 
 \section{Schulze Ring Shear Cell tester (p-p)}
 \label{sec:SRSCT}
 %************************************************
 
-A representative sample of bulk solid was placed in a shear cell of specified
-dimensions ($external ~ radius = 100 ~ mm$, $internal ~ radius = 50 ~ mm$).
+\input{images/090sctexperimental}
+
+A representative sample of bulk solid was placed in a Schulze ring shear cell
+tester (\acs{SCT}) of specified dimensions ($external ~ radius = 100 ~ mm$,
+$internal ~ radius = 50 ~ mm$), see Fig. \ref{fig:001srsct}.
 A normal load was applied to the cover. As soon as the lid touched the sample,
 its position was calculated.
-Together with the area of the ring, the total volume can be calculated, and subsequently the $bulk ~ density ~ (\rho_b)$ 
-of the sample was obtained the first bulk value.
-Then the specimen was pre-sheared until a steady-state shear value was reached.
+Together with the area of the ring, the total volume can be calculated, and subsequently the 
+\textit{bulk density} \acs{rhob}, the first bulk value
+of the sample, was obtained.
+Later, we tried to obtained the \textit{bulk values} indicated in Table
+\ref{tab:14bulkvalues}, slightly different from those indicated in Fig.
+\ref{fig:002srsctdiagram}.
+A representative stress path can be seen in Fig. \ref{fig:020experimental}.
+Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
+point in time at which the normal stress (\acs{sigman}) was modified during the	tests.
+After the \acs{rhob} identification, the \acs{sigman} was kept constant at e.g.
+10,000 Pa until $\tilde{t}=1$.
+The specimen was in this way pre-sheared until a steady-state shear value was
+reached from $\tilde{t}~=0.91$ to $\tilde{t}=1$.
 The steady-state flow horizontal stress
 is called steady-state flow/pre-shear stress.
 If the normal stress is known, it provides (Eq. \ref{eq:phi_ps}) the angle of
@@ -79,13 +88,14 @@ bulk value, see Schulze \cite{RefWorks:118}:
 %************************************************
 \input{equations/phi_ps}
 %************************************************
-The normal stress and the angular velocity were then immediately reduced to zero. 
-Subsequently, the specimen was sheared under a fraction (\acs{tauperc}) of the
-first normal load until the shear force reached a maximum and began to decrease. 
+At $\tilde{t}=1$ the normal stress and the angular velocity were then
+immediately reduced to zero.
+Subsequently, the specimen was sheared under a fraction (\acs{tauperc})(e.g.
+80\%) of the first normal load until the shear force reached a a second plateau.
 Both the pre-shear and shear phases were executed at constant velocity. 
-We define the horizontal stress at the shear force peak as the maximum shear
-stress, thus obtaining the incipient flow/shear coefficient of internal friction
-\acs{mush}, third bulk value (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
+We define the horizontal stress at the shear force peak as the average shear
+stress in this second plateau, thus obtaining the incipient flow/shear
+coefficient of internal friction \acs{mush}, third bulk value (Eq. \ref{eq:phi_s})\cite{RefWorks:118}:
 %************************************************
 \input{equations/phi_s}
 %************************************************
@@ -95,44 +105,11 @@ For each we used a normal load proportional to the initial one
 (\acs{tauperc}), increasing from stage one (40\%) to stage four (100\%)
 with two escalating intermediate stages (60\% and 80\%) for a total of twelve load conditions.
 Each experiment was performed on a fresh material sample. \\
-
-\ref{fig:001srsct}.\\
-\input{images/001srsct}
-
-\ref{fig:002srsctdiagram}.\\
-\input{images/002srsctdiagram}
-
-\ref{fig:020experimental}.\\
 \input{images/020experimental}
-
-Experimental and numerical samples of the stress path
-    for the Schulze ring shear cell tester.
-	Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
-	point in time at which the normal stress (\acs{sigman}) was modified during the
-	tests.
-	Until $\tilde{t}=1$, the \acs{sigman} was kept constant at 10,000 Pa. 
-	In Fig. \ref{fig:020experimental}, 
- 	a plateau was reached at $\tilde{t}~=0.91$.
-	The coefficient of pre-shear (\acs{mupsh}) was calculated as the average of the
-	coefficient of internal friction (\acs{muie}) in this first plateau.
-	At $\tilde{t}=1$, the \acs{sigman} was reduced to $80 \%$ of its initial
-	value, and soon after
-	a second plateau developed.
-	We obtained the coefficient of
-	shear (\acs{mush}) as the average of \acs{muie} in this second plateau.
-	The stress paths agree well, especially the plateaux.
-	They were clearly relevant because
-	the values representative of the bulk behaviours 
-	were collected there.
-
-
-
-
-
-
-
-
-
+The stress paths between Fig. \ref{fig:007shearcellsim} and Fig.
+\ref{fig:020experimental} agree well, especially the plateaux.
+They were clearly relevant because
+the values representative of the bulk behaviours were collected there.
 
 \section{Parameter Identification}
 \label{sec:parameteridentification}
@@ -142,7 +119,6 @@ values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
 The fourth bulk value was the result of two angle of repose (\acs{AoR}) tests that
 recreated the repose angle observed in a pile of the
 real material. 
-
 Subsequently, we compared the \acs{ANN} and experimental bulk behaviours for the
 twelve shear-cell load conditions.
 If in a DEM-parameter combination all the three bulk values differed by less 
@@ -161,3 +137,14 @@ We artificially decreased or increased the shear force, and thus \acs{mupsh} and
 \acs{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
 \input{equations/pcoeff}
+
+\subsection{Value representation}
+\label{subsec:valuerepresentation}
+
+\begin{itemize}
+  \item{parameter space plot;}
+  \item{box plot;
+  \improvement{explain about 25 and 75 percentile}
+  }
+  \item{density plot.}
+\end{itemize}

@@ -8,13 +8,13 @@
 \label{cap:anntraining}
 %************************************************
 
-As shown in Fig. \ref{fig:019methodology} in the training phase (dashed lines)
-\acs{DEM} simulations are performed
+Initially, as shown in Fig. \ref{fig:019methodology} in the training phase
+(dashed lines) \acs{DEM} simulations are performed
 with random initial input parameters.
 The behaviours obtained are used to train the
 Artificial Neural Networks (\acs{ANNs}) in a loop that continues until the
 difference between the outputs of each \acs{ANN} and its simulations is below the
-limit ($\Delta$) (see Section \ref{cap:ann}).
+limit ($\Delta$) (see Chapter \ref{cap:ann} for more details).
 In the parameters identification phase (solid
 lines) we identify valid input parameters by comparing (\textbf{=}) \acs{ANNs} and
 experimental behaviours.
@@ -32,7 +32,7 @@ bulk-behaviour-dependent variable from the mutually independent simulation varia
 The hidden (or central) layer's number of neurons was to be investigated. 
 The output layer contains one neuron for the output.
 The transfer function for the neurons of the central layer is the tangential
-sigmoid, while the neurons of the output layer use the linear transfer
+sigmoid, while the neuron of the output layer use the linear transfer
 function.\\
 Thus, we were able to use the \acs{DEM} parameter combinations and their
 corresponding bulk values to train the \acs{ANNs}.
