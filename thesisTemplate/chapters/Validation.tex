@@ -8,6 +8,8 @@
 \label{cap:validation}
 %************************************************
 
+All the results in this chapter are referred to sinter fine.
+
 \section{ANN model development}
 \label{sec:annmodeldev}
 
@@ -28,7 +30,7 @@ In fact,
 we achieved a $\acs{r2} = 0.96$ for an \acs{ANN} with fifteen neurons,
 a consistent agreement between the 
 \acs{DEM} and the \acs{ANN} values, which demonstrates the accurate predictive power of
-the \acs{ANN}.\\ 
+the \acs{ANN}, compared to the other two methods.\\ 
 Increasing the number of neurons did not improve the \acs{r2}; it even started to
 oscillate with higher numbers of neurons.
 We subsequently obtained the optimal number of neurons for all \acs{ANNs}.
@@ -40,17 +42,6 @@ did not take more than a few seconds on a single core.
 %************************************************
 \input{images/022regression}
 \improvement{Decide how many regression images are necessary.}
-
-	  \ref{fig:069sctbayesianlinearregressor}\\
-
-	  \ref{fig:071annnonlinearregressor}\\
-
-	  \ref{fig:072aorbayesianlinearregression}\\
-
-	  \ref{fig:073aorgaussiannonlinearregression}\\
-
-	  \ref{fig:074aorannnonlinearegression}\\
-  \ref{fig:077regressions}\\
 \input{images/077regressions}
 %************************************************
 
@@ -59,6 +50,8 @@ did not take more than a few seconds on a single core.
 
 \input{tables/09DEMFixedinputvalues}
 
+\subsection{SCT parameter space}
+\label{subsec:sctparameterspace}
 
 Experimental values identifying the bulk behavior, \acs{mupsh}, \acs{mush} and $\rho_{b}$, 
 of sinter fine were acquired through \acs{SCT} tests. 
@@ -72,6 +65,7 @@ Two \acs{AoR} tests were performed that gave an average angle of
 We obtained the radius (\acs{R}) mean and standard
 deviations, as shown in Table
 \ref{tab:09DEMFixedinputvalues}, from sieving experiments.
+\wrong{description of 1,068 is missing.}
 The comparison between numerical and experimental behaviours led to a first
 series of marked combinations ($MC1$) for one load condition of
 the shear cell ($\acs{sigman} = 10,070$ Pa, P=1.0), as plotted in Fig.
@@ -88,6 +82,10 @@ which demonstrates their influence and the ability of this procedure to find
 valid \acs{DEM} parameters.
 These results agree with our examination of the ratio of the standard deviation
 to the range, see Table \ref{tab:13DEMvalidvalues}.
+
+\subsection{SCT cloud space}
+\label{subsec:sctcloudspace}
+
 Further, we observed that various \acs{DEM} parameter
 combinations could reproduce the experimental behaviour, and thus evaluated
 their mutual dependencies.
@@ -120,6 +118,10 @@ shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
 Our approach could therefore be used
 for a wide range of bulk materials.\\
+
+\subsection{AoR and merge results}
+\label{subsec:aorandmergeresults}
+
 We then processed the random combinations with the \acs{AoR} \acs{ANN}. In Fig.
 \ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
 before could be seen.
