@@ -9,17 +9,18 @@
 %************************************************
 
 In our study, we harnessed Artificial Neural Networks (\acs{ANNs}) in order to
-reduce the number of \acs{DEM} test simulations required. 
+reduce the number of \acs{DEM} test simulations required
+to characterize bulk materials for large scale simulations. 
 \acs{ANNs} have proven to be a versatile tool in analysing complex, non-linear
 systems of multi-dimensional input streams (Vaferi et al. \cite{RefWorks:150}, Witten et
 al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
 In our case, we fed an \acs{ANN} with \acs{DEM} contact law parameters as input
 and compared the output with the bulk behaviour 
 predicted by a corresponding \acs{DEM} simulation. 
-The difference between \acs{ANN} prediction and \acs{DEM} prediction is used to train our 
-specific \acs{ANN} with a backward-propagation algorithm. 
+The difference between \acs{ANN} prediction and \acs{DEM} prediction was used to
+train our specific \acs{ANN} with a backward-propagation algorithm. 
 After a training phase comprising a limited number of \acs{DEM} test simulations,
-the \acs{ANN} can then be used as a stand-alone prediction tool for the bulk behaviour of a 
+the \acs{ANN} could then be used as a stand-alone prediction tool for the bulk behaviour of a 
 granular material in relation to \acs{DEM} contact law parameters. \\
 In this study, we applied this parameter identification method to two different
 granular bulk behaviours, namely the angle of repose (\acs{AoR}) test and the
@@ -30,8 +31,8 @@ comparing the stand-alone \acs{ANN} predictions with corresponding bulk experime
 For both cases we obtained valid sets of contact law parameters, 
 which we then compared to formulate a reliable contact law for a given
 granular material.
-We further show that the same \acs{ANN} can be used to characterize different granular materials, 
-which have the same particle behaviour and can modelled with the same contact
+We further showed that the same \acs{ANN} could be used to characterize different
+granular materials, which have the same particle behaviour and could modelled with the same contact
 law.
 
 \improvement{add some words on the applications}

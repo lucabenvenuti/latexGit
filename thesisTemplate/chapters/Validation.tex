@@ -8,22 +8,6 @@
 \label{cap:validation}
 %************************************************
 
-\section{DEM Simulations}
-\label{sec:simulations}
-
-For sinter fine, 546 shear cell and 81 static \acs{AoR} simulations 
-\wrong{write down all the simulations performed at the end.}
-were run with
-the parameter combinations described in Table
-\ref{tab:10DEMVariableinputvalues}.
-The computational time amounted to 1 hour with 32 AMD cores for a benchmark
-shear-cell simulation and to 9 hours for a benchmark \acs{AoR} simulation, both with
-50,000 particles.
-Simulations with larger \acs{dCylDp} required more time (e.g., about 12 hours for
-the shear cell with 400,000 particles ). \\
-
-\input{tables/10DEMVariableinputvalues}.
-
 \section{ANN model development}
 \label{sec:annmodeldev}
 
@@ -111,7 +95,7 @@ This is shown more clearly in a density plot (see Fig.
 \ref{fig:025cloudpirker1schulze10070} for $MC1$) 
 of the particles' coefficient of restitution (\acs{CoR}) in relation to
 the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}); 
-in the white area, no valid sets of simulation parameters can be found.
+in the white area, no valid sets of simulation parameters could be found.
 In each cell the valid sets are grouped according to the 4 different COR
 ranges.
 Each cell is coloured according to the group with the most members.
@@ -124,7 +108,7 @@ To further demonstrate the validity of the procedure, we modified the product
 coefficient. 
 First, we set it to $P=0.8$, and we obtained another
 series of marked combinations ($MC2$).
-It can be seen in the parameter space plot in Fig.
+It could be seen in the parameter space plot in Fig.
 \ref{fig:026radarpirker08schulze10070} that the confidence range is narrower
 than for $P=1.0$, while in the density plot in Fig. 
 \ref{fig:027cloudpirker08schulze10070} the area
@@ -138,13 +122,13 @@ Our approach could therefore be used
 for a wide range of bulk materials.\\
 We then processed the random combinations with the \acs{AoR} \acs{ANN}. In Fig.
 \ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
-before can be seen.
+before could be seen.
 In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by rolling particles, the coefficient of rolling friction has the maximum
 influence. \\
 Finally, we extracted from the $MC1$ values the \acs{AoR} \acs{ANN} behaviour
 and compared it with the experimental one.
-As can be seen in the parameter space plot in Fig.
+As could be seen in the parameter space plot in Fig.
 \ref{fig:033radarpirker1schulze10070aor}, the confidence interval is very small,
 indicating that all the parameters but the \acs{CoR} played an important role, 
 and demonstrating the reliability of these parameter
