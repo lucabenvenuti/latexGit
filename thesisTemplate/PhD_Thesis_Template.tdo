@@ -1,40 +1,40 @@
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ More words on motivation: industrial processes. 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).}{7}{section*.16}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain why we use DEM}{7}{section*.18}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{11}{section*.20}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some cool pictures}{11}{section*.21}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ words on hard spheres approach}{15}{section*.22}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Discuss about literature values for all parameters (ref. Combarros, Paulick).}{17}{section*.24}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about CFD: this chapter must be kept (or transformed into cfddem coupling) because of the blast furnace / raceway chapter (right?). cite THOMAS, STEFAN}{19}{section*.25}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details from Haykin introduction}{21}{section*.26}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details about the perceptron from Haykin}{21}{section*.28}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain feed forward here}{22}{section*.29}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details about the multilayer from Haykin}{22}{section*.31}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ better and more detailed explanation about the double moon}{22}{section*.32}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add details}{22}{section*.34}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ change subsection title}{23}{section*.35}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ lot of work to do here}{27}{section*.36}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details from Kloss}{27}{section*.37}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some details for experimental characterization}{33}{section*.45}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Make a table with the particles diameter distributions of all materials.}{33}{section*.46}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain that the values collected refers to particle-particle interactions}{33}{section*.47}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Evaluate large-small scale AoR relationship and put some images.}{34}{section*.49}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about JSCT (simplified version of RSCT, or viceversa).}{34}{section*.50}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain about 25 and 75 percentile}{36}{section*.54}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{39}{section*.55}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{39}{section*.57}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ or sub-chapter with PCA?}{39}{section*.58}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ underline that is good that the input parameters are not correlated}{39}{section*.60}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{41}{section*.62}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{41}{section*.66}
-\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ Decide if to put AoR regression images. In case improve them.}{41}{section*.68}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{42}{section*.65}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ description of 1068 is missing.}{42}{section*.70}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ one table for each material? here or in the polidispersity chapter?}{44}{section*.72}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{49}{section*.77}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{49}{section*.78}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ separate all images into single with captions}{49}{section*.79}
-\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ add box plots?}{49}{section*.80}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{69}{section*.97}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{69}{section*.98}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{69}{section*.99}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{69}{section*.100}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ More words on motivation: industrial processes. 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).}{7}{section*.16}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain why we use DEM}{7}{section*.18}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{11}{section*.20}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some cool pictures}{11}{section*.21}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ words on hard spheres approach}{15}{section*.22}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Discuss about literature values for all parameters (ref. Combarros, Paulick).}{17}{section*.24}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about CFD: this chapter must be kept (or transformed into cfddem coupling) because of the blast furnace / raceway chapter (right?). cite THOMAS, STEFAN}{19}{section*.25}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details from Haykin introduction}{21}{section*.26}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details about the perceptron from Haykin}{21}{section*.28}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain feed forward here}{22}{section*.29}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details about the multilayer from Haykin}{22}{section*.31}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ better and more detailed explanation about the double moon}{22}{section*.32}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add details}{22}{section*.34}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ change subsection title}{23}{section*.35}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ lot of work to do here}{27}{section*.36}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some more details from Kloss}{27}{section*.37}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some details for experimental characterization}{33}{section*.45}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Make a table with the particles diameter distributions of all materials.}{33}{section*.46}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain that the values collected refers to particle-particle interactions}{33}{section*.47}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Evaluate large-small scale AoR relationship and put some images.}{34}{section*.49}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about JSCT (simplified version of RSCT, or viceversa).}{34}{section*.50}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain about 25 and 75 percentile}{36}{section*.54}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{39}{section*.55}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{39}{section*.57}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ or sub-chapter with PCA?}{39}{section*.58}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ underline that is good that the input parameters are not correlated}{39}{section*.60}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{41}{section*.62}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{41}{section*.66}
+\contentsline {todo}{\color@box {}{blue!25}{\leavevmode {\color {blue!25}o}}\ Decide if to put AoR regression images. In case improve them.}{41}{section*.68}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{42}{section*.65}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ description of 1068 is missing.}{42}{section*.70}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ one table for each material? here or in the polidispersity chapter?}{44}{section*.72}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{49}{section*.77}
+\contentsline {todo}{\color@box {}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{49}{section*.78}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ separate all images into single with captions}{49}{section*.79}
+\contentsline {todo}{\color@box {}{blue!25}{\leavevmode {\color {blue!25}o}}\ add box plots?}{49}{section*.80}
+\contentsline {todo}{\color@box {}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{69}{section*.97}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{69}{section*.98}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{69}{section*.99}
+\contentsline {todo}{\color@box {}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{69}{section*.100}
