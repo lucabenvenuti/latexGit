@@ -16,9 +16,10 @@
 The method presented in the article \textit{Characterization of Particle Based Simulation Parameters
 by means of Artificial Neural Networks} allowed to collect data
 regarding the contact law
-for the \textit{Discrete Element Method} simulations involving sinterized ore.
+for the \textit{Discrete Element Method (DEM)} simulations involving sinterized
+ore.
 We took the average value for each of the $DEM$ parameter and we used them 
-in the industrial scale DEM simulation, with the same software, 
+in the industrial scale $DEM$ simulation, with the same software, 
 of an iron ore sintering process, see Fig. \ref{fig:057sinterChuteOrtoLayout}.
 Especially, we examined the behaviour of these particles in the sinter chute
 cooler.
@@ -35,8 +36,8 @@ Especially, the regions
 highlighted in Fig. \ref{fig:055sinterChuteVerticalLayout} and
 Fig. \ref{fig:067sinterchute} for the simulation were investigated.
 The simulation was performed with a maximum of 500,000 particles.
-With this method is a huge number, obtained with a coarse graining factor of
-five, meaning that all the particles have radii five time larger than reality.
+For a $DEM$ simulation is a huge number, obtained with a coarse graining factor
+of five, meaning that all the particles have radii five time larger than reality.
 Avoiding coarse graining would have meant more than 10,000,000 particles,
 infeasible for us.
 
@@ -47,6 +48,10 @@ infeasible for us.
 \label{sec:results}
 
 \input{Immagini/097particlespositions}
+\input{Paragrafi/radii}
+
+Particles are inserted continuously from the top according to the particle
+distribution in Table \ref{tab:radii}.
 There are two main phases:
 \begin{itemize}
   \item{Initial filling: during this phase many small particles deposited inside
@@ -61,20 +66,25 @@ with a more realistic size distribution, and it reached steady state
 \end{itemize}
 As expected, when the steady state was reached, the particles actually
 segregated, as it was intended to demonstrate.
-In fact, there were more particles with larger radii, from 8 to 25 mm, in the
-bottom layers.
-Instead, the smallest particles, radius = 2.5 mm, were rather on the top layer. 
 We divided the first of the boxes
 filled by the chute in three (equally high) layers, from 6 on top to 8 
 on bottom, see Fig. \ref{fig:056sinterChuteBox}. 
 The volume over these layers was not considered, because it was continuously 
-supplied of particles from the chute. In Fig. \ref{fig:066sinterbarplot} the
+supplied of particles from the chute.
+In fact, there were more particles with larger radii, from 25 to 125 mm, in the
+bottom layers.
+Instead, the smallest particles, radius = 12.5 mm, were rather on the top layer. 
+In Fig. \ref{fig:066sinterbarplot} the
 percentage of the total volume of the particles available in each layer at steady-state, 
 grouped by radius, is shown. 
 We could clearly see how the larger particles disposed mostly 
 in the bottom layer, validating the realized design.
-\input{Immagini/066sinterbarplot}
 
+\input{Immagini/066sinterbarplot}
+\input{Paragrafi/parameters}
+
+The $DEM$ parameters used in the simulation can be found in Table
+\ref{tab:parameters}.
 The total volume of the particles with different radii in the three considered
 layers, variation with time, can
 be seen in Fig. \ref{fig:096sinterplots}.
