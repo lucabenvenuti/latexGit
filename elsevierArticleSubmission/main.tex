@@ -271,7 +271,7 @@ cohesionless, see Section \ref{subsec:macroscopicexperimentsparameteridentificat
 Their amounts of open and closed pores are not negligible (see Yang
 \cite{RefWorks:191}), and thus the use of an Archimedean procedure to
 determine the correct particle density by direct measurement
-is, at least, flawed.
+was not applicable.
 Possibly, a tomography for each particle would lead to the particle density,
 but this analysis was infeasible: 
 the necessary time for the the amount of material
@@ -999,10 +999,11 @@ Finally, we show the number of valid parameter combinations over the total
 We have presented a two-step method for $DEM$ simulation parameter
 identification. In the first step, an artificial neural network is 
 trained using dedicated $DEM$ simulations in order to predict bulk 
-behaviours as function of a set of $DEM$ simulation parameters. 
+behaviours as function of a set of $DEM$ simulation parameters of a given
+contact law.
 In the second step, this artificial neural network is then used 
 to predict the bulk behaviour of a huge number of additional $DEM$ parameter
-sets of a given contact law.
+sets of the same contact law.
 The main findings of this study can be summarized as follows:
 \begin{itemize}
   \item{An artificial neural network can be trained by a limited number of
