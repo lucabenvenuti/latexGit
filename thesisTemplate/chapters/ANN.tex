@@ -11,11 +11,16 @@
 \section{Regression statistic}
 \label{sec:regressionstatistic}
 
+We start with a set of random variables, aiming to find a relationship between
+them. We choose one of them ($response$), and we infer its dependance from the
+others ($regressors$), also including an additive $error$ term. We call this a
+\textit{regression model}, which can be linear or nonlinear.
+
 \section{ANN intro}
 \label{sec:annintro}
 %\improvement{Add some more details from Haykin introduction}
-An Artificial Neural Network (\acs{ANN}) is a powerful modelling technique, 
-that is based on non-linear functions (Haykin \cite{RefWorks:158}). 
+An Artificial Neural Network (\acs{ANN}) is a powerful regression model, 
+based on non-linear functions (Haykin \cite{RefWorks:158}). 
 In fact, we can see a neural network as a huge and parallel computer, composed
 of many processing units. It stores experienced knowledge and translates it in
 an usable form. 
@@ -43,40 +48,61 @@ The basic element of an artificial neural network is the perceptron, see Fig.
 \ref{fig:064perceptron}, that is mathematically described by equation
 \ref{eq:perceptron}: 
 \input{equations/perceptron}
+where $x_j$ are the input nodes, $y$ is the output node, $w_j$ are the weights
+and $b$ is the bias.
 \input{images/064perceptron}
 In the simplest case  the activation function $\varphi(\cdot)$ is an hard
 limiter, or a signum function.
 Consequently, $y$ can be +1, for positive inputs, or -1, for negative inputs. Inputs of the first class
 belong to class $\mathscr{C}_1$, of the second to class $\mathscr{C}_2$.
-Thus, the patterns (y) are hypothesised to be linearly separable.
+Thus, the patterns ($y$) are hypothesised to be linearly separable.
+In this case the training, as identification of the correct weights and bias,
+can be precisely mathematically described.
+\input{images/105doublemoon2}
 The classical example of the double moon, see Fig. \ref{fig:105doublemoon2},
-clarifies the limits of the single perceptron approach.
+clarifies the limits of the single perceptron approach, especially 
+why a single neuron is not capable to handle a
+nonlinear problem.
 As long as the distance $d$ is positive, the domain can easily be
 linearly separated in two regions.
-
-\input{images/105doublemoon2}
-\input{images/063doublemoon}
-
-When $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, linear separation
-is not possible, and a multineuron approach is necessary.
-Further, it is also beneficial to use the strictly increasing hyperbolic tangent
-as activation function.
 
 %\improvement{better and more detailed explanation about the double moon}
 %\improvement{Add some more details about the perceptron from Haykin}
 \section{Multilayer}
 \label{sec:multilayer}
 
-\improvement{Add some more details about the multilayer from Haykin}
-The double moon, see Fig. \ref{fig:063doublemoon}, is the most classical
-example  to illustrate why a single neuron is not capable to handle a
-nonlinear problem.\\
+\input{images/063doublemoon}
+
+The handling of multiple outputs or, in our example, 
+when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
+separation not possible, and a multineuron approach necessary. 
+The first requirement of a multilayer neural network
+is that each neuron of the network must have differentiable nonlinear activation
+function, such as the strictly increasing hyperbolic tangent.
+Further, the network has at least one layer $hidden$ from both the input and the
+output nodes, see Fig. \ref{fig:018nnscheme}.
+An high degree of $connectivity$ is another salient characteristic, dependent on
+the synaptic weights of the network.
+
+%\improvement{Add some more details about the multilayer from Haykin}
+
 
 
 \improvement{explain feed forward here, pag 21 haykin}
 
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
+
+A multilayer perceptrons can be trained with the back-propagation algorithm,
+composed of two phases, forward and backward.
+In the first phase the weights do not change. 
+From the inputs through the hidden
+and output layers the output is computed. 
+In the second phase the error is calculated as the difference between the output
+and the response, and used to tune the weights, backward from the output to
+hidden layers.
+Of course, it arises the problem of when stopping the loop.
+
 
 To be able to handle non-linearly separable data, the standard linear perceptron
 \acs{ANN} was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
