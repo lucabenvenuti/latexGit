@@ -80,15 +80,17 @@ The first requirement of a multilayer neural network
 is that each neuron of the network must have differentiable nonlinear activation
 function, such as the strictly increasing hyperbolic tangent.
 Further, the network has at least one layer $hidden$ from both the input and the
-output nodes, see Fig. \ref{fig:018nnscheme}.
+output nodes, see Fig. \ref{fig:018nnscheme}, to compute higher-order
+statistics.
 An high degree of $connectivity$ is another salient characteristic, dependent on
 the synaptic weights of the network.
+Usually, each neuron of one layer is linked with all the neurons in the previous
+layer.
+The network is called $Feedforward$ meaning that the inputs of the neurons in
+one layer are only the output signals of the neurons in the previous layer.\\
 
 %\improvement{Add some more details about the multilayer from Haykin}
-
-
-
-\improvement{explain feed forward here, pag 21 haykin}
+%\improvement{explain feed forward here, pag 21 haykin}
 
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
@@ -101,7 +103,9 @@ and output layers the output is computed.
 In the second phase the error is calculated as the difference between the output
 and the response, and used to tune the weights, backward from the output to
 hidden layers.
-Of course, it arises the problem of when stopping the loop.
+Of course, it arises the problem of when stopping the loop. Thus, a cost
+function ($\mathscr{E}(\mathbf{w})$) is defined in a way that in each loop of
+the algorithm its value is lower than in the previous loop.
 
 
 To be able to handle non-linearly separable data, the standard linear perceptron
