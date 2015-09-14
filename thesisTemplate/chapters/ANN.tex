@@ -95,39 +95,93 @@ one layer are only the output signals of the neurons in the previous layer.\\
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
 
-A multilayer perceptrons can be trained with the back-propagation algorithm,
-composed of two phases, forward and backward.
+A multilayer perceptrons network can be trained with the
+supervised back-propagation algorithm, composed of two phases, forward and
+backward.
 In the first phase the weights do not change. 
 From the inputs through the hidden
-and output layers the output is computed. 
-In the second phase the error is calculated as the difference between the output
-and the response, and used to tune the weights, backward from the output to
-hidden layers.
-Of course, it arises the problem of when stopping the loop. Thus, a cost
-function ($\mathscr{E}(\mathbf{w})$) is defined in a way that in each loop of
+and output layers the output is computed.
+In the second phase the error is calculated as the difference at the j-th
+node between the output of the neuron ($y_j(n)$) and the expected response
+($d_j(n)$):
+\input{equations/error}
+and used to tune the weights, backward from the output to hidden
+layers.
+The expected response represents the teacher of the system.
+Of course, it arises the problem of when stopping the loop (or epoch). 
+Thus, a cost
+function ($\mathscr{E}(\mathbf{w})$) is defined: 
+in each loop of
 the algorithm its value is lower than in the previous loop.
-
-
-To be able to handle non-linearly separable data, the standard linear perceptron
-\acs{ANN} was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
-(MLPNN)}.
-Here, each processing unit or node (neuron) possesses a nonlinear activation function. 
-They are interconnected to form layers that are also interlinked. 
-The validity of the $MLPNN$, with a backpropagation reinforcement learning 
+If we consider $C$ neurons in the output layer the 
+\textit{total instantaneous error energy} of the whole network is:
+\input{equations/insterrorenergy}
+With a total of $N$ expected
+responses for training the cost function to be minimized can be expressed as the
+\textit{error energy averaged over the training sample}:
+\input{equations/costfunction}
+Consequently, the weight of the i-th input for the j-th neuron with the n-th
+example is corrected as follow:
+\input{equations/deltaweight}
+where $\eta$ is the \textit{learning-rate parameter}.
+This could be a user tuned parameter. 
+A large $\eta$ makes the algorithm fast,
+while a small one prevents divergence.
+Converged is reached when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
+The validity of the \textit{FF Multilayer Perceptron Neural Networks
+(MLPNN)}, with a backpropagation reinforcement learning 
 training algorithm (scaled conjugate gradient), has been demonstrated in the 
 literature, see Haykin \cite{RefWorks:158}. Several scientists 
 \cite{RefWorks:161, RefWorks:166, RefWorks:167, RefWorks:168, RefWorks:169,
 RefWorks:170, RefWorks:178, RefWorks:179} have employed \acs{ANNs} to model
 the mechanical properties of materials.
 
+% To be able to handle non-linearly separable data, the standard linear perceptron
+% \acs{ANN} was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
+% (MLPNN)}.
+% Here, each processing unit or node (neuron) possesses a nonlinear activation function. 
+% They are interconnected to form layers that are also interlinked. 
+
+\section{Generalization}
+\label{sec:generalization}
+
+\input{images/108fitting}
+
+Correctly computed input-output mapping is a synonym of a well $generalized$
+network, and of good nonlinear interpolation of the inputs, as in Fig. 
+\ref{fig:106goodfitting}. On the other hand, an excessive amount of
+training samples, known as $overfitting$, leads to poor generalization, see 
+Fig. \ref{fig:107badfitting}. Also the architecture of the neural network and
+physical complexity of the problem influence the generalization.
+A good rule of thumb requires the size of the training sample to be of the same
+order of magnitude of the ratio between (a) the total number of free parameters 
+(i.e., synaptic weights and biases) in the
+network and (b) the fraction of classification errors permitted on test
+data (e.g., the mean square value of the estimation error).
+
 \section{Cross validation}
 \label{sec:crossvalidation}
 
+A computationally efficient training and the evaluation of good generalization
+can be performed with the statistical tool of \textit{cross-validation}.
+The available data are randomly divided in the following subsets:
+
 \begin{enumerate}
-  \item{training samples set}
-  \item{generalization samples set (or validation, or for early stopping)}
-  \item{test samples set}
+  \item{training samples subset,}
+  \item{generalization (or validation, or early stopping) samples subset,}
+  \item{test samples subset.}
 \end{enumerate}
+
+For instance, every ten epochs the training is halted and the validation error
+(or the cost function) is evaluated with the partially trained network over the
+validation set.
+Then the training is resumed.
+This continues until the learning curve of the error for the validation set
+reaches a local minimum, a condition that should happen sooner (i.e., in a
+minor number of loops) than the falling of the learning curve for the training
+set (cost function $\mathscr{E}_{av}(N)$) under the prescribed limit.
+At this point the output of the trained network is evaluated over the test
+subset to evaluate its generalization performances.
 
 \section{Supervised learning and optimization}
 \label{sec:supervisedlearningandoptimization}
