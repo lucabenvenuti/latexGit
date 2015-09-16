@@ -92,6 +92,38 @@ one layer are only the output signals of the neurons in the previous layer.\\
 %\improvement{Add some more details about the multilayer from Haykin}
 %\improvement{explain feed forward here, pag 21 haykin}
 
+\section{Supervised learning and optimization}
+\label{sec:supervisedlearningandoptimization}
+
+The learning processes available for a neural network are:
+
+\begin{itemize}
+  \item{supervised learning, or learning with a teacher,}
+  \item{semi-supervised learning,}
+  \item{unsupervised learning.}
+\end{itemize}
+
+We focused on supervised learning.
+If we consider a single perceptron, each example consists of a vector of inputs
+and a scalar expected response.
+The error is calculated 
+as the difference at the j-th
+node between the output of the neuron ($y_j(n)$) and the expected response
+($d_j(n)$):
+\input{equations/error}
+The expected response represents the teacher of the system.
+Expanding this vision to multineurons network shifts into a matrix of inputs and
+a vector of expected responses.
+
+% \improvement{I focus only on supervised learning, but also unsupervised
+% learning and semi-supervised learning exist.}
+
+\begin{itemize}
+  \item{conjugate gradient \improvement{add details},}
+  \item{quasi-Newton,}
+  \item{Levenberg-Marquardt.}
+\end{itemize}
+
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
 
@@ -101,13 +133,9 @@ backward.
 In the first phase the weights do not change. 
 From the inputs through the hidden
 and output layers the output is computed.
-In the second phase the error is calculated as the difference at the j-th
-node between the output of the neuron ($y_j(n)$) and the expected response
-($d_j(n)$):
-\input{equations/error}
+In the second phase the error is calculated 
 and used to tune the weights, backward from the output to hidden
 layers.
-The expected response represents the teacher of the system.
 Of course, it arises the problem of when stopping the loop (or epoch). 
 Thus, a cost
 function ($\mathscr{E}(\mathbf{w})$) is defined: 
@@ -159,6 +187,8 @@ order of magnitude of the ratio between (a) the total number of free parameters
 network and (b) the fraction of classification errors permitted on test
 data (e.g., the mean square value of the estimation error).
 
+
+
 \section{Cross validation}
 \label{sec:crossvalidation}
 
@@ -182,18 +212,6 @@ minor number of loops) than the falling of the learning curve for the training
 set (cost function $\mathscr{E}_{av}(N)$) under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
 subset to evaluate its generalization performances.
-
-\section{Supervised learning and optimization}
-\label{sec:supervisedlearningandoptimization}
-
-\improvement{I focus only on supervised learning, but also unsupervised
-learning and semi-supervised learning exist.}
-
-\begin{itemize}
-  \item{conjugate gradient \improvement{add details}}
-  \item{quasi-Newton}
-  \item{Levenberg-Marquardt}
-\end{itemize}
 
 \section{Our ANNs}
 \label{sec:ouranns}
