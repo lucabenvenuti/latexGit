@@ -16,9 +16,9 @@ them. We choose one of them ($response$), and we infer its dependance from the
 others ($regressors$), also including an additive $error$ term. We call this a
 \textit{regression model}, which can be linear or nonlinear.
 The Bayesian linear and the Gaussian non linear regressions 
-can be used as regression methods for $DEM$ identification
+can be used as regression methods for \acs{DEM} identification
 and to further
-assess the quality of the $ANNs$ training.
+assess the quality of the \acs{ANNs} training.
 
 \section{ANN intro}
 \label{sec:annintro}
@@ -39,8 +39,8 @@ In this work, we first used the \acs{ANN} to fit the \acs{DEM} numerical simulat
 data, and then to process a vast number of parameters combinations. 
 \acs{ANNs} map combinations of input data to convenient outputs (fitting). 
 There is a variety of \acs{ANNs} available; important for our context were the
-Feedforward ($FF$) and the Radial basis function ($RBF$). 
-For $FF-NN$, 
+Feedforward (\acs{FF}) and the Radial basis function (\acs{RBF}). 
+For \acs{FF}-\acs{ANN},
 numerous training algorithms are available. The most common are based on
 backpropagation, e.g., Levenberg-Marquardt, Bayesian regulation and the scaled
 conjugate gradient.
@@ -90,7 +90,7 @@ An high degree of $connectivity$ is another salient characteristic, dependent on
 the synaptic weights of the network.
 Usually, each neuron of one layer is linked with all the neurons in the previous
 layer.
-A network is called $Feedforward$ if the inputs of the neurons in
+A network is called \acs{FF} if the inputs of the neurons in
 one layer are exclusively the output signals of the neurons in the previous
 layer.\\
 
@@ -137,7 +137,7 @@ and used to tune the weights, backward from the output to hidden
 layers.
 Of course, it arises the problem of when stopping the loop (or epoch). 
 Thus, a cost
-function ($\mathscr{E}(\mathbf{w})$) is defined: 
+function (\acs{EW}) is defined: 
 in each loop of
 the algorithm its value is lower than in the previous loop.
 If we consider $C$ neurons in the output layer the 
@@ -150,14 +150,13 @@ responses for training the cost function to be minimized can be expressed as the
 Consequently, the weight of the i-th input for the j-th neuron with the n-th
 example is corrected as follow:
 \input{equations/deltaweight}
-where $\eta$ is the \textit{learning-rate parameter},
+where \acs{eta} is the \textit{learning-rate parameter},
 which could be a user tuned parameter. 
-A large $\eta$ makes the algorithm fast,
+A large \acs{eta} makes the algorithm fast,
 while a small one prevents divergence.
 Converged is reached when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
-The validity of the \textit{Feedforward Multilayer Perceptron Neural Networks
-(MLPNN)}, with a backpropagation reinforcement learning 
-training algorithm,
+The validity of the \textit{\acs{FF} Multilayer Perceptron Neural Networks}
+(\acs{MLPNN}), with a backpropagation reinforcement learning training algorithm,
 % (scaled conjugate gradient)
 has been demonstrated in the 
 literature, see Haykin \cite{RefWorks:158}. Several scientists 
@@ -194,7 +193,7 @@ explicetely the weights (n + 1)'th iteration are obtained.
 Then \textbf{g}(\textit{n + 1}) is calculated, to be later used with the
 Polak-Ribiere method to compute the direction vector.
 The gradient methods stops when the residuals, calculated from the
-$\mathscr{E}_{av}(N)$, reach convergence.
+\acs{EAVN}, reach convergence.
 
 % To be able to handle non-linearly separable data, the standard linear perceptron
 % \acs{ANN} was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
@@ -239,7 +238,7 @@ Then the training is resumed.
 This continues until the learning curve of the error for the validation set
 reaches a local minimum, a condition that should happen sooner (i.e., in a
 minor number of loops) than the falling of the learning curve for the training
-set (cost function $\mathscr{E}_{av}(N)$) under the prescribed limit.
+set (cost function \acs{EAVN}) under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
 subset to evaluate its generalization performances.
 

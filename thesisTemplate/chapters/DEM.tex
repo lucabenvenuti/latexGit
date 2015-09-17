@@ -8,30 +8,35 @@
 \label{cap:dem}
 %************************************************
 
-
-\begin{itemize}
-  \item{Molecular Dynamics;}
-  \item{Discrete Element Method:
-  \begin{itemize}
-  \item{Hard spheres approach;}
-  \item{Soft spheres approach.}
-\end{itemize} }
-\end{itemize}
-
-%\section{DEM}
-%\label{sec:dem}
+The discrete element method (\acs{DEM}) is derived from Molecular Dynamics. \\ 
 For each particle i inside the domain, a Discrete Element Method (\acs{DEM}) code
 follows the trajectory and calculates the force that particle i exerts on particle j.
 The main forces involved are: gravity, contact forces due to collisions, and
 further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
-multiphase flows. 
+multiphase flows. \\
+The two approaches can be implemented for this method are:
+\begin{itemize}
+  \item{hard spheres,}
+  \item{soft spheres.}
+\end{itemize} 
+Thus, the hard-sphere approach is well-suited for binary collisions, easy to
+calculate, but cannot predict multi-particle interactions.
+It is mainly used for dilute flows, rather then in the dense flows we
+investigated.
 
-\section{Hard spheres approach}
-\label{sec:hardspheresapproach}
-\info{words on hard spheres approach}
+%\section{DEM}
+%\label{sec:dem}
+% \section{Hard spheres approach}
+% \label{sec:hardspheresapproach}
+% \info{words on hard spheres approach}
 
 \section{Soft spheres approach}
 \label{sec:softspheresapproach}
+
+The soft-sphere approach consider the deformations of the particles when they
+collide with each other.
+\input{images/109twospheres}
+\ref{fig:109twospheres}
 
 Contact models:
 \begin{itemize}

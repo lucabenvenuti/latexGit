@@ -2,7 +2,6 @@
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain why we use DEM}{7}{section*.18}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some words on the applications}{11}{section*.20}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ add some cool pictures}{11}{section*.21}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ words on hard spheres approach}{15}{section*.22}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Discuss about literature values for all parameters (ref. Combarros, Paulick).}{17}{section*.24}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about CFD: this chapter must be kept (or transformed into cfddem coupling) because of the blast furnace / raceway chapter (right?). cite THOMAS, STEFAN}{19}{section*.25}
 \contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ lot of work to do here}{29}{section*.31}
@@ -27,7 +26,7 @@
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{51}{section*.73}
 \contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ separate all images into single with captions}{51}{section*.74}
 \contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ add box plots?}{51}{section*.75}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{71}{section*.92}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{71}{section*.93}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{71}{section*.94}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{71}{section*.95}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{71}{section*.93}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polidispersity}{71}{section*.94}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{71}{section*.95}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{71}{section*.96}
