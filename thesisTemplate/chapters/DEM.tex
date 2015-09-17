@@ -33,16 +33,26 @@ investigated.
 \section{Soft spheres approach}
 \label{sec:softspheresapproach}
 
-The soft-sphere approach consider the deformations of the particles when they
-collide with each other.
 \input{images/109twospheres}
-\ref{fig:109twospheres}
-
-Contact models:
+The soft-sphere approach consider the deformations of the particles when they
+collide with each other. From the vector in Fig. \ref{fig:109twospheres} we can
+define after time \textit{t} the normal and tangential overlaps \acs{xin} and
+\acs{xit}:
+\input{equations/xin}
+\input{equations/xit}
+For an elasto-perfectly-plastic-viscous model the contact forces, normal and
+tangential, are:
+\input{equations/fn}
+\input{equations/ft}
+The Coulomb's law of friction is the condition in the tangential force
+formulation.
+At this point we can divide the contact models into:
 \begin{itemize}
-  \item{Hooke;}
-  \item{Hertz.}
+  \item{linear, e.g. Hooke,}
+  \item{non-linear, e.g. Hertz.}
 \end{itemize}
+
+\improvement{introduce the rolling friction}
 Rolling friction:
 \begin{itemize}
   \item{cdt;}
@@ -50,8 +60,8 @@ Rolling friction:
   \item{epsd2.}
 \end{itemize}
 
-\subsection{Hooke}
-\label{subsec:hooke}
+% \subsection{Hooke}
+% \label{subsec:hooke}
 
 \subsection{Hertz}
 \label{subsec:hertz}
