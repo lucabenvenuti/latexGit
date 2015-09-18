@@ -40,28 +40,12 @@ define after time \textit{t} the normal and tangential overlaps \acs{xin} and
 \acs{xit}:
 \input{equations/xin}
 \input{equations/xit}
-For an elasto-perfectly-plastic-viscous model the contact forces, normal and
-tangential, are:
-\input{equations/fn}
-\input{equations/ft}
-The Coulomb's law of friction is the condition in the tangential force
-formulation.
+where the subscript \acs{n} stands for normal and \acs{t} for tangential. 
 At this point we can divide the contact models into:
 \begin{itemize}
   \item{linear, e.g. Hooke,}
   \item{non-linear, e.g. Hertz.}
 \end{itemize}
-
-\improvement{introduce the rolling friction}
-Rolling friction:
-\begin{itemize}
-  \item{cdt;}
-  \item{epsd;}
-  \item{epsd2.}
-\end{itemize}
-
-% \subsection{Hooke}
-% \label{subsec:hooke}
 
 \subsection{Hertz}
 \label{subsec:hertz}
@@ -69,15 +53,14 @@ Rolling friction:
 For the raw material used in this work 
 Di Renzo and Di Maio \cite{RefWorks:145} suggested using the non-linear
 Hertzian model without cohesion for the particle-particle and particle-wall contacts. 
-This granular model uses the following formula for the contact force between two granular particles (Eq. \ref{eq:forceij}):
-%************************************************
-\input{equations/forceij}
-%************************************************
-where the subscript \acs{n} stands for normal and \acs{t} for tangential. 
+For an elasto-perfectly-plastic-viscous model the contact forces, normal and
+tangential, are:
+\input{equations/fn}
+\input{equations/ft}
+The Coulomb's law of friction is the condition in the tangential force
+formulation.
 Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
-while $\delta$ and $v$ are the displacement and the velocity, $r$ is the
-distance between two particles of radii $R_i$ and $R_j$, and $d = R_i + R_j $ is
-the contact distance.
+while is the velocity.
 Both the normal and the tangential
 force comprise two terms, a spring force and a damping force. 
 The tangential (or shear) force is a ``history'' effect that accounts for the
@@ -93,23 +76,49 @@ In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{
 \input{equations/equivProp2}
 %************************************************
 
+The coefficient of sliding friction \acs{mus} is 
+one of the particle-based \acs{DEM} parameter we investigated, 
+another being the coefficient of rolling friction (\acs{mur}),
+that can be simulated with these models:
+\begin{itemize}
+  \item{constant direct torque (cdt),}
+  \item{elasto-plastic-spring-dashpot.}
+\end{itemize}
+
 In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
 the method can be found.\\
-In the contact law we used, 
-the tangential component of the contact force between two generic particles
-($F_t$) is truncated to fulfil:
-%************************************************
-\input{equations/force_t}
-%************************************************
 
-where $F_n$ is the normal component and \acs{mus} is the coefficient of sliding
-friction, one of the particle-based \acs{DEM} parameter we investigated, 
-another being the coefficient of rolling friction (\acs{mur}). 
+% \subsection{Hooke}
+% \label{subsec:hooke}
+
+
+%This granular model uses the following formula for the contact force between
+% two granular particles (Eq. \ref{eq:forceij}):
+% %************************************************
+% \input{equations/forceij}
+% %************************************************
+
+
+% , $r$ is the
+% distance between two particles of radii $R_i$ and $R_j$, and $d = R_i + R_j $ is
+% % the contact distance.
+% 
+% 
+% 
+% 
+% In the contact law we used, 
+% the tangential component of the contact force between two generic particles
+% ($F_t$) is truncated to fulfil:
+% % %************************************************
+% % \input{equations/force_t}
+% % %************************************************
+% 
+% where $F_n$ is the normal component and 
 
 \subsection{EPSD2}
 \label{subsec:epsd2}
 
-For coarse non-spherical particles, this is a critical parameter and describes
+For coarse non-spherical particles, \acs{mur} is a critical parameter and describes
 inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
 torque counteracting the rotation of the particle. The \acs{mur} parameter enters the 
 equations according to the elasto-rolling resistance model presented by Wensrich and 
