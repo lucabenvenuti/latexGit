@@ -9,17 +9,17 @@
 %************************************************
 
 The discrete element method (\acs{DEM}) is derived from Molecular Dynamics. \\ 
-For each particle i inside the domain, a Discrete Element Method (\acs{DEM}) code
+For each particle i inside the domain, a \acs{DEM} code
 follows the trajectory and calculates the force that particle i exerts on particle j.
 The main forces involved are: gravity, contact forces due to collisions, and
 further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
 multiphase flows. \\
-The two approaches can be implemented for this method are:
+Two approaches can be implemented for this method:
 \begin{itemize}
   \item{hard spheres,}
   \item{soft spheres.}
 \end{itemize} 
-Thus, the hard-sphere approach is well-suited for binary collisions, easy to
+The hard-sphere approach is well-suited for binary collisions, easy to
 calculate, but cannot predict multi-particle interactions.
 It is mainly used for dilute flows, rather then in the dense flows we
 investigated.
@@ -60,7 +60,7 @@ tangential, are:
 The Coulomb's law of friction is the condition in the tangential force
 formulation.
 Here, $k$ and $\gamma$ are respectively the stiffness and damping coefficients, 
-while is the velocity.
+while \textbf{v} is the velocity.
 Both the normal and the tangential
 force comprise two terms, a spring force and a damping force. 
 The tangential (or shear) force is a ``history'' effect that accounts for the
@@ -133,8 +133,8 @@ The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
 The last two particle-based \acs{DEM} parameters we investigated were \acs{rhop}
-and the coefficient of restitution (\acs{CoR}) as defined by Ai. et al.
-\cite{RefWorks:131}.
+and the coefficient of restitution (\acs{CoR}) as defined by
+\citet{RefWorks:131}.
 Together with the others they are listed in Table \ref{tab:08DEMparameters}.\\
 
 \input{tables/08DEMparameters}
@@ -142,5 +142,18 @@ Together with the others they are listed in Table \ref{tab:08DEMparameters}.\\
 \section{Literature Values}
 \label{sec:literaturevalues}
 
-\improvement{Discuss about literature values for all parameters (ref.
-Combarros, Paulick).}
+There are yet ways to determine contact parameters directly by measuring
+material properties or by performing particle based experiments, see e.g.
+\citet{RefWorks:177}, \citet{RefWorks:181}, and \citet{RefWorks:186}.
+\citet{RefWorks:140} and \citet{RefWorks:190}
+are two of the most prominent examples of parameters identification by
+theoretical analysis. However, they focused on glass spheres, while
+non-sphericity was one of the fields we wanted to investigate. 
+Further, it is related to all the microscopic parameters we analysed. 
+Also the procedure of \citet{RefWorks:177}, although on
+industrial samples (aluminium oxide), still had mostly spherical particles. 
+In addition, these methodologies are laborious, 
+since they have to be performed for every new granular material prior to a $DEM$
+simulations. 
+Especially for the already cited rolling friction parameter, it is arduous to
+link the rolling friction parameter to the non-sphericity of the particle. 
