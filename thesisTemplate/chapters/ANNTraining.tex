@@ -4,9 +4,12 @@
 % !TEX spellcheck = en-EN
 
 %************************************************
-\chapter{Artificial Neural Network Training}
+\chapter{Artificial Neural Network Generalization}
 \label{cap:anntraining}
 %************************************************
+
+\section{ANN training concept}
+\label{sec:anntrainingconcept}
 
 Initially, as shown in Fig. \ref{fig:019methodology} in the training phase
 (dashed lines) \acs{DEM} simulations are performed
@@ -82,3 +85,221 @@ cell and one for the \acs{AoR} were obtained.
 % %************************************************
 \input{images/018nnscheme}
 \input{tables/12DEMRandominputvalues}
+
+% %************************************************
+% %************************************************
+
+\section{ANN model development}
+\label{sec:annmodeldev}
+
+\input{tables/15regressionvalues}
+
+First, we determined the regression of the bulk behaviour parameters, for
+instance the \acs{mupsh}, 
+with a Bayesian linear prediction (Fig.
+\ref{fig:069sctbayesianlinearregressor}) and a Gaussian nonlinear prediction
+(Fig.  \ref{fig:070sctgaussiannonlinearregressor}). 
+Later we obtained Fig.
+\ref{fig:071annnonlinearregressor}, where the corresponding plot for the \acs{ANN} with the maximum \acs{r2} is shown. 
+Each circle represents one of the 546 simulations.
+\wrong{write down all the simulations performed at the end.}
+Table \ref{tab:15regressionvalues} shows a quantitative comparison between the
+three methods. 
+In fact, 
+we achieved a $\acs{r2} = 0.96$ for an \acs{ANN} with fifteen neurons,
+a consistent agreement between the 
+\acs{DEM} and the \acs{ANN} values, which demonstrates the accurate predictive power of
+the \acs{ANN}, compared to the other two methods.\\ 
+Increasing the number of neurons did not improve the \acs{r2}; it even started to
+oscillate with higher numbers of neurons.
+We subsequently obtained the optimal number of neurons for all \acs{ANNs}.
+Further, we processed the random combinations (Table
+\ref{tab:10DEMVariableinputvalues}) with the \acs{ANN}.
+The \acs{ANN} evaluation was significantly faster than the \acs{DEM} simulations. The
+individuation of the numerical bulk behaviours for all the \acs{DEM} combinations
+did not take more than a few seconds on a single core.
+%************************************************
+\input{images/022regression}
+\improvement{Decide how many regression images are necessary.}
+\input{images/077regressions}
+
+\change{Decide if to put AoR regression images. In case improve them.}
+  
+%************************************************
+%************************************************
+
+\section{Parameter Identification}
+\label{sec:parameteridentification}
+
+We obtained for each of the twelve load conditions of the \acs{SCT} three bulk
+values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
+The fourth bulk value was the result of two angle of repose (\acs{AoR}) tests that
+recreated the repose angle observed in a pile of the
+real material. 
+Subsequently, we compared the \acs{ANN} and experimental bulk behaviours for the
+twelve shear-cell load conditions.
+If in a DEM-parameter combination all the three bulk values differed by less 
+than 5\% from those of the corresponding experiments, i.e.:
+%************************************************
+\input{equations/check2}
+the combination was marked. The marked combinations were processed by the
+\acs{AoR} \acs{ANN}, and then compared with the experiment.
+Were considered valid those that differed by less than $5\%$ also in this
+comparison (Eq. \ref{eq:checkaor}):
+%************************************************
+\input{equations/checkaor}
+Further, to prove the validity of the system, we tested the marked combinations
+by modifying the experimental bulk values of the shear cell. 
+We artificially decreased or increased the shear force, and thus \acs{mupsh} and
+\acs{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
+%************************************************
+\input{equations/pcoeff}
+
+\subsection{Value representation}
+\label{subsec:valuerepresentation}
+
+\begin{itemize}
+  \item{parameter space plot;}
+  \item{box plot;
+  \improvement{explain about 25 and 75 percentile}
+  }
+  \item{density plot.}
+\end{itemize}
+
+%************************************************
+%************************************************
+
+\input{tables/09DEMFixedinputvalues}
+
+\subsection{SCT parameter space}
+\label{subsec:sctparameterspace}
+
+Experimental values identifying the bulk behavior, \acs{mupsh}, \acs{mush} and $\rho_{b}$, 
+of sinter fine were acquired through \acs{SCT} tests. 
+Table \ref{tab:05sinterTableExperimental} presents
+these values for three load conditions: clearly the \acs{mupsh} decreases, and 
+the \acs{mush} oscillates.
+The \acs{rhob} has a clear average of 1,760 $kg/m^3$ with a 42 
+$kg/m^3$ deviation.
+Two \acs{AoR} tests were performed that gave an average angle of
+38.85$^\circ$.
+We obtained the radius (\acs{R}) mean and standard
+deviations, as shown in Table
+\ref{tab:09DEMFixedinputvalues}, from sieving experiments.
+\wrong{description of 1068 is missing.}
+The comparison between numerical and experimental behaviours led to a first
+series of marked combinations ($MC1$) for one load condition of
+the shear cell ($\acs{sigman} = 10,070$ Pa, P=1.0), as plotted in Fig.
+\ref{fig:024radarpirker1schulze10070}, where 
+the minimum and maximum values are shown, together with the mean. 
+Each axis of the parameter space plot represents one simulation parameter.
+The shaded area indicates valid parameter combinations, and dark shaded
+values indicate the confidence range.
+Note that the confidence interval is large, 
+especially for the \acs{CoR}, which highlights its insignificant influence on the
+characterization.
+Both the \acs{rhop}  and the \acs{mus}, however, show a narrow confidence interval, 
+which demonstrates their influence and the ability of this procedure to find
+valid \acs{DEM} parameters.
+These results agree with our examination of the ratio of the standard deviation
+to the range, see Table \ref{tab:13DEMvalidvalues}.
+
+\subsection{SCT cloud space}
+\label{subsec:sctcloudspace}
+
+Further, we observed that various \acs{DEM} parameter
+combinations could reproduce the experimental behaviour, and thus evaluated
+their mutual dependencies.
+This is shown more clearly in a density plot (see Fig. 
+\ref{fig:025cloudpirker1schulze10070} for $MC1$) 
+of the particles' coefficient of restitution (\acs{CoR}) in relation to
+the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}); 
+in the white area, no valid sets of simulation parameters could be found.
+In each cell the valid sets are grouped according to the 4 different COR
+ranges.
+Each cell is coloured according to the group with the most members.
+Multiple
+combinations (250,407 or 4\% of the total) of \acs{mus} and \acs{mur} reproduced
+the experimental behaviour with varying \acs{CoR}.
+This underlines once more their correlation, as already stated by Wensrich and 
+Katterfeld \cite{RefWorks:87}.
+To further demonstrate the validity of the procedure, we modified the product
+coefficient. 
+First, we set it to $P=0.8$, and we obtained another
+series of marked combinations ($MC2$).
+It could be seen in the parameter space plot in Fig.
+\ref{fig:026radarpirker08schulze10070} that the confidence range is narrower
+than for $P=1.0$, while in the density plot in Fig. 
+\ref{fig:027cloudpirker08schulze10070} the area
+appears larger, although slightly less densely populated. Finally, for $P=1.2$
+and its marked combinations ($MC3$) the parameter space plot in Fig.
+\ref{fig:028radarpirker12schulze10070} shows a largely different confidence
+range, while the density plot in Fig. \ref{fig:030cloudpirker12schulze10070} 
+shows a smaller area. As expected, the procedure was highly sensitive to
+variations in the experimental data.
+Our approach could therefore be used
+for a wide range of bulk materials.\\
+
+\subsection{AoR and merge results}
+\label{subsec:aorandmergeresults}
+
+We then processed the random combinations with the \acs{AoR} \acs{ANN}. In Fig.
+\ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
+before could be seen.
+In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
+by rolling particles, the coefficient of rolling friction has the maximum
+influence. \\
+Finally, we extracted from the $MC1$ values the \acs{AoR} \acs{ANN} behaviour
+and compared it with the experimental one.
+As could be seen in the parameter space plot in Fig.
+\ref{fig:033radarpirker1schulze10070aor}, the confidence interval is very small,
+indicating that all the parameters but the \acs{CoR} played an important role, 
+and demonstrating the reliability of these parameter
+combinations in representing the bulk behaviour.
+From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
+\%), see Table \ref{tab:13DEMvalidvalues}.
+%************************************************
+\input{tables/05sinterTableExperimental}
+\info{one table for each material? here or in the polidispersity chapter?}
+
+\input{tables/13DEMvalidvalues}
+
+
+%************************************************
+\input{images/079sctparameterspaceplots}
+\input{images/080sctdensityplots}
+\input{images/081aorandmergeparameterspaceplots}
+
+
+
+%************************************************
+%************************************************
+
+\section{Influence of poly-dispersity}
+\label{sec:polidispersity}
+%************************************************
+
+\info{Some examples of the new images: relationship between the standard
+deviation of the radius and the shape of the tile plot.}
+
+\improvement{table similar to \ref{tab:12DEMRandominputvalues} here}
+\wrong{separate all images into single with captions}
+\change{add box plots?}
+
+Fig. \ref{fig:082ironore0315}\\
+\input{images/082ironore0315}
+
+Fig. \ref{fig:083ironore31510}\\
+\input{images/083ironore31510}
+
+Fig. \ref{fig:084limestone0315}\\
+\input{images/084limestone0315}
+
+Fig. \ref{fig:085limestone31510}\\
+\input{images/085limestone31510}
+
+Fig. \ref{fig:086sinter0315}\\
+\input{images/086sinter0315}
+
+Fig. \ref{fig:087sinter31510}\\
+\input{images/087sinter31510}

@@ -157,3 +157,30 @@ since they have to be performed for every new granular material prior to a $DEM$
 simulations. 
 Especially for the already cited rolling friction parameter, it is arduous to
 link the rolling friction parameter to the non-sphericity of the particle. 
+
+
+\section{Unresolved CFD-DEM}
+\label{sec:unresolvedcfddem}
+%************************************************
+
+The existence of particles immersed in a fluid influences its behaviour. 
+Keeping aside the short-scale flow field, the local averages inside the
+Navier-Stokes fluid equations could account for the particles.
+On the hypothesis of having \textit{g(r)} a convenient averaging function, which
+is non-negative, smooth, asyntotically zero for large $r$, normalized, we can
+define the local void fraction ($\varepsilon(\mathbf{r},t)$), the volume of the
+fluid ($V_f(t)$) over the total volume, as:
+\input{equations/voidfraction}
+We define local mean values of fluid point properties as:
+\input{equations/a}
+which came from a slowly varying a rapidly fluctuating part:
+\input{equations/a2}
+Particle properties, on the solid volume $V_s(t)$ and the solid fraction
+$\phi(\mathbf{r},t)$, are expressed as field quantities as:
+\input{equations/b}
+The approximation is valid when $g(r)$ varies slowly over the particles length
+scale.
+\input{equations/divepsa}
+
+
+\info{to be continued}

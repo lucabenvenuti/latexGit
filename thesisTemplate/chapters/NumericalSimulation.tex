@@ -134,3 +134,43 @@ the values representative of the bulk behaviours
 were collected there.\\
 Together with the value from the \acs{AoR} simulation, we were able to define
 the numerical bulk behaviour.
+
+
+All the results in this chapter are pure \acs{DEM}, so they shoould be
+materials agnostic, given the same particle distribution.
+
+%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-
+%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-
+
+\section{Influence of variations of input parameters}
+\label{sec:influence}
+
+For sinter fine, 546 shear cell and 81 static \acs{AoR} simulations 
+\wrong{write down all the simulations performed at the end.}
+were run with
+the parameter combinations described in Table
+\ref{tab:10DEMVariableinputvalues}.
+The computational time amounted to 1 hour with 32 AMD cores for a benchmark
+shear-cell simulation and to 9 hours for a benchmark \acs{AoR} simulation, both with
+50,000 particles.
+Simulations with larger \acs{dCylDp} required more time (e.g., about 12 hours for
+the shear cell with 400,000 particles ). \\
+
+\input{tables/10DEMVariableinputvalues}.
+
+\info{Some examples on how the numerical bulk values change when the DEM input
+values change.}
+\info{or sub-chapter with PCA?}
+
+\section{PCA analysis}
+\label{sec:pcaanalysis}
+
+The linear relationship between the
+training values can be seen in Table \ref{tab:06inputRelationshipTable}.
+Sliding friction (\acs{mus}), rolling friction (\acs{mur}) and particle density (\acs{rhop})
+had the greatest influence on, respectively, the coefficient of pre-shear
+(\acs{mupsh}), the angle of repose  (\acs{AoR}) and the bulk density (\acs{rhob}). Notably, \acs{rhop}
+was not used as a training parameter for \acs{AoR} bulk behaviour. 
+\input{tables/06inputRelationshipTable}
+\improvement{underline that is good that the input parameters are not
+correlated}
