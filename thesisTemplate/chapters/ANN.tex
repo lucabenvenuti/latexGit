@@ -19,11 +19,27 @@ The Bayesian linear and the Gaussian non linear regressions
 can be used as regression methods for \acs{DEM} identification
 and to further
 assess the quality of the \acs{ANNs} training.
+Further, \citet{RefWorks:192} developed a tool for Gaussian
+processes inference and prediction, although we constrained ourselves to the case of exact inference
+(regression with Gaussian likelihood).
+The complete description of the Gaussian non linear regression can be found in
+\citet{RefWorks:194}.
+
+\subsection{Bayesian linear regression}
+\label{subsec:bayesian linear regression}
+
+We chose the Bayesian inference amongst the possible linear regression models.
+%     a_0: shape parameter of the prior precision of coefficients
+%     b_0: rate  parameter of the prior precision of coefficients
+%     c_0: shape parameter of the prior noise precision
+%     d_0: rate  parameter of the prior noise precision
 An effective tool for the posterior predictive density of a variational Bayesian
 multiple linear regression model is provided by \citet{RefWorks:193}.
-Further, \citet{RefWorks:192} developed a tool for Gaussian processes inference
-and prediction, although we constrained ourselves to the case of exact inference
-(regression with Gaussian likelihood).
+The theory is briefly explained in subsection \ref{subsec:bayesian linear
+regression}.
+\wrong{understand if the software requires as priors only the standard
+deviation or also the initial weights.}
+
 
 \section{ANN intro}
 \label{sec:annintro}
@@ -223,6 +239,8 @@ order of magnitude of the ratio between (a) the total number of free parameters
 network and (b) the fraction of classification errors permitted on test
 data (e.g., the mean square value of the estimation error).
 
+\info{comparison with bayesian linear regression}
+
 \section{Cross validation}
 \label{sec:crossvalidation}
 
@@ -246,6 +264,8 @@ minor number of loops) than the falling of the learning curve for the training
 set (cost function \acs{EAVN}) under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
 subset to evaluate its generalization performances.
+Also the standard regression models (i.e., Bayesian and Gaussian) are similarly
+evaluated.
 
 \section{ANNs training for DEM identification}
 \label{sec:annstrainingfordemidentification}
