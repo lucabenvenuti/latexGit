@@ -9,8 +9,9 @@
 %************************************************
 
 The discrete element method (\acs{DEM}) is derived from Molecular Dynamics. \\ 
-For each particle i inside the domain, a \acs{DEM} code
-follows the trajectory and calculates the force that particle i exerts on particle j.
+For each particle $i$ inside the domain, a \acs{DEM} code
+follows the trajectory and calculates the force that particle $i$ exerts on
+particle $j$.
 The main forces involved are: gravity, contact forces due to collisions, and
 further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
 multiphase flows. \\
@@ -30,11 +31,12 @@ investigated.
 % \label{sec:hardspheresapproach}
 % \info{words on hard spheres approach}
 
-\section{Soft spheres approach}
+\section{Soft sphere approach}
 \label{sec:softspheresapproach}
 
+\info{could use tikz for this image}
 \input{images/109twospheres}
-The soft-sphere approach consider the deformations of the particles when they
+The soft sphere approach consider the deformations of particles when they
 collide with each other. From the vector in Fig. \ref{fig:109twospheres} we can
 define after time \textit{t} the normal and tangential overlaps \acs{xin} and
 \acs{xit}:
@@ -66,6 +68,7 @@ force comprise two terms, a spring force and a damping force.
 The tangential (or shear) force is a ``history'' effect that accounts for the
 tangential displacement (``tangential overlap'') between the particles for the
 duration of contact.
+\info{add to acronyms}
 The $k_n$, $k_t$, $\gamma_n$, and $\gamma_t$ coefficients are calculated from
 the material properties as follows:
 %************************************************
@@ -81,7 +84,7 @@ one of the particle-based \acs{DEM} parameter we investigated,
 another being the coefficient of rolling friction (\acs{mur}),
 that can be simulated with these models:
 \begin{itemize}
-  \item{constant direct torque (cdt),}
+  \item{constant direct torque (CDT),}
   \item{elasto-plastic-spring-dashpot.}
 \end{itemize}
 
@@ -115,7 +118,7 @@ the method can be found.\\
 % 
 % where $F_n$ is the normal component and 
 
-\subsection{EPSD2}
+\subsection{Elasto-plastic-spring-dashpot 2}
 \label{subsec:epsd2}
 
 For coarse non-spherical particles, \acs{mur} is a critical parameter and describes
@@ -124,7 +127,7 @@ torque counteracting the rotation of the particle. The \acs{mur} parameter enter
 equations according to the elasto-rolling resistance model presented by Wensrich and 
 Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131} 
 based on the work of Jiang et al. \cite{RefWorks:143}. 
-The model is called $EPSD2$ in \acs{LIGGGHTS} and is appropriate for both one-way and cyclical rolling cases.
+The model is called EPSD2 in \acs{LIGGGHTS} and is appropriate for both one-way and cyclical rolling cases.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 
 %************************************************
@@ -132,7 +135,8 @@ The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 %************************************************
 
 where $R_r$ is the equivalent radius and $F_n$ the normal force.
-The last two particle-based \acs{DEM} parameters we investigated were \acs{rhop}
+The last two particle-based \acs{DEM} parameters we investigated were 
+the particle density (\acs{rhop})
 and the coefficient of restitution (\acs{CoR}) as defined by
 \citet{RefWorks:131}.
 Together with the others they are listed in Table \ref{tab:08DEMparameters}.\\
@@ -170,6 +174,9 @@ On the hypothesis of having \textit{g(r)} a convenient averaging function, which
 is non-negative, smooth, asyntotically zero for large $r$, normalized, we can
 define the local void fraction ($\varepsilon(\mathbf{r},t)$), the volume of the
 fluid ($V_f(t)$) over the total volume, as:
+
+\wrong{check all equations and add images}
+
 \input{equations/voidfraction}
 We define local mean values of fluid point properties as:
 \input{equations/a}
