@@ -107,6 +107,7 @@ can easily be linearly separated in two regions.
 The handling of multiple outputs or, in our example, 
 when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
 separation not possible, and a multineuron approach necessary. 
+\wrong{better explanation of the example necessary}
 Many neurons are combined to form a network.
 The first requirement of a multilayer neural network
 is that each neuron of the network must have differentiable nonlinear activation
@@ -154,7 +155,7 @@ starting the training.
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
 
-A multilayer perceptrons network can be trained with the
+A multilayer perceptron network can be trained with the
 supervised back-propagation algorithm, composed of two phases, forward and
 backward.
 In the first phase the weights do not change. 
@@ -175,8 +176,8 @@ With a total of $N$ expected
 responses for training the cost function to be minimized can be expressed as the
 \textit{error energy averaged over the training sample}:
 \input{equations/costfunction}
-Consequently, the weight of the i-th input for the j-th neuron with the n-th
-example is corrected as follow:
+Consequently, the weight of the $i$-th input for the $j$-th neuron with the
+$n$-th example is corrected as follow:
 \input{equations/deltaweight}
 where \acs{eta} is the \textit{learning-rate parameter},
 which could be a user tuned parameter. 
@@ -201,7 +202,7 @@ we can derive an error surface. Its local \textit{gradient vector}
 \textbf{g}(\textit{n}) can be written as:
 
 \input{equations/gradientvector}
-
+\wrong{insert the equation system}
 The quadratic approximation of the error surface can be performed with the
 following methods:
 
@@ -217,7 +218,7 @@ Further, it is faster and less computationally demanding than the
 remaining quadratic methods.
 First, the weights are randomly initialized. 
 At every iteration the n-th example is used to computed $\eta$, and later
-explicetely the weights (n + 1)'th iteration are obtained.
+explicetely the weights $(n + 1)$'th iteration are obtained.
 Then \textbf{g}(\textit{n + 1}) is calculated, to be later used with the
 Polak-Ribiere method to compute the direction vector.
 The gradient methods stops when the residuals, calculated from the

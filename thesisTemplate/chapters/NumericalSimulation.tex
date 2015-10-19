@@ -14,12 +14,12 @@ We used \acs{LIGGGHTS} as the simulation toolbox.
 \improvement{Add some more details from Kloss}
 We decided to utilize a single
 contact law for all the simulations performed.
-The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, which
-also depends on the particle density (\acs{rhop}).
-Furthermore, we locked the size distribution, which was obtained by experimental
-sieving, see Table \ref{tab:09DEMFixedinputvalues}.\\
-The \acs{DEM} parameters for the Young's modulus (\acs{E}) and the Poisson's coefficient
-(\acs{nu}) were taken from the literature, see \cite{RefWorks:175} 
+The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, because
+it depends on the particle density (\acs{rhop}) and on the particle size.
+Furthermore, we kept constant the size distribution, which was obtained by
+experimental sieving, see Table \ref{tab:09DEMFixedinputvalues}.\\
+The \acs{DEM} values for the Young's modulus (\acs{E}) and the Poisson's
+coefficient (\acs{nu}) were taken from the literature, see \cite{RefWorks:175} 
 and \cite{RefWorks:176}; however we reduced the former to increase the time step
 (\acs{deltat}), following the recommendations of Ai et al.
 \cite{RefWorks:131}.\\
