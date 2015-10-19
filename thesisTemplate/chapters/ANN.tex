@@ -8,8 +8,8 @@
 \label{cap:ann}
 %************************************************
 
-\section{Regression statistic}
-\label{sec:regressionstatistic}
+\section{Regression statistics}
+\label{sec:regressionstatistics}
 
 We start with a set of random variables, aiming to find a relationship between
 them. We choose one of them ($response$), and we infer its dependance from the
@@ -17,10 +17,11 @@ others ($regressors$), also including an additive $error$ term. We call this a
 \textit{regression model}, which can be linear or nonlinear.
 The Bayesian linear and the Gaussian non linear regressions 
 can be used as regression methods for \acs{DEM} identification
-and to further
-assess the quality of the \acs{ANNs} training.
-Further, \citet{RefWorks:192} developed a tool for Gaussian
-processes inference and prediction, although we constrained ourselves to the case of exact inference
+and as benchmark for more precise tools. 
+%to further
+%assess the quality of the \acs{ANNs} training.
+Specifically, we handled the software developed by \citet{RefWorks:192} 
+for Gaussian processes inference and prediction, although we constrained ourselves to the case of exact inference
 (regression with Gaussian likelihood).
 The complete description of the Gaussian non linear regression can be found in
 \citet{RefWorks:194}.
@@ -39,6 +40,7 @@ The theory is briefly explained in subsection \ref{subsec:bayesian linear
 regression}.
 \wrong{understand if the software requires as priors only the standard
 deviation or also the initial weights.}
+\info{to be continued}
 
 
 \section{ANN intro}
@@ -70,8 +72,9 @@ conjugate gradient.
 \section{Perceptron}
 \label{sec:perceptron}
 
-The basic element of an artificial neural network is the perceptron, see Fig.
-\ref{fig:064perceptron}, that is mathematically described by equation
+The basic element of an artificial neural network is the perceptron, a single
+neuron, see Fig.
+\ref{fig:064perceptron}, which is mathematically described by equation
 \ref{eq:perceptron}: 
 \input{equations/perceptron}
 where $x_j$ are the input nodes, $y$ is the output node, $w_j$ are the weights
@@ -89,8 +92,10 @@ The classical example of the double moon, see Fig. \ref{fig:105doublemoon2},
 which clarifies the limits of the single perceptron approach, especially 
 why a single neuron is not capable to handle a
 nonlinear problem.
-As long as the distance $d$ is positive, the domain can easily be
-linearly separated in two regions.
+We drew two \textit{moons}, both with an inner radius $r$. Their minimum
+distance is $d$.
+As long as $d$ is positive, the investigation space
+can easily be linearly separated in two regions.
 
 %\improvement{better and more detailed explanation about the double moon}
 %\improvement{Add some more details about the perceptron from Haykin}
@@ -102,6 +107,7 @@ linearly separated in two regions.
 The handling of multiple outputs or, in our example, 
 when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
 separation not possible, and a multineuron approach necessary. 
+Many neurons are combined to form a network.
 The first requirement of a multilayer neural network
 is that each neuron of the network must have differentiable nonlinear activation
 function, such as the strictly increasing hyperbolic tangent.
