@@ -11,23 +11,52 @@
 \section{Regression statistics}
 \label{sec:regressionstatistics}
 
-We start with a set of random variables, aiming to find a relationship between
-them. We choose one of them ($response$), and we infer its dependance from the
-others ($regressors$), also including an additive $error$ term. We call this a
-\textit{regression model}, which can be linear or nonlinear.
-The Bayesian linear and the Gaussian non linear regressions 
-can be used as regression methods for \acs{DEM} identification
-and as benchmark for more precise tools. 
+Statistics finds relationship between random variables.
+Once one of them ($response$) is chosen, it infers its dependance from the
+others ($regressors$), also including an additive $error$ term
+(\citet{RefWorks:194}). We call this a \textit{regression model}, which can be
+linear or nonlinear.
+In this work we exploited the following regression models:
+\begin{itemize}
+  \item{Bayesian linear,}
+  \item{Gaussian non linear,}
+  \item{Artificial Neural Network (\acs{ANN}).}
+\end{itemize}
+We later explained, section \ref{sec:annmodeldev}, why we focused on the last
+one over the other two.
+% The B and the  regressions 
+% can be used as regression methods for \acs{DEM} identification
+% and as benchmark for more precise tools. 
 %to further
 %assess the quality of the \acs{ANNs} training.
-Specifically, we handled the software developed by \citet{RefWorks:192} 
-for Gaussian processes inference and prediction, although we constrained ourselves to the case of exact inference
-(regression with Gaussian likelihood).
-The complete description of the Gaussian non linear regression can be found in
-\citet{RefWorks:194}.
+
+
+\section{Supervised learning}
+\label{sec:supervisedlearning}
+
+The learning processes available for a regression model are:
+
+\begin{itemize}
+  \item{supervised learning, or learning with a teacher,}
+  \item{semi-supervised learning,}
+  \item{unsupervised learning.}
+\end{itemize}
+
+The easiest regression model consists in fitting target data
+points (exptected response) with a polynomial curve.
+The cofficients of the curve are obtained by minimizing a cost function, which
+is proportional to the distance of said data points to the curve.
+The expected response represents the teacher of the system.
+The network is trained in \textit{batch mode}, all the examples are known before
+starting the training.
+We focused on supervised learning: the materials we investigated are examined in
+batch, not online.\\
+\citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
+training examples comprises the input vectors and their corresponding target
+vectors.
 
 \subsection{Bayesian linear regression}
-\label{subsec:bayesian linear regression}
+\label{subsec:bayesianlinearregression}
 
 We chose the Bayesian inference amongst the possible linear regression models.
 %     a_0: shape parameter of the prior precision of coefficients
@@ -36,11 +65,24 @@ We chose the Bayesian inference amongst the possible linear regression models.
 %     d_0: rate  parameter of the prior noise precision
 An effective tool for the posterior predictive density of a variational Bayesian
 multiple linear regression model is provided by \citet{RefWorks:193}.
-The theory is briefly explained in subsection \ref{subsec:bayesian linear
-regression}.
+% The theory is briefly explained in subsection \ref{subsec:bayesian linear
+% regression}.
 \wrong{understand if the software requires as priors only the standard
 deviation or also the initial weights.}
 \info{to be continued}
+
+\subsection{Gaussian non linear regression}
+\label{subsec:gaussiannonlinearregression}
+
+Specifically, we handled the software developed by \citet{RefWorks:192} 
+for Gaussian processes inference and prediction, although we constrained ourselves to the case of exact inference
+(regression with Gaussian likelihood).
+The complete description of the Gaussian non linear regression can be found in
+\citet{RefWorks:194}.
+
+
+% \improvement{I focus only on supervised learning, but also unsupervised
+% learning and semi-supervised learning exist.}
 
 
 \section{ANN intro}
@@ -126,18 +168,9 @@ layer.\\
 %\improvement{Add some more details about the multilayer from Haykin}
 %\improvement{explain feed forward here, pag 21 haykin}
 
-\section{Supervised learning}
-\label{sec:supervisedlearning}
+\section{Backpropagation algorithm}
+\label{sec:backpropagationalgorithm}
 
-The learning processes available for a neural network are:
-
-\begin{itemize}
-  \item{supervised learning, or learning with a teacher,}
-  \item{semi-supervised learning,}
-  \item{unsupervised learning.}
-\end{itemize}
-
-We focused on supervised learning.
 If we consider a single perceptron, each example consists of a vector of inputs
 and a scalar expected response.
 The error is calculated 
@@ -145,16 +178,6 @@ as the difference at the j-th
 node between the output of the neuron ($y_j(n)$) and the expected response
 ($d_j(n)$):
 \input{equations/error}
-The expected response represents the teacher of the system.
-The network is trained in \textit{batch mode}, all the examples are known before
-starting the training.
-
-% \improvement{I focus only on supervised learning, but also unsupervised
-% learning and semi-supervised learning exist.}
-
-\section{Backpropagation algorithm}
-\label{sec:backpropagationalgorithm}
-
 A multilayer perceptron network can be trained with the
 supervised back-propagation algorithm, composed of two phases, forward and
 backward.
