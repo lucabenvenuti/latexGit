@@ -641,7 +641,7 @@ $\mu_{sh}$, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 \end{equation}
 %************************************************
 
-\section{Results and discussion}
+\section{Results}
 \label{sec:results}
 %************************************************
 
@@ -992,6 +992,28 @@ Finally, we show the number of valid parameter combinations over the total
     \label{fig:35schulze10070aorradarandcloud}
 \end{figure}
 %************************************************
+\section{Discussion of Model Limitations}
+\label{sec:discussion}
+%************************************************
+In our approach we established a relationship between particle scale contact law
+parameters and macroscopic bulk behaviour by means of $ANN$. 
+In case the chosen contact law is physically correct by its functional dependencies, 
+this micro to macro relationship can be used in a reversed way to identify 
+valid sets of contact law parameters.\\
+However, in case the chosen contact law is not applicable to the granular 
+material under consideration, 
+our procedure might lead to a wrong set of parameters, which might lead to the
+correct bulk behaviour.
+In this case a first error (incorrect contact law) might be annulled by another
+one (wrong parameters).\\
+To avoid such misleading results, the functional dependency of the particle based contact 
+law should be chosen with care, taking into account the contact physics in the granular 
+flow regime under investigation. 
+Further, our $ANN$ based parameter
+identification should be applied to different macroscopic bulk behaviours. 
+If those parameter identifications do not 
+lead to a common set of valid parameters, most probably the chosen contact law was not applicable. 
+
 %************************************************
 \section{Conclusions}
 \label{sec:conclusions}
@@ -1034,9 +1056,11 @@ simulation parameters.
 %************************************************
 
 \section{Acknowledgements}
-This study was funded by the Christian Doppler Forschungsgesellschaft, Siemens
-VAI Metals Technologies, and Voestalpine Stahl. The authors gratefully
-acknowledge their support.
+\label{sec:acknowledgements}
+%************************************************
+This study was funded by the Competence center for excellent technologies in
+Advanced Metallurgical and Environmental Process Development (K1MET, Austria).
+The authors gratefully acknowledge its support.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{elsarticle-num}
@@ -1050,7 +1074,7 @@ acknowledge their support.
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
 \bibitem{RefWorks:130}
-P.~W. Cleary, M.~L. Sawley, Dem modelling of industrial granular flows: 3d case
+P.~W. Cleary, M.~L. Sawley, $DEM$ modelling of industrial granular flows: 3d case
   studies and the effect of particle shape on hopper discharge, Applied
   Mathematical Modelling 26~(2) (2002) 89--111.
 
@@ -1102,7 +1126,7 @@ M.~Combarros, H.~J. Feise, H.~Zetzener, A.~Kwade, Segregation of particulate
   solids: Experiments and dem simulations, Particuology 12~(0) (2014) 25--32.
 
 \bibitem{RefWorks:91}
-A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, Dem validation using an
+A.~Alenzi, M.~Marinack, C.~F. Higgs, J.~J. McCarthy, $DEM$ validation using an
   annular shear cell, Powder Technology 248~(0) (2013) 131--142.
 
 \bibitem{RefWorks:181}
@@ -1111,7 +1135,7 @@ M.~Paulick, M.~Morgeneyer, A.~Kwade, Review on the influence of elastic
   (2015) 66--76.
 
 \bibitem{RefWorks:186}
-S.~Lommen, D.~Schott, G.~Lodewijks, Dem speedup: Stiffness effects on behavior
+S.~Lommen, D.~Schott, G.~Lodewijks, $DEM$ speedup: Stiffness effects on behavior
   of bulk material, Particuology 12~(0) (2014) 107--112.
 
 \bibitem{RefWorks:140}
