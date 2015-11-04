@@ -267,19 +267,7 @@ Further explanations can be found in Section \ref{sec:methodology}.
 
 The material used for this work was sinter fine, see Fig.
 \ref{fig:104material}. Its particles had a mean radius of 0.73 mm and were
-cohesionless, see Section \ref{subsec:macroscopicexperimentsparameteridentification}.
-Their amounts of open and closed pores are not negligible (see Yang
-\cite{RefWorks:191}), and thus the use of an Archimedean procedure to
-determine the correct particle density by direct measurement
-was not applicable.
-Possibly, a tomography for each particle would lead to the particle density,
-but this analysis was infeasible: 
-the necessary time for the the amount of material
-analysed was unreasonable. 
-Further, a three-dimensional scan of each particle would have surely physically
-identified our particles, and made us able to confront them with other studies. 
-The high shape dispersity made also this analysis impossible. 
-We followed a different procedure, see Section
+cohesionless, see Section
 \ref{subsec:macroscopicexperimentsparameteridentification}.\\
 To avoid the macroscopic plastic deformations analysed by Harthong et al. \cite{RefWorks:183} 
 we checked for each simulation for its total duration that the packing density was 
@@ -290,16 +278,48 @@ et al. \cite{RefWorks:182, RefWorks:185}.
 The experimental characterization was performed at environmental temperature and thus 
 temperature was not considered in the numerical simulations. Chemical reactions and aging 
 were also not part of the scope of this work.
+
+%************************************************
+
+\subsection{Limitations}
+\label{subsec:limitations}
+
+The amounts of open and closed pores of the particles are not negligible (see
+Yang \cite{RefWorks:191}), and thus the use of an Archimedean procedure to
+determine the correct particle density by direct measurement
+was not applicable.
+Possibly, a tomography for each particle would lead to the particle density,
+but this analysis was infeasible: 
+the necessary time for the the amount of material
+analysed was unreasonable. 
+Further, a three-dimensional scan of each particle would have surely physically
+identified our particles, and made us able to confront them with other studies. 
+The high shape dispersity made not only this analysis impossible, but forbade us
+to achieve a trustworthy average density for the particles in a plausible time.
+Additionally, assigning a large number of different particle densities 
+to the numerical entities is futile, if a thorough investigation of the  
+correspondence between experimental and numerical bulk densities is not
+performed.
+However, this comparison was not included in the scope of our work.
+We followed a different procedure, see Section
+\ref{subsec:macroscopicexperimentsparameteridentification}.\\
 Further, due to the limited number of experiments realized, a restricted number
 of flow regimes were tested, and only one size distribution was considered. 
 The authors are confident that these two limitations have not compromised the validity of the method. 
-Rather, further investigations on these two aspects could again demonstrate its effectiveness. 
+Rather, further investigations on these two aspects could again demonstrate its
+effectiveness.\\
 Notably, we chose an elastic model to picture the particle behaviour. If we try
-to identify parameters for an elastic contact model in a system of non-elastic particles, this $ANN$ approach will fail. 
+to identify parameters for an elastic contact model in a system of non-elastic particles, 
+this $ANN$ approach will fail. 
 So choosing appropriate contact models is an essential pre-requisite for contact 
-parameter identification by means of $ANN$. 
-Moreover, $ANNs$ can give indications about the correctness of the chosen model, 
-see Section \ref{subsec:experimentsparameteridentification}.
+parameter identification by means of $ANN$.
+If we chose a wrong contact law, 
+$ANNs$ could give indications about its correctness, 
+see Section \ref{subsec:experimentsparameteridentification}, 
+by identifying no valid parameters.
+However, in the worst case scenario, we could end up adopting unreliable
+parameters in the chosen law.
+
 %************************************************
 \subsection{Discrete element method}
 \label{subsec:dem}
