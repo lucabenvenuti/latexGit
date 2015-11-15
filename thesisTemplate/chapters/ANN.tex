@@ -8,7 +8,7 @@
 \label{cap:ann}
 %************************************************
 
-\section{Probability}
+\section{Probability theory}
 \label{sec:probability}
 
 BISHOP defines $X$ a random variable with a fixed domain $Val(X)$,
@@ -38,6 +38,32 @@ the sum rule (Eq. \ref{eq:sumrule}) and the product rule (Eq.
 \input{equations/sumrule}
 \input{equations/productrule}
 \input{equations/bayestheorem}
+
+\subsection{The Gaussian Distribution}
+\label{subsec:gaussian}
+
+Provided a single real valued variable $x$, a Gaussian distribution is:
+\input{equations/gaussiandistribution}
+where $\mu$ is the mean and $\sigma^2$ is the variance, of which the square root
+is the standard deviation.
+Further, $\beta = 1/\sigma^2$ is the deviation.
+Given a set of observations $\mathbf{x} = (x_1, \ldots, x_N)^T$, assumed
+\textit{indipendent and identically distributed} (i.i.d.), the probability of
+the data set becomes:
+\input{equations/likelihoodgaussian}
+which can be more easily computed if written in a logaritmic form:
+\input{equations/loglikelihoodgaussian}
+To obtain the expectation of this likelihood Equation
+\ref{eq:loglikelihoodgaussian} can be maximized over $\mu$ and $\sigma^2$,
+giving respectively Eq. \ref{eq:mu} and Eq. \ref{eq:sigma}:
+\input{equations/mu}
+\input{equations/sigma}
+In case of a D-dimensional vector $\mathbf{x}$, we write the multivariate
+Gaussian distribution as:
+\input{equations/multivariategaussiandistribution}
+
+\subsection{The Standard Linear Model}
+\label{subsec:gaussian}
 
 \section{Regression statistics}
 \label{sec:regressionstatistics}
