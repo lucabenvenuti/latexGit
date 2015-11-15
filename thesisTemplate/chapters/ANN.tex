@@ -8,6 +8,37 @@
 \label{cap:ann}
 %************************************************
 
+\section{Probability}
+\label{sec:probability}
+
+BISHOP defines $X$ a random variable with a fixed domain $Val(X)$,
+showing aspects of the system's world. In this world, a fixed assignment of
+values to variables (from one to all) is called an $event$.
+Given a probability distribution $P$, this assigns to the specific event
+$\alpha$ a value: $P(\alpha)$.
+Provided a random variable $X$, whose $Val(X) = \{ x^1, \ldots , x^k \}$, a
+$Probability Distribution$ over $X$ is $P(X) = \{ P(x^1), \ldots , P(x^k) \}$.
+He further defines, given a second random variable $Y$:
+\begin{itemize}
+  \item {Probability of conjunction of events, $P(X = x, Y = y)$ or $P(x, y)$,
+  or $P((X = x) \cap (Y = y))$;}
+  \item {A set of variables, $\mathbf{X} = \{X_1, X_2, \ldots , X_k \}$;}
+  \item {Joint distribution over one set of variables, $P(\mathbf{X}) =
+  P(X_1, X_2, \ldots , X_k) $;}
+  \item {Joint distribution over two sets of variables, $P(\mathbf{X, Y}) =
+  P(X_1, X_2, \ldots , X_k, Y_1, Y_2, \ldots , Y_l  ) $;}
+  \item {Conditional distribution, $P(\mathbf{X | Y}) =
+  P(X_1, X_2, \ldots , X_k | Y_1, Y_2, \ldots , Y_l  ) $.}
+\end{itemize}
+
+For later reference, we write two fundamental rules of the probability theory,
+the sum rule (Eq. \ref{eq:sumrule}) and the product rule (Eq.
+\ref{eq:productrule}), from which Bayes derived his theorem (Eq.
+\ref{eq:bayestheorem}):
+\input{equations/sumrule}
+\input{equations/productrule}
+\input{equations/bayestheorem}
+
 \section{Regression statistics}
 \label{sec:regressionstatistics}
 
@@ -49,8 +80,10 @@ is proportional to the distance of said data points to the curve.
 The expected response represents the teacher of the system.
 The network is trained in \textit{batch mode}, all the examples are known before
 starting the training.
-We focused on supervised learning: the materials we investigated are examined in
-batch, not online.\\
+Further, these examples were assumed to be \textit{independent and identically
+distributed}.
+We focused on supervised learning: the materials we investigated
+are examined in batch, not online.\\
 \citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
 training examples comprises the input vectors and their corresponding target
 vectors.
