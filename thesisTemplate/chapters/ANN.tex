@@ -17,7 +17,8 @@ values to variables (from one to all) is called an $event$.
 Given a probability distribution $P$, this assigns to the specific event
 $\alpha$ a value: $P(\alpha)$.
 Provided a random variable $X$, whose $Val(X) = \{ x^1, \ldots , x^k \}$, a
-$Probability Distribution$ over $X$ is $P(X) = \{ P(x^1), \ldots , P(x^k) \}$.
+\textit{Probability Distribution} over $X$ is $P(X) = \{ P(x^1), \ldots , P(x^k)
+\}$.
 He further defines, given a second random variable $Y$:
 \begin{itemize}
   \item {Probability of conjunction of events, $P(X = x, Y = y)$ or $P(x, y)$,
@@ -61,9 +62,8 @@ giving respectively Eq. \ref{eq:mu} and Eq. \ref{eq:sigma}:
 In case of a D-dimensional vector $\mathbf{x}$, we write the multivariate
 Gaussian distribution as:
 \input{equations/multivariategaussiandistribution}
+where $\mathbf{\Sigma}$ is the covariance matrix.
 
-\subsection{The Standard Linear Model}
-\label{subsec:gaussian}
 
 \section{Regression statistics}
 \label{sec:regressionstatistics}
@@ -86,6 +86,44 @@ one over the other two.
 % and as benchmark for more precise tools. 
 %to further
 %assess the quality of the \acs{ANNs} training.
+
+
+\subsection{The Standard Bayesian Linear Model}
+\label{subsec:standardlinearmodel}
+
+RASMUSSEN defines the standard linear regression model with Gaussian noise as:
+\input{equations/standardlinearregression}
+where $\mathbf{x}$ is the input vector, $\mathbf{w}$ are the weights of the
+linear model, and $y$ is the target value. The noise $\varepsilon$ adopts an
+$i.i.d.$ Gaussian distribution:
+\input{equations/noise}
+Extending to the n-dimensional case, we have a set of $n$ observations:
+\input{equations/observations}
+Consequently, the $likelihood$, or probability density of the observations given
+the parameters, becomes:
+\input{equations/likelihoodcontinuous}
+where the Euclidean length of vector $\mathbf{v}$ is indicated by
+$|\mathbf{v}|$.
+We also consider the weights $\mathbf{w}$ proportional to the Gaussian
+distribution with zero mean and variance equal to the coviarance matrix
+$\Sigma_p$.\\
+Remembering the theorem of Bayes, Eq. \ref{eq:bayestheorem}, which states that:
+\input{equations/bayestheoremword}
+we can define the continuous posterior distribution as:
+\input{equations/bayestheoremcontinuous}
+where the \textit{marginal likelihood} is:
+\input{equations/marginallikelihood}
+A first estimation of the posterior can be determined as follow:
+\input{equations/likelihoodprior}
+where $A = \sigma_n^{-2} X X^T + \Sigma_p^{-1}$.
+
+\subsection{Gaussian Process}
+\label{subsec:gaussianprocess}
+
+RASMUSSEN defines a \textit{Gaussian process} as a set of random variables. 
+Any finite random of these variables have a joint Gaussian distribution.
+The process can be defined by its mean function $m(\mathbf{x})$ and its
+covariance function $k(\mathbf{x, x'})$
 
 
 \section{Supervised learning}

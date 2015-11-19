@@ -1,0 +1,11 @@
+\begin{equation}
+\label{eq:likelihoodcontinuous}
+\begin{align*}
+p(\mathbf{y} | X, \mathbf{w}) &= \prod_{i = 1}^{n} {p(y_i | \mathbf{x}_i,
+\mathbf{w})} = \prod_{i = 1}^{n} {\frac{1}{\sqrt{2\pi} \sigma_n} 
+exp \left(- \frac{(y_i - \mathbf{x}_i^T \mathbf{w})^2}{2 \sigma_n^2} \right)} \\
+&= \frac{1}{(2\pi \sigma_n^2)^{n/2}} exp \left(- \frac{1}{2 \sigma_n^2}
+|\mathbf{y} - X^T \mathbf{w}|^2 \right) = \mathcal{N}(X^T \mathbf{w}, \sigma_n^2
+I), 
+\end{align*}
+\end{equation}
