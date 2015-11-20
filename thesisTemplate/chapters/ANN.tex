@@ -87,6 +87,36 @@ one over the other two.
 %to further
 %assess the quality of the \acs{ANNs} training.
 
+\subsection{Supervised learning}
+\label{subsec:supervisedlearning}
+
+The learning processes available for a regression model are:
+
+\begin{itemize}
+  \item{supervised learning, or learning with a teacher,}
+  \item{semi-supervised learning,}
+  \item{unsupervised learning.}
+\end{itemize}
+
+The easiest regression model consists in fitting target data
+points (exptected response) with a polynomial curve.
+The cofficients of the curve are obtained by minimizing a cost function, which
+is proportional to the distance of said data points to the curve.
+The expected response represents the teacher of the system.
+The network is trained in \textit{batch mode}, all the examples are known before
+starting the training.
+Further, these examples were assumed to be \textit{independent and identically
+distributed}.
+We focused on supervised learning: the materials we investigated
+are examined in batch, not online.\\
+\citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
+training examples comprises the input vectors and their corresponding target
+vectors.
+%\subsection{Gaussian non linear regression}
+%\label{subsec:gaussiannonlinearregression}
+% \improvement{I focus only on supervised learning, but also unsupervised
+% learning and semi-supervised learning exist.}
+
 
 \subsection{The Standard Bayesian Linear Model}
 \label{subsec:standardlinearmodel}
@@ -159,37 +189,6 @@ The complete description of the Gaussian non linear regression can be found in
 \citet{RefWorks:194}.
 
 \info{decide if using the equations from 5.3 to 5.7 of Rasmussen}
-
-\section{Supervised learning}
-\label{sec:supervisedlearning}
-
-The learning processes available for a regression model are:
-
-\begin{itemize}
-  \item{supervised learning, or learning with a teacher,}
-  \item{semi-supervised learning,}
-  \item{unsupervised learning.}
-\end{itemize}
-
-The easiest regression model consists in fitting target data
-points (exptected response) with a polynomial curve.
-The cofficients of the curve are obtained by minimizing a cost function, which
-is proportional to the distance of said data points to the curve.
-The expected response represents the teacher of the system.
-The network is trained in \textit{batch mode}, all the examples are known before
-starting the training.
-Further, these examples were assumed to be \textit{independent and identically
-distributed}.
-We focused on supervised learning: the materials we investigated
-are examined in batch, not online.\\
-\citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
-training examples comprises the input vectors and their corresponding target
-vectors.
-%\subsection{Gaussian non linear regression}
-%\label{subsec:gaussiannonlinearregression}
-% \improvement{I focus only on supervised learning, but also unsupervised
-% learning and semi-supervised learning exist.}
-
 
 \section{ANN intro}
 \label{sec:annintro}
@@ -376,7 +375,7 @@ order of magnitude of the ratio between (a) the total number of free parameters
 network and (b) the fraction of classification errors permitted on test
 data (e.g., the mean square value of the estimation error).
 
-\info{comparison with bayesian linear regression}
+\input{tables/17regressionmethods}
 
 \section{Cross validation}
 \label{sec:crossvalidation}
