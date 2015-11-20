@@ -11,7 +11,7 @@
 \section{Probability theory}
 \label{sec:probability}
 
-BISHOP defines $X$ a random variable with a fixed domain $Val(X)$,
+\citet{RefWorks:194} defines $X$ a random variable with a fixed domain $Val(X)$,
 showing aspects of the system's world. In this world, a fixed assignment of
 values to variables (from one to all) is called an $event$.
 Given a probability distribution $P$, this assigns to the specific event
@@ -91,7 +91,7 @@ one over the other two.
 \subsection{The Standard Bayesian Linear Model}
 \label{subsec:standardlinearmodel}
 
-RASMUSSEN defines the standard linear regression model with Gaussian noise as:
+\citet{RefWorks:192} define the standard linear regression model with Gaussian noise as:
 \input{equations/standardlinearregression}
 where $\mathbf{x}$ is the input vector, $\mathbf{w}$ are the weights of the
 linear model, and $y$ is the target value. The noise $\varepsilon$ adopts an
@@ -115,16 +115,50 @@ where the \textit{marginal likelihood} is:
 \input{equations/marginallikelihood}
 A first estimation of the posterior can be determined as follow:
 \input{equations/likelihoodprior}
-where $A = \sigma_n^{-2} X X^T + \Sigma_p^{-1}$.
+where $A = \sigma_n^{-2} X X^T + \Sigma_p^{-1}$.\\
+An effective tool for the posterior predictive density of a variational Bayesian
+multiple linear regression model is provided by \citet{RefWorks:193}.
+% % \subsection{Bayesian linear regression}
+% \label{subsec:bayesianlinearregression}
+
+% We chose the Bayesian inference amongst the possible linear regression models.
+%     a_0: shape parameter of the prior precision of coefficients
+%     b_0: rate  parameter of the prior precision of coefficients
+%     c_0: shape parameter of the prior noise precision
+%     d_0: rate  parameter of the prior noise precision
+
+% The theory is briefly explained in subsection \ref{subsec:bayesian linear
+% regression}.
+% \wrong{understand if the software requires as priors only the standard
+% deviation or also the initial weights.}
+% \info{to be continued}
 
 \subsection{Gaussian Process}
 \label{subsec:gaussianprocess}
 
-RASMUSSEN defines a \textit{Gaussian process} as a set of random variables. 
+\citet{RefWorks:192} define a \textit{Gaussian process} as a set of random variables. 
 Any finite random of these variables have a joint Gaussian distribution.
-The process can be defined by its mean function $m(\mathbf{x})$ and its
-covariance function $k(\mathbf{x, x'})$
+The process $f(\mathbf{x})$ can be defined by its mean function $m(\mathbf{x})$
+and its covariance function $k(\mathbf{x, x'})$, which are, respectively:
+\input{equations/meanfunction}
+\input{equations/covariancefunction}
+and it can be written in a compact form as:
+\input{equations/gaussianprocess}
+In fact, the Bayesian linear regression model is a subcase of the Gaussian
+process model, with the following conditions:
+\input{equations/bayesianlinearmodelgaussianprocess}
+We used the \textit{squared exponential} (SE), also called Radial Basis Function
+(RBF) or Gaussian Function, as covariance function. It defines the covariance
+between a pair of random variables as:
+\input{equations/covariancefunctionse}
 
+Specifically, we handled the software developed by \citet{RefWorks:192} 
+for Gaussian processes inference and prediction, although we constrained ourselves to the case of exact inference
+(regression with Gaussian likelihood).
+The complete description of the Gaussian non linear regression can be found in
+\citet{RefWorks:194}.
+
+\info{decide if using the equations from 5.3 to 5.7 of Rasmussen}
 
 \section{Supervised learning}
 \label{sec:supervisedlearning}
@@ -151,33 +185,8 @@ are examined in batch, not online.\\
 \citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
 training examples comprises the input vectors and their corresponding target
 vectors.
-
-\subsection{Bayesian linear regression}
-\label{subsec:bayesianlinearregression}
-
-We chose the Bayesian inference amongst the possible linear regression models.
-%     a_0: shape parameter of the prior precision of coefficients
-%     b_0: rate  parameter of the prior precision of coefficients
-%     c_0: shape parameter of the prior noise precision
-%     d_0: rate  parameter of the prior noise precision
-An effective tool for the posterior predictive density of a variational Bayesian
-multiple linear regression model is provided by \citet{RefWorks:193}.
-% The theory is briefly explained in subsection \ref{subsec:bayesian linear
-% regression}.
-\wrong{understand if the software requires as priors only the standard
-deviation or also the initial weights.}
-\info{to be continued}
-
-\subsection{Gaussian non linear regression}
-\label{subsec:gaussiannonlinearregression}
-
-Specifically, we handled the software developed by \citet{RefWorks:192} 
-for Gaussian processes inference and prediction, although we constrained ourselves to the case of exact inference
-(regression with Gaussian likelihood).
-The complete description of the Gaussian non linear regression can be found in
-\citet{RefWorks:194}.
-
-
+%\subsection{Gaussian non linear regression}
+%\label{subsec:gaussiannonlinearregression}
 % \improvement{I focus only on supervised learning, but also unsupervised
 % learning and semi-supervised learning exist.}
 

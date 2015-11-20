@@ -1,0 +1,12 @@
+\begin{equation}
+\label{eq:bayesianlinearmodelgaussianprocess}
+\begin{align*}
+f(\mathbf{x}) &= \boldsymbol{\phi(\mathbf{x})}^T \mathbf{w}, \\
+\mathbf{w}	  & \sim \mathcal{N} (\mathbf{0}, \Sigma_p), \\
+\mathbb{E}[f(\mathbf{x}) ] &= \boldsymbol{\phi(\mathbf{x})}^T
+\mathbb{E}[\mathbf{w}] = 0, \\
+\mathbb{E}[f(\mathbf{x}) f(\mathbf{x'})] &= \boldsymbol{\phi(\mathbf{x})}^T
+\mathbb{E}[\mathbf{ww}^T] \boldsymbol{\phi(\mathbf{x'})} =
+\boldsymbol{\phi(\mathbf{x})}^T \Sigma_p \boldsymbol{\phi(\mathbf{x'})}.
+\end{align*}
+\end{equation}
