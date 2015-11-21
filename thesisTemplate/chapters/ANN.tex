@@ -190,16 +190,18 @@ The complete description of the Gaussian non linear regression can be found in
 
 \info{decide if using the equations from 5.3 to 5.7 of Rasmussen}
 
-\section{ANN intro}
+\section{Introduction on Artificial Neural Networks}
 \label{sec:annintro}
 %\improvement{Add some more details from Haykin introduction}
 An Artificial Neural Network (\acs{ANN}) is a powerful regression model, 
 based on non-linear functions (\citet{RefWorks:158}). 
 In fact, we can see a neural network as a huge and parallel computer, composed
-of many processing units. It stores experienced knowledge and translates it in
+of many processing units. 
+It stores experienced knowledge and translates it in
 an usable form. 
 The biological inspiration for artificial neural networks can be seen in Fig.
-\ref{fig:049neuron1}. It resembles the human brain especially because it
+\ref{fig:049neuron1}. 
+It resembles the human brain especially because it
 uses a learning process to acquire knowledge, which is stored through the
 synaptic weights.
 
@@ -208,11 +210,15 @@ synaptic weights.
 In this work, we first used the \acs{ANN} to fit the \acs{DEM} numerical simulation
 data, and then to process a vast number of parameters combinations. 
 \acs{ANNs} map combinations of input data to convenient outputs (fitting). 
-There is a variety of \acs{ANNs} available; important for our context were the
-Feedforward (\acs{FF}) and the Radial basis function (\acs{RBF}). 
+Amongst the available \acs{ANNs} were important for our context: 
+\begin{itemize}
+  \item {the Feedforward (\acs{FF}) \acs{ANN},}
+  \item {the Radial basis function (\acs{RBF}) \acs{ANN}.}	
+\end{itemize}
 We did not investigate the latter.
 For \acs{FF}-\acs{ANN},
-numerous training algorithms are available. The most common are based on
+numerous training algorithms are available. 
+The most common are based on
 backpropagation, e.g., Levenberg-Marquardt, Bayesian regulation and the scaled
 conjugate gradient.
 
@@ -233,29 +239,40 @@ Consequently, $y$ can be +1, for positive inputs, or -1, for negative inputs. In
 belong to class $\mathscr{C}_1$, of the second to class $\mathscr{C}_2$.
 Thus, the patterns ($y$) are hypothesised to be linearly separable.
 In this case the training, as identification of the correct weights and bias,
-can be precisely mathematically described.
+can be precisely mathematically described. \\
 \input{images/105doublemoon2}
 The classical example of the double moon, see Fig. \ref{fig:105doublemoon2},
 which clarifies the limits of the single perceptron approach, especially 
 why a single neuron is not capable to handle a
 nonlinear problem.
-We drew two \textit{moons}, both with an inner radius $r$. Their minimum
-distance is $d$.
+We drew two \textit{moons}, both with an inner radius $r$. 
+Their minimum distance is $d$.
+We could consider the two moons as composed by a finite number of
+two-dimensional points.
+If we use a portion of these points to train the $perceptron$, i.e. 
+to teach the network which points belong to a region and which belong to the
+other.
+Goal of the $perceptron$ is to divide the two-dimensional
+into two separate regions.
 As long as $d$ is positive, the investigation space
 can easily be linearly separated in two regions.
+Once trained, the $perceptron$ can assign the remaining points 
+to one moon or the other according to the training.
 
-%\improvement{better and more detailed explanation about the double moon}
-%\improvement{Add some more details about the perceptron from Haykin}
 \section{Multilayer}
 \label{sec:multilayer}
 
 \input{images/063doublemoon}
 
+
+
 The handling of multiple outputs or, in our example, 
 when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
 separation not possible, and a multineuron approach necessary. 
 \wrong{better explanation of the example necessary}
-Many neurons are combined to form a network.
+\input{images/111multilayerperceptron}
+Many neurons are combined to form a network, as in the architecture presented
+in Fig. \ref{fig:111multilayerperceptron}.
 The first requirement of a multilayer neural network
 is that each neuron of the network must have differentiable nonlinear activation
 function, such as the strictly increasing hyperbolic tangent.
@@ -273,19 +290,41 @@ layer.\\
 %\improvement{Add some more details about the multilayer from Haykin}
 %\improvement{explain feed forward here, pag 21 haykin}
 
-\section{Backpropagation algorithm}
-\label{sec:backpropagationalgorithm}
+\section{Batch Learning}
+\label{sec:batchlearning}
 
-If we consider a single perceptron, each example consists of a vector of inputs
-and a scalar expected response.
+A Multilayer \acs{ANN} can be trained in a supervised fashion with a training
+sample
+\input{equations/trainingsample}
+where $\mathbf{x}(n)$ is the stimulus applied to the input layer.
 The error is calculated 
 as the difference at the j-th
 node between the output of the neuron ($y_j(n)$) and the expected response
 ($d_j(n)$):
 \input{equations/error}
+$\mathbf{d}(n)$ is the desired response vector, and $d_j(n)$ is its j-th
+element.
+As in the Least Mean Square algorithm (see \citet{RefWorks:158}), we define
+the \textit{instanteneous error energy} for the j-th neuron as:
+\input{equations/insterrorenergy}
+If we sum over all the neurons in the output layer, we obtain
+the \textit{total instanteneous error energy} as:
+\input{equations/totalinsterrorenergy}
+With a total of $N$ expected
+responses for training the cost function to be minimized can be expressed as the
+\textit{error energy averaged over the training sample}:
+\input{equations/costfunction}
+
+\section{Backpropagation algorithm}
+\label{sec:backpropagationalgorithm}
+
+% If we consider a single perceptron, each example consists of a vector of inputs
+% and a scalar expected response.
+
 A multilayer perceptron network can be trained with the
 supervised back-propagation algorithm, composed of two phases, forward and
-backward.
+backward, as shown in Fig. \ref{fig:112ffbp}.
+\input{images/112ffbp}
 In the first phase the weights do not change. 
 From the inputs through the hidden
 and output layers the output is computed.
@@ -299,11 +338,7 @@ in each loop of
 the algorithm its value is lower than in the previous loop.
 If we consider $C$ neurons in the output layer the 
 \textit{total instantaneous error energy} of the whole network is:
-\input{equations/insterrorenergy}
-With a total of $N$ expected
-responses for training the cost function to be minimized can be expressed as the
-\textit{error energy averaged over the training sample}:
-\input{equations/costfunction}
+\wrong{rephrase after missing paragraph}
 Consequently, the weight of the $i$-th input for the $j$-th neuron with the
 $n$-th example is corrected as follow:
 \input{equations/deltaweight}
