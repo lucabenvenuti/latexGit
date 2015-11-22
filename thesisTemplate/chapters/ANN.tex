@@ -227,14 +227,18 @@ conjugate gradient.
 
 The basic element of an artificial neural network is the perceptron, a single
 neuron, see Fig.
-\ref{fig:064perceptron}, which is mathematically described by equation
-\ref{eq:perceptron}: 
+\ref{fig:064perceptron}
+It is composed by inputs ($x_1, x_2, \ldots, x_m$), weights for these inputs
+($w_1, w_2, \ldots, w_m$) and a bias $b$.
+A linear combination of these elements, and the incorporation of the bias, 
+forms the induced local field \cite{RefWorks:158}: 
+\input{equations/inducedlocalfield}
+or hard limiter.
+Then, we can obtain the output $y$ thanks to the activation function
+$\varphi(\cdot)$:
 \input{equations/perceptron}
-where $x_j$ are the input nodes, $y$ is the output node, $w_j$ are the weights
-and $b$ is the bias.
 \input{images/064perceptron}
-In the simplest case  the activation function $\varphi(\cdot)$ is an hard
-limiter, or a signum function.
+In the simplest case the activation function $\varphi(\cdot)$ is a signum function.
 Consequently, $y$ can be +1, for positive inputs, or -1, for negative inputs. Inputs of the first class
 belong to class $\mathscr{C}_1$, of the second to class $\mathscr{C}_2$.
 Thus, the patterns ($y$) are hypothesised to be linearly separable.
@@ -310,16 +314,36 @@ the \textit{instanteneous error energy} for the j-th neuron as:
 If we sum over all the neurons in the output layer, we obtain
 the \textit{total instanteneous error energy} as:
 \input{equations/totalinsterrorenergy}
-With a total of $N$ expected
-responses for training the cost function to be minimized can be expressed as the
-\textit{error energy averaged over the training sample}:
+One $epoch$ of training consists in the calibration of the synaptic weights
+after the presentation of all the $N$ training samples in $\mathscr{T}$
+Thus,
+% With a total of $N$ expected responses for training 
+the cost function (\acs{EW}) to be minimized can be
+expressed as the \textit{error energy averaged over the training sample}:
 \input{equations/costfunction}
+In the following epoch, the training sample $\mathscr{T}$ is randomly shuffled,
+and the cost function is once more computed.
+We define the \textit{gradient vector}
+\textbf{g}(\textit{n}) as:
+\input{equations/gradientvector}
+or the derivative of the cost function over the  weight vector.
+The \textit{batch learning} method grants an accurate prediction of the
+\textit{gradient vector}, and consequently, given defined prerequisites, the
+convergence to a local minimum of the method of the steepest descent.
+
 
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
 
 % If we consider a single perceptron, each example consists of a vector of inputs
 % and a scalar expected response.
+\citet {RefWorks:158} defines the induced local field for a multilayer
+\acs{ANN} as:
+\input{equations/inducedlocalfieldml}
+for the j-th neuron and the n-th example, given $m$ inputs.
+The case of $i$ equal to zero refers to the bias.
+Consequently, the function signal $y_j(n)$ for neuron $j$ becomes: 
+\input{equations/perceptronml}
 
 A multilayer perceptron network can be trained with the
 supervised back-propagation algorithm, composed of two phases, forward and
@@ -333,7 +357,7 @@ and used to tune the weights, backward from the output to hidden
 layers.
 Of course, it arises the problem of when stopping the loop (or epoch). 
 Thus, a cost
-function (\acs{EW}) is defined: 
+function  is defined: 
 in each loop of
 the algorithm its value is lower than in the previous loop.
 If we consider $C$ neurons in the output layer the 
@@ -361,10 +385,7 @@ the mechanical properties of materials.
 
 Expanding this vision to multineurons network shifts into a matrix of inputs and
 a vector of expected responses and consequently a vector of errors, from which
-we can derive an error surface. Its local \textit{gradient vector}
-\textbf{g}(\textit{n}) can be written as:
-
-\input{equations/gradientvector}
+we can derive an error surface. 
 \wrong{insert the equation system}
 The quadratic approximation of the error surface can be performed with the
 following methods:
