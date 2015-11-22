@@ -344,7 +344,15 @@ for the j-th neuron and the n-th example, given $m$ inputs.
 The case of $i$ equal to zero refers to the bias.
 Consequently, the function signal $y_j(n)$ for neuron $j$ becomes: 
 \input{equations/perceptronml}
-
+Thus, the weight $w_{ji}(n)$ of the $i$-th input for the $j$-th neuron
+with the $n$-th example is corrected by the back-propagation algorithm as
+follow:
+\input{equations/deltaweight}
+where the fraction represents the \textit{sensitivity factor} and \acs{eta} is
+the \textit{learning-rate parameter}, which could be a user tuned parameter.
+We can also write it as proportional to the \textit{local gradient}
+$\delta_j(n)$:
+\input{equations/deltaweight2}
 A multilayer perceptron network can be trained with the
 supervised back-propagation algorithm, composed of two phases, forward and
 backward, as shown in Fig. \ref{fig:112ffbp}.
@@ -352,25 +360,29 @@ backward, as shown in Fig. \ref{fig:112ffbp}.
 In the first phase the weights do not change. 
 From the inputs through the hidden
 and output layers the output is computed.
-In the second phase the error is calculated 
-and used to tune the weights, backward from the output to hidden
-layers.
-Of course, it arises the problem of when stopping the loop (or epoch). 
-Thus, a cost
-function  is defined: 
-in each loop of
-the algorithm its value is lower than in the previous loop.
-If we consider $C$ neurons in the output layer the 
-\textit{total instantaneous error energy} of the whole network is:
-\wrong{rephrase after missing paragraph}
-Consequently, the weight of the $i$-th input for the $j$-th neuron with the
-$n$-th example is corrected as follow:
-\input{equations/deltaweight}
-where \acs{eta} is the \textit{learning-rate parameter},
-which could be a user tuned parameter. 
+The backward pass moves in the opposite direction, from right to left.
+The local gradient $\delta$ is computed for each neuron, layer by layer.
+Thus, the weights can be tuned accordingly to the delta rule of Eq.
+\ref{eq:deltaweight2}.\\
+The variations of the weights in each loop can be more or less consistent,
+accordingly to the learning-rate parameter \acs{eta}. 
 A large \acs{eta} makes the algorithm fast,
 while a small one prevents divergence.
-Converged is reached when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
+Converged is reached when the absolute rate of change in the average squared
+error per epoch is sufficiently small \cite {RefWorks:158}.
+In our case, when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
+% In the second phase the error is calculated 
+% and used to tune the weights, backward from the output to hidden
+% layers.
+% Of course, it arises the problem of when stopping the loop (or epoch). 
+% Thus, a cost
+% function  is defined: 
+% in each loop of
+% the algorithm its value is lower than in the previous loop.
+% If we consider $C$ neurons in the output layer the 
+% \textit{total instantaneous error energy} of the whole network is:
+% \wrong{rephrase after missing paragraph}
+% where 
 The validity of the \textit{\acs{FF} Multilayer Perceptron Neural Networks}
 (\acs{MLPNN}), with a backpropagation reinforcement learning training algorithm,
 % (scaled conjugate gradient)
