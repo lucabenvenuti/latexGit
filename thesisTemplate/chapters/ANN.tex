@@ -273,16 +273,18 @@ to one moon or the other according to the training.
 The handling of multiple outputs or, in our example, 
 when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
 separation not possible, and a multineuron approach necessary. 
-\wrong{better explanation of the example necessary}
 \input{images/111multilayerperceptron}
 Many neurons are combined to form a network, as in the architecture presented
 in Fig. \ref{fig:111multilayerperceptron}.
-The first requirement of a multilayer neural network
-is that each neuron of the network must have differentiable nonlinear activation
+With more neurons, we can obtain a non-linear solution of our separation
+problem, and correctly classify the input, as shown in Fig.
+\ref{fig:063doublemoon}.\\
+The first requirement of a multilayer neural network is that each neuron 
+of the network must have differentiable nonlinear activation
 function, such as the strictly increasing hyperbolic tangent.
 Further, the network must have at least one layer $hidden$ from both the input
 and the output nodes, see Fig. \ref{fig:018nnscheme}, to compute higher-order
-statistics.
+statistics.\\
 An high degree of $connectivity$ is another salient characteristic, dependent on
 the synaptic weights of the network.
 Usually, each neuron of one layer is linked with all the neurons in the previous
@@ -383,6 +385,15 @@ In our case, when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
 % \textit{total instantaneous error energy} of the whole network is:
 % \wrong{rephrase after missing paragraph}
 % where 
+
+% \subsection{Backpropagation computational steps}
+% \label{subsec:backpropagationcomputationalsteps}
+% 
+% \citet {RefWorks:158} defines 
+
+\subsection{Backpropagation efficacy}
+\label{subsec:backpropagationefficacy}
+
 The validity of the \textit{\acs{FF} Multilayer Perceptron Neural Networks}
 (\acs{MLPNN}), with a backpropagation reinforcement learning training algorithm,
 % (scaled conjugate gradient)
@@ -412,6 +423,9 @@ Compared to a linear approximation the conjugate gradient method is
 more precise. 
 Further, it is faster and less computationally demanding than the
 remaining quadratic methods.
+
+
+
 First, the weights are randomly initialized. 
 At every iteration the n-th example is used to computed $\eta$, and later
 explicetely the weights $(n + 1)$'th iteration are obtained.
@@ -431,19 +445,29 @@ The gradient methods stops when the residuals, calculated from the
 
 \input{images/108fitting}
 
+\citet {RefWorks:158} suggests to carefully analyze two extreme situations:
+\begin{itemize}
+  \item {underfitting (or undertraining),}
+  \item {overfitting (or overtraining),}
+\end{itemize}
+when training a network.\\
 Correctly computed input-output mapping is a synonym of a well $generalized$
 network, and of good nonlinear interpolation of the inputs, as in Fig. 
-\ref{fig:106goodfitting}. On the other hand, an excessive amount of
+\ref{fig:106goodfitting}. 
+On one hand, $underfitting$ means that there were not neurons to characterize
+the given function.\\
+On the other hand, an excessive amount of
 training samples, known as $overfitting$, leads to poor generalization, see 
 Fig. \ref{fig:107badfitting}. Also the architecture of the neural network and
 physical complexity of the problem influence the generalization.
 A good rule of thumb requires the size of the training sample to be of the same
-order of magnitude of the ratio between (a) the total number of free parameters 
-(i.e., synaptic weights and biases) in the
-network and (b) the fraction of classification errors permitted on test
-data (e.g., the mean square value of the estimation error).
-
-\input{tables/17regressionmethods}
+order of magnitude of the ratio between:
+\begin{enumerate}[label=(\alph*)]
+  \item{the total number of free parameters (i.e., synaptic weights and biases)
+  in the network,}
+  \item{the fraction of classification errors permitted on test data (e.g., the
+  mean square value of the estimation error).}
+\end{enumerate}
 
 \section{Cross validation}
 \label{sec:crossvalidation}
@@ -461,25 +485,29 @@ The available data are randomly divided in the following subsets:
 For instance, every ten epochs the training is halted and the validation error
 (or the cost function) is evaluated with the partially trained network over the
 validation set.
-Then the training is resumed.
+Then the training is resumed. \\
 This continues until the learning curve of the error for the validation set
 reaches a local minimum, a condition that should happen sooner (i.e., in a
 minor number of loops) than the falling of the learning curve for the training
 set (cost function \acs{EAVN}) under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
-subset to evaluate its generalization performances.
+subset to evaluate its generalization performances.\\
 Also the standard regression models (i.e., Bayesian and Gaussian) are similarly
 evaluated.
 
 \section{ANNs training for DEM identification}
 \label{sec:annstrainingfordemidentification}
 
-Following the best practice suggested by \citet{RefWorks:150}, we
-used $MLPNN$.
+In their work, \citet{RefWorks:150} suggest an effective algorithm for
+\acs{MLPNN} regression. We followed their instructions. \\
 Further, the quality of the \acs{ANN} data had to be examined critically. 
 \citet{RefWorks:158} 
-suggested considering the quality of (a) \acs{ANN} training process and (b) the
-subsequent data generation based on the inputs provided.
+suggested considering the quality of:
+\begin{enumerate}[label=(\alph*)]
+  \item {\acs{ANN} training process,}
+  \item {the subsequent data generation based on the inputs provided.}
+\end{enumerate}
+
 Task (a) is particularly important
 when dealing with experimental training data, and
 usually addressed
@@ -489,7 +517,7 @@ However, our training pool was numerical and extensive,
 and the particles in our simulations were inserted using a random
 seed value.
 For vast amounts of training data, the effect of noise-corrupted patterns is
-negligible, see \citet{RefWorks:158}.
+negligible, see \citet{RefWorks:158}. \\
 Thus, in our work task (b) was more challenging.
 Once trained, the \acs{ANN} were fed
 combinations of \acs{DEM} parameters. 
@@ -497,8 +525,14 @@ We tried different methods to generate these combinations.
 Our first attempt consisted of assigning parameters to the investigated
 variables in even increments from the minimum to the maximum values. 
 For example, the \acs{CoR} ranged from 0.5 to 0.9, and thus the first value was
-0.5, the second 0.508163, and so on.
+0.5, the second 0.508163, and so on. \\
 To increase generalization, we decided to follow a different approach: 
 random value generators created the number of required values in the defined
 ranges for each parameter investigated.
 These were combined and used as input.\\
+
+\section{Comparison of regression methods}
+\label{sec:comparisonofregressionmethods}
+
+
+\input{tables/17regressionmethods}
