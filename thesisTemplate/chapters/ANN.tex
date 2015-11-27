@@ -15,10 +15,10 @@
 showing aspects of the system's world. In this world, a fixed assignment of
 values to variables (from one to all) is called an $event$.
 Given a probability distribution $P$, this assigns to the specific event
-$\alpha$ a value: $P(\alpha)$.
+$\alpha$ a value: $P(\alpha)$.\\
 Provided a random variable $X$, whose $Val(X) = \{ x^1, \ldots , x^k \}$, a
 \textit{Probability Distribution} over $X$ is $P(X) = \{ P(x^1), \ldots , P(x^k)
-\}$.
+\}$.\\
 He further defines, given a second random variable $Y$:
 \begin{itemize}
   \item {Probability of conjunction of events, $P(X = x, Y = y)$ or $P(x, y)$,
@@ -526,10 +526,11 @@ For instance, every ten epochs the training is halted and the validation error
 (or the cost function) is evaluated with the partially trained network over the
 validation set.
 Then the training is resumed. \\
+\input{images/123earlystopping}
 This continues until the learning curve of the error for the validation set
 reaches a local minimum, a condition that should happen sooner (i.e., in a
-minor number of loops) than the falling of the learning curve for the training
-set (cost function \acs{EAVN}) under the prescribed limit.
+minor number of loops, see Fig. \ref{fig:123earlystopping}) than the falling of
+the learning curve for the training set (cost function \acs{EAVN}) under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
 subset to evaluate its generalization performances.\\
 Also the standard regression models (i.e., Bayesian and Gaussian) are similarly
