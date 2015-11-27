@@ -331,8 +331,10 @@ We define the \textit{gradient vector}
 or the derivative of the cost function over the  weight vector.
 The \textit{batch learning} method grants an accurate prediction of the
 \textit{gradient vector}, and consequently, given defined prerequisites, the
-convergence to a local minimum of the method of the steepest descent.
-
+convergence to a local minimum of the method of the steepest descent.\\
+Finally, the curvature of the error performance surface is the Hessian matrix,
+written as:
+\input{equations/hessian}
 
 \section{Backpropagation algorithm}
 \label{sec:backpropagationalgorithm}
@@ -373,6 +375,7 @@ while a small one prevents divergence.
 Converged is reached when the absolute rate of change in the average squared
 error per epoch is sufficiently small \cite {RefWorks:158}.
 In our case, when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
+
 % In the second phase the error is calculated 
 % and used to tune the weights, backward from the output to hidden
 % layers.
@@ -424,15 +427,52 @@ more precise.
 Further, it is faster and less computationally demanding than the
 remaining quadratic methods.
 
+\subsection{Conjugate Gradient Algorithm}
+\label{subsec:conjugategradientalgorithm}
 
+First, the weight vector $\mathbf{w}(0)$ is randomly initialized. 
+Then, \citet {RefWorks:158} defines the $residual$ the steepest-descent
+direction:
+\input{equations/residual}
+Further, the conjugate gradient vectors $\mathbf{s}(n)$, which name the method,
+are:
+\input{equations/conjugategradientvectors}
+where $\beta(n)$ is calculated with the $Fletcher-Reeves$ formula as:
+\input{equations/fletcherreeves}
+Consequently, the algorithm is composed by the following steps:
+\begin{enumerate}
+  \item{From $\mathbf{w}(0)$, we calculate $\mathbf{g}(0)$, the gradient
+  vector, through backpropagation.}
+  \item{Fix $\mathbf{s}(0) = \mathbf{r}(0) = - \mathbf{g}(0)$.}
+  \item{To find the $\eta(n)$, which maximize the $\mathscr{E}_{av}(\eta)$,
+  compute a line search at the time step $n$.}
+  \item{Check the Euclidean norm of the residual $\mathbf{r}(n)$. If it is
+  under a small fraction of the initial number.}
+  \item{The weight vector is updated:
+  \input{equations/updateweight}
+  } 
+  \item{The gradient vector $\mathbf{g}(n + 1)$ is updated through back
+  propagation for $\mathbf{w}(n + 1)$.}
+  \item{Fix $\mathbf{r}(n + 1) = - \mathbf{g}(n + 1)$.}
+  \item{Through the $Fletcher-Reeves$ formula compute $\beta$:
+  \input{equations/fletcherreevesfw}
+  }
+  \item{The direction vector is updated:
+  \input{equations/conjugategradientvectorsfw}
+  }
+  \item{Fix $ n = n + 1$, and start again from step 3.}   
+\end{enumerate}
+% 
+% 
+% At every iteration the n-th example is used to computed $\eta$, and later
+% explicetely the weights $(n + 1)$'th iteration are obtained.
+% Then \textbf{g}(\textit{n + 1}) is calculated, to be later used with the
+% Polak-Ribiere method to compute the direction vector.
+The gradient methods stops when the residuals at the n-th step are a small
+fraction of their initial values.
 
-First, the weights are randomly initialized. 
-At every iteration the n-th example is used to computed $\eta$, and later
-explicetely the weights $(n + 1)$'th iteration are obtained.
-Then \textbf{g}(\textit{n + 1}) is calculated, to be later used with the
-Polak-Ribiere method to compute the direction vector.
-The gradient methods stops when the residuals, calculated from the
-\acs{EAVN}, reach convergence.
+% calculated from the
+% \acs{EAVN}, reach convergence.
 
 % To be able to handle non-linearly separable data, the standard linear perceptron
 % \acs{ANN} was modified to obtain \textit{FF Multilayer Perceptron Neural Networks
