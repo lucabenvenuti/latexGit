@@ -93,10 +93,20 @@ one over the other two.
 The learning processes available for a regression model are:
 
 \begin{itemize}
-  \item{supervised learning, or learning with a teacher,}
-  \item{semi-supervised learning,}
-  \item{unsupervised learning.}
+  \item{unsupervised learning,}
+  \item{semi-supervised learning, or reinforcement learning,}  
+  \item{supervised learning, or learning with a teacher.}
 \end{itemize}
+
+\textit{Unsupervised learning} does not count on the presence of a teacher.
+It focuses on a \textit{task-indipendent measure} of the quality of the
+representation, which the network must learn. It is required to optimize its
+parameters confronting this measure.\\
+A further step is \textit{semi-supervised learning}, where an online interaction
+between the network and its environment provides the training.
+
+\subsubsection{Supervised learning}
+\label{subsubsec:supervisedlearning}
 
 The easiest regression model consists in fitting target data
 points (exptected response) with a polynomial curve.
@@ -105,6 +115,7 @@ is proportional to the distance of said data points to the curve.
 The expected response represents the teacher of the system.
 The network is trained in \textit{batch mode}, all the examples are known before
 starting the training.
+The examples represent the teacher of the system.
 Further, these examples were assumed to be \textit{independent and identically
 distributed}.
 We focused on supervised learning: the materials we investigated
@@ -123,9 +134,9 @@ vectors.
 
 \citet{RefWorks:192} define the standard linear regression model with Gaussian noise as:
 \input{equations/standardlinearregression}
-where $\mathbf{x}$ is the input vector, $\mathbf{w}$ are the weights of the
-linear model, and $y$ is the target value. The noise $\varepsilon$ adopts an
-$i.i.d.$ Gaussian distribution:
+where $\mathbf{x}$ is the input vector of the regressors, $\mathbf{w}$ are the
+weights of the linear model, and $y$ is the target value, the response. The
+noise $\varepsilon$ adopts an $i.i.d.$ Gaussian distribution:
 \input{equations/noise}
 Extending to the n-dimensional case, we have a set of $n$ observations:
 \input{equations/observations}
@@ -233,12 +244,13 @@ It is composed by inputs ($x_1, x_2, \ldots, x_m$), weights for these inputs
 A linear combination of these elements, and the incorporation of the bias, 
 forms the induced local field \cite{RefWorks:158}: 
 \input{equations/inducedlocalfield}
-or hard limiter.
+% or hard limiter.
 Then, we can obtain the output $y$ thanks to the activation function
 $\varphi(\cdot)$:
 \input{equations/perceptron}
 \input{images/064perceptron}
-In the simplest case the activation function $\varphi(\cdot)$ is a signum function.
+In the simplest case the activation function $\varphi(\cdot)$ is a signum
+function, and divides the inputs in two classes.
 Consequently, $y$ can be +1, for positive inputs, or -1, for negative inputs. Inputs of the first class
 belong to class $\mathscr{C}_1$, of the second to class $\mathscr{C}_2$.
 Thus, the patterns ($y$) are hypothesised to be linearly separable.
@@ -246,14 +258,14 @@ In this case the training, as identification of the correct weights and bias,
 can be precisely mathematically described. \\
 \input{images/105doublemoon2}
 The classical example of the double moon, see Fig. \ref{fig:105doublemoon2},
-which clarifies the limits of the single perceptron approach, especially 
+clarifies the limits of the single perceptron approach, especially 
 why a single neuron is not capable to handle a
 nonlinear problem.
 We drew two \textit{moons}, both with an inner radius $r$. 
 Their minimum distance is $d$.
 We could consider the two moons as composed by a finite number of
 two-dimensional points.
-If we use a portion of these points to train the $perceptron$, i.e. 
+We could use a portion of these points to train the $perceptron$, i.e. 
 to teach the network which points belong to a region and which belong to the
 other.
 Goal of the $perceptron$ is to divide the two-dimensional
@@ -268,8 +280,6 @@ to one moon or the other according to the training.
 
 \input{images/063doublemoon}
 
-
-
 The handling of multiple outputs or, in our example, 
 when $d$ becomes negative, see Fig. \ref{fig:063doublemoon}, makes linear
 separation not possible, and a multineuron approach necessary. 
@@ -277,7 +287,8 @@ separation not possible, and a multineuron approach necessary.
 Many neurons are combined to form a network, as in the architecture presented
 in Fig. \ref{fig:111multilayerperceptron}.
 With more neurons, we can obtain a non-linear solution of our separation
-problem, and correctly classify the input, as shown in Fig.
+problem (a nonlinear function), and correctly classify the input, as shown in
+Fig.
 \ref{fig:063doublemoon}.\\
 The first requirement of a multilayer neural network is that each neuron 
 of the network must have differentiable nonlinear activation
@@ -289,7 +300,7 @@ An high degree of $connectivity$ is another salient characteristic, dependent on
 the synaptic weights of the network.
 Usually, each neuron of one layer is linked with all the neurons in the previous
 layer.
-A network is called \acs{FF} if the inputs of the neurons in
+A network is called feedforward \acs{FF} if the inputs of the neurons in
 one layer are exclusively the output signals of the neurons in the previous
 layer.\\
 
@@ -409,12 +420,12 @@ the mechanical properties of materials.
 \section{Optimization}
 \label{sec:optimization}
 
-Expanding this vision to multineurons network shifts into a matrix of inputs and
-a vector of expected responses and consequently a vector of errors, from which
-we can derive an error surface. 
-\wrong{insert the equation system}
-The quadratic approximation of the error surface can be performed with the
-following methods:
+% Expanding this vision to multineurons network shifts into a matrix of inputs and
+% a vector of expected responses and consequently a vector of errors, from which
+% we can derive an error surface. 
+% \wrong{insert the equation system}
+The quadratic approximation of the backpropagation algorithm can be performed
+with the following methods:
 
 \begin{itemize}
   \item{conjugate gradient,}
@@ -431,7 +442,7 @@ remaining quadratic methods.
 \label{subsec:conjugategradientalgorithm}
 
 First, the weight vector $\mathbf{w}(0)$ is randomly initialized. 
-Then, \citet {RefWorks:158} defines the $residual$ the steepest-descent
+Then, \citet {RefWorks:158} defines $residual$ as the steepest-descent
 direction:
 \input{equations/residual}
 Further, the conjugate gradient vectors $\mathbf{s}(n)$, which name the method,
@@ -494,8 +505,8 @@ when training a network.\\
 Correctly computed input-output mapping is a synonym of a well $generalized$
 network, and of good nonlinear interpolation of the inputs, as in Fig. 
 \ref{fig:106goodfitting}. 
-On one hand, $underfitting$ means that there were not neurons to characterize
-the given function.\\
+On one hand, $underfitting$ means that there were not enough neurons to
+characterize the given function.\\
 On the other hand, an excessive amount of
 training samples, known as $overfitting$, leads to poor generalization, see 
 Fig. \ref{fig:107badfitting}. Also the architecture of the neural network and
@@ -540,7 +551,8 @@ evaluated.
 \label{sec:annstrainingfordemidentification}
 
 In their work, \citet{RefWorks:150} suggest an effective algorithm for
-\acs{MLPNN} regression. We followed their instructions. \\
+\acs{MLPNN} regression. We followed their instructions, see Section
+\ref{sec:anntrainingconcept}. \\
 Further, the quality of the \acs{ANN} data had to be examined critically. 
 \citet{RefWorks:158} 
 suggested considering the quality of:
@@ -575,5 +587,8 @@ These were combined and used as input.\\
 \section{Comparison of regression methods}
 \label{sec:comparisonofregressionmethods}
 
-
+A comparison of the regression methods, based on their cost functions, is
+provided in \ref{tab:17regressionmethods}.
 \input{tables/17regressionmethods}
+In Section \ref{sec:annmodeldev} we compared the methods considering their
+average classification errors, given the test samples subsets.
