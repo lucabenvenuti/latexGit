@@ -10,7 +10,17 @@
 
 In our study, we harnessed Artificial Neural Networks (\acs{ANNs}) in order to
 reduce the number of \acs{DEM} test simulations required
-to characterize bulk materials for large scale simulations. 
+to characterize bulk materials for large scale simulations. \\
+As the following chapters will show, we divided this task in two sections:
+\begin{enumerate}
+  \item{identification of \acs{DEM} parameters, in part
+  \ref{par:identification},}
+  \item{applications, in part \ref{par:applications}.}
+\end{enumerate}
+
+\section{Aim for Neural Network}
+\label{sec:aimforneuralnetwork}
+
 \acs{ANNs} have proven to be a versatile tool in analysing complex, non-linear
 systems of multi-dimensional input streams (Vaferi et al. \cite{RefWorks:150}, Witten et
 al. \cite{RefWorks:174} and Haykin \cite{RefWorks:158}).
@@ -19,9 +29,11 @@ and compared the output with the bulk behaviour
 predicted by a corresponding \acs{DEM} simulation. 
 The difference between \acs{ANN} prediction and \acs{DEM} prediction was used to
 train our specific \acs{ANN} with a backward-propagation algorithm. 
+\input{images/127anntraining}
 After a training phase comprising a limited number of \acs{DEM} test simulations,
 the \acs{ANN} could then be used as a stand-alone prediction tool for the bulk behaviour of a 
-granular material in relation to \acs{DEM} contact law parameters. \\
+granular material in relation to \acs{DEM} contact law parameters, see Fig.
+\ref{fig:127anntraining}. \\
 In this study, we applied this parameter identification method to two different
 granular bulk behaviours, namely the angle of repose (\acs{AoR}) test and the
 Schulze shear cell (\acs{SCT}) test.
@@ -34,6 +46,3 @@ granular material.
 We further showed that the same \acs{ANN} could be used to characterize different
 granular materials, which have the same particle behaviour and could modelled with the same contact
 law.
-
-\improvement{more words on the applications}
-\improvement{more pictures}

@@ -8,23 +8,66 @@
 \label{cap:insufficiency}
 %************************************************
 
-This work focused on the particles handled by metallurgical industries.
-\improvement{list of metallurgical processes with particulate materials. E.g.,
-blast furnace is fed with coke and sintered iron ore particles: distribution of
-the feed by the chute, raceway formation} 
-\improvement{More words on motivation:
-industrial processes.
-1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).} 
+% As already mentioned in \ref{sec:metallurgical industry}, this work focused on
+% the particles handled by metallurgical industries.
+% \improvement{list of metallurgical processes with particulate materials. E.g.,
+% blast furnace is fed with coke and sintered iron ore particles: distribution of
+% the feed by the chute, raceway formation} 
+% \improvement{More words on motivation:
+% industrial processes.
+% 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).} 
 
-\section{Materials}
-\label{sec:materials}
+\citet{RefWorks:195} states that the iron metal can be obtained by reduction of
+iron oxides. The most used apparatus to obtain pig iron is the blast furnace.
+Iron oxides are mined from earth crust. 
+However, a blast furnace needs particles
+ranged between 7 and 25 millimiters \cite{RefWorks:195}.
+To reach the required specification, the extracted minerals are crushed and then
+sieved. Sieving divides the particles in two categories:
+\begin{itemize}
+  \item{lump ore, between 7 and 25 millimiters,}
+  \item{fines, less than 7 millimiters.} 
+\end{itemize}
+
+Lump ore can be used directly for blast furnace smelting.\\
+\input{images/124sinterplant}
+Instead, fines need to be sintered. 
+Sintering consists in partially melting the
+fines with limestone and coke.\\
+The resulting granular material needs nonetheless to be cooled for
+transportation and storage. 
+The metallurgical industry uses a \textit{sinter chute cooling system} for this
+purpose, see Fig. \ref{fig:124sinterplant}, with many phases:
+\begin{enumerate}
+  \item{Hot particles are fed into a chute, which deposits the
+  particles on a rotating system and segregates them, i.e. lays the large
+  particles on the bottom and the small ones on top.}
+  \item{Air is injected from the bottom of the rotating system, cooling the
+  particles.}
+  \item{The resulting particles larger than 25 millimiters are crushed, and
+  reinserted in the flow.}
+  \item{The particles smaller than 7 millimiters are melted once
+  more.}
+  \item{The particles between 7 and 25 millimiters are ready for blast furnace
+  smelting.}
+\end{enumerate}
+
+In our thesis, we focused on (1), and the particles involved in this process.\\
+Further, we investigated the more complex blast furnace smelting, with focus on
+the raceway area, which can be seen in Fig. \ref{fig:125blastfurnace}.
+
+\input{images/125blastfurnace}
+
+\section{Materials characterization}
+\label{sec:materialscharacterization}
 
 A univocal
 method to characterize these particles has so far not been established.
 From the experimental point of view, the main issues are the difficult setups and the general 
 reliability and reproducibility of the tests. 
 From the numerical point of view, no general procedure is available, and the existence of a 
-mathematically unique solution describing macro/micro particle contact has yet to be proved.
+mathematically unique solution describing macro/micro particle contact has yet
+to be proved.\\
 Moreover, in a recent study, \citet{RefWorks:56} implied "that the dynamic properties of a 
 powder cannot be applied to universally predict the static properties of a powder, and, likewise, 
 the static properties cannot be used to predict dynamic properties".\\
@@ -32,47 +75,50 @@ the static properties cannot be used to predict dynamic properties".\\
 \section{DEM Simulations}
 \label{sec:demsimulations}
 
-In their original formulation of \acs{DEM}, the discrete element method used in
-this work, \citet{RefWorks:172} allowed two particles to slightly overlap upon
+Many authors used \acs{DEM}, the discrete
+element method used in this work, to understand sintering processes 
+\cite{RefWorks:196, RefWorks:197} and smelting \cite{RefWorks:198,
+RefWorks:199}.\\
+In their original formulation of \acs{DEM} \citet{RefWorks:172} allowed two particles to slightly overlap upon
 contact, see Fig. \ref{fig:062collision}, and consequently they proposed
 repulsive forces in relation to this overlap distance.
+\input{images/062collision}
 The force that particle $i$ exerts on particle $j$ is defined as:
 \input{equations/newtonlaw}
-\input{images/062collision}
-\improvement{explain why we use DEM}
 Their fundamental modelling concept of \acs{DEM} has
 since been widely accepted in the literature and their soft sphere contact law has been developed further by
-numerous researchers (Vu-Quoc and Zhang \cite{RefWorks:148} and Di Renzo and Di Maio \cite{RefWorks:145}). 
+numerous researchers (\citet{RefWorks:148} and \citet{RefWorks:145}).
 With increasing computational resources, \acs{DEM} simulations have become very
 popular giving rise to the development of commercial (e.g., $PFC3D$, used by
-Wensrich and Katterfeld \cite{RefWorks:87}) and open-source software (e.g.,
-\acs{LIGGGHTS}, Kloss et al. \cite{RefWorks:136}, Aigner et al. \cite{RefWorks:139}).
+\citet{RefWorks:87}) and open-source software (e.g.,
+\acs{LIGGGHTS}, \citet{RefWorks:136}, \citet{RefWorks:139}).
 Soft-sphere \acs{DEM} simulations of thousands of particles have been proven to 
 faithfully model particle bulk behaviour, as in Fig. \ref{fig:061cfdemsim}
-(Hohner et al. \cite{RefWorks:86}).\\
+(\citet{RefWorks:86}).\\
 \input{images/061cfdemsim} 
 
 \section{Parameters}
 \label{sec:parameters}
 
 In these macroscopic \acs{DEM} simulations, the contact law kernel between a 
-pair of particles determines the global bulk behaviour of the granular material (Ai et al. \cite{RefWorks:131}). 
+pair of particles determines the global bulk behaviour of the granular material
+(\citet{RefWorks:131}).
 As a consequence, defining a correct contact law is of crucial importance for the predictive 
 capability of \acs{DEM} simulations. 
 Since \acs{DEM} contact laws are based 
 on a set of semi-empirical parameters, correct contact law 
 parameters must be defined for a given granular material
-or \acs{DEM} simulations will fail (Combarros et al. \cite{RefWorks:177}). \\
+or \acs{DEM} simulations will fail (\citet{RefWorks:177}). \\
 Identifying \acs{DEM} contact law parameters is not a trivial task. 
 Due to the huge number of particles in a granular material, it
 may be impractical to identify valid parameter sets by performing bilateral 
 particle collision experiments. 
 Furthermore, some contact law parameters such as the coefficient of rolling
 friction are purely empirical and cannot be determined by direct 
-particle-to-particle measurements (Wensrich and Katterfeld \cite{RefWorks:87}).
+particle-to-particle measurements (\citet{RefWorks:87}).
 Therefore, \acs{DEM} contact law parameters (Table \ref{tab:08DEMparameters}) are
 commonly determined by comparing the macroscopic outcome of large-scale \acs{DEM}
-simulations with bulk experiments (Alenzi et al. \cite{RefWorks:91}). 
+simulations with bulk experiments (\citet{RefWorks:91}). 
 If \acs{DEM} simulation results disagree with bulk measurements, the set of contact
 law parameters must be adjusted until reasonable agreement is achieved.\\
 However, this purely forward methodology of parameter identification is limited by 
@@ -80,14 +126,21 @@ the multi-dimensionality of the parameter space and the associated computational
 \acs{DEM} test simulations. 
 Moreover, one parameter set which is valid for one bulk behaviour (e.g., angle
 of repose) might fail for another (e.g., shear tester). \\
+
+\subsection{Direct Determination}
+\label{subsec:directdetermination}
+
+\input{images/126qpmtester}
 There are yet ways to determine contact parameters directly by measuring
-material properties or by performing particle based experiments, see e.g. Combarros et al. \cite{RefWorks:177}, 
-Paulick et al. \cite{RefWorks:181}, and Lommen et al. \cite{RefWorks:186}. 
+material properties or by performing particle based experiments, see e.g.
+\citet{RefWorks:177}, \citet{RefWorks:181}, and \citet{RefWorks:186}, as in
+Fig. \ref{fig:126qpmtester}.\\
 However, these methodologies are laborious, 
 since they have to be performed for every new granular material prior to a \acs{DEM}
 simulations. 
 Especially for the already cited rolling friction parameter, it is arduous to
-link the rolling friction parameter to the non-sphericity of the particle. Clearly, there is a
+link the rolling friction parameter to the non-sphericity of the particle. \\
+Clearly, there is a
 need for an efficient method for identifying \acs{DEM} contact law parameters, given
 a specific particle behaviour.
 

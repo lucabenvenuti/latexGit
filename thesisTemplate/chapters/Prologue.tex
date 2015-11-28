@@ -17,6 +17,25 @@ For instance, Discrete Element Methods (\acs{DEMs}), "a special class of numeric
 schemes for simulating the behavior of discrete, interacting bodies", are widely used to 
 simulate particle behaviour in these granular processes
 (\citet{RefWorks:130}).\\ 
+
+\section{Metallurgical industry}
+\label{sec:metallurgical industry}
+In this thesis, we focused on the granular materials the metallurgical industry
+handles, especially, in two processes:
+\begin{itemize}
+  \item{sinter cooling,}
+  \item{pig ore smelting through a blast furnace.} 
+\end{itemize} 
+
+In the first process we were interested about a sinter chute
+segregator, or more specifically, about the size distribution of the particles
+at its exit.\\
+In the second process, we wanted to investigate the raceway zone of the blast
+furnace, both its formation and its evolution.
+
+\section{Challenges}
+\label{sec:challenges}
+
 \input{images/054bsgmaterials}
 \input{images/050steel}
 In fact, gravels, Fig. \ref{fig:054bsgmaterials}, or granular particles in
@@ -25,17 +44,21 @@ like for instance a steel beam, Fig.
 \ref{fig:050steel}. For continuous materials simulation
 parameters are readily available.
 In case of a pile of particles the sum of discrete particle properties determines the pile's macroscopic behavior 
-(e.g. angle of repose).
-In discrete particle simulations particle based parameters (e.g. contact parameters) determine the macroscopic behavior 
-of the ensemble.
+(e.g., angle of repose).\\
+In discrete particle simulations particle based parameters (e.g., contact
+parameters) determine the macroscopic behavior of the ensemble.
 Unfortunately, particles are not uniform and particle based simulation
 parameters are difficult to obtain, and also depends on the numerical shape
 (polyhedral, multi-spheres, and simple spheres).
+
+\section{Calibration}
+\label{sec:calibration}
+
 A set of experimental and numerical solutions, together with artificial neural
 networks, could improve the accuracy and the range of applicability of the
 characterization of particles properties, and reduce the computational costs.
 The Discrete Element Method requires parameters for the individual contact, but
-to characterize every particle is prohibitive.
+to characterize every particle is prohibitive.\\
 We needed to find average contact parameters that lead to the expected bulk
 effect.
 We could start with an example of piled particles, more specifically called the
@@ -55,8 +78,7 @@ new parameters.}
 By our calibration procedure we could obtain valid sets of particle based
 simulation parameters in a very time consuming way, because in each control loop
 we would have to perform a complete \acs{DEM} simulation.
-A feasibility study
-\info{cite my first paper}
+A feasibility study \citet{RefWorks:173}
 required a grand total of
 9.900 days on a 32 core machine. 
 But it is not necessary to evaluate a huge number of parameter sets,
@@ -64,6 +86,10 @@ rather we should try to evaluate the \textit{sensitivity}
 of the macroscopic bulk behavior with respect to individual particle based parameters.
 This could be realized efficiently by artificial neural networks, see Fig.
 \ref{fig:048neuron0}. 
+
+\section{Neural Network Calibration}
+\label{sec:neuralnetworkcalibration}
+
 After the original work of \citet{RefWorks:189} we know that the human brain is
 composed of neurons and their connections. 
 They receive inputs from receptive
@@ -101,8 +127,8 @@ This effort was really necessary because the predictive capability of any
 \acs{DEM} simulation strongly depends on the validity of the particle 
 based simulation parameters.\\
 Once we had reliable \acs{DEM} parameters, we could use them for large scale \acs{DEM}
-simulations:
-\begin{itemize}
-\item{a sinter chute segregator;}
-\item{the raceway zone of a blast furnace.}
-\end{itemize}
+simulations.
+% \begin{itemize}
+% \item{;}
+% \item{ of a blast furnace.}
+% \end{itemize}
