@@ -121,11 +121,16 @@ the method can be found.\\
 \label{subsec:epsd2}
 
 For coarse non-spherical particles, \acs{mur} is a critical parameter and describes
-inter-particle friction in medium to dense granular flow simulations. It is proportional to the 
-torque counteracting the rotation of the particle. The \acs{mur} parameter enters the 
+inter-particle friction in medium to dense granular flow simulations. 
+It is proportional to the 
+torque counteracting the rotation of the particle. 
+The \acs{mur} parameter enters the 
 equations according to the elasto-rolling resistance model presented by Wensrich and 
 Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131} 
 based on the work of Jiang et al. \cite{RefWorks:143}. 
+A scheme of the particles interaction can be seen in Fig.
+\ref{fig:128springdashpot}.\\
+\input{images/128springdashpot}
 The model is called EPSD2 in \acs{LIGGGHTS} and is appropriate for both one-way and cyclical rolling cases.
 The maximum magnitude of rolling resistance torque is (Eq. \ref{eq:trmax}):
 
@@ -150,7 +155,12 @@ material properties or by performing particle based experiments, see e.g.
 \citet{RefWorks:177}, \citet{RefWorks:181}, and \citet{RefWorks:186}.
 \citet{RefWorks:140} and \citet{RefWorks:190}
 are two of the most prominent examples of parameters identification by
-theoretical analysis. However, they focused on glass spheres, while
+theoretical analysis. 
+
+\subsection{Limitations}
+\label{subsec:limitations}
+
+The available literature data, however, focused on glass spheres, while
 non-sphericity was one of the fields we wanted to investigate. 
 Further, it is related to all the microscopic parameters we analysed. 
 Also the procedure of \citet{RefWorks:177}, although on
@@ -169,13 +179,13 @@ link the rolling friction parameter to the non-sphericity of the particle.
 The existence of particles immersed in a fluid influences its behaviour. 
 Keeping aside the short-scale flow field, the local averages inside the
 Navier-Stokes fluid equations could account for the particles.
-On the hypothesis of having \textit{g(r)} a convenient averaging function, which
-is non-negative, smooth, asyntotically zero for large $r$, normalized, \citet{Refworks:201}
+This is called the \textit{unresolved \acs{CFD}-\acs{DEM} approach}, and can be
+seen in Fig. \ref{fig:130unresolvedcfddem}.\\
+\input{images/130unresolvedcfddem}
+On the hypothesis of having \textit{g(r)} a convenient averaging
+function, which is non-negative, smooth, asymptotically zero for large $r$, normalized, \citet{Refworks:201}
 defines the local void fraction ($\varepsilon(\mathbf{r},t)$), the volume of the
 fluid ($V_f(t)$) over the total volume, as:
-
-\wrong{check all equations and add images}
-
 \input{equations/voidfraction}
 We define local mean values of fluid point properties as:
 \input{equations/a}
@@ -185,8 +195,23 @@ Particle properties, on the solid volume $V_s(t)$ and the solid fraction
 $\phi(\mathbf{r},t)$, are expressed as field quantities as:
 \input{equations/b}
 The approximation is valid when $g(r)$ varies slowly over the particles length
-scale.
+scale, and the averages of the derivatives can be written as:
 \input{equations/divepsa}
-
-
-\info{to be continued}
+Further, for time derivatives we can write:
+\input{equations/ddtepsa}
+We could now write in Eq. \ref{eq:divepsa} $a = \rho \mathbf{u}$, so it becomes:
+\input{equations/divepsrhou}
+Similarly, for Eq. \ref{eq:ddtepsa}, we consider $a = \rho$, and we write:
+\input{equations/ddtepsrho}
+At this point, it is easy to demonstrate that by merging Eq. \ref{eq:divepsrhou}
+and Eq. \ref{eq:ddtepsrho} we obtain the \textit{volume-averaged continuity
+equation}:
+\input{equations/continuity}
+In case of incompressible flow, Eq. \ref{eq:continuity} becomes:
+\input{equations/continuityincompressible}
+In the same way, for the Navier-Stokes momentum equation:
+\input{equations/nsmomentumequation}
+which can be written:
+\input{equations/nsmomentumequation2}
+where:
+\input{equations/rr}

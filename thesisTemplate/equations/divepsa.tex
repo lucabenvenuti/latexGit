@@ -1,9 +1,15 @@
 \begin{equation}
-\nabla_{\mathbf{r}} \varepsilon (\mathbf{r},t) \bar{a}(\mathbf{r},t) =
-- \int_{S_f(t)}{d \mathbf{S} a(\mathbf{S},t) g(|\mathbf{r} - \mathbf{S}|) + 
-\varepsilon (\mathbf{r},t) \overline{\nabla a}(\mathbf{r},t)}
-\approx
-\frac{1}{\phi(\mathbf{r},t)} \sum_{p}{g(\mathbf{r} - \mathbf{r}_p)
-V_p b_p(t)}.
+\begin{align*}
+\nabla_{\mathbf{r}} \varepsilon (\mathbf{r},t) \bar{a}(\mathbf{r},t) 
+&=
+\int_{V_f(t)}{
+a(\mathbf{r'}, t) \nabla_{\mathbf{r}} g(|\mathbf{r} - \mathbf{r'}| )  \dd^3 r'} \\
+&=
+- \int_{S_f(t)}{ a(\mathbf{S},t) g(|\mathbf{r} - \mathbf{S}|) \dd \mathbf{S} + 
+\varepsilon (\mathbf{r},t) \overline{\nabla a}(\mathbf{r},t)} \\
+& \approx
+\sum_{p}{\int_{S_p(t)}{ a(\mathbf{S},t) g(|\mathbf{r} - \mathbf{S}|)  \dd
+\mathbf{S}}} + \varepsilon (\mathbf{r},t) \overline{\nabla a}(\mathbf{r},t).
+\end{align*}
  \label{eq:divepsa}
 \end{equation}

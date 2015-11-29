@@ -1,0 +1,18 @@
+\begin{equation}
+\begin{align*}
+\frac{\partial}{\partial t}\varepsilon (\mathbf{r},t) \bar{a}(\mathbf{r},t) 
+&=
+\int_{V_f(t)}{
+\frac{\partial a(\mathbf{r'}, t)}{\partial t} g(|\mathbf{r}
+- \mathbf{r'}| )  \dd^3 r'} \\
+&+ \lim \frac{1}{\Delta t} \left[
+\int_{V_f(t + \Delta t)}{ a(\mathbf{r'}, t) g(|\mathbf{r} - \mathbf{S}|)  \dd^3
+r'} - \int_{V_f(t)}{ a(\mathbf{r'}, t) g(|\mathbf{r} - \mathbf{S}|)  \dd^3 r'}
+\right ]\\
+& \approx
+\varepsilon (\mathbf{r},t) \overline{\dot{a}}(\mathbf{r},t) - 
+\sum_{p}{\int_{S_p(t)}{\mathbf{v_s} a(\mathbf{S},t) g(|\mathbf{r} - \mathbf{S}|) 
+\dd \mathbf{S}}}.
+\end{align*}
+ \label{eq:ddtepsa}
+\end{equation}
