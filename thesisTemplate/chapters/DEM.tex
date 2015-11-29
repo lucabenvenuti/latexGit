@@ -215,3 +215,23 @@ which can be written:
 \input{equations/nsmomentumequation2}
 where:
 \input{equations/rr}
+To complete the system, we add the particles equation of motion:
+\input{equations/equationofmotion}
+where $\Phi_{p-p}$ is a force field, which acts on particle $p$ because of the
+remaining particles.
+This \textit{unresolved \acs{CFD}-\acs{DEM} approach} works as long as the exact
+trajectories of each particle can be negliged.\\
+For completeness, we could say that also the equation of motion can be averaged
+over space, obtaining:
+\input{equations/eomaveraged}
+If the spheres have the same density, we can write:
+\input{equations/eomaveraged2}
+Finally:
+\input{equations/eom3}
+where:
+\input{equations/sr}
+The main advantage of this model is to allow a greater number of particles to be
+considered, since they are treated as an additional averaged fluid: this is
+called the \textit{two-fluid model}.
+Hovewer, this model work poorly in a dense system like our, see
+\citet{Refworks:202}, and was thus not considered further.
