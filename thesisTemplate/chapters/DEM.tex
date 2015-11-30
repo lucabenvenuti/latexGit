@@ -235,3 +235,16 @@ considered, since they are treated as an additional averaged fluid: this is
 called the \textit{two-fluid model}.
 Hovewer, this model work poorly in a dense system like our, see
 \citet{Refworks:202}, and was thus not considered further.
+
+\subsection{Governing Equations}
+\label{subsec:governingequations}
+From the equations derived in the previous paragraph, the software uses the
+following simplified governing equations \cite{Refworks:202}, which can be
+divided into fluid and solid phase.
+The continuity equation can be written as:
+\input{equations/continuityincompressiblebis}
+while the momentum equation is:
+\input{equations/nsmomentumequation3}
+with $R_{sl}$, the force exchange term, given by:
+\input{equations/rsl}
+where $f_{d,i}$ are ????????????????
