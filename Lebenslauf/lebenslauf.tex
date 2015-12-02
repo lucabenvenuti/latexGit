@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+
+\patchcmd{\maketitle}
+  {\hfil}
+  {\hspace*{0.05\textwidth}}
+  {}
+  {}
+\patchcmd{\maketitle}
+  {\setlength{\maketitlewidth}{0.8\textwidth}}
+  {\setlength{\maketitlewidth}{0.67\textwidth}}
+  {}
+  {}
+\patchcmd{\maketitle}
+  {\\[2.5em]}
+  {\hfil\raisebox{-2.7cm}{\framebox{\includegraphics[width=\@photowidth]{\@photo}}}\\[2.5em]}
+  {}
+  {}
+
+% personal data
+\name{Luca}{Benvenuti, D.I.}
+  % \extrainfo{additional information}
+%\title{Resume' title}
+\address{Aubrunnerweg 25}{4040 Linz}{Austria}
+\phone[mobile]{+43~680~220~2490}
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{lucabenvenuti@gmail.com}
+\homepage{http://goo.gl/ZNy4hX}
+\social[linkedin]{lucabenvenuti}
+% \social[twitter]{jdoe}
+% \social[github]{jdoe}
+% \extrainfo{additional information}
+
+\photo[4cm]{luca}
+
+\quote{Ich liebe Herausforderungen: Im Jahr 2013 war ich in Libyen. 
+Ich bin lernwillig und an pers\"{o}nlicher Weiterbildung interessiert: Deshalb
+absolviere ich ein Doktoratsstudium.
+Als Ingenieur bin ich ein logisch denkender Mensch.}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Pers\"{o}nliche Angaben}
+\cventry{Nationalit\"{a}t}{Italien}{}{}{}{}{}     
+\cventry{Geburt}{12. Mai 1988}{Desenzano del Garda}{}{}{}{}
+% \cventry{Familienstand}{verheiratet, 2 Kinder}{}{}{}{}
+% \cventry{Ehemann}{Max Mustermann}{Musterberuf}{}{}{}
+
+%\cventry{}{}{}{}{}{}
+
+\section{Berufserfahrung}
+% \subsection{Schule}
+% \cventry{1971--1975}{Grundschule}{Musterschule, Berlin}{}{}{} % arguments 3 to 6 are optional
+% \cventry{1975--1984}{Gymnasium}{Mustergymnasium}{Berlin}{}{}
+% \cventry{07/1984}{allgemeine Hochschulreife}{}{}{}{}
+% 
+% \subsection{Akademische Ausbildung und beruflicher Werdegang}
+\cventry{04/2013--jetzt}{Johannes Kepler Universit\"{a}t}{Particulate Flow
+Modelling}{}{}{Wissenschaftlicher Mitarbeiter}
+
+% {Wissenschaftlicher
+% Mitarbeiter}{Johannes Kepler Universit\"{a}t}{}{}{Particulate Flow Modelling.}
+
+\cventry{01/2013--04/2013}{LISCO expansion}{Ferretti
+International}{}{}{Bauleiter und Quantity Surveyor}
+
+\cvline{}{}{}
+
+\section{Ausbildung}
+
+\cventry{04/2013--jetzt}{Johannes Kepler Universit\"{a}t}{Particulate Flow
+Modelling}{}{}{Doktoratsstudium Mechatronik}
+
+\cventry{09/2010--12/2012}{Politecnico di
+Milano}{Bauingenieurwesen}{}{}{Masterstudium}
+
+\cventry{09/2007--12/2010}{Politecnico di
+Milano}{Bauingenieurwesen}{}{}{Bacherlorstudium}
+
+\cventry{09/2002--07/2007}{Liceo Bagatta}{Gymnasium}{}{}{}
+
+\cvline{}{}{}
+
+\section{Projekte}
+
+\cventry{04/2013--jetzt}{Kooperationen:}{Particulate Flow
+Modelling}{}{}{Wissenschaftlicher Mitarbeiter}
+
+\cventry{01/2013--04/2013}{LISCO expansion}{Ferretti
+International}{}{}{Bauleiter und Quantity Surveyor}
+
+\cvline{}{}{}
+
+\section{Qualifikationen}
+\subsection{EDV Anwendungen}
+\cventry{Betriebssysteme}{Linux Ubuntu}{}{}{}{}
+\cventry{Office}{Textverarbeitung}{}{}{}{}
+\cventry{}{Tabellenkalkulation}{}{}{}{}
+\cventry{}{E-Mail Programm}{}{}{}{}
+\cventry{Multimedia}{Bildbearbeitung}{}{}{}{}
+\cventry{}{Videoschnitt}{}{}{}{}
+\cventry{Sonstiges}{Super Mario}{}{}{}{}
+\cventry{}{Snake}{}{}{}{}
+\subsection{Fortbildungen}
+\cventry{1999}{Personalverantwortung übernehmen}{Fortbildungsstätte}{}{}{}
+\cventry{2010}{LaTeX anwenden}{Internet}{}{}{}
+\cventry{2012}{Coole Linuxtricks}{http://www.be-jo.net}{}{}{}
+
+\cvline{}{}{}
+
+\section{Sprachkenntnisse}
+\cvlanguage{Englisch}{gute Kenntnisse}{Berufspraxis}
+\cvlanguage{Französisch}{Grundkenntnisse}{Schule, 6 Jahre}
+
+\cvline{}{}{}
+
+\section{Sonstiges}
+\cventry{Hobbys}{Angeln}{Angelschein seit 1979}{}{}{}
+\cventry{}{Tischtennis}{Tischtennisverein Nordlichtchen}{}{}{}
+\cventry{}{Tanzsportverein Holdrio}{Ehrenvorsitzende}{}{}{\\
+Dissertationsthema: Bezeichnung DEM Simulationsparameter durch K\"{u}nstliche
+Neuronale Netze und Bulk-Experimente. \\
+Interessengebiete: Engineering (Zivil-, geotechnische, Materialien,
+mechanische), neuronale Netze. \\
+Kooperationen: Voestalpine, Primetals, TU Braunschweig. }
+\cvline{}{}{}
+\cvline{}{}{}
+\cvline{}{}{}
+\cvline{}{}{}
+
+Musterstadt, \today
+
+\end{document} 

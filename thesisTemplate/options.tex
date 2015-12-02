@@ -311,6 +311,13 @@
 
 % graphics
 \newcommand{\inputTikZ}[2]{\scalebox{#1}{\input{#2}}} % used for tikz schematic images
+%%add tikz
+\tikzstyle{block} = [draw, fill=white!20, rectangle, 
+    minimum height=3em, minimum width=6em]
+\tikzstyle{sum} = [draw, fill=white!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
 
 %blank page
 \newcommand\blankpage{%

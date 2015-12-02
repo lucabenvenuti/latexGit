@@ -183,23 +183,29 @@ This is called the \textit{unresolved \acs{CFD}-\acs{DEM} approach}, and can be
 seen in Fig. \ref{fig:130unresolvedcfddem}.\\
 \input{images/130unresolvedcfddem}
 On the hypothesis of having \textit{g(r)} a convenient averaging
-function, which is non-negative, smooth, asymptotically zero for large $r$, normalized, \citet{Refworks:201}
+function, which is non-negative, smooth, asymptotically zero for large $r$, normalized, \citet{RefWorks:201}
 defines the local void fraction ($\varepsilon(\mathbf{r},t)$), the volume of the
 fluid ($V_f(t)$) over the total volume, as:
 \input{equations/voidfraction}
+where $\mathbf{r}$ is the vector containing the position of a single particle
+and $\mathbf{r'}$ the position of the its closest neighbour particle.
 We define local mean values of fluid point properties as:
 \input{equations/a}
 which came from a slowly varying a rapidly fluctuating part:
 \input{equations/a2}
-Particle properties, on the solid volume $V_s(t)$ and the solid fraction
+Particle properties ($p$), on the solid volume $V_s(t)$ and the solid fraction
 $\phi(\mathbf{r},t)$, are expressed as field quantities as:
 \input{equations/b}
 The approximation is valid when $g(r)$ varies slowly over the particles length
-scale, and the averages of the derivatives can be written as:
+scale and its surface $S_p$, and the averages of the derivatives can be written
+as:
 \input{equations/divepsa}
 Further, for time derivatives we can write:
 \input{equations/ddtepsa}
-We could now write in Eq. \ref{eq:divepsa} $a = \rho \mathbf{u}$, so it becomes:
+\input{images/131stokessphere}
+We could now write in Eq. \ref{eq:divepsa} $a = \rho \mathbf{u}$, respectively
+the density and the velocity of the fluid surronding the particle, as can be
+seen in Fig. \ref{fig:131stokessphere}. So, it becomes:
 \input{equations/divepsrhou}
 Similarly, for Eq. \ref{eq:ddtepsa}, we consider $a = \rho$, and we write:
 \input{equations/ddtepsrho}
@@ -207,18 +213,24 @@ At this point, it is easy to demonstrate that by merging Eq. \ref{eq:divepsrhou}
 and Eq. \ref{eq:ddtepsrho} we obtain the \textit{volume-averaged continuity
 equation}:
 \input{equations/continuity}
-In case of incompressible flow, Eq. \ref{eq:continuity} becomes:
+In case of incompressible flow $\frac{\partial \rho}{\partial t} = 0$. Thus,
+Eq.
+\ref{eq:continuity} becomes:
 \input{equations/continuityincompressible}
-In the same way, for the Navier-Stokes momentum equation:
+In the same way, for the Navier-Stokes momentum equation, including the stress
+tensor $\tau$ \cite{Refworks:202}:
 \input{equations/nsmomentumequation}
 which can be written:
 \input{equations/nsmomentumequation2}
-where:
+with $\mathbf{F}_{p-f}$ as the interaction force between the particle and the
+fluid, or viceversa, considering Newton's third law, dependant on the particle
+velocity $\mathbf{v}_{p}$ and the diameter of the particle $d_p$. Further:
 \input{equations/rr}
 To complete the system, we add the particles equation of motion:
 \input{equations/equationofmotion}
-where $\Phi_{p-p}$ is a force field, which acts on particle $p$ because of the
-remaining particles.
+where $m_p$ is the mass of the particle, $\mathbf{g}$ the acceleration due to
+gravity, and $\Phi_{p-p}$ is a force field, which acts on particle $p$ because
+of the remaining particles.
 This \textit{unresolved \acs{CFD}-\acs{DEM} approach} works as long as the exact
 trajectories of each particle can be negliged.\\
 For completeness, we could say that also the equation of motion can be averaged
@@ -240,11 +252,49 @@ Hovewer, this model work poorly in a dense system like our, see
 \label{subsec:governingequations}
 From the equations derived in the previous paragraph, the software uses the
 following simplified governing equations \cite{Refworks:202}, which can be
-divided into fluid and solid phase.
-The continuity equation can be written as:
+divided into fluid and solid phase, given for both the same gravitational
+acceleration $g$.
+First, in the fluid phase the \textit{continuity equation} can be written as:
 \input{equations/continuityincompressiblebis}
-while the momentum equation is:
+where $\alpha_f$ is the fluid fraction, and $u$ is the fluid velocity, while the
+\textit{momentum equation} is:
 \input{equations/nsmomentumequation3}
-with $R_{sl}$, the force exchange term, given by:
+where $\rho_f$ is the fluid density, $\tau$ the shear stresses, $p$ the fluid
+pressure, and with $R_{sl}$, the force exchange term, given by:
 \input{equations/rsl}
-where $f_{d,i}$ are ????????????????
+where $f_{d,i}$ are the drag forces for every particle in the computational
+cell, of which $\Delta V$ is the volume. \\
+Then, for the solid phase, we can write the \textit{equation of motion} for each
+of the particles involved as:
+\input{equations/eom4}
+where $u_p$ is the velocity of the particle, $f_{p,p}$ the
+particle-particle interaction forces, while $f_{p,w}$ are the particle-wall
+interaction forces. The interaction force between the particle and the
+fluid is:
+\input{equations/forceparticlefluid}
+where $f_d$ is the drag force, $f_{\nabla p}$ the pressure gradient force,
+and $f_{\nabla \tau}$ the viscous force.\\
+Closure of the system can be obtained with initial and
+boundary conditions for both phases.
+
+\subsection{Time Discretization}
+\label{subsec:timestep}
+
+According to the original article by \citet{RefWorks:172}, which defined first
+the \acs{DEM}, we should carefully consider the time discretization to use for
+our simulations.\\
+For pure \acs{DEM} simulations, and for for the \acs{DEM} portions of the
+coupled simulations, \citet{RefWorks:172} suggest to fix a time step smaller
+than the 20\% of the Rayleigh time, defined as:
+\input{equations/rayleightime}
+where $r$ is the radius of the smallest particle, $\rho_p$ its density, $G$ its
+shear modulus, and $\nu$ its Poisson ratio.
+For the \acs{CFD} portions of the coupled simulations, \citet{RefWorks:201}
+states that the time step restrictions can be more easily complied.
+Thus, we used:
+\input{equations/timestepcfd}
+
+\subsection{Coupled Simulations}
+\label{subsec:coupledsimulations}
+
+\input{images/132cfdemstep}
