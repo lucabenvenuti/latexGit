@@ -312,12 +312,18 @@
 % graphics
 \newcommand{\inputTikZ}[2]{\scalebox{#1}{\input{#2}}} % used for tikz schematic images
 %%add tikz
+\usetikzlibrary{shapes.geometric}
 \tikzstyle{block} = [draw, fill=white!20, rectangle, 
     minimum height=3em, minimum width=6em]
 \tikzstyle{sum} = [draw, fill=white!20, circle, node distance=1cm]
 \tikzstyle{input} = [coordinate]
 \tikzstyle{output} = [coordinate]
 \tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+% \tikzstyle{relation} = [top color=white, bottom color=white!20, 
+%                                   draw=red!50!black!100, drop shadow]
+\tikzstyle{relation} = [draw, fill=white!20, diamond, 
+    minimum height=3em, minimum width=6em]
+ %   text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 
 %blank page
 \newcommand\blankpage{%
