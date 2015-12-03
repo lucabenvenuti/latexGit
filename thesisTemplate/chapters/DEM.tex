@@ -23,7 +23,10 @@ Two approaches can be implemented for this method:
 The hard-sphere approach is well-suited for binary collisions, easy to
 calculate, but cannot predict multi-particle interactions.
 It is mainly used for dilute flows, rather then in the dense flows we
-investigated.
+investigated.\\
+For the simulations performed in a coupled particle-fluid environment, see
+Chapter \ref{cap:blastfurnace}, we used an \textit{unresolved
+\acs{CFD}-\acs{DEM} approach}, see \ref{sec:unresolvedcfddem}.
 
 %\section{DEM}
 %\label{sec:dem}
@@ -34,7 +37,7 @@ investigated.
 \section{Soft sphere approach}
 \label{sec:softspheresapproach}
 
-\info{could use tikz for this image}
+%\info{could use tikz for this image}
 \input{images/109twospheres}
 The soft sphere approach considers the deformation of particles when they
 collide with each other. From the vector in Fig. \ref{fig:109twospheres} we can
@@ -88,7 +91,7 @@ that can be simulated with these models:
 \end{itemize}
 
 In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
-the method can be found.\\
+the methods can be found.\\
 
 % \subsection{Hooke}
 % \label{subsec:hooke}
@@ -298,3 +301,14 @@ Thus, we used:
 \label{subsec:coupledsimulations}
 
 \input{images/132cfdemstep}
+% \wrong{use this tikz heavy image}
+
+The work of the unresolved \acs{CFD}-\acs{DEM} software is
+illustrated in Fig. \ref{fig:132cfdemstep}, and can be
+found in details in \citet{RefWorks:201}.
+In our simulations, the whole diagram represents only one \acs{CFD} step and 10
+\acs{DEM} steps. 
+In fact, the \textit{Calculation of forces} block should be read as
+\textit{10 \acs{DEM} time steps for the calculation of the particle forces}.
+This is necessary because of the severe time discretization requirements
+inherent the method.

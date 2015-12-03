@@ -1,12 +1,11 @@
 \begin{figure}[!htb]
 \centering
-	\begin{tikzpicture}[auto, node distance=2cm ]%,>=latex']
-	    % We start by placing the blocks
+	\begin{tikzpicture}[auto, node distance=2cm ]
 	    \node [input, name=input] {};
  	    \node [sum, right=1.5cm of input] (one) {DEM step};
  	    \node [block, below of=one] (two) {Interpolation of fluid velocity};
  	    \node [block, below of=two] (three) {Interpolation of fluid pressure};
- 	    \node [block, below of=three] (four) {Force calculation};
+ 	    \node [block, below of=three] (four) {Calculation of forces};
  	    \node [output, right=1.5cm of four] (five) {five};
  	    \node [block, right=4.5cm of one] (six) {Calculation of void fraction};
  	    \node [sum, right=1.5cm of one] (seven) {CFD step};
@@ -22,14 +21,6 @@
  	    \node [output, below of=thirteen] (fifteen) {five}; 	    
  	    \node [output, right=2.0cm of ten] (sixteen) {five}; 
  	    \node [sum, below=1.0cm of thirteen] (seventeen) {back to start}; 	    	    	  	    	     	     	    
-% 	    \node [block, right of=sum] (controller) {Controller};
-% 	    \node [block, right of=controller, pin={[pinstyle]above:Disturbances},
-% 	            node distance=3cm] (system) {System};
-% 	    % We draw an edge between the controller and system block to 
-% 	    % calculate the coordinate u. We need it to place the measurement block. 
-% 	    \draw [->] (controller) -- node[name=u] {$u$} (system);
-% 	    \node [output, right of=system] (output) {};
-% 	    \node [block, below of=u] (measurements) {Measurements};
 % 	
 % 	    % Once the nodes are placed, connecting them is easy. 
  	    \draw [draw,->] (input) -- node {} (one);
@@ -49,16 +40,8 @@
  	    \draw [draw,->] (thirteen) -- node {$yes$} (seventeen); 	     	   	     	    	  	     	     	 	    
  	    \draw [draw,->] (fourteen) -- node {} (sixteen);
  	    \draw [draw,->] (sixteen) -- node {} (ten); 	  	     	 	    
-% 	    \draw [->] (sum) -- node {$e$} (controller);
-% 	    \draw [->] (system) -- node [name=y] {$y$}(output);
-% 	    \draw [->] (y) |- (measurements);
-% 	    \draw [->] (measurements) -| node[pos=0.99] {$-$} 
-% 	        node [near end] {$y_m$} (sum);
-	    
-		
-	    
+    
 	\end{tikzpicture}
-
 \caption[Computational CFD-DEM steps]{Computational CFD-DEM steps.}
 \label{fig:132cfdemstep}
 \end{figure}
