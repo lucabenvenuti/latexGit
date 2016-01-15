@@ -1,0 +1,174 @@
+%% Richard Berger, January 2016
+%% based on version of Andreas Neubauer, December 2015
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\textwidth 18cm
+\textheight 25cm
+\topmargin -2.7cm
+\oddsidemargin -1.05cm
+\parindent 0pt
+\pagestyle{empty}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\infosize}{\fontsize{8pt}{9.6pt}\selectfont}
+\newcommand{\titlesize}{\fontsize{28pt}{33.6pt}\selectfont}
+\newcommand{\largesize}{\fontsize{14pt}{16.8pt}\selectfont}
+\newcommand{\smallsize}{\fontsize{11pt}{13.2pt}\selectfont}
+
+\begin{document}
+%
+% -------- only change entries beginning here ----------------------------
+%
+% enter the title of the thesis
+%
+\def\title{M2S2A}
+%
+%
+% choose type of work: 0 ... Dissertation
+%                      1 ... Diplomarbeit
+%                      2 ... Masterarbeit
+\def\type{0}
+%
+%
+% enter name of degree, see examples below
+%
+%\def\degree{Diplom-Ingenieur}
+%\def\degree{Diplom-Ingenieurin}
+%\def\degree{Master of Science}
+%\def\degree{Magister}
+%\def\degree{Magistra}
+\def\degree{Doktor}
+%\def\degree{Doktorin}
+%
+%
+% enter the study (Studienrichtung)
+% e.g. Diplomstudium:
+%\def\study{Technische Mathematik}
+% e.g. Masterstudium:
+%\def\study{Industriemathematik}
+% e.g. Doktorratsstudium
+\def\study{Technischen Wissenschaften}
+%\def\study{Naturwissenschaften}
+%
+%
+% If the names for the following entries are too long, break them into several
+% lines using \\
+%
+%
+% enter the name of the student
+%
+\def\name{Luca Benvenuti}
+%
+%
+% enter the name of the institute
+% e.g.
+%\def\institute{Institut f\"ur\\ Industriemathematik}
+%
+\def\institute{Institut f\"{u}r Stromungslehre und Warme\"{u}bertragung}
+%
+%
+% enter the name and sex (male or female) of the supervisors
+% only for type 0 (Dissertation) you need two referees
+%
+\def\firstreferee{Stefan Pirker}
+\newif\iffirstrefmale
+\firstrefmaletrue
+%\firstrefmalefalse
+%
+\def\secondreferee{Simon Schneiderbauer}
+\newif\ifsecondrefmale
+\secondrefmaletrue
+%\secondrefmalefalse
+%
+%
+% if there has been assistance by further people uncomment the following line
+% and enter the name(s). if there are several assistants separate the names by \\
+%
+\def\assist{Thomas Lichtenegger}
+%\def\assist{Name of first assistant \\ Name of second assistant}
+%
+%
+% enter month year
+% (the month when you brought it to the Prüfungs- und Anerkennungsservice)
+%
+\def\date{April 2016}
+%
+% do not change anything below this line
+% -------------------------------------------------------------------------------
+%
+\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+\DeclareFontShape{OT1}{cmss}{m}{n}
+  {<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88><29.86><35.83>%
+   <42.99><51.59><67><77.38>cmss10}{}
+\DeclareFontShape{OT1}{cmss}{bx}{n}
+  {<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88><29.86><35.83>%
+   <42.99><51.59><67><77.38>cmssbx10}{}
+\makeatletter
+\def\Huge{\@setfontsize\Huge{29.86pt}{36}}
+\makeatother
+%
+\unitlength 1cm
+\sffamily
+\infosize
+\begin{picture}(18,0)
+\put(12.8,-2.5){\includegraphics[width=5.2cm]{jku_de}}
+\put(14.2,-4.2){\begin{minipage}[t]{3.9cm}
+Eingereicht von\\
+{\bfseries\name}%
+\vskip 4mm%
+Angefertigt am\\
+{\bfseries\institute}%
+\vskip 4mm%
+\ifcase\type%
+ \iffirstrefmale%
+ Erstbeurteiler\\
+ \else
+ Erstbeurteilerin\\
+ \fi
+ {\bfseries\firstreferee}%
+ \vskip 4mm%
+ \ifsecondrefmale%
+ Zweitbeurteiler\\
+ \else
+ Zweitbeurteilerin\\
+ \fi
+ {\bfseries\secondreferee}%
+\else
+ \iffirstrefmale%
+ Beurteiler\\
+ \else
+ Beurteilerin\\
+ \fi
+ {\bfseries\firstreferee}%
+\fi
+\vskip 4mm%
+\ifundefined{assist}\else
+ Mitbetreuung\\
+ {\bfseries\assist}%
+\vskip 4mm%
+\fi
+\date
+\end{minipage}}
+\put(14.2,-25){\begin{minipage}[t]{3.9cm}\infosize%
+{\bfseries JOHANNES KEPLER\\
+UNIVERSIT\"AT LINZ}\\
+Altenbergerstra{\ss}e 69\\
+4040 Linz, \"Osterreich\\
+www.jku.at\\
+DVR 0093696
+\end{minipage}}
+\put(0,-12.2){\begin{minipage}[b]{12cm}\titlesize\bfseries\title\end{minipage}}
+\put(0,-17.2){\includegraphics[width=4.4cm]{arr}}
+\put(0,-18.3){\begin{minipage}[t]{12cm}%
+{\largesize\ifcase\type Dissertation\or Diplomarbeit\or Masterarbeit\fi}%
+\vskip 2mm%
+\smallsize zur Erlangung des akademischen Grades%
+\vskip 3mm%
+{\largesize \degree} \ifcase\type{\largesize der \study}\fi
+\vskip 3mm%
+\smallsize im \ifcase\type Doktoratsstudium der\or Diplomstudium\or Masterstudium\fi
+\vskip 3mm%
+{\largesize \study}
+\end{minipage}}
+\end{picture}
+\end{document}
