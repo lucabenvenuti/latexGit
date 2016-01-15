@@ -13,7 +13,7 @@
 %% Options / Modifications / Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+%\usepackage{eso-pic}
 \input{options}	% all packages and modifications
 
 %\includeonly{introduction}	% include only a certain chapter
@@ -27,11 +27,13 @@
 \begin{document}
 
 %% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{empty} %No headings for the first pages.
-\hypersetup{pageanchor=false}
+% \pagestyle{empty} %No headings for the first pages.
+% \hypersetup{pageanchor=false}
+% 
+% \thispagestyle{empty}
+%\maketitle
 
-\thispagestyle{empty}
-\maketitle
+\includepdf{coversheet/coversheet.pdf}
 \afterpage{\blankpage}
 
 
