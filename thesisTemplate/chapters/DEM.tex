@@ -84,7 +84,7 @@ In addition to the equations \ref{eq:hertz} the following relations (Eqns. \ref{
 The coefficient of sliding friction \acs{mus} is 
 one of the particle-based \acs{DEM} parameter we investigated, 
 another being the coefficient of rolling friction (\acs{mur}),
-that can be simulated with these models:
+which can be simulated with these models:
 \begin{itemize}
   \item{constant direct torque (CDT),}
   \item{elasto-plastic-spring-dashpot.}
@@ -120,7 +120,7 @@ the methods can be found.\\
 % 
 % where $F_n$ is the normal component and 
 
-\subsection{Elasto-plastic-spring-dashpot 2}
+\subsection{Elasto-plastic-spring-dashpot 2 model}
 \label{subsec:epsd2}
 
 For coarse non-spherical particles, \acs{mur} is a critical parameter and describes
@@ -146,7 +146,8 @@ The last two particle-based \acs{DEM} parameters we investigated were
 the particle density (\acs{rhop})
 and the coefficient of restitution (\acs{CoR}) as defined by
 \citet{RefWorks:131}.
-Together with the others they are listed in Table \ref{tab:08DEMparameters}.\\
+Together with the others key parameters they are listed in Table
+\ref{tab:08DEMparameters}.\\
 
 \input{tables/08DEMparameters}
 
@@ -206,8 +207,8 @@ as:
 Further, for time derivatives we can write:
 \input{equations/ddtepsa}
 \input{images/131stokessphere}
-We could now write in Eq. \ref{eq:divepsa} $a = \rho \mathbf{u}$, respectively
-the density and the velocity of the fluid surronding the particle, as can be
+We could now write in Eq. \ref{eq:divepsa} that $a = \rho \mathbf{u}$,
+respectively the density and the velocity of the fluid surronding the particle, as can be
 seen in Fig. \ref{fig:131stokessphere}. So, it becomes:
 \input{equations/divepsrhou}
 Similarly, for Eq. \ref{eq:ddtepsa}, we consider $a = \rho$, and we write:
@@ -226,7 +227,8 @@ tensor $\tau$ \cite{Refworks:202}:
 which can be written:
 \input{equations/nsmomentumequation2}
 with $\mathbf{F}_{p-f}$ as the interaction force between the particle and the
-fluid, or viceversa, considering Newton's third law, dependant on the particle
+fluid, or viceversa, considering Newton's third law.
+This force is dependant on the particle
 velocity $\mathbf{v}_{p}$ and the diameter of the particle $d_p$. Further:
 \input{equations/rr}
 To complete the system, we add the particles equation of motion:
@@ -262,7 +264,7 @@ First, in the fluid phase the \textit{continuity equation} can be written as:
 where $\alpha_f$ is the fluid fraction, and $u$ is the fluid velocity, while the
 \textit{momentum equation} is:
 \input{equations/nsmomentumequation3}
-where $\rho_f$ is the fluid density, $\tau$ the shear stresses, $p$ the fluid
+Here, $\rho_f$ is the fluid density, $\tau$ the shear stresses, $p$ the fluid
 pressure, and with $R_{sl}$, the force exchange term, given by:
 \input{equations/rsl}
 where $f_{d,i}$ are the drag forces for every particle in the computational

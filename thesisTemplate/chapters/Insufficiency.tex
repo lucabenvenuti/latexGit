@@ -18,20 +18,28 @@
 % 1)Ask MB brochure on sinter cooler. 2) Ask TL and CF material on raceway (cite Alice's thesis).} 
 
 \citet{RefWorks:195} states that the iron metal can be obtained by reduction of
-iron oxides. The most used apparatus to obtain pig iron is the blast furnace.
+iron oxides, of which hematite and magnetite are the most common types. The most
+used apparatus to obtain pig iron is the blast furnace.
 Iron oxides are mined from earth crust. 
 However, a blast furnace needs particles
-ranged between 7 and 25 millimiters \cite{RefWorks:195}.
-To reach the required specification, the extracted minerals are crushed and then
-sieved. Sieving divides the particles in two categories:
+ranged between 7 and 25 millimiters \cite{RefWorks:195}, to grant a regular
+descent of the particle into its hearth.
+To reach the required specification, the
+extracted minerals are crushed and then sieved. 
+Sieving divides the particles in two categories:
 \begin{itemize}
   \item{lump ore, between 7 and 25 millimiters,}
   \item{fines, less than 7 millimiters.} 
 \end{itemize}
 
-Lump ore can be used directly for blast furnace smelting.\\
 \input{images/124sinterplant}
-Instead, fines need to be sintered. 
+
+Lump ore can be used directly for blast furnace smelting. 
+Instead, fines need to be sintered (Fig. \ref{fig:124sinterplant}). \\
+
+\section{Sintering}
+\label{sec:sintering}
+
 Sintering consists in partially melting the
 fines with limestone and coke.\\
 The resulting granular material needs nonetheless to be cooled for
@@ -53,16 +61,66 @@ purpose, see Fig. \ref{fig:124sinterplant}, with many phases:
 \end{enumerate}
 
 In our thesis, we focused on (1), and the particles involved in this process.\\
-Further, we investigated the more complex blast furnace smelting, with focus on
-the raceway area, which can be seen in Fig. \ref{fig:125blastfurnace}.
+
+\section{Blast furnace}
+\label{sec:blastfurnace}
+
+Well explained in the vast literature (\cite{RefWorks:203}), 
+iron making consists in separating the iron from its chemical combination with
+oxygen. 
+As of now, the blast furnace (Fig. \ref{fig:125blastfurnace}) is considered the
+most efficient process.
+It can be described as a countercurrent heat and oxygen exchanger.
+High temperature air, eventually in combination with pulverized coal, is
+inserted into the inferior section of the apparatus.\\
 
 \input{images/125blastfurnace}
+
+While rising, the gases
+provide the surronding particles with heat, and exits out the superior section
+of the furnace.
+Symmetrically, iron oxydes descend from the superior section and it is converted
+to metallic iron, which is collected into the inferior section.\\
+
+\subsection{Blast furnace structure}
+\label{subsec:blastfurnacestructure}
+
+The blast furnace is a massive vertical apparatus, built with consistent amounts
+of refractory materials and a robust steel shell.\\
+We can divide it in five sections from bottom to top:
+\begin{enumerate}
+  \item{hearth, where metal and slags are collected and tapped at regular
+  intervals;}
+  \item{bosh, into which a special type of pipes, called tuyeres, insert the air
+  at a temperature between $900^{\circ}$ and $1350^{\circ}$;}
+  \item{bosh parallel;}
+  \item{stack;}
+  \item{throat, where the solid charge of ore and coke is provided, and
+  partially exhaust combustion gases exit;}
+\end{enumerate}
+The areas in front of each tuyere, which can be seen in Fig.
+\ref{fig:125blastfurnace}, is called $raceway$ and is the most active. 
+We dedicated chapter \ref{cap:blastfurnace} to the investigation of its
+behaviour.
+
+\subsection{Blast furnace chemistry}
+\label{subsec:blastfurnacechemistry}
+
+The most relevant chemical reactions inside the furnace are presented in Eq.
+\ref{eq:co2}.
+
+\input{equations/co2}
+
+However, not only the combustion of coke inside the charge provides the heat
+necessary for iron melting.
+The air provided by the tuyeres is pre-heated through a combination of
+recycled exit combustion gases and methane. 
 
 \section{Materials characterization}
 \label{sec:materialscharacterization}
 
 A univocal
-method to characterize these particles has so far not been established.
+method to characterize the mentioned particles has so far not been established.
 From the experimental point of view, the main issues are the difficult setups and the general 
 reliability and reproducibility of the tests. 
 From the numerical point of view, no general procedure is available, and the existence of a 
@@ -90,7 +148,7 @@ since been widely accepted in the literature and their soft sphere contact law h
 numerous researchers (\citet{RefWorks:148} and \citet{RefWorks:145}).
 With increasing computational resources, \acs{DEM} simulations have become very
 popular giving rise to the development of commercial (e.g., $PFC3D$, used by
-\citet{RefWorks:87}) and open-source software (e.g.,
+\citet{RefWorks:87}) and open-source softwares (e.g.,
 \acs{LIGGGHTS}, \citet{RefWorks:136}, \citet{RefWorks:139}).
 Soft-sphere \acs{DEM} simulations of thousands of particles have been proven to 
 faithfully model particle bulk behaviour, as in Fig. \ref{fig:061cfdemsim}
@@ -120,7 +178,8 @@ Therefore, \acs{DEM} contact law parameters (Table \ref{tab:08DEMparameters}) ar
 commonly determined by comparing the macroscopic outcome of large-scale \acs{DEM}
 simulations with bulk experiments (\citet{RefWorks:91}). 
 If \acs{DEM} simulation results disagree with bulk measurements, the set of contact
-law parameters must be adjusted until reasonable agreement is achieved.\\
+law parameters must be adjusted until reasonable agreement is achieved, as
+explained in Section \ref{sec:parametersidentification}.\\
 However, this purely forward methodology of parameter identification is limited by 
 the multi-dimensionality of the parameter space and the associated computational costs of the required 
 \acs{DEM} test simulations. 

@@ -21,14 +21,14 @@ Provided a random variable $X$, whose $Val(X) = \{ x^1, \ldots , x^k \}$, a
 \}$.\\
 He further defines, given a second random variable $Y$:
 \begin{itemize}
-  \item {Probability of conjunction of events, $P(X = x, Y = y)$ or $P(x, y)$,
+  \item {probability of conjunction of events, $P(X = x, Y = y)$ or $P(x, y)$,
   or $P((X = x) \cap (Y = y))$;}
-  \item {A set of variables, $\mathbf{X} = \{X_1, X_2, \ldots , X_k \}$;}
-  \item {Joint distribution over one set of variables, $P(\mathbf{X}) =
+  \item {a set of variables, $\mathbf{X} = \{X_1, X_2, \ldots , X_k \}$;}
+  \item {joint distribution over one set of variables, $P(\mathbf{X}) =
   P(X_1, X_2, \ldots , X_k) $;}
-  \item {Joint distribution over two sets of variables, $P(\mathbf{X, Y}) =
+  \item {joint distribution over two sets of variables, $P(\mathbf{X, Y}) =
   P(X_1, X_2, \ldots , X_k, Y_1, Y_2, \ldots , Y_l  ) $;}
-  \item {Conditional distribution, $P(\mathbf{X | Y}) =
+  \item {conditional distribution, $P(\mathbf{X | Y}) =
   P(X_1, X_2, \ldots , X_k | Y_1, Y_2, \ldots , Y_l  ) $.}
 \end{itemize}
 
@@ -68,7 +68,7 @@ where $\mathbf{\Sigma}$ is the covariance matrix.
 \section{Regression statistics}
 \label{sec:regressionstatistics}
 
-Statistics finds relationship between random variables.
+Statistics finds relationships between random variables.
 Once one of them ($response$) is chosen, it infers its dependance from the
 others ($regressors$), also including an additive $error$ term
 (\citet{RefWorks:194}). We call this a \textit{regression model}, which can be
@@ -100,7 +100,8 @@ The learning processes available for a regression model are:
 
 \textit{Unsupervised learning} does not count on the presence of a teacher.
 It focuses on a \textit{task-indipendent measure} of the quality of the
-representation, which the network must learn. It is required to optimize its
+representation, which the network must learn. 
+This learning model is required to optimize its
 parameters confronting this measure.\\
 A further step is \textit{semi-supervised learning}, where an online interaction
 between the network and its environment provides the training.
@@ -116,10 +117,10 @@ The expected response represents the teacher of the system.
 The network is trained in \textit{batch mode}, all the examples are known before
 starting the training.
 The examples represent the teacher of the system.
-Further, these examples were assumed to be \textit{independent and identically
+Further, these examples are assumed to be \textit{independent and identically
 distributed}.
 We focused on supervised learning: the materials we investigated
-are examined in batch, not online.\\
+were examined in batch, not online.\\
 \citet{RefWorks:194} defines \textit{supervised learning} an application, where all the
 training examples comprises the input vectors and their corresponding target
 vectors.
@@ -189,8 +190,8 @@ In fact, the Bayesian linear regression model is a subcase of the Gaussian
 process model, with the following conditions:
 \input{equations/bayesianlinearmodelgaussianprocess}
 We used the \textit{squared exponential} (SE), also called Radial Basis Function
-(RBF) or Gaussian Function, as covariance function. It defines the covariance
-between a pair of random variables as:
+(\acs{RBF}) or Gaussian Function, as covariance function. It defines the
+covariance between a pair of random variables as:
 \input{equations/covariancefunctionse}
 
 Specifically, we handled the software developed by \citet{RefWorks:192} 
@@ -226,7 +227,8 @@ Amongst the available \acs{ANNs} were important for our context:
   \item {the Feedforward (\acs{FF}) \acs{ANN},}
   \item {the Radial basis function (\acs{RBF}) \acs{ANN}.}	
 \end{itemize}
-We did not investigate the latter.
+We did not investigate the latter, since its algorithm is a sub-case of the
+Gaussian Process we already implemented.
 For \acs{FF}-\acs{ANN},
 numerous training algorithms are available. 
 The most common are based on
@@ -238,7 +240,7 @@ conjugate gradient.
 
 The basic element of an artificial neural network is the perceptron, a single
 neuron, see Fig.
-\ref{fig:064perceptron}
+\ref{fig:064perceptron}.
 It is composed by inputs ($x_1, x_2, \ldots, x_m$), weights for these inputs
 ($w_1, w_2, \ldots, w_m$) and a bias $b$.
 A linear combination of these elements, and the incorporation of the bias, 
@@ -291,8 +293,8 @@ separation not possible, and a multineuron approach necessary.
 Many neurons are combined to form a network, as in the architecture presented
 in Fig. \ref{fig:111multilayerperceptron}.
 With more neurons, we can obtain a non-linear solution of our separation
-problem (a nonlinear function), and correctly classify the input, as shown in
-Fig.
+problem (a nonlinear function, the black continuous line), and correctly
+classify the input, as shown in Fig.
 \ref{fig:063doublemoon}.\\
 The first requirement of a multilayer neural network is that each neuron 
 of the network must have differentiable nonlinear activation
@@ -323,7 +325,7 @@ as the difference at the j-th
 node between the output of the neuron ($y_j(n)$) and the expected response
 ($d_j(n)$):
 \input{equations/error}
-$\mathbf{d}(n)$ is the desired response vector, and $d_j(n)$ is its j-th
+Thus, $\mathbf{d}(n)$ is the desired response vector, and $d_j(n)$ is its j-th
 element.
 As in the Least Mean Square algorithm (see \citet{RefWorks:158}), we define
 the \textit{instanteneous error energy} for the j-th neuron as:
@@ -389,7 +391,7 @@ A large \acs{eta} makes the algorithm fast,
 while a small one prevents divergence.
 Converged is reached when the absolute rate of change in the average squared
 error per epoch is sufficiently small \cite {RefWorks:158}.
-In our case, when $\mathscr{E}_{av}(N) < 10^{-4}$.\\
+In our case, when $\Delta w < 10^{-4}$.\\
 
 % In the second phase the error is calculated 
 % and used to tune the weights, backward from the output to hidden
@@ -446,7 +448,7 @@ remaining quadratic methods.
 \label{subsec:conjugategradientalgorithm}
 
 First, the weight vector $\mathbf{w}(0)$ is randomly initialized. 
-Then, \citet {RefWorks:158} defines $residual$ as the steepest-descent
+\citet {RefWorks:158} defines $residual$ as the steepest-descent
 direction:
 \input{equations/residual}
 Further, the conjugate gradient vectors $\mathbf{s}(n)$, which name the method,
@@ -461,8 +463,8 @@ Consequently, the algorithm is composed by the following steps:
   \item{Fix $\mathbf{s}(0) = \mathbf{r}(0) = - \mathbf{g}(0)$.}
   \item{To find the $\eta(n)$, which maximize the $\mathscr{E}_{av}(\eta)$,
   compute a line search at the time step $n$.}
-  \item{Check the Euclidean norm of the residual $\mathbf{r}(n)$. If it is
-  under a small fraction of the initial number.}
+  \item{Check the Euclidean norm of the residual $\Delta w$. If it is
+  under a small fraction of the initial number, then the method stops.}
   \item{The weight vector is updated:
   \input{equations/updateweight}
   } 
@@ -512,7 +514,7 @@ network, and of good nonlinear interpolation of the inputs, as in Fig.
 On one hand, $underfitting$ means that there were not enough neurons to
 characterize the given function.\\
 On the other hand, an excessive amount of
-training samples, known as $overfitting$, leads to poor generalization, see 
+neurons, known as $overfitting$, leads to poor generalization, see 
 Fig. \ref{fig:107badfitting}. Also the architecture of the neural network and
 physical complexity of the problem influence the generalization.
 A good rule of thumb requires the size of the training sample to be of the same
@@ -545,7 +547,7 @@ Then the training is resumed. \\
 This continues until the learning curve of the error for the validation set
 reaches a local minimum, a condition that should happen sooner (i.e., in a
 minor number of loops, see Fig. \ref{fig:123earlystopping}) than the falling of
-the learning curve for the training set (cost function \acs{EAVN}) under the prescribed limit.
+the learning curve for the training set under the prescribed limit.
 At this point the output of the trained network is evaluated over the test
 subset to evaluate its generalization performances.\\
 Also the standard regression models (i.e., Bayesian and Gaussian) are similarly
