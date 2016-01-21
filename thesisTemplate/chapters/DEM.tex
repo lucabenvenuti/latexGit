@@ -9,8 +9,8 @@
 %************************************************
 
 The discrete element method (\acs{DEM}) is derived from Molecular Dynamics. \\ 
-For each particle $i$ inside the domain, a \acs{DEM} code
-follows the trajectory and calculates the force that particle $i$ exerts on
+Being a Lagrangian method, for each particle $i$ inside the domain, a \acs{DEM}
+code follows the trajectory and calculates the force that particle $i$ exerts on
 particle $j$.
 The main forces involved are: gravity, contact forces due to collisions, and
 further interactions such as electrostatic, Van der Waals, cohesive forces and fluid-solid interactions in 
@@ -282,12 +282,14 @@ and $f_{\nabla \tau}$ the viscous force.\\
 Closure of the system can be obtained with initial and
 boundary conditions for both phases.
 
-\subsection{Time Discretization}
-\label{subsec:timestep}
+\section{Time Discretization}
+\label{sec:timestep}
 
 According to the original article by \citet{RefWorks:172}, which defined first
-the \acs{DEM}, we should carefully consider the time discretization to use for
-our simulations.\\
+the \acs{DEM}, 
+it is necessary to computationally resolve the equations for particle contacts
+in discrete time steps, the length of which should be carefully considered.
+These time steps are small fractions of the total simulation time.\\
 For pure \acs{DEM} simulations, and for for the \acs{DEM} portions of the
 coupled simulations, \citet{RefWorks:172} suggest to fix a time step smaller
 than the 20\% of the Rayleigh time, defined as:
@@ -299,8 +301,8 @@ states that the time step restrictions can be more easily complied.
 Thus, we used:
 \input{equations/timestepcfd}
 
-\subsection{Coupled Simulations}
-\label{subsec:coupledsimulations}
+\section{Coupled Simulations}
+\label{sec:coupledsimulations}
 
 \input{images/132cfdemstep}
 % \wrong{use this tikz heavy image}

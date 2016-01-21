@@ -8,14 +8,34 @@
 \label{cap:numericalsimulation}
 %************************************************
 
-\wrong{lot of work to do here}
+\citet{RefWorks:172} define a \acs{DEM} numerical simulation as a computational
+approximation of a real particulate material, represented as an ensemble of discrete, or distinct, elements, which
+interact among each other according to defined contact laws.
+Thus, under given hypotheses, we could use this simulation method to investigate
+the nature and the behaviour of any granular medium.\\
 
-We used \acs{LIGGGHTS} as the simulation toolbox.
-\improvement{Add some more details from Kloss}
-We decided to utilize a single
-contact law for all the simulations performed.
-The time step was between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, because
-it depends on the particle density (\acs{rhop}) and on the particle size.
+\section{Software}
+\label{sec:software}
+
+We used the public open source \acs{DEM} software \acs{LIGGGHTS} as simulation toolbox.
+\citet{RefWorks:136} and \citet{RefWorks:206} demonstrated its effectiveness.
+Especially, it is an highly parallelized software, which allowed us to perform
+our simulations on large scale clusters.\\
+Performing a simulation with \acs{LIGGGHTS} consists of two steps:
+\begin{enumerate}
+  \item{write a script, stating the involved domain, the chosen contact laws,
+  and the microscopic parameters of these laws;}
+  \item{running the script in bash with single or multiple cores.}
+\end{enumerate}
+
+\section{Microscopic parameters}
+\label{sec:microscopicparameters}
+
+In our work, we decided to utilize a single
+contact law for all the simulations performed (see \citet{RefWorks:205}).\\
+Following the indications summarized in \ref{sec:timestep}, we chose time
+steps between $1.29 \%$ and $1.53 \%$ of the Rayleigh time, 
+depending on the particle density (\acs{rhop}) and on the particle size.
 Furthermore, we kept constant the size distribution, which was obtained by
 experimental sieving, see Table \ref{tab:09DEMFixedinputvalues}.\\
 The \acs{DEM} values for the Young's modulus (\acs{E}) and the Poisson's
@@ -23,6 +43,10 @@ coefficient (\acs{nu}) were taken from the literature, see \cite{RefWorks:175}
 and \cite{RefWorks:176}; however we reduced the former to increase the time step
 (\acs{deltat}), following the recommendations of Ai et al.
 \cite{RefWorks:131}.\\
+
+\section{Macroscopic parameters}
+\label{sec:macroscopicparameters}
+
 A Matlab script allowed us to extract from the simulation output the numerical
 values representative of bulk behaviour (hereafter called \textit{bulk values}),
 see Table \ref{tab:14bulkvalues},
@@ -33,9 +57,9 @@ for each \acs{DEM} simulation parameter combination.
 \section{Drained angle of repose}
 \label{sec:aorsim}
 
-In \acs{AoR} simulations we sought to replicate meticulously the experimental setup, 
-considering both the plate and the liftable boundary, with the same domain size consideration as before
-see Fig. \ref{fig:065aorsim}. 
+In \acs{AoR} simulations we sought to replicate meticulously the experimental
+setup explained in Section \ref{sec:aor}, considering both the plate and the
+liftable boundary, with the same domain size consideration as before see Fig. \ref{fig:065aorsim}. 
 The particles had the same properties as in the shear-cell simulation. 
 The first phase was identical to that of the shear-cell simulation. 
 After lifting the boundary, the particles formed a heap.
