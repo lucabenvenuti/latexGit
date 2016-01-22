@@ -1,26 +1,26 @@
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ decide if using the equations from 5.3 to 5.7 of Rasmussen}{30}{section*.28}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Decide if keep the whole chapter, or just put a brief description of the experiment in the numerical section, as explanation for the simulation design, and put here only the experimental results.}{43}{section*.38}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some details for experimental characterization}{43}{section*.39}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ decide if using the equations from 5.3 to 5.7 of Rasmussen}{30}{section*.27}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Decide if keep the whole chapter, or just put a brief description of the experiment in the numerical section, as explanation for the simulation design, and put here only the experimental results.}{43}{section*.37}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Add some details for experimental characterization}{43}{section*.38}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Make a table with the particles diameter distributions of all materials.}{43}{section*.40}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain that the values collected refers to particle-particle interactions}{43}{section*.41}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Evaluate large-small scale AoR relationship and put some images.}{43}{section*.43}
 \contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Write something about JSCT (simplified version of RSCT, or viceversa).}{43}{section*.44}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{50}{section*.52}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{50}{section*.54}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ or sub-chapter with PCA?}{50}{section*.55}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ underline that is good that the input parameters are not correlated}{50}{section*.57}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{55}{section*.62}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{55}{section*.66}
-\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ Decide if to put AoR regression images. In case improve them.}{55}{section*.68}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{56}{section*.65}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain about 25 and 75 percentile}{56}{section*.69}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ description of 1068 is missing.}{58}{section*.71}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ one table for each material? here or in the polydispersity chapter?}{58}{section*.73}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{62}{section*.78}
-\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{62}{section*.79}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ separate all images into single with captions}{62}{section*.80}
-\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ add box plots?}{62}{section*.81}
-\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{81}{section*.99}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polydispersity}{81}{section*.100}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{81}{section*.101}
-\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{81}{section*.102}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{52}{section*.52}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples on how the numerical bulk values change when the DEM input values change.}{52}{section*.54}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ or sub-chapter with PCA?}{52}{section*.55}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ underline that is good that the input parameters are not correlated}{52}{section*.57}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{57}{section*.62}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ Decide how many regression images are necessary.}{57}{section*.66}
+\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ Decide if to put AoR regression images. In case improve them.}{57}{section*.68}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ write down all the simulations performed at the end.}{58}{section*.65}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ explain about 25 and 75 percentile}{58}{section*.69}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ description of 1068 is missing.}{60}{section*.71}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ one table for each material? here or in the polydispersity chapter?}{60}{section*.73}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ Some examples of the new images: relationship between the standard deviation of the radius and the shape of the tile plot.}{64}{section*.78}
+\contentsline {todo}{\color@fb@x {}{Plum}{}{Plum!25}{\leavevmode {\color {Plum!25}o}}\ table similar to \ref {tab:12DEMRandominputvalues} here}{64}{section*.79}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ separate all images into single with captions}{64}{section*.80}
+\contentsline {todo}{\color@fb@x {}{blue}{}{blue!25}{\leavevmode {\color {blue!25}o}}\ add box plots?}{64}{section*.81}
+\contentsline {todo}{\color@fb@x {}{red}{}{red!25}{\leavevmode {\color {red!25}o}}\ 3 steps: 2 step id + 1 step app}{83}{section*.99}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ polydispersity}{83}{section*.100}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 1}{83}{section*.101}
+\contentsline {todo}{\color@fb@x {}{OliveGreen}{}{OliveGreen!25}{\leavevmode {\color {OliveGreen!25}o}}\ application 2}{83}{section*.102}
