@@ -9,30 +9,48 @@
 \label{cap:experimentalcharacterization}
 %************************************************
 
+In the industrial processes we presented in Chapter \ref{cap:insufficiency} and
+in Part \ref{par:applications} the following materials:
+\begin{itemize}
+  \item{coke,}
+  \item{iron ore,}
+  \item{limestone,}
+  \item{sinter,} 
+\end{itemize}
+are involved, which can be furtherly divided according to the diameter of the
+particles in two categories:
+\begin{itemize}
+  \item{fine, until 3.15 millimiters;}
+  \item{coarse, larger than 3.15 millimiters.}
+\end{itemize}
 
-\info{Decide if keep the whole chapter, or just put a brief description of the
-experiment in the numerical section, as explanation for the simulation design,
-and put here only the experimental results.}
+We followed a series of standardized procedures to characterize these particles,
+as explained by various authors (\citet{RefWorks:45, RefWorks:46}).
+These experimental data were later used to determine \acs{DEM} numerical
+parameters, as explained in Chapters \ref{cap:numericalsimulation} and
+\ref{cap:anntraining}.
 
-\improvement{Add some details for experimental characterization}
-
-\input{tables/19particlesizedistributions}
-\input{tables/20shearcell1}
-\input{tables/21shearcell2}
-\input{tables/22shearcell3}
 
 \section{Particle Distribution}
 \label{sec:particledistribution}
 
-\improvement{Make a table with the particles diameter distributions of all
-materials.}
+Determine the particles distribution is the first task in bulk materials
+characterization, see \citet{RefWorks:44}.
+Thus, we sieved 
+
+\input{tables/19particlesizedistributions}
+
+% \improvement{Make a table with the particles diameter distributions of all
+% materials.}
 
 \section{Drained angle of repose (p-p) - small scale}
 \label{sec:aor}
 
+\input{tables/23aor}
+
 \improvement{explain that the values collected refers to particle-particle
 interactions} 
-A sample was deposited on a 20 cm diameter plate with liftable
+A sample was deposited on a 20 centimeters diameter plate with liftable
 boundary called static angle of repose (\acs{AoR}) tester, see Fig. \ref{fig:088aorexperimental}.
 Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
 Once stabilized, the \acs{AoR} was measured eight times using a digital protractor at different positions of the heap. 
@@ -67,6 +85,11 @@ Fig. \ref{fig:004sjsctdiagram} \\
 \label{sec:SRSCT}
 %************************************************
 
+\input{tables/20shearcell1}
+\input{tables/21shearcell2}
+\input{tables/22shearcell3}
+
+
 \input{images/090sctexperimental}
 
 A representative sample of bulk solid was placed in a Schulze ring shear cell
@@ -92,7 +115,7 @@ is called steady-state flow/pre-shear stress.
 If the normal stress is known, it provides (Eq. \ref{eq:phi_ps}) the angle of
 internal friction of the pre-shear phase ($\phi_{e-psh}$), and consequently the
 pre-shear coefficient of internal friction $ (\mu_{psh})$, the second
-bulk value, see Schulze \cite{RefWorks:118}:
+bulk value, see \citet{RefWorks:118}:
 %************************************************
 \input{equations/phi_ps}
 %************************************************
