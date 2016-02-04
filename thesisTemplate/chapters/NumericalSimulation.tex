@@ -52,7 +52,7 @@ values representative of bulk behaviour (hereafter called \textit{bulk values}),
 see Table \ref{tab:14bulkvalues},
 for each \acs{DEM} simulation parameter combination.
 
-\section{Drained angle of repose}
+\section{Drained Angle of Repose Simulation}
 \label{sec:aorsim}
 
 In \acs{AoR} simulations we sought to replicate meticulously the experimental
@@ -66,7 +66,7 @@ In the \acs{AoR} tests the average of the repose angles provided us with the fou
 bulk value of Table \ref{tab:14bulkvalues}.
 \input{images/065aorsim}
 
-\section{Shear Cell}
+\section{Shear Cell Simulation}
 \label{sec:scsimulation}
 %************************************************
 
@@ -92,7 +92,11 @@ However, a larger domain increases the number of particles and thus
 simulation time.
 For this reason, we considered the cylinder dimension (\acs{dCylDp}), which is
 proportional to the mean particle diameter, as an additional \acs{DEM}
-parameter to be investigated. \\
+parameter to be investigated.
+
+\subsection{SCT simulation procedure}
+\label{subsec:scsimulation}
+
 A simulation run comprised four phases. 
 First, the shear cell was filled with the granulate material, and it was allowed
 to settle.
@@ -102,10 +106,8 @@ As in the experiment, the servo-wall allows calculating the position of the lid
 while the first particle is being touched. 
 The distance between the lid and the bottom of the domain multiplied by the 
 simulation area gave the total volume.
-Since the software already provided the total mass, we were able to calculate:
-%************************************************
-\input{equations/rhob}
-%************************************************
+Since the software already provided the total mass, we were able to calculate
+the bulk density (\acs{rhob}).\\
 Next, the ring moved by a distance $l=0.1875 \cdot radius ~of ~the ~ring$, and
 the required pre-shear force was measured.
 Finally, the normal load was reduced to a fraction of the initial load, 
@@ -121,6 +123,10 @@ best trade-off.\\
 The normal stresses (pre-shear and shear phases) applied in each simulation were
 the same as in the experiments.
 The corresponding $\tau_{psh}$ and $\tau_{sh}$ were calculated - as in the experiments - from the mean of the plateau.\\
+
+\subsection{SCT Simulation Input Parameters}
+\label{subsec:sctsimulationinputparameters}
+
 The input \acs{DEM} coefficients, \acs{CoR}, \acs{mus}, \acs{mur},
 \acs{rhop} and \acs{dCylDp} (the cylinder dimension, proportional to the mean
 particle diameter), as indicated in Table \ref{tab:10DEMVariableinputvalues}, 
@@ -131,12 +137,16 @@ simulations had a \acs{dCylDp} larger than $20$.
 The normal stress \acs{sigman} and its
 percentage during the incipient flow condition \acs{tauperc}
 varied to replicate twelve shear-cell load conditions.\\ 
+
+\subsection{SCT Simulation Output Parameters}
+\label{subsec:sctsimulationoutputparameters}
+
 \input{images/021simexample}
 Each \acs{SCT} simulation gave three of the \texit{bulk values} indicated in
 Table \ref{tab:14bulkvalues}.
 The first bulk value (\acs{rhob}) was provided directly. 
 For correctly performed simulations, we
-observed a stress path as in Fig. \ref{fig:021simexample}.
+observed a stress path as the example in Fig. \ref{fig:021simexample}.
 Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
 point in time at which the normal stress (\acs{sigman}) was modified during the
 tests.
@@ -150,24 +160,16 @@ value, and soon after
 a second plateau developed.
 We obtained the coefficient of
 shear (\acs{mush}) as the average of \acs{muie} in this second plateau.
-The stress paths agree well, especially the plateaux.
-They were clearly relevant because
-the values representative of the bulk behaviours
-were collected there.\\
-Together with the value from the \acs{AoR} simulation, we were able to define
-the numerical bulk behaviour.
-
-
-All the results in this chapter are pure \acs{DEM}, so they shoould be
-materials agnostic, given the same particle distribution.
-
-\subsection{bohbohbohbohbohbohbohboh}
-\label{subsec:bohbohbohbohbohbohbohbohboh}
-
 The stress paths between Fig. \ref{fig:007shearcellsim} and Fig.
 \ref{fig:020experimental} agree well, especially the plateaux.
 They were clearly relevant because
-the values representative of the bulk behaviours were collected there.
+the values representative of the bulk behaviours were collected there.\\
+Together with the value from the \acs{AoR} simulation, we were able to define
+the numerical bulk behaviour.\\
+All the results in this chapter are pure \acs{DEM}, so they shoould be
+materials agnostic, given the same particle distribution, see
+Section \ref{sec:polydispersity}.
+
 
 %*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-
 %*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-%*-*-*-*-*-
@@ -175,32 +177,23 @@ the values representative of the bulk behaviours were collected there.
 \section{Influence of variations of input parameters}
 \label{sec:influence}
 
-For sinter fine, 546 shear cell and 81 static \acs{AoR} simulations 
-\wrong{write down all the simulations performed at the end.}
+In total, 2,400 shear cell and 400 static \acs{AoR} simulations 
 were run with
 the parameter combinations described in Table
-\ref{tab:10DEMVariableinputvalues}.
+\ref{tab:10DEMVariableinputvalues} with different particle size
+distributions for the various materials analyzed.
 The computational time amounted to 1 hour with 32 AMD cores for a benchmark
 shear-cell simulation and to 9 hours for a benchmark \acs{AoR} simulation, both with
 50,000 particles.
 Simulations with larger \acs{dCylDp} required more time (e.g., about 12 hours for
 the shear cell with 400,000 particles ). \\
+To better understand the effect of the variation of the input parameters, nine
+\acs{SCT} simulations have been selected, and their stress paths shown in Fig.
+\ref{fig:136comparisonfrictioncoefficients}.
+
+\input{images/136comparisonfrictioncoefficients}
 
 \input{tables/10DEMVariableinputvalues}.
 
 \info{Some examples on how the numerical bulk values change when the DEM input
 values change.}
-\info{or sub-chapter with PCA?}
-
-\section{PCA analysis}
-\label{sec:pcaanalysis}
-
-The linear relationship between the
-training values can be seen in Table \ref{tab:06inputRelationshipTable}.
-Sliding friction (\acs{mus}), rolling friction (\acs{mur}) and particle density (\acs{rhop})
-had the greatest influence on, respectively, the coefficient of pre-shear
-(\acs{mupsh}), the angle of repose  (\acs{AoR}) and the bulk density (\acs{rhob}). Notably, \acs{rhop}
-was not used as a training parameter for \acs{AoR} bulk behaviour. 
-\input{tables/06inputRelationshipTable}
-\improvement{underline that is good that the input parameters are not
-correlated}
