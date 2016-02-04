@@ -28,7 +28,14 @@ We followed a series of standardized procedures to characterize these particles,
 as explained by various authors (\citet{RefWorks:45, RefWorks:46}).
 These experimental data were later used to determine \acs{DEM} numerical
 parameters, as explained in Chapters \ref{cap:numericalsimulation} and
-\ref{cap:anntraining}.
+\ref{cap:anntraining}.\\
+For our investigations we focused on particle-particle (\acs{pp}) interactions,
+and the bulk behaviour representative values summarized in Table
+\ref{tab:14bulkvalues}.
+According to \citet{RefWorks:136}, they are the most relevant for the large,
+dense conditions we researched.
+
+\input{tables/14bulkvalues}
 
 
 \section{Particle Distribution}
@@ -36,34 +43,42 @@ parameters, as explained in Chapters \ref{cap:numericalsimulation} and
 
 Determine the particles distribution is the first task in bulk materials
 characterization, see \citet{RefWorks:44}.
-Thus, we sieved 
-
+Thus, we sieved each material investigated with an electrically tilting siever.
+We proceded in a sequence from the largest to the smallest sieving diameter
+(6.3, 5.6, 3.55, 2, 1.6, 1.25, 1, 0.8, 0.63, 0.5, 0.315, 0.25, 0.0001
+millimiters). The results can be seen in Table
+\ref{tab:19particlesizedistributions}.
 \input{tables/19particlesizedistributions}
-
-% \improvement{Make a table with the particles diameter distributions of all
-% materials.}
 
 \section{Drained angle of repose (p-p) - small scale}
 \label{sec:aor}
 
-\input{tables/23aor}
-
-\improvement{explain that the values collected refers to particle-particle
-interactions} 
-A sample was deposited on a 20 centimeters diameter plate with liftable
-boundary called static angle of repose (\acs{AoR}) tester, see Fig. \ref{fig:088aorexperimental}.
-Once the particles were in position, the boundary was lifted, allowing some particles to drop. 
-Once stabilized, the \acs{AoR} was measured eight times using a digital protractor at different positions of the heap. 
+Later, we performed \acs{pp} drained angle of repose (\acs{AoR}) tests.
+Drained, because each sample was completely dry and moistless.
+\citet{RefWorks:69} defines \textit{angle of repose} the angle of the slope of a
+bulk material sample when it reaches steady-state after deposition.\\
+In our test, a sample was deposited on a 20 centimeters diameter plate (hence,
+small scale) with liftable boundary called static \acs{AoR} tester, see Fig.
+\ref{fig:088aorexperimental}.
+Once the particles were in position, the boundary was lifted, allowing some
+particles to drop.
+Once stabilized, the \acs{AoR} was measured eight times using a digital
+protractor at different positions of the heap.
 The average of the measurements gave the fourth bulk value (see Table
 \ref{tab:14bulkvalues}).
 Note that, since the experiments were performed only for relatively large size
 bulk solids, the compaction condition in the initial state was not critical to the
 final result of this test.\\
+In Table \ref{tab:23aor} the results of the tests performed on the various
+materials can be seen.
 \input{images/088aorexperimental}
+\info{decide if putting the complete table}
+\input{tables/23aor}
 
 \section{Drained angle of repose (p-p) - large scale}
 \label{sec:aorlargescale}
 
+\info{decide if keeping}
 At the Leoben VAS facility a new rotating double chute was used: 
 nine large scale dynamic angle of repose tests were performed. 
 \improvement{Evaluate large-small scale AoR relationship and put some images.}
@@ -72,21 +87,40 @@ nine large scale dynamic angle of repose tests were performed.
 \label{sec:jsct}
 %************************************************
 
-\improvement{Write something about JSCT (simplified version of RSCT, or
-viceversa).}
-Fig. \ref{fig:052ShearCellLab} \\
-Fig. \ref{fig:053PoorMan} \\
-Fig. \ref{fig:003sjsct} \\
-
-Fig. \ref{fig:004sjsctdiagram} \\
+The third step of the procedure was using shear testers - 
+a simplified Jenike shear cell tester (\acs{JSCT}, Fig. \ref{fig:003sjsct}, see
+\citet{RefWorks:114}) and a Schulze ring shear cell
+tester (\acs{SCT}, see \citet{RefWorks:142}) to characterize particle flow
+properties, especially the complete yield locus.
+Compared to the original \acs{JSCT} in Fig. \ref{fig:052ShearCellLab}, we
+defined our tester in Fig.
+\ref{fig:053PoorMan} simplified because it is a prototype designed for fast characterization (see \citet{RefWorks:138}).
+Each experiment was performed on a fresh material sample. \\
+In the tests with the simplified \acs{JSCT}, a representative sample of bulk solid 
+was placed in a shear cell of 104 millimiters diameter. 
+This specimen was pre-consolidated by twisting the shear cell cover while applying a 
+compressive load (from 0.488 to 1.379 kg) normal to it.\\
+Since this was a simplified tester, the specimen was then sheared with the 
+same normal load at a constant velocity. 
+In fact, the \textit{shear to failure} phase was missing in these \textit{simplified} tests, 
+and the \textit{consolidation} phase was not completely serialized.
+The steady-state flow horizontal stress (Fig. \ref{fig:004sjsctdiagram}) is
+called pre-shear stress ($\tau_{psh}$). 
+Knowing the normal stress, it gives (Eq. \ref{eq:phi_ps}) the angle of internal 
+friction of the pre-shear phase ($\phi_{e-psh}$), our first flowability value \cite{RefWorks:118}:
+%************************************************
+\input{equations/phi_ps}
+%************************************************
 \input{images/089jsctexperimental}
+The values obtained in the tests are summarized in Table \ref{tab:24shearcell4}.
+
+\input{tables/24shearcell4}
 
 \section{Schulze Ring Shear Cell tester (p-p)}
 \label{sec:SRSCT}
 %************************************************
-
-\input{tables/20shearcell1}
 \input{tables/21shearcell2}
+\input{tables/20shearcell1}
 \input{tables/22shearcell3}
 
 
@@ -95,6 +129,10 @@ Fig. \ref{fig:004sjsctdiagram} \\
 A representative sample of bulk solid was placed in a Schulze ring shear cell
 tester (\acs{SCT}) of specified dimensions ($external ~ radius = 100 ~ mm$,
 $internal ~ radius = 50 ~ mm$), see Fig. \ref{fig:001srsct}.
+
+\subsection{SRSCT procedure}
+\label{subsec:srsctprocedure}
+
 A normal load was applied to the cover. As soon as the lid touched the sample,
 its position was calculated.
 Together with the area of the ring, the total volume can be calculated, and subsequently the 
@@ -102,7 +140,7 @@ Together with the area of the ring, the total volume can be calculated, and subs
 of the sample, was obtained.
 Later, we tried to obtained the \textit{bulk values} indicated in Table
 \ref{tab:14bulkvalues}, slightly different from those indicated in Fig.
-\ref{fig:002srsctdiagram}.
+\ref{fig:002srsctdiagram}.\\
 A representative stress path can be seen in Fig. \ref{fig:020experimental}.
 Time was normalized: $\tilde{t} = t/t_{change}$, where $t_{change}$ is the
 point in time at which the normal stress (\acs{sigman}) was modified during the	tests.
@@ -115,10 +153,7 @@ is called steady-state flow/pre-shear stress.
 If the normal stress is known, it provides (Eq. \ref{eq:phi_ps}) the angle of
 internal friction of the pre-shear phase ($\phi_{e-psh}$), and consequently the
 pre-shear coefficient of internal friction $ (\mu_{psh})$, the second
-bulk value, see \citet{RefWorks:118}:
-%************************************************
-\input{equations/phi_ps}
-%************************************************
+bulk value, see \citet{RefWorks:118}, see Eq. \ref{eq:phi_ps}.\\
 At $\tilde{t}=1$ the normal stress and the angular velocity were then
 immediately reduced to zero.
 Subsequently, the specimen was sheared under a fraction (\acs{tauperc})(e.g.
@@ -137,45 +172,8 @@ For each we used a normal load proportional to the initial one
 with two escalating intermediate stages (60\% and 80\%) for a total of twelve load conditions.
 Each experiment was performed on a fresh material sample. \\
 \input{images/020experimental}
-The stress paths between Fig. \ref{fig:007shearcellsim} and Fig.
-\ref{fig:020experimental} agree well, especially the plateaux.
-They were clearly relevant because
-the values representative of the bulk behaviours were collected there.
 
-% \section{Parameter Identification}
-% \label{sec:parameteridentification}
-% 
-% We obtained for each of the twelve load conditions of the \acs{SCT} three bulk
-% values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
-% The fourth bulk value was the result of two angle of repose (\acs{AoR}) tests that
-% recreated the repose angle observed in a pile of the
-% real material. 
-% Subsequently, we compared the \acs{ANN} and experimental bulk behaviours for the
-% twelve shear-cell load conditions.
-% If in a DEM-parameter combination all the three bulk values differed by less 
-% than 5\% from those of the corresponding experiments, i.e.:
-% %************************************************
-% \input{equations/check2}
-% the combination was marked. The marked combinations were processed by the
-% \acs{AoR} \acs{ANN}, and then compared with the experiment.
-% Were considered valid those that differed by less than $5\%$ also in this
-% comparison (Eq. \ref{eq:checkaor}):
-% %************************************************
-% \input{equations/checkaor}
-% Further, to prove the validity of the system, we tested the marked combinations
-% by modifying the experimental bulk values of the shear cell. 
-% We artificially decreased or increased the shear force, and thus \acs{mupsh} and
-% \acs{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
-% %************************************************
-% \input{equations/pcoeff}
-% 
-% \subsection{Value representation}
-% \label{subsec:valuerepresentation}
-% 
-% \begin{itemize}
-%   \item{parameter space plot;}
-%   \item{box plot;
-%   \improvement{explain about 25 and 75 percentile}
-%   }
-%   \item{density plot.}
-% \end{itemize}
+\subsection{SRSCT results}
+\label{subsec:srsctresults}
+
+WRITE SOMETHING
