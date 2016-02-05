@@ -8,35 +8,51 @@
 \label{cap:anntraining}
 %************************************************
 
-\section{PCA analysis}
+\section{Principal Component Analysis (PCA) Results}
 \label{sec:pcaanalysis}
 
-The linear relationship between the
-training values can be seen in Table \ref{tab:06inputRelationshipTable}.
+We evaluated the linear relationship between the microscopic and the
+macroscopic parameters in the training simulations with Matlab Principal
+Component Analysis.
+The results can be seen in Table \ref{tab:06inputRelationshipTable}.
 Sliding friction (\acs{mus}), rolling friction (\acs{mur}) and particle density (\acs{rhop})
 had the greatest influence on, respectively, the coefficient of pre-shear
 (\acs{mupsh}), the angle of repose  (\acs{AoR}) and the bulk density (\acs{rhob}). Notably, \acs{rhop}
-was not used as a training parameter for \acs{AoR} bulk behaviour. 
+was not used as a training parameter for \acs{AoR} bulk behaviour. \\
+However, we can see how each relationship is below the 100\% necessary to claim
+a direct linear correlation.
+Thus, we demonstrated that we need more precise statistical tools to investigate
+the relationships and generalize the results.
+
 \input{tables/06inputRelationshipTable}
-\improvement{underline that is good that the input parameters are not
-correlated}
 
+\section{Regression statistic training concept}
+\label{sec:regressiontrainingconcept}
 
-\section{ANN training concept}
-\label{sec:anntrainingconcept}
+\input{images/127anntraining}
 
 Initially, as shown in Fig. \ref{fig:019methodology} in the training phase
 (dashed lines) \acs{DEM} simulations are performed
 with random initial input parameters.
-The behaviours obtained are used to train the
-Artificial Neural Networks (\acs{ANNs}) in a loop that continues until the
-difference between the outputs of each \acs{ANN} and its simulations is below the
-limit ($\Delta$) (see Chapter \ref{cap:ann} for more details).
-In the parameters identification phase (solid
-lines) we identify valid input parameters by comparing (\textbf{=}) \acs{ANNs} and
-experimental behaviours.
+The behaviours obtained are used to train the following regression models:
+\begin{itemize}
+  \item{Bayesian linear,}
+  \item{Gaussian non linear,}
+  \item{Artificial Neural Network (\acs{ANN}).}
+\end{itemize}
+For all the three models training consists in a loop that continues until the
+difference between the outputs of each model and its samples is below the
+limit ($\Delta$) (see Chapter \ref{cap:ann} for more details).\\
+Thus, we were able to use the \acs{DEM} parameter combinations and their
+corresponding bulk values to train the models.
+Especially, we divided the samples in three pools: the first, with 70\% of the
+samples, as \textit{training set}, the second, with 15\% of the samples, as
+\textit{generalization set}, for early stopping, and the third, as \textit{test
+set}, as suggested by Haykin (2009). The assignment of each sample to each pool
+was random.
 
-\input{images/019methodology}
+\subsection{ANN training concept specifications}
+\label{subsec:anntrainingconceptspecifications}
 
 The training of an \acs{ANN} consists in defining the weights and the biases for
 each of its neuron.
@@ -52,34 +68,71 @@ The transfer function for the neurons of the central layer is the tangential
 sigmoid, while the neuron of the output layer use the linear transfer
 function.\\
 \input{images/018nnscheme}
-Thus, we were able to use the \acs{DEM} parameter combinations and their
-corresponding bulk values to train the \acs{ANNs}.
-Especially, we divided the samples in three pools: the first, with 70\% of the
-samples, as \textit{training set}, the second, with 15\% of the samples, as
-\textit{generalization set}, for early stopping, and the third, as \textit{test
-set}, as suggested by Haykin (2009). The assignment of each sample to each pool
-was random.
 We started with all the \acs{DEM} parameter combinations and their corresponding
 numerical \acs{mupsh} from the \textit{training set} to create 36 \acs{ANNs} that
 differed in their numbers of neurons in the hidden layer (between five to forty neurons).
 The \textit{generalization set} was used to speed the training. 
-We then determined the coefficient of determination (\acs{r2}) between the
+We then determined the coefficient of determination (\acs{r2}), 
+\input{equations/rSquare}
+between the
 $bulk-macro$ behaviours in the output of the \acs{ANN} and the \textit{test
 set} simulations, which were not correlated with the remaining 70\% used for the
 training.
 Thus, we could select for \acs{mupsh} the \acs{ANN} with the maximum \acs{r2}, 
 again as suggested by Vaferi et al. \cite{RefWorks:150}, and we noted its number
 of neurons.
-We then checked \acs{r2}, \textit{root mean squared error, mean absolute error,
-mean squared error} of this ANN against a \textit{Bayesian linear regression}
-and a \textit{Gaussian nonlinear regression} to estimate the validity of the
-regression.
-Both were trained with the same training set as the ANNs. 
-The check was performed for each method by comparing the \acs{DEM} bulk values of 
-the test set against the bulk values predicted by each method from the 
-corresponding \acs{DEM} input values of the test set. \\
 We repeated the same \acs{ANN} creation steps for \acs{mush}, \acs{rhob}
 and \acs{AoR}, obtaining one trained \acs{ANN} for each bulk value. \\
+
+\subsection{Sinter fine ANN training}
+\label{subsec:sinterfineanntraining}
+
+As said, we started with the sinter fine.
+The first bulk value \acs{ANN} trained was the \acs{mupsh}, where we achieved a
+$\acs{r2} = 0.96$ for an \acs{ANN} with fifteen neurons, a consistent agreement between the 
+\acs{DEM} and the \acs{ANN} values, which demonstrates the accurate predictive power of
+the \acs{ANN}, compared to the other two methods.
+Increasing the number of neurons did not improve the \acs{r2}; it even started to
+oscillate with higher numbers of neurons.
+We subsequently obtained the optimal number of neurons for all \acs{ANNs}.\\
+Later, we obtained Fig.
+\ref{fig:022regression}, where the corresponding plot for the \acs{ANN} with the maximum \acs{r2} is shown. 
+Each circle represents one of the 546 simulations.
+\input{images/022regression}
+
+\section{Statistical tools comparison}
+\label{sec:statisticaltoolscomparison}
+
+%\input{images/077regressions}
+\input{images/143sctregressions}
+\input{images/144aorregressions}
+
+We checked \acs{r2}, \textit{mean absolute error}, 
+\input{equations/meanAbsoluteError}
+\textit{mean squared error},
+\input{equations/meanSquareError}
+and \textit{root mean squared error},
+\input{equations/rootMeanSquareError}
+for the \textit{Bayesian linear
+regression}, the \textit{Gaussian nonlinear
+regression}, and the
+\textit{\acs{ANN} regression} to establish the most effective method.
+All were trained with the same training set. 
+For instance, a comparison of the \acs{r2} for the \acs{mupsh} can be see in 
+Fig. \ref{fig:069sctbayesianlinearregressor},
+Fig. \ref{fig:070sctgaussiannonlinearregressor}) Fig.
+\ref{fig:071annnonlinearregressor}.\\
+In fact, the check was performed for each method by comparing the \acs{DEM} bulk
+values of the test set against the bulk values predicted by each method from the 
+corresponding \acs{DEM} input values of the test set. \\
+Table \ref{tab:15regressionvalues} shows a quantitative comparison between the
+three methods. 
+\input{tables/15regressionvalues}
+%************************************************
+
+\section{Parameter Identification}
+\label{sec:parameteridentification}
+
 Since \acs{mupsh}, \acs{mush} and \acs{rhob} belonged to the shear-cell
 simulations, their \acs{ANNs} were handled together: we had one cluster with three 
 \acs{ANNs} for the shear cell and one with only one \acs{ANN} for the \acs{AoR}.
@@ -89,7 +142,7 @@ Oberkampf et al. \cite{RefWorks:160} suggested using a Design of Experiments
 They stated that this approach allows optimization of computation time
 with an acceptable loss of precision.
 The speed of the trained \acs{ANNs} enabled us to follow a different approach to
-maximizing the precision of the characterization.
+maximizing the precision of the characterization.\\
 We created random values
 in the range and numbers defined in Table \ref{tab:12DEMRandominputvalues}
 according to a standard uniform distribution.
@@ -97,57 +150,17 @@ The total number of combinations of these random values was 6,250,000.
 These combinations were then fed to and processed by the selected
 \acs{ANNs}, and thus three bulk values for the shear
 cell and one for the \acs{AoR} were obtained.
-% %************************************************
-
-\input{tables/12DEMRandominputvalues}
-
-% %************************************************
-% %************************************************
-
-\section{ANN model development}
-\label{sec:annmodeldev}
-
-\input{tables/15regressionvalues}
-
-\input{equations/rootMeanSquareError}
-\input{equations/rSquare}
-
-First, we determined the regression of the bulk behaviour parameters, for
-instance the \acs{mupsh}, 
-with a Bayesian linear prediction (Fig.
-\ref{fig:069sctbayesianlinearregressor}) and a Gaussian nonlinear prediction
-(Fig.  \ref{fig:070sctgaussiannonlinearregressor}). 
-Later we obtained Fig.
-\ref{fig:071annnonlinearregressor}, where the corresponding plot for the \acs{ANN} with the maximum \acs{r2} is shown. 
-Each circle represents one of the 546 simulations.
-\wrong{write down all the simulations performed at the end.}
-Table \ref{tab:15regressionvalues} shows a quantitative comparison between the
-three methods. 
-In fact, 
-we achieved a $\acs{r2} = 0.96$ for an \acs{ANN} with fifteen neurons,
-a consistent agreement between the 
-\acs{DEM} and the \acs{ANN} values, which demonstrates the accurate predictive power of
-the \acs{ANN}, compared to the other two methods.\\ 
-Increasing the number of neurons did not improve the \acs{r2}; it even started to
-oscillate with higher numbers of neurons.
-We subsequently obtained the optimal number of neurons for all \acs{ANNs}.
-Further, we processed the random combinations (Table
-\ref{tab:10DEMVariableinputvalues}) with the \acs{ANN}.
 The \acs{ANN} evaluation was significantly faster than the \acs{DEM} simulations. The
 individuation of the numerical bulk behaviours for all the \acs{DEM} combinations
 did not take more than a few seconds on a single core.
-%************************************************
-\input{images/022regression}
-\improvement{Decide how many regression images are necessary.}
-\input{images/077regressions}
+\input{tables/12DEMRandominputvalues}
+% %************************************************
 
-\change{Decide if to put AoR regression images. In case improve them.}
-  
-%************************************************
-%************************************************
+As can be seen in Fig. \ref{fig:019methodology}, in the parameters
+identification phase (solid lines) we identify valid input parameters by comparing (\textbf{=}) \acs{ANNs} and
+experimental behaviours.
 
-\section{Parameter Identification}
-\label{sec:parameteridentification}
+\input{images/019methodology}
 
 We obtained for each of the twelve load conditions of the \acs{SCT} three bulk
 values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
@@ -187,9 +200,7 @@ We artificially decreased or increased the shear force, and thus \acs{mupsh} and
 %************************************************
 %************************************************
 
-\input{tables/09DEMFixedinputvalues}
-
-\subsection{SCT parameter space}
+\subsection{SCT parameter space for Sinter fine}
 \label{subsec:sctparameterspace}
 
 Experimental values identifying the bulk behavior, \acs{mupsh}, \acs{mush} and $\rho_{b}$, 
