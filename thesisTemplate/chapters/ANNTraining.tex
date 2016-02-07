@@ -119,14 +119,14 @@ regression}, and the
 \textit{\acs{ANN} regression} to establish the most effective method.
 All were trained with the same training set. 
 For instance, a comparison of the \acs{r2} for the \acs{mupsh} can be see in 
-Fig. \ref{fig:069sctbayesianlinearregressor},
-Fig. \ref{fig:070sctgaussiannonlinearregressor}) Fig.
-\ref{fig:071annnonlinearregressor}.\\
-In fact, the check was performed for each method by comparing the \acs{DEM} bulk
-values of the test set against the bulk values predicted by each method from the 
+Fig. \ref{fig:143sctregressions}.
+In Fig. \ref{fig:144aorregressions} a similar comparison for the \acs{AoR} can
+be found.\\
+In fact, the check was performed for each method by comparing the
+\acs{DEM} bulk values of the test set against the bulk values predicted by each method from the 
 corresponding \acs{DEM} input values of the test set. \\
 Table \ref{tab:15regressionvalues} shows a quantitative comparison between the
-three methods. 
+three methods for the \acs{mupsh}. 
 \input{tables/15regressionvalues}
 %************************************************
 
@@ -137,12 +137,22 @@ Since \acs{mupsh}, \acs{mush} and \acs{rhob} belonged to the shear-cell
 simulations, their \acs{ANNs} were handled together: we had one cluster with three 
 \acs{ANNs} for the shear cell and one with only one \acs{ANN} for the \acs{AoR}.
 We could then proceed in identifying valid input parameters.
+
+\subsection{Computational Condiderations}
+\label{subsec:computationalcondiderations}
+
 Oberkampf et al. \cite{RefWorks:160} suggested using a Design of Experiments
 (\acs{DoE}) method to determine the parameter combinations to be simulated.
 They stated that this approach allows optimization of computation time
 with an acceptable loss of precision.
 The speed of the trained \acs{ANNs} enabled us to follow a different approach to
 maximizing the precision of the characterization.\\
+
+\input{tables/12DEMRandominputvalues}
+
+\subsection{Decisional Limits}
+\label{subsec:decisionallimits}
+
 We created random values
 in the range and numbers defined in Table \ref{tab:12DEMRandominputvalues}
 according to a standard uniform distribution.
@@ -152,16 +162,11 @@ These combinations were then fed to and processed by the selected
 cell and one for the \acs{AoR} were obtained.
 The \acs{ANN} evaluation was significantly faster than the \acs{DEM} simulations. The
 individuation of the numerical bulk behaviours for all the \acs{DEM} combinations
-did not take more than a few seconds on a single core.
-\input{tables/12DEMRandominputvalues}
-% %************************************************
-
+did not take more than a few seconds on a single core.\\
+\input{images/019methodology}
 As can be seen in Fig. \ref{fig:019methodology}, in the parameters
 identification phase (solid lines) we identify valid input parameters by comparing (\textbf{=}) \acs{ANNs} and
-experimental behaviours.
-
-\input{images/019methodology}
-
+experimental behaviours.\\
 We obtained for each of the twelve load conditions of the \acs{SCT} three bulk
 values (\acs{mupsh}, \acs{mush} and \acs{rhob}).
 The fourth bulk value was the result of two angle of repose (\acs{AoR}) tests that
@@ -179,8 +184,13 @@ Were considered valid those that differed by less than $5\%$ also in this
 comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \input{equations/checkaor}
-Further, to prove the validity of the system, we tested the marked combinations
-by modifying the experimental bulk values of the shear cell. 
+
+\subsection{Reliability Considerations}
+\label{subsec:reliabilityconsiderations}
+
+We tested the marked combinations
+by modifying the experimental bulk values of the shear cell to further prove
+the validity of the system.
 We artificially decreased or increased the shear force, and thus \acs{mupsh} and
 \acs{mush}, by a product coefficient ($P$), e.g. Eq. \ref{eq:pcoeff}:
 %************************************************
@@ -191,11 +201,58 @@ We artificially decreased or increased the shear force, and thus \acs{mupsh} and
 
 \begin{itemize}
   \item{parameter space plot;}
-  \item{box plot;
-  \improvement{explain about 25 and 75 percentile}
-  }
+  \item{box plot;}
   \item{density plot.}
 \end{itemize}
+
+\subsubsection{Parameter space plot}
+\label{subsubsec:parameterspaceplot}
+
+An example of a parameter space plot can be seen
+in Fig. \ref{fig:041radarpirker1schulze1068}.
+On the axes we can see:
+\begin{itemize}
+  \item{the \acl{CoR} (\acs{CoR}),}
+  \item{the \acl{mus} (\acs{mus}),}
+  \item{the \acl{mur} (\acs{mur}),}  
+  \item{the \acl{rhob} (\acs{rhob}).}
+\end{itemize}
+Further, are shown:
+\begin{itemize}
+  \item{the minimum input values amongst the millions possible combinations,
+  with a blue straight line;}
+  \item{the minimum values amongst the valid, or marked combinations, with a
+  green straight line;}
+  \item{the mean values amongst the valid, or marked combinations, with an
+  orange dotted line;}
+  \item{the negative standard deviations from the mean values amongst the valid,
+  or marked combinations, with a red straight line;}
+  \item{the positive standard deviations from the mean values amongst the valid,
+  or marked combinations, with a red straight line;}  
+  \item{the maximum values amongst the valid, or marked combinations, with a
+  green straight line;}
+  \item{the maximum input values amongst the millions possible combinations,
+  with a blue straight line.}  
+\end{itemize}
+
+The shaded area indicates valid parameter combinations, and dark shaded
+values indicate the confidence range
+
+\input{images/041radarpirker1schulze1068}
+
+
+\subsubsection{Box plot}
+\label{subsubsec:boxplot}
+  
+\citet{RefWorks:207} defines a box plot a graphical representation of
+collections of numerical data by means of their quartiles.
+These are three points, which divide the data in four groups that are equals and
+contain a quarter of the data each.\\
+In a box plot the values between the first quartile (25\%) and the third
+quartile (75\%) are included in a blue box.
+Further, so called \textit{baffles} or \textit{whishers} are lines, which are
+extended as far as the minimum and maximum values.
+Finally, the median is represented as a red straight line.
 
 %************************************************
 %************************************************
@@ -219,11 +276,7 @@ deviations, as shown in Table
 The comparison between numerical and experimental behaviours led to a first
 series of marked combinations ($MC1$) for one load condition of
 the shear cell ($\acs{sigman} = 10,070$ Pa, P=1.0), as plotted in Fig.
-\ref{fig:024radarpirker1schulze10070}, where 
-the minimum and maximum values are shown, together with the mean. 
-Each axis of the parameter space plot represents one simulation parameter.
-The shaded area indicates valid parameter combinations, and dark shaded
-values indicate the confidence range.
+\ref{fig:024radarpirker1schulze10070}.
 Note that the confidence interval is large, 
 especially for the \acs{CoR}, which highlights its insignificant influence on the
 characterization.
