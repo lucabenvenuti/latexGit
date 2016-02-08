@@ -238,12 +238,14 @@ Further, are shown:
 The shaded area indicates valid parameter combinations, and dark shaded
 values indicate the confidence range
 
-\input{images/041radarpirker1schulze1068}
+\input{images/149paramspaceplotsct1068}
 
 
 \subsubsection{Box plot}
 \label{subsubsec:boxplot}
   
+An example of a box plot can be seen
+in Fig. \ref{fig:145BoxSCT1068p08sinterfine}.
 \citet{RefWorks:207} defines a box plot a graphical representation of
 collections of numerical data by means of their quartiles.
 These are three points, which divide the data in four groups that are equals and
@@ -254,29 +256,42 @@ Further, so called \textit{baffles} or \textit{whishers} are lines, which are
 extended as far as the minimum and maximum values.
 Finally, the median is represented as a red straight line.
 
+\input{images/146boxplotsct1068}
+
+\subsubsection{Density plot}
+\label{subsubsec:densityplot}
+
+Further, we observed that various \acs{DEM} parameter
+combinations could reproduce the experimental behaviour, and thus evaluated
+their mutual dependencies.
+This is shown more clearly in a density plot (e.g., Fig. 
+\ref{fig:150ParamSpaceSCT1068p08sinterfine}) 
+of the particles' coefficient of restitution (\acs{CoR}) in relation to
+the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}); 
+in the white area, no valid sets of simulation parameters could be found.
+In each cell the valid sets are grouped according to the 4 different COR
+ranges.
+Each cell is coloured according to the group with the most members.
+
+\input{images/155tileplotsct1068sinterfine}
+
 %************************************************
 %************************************************
 
 \subsection{SCT parameter space for Sinter fine}
 \label{subsec:sctparameterspace}
 
-Experimental values identifying the bulk behavior, \acs{mupsh}, \acs{mush} and $\rho_{b}$, 
-of sinter fine were acquired through \acs{SCT} tests. 
-Table \ref{tab:05sinterTableExperimental} presents
-these values for three load conditions: clearly the \acs{mupsh} decreases, and 
-the \acs{mush} oscillates.
-The \acs{rhob} has a clear average of 1,760 $kg/m^3$ with a 42 
-$kg/m^3$ deviation.
-Two \acs{AoR} tests were performed that gave an average angle of
-38.85$^\circ$.
-We obtained the radius (\acs{R}) mean and standard
-deviations, as shown in Table
-\ref{tab:09DEMFixedinputvalues}, from sieving experiments.
-\wrong{description of 1068 is missing.}
+\input{images/079sctparameterspaceplots}
+
 The comparison between numerical and experimental behaviours led to a first
-series of marked combinations ($MC1$) for one load condition of
-the shear cell ($\acs{sigman} = 10,070$ Pa, P=1.0), as plotted in Fig.
-\ref{fig:024radarpirker1schulze10070}.
+series of marked combinations ($MC1$) for two load conditions of
+the shear cell:
+\begin{itemize}
+  \item{$\acs{sigman} = 1,068$ Pa, P=1.0, as plotted in Fig.
+  \ref{fig:041radarpirker1schulze1068},}
+  \item{$\acs{sigman} = 10,070$ Pa, P=1.0, as plotted in Fig.
+  \ref{fig:024radarpirker1schulze10070}.}
+\end{itemize}
 Note that the confidence interval is large, 
 especially for the \acs{CoR}, which highlights its insignificant influence on the
 characterization.
@@ -289,22 +304,15 @@ to the range, see Table \ref{tab:13DEMvalidvalues}.
 \subsection{SCT cloud space}
 \label{subsec:sctcloudspace}
 
-Further, we observed that various \acs{DEM} parameter
-combinations could reproduce the experimental behaviour, and thus evaluated
-their mutual dependencies.
-This is shown more clearly in a density plot (see Fig. 
-\ref{fig:025cloudpirker1schulze10070} for $MC1$) 
-of the particles' coefficient of restitution (\acs{CoR}) in relation to
-the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}); 
-in the white area, no valid sets of simulation parameters could be found.
-In each cell the valid sets are grouped according to the 4 different COR
-ranges.
-Each cell is coloured according to the group with the most members.
 Multiple
 combinations (250,407 or 4\% of the total) of \acs{mus} and \acs{mur} reproduced
 the experimental behaviour with varying \acs{CoR}.
 This underlines once more their correlation, as already stated by Wensrich and 
 Katterfeld \cite{RefWorks:87}.
+
+\subsection{Product coeffiecient effect}
+\label{subsec:productcoeffiecienteffect}
+
 To further demonstrate the validity of the procedure, we modified the product
 coefficient. 
 First, we set it to $P=0.8$, and we obtained another
@@ -341,14 +349,14 @@ combinations in representing the bulk behaviour.
 From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 \%), see Table \ref{tab:13DEMvalidvalues}.
 %************************************************
-\input{tables/05sinterTableExperimental}
-\info{one table for each material? here or in the polydispersity chapter?}
+% \input{tables/05sinterTableExperimental}
+% \info{one table for each material? here or in the polydispersity chapter?}
 
 \input{tables/13DEMvalidvalues}
 
 
 %************************************************
-\input{images/079sctparameterspaceplots}
+
 \input{images/080sctdensityplots}
 \input{images/081aorandmergeparameterspaceplots}
 
