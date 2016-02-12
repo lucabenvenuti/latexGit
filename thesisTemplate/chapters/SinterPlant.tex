@@ -14,22 +14,29 @@
 The method previously explained allowed to collect data regarding the contact
 law. We took the average value for each of the \acs{DEM} parameter and we used them 
 in an industrial scale \acs{DEM} simulation, with the same software, 
-of an iron ore sintering process. 
+of an iron ore sintering process, see Fig. \ref{fig:057sinterChuteOrtoLayout}.
 Especially, we examined the behaviour of these particles in a sinter chute cooler. 
 The particles moved from the top of a specifically designed chute and were 
 collected by moving boxes at the bottom. These boxes were holed at the base, 
 allowing cool air to lower the temperature of the sinter. 
 It was critical to ascertain if the larger particles segregated, 
-by moving to the bottom of the boxes, while the smaller to the top, allowing a 
-more effective distribution of the cool air. The simulation was performed 
-with a maximum of 500,000 particles.
+by moving to the bottom of the boxes (see Fig. \ref{fig:056sinterChuteBox}), while the smaller to the top,
+allowing a more effective distribution of the cool air. 
+Especially, the regions
+highlighted in Fig. \ref{fig:055sinterChuteVerticalLayout} and
+Fig. \ref{fig:067sinterchute} for the simulation were investigated.
+The simulation was performed with a maximum of 500,000 particles.
 For a $DEM$ simulation is a huge number, obtained with a coarse graining factor
 of five, meaning that all the particles have radii five time larger than reality.
 Avoiding coarse graining would have meant more than 10,000,000 particles,
 infeasible for us.
 
-\section{Coarse graining}
-\label{sec:coarsegraining}
+\input{images/057sinterChuteOrtoLayout}
+\input{images/056sinterChuteBox}
+\input{images/055sinterChuteVerticalLayout}
+\input{images/067sinterchute}
+% \section{Coarse graining}
+% \label{sec:coarsegraining}
 
 \section{Sinter chute results}
 \label{sec:sinterchuteresults}
@@ -40,44 +47,40 @@ distribution in Table \ref{tab:16radii}.
 There are two main phases:
 \begin{itemize}
   \item{Initial filling: during this phase many small particles deposited inside
-  the chute}
+  the chute.}
   \item{Moving bottom box: also in this phase particles were
 continuously inserted from the top. After the filling was completed, the
-scraper was moved and all the particles further a defined surface were
+scraper was moved and all the particles beyond a defined surface were
 deleted. Inside the sinter, all the places that small particles could
 occupy already were. At this point the bottom box was filled again, but
-with a more realistic size distribution, and it reached steady state, as can
-be seen in figures \ref{fig:043rS1}, \ref{fig:044rS2}, \ref{fig:045rS4}, and
-\ref{fig:046rS6}.}
+with a more realistic size distribution, and it reached steady state 
+(few screenshots in Fig. \ref{fig:097particlespositions}).}
 \end{itemize}
 As expected, when the steady state was reached, the particles actually
 segregated, as it was intended to demonstrate.
-In fact, there were more particles with larger radiuses, from 8 to 25 mm, in the
-bottom layers.
-Instead, the smallest particles, radius = 2.5 mm, was rather on the top layer.\\ 
-As explained in the Application section, we divided the first of the boxes
+We divided the first of the boxes
 filled by the chute in three (equally high) layers, from 6 on top to 8 
 on bottom, see Fig. \ref{fig:056sinterChuteBox}. 
 The volume over these layers was not considered, because it was continuously 
-supplied of particles from the chute. In Fig. \ref{fig:066sinterbarplot} the
+supplied of particles from the chute.
+In fact, there were more particles with larger radii, from 25 to 125 mm, in the
+bottom layers.
+Instead, the smallest particles, radius = 12.5 mm, were rather on the top layer. 
+In Fig. \ref{fig:066sinterbarplot} the
 percentage of the total volume of the particles available in each layer at steady-state, 
 grouped by radius, is shown. 
 We could clearly see how the larger particles disposed mostly 
-in the bottom layer, validating the realized design.
+in the bottom layer, validating the realized design.\\
+The $DEM$ parameters used in the simulation can be found in Table
+\ref{tab:13DEMvalidvalues}.
+The total volume of the particles with different radii in the three considered
+layers, variation with time, can
+be seen in Fig. \ref{fig:096sinterplots}.
 
+\ref{fig:223sinterplots2}\\
 
-\input{images/055sinterChuteVerticalLayout}
-\ref{fig:055sinterChuteVerticalLayout} \\
-
-\input{images/056sinterChuteBox}
-
-
-\input{images/057sinterChuteOrtoLayout}
-\ref{fig:057sinterChuteOrtoLayout} \\
-
-\input{images/067sinterchute}
-\ref{fig:067sinterchute}\\
-
-\input{images/047figuresSinter}
 \input{images/066sinterbarplot}
 
+\input{images/097particlespositions}
+\input{images/096sinterplots}
+\input{images/223sinterplots2}
