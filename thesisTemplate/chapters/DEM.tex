@@ -8,7 +8,9 @@
 \label{cap:dem}
 %************************************************
 
-The discrete element method (\acs{DEM}) is derived from Molecular Dynamics. \\ 
+The discrete element method (\acs{DEM}) is derived from Molecular Dynamics
+\cite{RefWorks:133, RefWorks:137}.
+\\
 Being a Lagrangian method, for each particle $i$ inside the domain, a \acs{DEM}
 code follows the trajectory and calculates the force that particle $i$ exerts on
 particle $j$.
@@ -22,8 +24,8 @@ Two approaches can be implemented for this method:
 \end{itemize} 
 The hard-sphere approach is well-suited for binary collisions, easy to
 calculate, but cannot predict multi-particle interactions.
-It is mainly used for dilute flows (e.g., \citet{RefWorks:122, RefWorks:151}),
-rather then in the dense flows we investigated.\\
+It is mainly used for dilute flows (e.g., \citet{RefWorks:78, RefWorks:122,
+RefWorks:151, RefWorks:152}), rather then in the dense flows we investigated.\\
 For the simulations performed in a coupled particle-fluid environment, see
 Chapter \ref{cap:blastfurnace}, we used an \textit{unresolved
 \acs{CFD}-\acs{DEM} approach}, see \ref{sec:unresolvedcfddem}.
@@ -53,8 +55,8 @@ At this point we can divide the contact models into:
 \end{itemize}
 
 The soft sphere approach is a well established method for metallurgical raw
-material characterization (e.g., \citet{RefWorks:81, RefWorks:92, RefWorks:99,
-RefWorks:108}).
+material characterization (e.g., \citet{RefWorks:71, RefWorks:74, RefWorks:76,
+RefWorks:79, RefWorks:81, RefWorks:92, RefWorks:97, RefWorks:99, RefWorks:108}).
 
 \subsection{Hertz}
 \label{subsec:hertz}
@@ -94,8 +96,8 @@ which can be simulated with these models:
   \item{elasto-plastic-spring-dashpot.}
 \end{itemize}
 
-In the paper by Wensrich and Katterfeld \cite{RefWorks:87}, further details on
-the methods can be found.\\
+In the papers by \citet{RefWorks:41, RefWorks:87, RefWorks:144,
+RefWorks:183}, further details on the methods can be found.\\
 
 % \subsection{Hooke}
 % \label{subsec:hooke}
@@ -132,9 +134,8 @@ inter-particle friction in medium to dense granular flow simulations.
 It is proportional to the 
 torque counteracting the rotation of the particle. 
 The \acs{mur} parameter enters the 
-equations according to the elasto-rolling resistance model presented by Wensrich and 
-Katterfeld \cite{RefWorks:87} and Ai et al. \cite{RefWorks:131} 
-based on the work of Jiang et al. \cite{RefWorks:143}. 
+equations according to the elasto-rolling resistance model presented by
+\citet{RefWorks:87, RefWorks:131} based on the work of \citet{RefWorks:143}.
 A scheme of the particles interaction can be seen in Fig.
 \ref{fig:128springdashpot}.\\
 \input{images/128springdashpot}
@@ -160,11 +161,14 @@ Together with the others key parameters they are listed in Table
 
 There are yet ways to determine contact parameters directly by measuring
 material properties or by performing particle based experiments (
-\cite{RefWorks:52, RefWorks:80, RefWorks:88, RefWorks:89, RefWorks:96,
-RefWorks:101, RefWorks:107, RefWorks:149, RefWorks:154, RefWorks:156,
+\cite{RefWorks:50, RefWorks:52, RefWorks:53, RefWorks:55, RefWorks:58,
+RefWorks:62, RefWorks:64, RefWorks:68, RefWorks:75, RefWorks:80, RefWorks:83,
+RefWorks:85, RefWorks:88, RefWorks:89, RefWorks:90, RefWorks:95, RefWorks:96, RefWorks:101, RefWorks:107, RefWorks:115,
+RefWorks:120, RefWorks:123, RefWorks:124, RefWorks:128, RefWorks:135,
+RefWorks:149, RefWorks:153, RefWorks:154, RefWorks:155, RefWorks:156,
 RefWorks:162, RefWorks:177, RefWorks:181, RefWorks:186}).
-\citet{RefWorks:140, RefWorks:190}
-are two of the most prominent examples of parameters identification by
+\citet{RefWorks:57, RefWorks:140, RefWorks:146, RefWorks:165, RefWorks:190}
+are some of the most prominent examples of parameters identification by
 theoretical analysis. 
 
 \subsection{Limitations}
