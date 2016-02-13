@@ -87,8 +87,8 @@ In our case we aimed to:
 Statistics finds relationships between random variables.
 Once one of them ($response$) is chosen, it infers its dependance from the
 others ($regressors$), also including an additive $error$ term
-(\citet{RefWorks:194}). We call this a \textit{regression model}, which can be
-linear or nonlinear.
+(\citet{RefWorks:109, RefWorks:112, RefWorks:113, RefWorks:194}). We call this a
+\textit{regression model}, which can be linear or nonlinear.
 In this work we exploited the following regression models:
 \begin{itemize}
   \item{Bayesian linear,}
@@ -103,8 +103,8 @@ one over the other two.
 %to further
 %assess the quality of the \acs{ANNs} training.
 
-\subsection{Supervised learning}
-\label{subsec:supervisedlearning}
+\subsection{Learning processes}
+\label{subsec:learningprocesses}
 
 The learning processes available for a regression model are:
 
@@ -149,7 +149,8 @@ vectors.
 \subsection{The Standard Bayesian Linear Model}
 \label{subsec:standardlinearmodel}
 
-\citet{RefWorks:192} define the standard linear regression model with Gaussian noise as:
+\citet{RefWorks:192, RefWorks:110} define the standard linear
+regression model with Gaussian noise as:
 \input{equations/standardlinearregression}
 where $\mathbf{x}$ is the input vector of the regressors, $\mathbf{w}$ are the
 weights of the linear model, and $y$ is the target value, the response. The
@@ -592,7 +593,7 @@ However, our training pool was numerical and extensive,
 and the particles in our simulations were inserted using a random
 seed value.
 For vast amounts of training data, the effect of noise-corrupted patterns is
-negligible, see \citet{RefWorks:158}. \\
+negligible, see \citet{RefWorks:158, RefWorks:188}. \\
 Thus, in our work task (b) was more challenging.
 Once trained, the \acs{ANN} were fed
 combinations of \acs{DEM} parameters. 

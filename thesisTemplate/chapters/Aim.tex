@@ -50,3 +50,55 @@ granular materials, which have the same particle behaviour and could modelled wi
 law.
 
 \input{images/019methodology}
+
+
+\subsection{Applicability and scope}
+\label{subsec:applicability}
+
+%************************************************
+\begin{figure}[!htb] 
+\centering 
+\includegraphics[width=.96\textwidth]{104material} 
+\caption[Sinter ore fine]{Sinter ore fine analysed.}
+\label{fig:104material} 
+\end{figure}
+
+%************************************************
+
+The materials used for this work were sinter fine, see Fig.
+\ref{fig:104material}, 
+\wrong{add photos of all materials}
+. Its particles had a mean radius of 0.73 mm and were
+cohesionless, see Section \ref{subsec:macroscopicexperimentsparameteridentification}.
+Their amounts of open and closed pores are not negligible (see
+\citet{RefWorks:191}), 
+and thus the use of an Archimedean procedure to determine the correct particle density by direct measurement
+was not applicable.
+Possibly, a tomography for each particle would lead to the particle density
+(e.g., \citet{RefWorks:77}), but this analysis was infeasible: 
+the necessary time for the the amount of material
+analysed was unreasonable. 
+Further, a three-dimensional scan of each particle would have surely physically
+identified our particles, and made us able to confront them with other studies. 
+The high shape dispersity made also this analysis impossible. 
+We followed a different procedure, see Section
+\ref{subsec:macroscopicexperimentsparameteridentification}.\\
+To avoid the macroscopic plastic deformations analysed by Harthong et al. \cite{RefWorks:183} 
+we checked for each simulation for its total duration that the packing density was 
+lower than a defined limit. 
+This threshold (0.671) was given by the packing density of the close random packing with the 
+same size distribution, as suggested and with the software provided by Baranau, Tallarek 
+et al. \cite{RefWorks:182, RefWorks:185}.
+The experimental characterization was performed at environmental temperature and thus 
+temperature was not considered in the numerical simulations. Chemical reactions and aging 
+were also not part of the scope of this work.
+Further, due to the limited number of experiments realized, a restricted number
+of flow regimes were tested, and only one size distribution was considered. 
+The authors are confident that these two limitations have not compromised the validity of the method. 
+Rather, further investigations on these two aspects could again demonstrate its effectiveness. 
+Notably, we chose an elastic model to picture the particle behaviour. If we try
+to identify parameters for an elastic contact model in a system of non-elastic particles, this $ANN$ approach will fail. 
+So choosing appropriate contact models is an essential pre-requisite for contact 
+parameter identification by means of $ANN$. 
+Moreover, $ANNs$ can give indications about the correctness of the chosen model, 
+see Section \ref{subsec:experimentsparameteridentification}.
