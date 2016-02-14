@@ -254,6 +254,8 @@ quartile (75\%) are included in a blue box.
 Further, so called \textit{baffles} or \textit{whishers} are lines, which are
 extended as far as the minimum and maximum values.
 Finally, the median is represented as a red straight line.
+Values are normalized, meaning that for each input value the maximum extracted
+is one.
 
 \input{images/146boxplotsct1068}
 
@@ -311,7 +313,9 @@ to the range, see Table \ref{tab:13DEMvalidvalues}.
 \subsection{SCT box plot for Sinter fine}
 \label{subsec:sctboxsinterfine}
 
-\lipsum[1]
+The representation through box plots in Fig.
+\ref{fig:156boxplotsct10070sinterfine} is consistent with those shown in the
+previous Section \ref{subsec:sctparameterspacesinterfine}.
 
 \input{images/156boxplotsct10070sinterfine}
 
@@ -350,8 +354,8 @@ variations in the experimental data.
 Our approach could therefore be used
 for a wide range of bulk materials.\\
 
-\subsection{AoR and merge results}
-\label{subsec:aorandmergeresults}
+\subsection{AoR results}
+\label{subsec:aorresults}
 
 We then processed the random combinations with the \acs{AoR} \acs{ANN}. In Fig.
 \ref{fig:031radarpirker1aor} the parameter space plot for the same criteria as
@@ -359,27 +363,25 @@ before could be seen.
 In accordance with theory (Wensrich and Katterfeld \cite{RefWorks:87}), in a simulation dominated
 by rolling particles, the coefficient of rolling friction has the maximum
 influence. \\
+\input{images/207aorparameterspaceplots}
+%************************************************
+% \input{tables/05sinterTableExperimental}
+% \info{one table for each material? here or in the polydispersity chapter?}
+
+\subsection{Merge results}
+\label{subsec:mergeresults}
+
 Finally, we extracted from the $MC1$ values the \acs{AoR} \acs{ANN} behaviour
 and compared it with the experimental one.
 As could be seen in the parameter space plot in Fig.
-\ref{fig:033radarpirker1schulze10070aor}, the confidence interval is very small,
+\ref{fig:208mergeparameterspaceplots}, the confidence interval is very small,
 indicating that all the parameters but the \acs{CoR} played an important role, 
 and demonstrating the reliability of these parameter
 combinations in representing the bulk behaviour.
 From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 \%), see Table \ref{tab:13DEMvalidvalues}.
-%************************************************
-% \input{tables/05sinterTableExperimental}
-% \info{one table for each material? here or in the polydispersity chapter?}
 
 \input{tables/13DEMvalidvalues}
-
-
-%************************************************
-
-
-%081aorandmergeparameterspaceplots}
-\input{images/207aorparameterspaceplots}
 \input{images/208mergeparameterspaceplots}
 
 
@@ -389,14 +391,36 @@ From the initial 6,250,000 combinations, only 3,884 were valid (0.0621
 \section{Remaining Materials Characterization}
 \label{sec:remainingmaterialscharacterization}
 
-\input{tables/32weightsbiasesAOR}
-\input{tables/33weightsbiasesmuie}
+We later proceeded in further expanding the characterization by investigating
+the values for the remaining materials.
+Thus, we realized a limited number of simulations (620 \acs{SCT} simulations
+and 180 \acs{AoR} simulations) with the particles distributions in Table
+\ref{tab:19particlesizedistributions} and the stress conditions in Table
+\ref{tab:21shearcell2}.\\
+Together with the simulations already performed for sinter fine, we trained
+additional \acs{ANNs} for the four bulk values involved.
+Again, we extracted those with the maximum \acs{r2}.
+The weights and biases for the \acs{muie} can be found in Table
+\ref{tab:33weightsbiasesmuie}.
+Similarly, weights and biases for the \acs{AoR} are in Table
+\ref{tab:32weightsbiasesAOR}.
 
-\subsection{cokecoarse Characterization}
+\input{tables/33weightsbiasesmuie}
+\input{tables/32weightsbiasesAOR}
+
+
+\subsection{Coke coarse Characterization}
 \label{subsec:cokecoarsecharacterization}
 
-\lipsum[1]
-
+The valid values identified for the coke coarse can be found in Table
+\ref{tab:25DEMvalidvaluescokecoarse}.\\
+However, while the plots referring to the single test show reasonably narrow
+confidence ranges, Fig. \ref{fig:197BoxMixcokecoarse_27} shows unreasonably
+large valid ranges.
+For comparison, in Fig. \ref{fig:198TileMixcokecoarse_27} only a tiny portion of
+the density plot is colored.
+In fact, this means that the choice of valid values is limited, as Table
+\ref{tab:25DEMvalidvaluescokecoarse} shows.
 \input{tables/25DEMvalidvaluescokecoarse}
 \input{images/209boxplotscokecoarse}
 \input{images/210tileplotscokecoarse}
