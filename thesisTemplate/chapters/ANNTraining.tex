@@ -426,62 +426,85 @@ In fact, this means that the choice of valid values is limited, as Table
 \input{images/210tileplotscokecoarse}
 
 
-\subsection{cokefine Characterization}
+\subsection{Coke fine Characterization}
 \label{subsec:cokefinecharacterization}
 
-\lipsum[1]
-
+The range of valid values for coke is even narrower than that for the coke
+coarse, see Fig. \ref{tab:211boxplotscokefine} and
+Fig. \ref{fig:167BoxSCTcokefinetest02coeffP1}.
+The final results can be read in Table \ref{tab:26DEMvalidvaluescokefine}.\\
+Regrettably, considerations similar to those in Section
+\ref{subsec:cokecoarsecharacterization} can be formulated for the intersation
+box plot.
+Fig. \ref{fig:192TileMixcokefine_3} shows the valid values.
 
 \input{tables/26DEMvalidvaluescokefine}
 \input{images/211boxplotscokefine}
 \input{images/212tileplotscokefine}
 
 
-\subsection{ironorecoarse Characterization}
+\subsection{Iron ore coarse Characterization}
 \label{subsec:ironorecoarsecharacterization}
 
-\lipsum[1]
+The iron ore coarse is subject to the identical considerations of coke coarse,
+shown in Section \ref{subsec:cokecoarsecharacterization}.
+Fig. \ref{fig:213boxplotsironorecoarse} and Fig.
+\ref{fig:214tileplotsironorecoarse}, together with Table
+\ref{tab:27DEMvalidvaluesironorecoarse}, show the final values.
 
 \input{tables/27DEMvalidvaluesironorecoarse}
 \input{images/213boxplotsironorecoarse}
 \input{images/214tileplotsironorecoarse}
 
 
-\subsection{ironorefine Characterization}
+\subsection{Iron ore fine Characterization}
 \label{subsec:ironorefinecharacterization}
 
-\lipsum[1]
-
+Even the iron ore fine is subject to the identical considerations of coke
+fine, shown in Section \ref{subsec:cokefinecharacterization}.
+Fig. \ref{fig:215boxplotsironorefine} and Fig.
+\ref{fig:216tileplotsironorefine}, together with Table
+\ref{tab:28DEMvalidvaluesironorefine}, show the final values.
 
 \input{tables/28DEMvalidvaluesironorefine}
 \input{images/215boxplotsironorefine}
 \input{images/216tileplotsironorefine}
 
-\subsection{limestonecoarse Characterization}
+
+\subsection{Limestone coarse Characterization}
 \label{subsec:limestonecoarsecharacterization}
 
-\lipsum[1]
-
+The same effects of coke coarse and iron ore coarse are visible when
+investigating the limestone coarse.
+Fig. \ref{fig:217boxplotslimestonecoarse} and Fig.
+\ref{fig:218tileplotslimestonecoarse}, together with Table
+\ref{tab:29DEMvalidvalueslimestonecoarse}, show the final values.
 
 \input{tables/29DEMvalidvalueslimestonecoarse}
 \input{images/217boxplotslimestonecoarse}
 \input{images/218tileplotslimestonecoarse}
 
 
-\subsection{limestonefine Characterization}
+\subsection{Limestone fine Characterization}
 \label{subsec:limestonefinecharacterization}
 
-\lipsum[1]
+For the limestone fine we obtained reasonable box plots, see Fig.
+\ref{fig:219boxplotslimestonefine}, but also comsistent density plots, see Fig.
+\ref{fig:220tileplotslimestonefine}.
+The final values can be found in Table \ref{tab:30DEMvalidvalueslimestonefine}.
 \input{tables/30DEMvalidvalueslimestonefine}
 \input{images/219boxplotslimestonefine}
 \input{images/220tileplotslimestonefine}
 
 
-\subsection{sintercoarse Characterization}
+\subsection{Sinter coarse Characterization}
 \label{subsec:sintercoarsecharacterization}
 
-\lipsum[1]
-
+The same effects of coke coarse, iron ore coarse, and limestone coarse are
+visible when investigating the sinter coarse.
+Fig. \ref{fig:221boxplotssintercoarse} and Fig.
+\ref{fig:222tileplotssintercoarse}, together with Table
+\ref{tab:31DEMvalidvaluessintercoarse}, show the final values.
 
 \input{tables/31DEMvalidvaluessintercoarse}
 \input{images/221boxplotssintercoarse}
@@ -491,7 +514,7 @@ In fact, this means that the choice of valid values is limited, as Table
 \label{sec:discussion}
 %************************************************
 In our approach we established a relationship between particle scale contact law
-parameters and macroscopic bulk behaviour by means of $ANN$. 
+parameters and macroscopic bulk behaviour by means of \acs{ANN}. 
 In case the chosen contact law is physically correct by its functional dependencies, 
 this micro to macro relationship can be used in a reversed way to identify 
 valid sets of contact law parameters.\\
@@ -504,7 +527,7 @@ one (wrong parameters).\\
 To avoid such misleading results, the functional dependency of the particle based contact 
 law should be chosen with care, taking into account the contact physics in the granular 
 flow regime under investigation. 
-Further, our $ANN$ based parameter
+Further, our \acs{ANN} based parameter
 identification should be applied to different macroscopic bulk behaviours. 
 If those parameter identifications do not 
 lead to a common set of valid parameters, most probably the chosen contact law was not applicable. 
