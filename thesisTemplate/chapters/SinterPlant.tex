@@ -8,14 +8,18 @@
 \label{cap:sintersegregator}
 %************************************************
 
+\section{Material properties for sinter chute simulation}
+\label{sec:materialpropertiesforsinterchutesimulation}
+
+The method previously explained allowed to collect data regarding the contact
+law. We took the average value for each of the \acs{DEM} parameter from Table
+\ref{tab:13DEMvalidvalues} and we used them in an industrial scale \acs{DEM}
+simulation, with the same software, of an iron ore sintering process, see Fig. \ref{fig:057sinterChuteOrtoLayout}.
+Especially, we examined the behaviour of these particles in a sinter chute cooler. 
+
 \section{Sinter chute design}
 \label{sec:sinterchutedesign}
 
-The method previously explained allowed to collect data regarding the contact
-law. We took the average value for each of the \acs{DEM} parameter and we used them 
-in an industrial scale \acs{DEM} simulation, with the same software, 
-of an iron ore sintering process, see Fig. \ref{fig:057sinterChuteOrtoLayout}.
-Especially, we examined the behaviour of these particles in a sinter chute cooler. 
 The particles moved from the top of a specifically designed chute and were 
 collected by moving boxes at the bottom. These boxes were holed at the base, 
 allowing cool air to lower the temperature of the sinter. 
@@ -25,6 +29,10 @@ allowing a more effective distribution of the cool air.
 Especially, the regions
 highlighted in Fig. \ref{fig:055sinterChuteVerticalLayout} and
 Fig. \ref{fig:067sinterchute} for the simulation were investigated.
+
+\section{Numerical considerations for sinter chute simulation}
+\label{sec:numericalconsiderationsforsinterchutesimulation}
+
 The simulation was performed with a maximum of 500,000 particles.
 For a $DEM$ simulation is a huge number, obtained with a coarse graining factor
 of five, meaning that all the particles have radii five time larger than reality.
@@ -38,24 +46,34 @@ infeasible for us.
 % \section{Coarse graining}
 % \label{sec:coarsegraining}
 
-\section{Sinter chute results}
-\label{sec:sinterchuteresults}
+\section{Sinter chute simulation phases}
+\label{sec:sinterchutesimulationphases}
 
 \input{tables/16radii}
 Particles are inserted continuously from the top according to the particle
-distribution in Table \ref{tab:16radii}.
-There are two main phases:
-\begin{itemize}
-  \item{Initial filling: during this phase many small particles deposited inside
-  the chute.}
-  \item{Moving bottom box: also in this phase particles were
+distribution in Table \ref{tab:16radii} in two main phases:
+
+\subsection{Initial filling}
+\label{subsec:initialfilling}
+
+During the initial phase many of the small particles deposited inside the chute,
+while the large majority of the large ones reached the bottom box.
+
+\subsection{Moving bottom box}
+\label{subsec:movingbottombox}
+
+Similarly, also in this phase particles were
 continuously inserted from the top. After the filling was completed, the
 scraper was moved and all the particles beyond a defined surface were
 deleted. Inside the sinter, all the places that small particles could
 occupy already were. At this point the bottom box was filled again, but
-with a more realistic size distribution, and it reached steady state 
-(few screenshots in Fig. \ref{fig:097particlespositions}).}
-\end{itemize}
+with a more realistic size distribution, and it reached steady state.
+Fig. \ref{fig:097particlespositions} show the progressive variation of the
+position of the particles inside the numerical setup.
+
+\section{Sinter chute results}
+\label{sec:sinterchuteresults}
+
 As expected, when the steady state was reached, the particles actually
 segregated, as it was intended to demonstrate.
 We divided the first of the boxes
@@ -75,12 +93,9 @@ The $DEM$ parameters used in the simulation can be found in Table
 \ref{tab:13DEMvalidvalues}.
 The total volume of the particles with different radii in the three considered
 layers, variation with time, can
-be seen in Fig. \ref{fig:096sinterplots}.
-
-\ref{fig:223sinterplots2}\\
+be seen in Fig. \ref{fig:096sinterplots} and \ref{fig:223sinterplots2}.\\
 
 \input{images/066sinterbarplot}
-
 \input{images/097particlespositions}
 \input{images/096sinterplots}
 \input{images/223sinterplots2}
