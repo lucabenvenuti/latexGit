@@ -26,18 +26,50 @@ The results presented in Fig. \ref{fig:068racewaylayout}, Fig.
 \section{Results}
 \label{sec:resultsbf}
 
-The change of sliding friction coefficient bears no effect on the velocity of
-the gases. 
+We considered a portion of the blast furnace center on a single tuyere (x = 0.0,
+y = 0.0, z = 0.0).
+The hot gases are injected along the x direction, and z represents the vertical
+direction.
+The domain is developed as follow:
+\begin{itemize}
+  \item{$0.0 < x < 2.0 m$,}
+  \item{$-0.75 < y_1 < -0.6 m$, $-0.6 < y_2 < 0.6 m$,}
+  \item{$-1.0 < z < 1.5 m$.} 
+\end{itemize}
+
+The change of sliding and rolling friction coefficients bear no effect on the
+velocity of the gases. 
 Their exit path is clearly accessible and the same kinetic energy, and thus velocity, was
-dissipated to displace particles, see Fig. \ref{fig:225racewayu}.\\
+dissipated to displace particles, see Fig. \ref{fig:225racewayu}.
+Instead, the increase of the inlet velocity from 100 m/s to 200 m/s clearly
+increments the raceway area by 50\%.\\
 However, the particles velocity is clearly, and logically, higher for low
 friction particles. They could be moved by the flow more easily compared to high
-friction particles, see Fig. \ref{fig:238racewayus}.\\
+friction particles, see Fig. \ref{fig:238racewayus}.
+Similarly, the increase of the inlet velocity from 100 m/s to 200 m/s clearly
+increments the fast particle area by 50\%.\\
 Concerning the void fraction, low friction allowed a better compaction of the
 particles in the top volume, see Fig. \ref{fig:239racewayvf}.
 Consequently, the gases need to travel less to reach the top empty volume.
 The volume interested by an higher void fraction as effect of the raceway is
-thus smaller.	 
+thus smaller.\\
+If we combine the information from the previous images we obtain Fig.
+\ref{fig:265racewaysummary}.
+As we can see, the only relevant effect for the height and width of the raceway
+area is due to the increase in the inlet velocity. 
+We also investigated the height of the ``chimney'', an area over the
+raceway, where the fluid and particles velocities are still high.
+As can be seen in Fig. \ref{fig:264DeletedParticles}, this value increases
+proportionally to the increase of the friction coefficients, but naturally
+reaches a maximum with the fast inlet velocity simulation.
+The kinetic energy of the fluid could not be dissipated for moving particles
+already in the proximity area of the tuyere.
+Consequently, it has remained high in a larger area.\\
+Further, the low friction particles tend to flow more easily in the raceway volume. 
+Thus, the delete atoms command is more effective than in the high friction case,
+because more particles reach the deletion area.
+Increasing the inlet velocity allows even more particles to reach the area,
+displaced by the fast fluid.
 
 \input{images/225racewayu}
 \input{images/258racewayustd}
