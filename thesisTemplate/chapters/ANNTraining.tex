@@ -190,11 +190,24 @@ comparison (Eq. \ref{eq:checkaor}):
 %************************************************
 \input{equations/checkaor}
 
-\subsection{Value representation}
-\label{subsec:valuerepresentation}
+\section{Sinter fine Characterization}
+\label{sec:sinterfinecharacterization}
 
-We decided to show the valid values achieved through the procedure with three
-compact graphical schemes:
+We realized 6,250,000 parameter of combinations random values for sinter fine.
+Amongst them we searched for values complying with the experimental results.
+Further, we investigated the reliability of the procedure, see Section
+\ref{subsec:reliabilityconsiderations}.\\
+The comparison between numerical and experimental behaviours led to a first
+series of marked combinations ($MC1$) for two load conditions of
+the shear cell:
+\begin{itemize}
+  \item{$\acs{sigman} = 1,068$ Pa, P=1.0, as plotted in Fig.
+  \ref{fig:041radarpirker1schulze1068},}
+  \item{$\acs{sigman} = 10,070$ Pa, P=1.0, as plotted in Fig.
+  \ref{fig:024radarpirker1schulze10070}.}
+\end{itemize}
+We decided to show the valid values achieved through the procedure for every
+material analyzed with three compact graphical schemes:
 
 \begin{itemize}
   \item{parameter space plot,}
@@ -202,11 +215,15 @@ compact graphical schemes:
   \item{density plot.}
 \end{itemize}
 
-\subsubsection{Parameter space plot}
-\label{subsubsec:parameterspaceplot}
+In the following sections, the plots regarding the sinter fine with
+$\acs{sigman} = 10,070$ Pa are discussed and interpreted as pattern for each
+material in each load condition.
+
+\subsection{Parameter space plot}
+\label{subsec:parameterspaceplot}
 
 An example of a parameter space plot can be seen
-in Fig. \ref{fig:041radarpirker1schulze1068}.
+in Fig. \ref{fig:024radarpirker1schulze10070}.
 On the axes we can see:
 \begin{itemize}
   \item{the \acl{CoR} (\acs{CoR}),}
@@ -234,14 +251,27 @@ Further, are shown:
 
 The shaded area indicates valid parameter combinations, and dark shaded
 values indicate the confidence range.
-This plot is especially interesting for reliability consideration, see Section
-\ref{subsec:reliabilityconsiderations}.
+As expected, the two shaded areas cover the majority of the plot, proving at the
+same time 1) the non-unicity of the solution for the characterization problem
+and 2) the possible solutions may largerly vary over the domain.\\
+However, the confidence range gives more punctual information.
+Note that the confidence interval is large, 
+especially for the \acs{CoR}, which highlights its insignificant influence on the
+characterization.
+Both the \acs{rhop} and the \acs{mus}, however, show a narrow confidence interval, 
+which demonstrates their influence and the ability of this procedure to find
+valid \acs{DEM} parameters.
+Further, the mean values for the \acs{mus} and the \acs{mur} are
+comparable to the highly friction resistant materials described in the literature \cite{RefWorks:175}.
+These results agree with our
+examination of the ratio of the standard deviation to the range, see Table \ref{tab:13DEMvalidvalues}.
+Finally, this plot is especially interesting for reliability consideration, see
+Section \ref{subsec:reliabilityconsiderations}.
 
-\input{images/149paramspaceplotsct1068}
+\input{images/079sctparameterspaceplots}
 
-
-\subsubsection{Box plot}
-\label{subsubsec:boxplot}
+\subsection{Box plot}
+\label{subsec:boxplot}
   
 An example of a box plot can be seen
 in Fig. \ref{fig:145BoxSCT1068p08sinterfine}.
@@ -252,81 +282,52 @@ contain a quarter of the data each.\\
 In a box plot the values between the first quartile (25\%) and the third
 quartile (75\%) are included in a blue box.
 Further, so called \textit{baffles} or \textit{whishers} are lines, which are
-extended as far as the minimum and maximum values.
+extended as far as the minimum and maximum values not considered outliers.
+The data which exceed the whishers are represented with red crosses.
 Finally, the median is represented as a red straight line.
 Values are normalized, meaning that for each input value the maximum extracted
-is one.
+is one.\\
+The representation through box plots in Fig.
+\ref{fig:075sctboxplot} is consistent for the the \acs{rhop} and the
+\acs{mus} with those shown in the parameter space plot in Fig.
+\ref{fig:024radarpirker1schulze10070}.
+However, the box plot representation helps to underline the much higher level of
+variability for the \acs{mur} compared to the \acs{CoR}.
+This can be explained if we consider again the non-unicity of the solution and
+how the \acs{mur} has a reduced influence on the shear cell results compared to
+the \acs{mus}.
+This aspect is even clear in a density plot.
 
-\input{images/146boxplotsct1068}
+\input{images/156boxplotsct10070sinterfine}
 
-\subsubsection{Density plot}
-\label{subsubsec:densityplot}
+\subsection{Density plot}
+\label{subsec:densityplot}
 
 Further, we observed that various \acs{DEM} parameter
 combinations could reproduce the experimental behaviour, and thus evaluated
 their mutual dependencies.
 This is shown more clearly in a density plot (e.g., Fig. 
-\ref{fig:152TileSCT1068p08sinterfine}) 
+\ref{fig:159TileSCT10070p08sinterfine}) 
 of the particles' coefficient of restitution (\acs{CoR}) in relation to
-the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}); 
-in the white area, no valid sets of simulation parameters could be found.
+the coefficients of sliding friction (\acs{mus}) and rolling friction (\acs{mur}).
+The \acs{rhop} was not considered, since every valid combination has the same
+value for it (or a close number).\\
+In the white area, no valid sets of simulation parameters could be found.
 In each cell the valid sets are grouped according to the 4 different COR
 ranges.
-Each cell is coloured according to the group with the most members.
-
-\input{images/155tileplotsct1068sinterfine}
-
-%************************************************
-%************************************************
-
-\section{Sinter fine Characterization}
-\label{sec:sinterfinecharacterization}
-
-We realized 6,250,000 parameter of combinations random values for sinter fine.
-Amongst them we searched for values complying with the experimental results.
-Further, we investigated the reliability of the procedure, see Section
-\ref{subsec:reliabilityconsiderations}.
-
-\subsection{SCT parameter space plot for Sinter fine}
-\label{subsec:sctparameterspacesinterfine}
-
-\input{images/079sctparameterspaceplots}
-
-The comparison between numerical and experimental behaviours led to a first
-series of marked combinations ($MC1$) for two load conditions of
-the shear cell:
-\begin{itemize}
-  \item{$\acs{sigman} = 1,068$ Pa, P=1.0, as plotted in Fig.
-  \ref{fig:041radarpirker1schulze1068},}
-  \item{$\acs{sigman} = 10,070$ Pa, P=1.0, as plotted in Fig.
-  \ref{fig:024radarpirker1schulze10070}.}
-\end{itemize}
-Note that the confidence interval is large, 
-especially for the \acs{CoR}, which highlights its insignificant influence on the
-characterization.
-Both the \acs{rhop}  and the \acs{mus}, however, show a narrow confidence interval, 
-which demonstrates their influence and the ability of this procedure to find
-valid \acs{DEM} parameters.
-These results agree with our examination of the ratio of the standard deviation
-to the range, see Table \ref{tab:13DEMvalidvalues}.
-
-\subsection{SCT box plot for Sinter fine}
-\label{subsec:sctboxsinterfine}
-
-The representation through box plots in Fig.
-\ref{fig:156boxplotsct10070sinterfine} is consistent with those shown in the
-previous Section \ref{subsec:sctparameterspacesinterfine}.
-
-\input{images/156boxplotsct10070sinterfine}
-
-\subsection{SCT cloud space}
-\label{subsec:sctcloudspace}
-
-Multiple
+Each cell is coloured according to the group with the most members.\\
+It is clear their correlation, as already stated by Wensrich and 
+Katterfeld \cite{RefWorks:87}.
+For high values of the \acs{CoR} small values for \acs{mus} and \acs{mur} are
+sufficient to reach the desired frictional bulk values.
+On the other hand, with low \acs{CoR} values, high numbers for the friction
+micro coefficients are necessary to achieve the same results.
+This effect agrees with the contact law used, described in Chapter
+\ref{cap:dem}.\\
+For the $\acs{sigman} = 10,070$ Pa, P=1.0 case, Fig.
+\ref{fig:160TileSCT10070p10sinterfine}, multiple
 combinations (250,407 or 4\% of the total) of \acs{mus} and \acs{mur} reproduced
 the experimental behaviour with varying \acs{CoR}.
-This underlines once more their correlation, as already stated by Wensrich and 
-Katterfeld \cite{RefWorks:87}.
 
 \input{images/080sctdensityplots}
 
@@ -353,6 +354,16 @@ shows a smaller area. As expected, the procedure was highly sensitive to
 variations in the experimental data.
 Our approach could therefore be used
 for a wide range of bulk materials.\\
+
+%************************************************
+%************************************************
+
+\subsection{Sinter fine 1068}
+\label{subsec:sinterfine1068}
+
+\input{images/149paramspaceplotsct1068}
+\input{images/146boxplotsct1068}
+\input{images/155tileplotsct1068sinterfine}
 
 \subsection{AoR results}
 \label{subsec:aorresults}
@@ -448,8 +459,7 @@ Fig. \ref{fig:192TileMixcokefine_3} shows the valid values.
 
 The iron ore coarse is subject to the identical considerations of coke coarse,
 shown in Section \ref{subsec:cokecoarsecharacterization}.
-Fig. \ref{fig:213boxplotsironorecoarse} and Fig.
-\ref{fig:214tileplotsironorecoarse}, together with Table
+Fig. \ref{fig:213boxplotsironorecoarse}, together with Table
 \ref{tab:27DEMvalidvaluesironorecoarse}, show the final values.
 
 \input{tables/27DEMvalidvaluesironorecoarse}
@@ -462,8 +472,7 @@ Fig. \ref{fig:213boxplotsironorecoarse} and Fig.
 
 Even the iron ore fine is subject to the identical considerations of coke
 fine, shown in Section \ref{subsec:cokefinecharacterization}.
-Fig. \ref{fig:215boxplotsironorefine} and Fig.
-\ref{fig:216tileplotsironorefine}, together with Table
+Fig. \ref{fig:215boxplotsironorefine}, together with Table
 \ref{tab:28DEMvalidvaluesironorefine}, show the final values.
 
 \input{tables/28DEMvalidvaluesironorefine}
