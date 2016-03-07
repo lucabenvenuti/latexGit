@@ -8,85 +8,54 @@
 \label{cap:blastfurnace}
 %************************************************
 
-\info{incomplete}
+\section{Blast furnace design}
+\label{sec:bfdesign}
 
-The raceway, a critical portion of the blast furnace (Fig.
-\ref{fig:068racewaylayout}), was investigated.
-We performed a limited number of simulations of this volume to investigate the
-effect of the variation of the \acl{mus} (\acs{mus}).\\
-The results presented in Fig. \ref{fig:068racewaylayout}, Fig.
-\ref{fig:225racewayu}, Fig. \ref{fig:238racewayus}, and Fig.
-\ref{fig:239racewayvf} were later compared with the literature data from
-\citet{RefWorks:208}.
+Well explained in the vast literature (\cite{RefWorks:203}), 
+iron making consists in separating the iron from its chemical combination with
+oxygen. 
+As of now, the blast furnace (Fig. \ref{fig:125blastfurnace}) is considered the
+most efficient process.
 
-\input{images/068racewaylayout}
+\input{images/319raceway}
 
-\newpage
+\subsection{Structure}
+\label{subsec:bfstructure}
+
+The blast furnace is a massive vertical apparatus, built with consistent amounts
+of refractory materials and a robust steel shell.
+The areas in front of each tuyere, which can be seen in Fig.
+\ref{fig:125blastfurnace}, is called $raceway$ and is the most active. 
+We dedicated this chapter to the investigation of its behaviour.
+
+\subsection{Simulation layout}
+\label{subsec:simulationlayout}
+
+Given its axial-symmetric geometry and according to \citet{RefWorks:208}, we
+considered only a wedge and applied periodic boundary conditions.
+Three tuyeres and a sufficiently high space over and under them were used to
+grant uniform conditions.
+As in \citet{RefWorks:208}, 15,000 cells were created for the mesh, shown in
+Fig. \ref{fig:273layoutbf}. We performed a
+limited number of simulations of this volume to investigate the effect of the
+variation of the \acl{mus} (\acs{mus}).
+
+\input{images/273layoutbf}
 
 \section{Results}
 \label{sec:resultsbf}
 
-We considered a portion of the blast furnace center on a single tuyere (x = 0.0,
-y = 0.0, z = 0.0).
-The hot gases are injected along the x direction, and z represents the vertical
-direction.
-The domain is developed as follow:
-\begin{itemize}
-  \item{$0.0 < x < 2.0 m$,}
-  \item{$-0.75 < y_1 < -0.6 m$, $-0.6 < y_2 < 0.6 m$,}
-  \item{$-1.0 < z < 1.5 m$.} 
-\end{itemize}
+\info{incomplete}
 
-The change of sliding and rolling friction coefficients bear no effect on the
+The change of sliding friction coefficients bear no effect on the
 velocity of the gases. 
-Their exit path is clearly accessible and the same kinetic energy, and thus velocity, was
-dissipated to displace particles, see Fig. \ref{fig:225racewayu}.
-Instead, the increase of the inlet velocity from 100 m/s to 200 m/s clearly
-increments the raceway area by 50\%.\\
 However, the particles velocity is clearly, and logically, higher for low
-friction particles. They could be moved by the flow more easily compared to high
-friction particles, see Fig. \ref{fig:238racewayus}.
-Similarly, the increase of the inlet velocity from 100 m/s to 200 m/s clearly
-increments the fast particle area by 50\%.\\
-Concerning the void fraction, low friction allowed a better compaction of the
-particles in the top volume, see Fig. \ref{fig:239racewayvf}.
-Consequently, the gases need to travel less to reach the top empty volume.
-The volume interested by an higher void fraction as effect of the raceway is
-thus smaller.\\
-If we combine the information from the previous images we obtain Fig.
-\ref{fig:265racewaysummary}.
-As we can see, the only relevant effect for the height and width of the raceway
-area is due to the increase in the inlet velocity. 
-We also investigated the height of the ``chimney'', an area over the
-raceway, where the fluid and particles velocities are still high.
-As can be seen in Fig. \ref{fig:264DeletedParticles}, this value increases
-proportionally to the increase of the friction coefficients, but naturally
-reaches a maximum with the fast inlet velocity simulation.
-The kinetic energy of the fluid could not be dissipated for moving particles
-already in the proximity area of the tuyere.
-Consequently, it has remained high in a larger area.\\
-Further, the low friction particles tend to flow more easily in the raceway volume. 
-Thus, the delete atoms command is more effective than in the high friction case,
-because more particles reach the deletion area.
-Increasing the inlet velocity allows even more particles to reach the area,
-displaced by the fast fluid.
-\input{images/273layoutbf}
-\input{images/286hor_slice_01ms}
-\input{images/298verticalslicelf}
-\input{images/282verticalslicehf}
+friction particles. 
+They could be moved by the flow more easily compared to high
+friction particles, see Fig. \ref{fig:300us_average_lf}.
+
 \input{images/299u_average_lf}
-\input{images/283u_average_hf}
 \input{images/300us_average_lf}
-\input{images/284us_average_hf}
 
-% \input{images/225racewayu}
-% \input{images/258racewayustd}
-% \input{images/238racewayus}
-% \input{images/259racewayusstd}
-% \input{images/239racewayvf}
-% \input{images/260racewayvfstd}
-% \input{images/265racewaysummary}
-
-
-% Later, we trained a dedicated \acs{ANN} to evaluate the contribution of each of
-% these parameters over the final results.
+\input{images/298verticalslicelf}
+\input{images/286hor_slice_01ms}
