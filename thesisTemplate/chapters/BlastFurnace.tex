@@ -28,18 +28,28 @@ The areas in front of each tuyere, which can be seen in Fig.
 \ref{fig:125blastfurnace}, is called $raceway$ and is the most active. 
 We dedicated this chapter to the investigation of its behaviour.
 
-\subsection{Simulation layout}
-\label{subsec:simulationlayout}
+\subsection{Simulation prerequisites}
+\label{subsec:simulationprerequisites}
 
 Given its axial-symmetric geometry and according to \citet{RefWorks:208}, we
 considered only a wedge and applied periodic boundary conditions.
 Three tuyeres and a sufficiently high space over and under them were used to
 grant uniform conditions.
 As in \citet{RefWorks:208}, 15,000 cells were created for the mesh, shown in
-Fig. \ref{fig:273layoutbf}. We performed a
-limited number of simulations of this volume to investigate the effect of the
-variation of the \acl{mus} (\acs{mus}).
+Fig. \ref{fig:273layoutbf}. 
+We performed two of simulations of this volume to investigate the effect of the
+variation of the \acl{mus} (\acs{mus}):
+\begin{enumerate}
+  \item{\acs{mus} = 0.1, or reduced,}
+  \item{\acs{mus} = 0.9, or real, obtained from the parameter identification.}
+\end{enumerate}
+The remaining \acs{DEM} parameters can be found in Table
+\ref{tab:36BFDEMvalues}, derived from the parameters identified in the previous
+Chapter \ref{cap:anntraining}.
+The procedure to obtain the equivalent \acs{DEM} parameters from those of the
+materials involved can be found in \citet{RefWorks:208}.
 
+\input{tables/36BFDEMvalues}
 \input{images/273layoutbf}
 
 \section{Results}
