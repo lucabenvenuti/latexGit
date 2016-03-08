@@ -37,8 +37,11 @@ Three tuyeres and a sufficiently high space over and under them were used to
 grant uniform conditions.
 As in \citet{RefWorks:208}, 15,000 cells were created for the mesh, shown in
 Fig. \ref{fig:273layoutbf}. 
-We performed two of simulations of this volume to investigate the effect of the
-variation of the \acl{mus} (\acs{mus}):
+The tuyeres were considered as inlets. Air is inserted with a velocity of 100
+m/s, a density of $1.1885 kg/m^3$ and a kinematic viscosity of $1.5 \cdot
+10^{-5} m^2/s$.\\
+We performed two of simulations of this volume to investigate
+the effect of the variation of the \acl{mus} (\acs{mus}):
 \begin{enumerate}
   \item{\acs{mus} = 0.1, or reduced,}
   \item{\acs{mus} = 0.9, or real, obtained from the parameter identification.}
@@ -47,7 +50,12 @@ The remaining \acs{DEM} parameters can be found in Table
 \ref{tab:36BFDEMvalues}, derived from the parameters identified in the previous
 Chapter \ref{cap:anntraining}.
 The procedure to obtain the equivalent \acs{DEM} parameters from those of the
-materials involved can be found in \citet{RefWorks:208}.
+materials involved can be found in \citet{RefWorks:208}, together with the
+particle distribution, which drove us into using approximately 160,000 particles
+for each simulation.
+This amount allowed us to completely filled the setup.
+On top, a servo-wall, similar to the \asc{SCT} simulation, consented to apply
+the correct load conditions inside the system.
 
 \input{tables/36BFDEMvalues}
 \input{images/273layoutbf}
@@ -55,17 +63,30 @@ materials involved can be found in \citet{RefWorks:208}.
 \section{Results}
 \label{sec:resultsbf}
 
+\subsection{Fluid velocity}
+\label{subsec:fluidvelocity}
+
 \info{incomplete}
 
 The change of sliding friction coefficients bear no effect on the
 velocity of the gases. 
+
+\input{images/299u_average_lf}
+
+\subsection{Particle velocity}
+\label{subsec:particlevelocity}
+
 However, the particles velocity is clearly, and logically, higher for low
 friction particles. 
 They could be moved by the flow more easily compared to high
 friction particles, see Fig. \ref{fig:300us_average_lf}.
 
-\input{images/299u_average_lf}
+
 \input{images/300us_average_lf}
 
 \input{images/298verticalslicelf}
+
+\subsection{Penetration depth}
+\label{subsec:penetrationdepth}
+
 \input{images/286hor_slice_01ms}
