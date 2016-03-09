@@ -33,8 +33,8 @@ We dedicated this chapter to the investigation of its behaviour.
 
 Given its axial-symmetric geometry and according to \citet{RefWorks:208}, we
 considered only a wedge and applied periodic boundary conditions.
-Three tuyeres and a sufficiently high space over and under them were used to
-grant uniform conditions.
+Three tuyeres, instead of a single one, and a sufficiently high space over and
+under them were used to grant uniform conditions.
 As in \citet{RefWorks:208}, 15,000 cells were created for the mesh, shown in
 Fig. \ref{fig:273layoutbf}. 
 The tuyeres were considered as inlets. Air is inserted with a velocity of 100
@@ -56,6 +56,7 @@ for each simulation.
 This amount allowed us to completely filled the setup.
 On top, a servo-wall, similar to the \acs{SCT} simulation, consented to apply
 the correct load conditions inside the system.
+Each simulation lasted 195 hours on a 32 cores machine.
 
 \input{tables/36BFDEMvalues}
 \input{images/273layoutbf}
@@ -65,31 +66,82 @@ the correct load conditions inside the system.
 
 In accordance to the literature (\cite{RefWorks:203, RefWorks:208}) we focused
 on the gases, or fluid, velocity and the particles velocity in a vertical slice
-of the simulation domain of the two simulations.
-Further, we investigated the penetration depth of the raceway 
+of the simulation domain of the two simulations, in correspondance of the most
+inner inlet.
+Further, we investigated the penetration depth of the raceway in an horizontal
+slice of the system, following the indications of \citet{RefWorks:208}.
 
 \subsection{Fluid velocity}
 \label{subsec:fluidvelocity}
 
-The change of sliding friction coefficients bear no effect on the
-velocity of the gases. 
+As thoroughly explained in the literature (\cite{RefWorks:198, RefWorks:199}),
+the change of sliding friction coefficients bear limited effect on the velocity
+of the gases. In Fig. \ref{fig:299u_average_lf} we plotted the spatially
+interpolated values for the fluid velocity, together with the velocity vector
+arrows and the stream lines, for the two simulations investigated.
 
 \input{images/299u_average_lf}
 
 \subsection{Particle velocity}
 \label{subsec:particlevelocity}
 
-However, the particles velocity is clearly, and logically, higher for low
-friction particles. 
+On the other hand, and again according to the literature (\cite{RefWorks:198,
+RefWorks:199}), the particles velocity is clearly, and logically, higher for low friction particles. 
 They could be moved by the flow more easily compared to high
 friction particles, see Fig. \ref{fig:300us_average_lf}.
-
+Again, the spatially
+interpolated values for the particles velocity, together with the velocity
+vector arrows and the stream lines, for the two simulations investigated, can be seen.
+In this plot the particles are represented as a fluid occupying the particles
+space. 
+Thus, a certain degree of smoothing must be taken into account.
+However, the raceway area is clearly larger in the reduced \acs{mus}
+simulation, testifying the consistent effect of this parameter in the overall
+results. \\
 
 \input{images/300us_average_lf}
+
+We decided for this reason to represent each particle present in the domain
+slice considered in Fig. \ref{fig:298verticalslicelf}.
+As suggested by \citet{RefWorks:208}, we colored differently the particles
+faster or slower than a series of fixed velocity thresholds. 
+So, we were able to investigate to which extent
+from the inlet particles were set into motion.\\
+It is clearly visible that the red, and faster, particles are in superior
+numbers for the low friction simulations.
+Further, in the high friction case, we can see in Fig.
+\ref{fig:268ver_slice_001mshf} that there are low velocities area even close to
+the raceway, condition not present in the low friction case.
 
 \input{images/298verticalslicelf}
 
 \subsection{Penetration depth}
 \label{subsec:penetrationdepth}
+
+\citet{RefWorks:208} calculates the raceway penetration depth with Merry's
+model:
+\input{equations/racewaypenetration}
+with $d_T$ as the tuyere diameter, $d_p$ is the particle diameter, averaged in
+our case, $\rho_f$ and $\rho_p$ are the fluid and particle
+density, respectively. Of course, $u$ is the inlet velocity and $g$ represents
+the gravitational constant.
+Her results estimate a penetration depth of 0.8 meters.\\
+Our results, shown in Fig. \ref{fig:286hor_slice_01ms}, were inferior to this
+estimation.
+\citet{RefWorks:208} suggested two main reasons for the discrepancy between
+\acs{CFD}-\acs{DEM} numerical results and theoretical analysis: a) only the
+particles with size over a defined diameter were modelled, and b) the void
+fraction inside the experimental setup is unknown and, thus, impossible to model
+reliably.\\
+Especially, a) was due to computational considerations.
+Including in the particle distribution even the small particles led to an
+increase of the amount of particles to more than half a million.
+In addition, this brought the computational time for a single simulation with 32
+cores to exceed a month duration.
+We attempted to reduce the simulation domain to keep the particle distribution
+and to consider at the same time a reduced amount of particles.
+Due to the unsufficient volume, the raceway could not properly develop, the
+results were inconclusive, and even channeling was observed.
+A complete discussion of this attempt is out of the scope of this thesis.
 
 \input{images/286hor_slice_01ms}
