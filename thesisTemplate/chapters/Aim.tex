@@ -18,8 +18,6 @@ As the following chapters will show, we divided this task in two sections:
   \item{applications, in part \ref{par:applications}.}
 \end{enumerate}
 
-\info{aim for regression from pca}
-
 \section{Aim for Neural Network}
 \label{sec:aimforneuralnetwork}
 
@@ -30,9 +28,14 @@ In our case, we fed an \acs{ANN} with \acs{DEM} contact law parameters as input
 and compared the output with the bulk behaviour 
 predicted by a corresponding \acs{DEM} simulation. 
 The difference between \acs{ANN} prediction and \acs{DEM} prediction was used to
-train our specific \acs{ANN} with a backward-propagation algorithm. 
+train our specific \acs{ANN} with a backward-propagation algorithm, comprising a
+limited number of \acs{DEM} test simulations.\\
 \input{images/127anntraining}
-After a training phase comprising a limited number of \acs{DEM} test simulations,
+This \acs{ANN} based regression was compared with two standardized regression
+methods, namely the Bayesian linear and the Gaussian non linear.
+By comparing the fitting errors or each method, we were able to demonstrate that
+the \acs{ANN} was the most effective.
+After the training phase,
 the \acs{ANN} could then be used as a stand-alone prediction tool for the bulk behaviour of a 
 granular material in relation to \acs{DEM} contact law parameters, see Fig.
 \ref{fig:127anntraining}. \\
@@ -46,8 +49,8 @@ For both cases we obtained valid sets of contact law parameters,
 which we then compared to formulate a reliable contact law for a given
 granular material.
 We further showed that the same \acs{ANN} could be used to characterize different
-granular materials, which have the same particle behaviour and could modelled with the same contact
-law.
+granular materials, which have the same particle behaviour and could be modelled
+with the same contact law.
 
 \input{images/019methodology}
 
@@ -76,7 +79,7 @@ We followed a different procedure, see Chapter \ref{cap:anntraining}.\\
 To avoid the macroscopic plastic deformations analysed by Harthong et al. \cite{RefWorks:183} 
 we checked for each simulation for its total duration that the packing density was 
 lower than a defined limit. 
-This threshold (0.671) was given by the packing density of the close random packing with the 
+This threshold was given by the packing density of the close random packing with the 
 same size distribution, as suggested and with the software provided by Baranau, Tallarek 
 et al. \cite{RefWorks:182, RefWorks:185}.
 The experimental characterization was performed at environmental temperature and thus 
