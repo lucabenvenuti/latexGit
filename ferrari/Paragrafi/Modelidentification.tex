@@ -14,15 +14,66 @@ Specific operating ranges  in N/alpha domain:
 	\item{Validation data: JKU DOE 1 ($data_acq_tuesday_jkucycle001$).}
 \end{itemize}
 
+\subsection{Left turbo revolutions (giri tsx)}
+\begin{itemize}
+	\item{inputs: Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
+	\item{output: Left turbo revolutions (giri tsx)}
+\end{itemize}	
 
+\input{Paragrafi/inputs_P2_SX_P5_SX___outputs_GIRI_TSX}
+
+
+\subsection{Intercooler left way out air pressure(P5 SX)}
+\begin{itemize}
+	\item{inputs: Turbocharger Left Way Out Air Pressure (P2 Sx), Left turbo revolutions (giri tsx)}
+	\item{output: Intercooler left way out air pressure(P5 SX)}
+\end{itemize}	
+
+\input{Paragrafi/inputs_GIRI_TSX_P2_SX___outputs_P5_SX}
+
+\subsection{Turbocharger Left Way Out Air Pressure (P2 Sx)}
+\begin{itemize}
+	\item{inputs: Intercooler left way out air pressure(P5 SX), Left turbo revolutions (giri tsx)}
+	\item{output: Turbocharger Left Way Out Air Pressure (P2 Sx)}
+\end{itemize}	
+
+\input{Paragrafi/inputs_P5_SX_GIRI_TSX___outputs_P2_SX}
+
+%%%%
+
+\subsection{Right turbo revolutions (giri tdx)}
+\begin{itemize}
+	\item{inputs: Turbocharger Right Way Out Air Pressure (P2 Dx), Intercooler right way out air pressure(P5 DX)}
+	\item{output: Right turbo revolutions (giri tdx)}
+\end{itemize}	
+
+\input{Paragrafi/inputs_P2_DX_P5_DX___outputs_GIRI_TDX}
+
+
+\subsection{Intercooler right way out air pressure(P5 DX)}
+\begin{itemize}
+	\item{inputs: Turbocharger Right Way Out Air Pressure (P2 Dx), Right turbo revolutions (giri tdx)}
+	\item{output: Intercooler right way out air pressure(P5 DX)}
+\end{itemize}	
+
+\input{Paragrafi/inputs_GIRI_TDX_P2_DX___outputs_P5_DX}
 
 \subsection{Turbocharger Right Way Out Air Pressure (P2 Dx)}
 \begin{itemize}
-	\item{inputs: actual engine torque (copp kgm), ingnition angle (zwout)}
-	\item{output: turbocharger right way out air pressure (p2 dx)}
+	\item{inputs: Intercooler right way out air pressure(P5 DX), Right turbo revolutions (giri tdx)}
+	\item{output: Turbocharger Right Way Out Air Pressure (P2 Dx)}
 \end{itemize}	
 
-%\input{Paragrafi/inputs_P2_SX_P5_SX___outputs_GIRI_TDX}
+\input{Paragrafi/inputs_P5_DX_GIRI_TDX___outputs_P2_DX}
+
+
+%Intercooler right way out air pressure(P5 DX)
+%Turbocharger Right Way Out Air Pressure (P2 Dx)
+%Right turbo revolutions (giri tdx)
+
+
+
+
 
 %%\input{Immagini/inputsCOPP_KGM-zwout-outputsP2_DX-1}
 %%\input{Immagini/inputsCOPP_KGM-zwout-outputsP2_DX-2}
