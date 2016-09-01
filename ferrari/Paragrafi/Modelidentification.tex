@@ -14,6 +14,8 @@ Specific operating ranges  in N/alpha domain:
 	\item{Validation data: JKU DOE 1 ($data_acq_tuesday_jkucycle001$).}
 \end{itemize}
 
+Please consider: number of poles (np), number of zeros (nz),polynomial degree (dPl), order of target y (oY), fit value with down sampling of 50  500 ms (ft50), MAX ERROR with down sampling of 50  (mxDf50), mean square error with down sampling of 50 (mse50), etc with higher down sampling.
+
 \subsection{Left turbo revolutions (giri tsx)}
 \begin{itemize}
 	\item{inputs: Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
@@ -22,22 +24,57 @@ Specific operating ranges  in N/alpha domain:
 
 \input{Paragrafi/inputs_P2_SX_P5_SX___outputs_GIRI_TSX}
 
-
-\subsection{Intercooler left way out air pressure(P5 SX)}
+\subsection{Left turbo revolutions (giri tsx)}
 \begin{itemize}
-	\item{inputs: Turbocharger Left Way Out Air Pressure (P2 Sx), Left turbo revolutions (giri tsx)}
-	\item{output: Intercooler left way out air pressure(P5 SX)}
+	\item{inputs: engine revolutions (nmot w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx)}
+	\item{output: Left turbo revolutions (giri tsx)}
 \end{itemize}	
 
-\input{Paragrafi/inputs_GIRI_TSX_P2_SX___outputs_P5_SX}
+\input{Paragrafi/inputs_nmot_w_trqCLth_PRIST_W_MSHFM1_P2_SX___outputs_GIRI_TSX}
 
-\subsection{Turbocharger Left Way Out Air Pressure (P2 Sx)}
+\subsection{Left turbo revolutions (giri tsx)}
 \begin{itemize}
-	\item{inputs: Intercooler left way out air pressure(P5 SX), Left turbo revolutions (giri tsx)}
-	\item{output: Turbocharger Left Way Out Air Pressure (P2 Sx)}
+	\item{inputs: engine revolutions (nmot w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
+	\item{output: Left turbo revolutions (giri tsx)}
 \end{itemize}	
 
-\input{Paragrafi/inputs_P5_SX_GIRI_TSX___outputs_P2_SX}
+\input{Paragrafi/inputs_nmot_w_trqCLth_PRIST_W_MSHFM1_P2_SX_P5_SX___outputs_GIRI_TSX}
+
+\subsection{Left turbo revolutions (giri tsx)}
+\begin{itemize}
+	\item{inputs: engine revolutions (nmot w), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
+	\item{output: Left turbo revolutions (giri tsx)}
+\end{itemize}	
+
+\input{Paragrafi/inputs_nmot_w_pvd_w_trqCLth_PRIST_W_MSHFM1_P2_SX_P5_SX___outputs_GIRI_TSX}
+
+
+%\subsection{Left turbo revolutions (giri tsx)}
+%\begin{itemize}
+%	\item{inputs: actual engine power (pot kw), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
+%	\item{output: Left turbo revolutions (giri tsx)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_POT_KW_pvd_w_trqCLth_PRIST_W_MSHFM1_P2_SX_P5_SX___outputs_GIRI_TSX}
+
+
+
+
+%\subsection{Intercooler left way out air pressure(P5 SX)}
+%\begin{itemize}
+%	\item{inputs: Turbocharger Left Way Out Air Pressure (P2 Sx), Left turbo revolutions (giri tsx)}
+%	\item{output: Intercooler left way out air pressure(P5 SX)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_GIRI_TSX_P2_SX___outputs_P5_SX}
+%
+%\subsection{Turbocharger Left Way Out Air Pressure (P2 Sx)}
+%\begin{itemize}
+%	\item{inputs: Intercooler left way out air pressure(P5 SX), Left turbo revolutions (giri tsx)}
+%	\item{output: Turbocharger Left Way Out Air Pressure (P2 Sx)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_P5_SX_GIRI_TSX___outputs_P2_SX}
 
 %%%%
 
@@ -50,44 +87,60 @@ Specific operating ranges  in N/alpha domain:
 \input{Paragrafi/inputs_P2_DX_P5_DX___outputs_GIRI_TDX}
 
 
-\subsection{Intercooler right way out air pressure(P5 DX)}
+%\subsection{Intercooler right way out air pressure(P5 DX)}
+%\begin{itemize}
+%	\item{inputs: Turbocharger Right Way Out Air Pressure (P2 Dx), Right turbo revolutions (giri tdx)}
+%	\item{output: Intercooler right way out air pressure(P5 DX)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_GIRI_TDX_P2_DX___outputs_P5_DX}
+%
+%\subsection{Turbocharger Right Way Out Air Pressure (P2 Dx)}
+%\begin{itemize}
+%	\item{inputs: Intercooler right way out air pressure(P5 DX), Right turbo revolutions (giri tdx)}
+%	\item{output: Turbocharger Right Way Out Air Pressure (P2 Dx)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_P5_DX_GIRI_TDX___outputs_P2_DX}
+
+\subsection{Right turbo revolutions (giri tdx)}
 \begin{itemize}
-	\item{inputs: Turbocharger Right Way Out Air Pressure (P2 Dx), Right turbo revolutions (giri tdx)}
-	\item{output: Intercooler right way out air pressure(P5 DX)}
+	\item{inputs: engine revolutions (nmot w), actual engine torque (trqCLth), rail pressure real value Right side (prist w), air flow Right side (mshfm1), Turbocharger Right Way Out Air Pressure (P2 Dx)}
+	\item{output: Right turbo revolutions (giri tdx)}
 \end{itemize}	
 
-\input{Paragrafi/inputs_GIRI_TDX_P2_DX___outputs_P5_DX}
+\input{Paragrafi/inputs_nmot_w_trqCLth_prist_w_mshfm1_P2_DX___outputs_GIRI_TDX}
 
-\subsection{Turbocharger Right Way Out Air Pressure (P2 Dx)}
+\subsection{Right turbo revolutions (giri tdx)}
 \begin{itemize}
-	\item{inputs: Intercooler right way out air pressure(P5 DX), Right turbo revolutions (giri tdx)}
-	\item{output: Turbocharger Right Way Out Air Pressure (P2 Dx)}
+	\item{inputs: engine revolutions (nmot w), actual engine torque (trqCLth), rail pressure real value Right side (prist w), air flow Right side (mshfm1), Turbocharger Right Way Out Air Pressure (P2 Dx), Intercooler Right way out air pressure(P5 DX)}
+	\item{output: Right turbo revolutions (giri tdx)}
 \end{itemize}	
 
-\input{Paragrafi/inputs_P5_DX_GIRI_TDX___outputs_P2_DX}
+\input{Paragrafi/inputs_nmot_w_trqCLth_prist_w_mshfm1_P2_DX_P5_DX___outputs_GIRI_TDX}
 
-\subsection{Left turbo revolutions (giri tsx)}
+\subsection{Right turbo revolutions (giri tdx)}
 \begin{itemize}
-	\item{inputs: actual engine power (pot kw), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
-	\item{output: Left turbo revolutions (giri tsx)}
+	\item{inputs: engine revolutions (nmot w), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value Right side (prist w), air flow Right side (mshfm1), Turbocharger Right Way Out Air Pressure (P2 Dx), Intercooler Right way out air pressure(P5 DX)}
+	\item{output: Right turbo revolutions (giri tdx)}
 \end{itemize}	
 
-\input{Paragrafi/inputs_POT_KW_pvd_w_trqCLth_PRIST_W_MSHFM1_P2_SX_P5_SX___outputs_GIRI_TSX}
+\input{Paragrafi/inputs_nmot_w_pvd_w_trqCLth_prist_w_mshfm1_P2_DX_P5_DX___outputs_GIRI_TDX}
 
-\subsection{Left turbo revolutions (giri tsx)}
-\begin{itemize}
-	\item{inputs: engine revolutions (nmot w), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value left side (PRIST W), air flow left side (MSHFM1), Turbocharger Left Way Out Air Pressure (P2 Sx), Intercooler left way out air pressure(P5 SX)}
-	\item{output: Left turbo revolutions (giri tsx)}
-\end{itemize}	
+%\subsection{Right turbo revolutions (giri tdx)}
+%\begin{itemize}
+%	\item{inputs: actual engine power (pot kw), boost pressure (pvd w), actual engine torque (trqCLth), rail pressure real value right side (prist w), air flow right side (mshfm1), Turbocharger Right Way Out Air Pressure (P2 Dx), Intercooler right way out air pressure(P5 DX)}
+%	\item{output: Right turbo revolutions (giri tsx)}
+%\end{itemize}	
+%
+%\input{Paragrafi/inputs_POT_KW_pvd_w_trqCLth_prist_w_mshfm1_P2_DX_P5_DX___outputs_GIRI_TDX}
 
-\input{Paragrafi/inputs_nmot_w_pvd_w_trqCLth_PRIST_W_MSHFM1_P2_SX_P5_SX___outputs_GIRI_TSX}
+
 
 
 %Intercooler right way out air pressure(P5 DX)
 %Turbocharger Right Way Out Air Pressure (P2 Dx)
 %Right turbo revolutions (giri tdx)
-
-
 
 
 
